@@ -1,0 +1,22 @@
+---
+permalink: network/admin-network-requirements.html 
+sidebar: sidebar 
+keywords: admin network requirements, guidelines for admin network, aesl 
+summary: 管理網路為選用網路。如果您計畫設定管理網路、請遵循下列要求與準則。 
+---
+= 管理網路需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+管理網路為選用網路。如果您計畫設定管理網路、請遵循下列要求與準則。
+
+管理網路的典型用途包括管理連線、 AutoSupport 、 KMS 、以及連線至關鍵伺服器的連線、例如 NTP 、 DNS 和 LDAP 、如果這些連線不是透過網格網路或用戶端網路提供。
+
+
+NOTE: 只要能夠連線所需的網路服務和用戶端、每個節點都可以使用管理網路和Aesl。
+
+
+NOTE: 您必須在管理網路上定義至少一個子網路、才能啟用來自外部子網路的傳入連線。在Aesl的每個子網路中、會自動在每個節點上產生靜態路由。

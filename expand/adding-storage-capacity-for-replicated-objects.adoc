@@ -1,0 +1,24 @@
+---
+permalink: expand/adding-storage-capacity-for-replicated-objects.html 
+sidebar: sidebar 
+keywords: replication, replicated, copies, capacity, storage nodes, expand, expansion 
+summary: 如果您部署的資訊生命週期管理（ILM）原則包含建立物件複本的規則、您必須考量要新增多少儲存設備、以及新增儲存磁碟區或儲存節點的位置。 
+---
+= 新增複寫物件的儲存容量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您部署的資訊生命週期管理（ILM）原則包含建立物件複本的規則、您必須考量要新增多少儲存設備、以及新增儲存磁碟區或儲存節點的位置。
+
+如需新增其他儲存設備的相關指引、請檢查建立複寫複本的ILM規則。如果ILM規則建立兩個以上的物件複本、請規劃在物件複本所在的每個位置新增儲存設備。簡單來說、如果您有兩個站台的網格和 ILM 規則、在每個站台建立一個物件複本、則您必須link:../expand/adding-storage-volumes-to-storage-nodes.html["新增儲存設備"]前往每個站台、以增加網格的整體物件容量。如需物件複寫的相關資訊，請參閱link:../ilm/what-replication-is.html["什麼是複寫"]。
+
+基於效能考量、您應該嘗試在不同站台之間維持儲存容量和運算能力的平衡。因此、在此範例中、您應該將相同數量的儲存節點新增至每個站台、或是在每個站台新增額外的儲存磁碟區。
+
+如果您有更複雜的ILM原則、其中包含根據儲存區名稱等準則將物件放置在不同位置的規則、或是隨著時間變更物件位置的規則、則您對擴充所需儲存區的分析將會類似、但會更為複雜。
+
+記錄整體儲存容量的使用速度、有助於瞭解擴充所需的儲存容量、以及何時需要額外的儲存空間。您可以使用 Grid Manager 來link:../monitor/monitoring-storage-capacity.html["監控及記錄儲存容量"]。
+
+規劃擴充的時間時、請記得考量購買和安裝額外儲存設備可能需要多長時間。

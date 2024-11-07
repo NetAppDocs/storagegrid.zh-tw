@@ -1,0 +1,47 @@
+---
+permalink: fabricpool/best-practices-ilm.html 
+sidebar: sidebar 
+keywords: FabricPool, best practices, ILM, information lifecycle management, ILM rule, ILM policy, erasure-coding, replication 
+summary: 如果您使用 FabricPool 將資料分層至 StorageGRID 、則必須瞭解使用 StorageGRID 資訊生命週期管理（ ILM ）搭配 FabricPool 資料的需求。 
+---
+= 搭配 FabricPool 資料使用 ILM 的最佳實務做法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用 FabricPool 將資料分層至 StorageGRID 、則必須瞭解使用 StorageGRID 資訊生命週期管理（ ILM ）搭配 FabricPool 資料的需求。
+
+
+CAUTION: 不知道什麼是無法理解的ILM規則或原則。FabricPool StorageGRID如果無法設定不正確的ILM原則、就可能發生資料遺失StorageGRID 。如需詳細資訊、請參閱link:../ilm/what-ilm-rule-is.html["使用 ILM 規則來管理物件"]和link:../ilm/creating-ilm-policy.html["建立 ILM 原則"]。
+
+
+
+== 搭配 FabricPool 使用 ILM 的準則
+
+當您使用 FabricPool 設定精靈時、精靈會自動為您建立的每個 S3 儲存區建立新的 ILM 規則、並將該規則新增至非作用中原則。系統會提示您啟動原則。自動建立的規則遵循建議的最佳實務做法：在單一站台使用 2+1 銷毀編碼。
+
+如果您是手動設定 StorageGRID 、而不是使用 FabricPool 設定精靈、請檢閱這些準則、確保您的 ILM 規則和 ILM 原則適合 FabricPool 資料和業務需求。您可能需要建立新規則並更新使用中的 ILM 原則、才能符合這些準則。
+
+* 您可以使用複寫和銷毀編碼規則的任何組合來保護雲端層資料。
++
+建議的最佳實務做法是在站台內使用2+1銷毀編碼、以達到具成本效益的資料保護。銷毀編碼使用的CPU較多、但儲存容量卻遠低於複寫。4+1和6+1方案使用的容量比2+1方案少。不過、如果您需要在網格擴充期間新增儲存節點、4+1和6+1配置的彈性會較低。如需詳細資訊、請參閱 link:../expand/adding-storage-capacity-for-erasure-coded-objects.html["新增銷毀編碼物件的儲存容量"]。
+
+* 套用至FabricPool 資料的每個規則都必須使用銷毀編碼、否則必須至少建立兩個複製複本。
++
+
+CAUTION: ILM規則只會在任何時間段建立一個複寫複本、使資料有永久遺失的風險。如果只有一個物件複寫複本存在、則當儲存節點故障或發生重大錯誤時、該物件就會遺失。在升級等維護程序期間、您也會暫時失去物件的存取權。
+
+* 如果您需要link:remove-fabricpool-data.html["從 StorageGRID 移除 FabricPool 資料"]、請使用 ONTAP 擷取 FabricPool Volume 的所有資料、並將其提升至效能層。
++
+
+CAUTION: 為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。將每個 ILM 規則的保留期間設定為 * 永遠 * 、以確保 FabricPool 物件不會被 StorageGRID ILM 刪除。
+
+* 請勿建立將 FabricPool 雲端層資料從儲存庫移出至其他位置的規則。您無法使用雲端儲存池將 FabricPool 資料移至其他物件存放區。
++
+
+NOTE: 由於從雲端儲存資源池目標擷取物件的延遲增加、因此不支援使用FabricPool 含有支援功能的雲端儲存資源池。
+
+* 從功能完善的9.8開始ONTAP 、您可以選擇性地建立物件標記、以協助分類及排序階層式資料、以便更輕鬆地進行管理。例如、您只能在FabricPool 附加StorageGRID 到該功能的不含資料的地方設定標籤。然後、當您在StorageGRID 物件標籤進階篩選器中建立ILM規則時、可以使用物件標籤進階篩選器來選取及放置此資料。
+

@@ -1,0 +1,61 @@
+---
+permalink: admin/configuring-admin-proxy-settings.html 
+sidebar: sidebar 
+keywords: admin proxy, autosupport, non-transparent proxy 
+summary: 如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、您可以在管理節點和技術支援（ AutoSupport ）之間設定非透明的 Proxy 伺服器。 
+---
+= 設定管理 Proxy 設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、則可以在管理節點和技術支援（ AutoSupport ）之間設定不透明的 Proxy 伺服器。
+
+如需 AutoSupport 的詳細資訊，請參閱link:configure-autosupport-grid-manager.html["設定AutoSupport 功能"]。
+
+.開始之前
+* 您有 link:admin-group-permissions.html["特定存取權限"]。
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+
+
+.關於這項工作
+您可以設定單一管理 Proxy 的設定。
+
+.步驟
+. 選擇*組態*>*安全性*>* Proxy設定*。
++
+此時會顯示 Proxy 設定頁面。依預設、會在索引標籤功能表中選取儲存設備。
+
+. 選擇 * 管理 * 標籤。
+. 選中 *Enable Admin Proxy* 複選框。
+. 輸入Proxy伺服器的主機名稱或IP位址。
+. 輸入用來連線至Proxy伺服器的連接埠。
+. 您也可以輸入 Proxy 伺服器的使用者名稱和密碼。
++
+如果您的 Proxy 伺服器不需要使用者名稱或密碼、請將這些欄位保留空白。
+
+. 選取下列其中一項：
++
+** 如果您想要保護與管理 Proxy 的連線、請選取 * 驗證 Proxy 憑證 * 。上傳 CA 套件以驗證管理 Proxy 伺服器所提供 SSL 憑證的真實性。
++
+
+CAUTION: AutoSupport on Demand 、 E 系列 AutoSupport Through StorageGRID 、以及 StorageGRID 升級頁面上的更新路徑判斷、如果驗證了 Proxy 憑證、將無法運作。
+
++
+上傳 CA 套件後、便會顯示其中繼資料。
+
+** 如果您不想在與管理 Proxy 伺服器通訊時驗證憑證、請選取 * 不要驗證 Proxy 憑證 * 。
+
+
+. 選擇*保存*。
++
+儲存管理 Proxy 之後、系統會設定管理節點與技術支援之間的 Proxy 伺服器。
+
++
+
+NOTE: Proxy變更可能需要10分鐘才能生效。
+
+. 如果您需要停用管理 Proxy 、請清除 * 啟用管理 Proxy * 核取方塊、然後選取 * 儲存 * 。
+

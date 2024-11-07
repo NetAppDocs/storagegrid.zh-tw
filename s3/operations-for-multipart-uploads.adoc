@@ -1,0 +1,92 @@
+---
+permalink: s3/operations-for-multipart-uploads.html 
+sidebar: sidebar 
+keywords: operations, multipart uploads, uploads, rest API 
+summary: 本節說明StorageGRID 此功能如何支援多部份上傳作業。 
+---
+= 多部份上傳作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本節說明StorageGRID 此功能如何支援多部份上傳作業。
+
+下列條件與附註適用於所有多重部分上傳作業：
+
+* 您不應超過 1 、 000 次同時上傳多個部分至單一儲存庫、因為該儲存庫的 ListMultipartuploADS 查詢結果可能會傳回不完整的結果。
+* 針對多個零件執行AWS大小限制。StorageGRIDS3用戶端必須遵循下列準則：
++
+** 多部份上傳的每個部分必須介於5個mib（5、242,880位元組）和5 GiB（5、368,709,120位元組）之間。
+** 最後一部分可小於5個mib（5、242,880位元組）。
+** 一般而言、零件尺寸應盡量大。例如、對於100 GiB物件使用5 GiB的零件大小。因為每個零件都被視為唯一的物件、所以使用較大的零件大小可降低 StorageGRID 中繼資料的負荷。
+** 對於小於5 GiB的物件、請考慮改用非多部份上傳。
+
+
+* 如果 ILM 規則使用平衡或嚴格link:../ilm/data-protection-options-for-ingest.html["擷取選項"]、則會在擷取時評估多部分物件的每個部分、以及在多部分上傳完成時評估整個物件的 ILM 。您應該瞭解這會如何影響物件和零件放置：
++
+** 如果在 S3 多部分上傳進行期間 ILM 有所變更、則當多部分上傳完成時、物件的某些部分可能不符合目前的 ILM 需求。未正確放置的任何零件都會排入 ILM 重新評估的佇列、稍後移至正確位置。
+** 評估零件的ILM時StorageGRID 、會根據零件大小而非物件大小來篩選。這表示物件的部分可以儲存在不符合整體物件 ILM 需求的位置。例如、如果規則指定所有 10 GB 或更大的物件都儲存在 DC1 、而所有較小的物件都儲存在 DC2 、則 10 部分多部分上傳的每 1 GB 部分都會儲存在 DC2 的擷取位置。不過、評估整體物件的 ILM 時、物件的所有部分都會移至 DC1 。
+
+
+* 所有多部分上傳操作均支持 StorageGRID link:consistency-controls.html["一致性值"]。
+* 當使用多部分上傳擷取物件時、link:../admin/what-object-segmentation-is.html["物件分割臨界值（ 1 GiB ）"]不會套用。
+* 視需要、您可以使用link:using-server-side-encryption.html["伺服器端加密"]多部分上傳。若要使用 SSE （伺服器端加密搭配 StorageGRID 託管金鑰）、請僅在 CreateMultpartUpload 要求中加入 `x-amz-server-side-encryption`要求標頭。若要使用 SSE-C （伺服器端加密搭配客戶提供的金鑰）、您可以在 CreateMultpartUpload 要求和每個後續的 UploPart 要求中指定相同的三個加密金鑰要求標頭。
+
+
+[cols="2a,3a"]
+|===
+| 營運 | 實作 
+
+
+ a| 
+AbortMultiPart上 傳
+ a| 
+以所有Amazon S3 REST API行為來實作。如有變更、恕不另行通知。
+
+
+
+ a| 
+完成多個部分上傳
+ a| 
+請參閱 link:complete-multipart-upload.html["完成多個部分上傳"]
+
+
+
+ a| 
+建立多個部分上傳
+
+（先前命名的「 Initiate Multifart Upload 」
+ a| 
+請參閱 link:initiate-multipart-upload.html["建立多個部分上傳"]
+
+
+
+ a| 
+ListMultipartUploads
+ a| 
+請參閱 link:list-multipart-uploads.html["ListMultipartUploads"]
+
+
+
+ a| 
+清單零件
+ a| 
+以所有Amazon S3 REST API行為來實作。如有變更、恕不另行通知。
+
+
+
+ a| 
+上傳零件
+ a| 
+請參閱 link:upload-part.html["上傳零件"]
+
+
+
+ a| 
+上傳PartCopy
+ a| 
+請參閱 link:upload-part-copy.html["上傳PartCopy"]
+
+|===

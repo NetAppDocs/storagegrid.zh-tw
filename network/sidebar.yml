@@ -1,0 +1,41 @@
+---
+section: network
+title: 網路準則
+entries:
+- title: 網路連線StorageGRID
+  pdf-filename: 網路連線準則StorageGRID
+  url: "/network/index.html"
+- title: 網路類型StorageGRID
+  url: "/network/storagegrid-network-types.html"
+- title: 網路拓撲範例
+  entries:
+  - title: 網格網路拓撲
+    url: "/network/grid-network-topology.html"
+  - title: 管理網路拓撲
+    url: "/network/admin-network-topology.html"
+  - title: 用戶端網路拓撲
+    url: "/network/client-network-topology.html"
+  - title: 三個網路的拓撲
+    url: "/network/topology-for-all-three-networks.html"
+- title: 網路需求
+  url: "/network/networking-requirements-and-guidelines.html"
+- title: 網路特定需求
+  url: "/network/network-specific-requirements.html"
+- title: 部署特定的網路考量
+  entries:
+  - title: Linux部署
+    url: "/network/linux-deployments.html"
+  - title: 適用於平台服務和雲端儲存資源池的網路和連接埠
+    url: "/network/networking-and-ports-for-platform-services-and-cloud-storage-pools.html"
+  - title: 應用裝置節點
+    url: "/network/appliance-nodes.html"
+- title: 網路安裝與資源配置
+  url: "/network/network-installation-and-provisioning.html"
+- title: 安裝後準則
+  url: "/network/post-installation-guidelines.html"
+- title: 網路連接埠參考
+  entries:
+  - title: 內部網格節點通訊
+    url: "/network/internal-grid-node-communications.html"
+  - title: 外部通訊
+    url: "/network/external-communications.html"

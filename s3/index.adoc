@@ -1,0 +1,206 @@
+---
+permalink: s3/index.html 
+sidebar: sidebar 
+keywords: about s3, s3 rest api, s3 overview 
+summary: 支援Simple Storage Service（S3）API、這是一組代表性狀態傳輸（REST）網路服務。StorageGRID 
+---
+= S3 REST API 支援的版本與更新
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援簡單儲存服務（S3）API、此API是以代表狀態傳輸（REST）網路服務的形式實作。StorageGRID
+
+S3 REST API 的支援可讓您將專為 S3 Web 服務開發的服務導向應用程式、與使用 StorageGRID 系統的內部部署物件儲存設備連線。用戶端應用程式目前使用 S3 REST API 呼叫的變更最少。
+
+
+
+== 支援的版本
+
+支援下列S3和HTTP的特定版本。StorageGRID
+
+[cols="1a,1a"]
+|===
+| 項目 | 版本 
+
+
+ a| 
+S3 API 規格
+ a| 
+http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html["Amazon Web Services（AWS）文件：Amazon Simple Storage Service API Reference"^]
+
+
+
+ a| 
+HTTP
+ a| 
+1.1
+
+如需HTTP的詳細資訊、請參閱HTTP / 1.1（RFC 7230-35）。
+
+https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616：超文字傳輸傳輸協定（HTTP / 1.1）"^]
+
+*附註* StorageGRID ：不支援HTTP / 1.1鋪管。
+
+|===
+
+
+== S3 REST API 支援的更新
+
+[cols="1a,4a"]
+|===
+| 版本 | 註解 
+
+
+ a| 
+11.9
+ a| 
+* 新增下列要求和支援標頭的預先計算 SHA-256 檢查值支援。您可以使用此功能來驗證上傳物件的完整性：
++
+** CompleteMultpartUpload ： `x-amz-checksum-sha256`
+** CreateMultpartUpload ： `x-amz-checksum-algorithm`
+** GetObject ： `x-amz-checksum-mode`
+** 標題物件： `x-amz-checksum-mode`
+** 清單零件
+** PutObject ： `x-amz-checksum-sha256`
+** 上傳部分： `x-amz-checksum-sha256`
+
+
+* 新增網格管理員控制租戶層級保留和法規遵循設定的功能。這些設定會影響 S3 物件鎖定設定。
++
+** 貯體預設保留模式和物件保留模式：監管或法規遵循（如果網格管理員允許）。
+** 貯體預設保留期間和物件保留截止日期：必須小於或等於網格管理員所設定的保留期間上限所允許的值。
+
+
+* 改善內容編碼與串流 `x-amz-content-sha256`值的支援 `aws-chunked`。限制：
++
+** 如果存在、 `chunk-signature`則為選用且未驗證
+** 如果存在、 `x-amz-trailer`內容會被忽略
+
+
+
+
+
+
+ a| 
+11.8
+ a| 
+更新 S3 作業的名稱，以符合中使用的名稱 http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html["Amazon Web Services（AWS）文件：Amazon Simple Storage Service API Reference"^]。
+
+
+
+ a| 
+11.7
+ a| 
+* 已新增。link:quick-reference-support-for-aws-apis.html["快速參考：支援的 S3 API 要求"]
+* 新增對使用 S3 物件鎖定的治理模式的支援。
+* 新增「取得物件」和「標頭物件」要求的 StorageGRID 特定回應標頭支援 `x-ntap-sg-cgr-replication-status`。此標頭提供物件的跨網格複寫狀態。
+* SelectObjectContent 要求現在支援 Parquet 物件。
+
+
+
+
+ a| 
+11.6
+ a| 
+* 新增支援、可在「取得物件」和「標題物件要求」中使用 `partNumber`要求參數。
+* 新增S3物件鎖定的預設保留模式支援、以及儲存區層級的預設保留期間。
+* 新增對原則條件金鑰的支援 `s3:object-lock-remaining-retention-days`、可設定物件的允許保留期間範圍。
+* 將單一「放置物件」作業的最大大小 _ 建議 _ 變更為 5 GiB （ 5 、 368,709,120 位元組）。如果您的物件大於5 GiB、請改用多部份上傳。
+
+
+
+
+ a| 
+11.5
+ a| 
+* 新增對管理儲存區加密的支援。
+* 新增了對S3物件鎖定和過時舊版規範要求的支援。
+* 新增使用刪除版本型儲存區上的多個物件的支援。
+*  `Content-MD5`現在已正確支援要求標頭。
+
+
+
+
+ a| 
+11.4.11.4
+ a| 
+* 新增刪除庫位標記、取得庫位標記及置入庫位標記的支援。不支援成本分攤標記。
+* 對於StorageGRID 在VMware 11.4中建立的儲存區、不再需要限制物件金鑰名稱以符合效能最佳實務做法。
+* 新增對活動類型的儲存庫通知的支援 `s3:ObjectRestore:Post`。
+* 現在已強制多部分零件的AWS大小限制。多部分上傳中的每個部分必須介於5個mib和5 GiB之間。最後一個部分可能小於5個mib。
+* 新增 TLS 1.3 支援
+
+
+
+
+ a| 
+11.3
+ a| 
+* 新增支援使用客戶提供的金鑰（SSE-C）進行物件資料的伺服器端加密。
+* 新增刪除、取得及放置 Bucket 生命週期作業（僅限到期動作）及回應標頭的支援 `x-amz-expiration`。
+* 更新的「放置物件」、「放置物件」-「複製」和「多重成分上傳」、說明ILM規則在擷取時使用同步放置的影響。
+* 不再支援TLS 1.1密碼。
+
+
+
+
+ a| 
+11.2
+ a| 
+新增後物件還原支援、可搭配雲端儲存資源池使用。新增了使用AWS語法的支援、可用於ARN、原則條件金鑰、以及群組和儲存區原則中的原則變數。我們StorageGRID 將繼續支援使用此功能的現有群組和儲存區原則。
+
+*附註：*在其他組態JSON/XML中使用ARN/URN StorageGRID （包括用於自訂的版本功能）並未變更。
+
+
+
+ a| 
+11.1
+ a| 
+新增支援跨來源資源共享（ CORS ）、 HTTP for S3 用戶端連線至網格節點、以及儲存區的法規遵循設定。
+
+
+
+ a| 
+11.0
+ a| 
+新增支援、可設定適用於儲存區的平台服務（CloudMirror複寫、通知及Elasticsearch整合）。此外、也新增對貯體物件標記位置限制的支援、以及可用的一致性。
+
+
+
+ a| 
+10.4
+ a| 
+新增對ILM掃描版本設定、端點網域名稱頁面更新、原則、原則範例及PuttoverwriteObject權限中的條件和變數的支援。
+
+
+
+ a| 
+10.3
+ a| 
+新增版本管理支援。
+
+
+
+ a| 
+10.2
+ a| 
+新增對群組和庫位存取原則的支援、以及多部份複本（上傳零件-複本）的支援。
+
+
+
+ a| 
+10.1
+ a| 
+新增多部分上傳、虛擬託管樣式要求及v4驗證的支援。
+
+
+
+ a| 
+10.0
+ a| 
+由整個系統初始支援S3 REST API StorageGRID 。目前支援的_Simple Storage Service API Reference版本為2009-03-01。
+
+|===

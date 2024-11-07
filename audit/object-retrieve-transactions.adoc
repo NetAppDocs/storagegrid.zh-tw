@@ -1,0 +1,103 @@
+---
+permalink: audit/object-retrieve-transactions.html 
+sidebar: sidebar 
+keywords: object retrieve, transactions, SGET, WGET 
+summary: 您可以找出 S3 API 專屬稽核訊息、以識別稽核記錄中的物件擷取交易。 
+---
+= 物件擷取交易
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以找出 S3 API 專屬稽核訊息、以識別稽核記錄中的物件擷取交易。
+
+下列表格並未列出擷取交易期間產生的所有稽核訊息。僅包含追蹤擷取交易所需的訊息。
+
+
+
+== S3擷取稽核訊息
+
+[cols="1a,1a,2a,1a,1a"]
+|===
+| 程式碼 | 名稱 | 說明 | 追蹤 | 請參閱 
+
+
+ a| 
+SGET
+ a| 
+S3取得
+ a| 
+要求從儲存區擷取物件。
+ a| 
+CBID、S3BK、S3KY
+ a| 
+link:sget-s3-get.html["SGET：S3取得"]
+
+|===
+
+
+== 快速擷取稽核訊息
+
+[cols="1a,1a,2a,1a,1a"]
+|===
+| 程式碼 | 名稱 | 說明 | 追蹤 | 請參閱 
+
+
+ a| 
+WGet
+ a| 
+Swift Get
+ a| 
+要求從容器擷取物件。
+ a| 
+CBID、WCON、WOBJ
+ a| 
+link:wget-swift-get.html["WGet：Swift Get"]
+
+|===
+
+
+== 範例：S3物件擷取
+
+當S3用戶端從儲存節點（LMR服務）擷取物件時、會產生稽核訊息並儲存至稽核記錄。
+
+請注意、下列範例並未列出交易期間產生的所有稽核訊息。僅列出與S3擷取交易（SGET）相關的項目。
+
+
+
+=== SGET：S3取得
+
+當用戶端將 GetObject 要求傳送至 LDR 服務時、就會開始物件擷取。訊息包含用來擷取物件的儲存區、以及用來識別物件的S3金鑰。
+
+[listing, subs="specialcharacters,quotes"]
+----
+2017-09-20T22:53:08.782605 [AUDT:[RSLT(FC32):SUCS][TIME(UI64):47807][SAIP(IPAD):"10.96.112.26"][S3AI(CSTR):"43979298178977966408"][SACC(CSTR):"s3-account-a"][S3AK(CSTR):"SGKHt7GzEcu0yXhFhT_rL5mep4nJt1w75GBh-O_FEw=="][SUSR(CSTR):"urn:sgws:identity::43979298178977966408:root"][SBAI(CSTR):"43979298178977966408"][SBAC(CSTR):"s3-account-a"]\[S3BK\(CSTR\):"bucket-anonymous"\]\[S3KY\(CSTR\):"Hello.txt"\][CBID(UI64):0x83D70C6F1F662B02][CSIZ(UI64):12][AVER(UI32):10][ATIM(UI64):1505947988782605]\[ATYP\(FC32\):SGET\][ANID(UI32):12272050][AMID(FC32):S3RQ][ATID(UI64):17742374343649889669]]
+----
+如果儲存區原則允許、用戶端可以匿名擷取物件、或從不同租戶帳戶所擁有的儲存區擷取物件。稽核訊息包含有關庫位擁有者租戶帳戶的資訊、以便您追蹤這些匿名和跨帳戶的要求。
+
+在下列範例訊息中、用戶端會傳送 GetObject 要求給儲存在他們不擁有的儲存區中的物件。SAI和Sbus的值會記錄庫位擁有者的租戶帳戶ID和名稱、這與S3AI和SACC中記錄的租戶帳戶ID和用戶端名稱不同。
+
+[listing, subs="specialcharacters,quotes"]
+----
+2017-09-20T22:53:15.876415 [AUDT:[RSLT(FC32):SUCS][TIME(UI64):53244][SAIP(IPAD):"10.96.112.26"]\[S3AI\(CSTR\):"17915054115450519830"\]\[SACC\(CSTR\):"s3-account-b"\][S3AK(CSTR):"SGKHpoblWlP_kBkqSCbTi754Ls8lBUog67I2LlSiUg=="][SUSR(CSTR):"urn:sgws:identity::17915054115450519830:root"]\[SBAI\(CSTR\):"43979298178977966408"\]\[SBAC\(CSTR\):"s3-account-a"\][S3BK(CSTR):"bucket-anonymous"][S3KY(CSTR):"Hello.txt"][CBID(UI64):0x83D70C6F1F662B02][CSIZ(UI64):12][AVER(UI32):10][ATIM(UI64):1505947995876415][ATYP(FC32):SGET][ANID(UI32):12272050][AMID(FC32):S3RQ][ATID(UI64):6888780247515624902]]
+----
+
+
+== 範例：在物件上選取S3
+
+當S3用戶端對物件發出S3 Select查詢時、會產生稽核訊息並儲存至稽核記錄。
+
+請注意、下列範例並未列出交易期間產生的所有稽核訊息。僅列出與S3 Select交易（SelectObjectContent）相關的交易。
+
+每個查詢會產生兩個稽核訊息：一個執行 S3 Select 要求授權（ S3SR 欄位設定為「 SELECT 」）、另一個後續標準 GET 作業、可在處理期間從儲存設備擷取資料。
+
+[listing, subs="specialcharacters,quotes"]
+----
+2021-11-08T15:35:30.750038 [AUDT:[RSLT(FC32):SUCS][CNID(UI64):1636385730715700][TIME(UI64):29173][SAIP(IPAD):"192.168.7.44"][S3AI(CSTR):"63147909414576125820"][SACC(CSTR):"Tenant1636027116"][S3AK(CSTR):"AUFD1XNVZ905F3TW7KSU"][SUSR(CSTR):"urn:sgws:identity::63147909414576125820:root"][SBAI(CSTR):"63147909414576125820"][SBAC(CSTR):"Tenant1636027116"][S3BK(CSTR):"619c0755-9e38-42e0-a614-05064f74126d"][S3KY(CSTR):"SUB-EST2020_ALL.csv"][CBID(UI64):0x0496F0408A721171][UUID(CSTR):"D64B1A4A-9F01-4EE7-B133-08842A099628"][CSIZ(UI64):0][S3SR(CSTR):"select"][AVER(UI32):10][ATIM(UI64):1636385730750038][ATYP(FC32):SPOS][ANID(UI32):12601166][AMID(FC32):S3RQ][ATID(UI64):1363009709396895985]]
+----
+[listing, subs="specialcharacters,quotes"]
+----
+2021-11-08T15:35:32.604886 [AUDT:[RSLT(FC32):SUCS][CNID(UI64):1636383069486504][TIME(UI64):430690][SAIP(IPAD):"192.168.7.44"][HTRH(CSTR):"{\"x-forwarded-for\":\"unix:\"}"][S3AI(CSTR):"63147909414576125820"][SACC(CSTR):"Tenant1636027116"][S3AK(CSTR):"AUFD1XNVZ905F3TW7KSU"][SUSR(CSTR):"urn:sgws:identity::63147909414576125820:root"][SBAI(CSTR):"63147909414576125820"][SBAC(CSTR):"Tenant1636027116"][S3BK(CSTR):"619c0755-9e38-42e0-a614-05064f74126d"][S3KY(CSTR):"SUB-EST2020_ALL.csv"][CBID(UI64):0x0496F0408A721171][UUID(CSTR):"D64B1A4A-9F01-4EE7-B133-08842A099628"][CSIZ(UI64):10185581][MTME(UI64):1636380348695262][AVER(UI32):10][ATIM(UI64):1636385732604886][ATYP(FC32):SGET][ANID(UI32):12733063][AMID(FC32):S3RQ][ATID(UI64):16562288121152341130]]
+----

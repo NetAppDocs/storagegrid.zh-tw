@@ -1,0 +1,102 @@
+---
+permalink: ubuntu/installing-linux.html 
+sidebar: sidebar 
+keywords: how to install Linux 
+summary: 您必須在所有 Ubuntu 或 Debian 網格主機上安裝 StorageGRID 。如需支援版本的清單、請使用 NetApp 互通性對照表工具。 
+---
+= 安裝Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在所有 Ubuntu 或 Debian 網格主機上安裝 StorageGRID 。如需支援版本的清單、請使用 NetApp 互通性對照表工具。
+
+.開始之前
+確保您的作業系統符合 StorageGRID 的最低核心版本需求、如下所列。使用命令 `uname -r`取得作業系統的核心版本、或洽詢作業系統廠商。
+
+* 注意： * Ubuntu 版本 18.04 和 20.04 的支援已過時、將於未來版本中移除。
+
+[cols="1a,2a,3a"]
+|===
+| Ubuntu 版本 | 最低核心版本 | 核心套件名稱 
+
+
+ a| 
+18.04.6 （已過時）
+ a| 
+5.4.0-150- 一般
+ a| 
+Linux-image-5.4.0-150- 一般 / 雙聲道更新、雙聲道安全性、現為 5.4.0-150.167~18.04.1
+
+
+
+ a| 
+20.04.5 （已過時）
+ a| 
+5.4.0-131-generic
+ a| 
+Linux-image-5.4.0-131-generic/fo-updates 、現為 5.4.0-131.147
+
+
+
+ a| 
+22.04.1.
+ a| 
+5.15.0-47- 一般
+ a| 
+Linux-image-5.15.0-47-generic/jammy-updates,jammy-security,now 5.15.0-47.51
+
+
+
+ a| 
+24.04
+ a| 
+6.8.0-31-generic
+ a| 
+Linux-image-6.8.0-31-generic/grine, 現在 6.8.0-31.31
+
+|===
+* 備註： * 支援 Debian 版本 11 已被淘汰、將於未來版本中移除。
+
+[cols="1a,2a,2a"]
+|===
+| Debian 版本 | 最低核心版本 | 核心套件名稱 
+
+
+ a| 
+11 （已過時）
+ a| 
+5.10.0-18-amd64
+ a| 
+Linux-image-5.10.0-18-amd64/Stable 、現為 5.10.150-1
+
+
+
+ a| 
+12
+ a| 
+6.1.0-9-amd64
+ a| 
+Linux-image-6.1.0-9-amd64/Stable 、現為 6.1.27-1
+
+|===
+.步驟
+. 根據代理商的指示或您的標準程序、在所有實體或虛擬網格主機上安裝Linux。
++
+
+NOTE: 請勿安裝任何圖形化桌面環境。安裝Ubuntu時、您必須選取*標準系統公用程式*。建議選取* OpenSSH server*以啟用對Ubuntu主機的ssh存取。所有其他選項都可以保持清除狀態。
+
+. 確保所有主機都能存取Ubuntu或Debian套件儲存庫。
+. 如果已啟用交換：
++
+.. 執行下列命令： `$ sudo swapoff --all`
+.. 移除中的所有交換項目 `/etc/fstab`、以保留設定。
++
+
+NOTE: 如果無法完全停用交換、可能會嚴重降低效能。
+
+
+
+

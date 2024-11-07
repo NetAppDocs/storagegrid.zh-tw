@@ -1,0 +1,102 @@
+---
+permalink: admin/creating-enterprise-application-azure.html 
+sidebar: sidebar 
+keywords: enterprise application, azure ad, single sign on, sso 
+summary: 您可以使用Azure AD為系統中的每個管理節點建立企業應用程式。 
+---
+= 在Azure AD中建立企業應用程式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Azure AD為系統中的每個管理節點建立企業應用程式。
+
+.開始之前
+* 您已開始設定StorageGRID 單一登入功能以供使用、並選擇* Azure *作為SSO類型。
+* *在Grid Manager的「單一登入」頁面上選取「沙箱模式*」。請參閱。 link:../admin/using-sandbox-mode.html["使用沙箱模式"]
+* 您的系統中每個管理節點都有*企業應用程式名稱*。您可以從StorageGRID 「管理員節點」詳細資料表中複製這些值、該表位於「報價單一登入」頁面。
++
+
+NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業應用程式。為每個管理節點設定企業應用程式、可確保使用者安全地登入及登出任何管理節點。
+
+* 您有在Azure Active Directory中建立企業應用程式的經驗。
+* 您有一個Azure帳戶、且有有效的訂閱。
+* 您在Azure帳戶中有下列任一角色：Global Administrator、Cloud Application Administrator、Application Administrator或服務主體的擁有者。
+
+
+
+
+== 存取Azure AD
+
+.步驟
+. 登入 https://portal.azure.com["Azure Portal"^]。
+. 瀏覽至 https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade["Azure Active Directory"^]。
+. 選擇。 https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/Overview/menuId/["企業應用程式"^]
+
+
+
+
+== 建立企業應用程式並儲存StorageGRID 不可靠的SSO組態
+
+若要在 StorageGRID 中儲存 Azure 的 SSO 組態、您必須使用 Azure 為每個管理節點建立企業應用程式。您將從Azure複製聯盟中繼資料URL、然後貼到StorageGRID 「支援單一登入」頁面上對應的*聯盟中繼資料URL*欄位。
+
+.步驟
+. 針對每個管理節點重複下列步驟。
++
+.. 在Azure Enterprise應用程式窗格中、選取*新增應用程式*。
+.. 選取*建立您自己的應用程式*。
+.. 如需名稱、請在StorageGRID 「Data Name（管理員節點）」詳細資料表中輸入您複製的*企業應用程式名稱*（英文）、位於「Data Flash（英文）」頁面上。
+.. 選擇*整合您在圖庫中找不到的任何其他應用程式（非圖庫）*選項按鈕。
+.. 選擇* Create *（建立*）。
+.. 選取* 2中的*入門*連結。設定單一登入*方塊、或選取左邊界的*單一登入*連結。
+.. 選取「* SAML *」方塊。
+.. 複製*應用程式聯盟中繼資料URL*、可在*步驟3 SAML簽署憑證*下找到。
+.. 前往StorageGRID 「僅供參考的單一登入」頁面、然後將URL貼到*聯盟中繼資料URL*欄位、此欄位對應您使用的*企業應用程式名稱*。
+
+
+. 在貼上每個管理節點的聯盟中繼資料URL、並對SSO組態進行所有其他必要變更之後、請在StorageGRID 「支援單一登入」頁面上選取「*儲存*」。
+
+
+
+
+== 下載每個管理節點的SAML中繼資料
+
+儲存SSO組態之後、您可以為StorageGRID 您的系統中的每個管理節點下載SAML中繼資料檔案。
+
+.步驟
+. 針對每個管理節點重複這些步驟。
++
+.. 從管理節點登入StorageGRID 到這個功能。
+.. 選擇*組態*>*存取控制*>*單一登入*。
+.. 選取按鈕、即可下載該管理節點的SAML中繼資料。
+.. 儲存您要上傳至Azure AD的檔案。
+
+
+
+
+
+
+== 將SAML中繼資料上傳至每個企業應用程式
+
+下載每StorageGRID 個「支援對象管理節點」的SAML中繼資料檔案之後、請在Azure AD中執行下列步驟：
+
+.步驟
+. 返回Azure Portal。
+. 針對每個企業應用程式重複這些步驟：
++
+
+NOTE: 您可能需要重新整理「企業應用程式」頁面、以查看先前新增至清單中的應用程式。
+
++
+.. 前往企業應用程式的「內容」頁面。
+.. 將*需要指派*設為*否*（除非您要個別設定指派）。
+.. 前往單一登入頁面。
+.. 完成SAML組態。
+.. 選取*上傳中繼資料檔案*按鈕、然後選取您為對應的管理節點下載的SAML中繼資料檔案。
+.. 載入檔案後、選取*「Save"（儲存）*、然後選取「* X*」以關閉窗格。您將返回「使用SAML設定單一登入」頁面。
+
+
+. 請依照中的步驟link:../admin/using-sandbox-mode.html["使用沙箱模式"]測試每個應用程式。
+

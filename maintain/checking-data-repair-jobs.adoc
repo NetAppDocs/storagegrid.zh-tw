@@ -1,0 +1,57 @@
+---
+permalink: maintain/checking-data-repair-jobs.html 
+sidebar: sidebar 
+keywords: storagegrid, data repair 
+summary: 在解除委任網格節點之前、您必須確認沒有任何資料修復工作處於作用中狀態。如果有任何修復失敗、您必須重新啟動它們、並讓它們在執行取消委任程序之前完成。 
+---
+= 檢查資料修復工作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在解除委任網格節點之前、您必須確認沒有任何資料修復工作處於作用中狀態。如果有任何修復失敗、您必須重新啟動它們、並讓它們在執行取消委任程序之前完成。
+
+.關於這項工作
+如果您需要取消委任中斷連線的儲存節點、您也必須在完成取消委任程序後完成這些步驟、以確保資料修復工作已順利完成。您必須確保已移除節點上的任何銷毀編碼片段已成功還原。
+
+這些步驟僅適用於具有銷毀編碼物件的系統。
+
+.步驟
+. 登入主要管理節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+
+. 檢查正在執行的維修： `repair-data show-ec-repair-status`
++
+** 如果您從未執行過資料修復工作、則輸出為 `No job found`。您不需要重新啟動任何修復工作。
+** 如果資料修復工作先前執行或目前正在執行、則輸出會列出修復的資訊。每項維修都有唯一的維修ID。
++
+image::../media/repair-data-status.png[維修資料狀態]
+
+
+
++
+
+TIP: 您也可以選擇使用 Grid Manager 來監控正在進行的還原程序、並顯示還原歷程記錄。請參閱。 link:../maintain/restoring-volume.html["使用 Grid Manager 還原物件資料"]
+
+. 如果所有維修的狀態為、則 `Completed`不需要重新啟動任何修復工作。
+. 如果任何修復的狀態為、則 `Stopped`必須重新啟動該修復。
++
+.. 從輸出中取得故障修復的修復ID。
+.. 執行 `repair-data start-ec-node-repair`命令。
++
+使用 `--repair-id`選項來指定「維修 ID 」。例如、如果您想要重試修復 ID 為 949292 的修復、請執行此命令： `repair-data start-ec-node-repair --repair-id 949292`
+
+.. 繼續追蹤 EC 資料維修的狀態、直到所有維修的狀態均為 `Completed`。
+
+
+

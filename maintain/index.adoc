@@ -1,0 +1,33 @@
+---
+permalink: maintain/index.html 
+sidebar: sidebar 
+keywords: maintain overview, maintenance overview, about maintain, about maintenance 
+summary: 網格維護工作包括汰換節點或站台、重新命名網格、節點或站台、以及維護網路。您也可以執行主機和中介軟體程序、以及網格節點程序。 
+---
+= 網格維護
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+網格維護工作包括汰換節點或站台、重新命名網格、節點或站台、以及維護網路。您也可以執行主機和中介軟體程序、以及網格節點程序。
+
+
+NOTE: 在這些說明中， "Linux" 指的是 Red Hat ® Enterprise Linux ® 、 Ubuntu ® 或 Debian ® 部署。如需支援版本的清單，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]。
+
+
+
+== 開始之前
+
+* 您對StorageGRID 此系統有廣泛的瞭解。
+* 您已檢閱StorageGRID 過您的不全系統拓撲、並瞭解網格組態。
+* 您瞭解必須確實遵循所有指示、並留意所有警告。
+* 您瞭解不支援未說明的維護程序、或是需要服務參與。
+
+
+
+
+== 設備的維護程序
+
+有關硬體程序、請參閱 https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/index.html["StorageGRID 應用裝置的維護指示"^]。

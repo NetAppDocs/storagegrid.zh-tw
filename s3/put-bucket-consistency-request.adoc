@@ -1,0 +1,80 @@
+---
+permalink: s3/put-bucket-consistency-request.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, PUT bucket consistency request 
+summary: 「放置貯體一致性」要求可讓您指定套用至在貯體上執行之作業的一致性。 
+---
+= 實現庫位一致性
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「放置貯體一致性」要求可讓您指定套用至在貯體上執行之作業的一致性。
+
+預設一致性設定為保證新建立物件的寫入後讀取。
+
+.開始之前
+您必須具有S3：PuttBucketConsistency權限或帳戶root權限、才能完成此作業。
+
+
+
+== 申請
+
+ `x-ntap-sg-consistency`參數必須包含下列其中一個值：
+
+[cols="1a,2a"]
+|===
+| 一致性 | 說明 
+
+
+ a| 
+全部
+ a| 
+所有節點都會立即接收資料、否則要求將會失敗。
+
+
+
+ a| 
+強大的全球化技術
+ a| 
+保證所有站台所有用戶端要求的寫入後讀取一致性。
+
+
+
+ a| 
+強式網站
+ a| 
+保證站台內所有用戶端要求的寫入後讀取一致性。
+
+
+
+ a| 
+全新寫入後讀取
+ a| 
+（預設）為新物件提供寫入後讀取一致性、並最終確保物件更新一致。提供高可用度與資料保護保證。建議大多數情況下使用。
+
+
+
+ a| 
+可用
+ a| 
+提供新物件和物件更新的最終一致性。對於 S3 貯體、請僅視需要使用（例如、包含很少讀取的記錄值之貯體、或用於對不存在的金鑰執行 head 或 Get 作業）。S3 FabricPool 儲存區不支援。
+
+|===
+* 注意： * 一般而言、您應該使用「新寫入後讀取」的一致性。如果要求無法正常運作、請盡可能變更應用程式用戶端行為。或者、設定用戶端以指定每個 API 要求的一致性。將貯體層級的一致性設為最後的方法。
+
+
+
+== 申請範例
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /bucket?x-ntap-sg-consistency=strong-global HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+.相關資訊
+link:consistency-controls.html["一致性值"]

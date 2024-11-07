@@ -1,0 +1,51 @@
+---
+permalink: maintain/replacing-non-primary-admin-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, replace non-primary admin node, replacing non-primary admin node, non-primary admin node 
+summary: 若要恢復非主要管理節點、您必須先更換實體或虛擬硬體。 
+---
+= 取代非主要管理節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要恢復非主要管理節點、您必須先更換實體或虛擬硬體。
+
+您可以使用在同一個平台上執行的非主要管理節點來取代故障的非主要管理節點、也可以將在VMware上執行的非主要管理節點、或將Linux主機上裝載的非主要管理節點、替換成在服務應用裝置上的非主要管理節點。
+
+請使用符合您為節點所選替換平台的程序。完成節點更換程序（適用於所有節點類型）之後、該程序將引導您進行非主要管理節點還原的下一步。
+
+[cols="1a,2a"]
+|===
+| 替換平台 | 程序 
+
+
+ a| 
+VMware
+ a| 
+link:all-node-types-replacing-vmware-node.html["更換VMware節點"]
+
+
+
+ a| 
+Linux
+ a| 
+link:all-node-types-replacing-linux-node.html["更換Linux節點"]
+
+
+
+ a| 
+服務應用裝置
+ a| 
+link:replacing-failed-node-with-services-appliance.html["更換服務應用裝置"]
+
+
+
+ a| 
+OpenStack
+ a| 
+NetApp提供的OpenStack虛擬機器磁碟檔案和指令碼不再支援還原作業。如果您需要恢復在OpenStack部署中執行的節點、請下載適用於您Linux作業系統的檔案。然後，請遵循的程序link:all-node-types-replacing-linux-node.html["更換 Linux 節點"]。
+
+|===

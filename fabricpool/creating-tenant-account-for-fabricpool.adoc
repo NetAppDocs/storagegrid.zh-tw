@@ -1,0 +1,106 @@
+---
+permalink: fabricpool/creating-tenant-account-for-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, tenant, SSO 
+summary: 您必須在Grid Manager中建立租戶帳戶FabricPool 、以供使用。 
+---
+= 建立一個客戶帳戶FabricPool 以供使用
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在Grid Manager中建立租戶帳戶FabricPool 、以供使用。
+
+租戶帳戶可讓用戶端應用程式將物件儲存及擷取StorageGRID 到靜止不動的地方。每個租戶帳戶都有自己的帳戶ID、授權群組和使用者、庫位和物件。
+
+如需此工作的詳細資訊，請參閱link:../admin/creating-tenant-account.html["建立租戶帳戶"]。要使用 FabricPool 安裝嚮導完成此任務，請轉至link:use-fabricpool-setup-wizard-steps.html["存取並完成 FabricPool 設定精靈"]。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
+
+
+.步驟
+. 選取*租戶*。
+. 選擇* Create *（建立*）。
+. 如需輸入詳細資料步驟、請輸入下列資訊。
++
+[cols="1a,3a"]
+|===
+| 欄位 | 說明 
+
+
+ a| 
+名稱
+ a| 
+租戶帳戶的名稱。租戶名稱不一定是唯一的。建立租戶帳戶時、會收到唯一的數字帳戶ID。
+
+
+
+ a| 
+說明（選用）
+ a| 
+協助識別租戶的說明。
+
+
+
+ a| 
+用戶端類型
+ a| 
+必須是 *S2* （用於 FabricPool ）。
+
+
+
+ a| 
+儲存配額（選用）
+ a| 
+將此欄位保留空白以供 FabricPool 使用。
+
+|===
+. 對於 Select 權限步驟：
++
+.. 請勿選取 * 允許平台服務 * 。
++
+FabricPool 租戶通常不需要使用平台服務、例如 CloudMirror 複寫。
+
+.. 您也可以選擇 * 使用自己的身分識別來源 * 。
+.. 請勿選取 * 允許 S3 選取 * 。
++
+FabricPool 租戶通常不需要使用 S3 Select 。
+
+.. 您也可以選擇 * 使用網格同盟連線 * 、以允許租戶使用link:../admin/grid-federation-overview.html["網格同盟連線"]進行帳戶複製和跨網格複寫。然後選取要使用的網格同盟連線。
+
+
+. 對於「定義根目錄存取」步驟、請根據您的 StorageGRID 系統使用link:../admin/using-identity-federation.html["身分識別聯盟"]、link:../admin/configuring-sso.html["單一登入（ SSO ）"]或兩者、指定哪個使用者將擁有租戶帳戶的初始根目錄存取權限。
++
+[cols="1a,2a"]
+|===
+| 選項 | 請這麼做 
+
+
+ a| 
+如果未啟用身分識別聯盟
+ a| 
+指定當以本機根使用者身分登入租戶時所使用的密碼。
+
+
+
+ a| 
+如果已啟用身分識別聯盟
+ a| 
+.. 選取現有的同盟群組以擁有租用戶的根存取權限。
+.. 您也可以選擇指定當以本機根使用者身分登入租用戶時要使用的密碼。
+
+
+
+
+ a| 
+如果同時啟用身分識別聯盟和單一登入（ SSO ）
+ a| 
+選取現有的同盟群組以擁有租用戶的根存取權限。沒有本機使用者可以登入。
+
+|===
+. 選取*建立租戶*。
+

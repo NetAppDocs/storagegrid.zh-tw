@@ -1,0 +1,94 @@
+---
+permalink: admin/kms-overview-of-kms-and-appliance-configuration.html 
+sidebar: sidebar 
+keywords: kms, appliance configuration, node encryption 
+summary: 在使用金鑰管理伺StorageGRID 服器（KMS）來保護應用裝置節點上的資訊安全之前、您必須先完成兩項組態工作：設定一或多個KMS伺服器、以及啟用應用裝置節點的節點加密。完成這兩項組態工作之後、就會自動執行金鑰管理程序。 
+---
+= KMS 與應用裝置組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用金鑰管理伺服器（KMS）來保護StorageGRID 應用裝置節點上的各項資料之前、您必須先完成兩項組態工作：設定一或多個KMS伺服器、以及為應用裝置節點啟用節點加密。完成這兩項組態工作之後、就會自動執行金鑰管理程序。
+
+流程圖顯示使用KMS保護StorageGRID 應用裝置節點上的資訊安全的高階步驟。
+
+image::../media/kms_configuration_overview.png[KMS 組態工作流程、如下列文字所述]
+
+流程圖會顯示KMS設定與應用裝置設定並行執行、不過您可以根據需求、在新應用裝置節點啟用節點加密之前或之後、設定金鑰管理伺服器。
+
+
+
+== 設定金鑰管理伺服器（KMS）
+
+設定金鑰管理伺服器包括下列高層級步驟。
+
+[cols="1a,1a"]
+|===
+| 步驟 | 請參閱 
+
+
+ a| 
+存取KMS軟體、並在StorageGRID 每個KMS或KMS叢集上新增一個用戶端以供使用。
+ a| 
+link:kms-configuring-storagegrid-as-client.html["在StorageGRID KMS中設定以用戶端身份執行的功能"]
+
+
+
+ a| 
+在StorageGRID KMS取得有關該客戶端的必要資訊。
+ a| 
+link:kms-configuring-storagegrid-as-client.html["在StorageGRID KMS中設定以用戶端身份執行的功能"]
+
+
+
+ a| 
+將KMS新增至Grid Manager、指派給單一站台或預設站台群組、上傳必要的憑證、並儲存KMS組態。
+ a| 
+link:kms-adding.html["新增金鑰管理伺服器（KMS）"]
+
+|===
+
+
+== 設定產品
+
+設定KMS使用的應用裝置節點包括下列高層級步驟。
+
+. 在設備安裝的硬體組態階段、請使用StorageGRID 「支援服務」功能的「應用程式安裝程式」來啟用應用裝置的「*節點加密*」設定。
++
+
+NOTE: 將應用裝置新增至網格後、您無法啟用 * 節點加密 * 設定、也無法將外部金鑰管理用於未啟用節點加密的應用裝置。
+
+. 執行StorageGRID 《程式安裝程式：在安裝期間、會將隨機資料加密金鑰（DEek）指派給每個應用裝置磁碟區、如下所示：
++
+** DEK用於加密每個Volume上的資料。這些金鑰是使用應用裝置作業系統中的 Linux 統一金鑰設定（ LUKS ）磁碟加密來產生、無法變更。
+** 每個個別的「DEK」都是使用主要金鑰加密金鑰（KEK）進行加密。初始KEK是加密DEK的暫用金鑰、直到應用裝置連線至KMS為止。
+
+
+. 將應用裝置節點新增StorageGRID 至
+
+
+如需詳細資訊、請參閱 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html["啟用節點加密"^]。
+
+
+
+== 金鑰管理加密程序（自動執行）
+
+金鑰管理加密包括下列自動執行的高層級步驟。
+
+. 當您在網格中安裝已啟用節點加密的應用裝置時StorageGRID 、即可判斷包含新節點的站台是否存在KMS組態。
++
+** 如果站台已設定KMS、則裝置會接收KMS組態。
+** 如果尚未為站台設定KMS、則在您為站台設定KMS、且裝置收到KMS組態之前、應用裝置上的資料會繼續由暫用KEK加密。
+
+
+. 應用裝置使用KMS組態連線至KMS、並要求加密金鑰。
+. KMS會傳送加密金鑰給應用裝置。來自KMS的新金鑰取代了暫用KEK、現在用於加密和解密應用裝置磁碟區的DEK。
++
+
+CAUTION: 加密應用裝置節點連線至設定的KMS之前存在的任何資料、都會以暫用金鑰加密。不過、除非KMS加密金鑰取代暫用金鑰、否則應用裝置磁碟區不應被視為受到保護、以免從資料中心移除。
+
+. 如果裝置電源已開啟或重新開機、則會重新連線至KMS以要求金鑰。儲存在揮發性記憶體中的金鑰、無法在停電或重新開機的情況下繼續運作。
+

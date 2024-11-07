@@ -1,0 +1,315 @@
+---
+permalink: s3/put-bucket-metadata-notification-configuration-request.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, PUT bucket metadata notification configuration request 
+summary: 「置入庫位元資料」通知組態要求可讓您針對個別的庫位啟用搜尋整合服務。您在要求本文中提供的中繼資料通知組態XML、會指定將中繼資料傳送至目的地搜尋索引的物件。 
+---
+= 放置時段中繼資料通知組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「置入庫位元資料」通知組態要求可讓您針對個別的庫位啟用搜尋整合服務。您在要求本文中提供的中繼資料通知組態XML、會指定將中繼資料傳送至目的地搜尋索引的物件。
+
+您必須擁有儲存區的S3：PuttBucketMetadata通知權限、或是帳戶根權限、才能完成此作業。
+
+
+
+== 申請
+
+要求必須在要求本文中包含中繼資料通知組態。每個中繼資料通知組態都包含一或多個規則。每個規則都會指定要套用的物件、StorageGRID 以及應將物件中繼資料傳送到哪個目的地。
+
+物件可依物件名稱的前置詞進行篩選。例如、您可以將字首為物件的中繼資料傳送至一個目的地、而將字首為另一個目的地的物件傳送 `/images`至另一個目的地 `/videos`。
+
+有重疊前置字元的組態無效、提交時會遭到拒絕。例如、不允許為具有前置碼的物件加入一個規則、並為具有前置碼的物件加入第二個規則 `test2`的組態 `test`。
+
+目的地必須使用StorageGRID 不實端點的URN來指定。提交中繼資料通知組態時、端點必須存在、否則要求會以失敗的方式失敗 `400 Bad Request`。錯誤訊息指出： `Unable to save the metadata notification (search) policy. The specified endpoint URN does not exist: _URN_.`
+
+[listing]
+----
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>rule-status</Status>
+        <Prefix>key-prefix</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:region:account-ID:domain/mydomain/myindex/mytype</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Rule-2</ID>
+         ...
+    </Rule>
+     ...
+</MetadataNotificationConfiguration>
+----
+下表說明中繼資料通知組態XML中的元素。
+
+[cols="1a,2a,1a"]
+|===
+| 名稱 | 說明 | 必要 
+
+
+ a| 
+Metadata NotifyationConfiguration
+ a| 
+用於指定中繼資料通知物件和目的地之規則的容器標籤。
+
+包含一或多個規則元素。
+ a| 
+是的
+
+
+
+ a| 
+規則
+ a| 
+規則的容器標記、用於識別應將中繼資料新增至指定索引的物件。
+
+會拒絕具有重疊前置碼的規則。
+
+包括在Metadata NotifyationConfiguration元素中。
+ a| 
+是的
+
+
+
+ a| 
+ID
+ a| 
+規則的唯一識別碼。
+
+包含在Rule元素中。
+ a| 
+否
+
+
+
+ a| 
+狀態
+ a| 
+狀態可以是「已啟用」或「已停用」。不針對停用的規則採取任何行動。
+
+包含在Rule元素中。
+ a| 
+是的
+
+
+
+ a| 
+前置碼
+ a| 
+符合前置碼的物件會受到規則影響、其中繼資料會傳送到指定的目的地。
+
+若要符合所有物件、請指定一個空白首碼。
+
+包含在Rule元素中。
+ a| 
+是的
+
+
+
+ a| 
+目的地
+ a| 
+規則目的地的容器標記。
+
+包含在Rule元素中。
+ a| 
+是的
+
+
+
+ a| 
+urn
+ a| 
+傳送物件中繼資料的目的地之一。必須是StorageGRID 具有下列屬性的不景端點的URN：
+
+* `es`必須是第三個元素。
+* URN 必須以索引結尾、並在表單中輸入中繼資料的儲存位置 `domain-name/myindex/mytype`。
+
+
+端點是使用租戶管理程式或租戶管理API來設定。它們採用下列形式：
+
+* `arn:aws:es:region:account-ID:domain/mydomain/myindex/mytype`
+* `urn:mysite:es:::mydomain/myindex/mytype`
+
+
+端點必須在提交組態XML之前進行設定、否則組態將會失敗並顯示404錯誤。
+
+目標元素中包含urn.
+ a| 
+是的
+
+|===
+
+
+== 申請範例
+
+此範例顯示啟用儲存庫的搜尋整合功能。在此範例中、所有物件的物件中繼資料都會傳送到相同的目的地。
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /test1?x-ntap-sg-metadata-notification HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>Enabled</Status>
+        <Prefix></Prefix>
+        <Destination>
+           <Urn>urn:sgws:es:::sgws-notifications/test1/all</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+在此範例中、符合前置碼之物件的物件中繼資料 `/images`會傳送至一個目的地、而符合前置碼之物件的物件中繼資料 `/videos`則會傳送至第二個目的地。
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /graphics?x-ntap-sg-metadata-notification HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Images-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/images</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-east-1:3333333:domain/es-domain/graphics/imagetype</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Videos-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/videos</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-west-1:22222222:domain/es-domain/graphics/videotype</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+
+
+== 由搜尋整合服務產生的JSON
+
+當您啟用儲存區的搜尋整合服務時、每次新增、更新或刪除物件中繼資料或標記時、都會產生Json文件並傳送至目的地端點。
+
+此範例顯示在名為的儲存格中建立 `test`具有金鑰的物件時、可能會產生的 JSON 範例 `SGWS/Tagging.txt`。 `test`貯體未版本化、因此 `versionId`標記為空。
+
+[listing]
+----
+{
+  "bucket": "test",
+  "key": "SGWS/Tagging.txt",
+  "versionId": "",
+  "accountId": "86928401983529626822",
+  "size": 38,
+  "md5": "3d6c7634a85436eee06d43415012855",
+  "region":"us-east-1",
+  "metadata": {
+    "age": "25"
+  },
+  "tags": {
+    "color": "yellow"
+  }
+}
+----
+
+
+== 中繼資料通知中包含的物件中繼資料
+
+此表格列出JSON文件中所有欄位、這些欄位會在啟用搜尋整合時傳送至目的地端點。
+
+文件名稱包含儲存區名稱、物件名稱及版本ID（若有）。
+
+[cols="1a,1a,1a"]
+|===
+| 類型 | 項目名稱 | 說明 
+
+
+ a| 
+儲存區和物件資訊
+ a| 
+鏟斗
+ a| 
+庫位名稱
+
+
+
+ a| 
+儲存區和物件資訊
+ a| 
+金鑰
+ a| 
+物件金鑰名稱
+
+
+
+ a| 
+儲存區和物件資訊
+ a| 
+版本ID
+ a| 
+物件版本、適用於版本控制的儲存區中的物件
+
+
+
+ a| 
+儲存區和物件資訊
+ a| 
+區域
+ a| 
+例如、貯體區域 `us-east-1`
+
+
+
+ a| 
+系統中繼資料
+ a| 
+尺寸
+ a| 
+HTTP用戶端可見的物件大小（以位元組為單位）
+
+
+
+ a| 
+系統中繼資料
+ a| 
+md5
+ a| 
+物件雜湊
+
+
+
+ a| 
+使用者中繼資料
+ a| 
+中繼資料
+`_key:value_`
+ a| 
+物件的所有使用者中繼資料、做為金鑰值配對
+
+
+
+ a| 
+標記
+ a| 
+標籤
+`_key:value_`
+ a| 
+為物件定義的所有物件標記、做為金鑰值配對
+
+|===
+
+NOTE: 針對標記和使用者中繼資料StorageGRID 、將日期和數字以字串或S3事件通知的形式傳送至Elasticsearch。若要設定Elasticsearch將這些字串解譯為日期或數字、請遵循Elasticsearch指示進行動態欄位對應、以及對應日期格式。您必須先在索引上啟用動態欄位對應、才能設定搜尋整合服務。建立文件索引後、您就無法編輯索引中文件的欄位類型。
+
+.相關資訊
+link:../tenant/index.html["使用租戶帳戶"]

@@ -1,0 +1,33 @@
+---
+permalink: rhel/specifying-domain-name-system-server-information.html 
+sidebar: sidebar 
+keywords: how to specify domain name system, dns 
+summary: 您必須指定 StorageGRID 系統的 DNS 資訊、才能使用主機名稱而非 IP 位址來存取外部伺服器。 
+---
+= 指定 DNS 伺服器資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須指定 StorageGRID 系統的 DNS 資訊、才能使用主機名稱而非 IP 位址來存取外部伺服器。
+
+.關於這項工作
+指定 https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/checking-dns-server-configuration.html["DNS伺服器資訊"^]可讓您使用完整網域名稱（ FQDN ）主機名稱、而非電子郵件通知和 AutoSupport 的 IP 位址。
+
+若要確保正常運作、請指定兩或三個 DNS 伺服器。如果您指定超過三個、可能只會使用三個、因為某些平台的已知作業系統限制。如果您在環境中有路由限制、則可link:../maintain/modifying-dns-configuration-for-single-grid-node.html["自訂 DNS 伺服器清單"]讓個別節點（通常是站台上的所有節點）使用最多三個 DNS 伺服器的不同組別。
+
+如有可能、請使用每個站台都能在本機存取的 DNS 伺服器、以確保某個著陸站台可以解析外部目的地的 FQDN 。
+
+.步驟
+. 在「*伺服器1*」文字方塊中、指定至少一個DNS伺服器的IPV4位址。
+. 如有必要、請選取最後一個項目旁的加號、以新增其他伺服器項目。
++
+image::../media/9_gmi_installer_dns_page.gif[此影像由周邊文字說明。]
+
++
+最佳實務做法是指定至少兩部DNS伺服器。您最多可以指定六個DNS伺服器。
+
+. 選擇*下一步*。
+

@@ -1,0 +1,142 @@
+---
+permalink: s3/changes-to-s3-rest-api-support.html 
+sidebar: sidebar 
+keywords: s3 rest api support changes 
+summary: 您應該注意StorageGRID 到支援S3 REST API的功能有所變更。 
+---
+= S3 REST API支援變更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該注意StorageGRID 到支援S3 REST API的功能有所變更。
+
+[cols="1a,4a"]
+|===
+| 版本 | 註解 
+
+
+ a| 
+11.8
+ a| 
+* 新增了對 PuttBucketLifecycleConfiguration 作業的支援 `ExpiredObjectDeleteMarker`、可刪除過期的物件刪除標記。
+* 新增原則條件金鑰的支援 `s3:ExistingObjectTag/<tag-key>`、這需要現有物件具有特定的標記金鑰和值。
+* 新增對原則條件金鑰的支援 `s3:RequestObjectTag/<tag-key>`、當物件要求包含標記時、需要特定的標記和金鑰值。
+
+
+
+
+ a| 
+11.7
+ a| 
+* 新增對使用 S3 物件鎖定的治理模式的支援。
+* 新增 GetObject 和 HeadObject 要求的 StorageGRID 特定回應標頭支援 `x-ntap-sg-cgr-replication-status`。此標頭提供物件的跨網格複寫狀態。
+* SelectObjectContent 要求現在支援 Parquet 物件。
+
+
+
+
+ a| 
+11.6
+ a| 
+* 新增在 GetObject 和 HeadObject 要求中使用 request 參數的支援 `partNumber`。
+* 新增S3物件鎖定的預設保留模式支援、以及儲存區層級的預設保留期間。
+* 新增對原則條件金鑰的支援 `s3:object-lock-remaining-retention-days`、可設定物件的允許保留期間範圍。
+* 將單一 PutObject 作業的最大大小 _ 建議 _ 變更為 5 GiB （ 5 、 368,709,120 位元組）。如果您的物件大於5 GiB、請改用多部份上傳。
+
+
+
+
+ a| 
+11.5
+ a| 
+* 新增對管理儲存區加密的支援。
+* 新增了對S3物件鎖定和過時舊版規範要求的支援。
+* 新增對在版本控制的貯體上使用 DeleteObjects 的支援。
+*  `Content-MD5`現在已正確支援要求標頭。
+
+
+
+
+ a| 
+11.4.11.4
+ a| 
+* 新增對刪除標籤、 GetBucketTagged 和 PuttBucketTagged 的支援。不支援成本分攤標記。
+* 對於StorageGRID 在VMware 11.4中建立的儲存區、不再需要限制物件金鑰名稱以符合效能最佳實務做法。
+* 新增對活動類型的儲存庫通知的支援 `s3:ObjectRestore:Post`。
+* 現在已強制多部分零件的AWS大小限制。多部分上傳中的每個部分必須介於5個mib和5 GiB之間。最後一個部分可能小於5個mib。
+* 新增 TLS 1.3 支援
+
+
+
+
+ a| 
+11.3
+ a| 
+* 新增支援使用客戶提供的金鑰（SSE-C）進行物件資料的伺服器端加密。
+* 新增對 DeleteBucketLifecycle 、 GetBucketLifecycleConfiguration 和 PuttBucketLifecycleConfiguration 作業（僅限到期動作）的支援、以及回應標頭的支援 `x-amz-expiration`。
+* 更新的 PutObject 、 CopyObject 和 MultpartUpload 、說明使用同步放置在擷取位置的 ILM 規則的影響。
+* 不再支援TLS 1.1密碼。
+
+
+
+
+ a| 
+11.2
+ a| 
+新增與 Cloud Storage Pool 搭配使用的 RestoreObject 支援。新增了使用AWS語法的支援、可用於ARN、原則條件金鑰、以及群組和儲存區原則中的原則變數。我們StorageGRID 將繼續支援使用此功能的現有群組和儲存區原則。
+
+*附註：*在其他組態JSON/XML中使用ARN/URN StorageGRID （包括用於自訂的版本功能）並未變更。
+
+
+
+ a| 
+11.1
+ a| 
+新增支援跨來源資源共享（ CORS ）、 HTTP for S3 用戶端連線至網格節點、以及儲存區的法規遵循設定。
+
+
+
+ a| 
+11.0
+ a| 
+新增支援、可設定適用於儲存區的平台服務（CloudMirror複寫、通知及Elasticsearch整合）。此外、也新增對貯體物件標記位置限制的支援、以及可用的一致性。
+
+
+
+ a| 
+10.4
+ a| 
+新增對ILM掃描版本設定、端點網域名稱頁面更新、原則、原則範例及PuttoverwriteObject權限中的條件和變數的支援。
+
+
+
+ a| 
+10.3
+ a| 
+新增版本管理支援。
+
+
+
+ a| 
+10.2
+ a| 
+新增支援群組和儲存庫存取原則、以及多個部分複本（ UploadPartCopy ）。
+
+
+
+ a| 
+10.1
+ a| 
+新增多部分上傳、虛擬託管樣式要求及v4驗證的支援。
+
+
+
+ a| 
+10.0
+ a| 
+由整個系統初始支援S3 REST API StorageGRID 。目前支援的_Simple Storage Service API Reference版本為2009-03-01。
+
+|===

@@ -1,0 +1,8 @@
+---
+permalink: maintain/site-decommissioning.html 
+redirect: storagegrid/maintain/considerations-for-removing-site.html 
+---
+= 
+:allow-uri-read: 
+
+

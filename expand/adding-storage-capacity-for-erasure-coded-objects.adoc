@@ -1,0 +1,28 @@
+---
+permalink: expand/adding-storage-capacity-for-erasure-coded-objects.html 
+sidebar: sidebar 
+keywords: erasure coding, capacity, storage nodes, ec, expand, expansion 
+summary: 如果您的ILM原則包含製作銷毀編碼複本的規則、您必須規劃新增儲存設備的位置、以及新增儲存設備的時間。您新增的儲存容量和新增的時間、可能會影響網格的可用儲存容量。 
+---
+= 新增銷毀編碼物件的儲存容量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的ILM原則包含製作銷毀編碼複本的規則、您必須規劃新增儲存設備的位置、以及新增儲存設備的時間。您新增的儲存容量和新增的時間、可能會影響網格的可用儲存容量。
+
+規劃儲存擴充的第一步是檢查ILM原則中建立銷毀編碼物件的規則。由於此功能可為每個銷毀編碼物件建立_k+m_片段、並將每個片段儲存在不同的儲存節點上、因此您必須確保擴充後至少有_k+m_儲存節點空間可容納新的銷毀編碼資料。StorageGRID如果銷毀編碼設定檔提供站台遺失保護、您必須將儲存設備新增至每個站台。如需銷毀編碼設定檔的相關資訊、請參閱link:../ilm/what-erasure-coding-schemes-are.html["什麼是銷毀編碼方案"]。
+
+您需要新增的節點數量也取決於執行擴充時現有節點的完整程度。
+
+
+
+== 新增銷毀編碼物件儲存容量的一般建議
+
+如果您想要避免詳細計算、當現有儲存節點的容量達到70%時、您可以在每個站台新增兩個儲存節點。
+
+這項一般建議針對單一站台網格和磁碟區編碼提供站台遺失保護的網格、提供廣泛的銷毀編碼方案合理的結果。
+
+要更好地瞭解導致此建議的因素或爲您的站點制定更精確的計劃，請參閱link:considerations-for-rebalancing-erasure-coded-data.html["重新平衡銷毀編碼資料的考量事項"]。如需針對您的情況最佳化的自訂建議、請聯絡您的 NetApp 專業服務顧問。

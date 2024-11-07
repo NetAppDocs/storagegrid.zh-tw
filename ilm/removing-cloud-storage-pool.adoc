@@ -1,0 +1,71 @@
+---
+permalink: ilm/removing-cloud-storage-pool.html 
+sidebar: sidebar 
+keywords: remove cloud storage pool 
+summary: 如果 Cloud Storage Pool 未用於 ILM 規則、而且不包含物件資料、您可以將其移除。 
+---
+= 移除雲端儲存資源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 Cloud Storage Pool 未用於 ILM 規則、而且不包含物件資料、您可以將其移除。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:../admin/admin-group-permissions.html["必要的存取權限"]。
+
+
+
+
+== 如有需要、請使用 ILM 來移動物件資料
+
+如果您要移除的雲端儲存池包含物件資料、則必須使用 ILM 將資料移至其他位置。例如、您可以將資料移至網格上的儲存節點、或移至不同的雲端儲存池。
+
+.步驟
+. 選取 * ILM * > * 儲存池 * > * 雲端儲存池 * 。
+. 請查看表格中的 ILM 使用率欄、以判斷您是否可以移除雲端儲存池。
++
+如果雲端儲存池正用於 ILM 規則或銷毀編碼設定檔中、則無法移除該集區。
+
+. 如果使用的是雲端儲存池、請選取 * 雲端儲存池名稱 _ * > * ILM 使用量 * 。
+. link:working-with-ilm-rules-and-ilm-policies.html["複製每個 ILM 規則"]這會將物件放置在您要移除的雲端儲存池中。
+. 決定您要移動由您複製的每個規則所管理的現有物件的位置。
++
+您可以使用一或多個儲存池或不同的雲端儲存池。
+
+. 編輯您複製的每個規則。
++
+對於「建立 ILM 規則」精靈的步驟 2 、請從「 * 複本於 * 」欄位中選取新位置。
+
+. link:creating-ilm-policy.html["建立新的 ILM 原則"]並以複製規則取代每個舊規則。
+. 啟動新原則。
+. 等待 ILM 從雲端儲存池移除物件、並將其置於新位置。
+
+
+
+
+== 刪除雲端儲存池
+
+當雲端儲存池是空的且未用於任何 ILM 規則時、您可以將其刪除。
+
+.開始之前
+* 您已移除可能已使用資源池的任何 ILM 規則。
+* 您已確認S3儲存區或Azure容器不含任何物件。
++
+如果您嘗試移除包含物件的雲端儲存池、就會發生錯誤。請參閱。 link:troubleshooting-cloud-storage-pools.html["疑難排解雲端儲存資源池"]
+
++
+
+NOTE: 當您建立Cloud Storage Pool時StorageGRID 、將標記檔案寫入儲存庫或容器、以將其識別為雲端儲存池。請勿移除這個名為的檔案 `x-ntap-sgws-cloud-pool-uuid`。
+
+
+
+.步驟
+. 選取 * ILM * > * 儲存池 * > * 雲端儲存池 * 。
+. 如果 ILM 使用率欄顯示未使用 Cloud Storage Pool 、請選取核取方塊。
+. 選擇*「Actions」（動作）*>*「Remove*」（移除
+. 選擇*確定*。
+

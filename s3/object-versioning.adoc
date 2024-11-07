@@ -1,0 +1,39 @@
+---
+permalink: s3/object-versioning.html 
+sidebar: sidebar 
+keywords: object version, object versioning 
+summary: 如果您想要保留多個物件版本、可以設定貯體的版本設定狀態。啟用貯體版本設定有助於防止意外刪除物件、並可讓您擷取及還原物件的舊版。 
+---
+= 物件版本管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您要保留每個物件的多個版本、可以設定貯體的版本設定狀態。啟用貯體版本設定有助於防止意外刪除物件、並可讓您擷取及還原物件的舊版。
+
+支援大部分功能的支援功能、以及部分限制、可讓整個系統執行版本管理。StorageGRIDStorageGRID 最多支援每個物件的 10 、 000 個版本。
+
+物件版本管理可與StorageGRID 資訊的生命週期管理（ILM）或S3生命週期組態結合使用。您必須明確啟用每個儲存區的版本設定。當貯體啟用版本設定時、新增至貯體的每個物件都會指派版本 ID 、由 StorageGRID 系統產生。
+
+不支援使用MFA（多因素驗證）刪除。
+
+
+NOTE: 版本管理只能在StorageGRID 以不含更新版本的版本資訊版本10.3所建立的儲存庫上啟用。
+
+
+
+== ILM與版本管理
+
+ILM原則會套用至物件的每個版本。ILM掃描程序會持續掃描所有物件、並根據目前的ILM原則重新評估這些物件。您對ILM原則所做的任何變更、都會套用至所有先前擷取的物件。如果啟用版本管理、則包括先前擷取的版本。ILM掃描會將新的ILM變更套用至先前擷取的物件。
+
+對於啟用版本設定的儲存區中的 S3 物件、版本設定支援可讓您建立使用「非目前時間」做為參考時間的 ILM 規則（請針對中的「僅將此規則套用至舊版物件？」問題選取 * 是 * link:../ilm/create-ilm-rule-enter-details.html["建立 ILM 規則精靈的步驟 1"]）。更新物件時、其舊版本會變成非最新版本。使用「非目前時間」篩選器可讓您建立原則、以減少舊版物件的儲存影響。
+
+
+NOTE: 當您使用多部分上傳作業上傳物件的新版本時、原始版本物件的非目前時間會反映新版本的多部分上傳時間、而非多部分上傳完成時。在有限的情況下、原始版本的非目前時間可能比目前版本的時間早上幾小時或幾天。
+
+.相關資訊
+* link:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["如何刪除S3版本控制物件"]
+* link:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["S3版本化物件的ILM規則和原則（範例4）"]。
+

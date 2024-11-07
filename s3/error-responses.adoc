@@ -1,0 +1,378 @@
+---
+permalink: s3/error-responses.html 
+sidebar: sidebar 
+keywords: error, error responses 
+summary: 支援所有適用的標準S3 REST API錯誤回應。StorageGRID此外、此功能還會加入數個自訂回應。StorageGRID 
+---
+= 錯誤回應
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援所有適用的標準S3 REST API錯誤回應。StorageGRID此外、此功能還會加入數個自訂回應。StorageGRID
+
+
+
+== 支援的S3 API錯誤代碼
+
+[cols="1a,1a"]
+|===
+| 名稱 | HTTP 狀態 
+
+
+ a| 
+ACCESSDENIED
+ a| 
+403禁止
+
+
+
+ a| 
+《標誌摘要》
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+BuckketAlreadyEx分子
+ a| 
+衝突
+
+
+
+ a| 
+BucketNotEmpty
+ a| 
+衝突
+
+
+
+ a| 
+不完整正文
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+內部錯誤
+ a| 
+500內部伺服器錯誤
+
+
+
+ a| 
+InvalidAccessKeyId
+ a| 
+403禁止
+
+
+
+ a| 
+InvalidArgument
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidBucketName
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidBucketState
+ a| 
+衝突
+
+
+
+ a| 
+InvalidDigest
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidEncryptionAlgorithm錯誤
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidPart
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidPartOrder
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidRang
+ a| 
+無法滿足416個要求的範圍
+
+
+
+ a| 
+InvalidRequest
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidStorageClass
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidTag
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+InvalidURI
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+KeyTooLong
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+MalformedXML
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+Metadata TooLarg
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+方法未允許
+ a| 
+不允許使用405方法
+
+
+
+ a| 
+內容長度
+ a| 
+需要411長度
+
+
+
+ a| 
+MissingRequestBodyError
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+MISingSecurityHeader
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+NoSuchBucket
+ a| 
+找不到404
+
+
+
+ a| 
+NoSuchKey
+ a| 
+找不到404
+
+
+
+ a| 
+NoSuchUpload
+ a| 
+找不到404
+
+
+
+ a| 
+未實作
+ a| 
+501未實作
+
+
+
+ a| 
+NoSuchBucketPolicy
+ a| 
+找不到404
+
+
+
+ a| 
+ObjectLockConfiguration未找到錯誤
+ a| 
+找不到404
+
+
+
+ a| 
+預先條件失敗
+ a| 
+412先決條件失敗
+
+
+
+ a| 
+要求時間TooSkewed
+ a| 
+403禁止
+
+
+
+ a| 
+服務無法使用
+ a| 
+503服務無法使用
+
+
+
+ a| 
+簽名DoesNotMatch
+ a| 
+403禁止
+
+
+
+ a| 
+TooManyboo
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+使用者KeyMustBeSpecified
+ a| 
+400個錯誤要求
+
+|===
+
+
+== 零點自訂錯誤代碼StorageGRID
+
+[cols="2a,2a,1a"]
+|===
+| 名稱 | 說明 | HTTP 狀態 
+
+
+ a| 
+XBucketLifecycleNotSupported
+ a| 
+不允許在符合舊版規範的儲存庫中進行貯體生命週期組態
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+XBucketPolicyParseException
+ a| 
+無法剖析收到的儲存區原則Json。
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+XComplianceConflict
+ a| 
+因為舊版規範設定而拒絕作業。
+ a| 
+403禁止
+
+
+
+ a| 
+XComplianceReducedRedundancyForbided
+ a| 
+舊型符合標準的儲存區不允許減少備援
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+XMaxBucketPolicyLengthExceed
+ a| 
+您的原則超過允許的儲存區原則長度上限。
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+XMissingInternalRequestHeader
+ a| 
+缺少內部要求的標頭。
+ a| 
+400個錯誤要求
+
+
+
+ a| 
+XNoSuchBucketCompliance
+ a| 
+指定的儲存庫未啟用舊版法規遵循。
+ a| 
+找不到404
+
+
+
+ a| 
+XNotAcceptable
+ a| 
+要求包含一或多個無法滿足的Accept標頭。
+ a| 
+無法接受的406
+
+
+
+ a| 
+XNotImplemed
+ a| 
+您提供的要求暗示功能尚未實作。
+ a| 
+501未實作
+
+|===

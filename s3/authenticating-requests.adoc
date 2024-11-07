@@ -1,0 +1,32 @@
+---
+permalink: s3/authenticating-requests.html 
+sidebar: sidebar 
+keywords: authenticate requests, authenticating, requests 
+summary: 支援使用S3 API驗證和匿名存取物件的功能。StorageGRID 
+---
+= 驗證要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援使用S3 API驗證和匿名存取物件的功能。StorageGRID
+
+S3 API支援驗證S3 API要求的簽名版本2和簽名版本4。
+
+驗證的要求必須使用您的存取金鑰ID和秘密存取金鑰來簽署。
+
+StorageGRID 系統支援兩種驗證方法： HTTP `Authorization` 標頭和使用查詢參數。
+
+
+
+== 使用HTTP授權標頭
+
+除了 Bucket 原則允許的匿名要求外、所有 S3 API 作業都會使用 HTTP `Authorization` 標頭。 `Authorization`標頭包含驗證要求所需的所有簽署資訊。
+
+
+
+== 使用查詢參數
+
+您可以使用查詢參數將驗證資訊新增至URL。這稱為URL預先簽署、可用來授予特定資源的暫時存取權。具有預先簽署 URL 的使用者不需要知道密碼存取金鑰即可存取資源、這可讓您提供第三方受限存取資源。

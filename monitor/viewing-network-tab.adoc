@@ -1,0 +1,25 @@
+---
+permalink: monitor/viewing-network-tab.html 
+sidebar: sidebar 
+keywords: network tab 
+summary: 「網路」索引標籤會顯示圖表、顯示在節點、站台或網格上所有網路介面上接收和傳送的網路流量。 
+---
+= 檢視「網路」索引標籤
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「網路」索引標籤會顯示圖表、顯示在節點、站台或網格上所有網路介面上接收和傳送的網路流量。
+
+「網路」索引標籤會顯示所有節點、每個站台及整個網格。
+
+若要顯示不同的時間間隔、請選取圖表或圖表上方的其中一個控制項。您可以顯示1小時、1天、1週或1個月的可用時間間隔資訊。您也可以設定自訂時間間隔、以便指定日期和時間範圍。
+
+對於節點、「網路介面」表提供每個節點實體網路連接埠的相關資訊。網路通訊表提供每個節點的接收和傳輸作業、以及任何驅動程式回報的故障計數器的詳細資料。
+
+image::../media/nodes_page_network_tab.png[「節點」頁面「網路」標籤]
+
+.相關資訊
+link:monitoring-network-connections-and-performance.html["監控網路連線與效能"]

@@ -1,0 +1,134 @@
+---
+permalink: audit/mgau-management-audit-message.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, MGAU, Management audit message 
+summary: 「管理」類別會將使用者要求記錄至管理API。並非取得API或取得API要求的每個要求、都會以使用者名稱、IP和API要求類型來記錄回應。 
+---
+= MGAU：管理稽核訊息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「管理」類別會將使用者要求記錄至管理API。每個不是取得或發出有效 API URI 要求的 HTTP 要求、都會記錄一個回應、其中包含 API 的使用者名稱、 IP 和要求類型。不會記錄無效的 API URI （例如 /API/v3 授權）、以及對有效 API URI 的無效要求。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+MDIP
+ a| 
+目的地IP位址
+ a| 
+伺服器（目的地）IP位址。
+
+
+
+ a| 
+MDNA
+ a| 
+網域名稱
+ a| 
+主機網域名稱。
+
+
+
+ a| 
+MPAT
+ a| 
+要求路徑
+ a| 
+要求路徑。
+
+
+
+ a| 
+MPQP
+ a| 
+要求查詢參數
+ a| 
+要求的查詢參數。
+
+
+
+ a| 
+MRBD
+ a| 
+申請本文
+ a| 
+申請本文的內容。當回應本文預設為記錄時、在某些情況下、當回應本文為空白時、會記錄要求本文。由於下列資訊無法在回應本文中取得、因此會從下列POST方法的要求本文中取得：
+
+* * POST授權*中的使用者名稱和帳戶ID
+* 在* POST / GRID / GRID網路/更新*中設定新的子網路
+* 在* POST / GRID / NTP-伺服器/更新*中新增NTP伺服器
+* 在* POST / GRID /伺服器/取消委任*中停用伺服器ID
+
+
+*附註：*敏感資訊會被刪除（例如S3存取金鑰）、或以星號（例如密碼）遮罩。
+
+
+
+ a| 
+MRMD
+ a| 
+申請方法
+ a| 
+HTTP要求方法：
+
+* 貼文
+* 放入
+* 刪除
+* 修補程式
+
+
+
+
+ a| 
+MRSC
+ a| 
+回應代碼
+ a| 
+回應代碼。
+
+
+
+ a| 
+MRSP
+ a| 
+回應本文
+ a| 
+預設會記錄回應內容（回應本文）。
+
+*附註：*敏感資訊會被刪除（例如S3存取金鑰）、或以星號（例如密碼）遮罩。
+
+
+
+ a| 
+MSIP
+ a| 
+來源IP位址
+ a| 
+用戶端（來源）IP位址。
+
+
+
+ a| 
+多重複使用者
+ a| 
+使用者URN
+ a| 
+傳送要求之使用者的URN（統一資源名稱）。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果
+ a| 
+傳回成功（SUCS）或後端報告的錯誤。
+
+|===

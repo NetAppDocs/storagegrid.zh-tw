@@ -1,0 +1,81 @@
+---
+permalink: vmware/troubleshooting-installation-issues.html 
+sidebar: sidebar 
+keywords: how to troubleshoot installation issues 
+summary: 如果在安裝StorageGRID 您的作業系統時發生任何問題、您可以存取安裝記錄檔。 
+---
+= 疑難排解安裝問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果在安裝StorageGRID 您的作業系統時發生任何問題、您可以存取安裝記錄檔。
+
+以下是主要的安裝記錄檔、可能需要技術支援才能解決問題。
+
+* `/var/local/log/install.log`（可在所有網格節點上找到）
+* `/var/local/log/gdu-server.log`（可在主要管理節點上找到）
+
+
+.相關資訊
+若要瞭解如何存取記錄檔，請參閱link:../monitor/logs-files-reference.html["記錄檔參考"]。
+
+如果您需要其他協助、請聯絡 https://mysupport.netapp.com/site/global/dashboard["NetApp支援"^]。
+
+
+
+== 虛擬機器資源保留需要調整
+
+OVF檔案包含一項資源保留、旨在確保每個網格節點都有足夠的RAM和CPU、以有效運作。如果您透過在 VMware 上部署這些 OVF 檔案來建立虛擬機器、且無法使用預先定義的資源數量、則虛擬機器將無法啟動。
+
+.關於這項工作
+如果您確定VM主機有足夠的資源可用於每個網格節點、請手動調整每個虛擬機器的資源配置、然後嘗試啟動虛擬機器。
+
+.步驟
+. 在VMware vSphere Hypervisor用戶端樹狀結構中、選取尚未啟動的虛擬機器。
+. 以滑鼠右鍵按一下虛擬機器、然後選取*編輯設定*。
+. 從Virtual Machines Properties（虛擬機屬性）窗口中，選擇* Resources（資源）*選項卡。
+. 調整分配給虛擬機器的資源：
++
+.. 選取「* CPU*」、然後使用「保留」滑桿來調整保留給此虛擬機器的MHz。
+.. 選取*記憶體*、然後使用保留滑桿調整此虛擬機器保留的MB。
+
+
+. 按一下「*確定*」。
+. 視需要重複相同VM主機上裝載的其他虛擬機器。
+
+
+
+
+== 暫時安裝密碼已停用
+
+部署 VMware 節點時、您可以選擇性地指定暫時安裝密碼。您必須擁有此密碼才能存取 VM 主控台、或在新節點加入網格之前使用 SSH 。
+
+如果您選擇停用暫存安裝密碼、則必須執行其他步驟來偵錯安裝問題。
+
+您可以執行下列其中一項：
+
+* 重新部署虛擬機器、但請指定暫時安裝密碼、以便您存取主控台或使用 SSH 來偵錯安裝問題。
+* 使用 vCenter 設定密碼：
++
+.. 關閉虛擬機器電源。
+.. 移至 * VM* 、選取 * 組態 * 索引標籤、然後選取 * 應用程式選項 * 。
+.. 指定要設定的暫存安裝密碼類型：
++
+*** 選取 * custom_entime_password* 以設定自訂的暫存密碼。
+*** 選取 * 暫存密碼類型 * 以使用節點名稱做為暫存密碼。
+
+
+.. 選擇*設定值*。
+.. 設定暫時密碼：
++
+*** 將 *custom_entime_password* 變更為自訂密碼值。
+*** 使用 * 使用節點名稱 * 值更新 * 暫用密碼類型 * 。
+
+
+.. 重新啟動 VM 以套用新密碼。
+
+
+

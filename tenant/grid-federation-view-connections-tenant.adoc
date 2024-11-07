@@ -1,0 +1,91 @@
+---
+permalink: tenant/grid-federation-view-connections-tenant.html 
+sidebar: sidebar 
+keywords: grid federation connection, view, clear error, last error 
+summary: 如果您的租戶帳戶具有使用網格同盟連線權限、您可以檢視允許的連線。 
+---
+= 檢視網格同盟連線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、您可以檢視允許的連線。
+
+.開始之前
+* 租戶帳戶具有 * 使用網格同盟連線 * 權限。
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["root 存取權限"]。
+
+
+.步驟
+. 選擇 * 儲存設備（ S3 ） * > * 網格聯盟連線 * 。
++
+此時會出現 Grid Federation 連線頁面、其中包含摘要下列資訊的表格：
+
++
+[cols="1a,2a"]
+|===
+| 欄位 | 說明 
+
+
+ a| 
+連線名稱
+ a| 
+此租用戶有權使用的網格同盟連線。
+
+
+
+ a| 
+具有跨網格複寫的貯體
+ a| 
+對於每個網格同盟連線、已啟用跨網格複寫的租戶區。新增至這些貯體的物件將會複寫至連線中的其他網格。
+
+
+
+ a| 
+上次錯誤
+ a| 
+對於每個網格聯盟連線、資料複寫到其他網格時、最新發生的錯誤（如果有）。請參閱。 <<clear-last-error,清除最後一個錯誤>>
+
+|===
+. 您也可以選擇儲存區名稱至link:viewing-s3-bucket-details.html["檢視貯體詳細資料"]。
+
+
+
+
+== [[Clear-last 錯誤 ]] 清除最後一個錯誤
+
+下列其中一個原因可能會在 * 最後一個錯誤 * 欄中出現錯誤：
+
+* 找不到來源物件版本。
+* 找不到來源貯體。
+* 目的地貯體已刪除。
+* 目的地貯體是由不同的帳戶重新建立。
+* 目的地貯體已暫停版本設定。
+* 目的地貯體是由相同的帳戶重新建立、但現在已取消版本管理。
+
+
+
+NOTE: 此欄只會顯示最後發生的跨網格複寫錯誤、不會顯示先前可能發生的錯誤。
+
+.步驟
+. 如果訊息出現在 * 最後一個錯誤 * 欄中、請檢視訊息文字。
++
+例如、此錯誤表示跨網格複寫的目的地儲存格處於無效狀態、可能是因為版本設定已暫停或啟用 S3 物件鎖定。
+
++
+image::../media/grid-federation-cgr-object-example-last-error.png[GRID 聯盟 - cgr-object-example-last 錯誤]
+
+. 執行任何建議的動作。例如、如果目的地貯體上的版本設定已暫停進行跨網格複寫、請重新啟用該貯體的版本設定。
+. 從表格中選取連線。
+. 選取 * 清除錯誤 * 。
+. 選擇 * 是 * 以清除訊息並更新系統狀態。
+. 等待 5-6 分鐘、然後將新物件擷取到貯體中。確認錯誤訊息不會再次出現。
++
+
+NOTE: 若要確保清除錯誤訊息、請在訊息中的時間戳記之後至少等待 5 分鐘、然後再擷取新物件。
+
+. 若要判斷是否有任何物件因儲存區錯誤而無法複寫link:../admin/grid-federation-retry-failed-replication.html["識別並重試失敗的複寫作業"]、請參閱。
+

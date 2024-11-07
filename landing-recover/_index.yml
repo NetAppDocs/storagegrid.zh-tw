@@ -1,0 +1,39 @@
+---
+indexpage:
+  title: 恢復或更換節點
+  summary: 如果網格節點發生故障、您可以更換故障的實體或虛擬伺服器、重新安裝StorageGRID 還原軟體、以及還原可恢復的資料、來還原節點。
+  keywords: recover node, replace node
+  lead: 如果網格節點發生故障、您可以更換故障的實體或虛擬伺服器、重新安裝StorageGRID 還原軟體、以及還原可恢復的資料、來還原節點。
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 警告與考量
+      url: "../maintain/warnings-and-considerations-for-grid-node-recovery.html"
+    - title: 收集所需資料
+      url: "../maintain/gathering-required-materials-for-grid-node-recovery.html"
+  - title: 恢復故障節點
+    links:
+    - title: 警告與考量
+      url: "../maintain/warnings-and-considerations-for-grid-node-recovery.html"
+    - title: 儲存節點
+      url: "../maintain/recovering-from-storage-node-failures.html"
+    - title: 管理節點
+      url: "../maintain/recovering-from-admin-node-failures.html"
+    - title: 閘道節點
+      url: "../maintain/replacing-gateway-node.html"
+    - title: 歸檔節點
+      url: "../maintain/recovering-from-archive-node-failures.html"
+  - title: 更換節點
+    links:
+    - title: 取代 Linux 節點
+      url: "../maintain/all-node-types-replacing-linux-node.html"
+    - title: 更換 VMware 節點
+      url: "../maintain/all-node-types-replacing-vmware-node.html"
+    - title: 以服務應用裝置取代 Linux 或 VMware 節點
+      url: "../maintain/installing-services-appliance-platform-change-only.html"
+    - title: 複製應用裝置節點
+      url: https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/how-appliance-node-cloning-works.html
+  - title: 恢復站台
+    links:
+    - title: 技術支援如何恢復網站
+      url: "../maintain/how-site-recovery-is-performed-by-technical-support.html"

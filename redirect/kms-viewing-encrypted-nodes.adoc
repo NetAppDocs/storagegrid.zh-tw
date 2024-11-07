@@ -1,0 +1,8 @@
+---
+permalink: admin/kms-viewing-encrypted-nodes.html 
+redirect: storagegrid/admin/kms-viewing-details.html 
+---
+= 
+:allow-uri-read: 
+
+

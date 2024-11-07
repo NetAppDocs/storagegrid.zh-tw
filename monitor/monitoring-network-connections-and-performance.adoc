@@ -1,0 +1,97 @@
+---
+permalink: monitor/monitoring-network-connections-and-performance.html 
+sidebar: sidebar 
+keywords: monitoring, monitoring network connections, network, network performance 
+summary: 節點和站台之間的網路完整性和頻寬、以及個別網格節點的資源使用量、都是有效作業的關鍵。 
+---
+= 監控網路和系統資源
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+節點和站台之間的網路完整性和頻寬、以及個別網格節點的資源使用量、都是有效作業的關鍵。
+
+
+
+== 監控網路連線與效能
+
+如果您的資訊生命週期管理（ILM）原則使用提供站台遺失保護的方案、在站台之間複製複寫的物件、或是儲存以銷毀編碼的物件、那麼網路連線能力和頻寬就特別重要。如果站台之間的網路無法使用、網路延遲太高、或網路頻寬不足、則部分ILM規則可能無法將物件放置在預期位置。這可能會導致擷取失敗（若為 ILM 規則選取嚴格擷取選項）、或是擷取效能和 ILM 待處理記錄不佳。
+
+使用 Grid Manager 來監控連線能力和網路效能、以便您迅速解決任何問題。
+
+此外、請考慮link:../admin/managing-traffic-classification-policies.html["建立網路流量分類原則"]監控與特定租戶、貯體、子網路或負載平衡器端點相關的流量。您可以視需要設定流量限制原則。
+
+.步驟
+. 選擇*節點*。
++
+此時會出現「節點」頁面。網格中的每個節點都會以表格格式列出。
+
++
+image::../media/nodes_menu.png[節點功能表]
+
+. 選取網格名稱、特定資料中心站台或網格節點、然後選取*網路*索引標籤。
++
+網路流量圖表提供整個網格、資料中心站台或節點的整體網路流量摘要。
+
++
+image::../media/nodes_page_network_traffic_graph.png[節點頁面網路流量圖]
+
++
+.. 如果您選取了網格節點、請向下捲動以檢閱頁面的「*網路介面*」區段。
++
+image::../media/nodes_page_network_interfaces.png[節點頁面網路介面]
+
+.. 對於網格節點、請向下捲動以檢閱頁面的「*網路通訊*」區段。
++
+「接收和傳輸」表格顯示已在每個網路上接收和傳送多少位元組和封包、以及其他接收和傳輸度量。
+
++
+image::../media/nodes_page_network_communication.png[節點頁面網路通訊]
+
+
+
+. 使用與流量分類原則相關的度量來監控網路流量。
++
+.. 選擇*組態*>*網路*>*流量分類*。
++
+「流量分類原則」頁面隨即出現、表中會列出現有的原則。
+
++
+image::../media/traffic_classification_policies_main_screen_w_examples.png[圖表的流量原則範例]
+
+.. 若要檢視顯示與原則相關聯之網路度量的圖表、請選取原則左側的選項按鈕、然後按一下* Metrics *。
+.. 檢閱圖表以瞭解與原則相關的網路流量。
++
+如果流量分類原則是設計用來限制網路流量、請分析流量受限的頻率、並決定原則是否持續符合您的需求。不時地link:../admin/managing-traffic-classification-policies.html["視需要調整每個流量分類原則"]、
+
+
+
+
+
+.相關資訊
+* link:viewing-network-tab.html["檢視「網路」索引標籤"]
+* link:monitoring-system-health.html#monitor-node-connection-states["監控節點連線狀態"]
+
+
+
+
+== 監控節點層級資源
+
+監控個別網格節點、以檢查其資源使用量。如果節點持續過載、則可能需要更多節點才能有效運作。
+
+.步驟
+. 從「*節點*」頁面選取節點。
+. 選取「*硬體*」索引標籤以顯示CPU使用率和記憶體使用率的圖表。
++
+image::../media/nodes_page_hardware_tab_graphs.png[節點頁面硬體索引標籤]
+
+. 若要顯示不同的時間間隔、請選取圖表或圖表上方的其中一個控制項。您可以顯示1小時、1天、1週或1個月的可用時間間隔資訊。您也可以設定自訂時間間隔、以便指定日期和時間範圍。
+. 如果節點裝載在儲存設備或服務應用裝置上、請向下捲動以檢視元件表。所有元件的狀態應為「標稱」。調查其他狀態的元件。
+
+
+.相關資訊
+* link:viewing-hardware-tab.html#view-information-about-appliance-storage-nodes["檢視應用裝置儲存節點的相關資訊"]
+* link:viewing-hardware-tab.html#view-information-about-appliance-admin-nodes-and-gateway-nodes["檢視應用裝置管理節點和閘道節點的相關資訊"]
+

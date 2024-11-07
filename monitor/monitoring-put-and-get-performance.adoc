@@ -1,0 +1,30 @@
+---
+permalink: monitor/monitoring-put-and-get-performance.html 
+sidebar: sidebar 
+keywords: put, get, performance 
+summary: 您可以監控特定作業（例如物件存放區和擷取）的效能、以協助識別可能需要進一步調查的變更。 
+---
+= 監控成效、獲得效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以監控特定作業（例如物件存放區和擷取）的效能、以協助識別可能需要進一步調查的變更。
+
+.關於這項工作
+若要監控 Put 並取得效能、您可以直接從工作站或使用開放原始碼 S3tester 應用程式來執行 S3 命令。使用這些方法可讓您獨立評估StorageGRID 不受支援的因素效能、例如用戶端應用程式問題或外部網路問題。
+
+執行PUT與Get作業測試時、請遵循下列準則：
+
+* 使用與一般擷取至網格的物件類似的物件大小。
+* 針對本機和遠端站台執行作業。
+
+
+中的訊息link:../audit/index.html["稽核日誌"]指出執行特定作業所需的總時間。例如、若要判斷S3 Get要求的總處理時間、您可以檢閱SGET稽核訊息中Time屬性的值。您也可以在稽核訊息中找到下列 S3 作業的時間屬性：刪除、取得、標題、中繼資料更新、張貼、放置
+
+分析結果時、請查看滿足要求所需的平均時間、以及您可以達到的整體處理量。定期重複相同的測試並記錄結果、以便識別可能需要調查的趨勢。
+
+* 您可以 https://github.com/s3tester["從GitHub下載S3tester"^]。
+

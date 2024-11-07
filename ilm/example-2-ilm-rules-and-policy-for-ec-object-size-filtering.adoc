@@ -1,0 +1,108 @@
+---
+permalink: ilm/example-2-ilm-rules-and-policy-for-ec-object-size-filtering.html 
+sidebar: sidebar 
+keywords: object size for erasure coding, example ILM rule, information lifecycle rule examples, 1 MB 
+summary: 您可以使用下列範例規則和原則做為起點、定義ILM原則、根據物件大小篩選以符合建議的EC需求。 
+---
+= 範例2：EC物件大小篩選的ILM規則和原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用下列範例規則和原則做為起點、定義ILM原則、根據物件大小篩選以符合建議的EC需求。
+
+
+CAUTION: 下列ILM規則和原則僅為範例。有許多方法可以設定ILM規則。在啟動新原則之前、請先進行模擬、確認其運作方式符合保護內容免於遺失的目的。
+
+
+
+== ILM規則1（例如2）：對於大於1 MB的物件使用EC
+
+此範例ILM規則銷毀會將大於1 MB的物件編碼。
+
+
+NOTE: 銷毀編碼最適合大於1 MB的物件。請勿對小於 200 KB 的物件使用抹除編碼、以避免管理非常小的銷毀編碼片段所造成的負擔。
+
+[cols="2a,2a"]
+|===
+| 規則定義 | 範例值 
+
+
+ a| 
+規則名稱
+ a| 
+僅 EC 物件 > 1 MB
+
+
+
+ a| 
+參考時間
+ a| 
+擷取時間
+
+
+
+ a| 
+物件大小的進階篩選器
+ a| 
+物件大小大於 1 MB
+
+
+
+ a| 
+刊登位置
+ a| 
+使用三個站台建立2+1銷毀編碼複本
+
+|===
+image::../media/policy_2_rule_1_ec_objects_adv_filtering.png[ILM規則1例如2：所有大於1 MB的物件都使用EC]
+
+
+
+== ILM規則2例如2：兩個複寫複本
+
+此範例ILM規則會建立兩個複寫複本、而不會依物件大小進行篩選。此規則是原則的預設規則。由於第一個規則會篩選出大於1 MB的所有物件、因此此規則僅適用於1 MB或更小的物件。
+
+[cols="1a,2a"]
+|===
+| 規則定義 | 範例值 
+
+
+ a| 
+規則名稱
+ a| 
+兩個複寫複本
+
+
+
+ a| 
+參考時間
+ a| 
+擷取時間
+
+
+
+ a| 
+物件大小的進階篩選器
+ a| 
+無
+
+
+
+ a| 
+刊登位置
+ a| 
+在第 0 天至永遠、請在站台 1 保留一個複寫複本、並在站台 2 保留一個複寫複本。
+
+|===
+
+
+== 範例2的ILM原則：對於大於1 MB的物件使用EC
+
+本範例ILM原則包括兩個ILM規則：
+
+* 第一個規則銷毀會將大於1 MB的所有物件編碼。
+* 第二個（預設）ILM規則會建立兩個複寫複本。由於規則1已篩選出大於1 MB的物件、因此規則2僅適用於1 MB或更小的物件。
+

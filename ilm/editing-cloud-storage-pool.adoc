@@ -1,0 +1,49 @@
+---
+permalink: ilm/editing-cloud-storage-pool.html 
+sidebar: sidebar 
+keywords: edit cloud storage pool 
+summary: 您可以編輯Cloud Storage Pool來變更其名稱、服務端點或其他詳細資料、但是您無法變更Cloud Storage Pool的S3儲存區或Azure容器。 
+---
+= 編輯雲端儲存資源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯 Cloud Storage Pool 來變更其名稱、服務端點或其他詳細資料、但是您無法變更 Cloud Storage Pool 的 S3 儲存區或 Azure 容器。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
+* 您已檢閱link:considerations-for-cloud-storage-pools.html["雲端儲存資源池的考量"]。
+
+
+.步驟
+. 選取 * ILM * > * 儲存池 * > * 雲端儲存池 * 。
++
+Cloud Storage Pools表格會列出現有的Cloud Storage Pools。
+
+. 選取您要編輯的雲端儲存池核取方塊、然後選取 * 動作 * > * 編輯 * 。
++
+或者、選取雲端儲存池的名稱、然後選取 * 編輯 * 。
+
+. 視需要變更雲端儲存池名稱、服務端點、驗證認證或憑證驗證方法。
++
+
+NOTE: 您無法變更雲端儲存池的供應商類型、 S3 儲存區或 Azure 容器。
+
++
+如果您先前已上傳伺服器或用戶端憑證、您可以展開 * 憑證詳細資料 * 手風琴來檢閱目前使用的憑證。
+
+. 選擇*保存*。
++
+當您儲存雲端儲存資源池時StorageGRID 、驗證資源桶或容器及服務端點是否存在、以及是否可以使用您指定的認證資料來存取。
+
++
+如果Cloud Storage Pool驗證失敗、則會顯示錯誤訊息。例如、如果發生憑證錯誤、可能會報告錯誤。
+
++
+請參閱的說明link:troubleshooting-cloud-storage-pools.html["疑難排解雲端儲存資源池"]、解決問題、然後再次嘗試儲存 Cloud Storage Pool 。
+
+

@@ -1,0 +1,127 @@
+---
+permalink: rhel/configuring-docker-storage-volume.html 
+sidebar: sidebar 
+keywords: how to configure container engine storage volume, Docker, Podman 
+summary: 安裝Container引擎（Docker或Podman）之前、您可能需要先格式化儲存磁碟區並加以掛載。 
+---
+= 設定Container Engine儲存Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝Container引擎（Docker或Podman）之前、您可能需要先格式化儲存磁碟區並加以掛載。
+
+
+NOTE: 將 Docker 作為僅限軟體部署的容器引擎的支援已過時。Docker 將在未來版本中以另一個 Container 引擎取代。
+
+.關於這項工作
+如果您計畫將本機儲存空間用於 Docker 或 Podman 儲存磁碟區、並且在包含 Docker 和 `/var/lib/containers` Podman 的主機分割區上有足夠的可用空間、則可以略過這些步驟 `/var/lib/docker`。
+
+
+NOTE: 只有Red Hat Enterprise Linux（RHEL）才支援Podman。
+
+.步驟
+. 在容器引擎儲存磁碟區上建立檔案系統：
++
+[listing]
+----
+sudo mkfs.ext4 container-engine-storage-volume-device
+----
+. 掛載Container Engine儲存磁碟區：
++
+** 適用於Docker：
++
+[listing]
+----
+sudo mkdir -p /var/lib/docker
+sudo mount container-storage-volume-device /var/lib/docker
+----
+** 若為Podman：
++
+[listing]
+----
+sudo mkdir -p /var/lib/containers
+sudo mount container-storage-volume-device /var/lib/containers
+----
+
+
+. 將container儲存設備磁碟區裝置的項目新增至/etc/fstab。
++
+此步驟可確保儲存磁碟區在主機重新開機後自動重新掛載。
+
+
+
+
+
+== 安裝Docker
+
+此系統可在Red Hat Enterprise Linux上執行、作為容器的集合。StorageGRID如果您選擇使用Docker Container引擎、請依照下列步驟安裝Docker。否則，<<安裝Podman,安裝Podman>>。
+
+.步驟
+. 請依照Linux套裝作業系統的指示來安裝Docker。
++
+
+NOTE: 如果您的Linux套裝作業系統未隨附Docker、您可以從Docker網站下載。
+
+. 執行下列兩個命令、確保已啟用及啟動Docker：
++
+[listing]
+----
+sudo systemctl enable docker
+----
++
+[listing]
+----
+sudo systemctl start docker
+----
+. 輸入下列命令、確認您已安裝Docker的預期版本：
++
+[listing]
+----
+sudo docker version
+----
++
+用戶端和伺服器版本必須為 1.11.0 或更新版本。
+
+
+
+
+
+== 安裝Podman
+
+此系統可在Red Hat Enterprise Linux上執行、作為容器的集合。StorageGRID如果您選擇使用Podman容器引擎、請依照下列步驟安裝Podman。否則，<<安裝Docker,安裝Docker>>。
+
+
+NOTE: 只有Red Hat Enterprise Linux（RHEL）才支援Podman。
+
+.步驟
+. 依照Linux套裝作業系統的指示、安裝Podman和Podman-Docker。
++
+
+NOTE: 安裝Podman時、您也必須安裝Podman-Docker套件。
+
+. 輸入下列命令、確認您已安裝Podman和Podman-Docker的預期版本：
++
+[listing]
+----
+sudo docker version
+----
++
+
+NOTE: 使用Podman-Docker套件可以使用Docker命令。
+
++
+用戶端和伺服器版本必須為 3.2.3 或更新版本。
+
++
+[listing]
+----
+Version: 3.2.3
+API Version: 3.2.3
+Go Version: go1.15.7
+Built: Tue Jul 27 03:29:39 2021
+OS/Arch: linux/amd64
+----
+

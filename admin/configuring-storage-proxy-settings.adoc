@@ -1,0 +1,46 @@
+---
+permalink: admin/configuring-storage-proxy-settings.html 
+sidebar: sidebar 
+keywords: storage proxy, non-transparent proxy, platform service endpoint 
+summary: 如果您使用的是平台服務或雲端儲存資源池、可以在儲存節點和外部S3端點之間設定不透明的Proxy。例如、您可能需要不透明的Proxy、才能將平台服務訊息傳送至外部端點、例如網際網路上的端點。 
+---
+= 設定儲存 Proxy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用的是平台服務或雲端儲存資源池、可以在儲存節點和外部S3端點之間設定不透明的Proxy。例如、您可能需要不透明的Proxy、才能將平台服務訊息傳送至外部端點、例如網際網路上的端點。
+
+
+NOTE: 設定的儲存 Proxy 設定不適用於 Kafka 平台服務端點。
+
+.開始之前
+* 您有 link:admin-group-permissions.html["特定存取權限"]。
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+
+
+.關於這項工作
+您可以設定單一儲存 Proxy 的設定。
+
+.步驟
+. 選擇*組態*>*安全性*>* Proxy設定*。
+. 在 * 儲存 * 標籤上、選取 * 啟用儲存代理 * 核取方塊。
+. 選取儲存 Proxy 的傳輸協定。
+. 輸入Proxy伺服器的主機名稱或IP位址。
+. 或者、輸入用來連線至Proxy伺服器的連接埠。
++
+將此欄位保留空白以使用通訊協定的預設連接埠： HTTP 為 80 、 SOCKS5 為 1080 。
+
+. 選擇*保存*。
++
+儲存儲存 Proxy 之後、即可設定並測試平台服務或雲端儲存池的新端點。
+
++
+
+NOTE: Proxy變更可能需要10分鐘才能生效。
+
+. 檢查Proxy伺服器的設定、確保StorageGRID 不會封鎖來自下列項目的平台服務相關訊息。
+. 如果您需要停用儲存 Proxy 、請清除核取方塊、然後選取 * 儲存 * 。
+

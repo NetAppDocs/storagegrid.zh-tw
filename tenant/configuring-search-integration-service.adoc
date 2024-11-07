@@ -1,0 +1,306 @@
+---
+permalink: tenant/configuring-search-integration-service.html 
+sidebar: sidebar 
+keywords: how to configure search integration service 
+summary: 您可以建立搜尋整合組態 XML 、並使用 Tenant Manager 將 XML 套用至貯體、以啟用貯體的搜尋整合。 
+---
+= 設定搜尋整合服務
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立搜尋整合 XML 、並使用 Tenant Manager 將 XML 套用至貯體、以啟用貯體的搜尋整合。
+
+.開始之前
+* StorageGRID 管理員已為您的租戶帳戶啟用平台服務。
+* 您已經建立了要索引其內容的 S3 儲存貯體。
+* 您打算用作搜尋整合服務目的地的端點已經存在、而且您有其 URN 。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["管理所有貯體或根目錄存取權限"]。這些權限會在使用租戶管理程式設定儲存區時、覆寫群組或儲存區原則中的權限設定。
+
+
+.關於這項工作
+在您設定來源儲存區的搜尋整合服務之後、建立物件或更新物件的中繼資料或標記、會觸發物件中繼資料傳送到目的地端點。
+
+如果您為已包含物件的貯體啟用搜尋整合服務、則不會自動傳送現有物件的中繼資料通知。更新這些現有物件、確保其中繼資料已新增至目的地搜尋索引。
+
+.步驟
+. 啟用貯體的搜尋整合：
++
+** 使用文字編輯器建立啟用搜尋整合所需的中繼資料通知XML。
+** 設定XML時、請使用搜尋整合端點的URN作為目的地。
++
+物件可依物件名稱的前置詞進行篩選。例如、您可以將具有前置詞的物件中繼資料傳送至一個目的地、並將具有前置詞的物件中繼資料傳送 `images`至另一個目的地 `videos`。有重疊前置字元的組態無效、提交時會遭到拒絕。例如、不允許針對具有前置字元的物件、包含一條規則的組態 `test`、以及針對具有前置字元的物件的第二條規則 `test2`。
+
++
+如有需要<<example-notification-config,中繼資料組態 XML 的範例>>、請參閱。
+
++
+[listing]
+----
+<MetadataNotificationConfiguration>
+ <Rule>
+    <Status>Enabled</Status>
+    <Prefix></Prefix>
+    <Destination>
+       <Urn>/Urn>
+       </Destination>
+ </Rule>
+</MetadataNotificationConfiguration>
+----
++
+中繼資料通知組態 XML 中的元素：
+
++
+[cols="1a,3a,1a"]
+|===
+| 名稱 | 說明 | 必要 
+
+
+ a| 
+Metadata NotifyationConfiguration
+ a| 
+用於指定中繼資料通知物件和目的地之規則的容器標籤。
+
+包含一或多個規則元素。
+ a| 
+是的
+
+
+
+ a| 
+規則
+ a| 
+規則的容器標記、用於識別應將中繼資料新增至指定索引的物件。
+
+會拒絕具有重疊前置碼的規則。
+
+包括在Metadata NotifyationConfiguration元素中。
+ a| 
+是的
+
+
+
+ a| 
+ID
+ a| 
+規則的唯一識別碼。
+
+包含在Rule元素中。
+ a| 
+否
+
+
+
+ a| 
+狀態
+ a| 
+狀態可以是「已啟用」或「已停用」。不針對停用的規則採取任何行動。
+
+包含在Rule元素中。
+ a| 
+是的
+
+
+
+ a| 
+前置碼
+ a| 
+符合前置碼的物件會受到規則影響、其中繼資料會傳送到指定的目的地。
+
+若要符合所有物件、請指定一個空白首碼。
+
+包含在Rule元素中。
+ a| 
+是的
+
+
+
+ a| 
+目的地
+ a| 
+規則目的地的容器標記。
+
+包含在Rule元素中。
+ a| 
+是的
+
+
+
+ a| 
+urn
+ a| 
+傳送物件中繼資料的目的地之一。必須是StorageGRID 具有下列屬性的不景端點的URN：
+
+*** `es`必須是第三個元素。
+*** URN 必須以索引結尾、並在表單中輸入中繼資料的儲存位置 `domain-name/myindex/mytype`。
+
+
+端點是使用租戶管理程式或租戶管理API來設定。它們採用下列形式：
+
+*** `arn:aws:es:region:account-ID:domain/mydomain/myindex/mytype`
+*** `urn:mysite:es:::mydomain/myindex/mytype`
+
+
+端點必須在提交組態XML之前進行設定、否則組態將會失敗並顯示404錯誤。
+
+目標元素中包含urn.
+ a| 
+是的
+
+|===
+
+
+. 在租戶管理程式中、選取*儲存設備（S3）*>*桶*。
+. 選取來源儲存區的名稱。
++
+此時會顯示「庫位詳細資料」頁面。
+
+. 選擇*平台服務*>*搜尋整合*
+. 選中 * 啓用搜索集成 * 複選框。
+. 將中繼資料通知組態貼到文字方塊中、然後選取*儲存變更*。
++
+
+NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Management API的管理員為其啟用平台服務。如果您儲存組態XML時發生錯誤、請聯絡StorageGRID 您的管理員。
+
+. 確認搜尋整合服務的設定正確：
++
+.. 將符合觸發組態XML中指定中繼資料通知要求的物件新增至來源儲存區。
++
+在先前所示的範例中、新增至儲存區的所有物件都會觸發中繼資料通知。
+
+.. 確認包含物件中繼資料和標記的Json文件已新增至端點中指定的搜尋索引。
+
+
+
+
+.完成後
+如有必要、您可以使用下列任一方法來停用儲存區的搜尋整合：
+
+* 選取 * 儲存（ S3 ） * > * 儲存容量 * 、然後清除 * 啟用搜尋整合 * 核取方塊。
+* 如果您直接使用S3 API、請使用刪除時段中繼資料通知要求。請參閱實作S3用戶端應用程式的指示。
+
+
+
+
+== [[example-notice-config]] 範例：適用於所有物件的中繼資料通知組態
+
+在此範例中、所有物件的物件中繼資料都會傳送到相同的目的地。
+
+[listing]
+----
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>Enabled</Status>
+        <Prefix></Prefix>
+        <Destination>
+           <Urn>urn:myes:es:::sgws-notifications/test1/all</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+
+
+== 範例：中繼資料通知組態有兩個規則
+
+在此範例中、符合前置碼之物件的物件中繼資料 `/images`會傳送至一個目的地、而符合前置碼之物件的物件中繼資料 `/videos`則會傳送至第二個目的地。
+
+[listing]
+----
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Images-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/images</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-east-1:3333333:domain/es-domain/graphics/imagetype</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Videos-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/videos</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-west-1:22222222:domain/es-domain/graphics/videotype</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+
+
+== 中繼資料通知格式
+
+當您啟用儲存區的搜尋整合服務時、每次新增、更新或刪除物件中繼資料或標記時、都會產生Json文件並傳送至目的地端點。
+
+此範例顯示在名為的儲存格中建立 `test`具有金鑰的物件時、可能會產生的 JSON 範例 `SGWS/Tagging.txt`。 `test`貯體未版本化、因此 `versionId`標記為空。
+
+[listing]
+----
+{
+  "bucket": "test",
+  "key": "SGWS/Tagging.txt",
+  "versionId": "",
+  "accountId": "86928401983529626822",
+  "size": 38,
+  "md5": "3d6c7634a85436eee06d43415012855",
+  "region":"us-east-1",
+  "metadata": {
+    "age": "25"
+  },
+  "tags": {
+    "color": "yellow"
+  }
+}
+----
+
+
+=== JSON 文件中包含的欄位
+
+文件名稱包含儲存區名稱、物件名稱及版本ID（若有）。
+
+儲存區和物件資訊::
++
+--
+`bucket`：貯體名稱
+
+`key`：物件金鑰名稱
+
+`versionID`：對象版本，用於版本控制桶中的對象
+
+`region`例如：鏟斗區域 `us-east-1`
+
+--
+系統中繼資料::
++
+--
+`size`： HTTP 客戶端可見的對象大小（以字節爲單位）
+
+`md5`：物件雜湊
+
+--
+使用者中繼資料::
++
+--
+`metadata`：對象的所有用戶元數據，作爲鍵值對
+
+`key:value`
+
+--
+標記::
++
+--
+`tags`：爲對象定義的所有對象標記，作爲鍵值對
+
+`key:value`
+
+--
+
+
+
+
+=== 如何在彈性搜尋中檢視結果
+
+針對標記和使用者中繼資料StorageGRID 、將日期和數字以字串或S3事件通知的形式傳送至Elasticsearch。若要設定Elasticsearch將這些字串解譯為日期或數字、請遵循Elasticsearch指示進行動態欄位對應、以及對應日期格式。設定搜尋整合服務之前、請先啟用索引上的動態欄位對應。建立文件索引後、您就無法編輯索引中文件的欄位類型。

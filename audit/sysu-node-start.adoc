@@ -1,0 +1,39 @@
+---
+permalink: audit/sysu-node-start.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, SYSU, Node Start 
+summary: 重新啟動服務時、會產生此訊息、指出先前的關機是否乾淨（命令）或不正常（非預期）。 
+---
+= SYSU：節點啟動
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+重新啟動服務時、會產生此訊息、指出先前的關機是否乾淨（命令）或不正常（非預期）。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+RSRLT
+ a| 
+乾淨關機
+ a| 
+關機性質：
+
+SUCS：系統完全關機。
+
+DSDN：系統並未完全關機。
+
+VRGN：系統在伺服器安裝（或重新安裝）後第一次啟動。
+
+|===
+此訊息並不表示主機伺服器是否已啟動、僅表示報告服務。此訊息可用於：
+
+* 偵測稽核追蹤中的不連續性。
+* 判斷服務是否在運作期間故障（StorageGRID 因為整個過程中、由於系統分散的特性可能會遮罩這些故障）。伺服器管理員會自動重新啟動失敗的服務。
+

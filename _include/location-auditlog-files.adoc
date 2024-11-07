@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+link:../monitor/configure-audit-messages.html#select-audit-information-destinations["瞭解稽核資訊的目的地"]。

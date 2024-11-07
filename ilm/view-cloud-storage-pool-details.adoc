@@ -1,0 +1,43 @@
+---
+permalink: ilm/view-cloud-storage-pool-details.html 
+sidebar: sidebar 
+keywords: view cloud storage pool 
+summary: 您可以檢視 Cloud Storage Pool 的詳細資料、以判斷其使用位置、並查看其中包含哪些節點和儲存等級。 
+---
+= 檢視雲端儲存池詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視 Cloud Storage Pool 的詳細資料、以判斷其使用位置、並查看其中包含哪些節點和儲存等級。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
+
+
+.步驟
+. 選取 * ILM * > * 儲存池 * > * 雲端儲存池 * 。
++
+Cloud Storage Pools 表格包含每個包含 Storage Node 的 Cloud Storage Pool 的下列資訊：
+
++
+** *Name* ：池的唯一顯示名稱。
+** * URI* ：雲端儲存池的統一資源識別碼。
+** * 供應商類型 * ：此雲端儲存池使用哪種雲端供應商。
+** * Container * ：用於 Cloud Storage Pool 的儲存區名稱。
+** * ILM 使用率 * ：目前使用資源池的方式。雲端儲存資源池可能未使用、或可能用於一或多個 ILM 規則、銷毀編碼設定檔、或兩者。
+** * 最後一個錯誤 * ：此雲端儲存池執行狀況檢查期間偵測到的最後一個錯誤。
+
+
+. 若要檢視特定雲端儲存池的詳細資料、請選取其名稱。
++
+隨即顯示集區的詳細資料頁面。
+
+. 檢視 * 驗證 * 索引標籤以瞭解此雲端儲存池的驗證類型、並編輯驗證詳細資料。
+. 檢視 * 伺服器驗證 * 索引標籤、瞭解驗證詳細資料、編輯驗證、下載新憑證、或複製憑證 PEM 。
+. 檢視 * ILM 使用率 * 索引標籤、判斷雲端儲存池目前是否正在任何 ILM 規則或銷毀編碼設定檔中使用。
+. 您也可以移至 * ILM 規則頁面 * 、以link:working-with-ilm-rules-and-ilm-policies.html["瞭解並管理任何規則"]使用雲端儲存池。
+

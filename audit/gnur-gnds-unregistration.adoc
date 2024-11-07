@@ -1,0 +1,42 @@
+---
+permalink: audit/gnur-gnds-unregistration.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, GNUR, GNDS Unregistration 
+summary: 當服務從StorageGRID 該系統中取消登錄其本身的資訊時、CMN服務會產生此稽核訊息。 
+---
+= GNur：GNDS取消登錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當服務從StorageGRID 該系統中取消登錄其本身的資訊時、CMN服務會產生此稽核訊息。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+RSRLT
+ a| 
+結果
+ a| 
+更新要求的結果：
+
+* SUCS：成功
+* SUNVM：服務無法使用
+* GERR:其他故障
+
+
+
+
+ a| 
+GNID
+ a| 
+節點 ID
+ a| 
+啟動更新要求之服務的節點ID。
+
+|===

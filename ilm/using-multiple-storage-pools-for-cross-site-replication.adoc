@@ -1,0 +1,79 @@
+---
+permalink: ilm/using-multiple-storage-pools-for-cross-site-replication.html 
+sidebar: sidebar 
+keywords: site-loss protection, cross-site replication, storage pools 
+summary: 如果您的 StorageGRID 部署包含多個站台、您可以使用複寫和銷毀編碼搭配適當設定的儲存集區、以啟用站台遺失保護。 
+---
+= 啟用站台遺失保護
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的 StorageGRID 部署包含多個站台、您可以使用複寫和銷毀編碼搭配適當設定的儲存集區、以啟用站台遺失保護。
+
+複寫和銷毀編碼需要不同的儲存池組態：
+
+* 若要使用複寫來保護站台遺失、請使用在 StorageGRID 安裝期間自動建立的站台專屬儲存集區。然後建立 ILM 規則、以link:create-ilm-rule-define-placements.html["放置指示"]指定多個儲存資源池、以便在每個站台上放置每個物件的一個複本。
+* 若要使用抹除編碼來保護站台遺失link:guidelines-for-creating-storage-pools.html#guidelines-for-storage-pools-used-for-erasure-coded-copies["建立由多個站台組成的儲存資源池"]、請參閱。然後建立 ILM 規則、使用一個由多個站台和任何可用的銷毀編碼架構所組成的儲存資源池。
+
+
+
+CAUTION: 在設定 StorageGRID 部署以保護站台遺失時，您也必須考慮和link:../s3/consistency-controls.html["一致性"]的影響link:data-protection-options-for-ingest.html["擷取選項"]。
+
+
+
+== 複寫範例
+
+根據預設、 StorageGRID 安裝期間會為每個站台建立一個儲存池。只有一個站台組成儲存集區、您就能設定使用複寫來保護站台遺失的 ILM 規則。在此範例中：
+
+* 儲存池 1 包含站台 1
+* 儲存池 2 包含站台 2
+* ILM 規則包含兩個放置位置：
++
+** 在站台 1 複寫 1 個複本、以儲存物件
+** 在站台 2 複寫 1 個複本來儲存物件
+
+
+
+
+ILM 規則放置位置：
+
+image::../media/ilm_replication_at_2_sites.png[在 2 個站台每個複本複本 1 個]
+
+image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[在 2 個站台中的每個站台建立 1 個複本 - 站台專屬儲存池]
+
+如果某個站台遺失、則可在另一個站台取得物件複本。
+
+
+
+== 銷毀編碼範例
+
+每個儲存資源池包含多個站台、可讓您設定 ILM 規則、使用銷毀編碼來保護站台遺失。在此範例中：
+
+* 儲存池 1 包含站台 1 至 3
+* ILM 規則包含一個放置位置：在儲存池 1 使用 4+2 EC 配置（包含三個站台）以銷毀編碼來儲存物件
+
+
+ILM 規則放置位置：
+
+image::../media/ilm_erasure_coding_site_loss_protection_4+2.png[EC 1 儲存池 9 儲存節點 3 站台]
+
+在此範例中：
+
+* ILM 規則使用 4+2 銷毀編碼方案。
+* 每個物件會分割成四個等量資料片段、並從物件資料計算兩個同位元檢查片段。
+* 這六個片段中的每個片段都儲存在三個資料中心站台的不同節點上、以針對節點故障或站台遺失提供資料保護。
+
+
+
+NOTE: 在包含任意數量站台的儲存集區中、除了兩個站台之外、也允許進行銷毀編碼。
+
+使用 4+2 銷毀編碼方案的 ILM 規則：
+
+image::../media/ec_three_sites_4_plus_2_site_loss_example_template.png[使用 4+2 EC 方案在 3 個站台上進行銷毀編碼、以儲存物件]
+
+如果某個站台遺失、資料仍可恢復：
+
+image::../media/ec_three_sites_4_plus_2_site_loss_example.png[銷毀編碼 4+2 EC 方案 1 站台遺失]

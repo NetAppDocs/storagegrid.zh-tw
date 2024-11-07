@@ -1,0 +1,141 @@
+---
+permalink: vmware/downloading-and-extracting-storagegrid-installation-files.html 
+sidebar: sidebar 
+keywords: how to download vmware installation files 
+summary: 您必須下載StorageGRID 更新檔、並擷取檔案。您也可以手動驗證安裝套件中的檔案。 
+---
+= 下載並解壓縮StorageGRID 安裝檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須下載StorageGRID 更新檔、並擷取檔案。您也可以手動驗證安裝套件中的檔案。
+
+.步驟
+. 前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載頁StorageGRID 面"^]。
+. 選取下載最新版本的按鈕、或從下拉式功能表中選取其他版本、然後選取*執行*。
+. 以您NetApp帳戶的使用者名稱和密碼登入。
+. 如果出現「 Caution/MustRead 」說明、請閱讀並選取核取方塊。
++
+
+CAUTION: 安裝StorageGRID 完此版本的更新後、您必須套用所有必要的修補程式。如需詳細資訊、請參閱link:../maintain/storagegrid-hotfix-procedure.html["修復與維護指示中的修復程序程序"]
+
+. 閱讀終端使用者授權合約、選取核取方塊、然後選取 * 接受並繼續 * 。
+. 在 * 安裝 StorageGRID * 欄中、選取 VMware 的 .tgz 或 .zip 安裝歸檔。
++
+
+NOTE: 如果您在服務筆記型電腦上執行 Windows 、請使用 `.zip`此檔案。
+
+. 儲存安裝歸檔。
+. [[vmware-download-verification package]] 如果您需要驗證安裝歸檔：
++
+.. 下載 StorageGRID 程式碼簽章驗證套件。此套件的檔案名稱使用格式 `StorageGRID_<version-number>_Code_Signature_Verification_Package.tar.gz`、其中 `<version-number>`是 StorageGRID 軟體版本。
+.. 請依照的步驟執行link:../vmware/download-files-verify.html["手動驗證安裝檔案"]。
+
+
+. 從安裝歸檔中擷取檔案。
+. 選擇您需要的檔案。
++
+您需要的檔案取決於您規劃的網格拓撲、以及如何部署StorageGRID 您的作業系統。
+
+
+
+
+NOTE: 表中列出的路徑是相對於擷取安裝歸檔所安裝的最上層目錄。
+
+[cols="1a,1a"]
+|===
+| 路徑和檔案名稱 | 說明 
+
+
+| /vSphere/README  a| 
+說明StorageGRID 包含在更新檔中的所有檔案的文字檔。
+
+
+
+| ./vSphere/NLF000000.txt  a| 
+不提供產品任何支援權利的免費授權。
+
+
+
+| /vSphere/NetApp-SG-version -SHA-vmdk  a| 
+用來做為建立網格節點虛擬機器範本的虛擬機器磁碟檔案。
+
+
+
+| /vSphere/vSphere-primer-admin.OVF ./vSphere/vSphere-prime-admin.mf  a| 
+開放式虛擬化格式模板文件(`.mf`）(`.ovf`和清單文件），用於部署主管理節點。
+
+
+
+| /vSphere/vSphere-non-prime-admin.OVF ./vSphere/vSphere-non-prime-admin.mf  a| 
+模板文件(`.mf`）(`.ovf`和清單文件），用於部署非主管理員節點。
+
+
+
+| /vSphere/vSphere-gateway.OVF ./vSphere/vSphere-gateway.mf  a| 
+模板文件(`.mf`）(`.ovf`和清單文件），用於部署網關節點。
+
+
+
+| /vSphere/vSphere-storage。OVF ./vSphere/vSphere-storage  a| 
+模板文件(`.mf`）(`.ovf`和清單文件），用於部署基於虛擬機的存儲節點。
+
+
+
+| 部署指令碼工具 | 說明 
+
+
+| ./vSphere/deploy-vsphere-ovftool.sh  a| 
+Bash Shell指令碼、用於自動化虛擬網格節點的部署。
+
+
+
+| ./vSphere/deploy-vsphere-ovftool-sample.ini  a| 
+用於指令碼的範例組態檔 `deploy-vsphere-ovftool.sh`。
+
+
+
+| ./vSphere/configure-storagegrid.py  a| 
+Python指令碼、用於自動化StorageGRID 組態的功能。
+
+
+
+| ./vSphere/configure-sga.py  a| 
+Python指令碼、用於自動化StorageGRID 設定不必要的應用程式。
+
+
+
+| ./vSphere/storagegrid-ssoauth.py  a| 
+啟用單一登入（ SSO ）時、您可以使用 Python 指令碼範例登入 Grid Management API 。您也可以使用此指令碼來進行 Ping 聯合整合。
+
+
+
+| /vSphere/configure-storagegrid、same.json  a| 
+用於指令碼的範例組態檔 `configure-storagegrid.py`。
+
+
+
+| /vSphere/configure-storagegrid、blank.json  a| 
+用於指令碼的空白組態檔 `configure-storagegrid.py`。
+
+
+
+| ./vSphere/storagegrid-ssoauth-azure.py  a| 
+使用 Active Directory 或 Ping 聯合啟用單一登入（ SSO ）時、可以用來登入 Grid Management API 的 Python 指令碼範例。
+
+
+
+| ./svSphere/storagegRID -soauth-azure.js  a| 
+由搭配 Python 指令碼所呼叫的輔助程式指令碼 `storagegrid-ssoauth-azure.py`、用於執行與 Azure 的 SSO 互動。
+
+
+
+| /vSphere/Extras / API架構  a| 
+API架構StorageGRID 。
+
+* 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
+
+|===

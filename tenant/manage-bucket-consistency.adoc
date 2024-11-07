@@ -1,0 +1,84 @@
+---
+permalink: tenant/manage-bucket-consistency.html 
+sidebar: sidebar 
+keywords: how to manage bucket consistency, how to change bucket consistency, read after new write, read-after-new-write, strong site, strong-site, strong global, strong-global 
+summary: 一致性值可用來指定儲存區設定變更的可用度、並在儲存節點和站台之間的物件可用度與這些物件一致性之間取得平衡。您可以將一致性值變更為不同於預設值、讓用戶端應用程式能夠滿足其作業需求。 
+---
+= 管理貯體一致性
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一致性值可用來指定儲存區設定變更的可用度、並在儲存節點和站台之間的物件可用度與這些物件一致性之間取得平衡。您可以將一致性值變更為不同於預設值、讓用戶端應用程式能夠滿足其作業需求。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["管理所有貯體或根目錄存取權限"]。這些權限會覆寫群組或儲存區原則中的權限設定。
+
+
+
+
+== 貯體一致性準則
+
+貯體一致性用於判斷影響該 S3 貯體內物件的用戶端應用程式一致性。一般而言、您應該為儲存區使用 * 讀取 - 新寫入 * 一致性。
+
+
+
+== [[change-bucker-consistency （變更貯體一致性） ] 變更貯體一致性
+
+如果 *Read-after new-write* 的一致性不符合用戶端應用程式的要求、您可以透過設定貯體一致性或使用標頭來變更一致性 `Consistency-Control`。 `Consistency-Control`標頭會取代貯體一致性。
+
+
+NOTE: 當您變更貯體的一致性時、只有在變更後擷取的物件才保證符合修訂的設定。
+
+.步驟
+. 從儀表板選取 * 檢視貯體 * 、或選取 * 儲存空間（ S3 ） * > * 鏟斗 * 。
+. 從表格中選取貯體名稱。
++
+此時會顯示「庫位詳細資料」頁面。
+
+. 從 *Bucket options* 標籤中、選取 ** 折疊式。
+. 針對此貯體中的物件所執行的作業、選取一致性。
++
+** * 全部 * ：提供最高等級的一致性。所有節點都會立即接收資料、否則要求將會失敗。
+** *Strong-globall* ：保證所有網站上所有用戶端要求的寫入後讀取一致性。
+** *Strong-site* ：保證網站內所有用戶端要求的寫入後讀取一致性。
+** * 新寫入後讀取 * （預設）：提供新物件的寫入後讀取一致性、以及物件更新的最終一致性。提供高可用度與資料保護保證。建議大多數情況下使用。
+** * 可用 * ：提供新物件和物件更新的最終一致性。對於 S3 貯體、請僅視需要使用（例如、包含很少讀取的記錄值之貯體、或用於對不存在的金鑰執行 head 或 Get 作業）。S3 FabricPool 儲存區不支援。
+
+
+. 選取*儲存變更*。
+
+
+
+
+== 變更貯體設定時會發生什麼情況
+
+貯體有多個設定會影響貯體和這些貯體內物件的行為。
+
+下列貯體設定預設使用 * 強 * 一致性。如果任一站台內沒有兩個以上的儲存節點、或站台無法使用、則這些設定的任何變更可能無法使用。
+
+* link:deleting-s3-bucket-objects.html["背景空白貯體刪除"]
+* link:enabling-or-disabling-last-access-time-updates.html["上次存取時間"]
+* link:../s3/create-s3-lifecycle-configuration.html["生命週期"]
+* link:../s3/bucket-and-group-access-policies.html["貯體原則"]
+* link:../s3/operations-on-buckets.html["貯體標記"]
+* link:changing-bucket-versioning.html["貯體版本管理"]
+* link:using-s3-object-lock.html["S3物件鎖定"]
+* link:../admin/reviewing-storagegrid-encryption-methods.html#bucket-encryption-table["貯體加密"]
+
+
+
+NOTE: 貯體版本管理、 S3 物件鎖定和貯體加密的一致性值無法設定為不太一致的值。
+
+下列貯體設定不使用強而一致的特性、而且變更的可用度也較高。變更這些設定可能需要一些時間才能生效。
+
+* link:considerations-for-platform-services.html["平台服務組態：通知、複寫或搜尋整合"]
+* link:configuring-cross-origin-resource-sharing-cors.html["CORS 組態"]
+* <<change-bucket-consistency,變更貯體一致性>>
+
+
+
+TIP: 如果變更貯體設定時所使用的預設一致性不符合用戶端應用程式的需求、您可以使用或 `force`的標頭link:../s3/put-bucket-consistency-request.html["S3 REST API"]來變更一致性、 `Consistency-Control`或使用中的或 `reducedConsistency`選項link:understanding-tenant-management-api.html["租戶管理API"]。

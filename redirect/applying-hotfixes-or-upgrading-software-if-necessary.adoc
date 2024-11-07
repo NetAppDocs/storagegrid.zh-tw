@@ -1,0 +1,8 @@
+---
+permalink: monitor/applying-hotfixes-or-upgrading-software-if-necessary.html 
+redirect: storagegrid/landing-install-upgrade/index.html 
+---
+= 
+:allow-uri-read: 
+
+

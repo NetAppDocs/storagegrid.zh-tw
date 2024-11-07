@@ -1,0 +1,74 @@
+---
+permalink: admin/changing-network-options-object-encryption.html 
+sidebar: sidebar 
+keywords: enable http, storage node connections 
+summary: 您可以設定網路和物件安全性來加密儲存的物件、防止某些 S3 要求、或允許用戶端連線至儲存節點使用 HTTP 而非 HTTPS 。 
+---
+= 設定網路和物件安全性
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定網路和物件安全性來加密儲存的物件、防止某些 S3 要求、或允許用戶端連線至儲存節點使用 HTTP 而非 HTTPS 。
+
+
+
+== 儲存的物件加密
+
+儲存的物件加密可在透過 S3 擷取時、加密所有物件資料。根據預設、儲存的物件不會加密、但您可以選擇使用 AES ‐ 128 或 AES ‐ 256 加密演算法來加密物件。啟用此設定時、所有新擷取的物件都會加密、但不會對現有的儲存物件進行任何變更。如果停用加密、目前加密的物件仍會保持加密狀態、但新擷取的物件不會加密。
+
+「儲存的物件加密」設定僅適用於未透過貯體層級或物件層級加密進行加密的 S3 物件。
+
+如需 StorageGRID 加密方法的詳細資訊，請參閱link:../admin/reviewing-storagegrid-encryption-methods.html["檢閱StorageGRID 功能加密方法"]。
+
+
+
+== 防止用戶端修改
+
+防止用戶端修改是全系統的設定。當選擇 * 防止用戶端修改 * 選項時、會拒絕下列要求。
+
+
+
+=== S3 REST API
+
+* 刪除 Bucket 要求
+* 任何修改現有物件資料、使用者定義中繼資料或S3物件標記的要求
+
+
+
+
+== 啟用 HTTP 以進行儲存節點連線
+
+根據預設、用戶端應用程式會使用 HTTPS 網路傳輸協定來直接連線至儲存節點。您可以選擇性地為這些連線啟用HTTP、例如在測試非正式作業網格時。
+
+僅當 S3 用戶端需要直接與儲存節點建立 HTTP 連線時、才可使用 HTTP 進行儲存節點連線。您不需要將此選項用於僅使用 HTTPS 連線的用戶端或連線到負載平衡器服務的用戶端（因為您可以link:../admin/configuring-load-balancer-endpoints.html["設定每個負載平衡器端點"]使用 HTTP 或 HTTPS ）。
+
+請參閱link:summary-ip-addresses-and-ports-for-client-connections.html["摘要：用於用戶端連線的IP位址和連接埠"]以瞭解 S3 用戶端在使用 HTTP 或 HTTPS 連線至儲存節點時所使用的連接埠。
+
+
+
+== 選取選項
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您擁有root存取權限。
+
+
+.步驟
+. 選擇 * 組態 * > * 安全性 * > * 安全性設定 * 。
+. 選取 * 網路和物件 * 索引標籤。
+. 對於儲存的物件加密、如果您不想加密儲存的物件、請使用 * 無 * （預設）設定、或選取 * AES-128* 或 * AES-256* 來加密儲存的物件。
+. 如果您想要防止 S3 用戶端提出特定要求、請選擇性地選取 * 防止用戶端修改 * 。
++
+
+NOTE: 如果您變更此設定、則需要約一分鐘的時間才能套用新設定。系統會快取設定的值、以利效能與擴充。
+
+. 如果用戶端直接連線至儲存節點、且您想使用 HTTP 連線、則可選擇 * 啟用儲存節點連線的 HTTP * 。
++
+
+NOTE: 啟用正式作業網格的HTTP時請務必小心、因為要求會以未加密的方式傳送。
+
+. 選擇*保存*。
+

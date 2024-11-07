@@ -1,0 +1,59 @@
+---
+section: vmware
+title: 在 VMware 上安裝 StorageGRID
+entries:
+- title: 快速入門
+  pdf-filename: 在 VMware 上安裝 StorageGRID
+  url: "/vmware/index.html"
+- title: 規劃並準備在 VMware 上安裝
+  entries:
+  - title: 必要資訊與資料
+    url: "/vmware/required-materials.html"
+  - title: 下載並解壓縮StorageGRID 安裝檔案
+    url: "/vmware/downloading-and-extracting-storagegrid-installation-files.html"
+  - title: 手動驗證安裝檔案
+    url: "/vmware/download-files-verify.html"
+  - title: 軟體需求
+    url: "/vmware/software-requirements.html"
+  - title: CPU與RAM需求
+    url: "/vmware/cpu-and-ram-requirements.html"
+  - title: 儲存與效能需求
+    url: "/vmware/storage-and-performance-requirements.html"
+- title: 自動化安裝（VMware）
+  url: "/vmware/automating-grid-node-deployment-in-vmware-vsphere.html"
+- title: 部署虛擬機器網格節點（VMware）
+  entries:
+  - title: 收集部署環境的相關資訊
+    url: "/vmware/collecting-information-about-your-deployment-environment.html"
+  - title: 網格節點如何探索主要管理節點
+    url: "/vmware/how-grid-nodes-discover-primary-admin-node.html"
+  - title: 將StorageGRID 一個節點部署為虛擬機器
+    url: "/vmware/deploying-storagegrid-node-as-virtual-machine.html"
+- title: 設定網格並完成安裝（VMware）
+  entries:
+  - title: 瀏覽至Grid Manager
+    url: "/vmware/navigating-to-grid-manager.html"
+  - title: 指定授權資訊
+    url: "/vmware/specifying-storagegrid-license-information.html"
+  - title: 新增站台
+    url: "/vmware/adding-sites.html"
+  - title: 指定網格網路子網路
+    url: "/vmware/specifying-grid-network-subnets.html"
+  - title: 核准擱置的網格節點
+    url: "/vmware/approving-pending-grid-nodes.html"
+  - title: 指定 NTP 伺服器資訊
+    url: "/vmware/specifying-network-time-protocol-server-information.html"
+  - title: 指定 DNS 伺服器資訊
+    url: "/vmware/specifying-domain-name-system-server-information.html"
+  - title: 指定系統密碼
+    url: "/vmware/specifying-storagegrid-system-passwords.html"
+  - title: 檢閱組態並完成安裝
+    url: "/vmware/reviewing-your-configuration-and-completing-installation.html"
+  - title: 安裝後準則
+    url: "/vmware/post-installation-guidelines.html"
+- title: 安裝 REST API
+  url: "/vmware/overview-of-installation-rest-api.html"
+- title: 下一步
+  url: "/vmware/where-to-go-next.html"
+- title: 疑難排解安裝問題
+  url: "/vmware/troubleshooting-installation-issues.html"

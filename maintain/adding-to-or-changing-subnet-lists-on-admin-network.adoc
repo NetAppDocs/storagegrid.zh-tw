@@ -1,0 +1,140 @@
+---
+permalink: maintain/adding-to-or-changing-subnet-lists-on-admin-network.html 
+sidebar: sidebar 
+keywords: storagegrid, subnet list, admin network 
+summary: 您可以在一或多個節點的管理網路子網路清單中新增、刪除或變更子網路。 
+---
+= 新增或變更管理網路上的子網路清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在一或多個節點的管理網路子網路清單中新增、刪除或變更子網路。
+
+.開始之前
+* 您有 `Passwords.txt`檔案。
+
+
+您可以新增、刪除或變更子網路至管理網路子網路清單上的所有節點。
+
+.步驟
+. 登入主要管理節點：
++
+.. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 輸入下列命令以啟動變更 IP 工具： `change-ip`
+. 在提示字元下輸入資源配置通關密碼。
++
+主功能表隨即出現。
+
++
+image::../media/change_ip_tool_main_menu.png[顯示變更IP工具歡迎畫面的快照]
+
+. （可選）限制執行操作的網路/節點。請選擇下列其中一項：
++
+** 如果您要篩選要執行作業的特定節點、請選擇* 1*來選取要編輯的節點。選取下列其中一個選項：
++
+*** * 1*：單一節點（依名稱選取）
+*** * 2 *：單一節點（依站台選取、然後依名稱選取）
+*** * 3*：單一節點（依目前IP選取）
+*** * 4 *：站台上的所有節點
+*** *5*：網格中的所有節點
+*** * 0*：返回
+
+
+** 允許「全部」保持選取狀態。選擇完成後、主功能表畫面會出現。「選取的節點」欄位會反映您的新選擇、現在所有選取的作業都只會在此項目上執行。
+
+
+. 在主功能表上、選取選項以編輯管理網路的子網路（選項* 3*）。
+. 請選擇下列其中一項：
++
+--
+** 輸入以下命令新增子網路： `add CIDR`
+** 輸入以下命令刪除子網路： `del CIDR`
+** 輸入以下命令來設定子網路清單： `set CIDR`
+
+
+--
++
+--
+
+NOTE: 對於所有命令、您可以使用下列格式輸入多個位址： `add CIDR, CIDR`
+
+範例： `add 172.14.0.0/16, 172.15.0.0/16, 172.16.0.0/16`
+
+
+TIP: 您可以使用「向上箭頭」將先前輸入的值重新叫用至目前的輸入提示、然後視需要編輯、以減少所需的輸入量。
+
+以下輸入範例顯示將子網路新增至管理網路子網路清單：
+
+image::../media/change_ip_tool_aesl_sample_input.gif[變更IP工具範例]
+
+--
+. 準備好後、輸入* q*返回主功能表畫面。您的變更會保留到清除或套用為止。
++
+
+NOTE: 如果您在步驟 2 中選取任何「全部」節點選擇模式、請按 * Enter* （不含 * q* ）以移至清單中的下一個節點。
+
+. 請選擇下列其中一項：
++
+** 選擇選項*5*可在隔離的輸出中顯示編輯內容、僅顯示變更的項目。變更會以綠色（新增）或紅色（刪除）反白顯示、如下面的範例輸出所示：
++
+image::../media/change_ip_tool_aesl_sample_output.png[周邊文字所述的螢幕擷取畫面]
+
+** 選擇選項*6*可在顯示完整組態的輸出中顯示編輯內容。變更會以綠色（新增）或紅色（刪除）強調顯示。*附註：*某些終端模擬器可能會使用刪除線格式顯示新增和刪除內容。
++
+當您嘗試變更子網路清單時、會顯示下列訊息：
+
++
+[listing]
+----
+CAUTION: The Admin Network subnet list on the node might contain /32 subnets derived from automatically applied routes that aren't persistent. Host routes (/32 subnets) are applied automatically if the IP addresses provided for external services such as NTP or DNS aren't reachable using default StorageGRID routing, but are reachable using a different interface and gateway. Making and applying changes to the subnet list will make all automatically applied subnets persistent. If you don't want that to happen, delete the unwanted subnets before applying changes. If you know that all /32 subnets in the list were added intentionally, you can ignore this caution.
+----
++
+如果您未將NTP和DNS伺服器子網路明確指派給網路、StorageGRID 則會自動建立連線的主機路由（/32）。例如、如果您想要使用/16或/24路由進行DNS或NTP伺服器的傳出連線、您應該刪除自動建立的/32路由、然後新增所需的路由。如果您不刪除自動建立的主機路由、則會在您套用任何變更至子網路清單後保留該路由。
+
+
+
++
+
+NOTE: 雖然您可以使用這些自動探索的主機路由、但一般而言、您應該手動設定DNS和NTP路由、以確保連線能力。
+
+. 選取選項* 7*以驗證所有階段變更。
++
+此驗證可確保遵循Grid、Admin和Client Networks的規則、例如使用重疊的子網路。
+
+. （可選）選擇選項*8*以保存所有分段更改並稍後返回以繼續進行更改。
++
+此選項可讓您結束變更IP工具、並在稍後重新啟動、而不會遺失任何未套用的變更。
+
+. 執行下列其中一項：
++
+** 如果您要清除所有變更而不儲存或套用新的網路組態、請選取選項* 9*。
+** 如果您準備好套用變更並配置新的網路組態、請選取選項* 10*。在資源配置期間、輸出會在套用更新時顯示狀態、如下列輸出範例所示：
++
+[listing]
+----
+Generating new grid networking description file...
+
+Running provisioning...
+
+Updating grid network configuration on Name
+----
+
+
+. 從Grid Manager下載新的恢復套件。
++
+.. 選擇* maintenance *>* System*>* Recovery套件*。
+.. 輸入資源配置通關密碼。
+
+
+

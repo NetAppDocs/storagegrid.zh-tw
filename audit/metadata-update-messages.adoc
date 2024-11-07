@@ -1,0 +1,62 @@
+---
+permalink: audit/metadata-update-messages.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, Metadata update, S3 metadata update, SUPD 
+summary: 當S3用戶端更新物件的中繼資料時、就會產生稽核訊息。 
+---
+= 中繼資料更新訊息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當S3用戶端更新物件的中繼資料時、就會產生稽核訊息。
+
+
+
+== S3中繼資料更新稽核訊息
+
+[cols="1a,1a,2a,1a,2a"]
+|===
+| 程式碼 | 名稱 | 說明 | 追蹤 | 請參閱 
+
+
+ a| 
+SUPD
+ a| 
+S3中繼資料已更新
+ a| 
+當S3用戶端更新擷取物件的中繼資料時產生。
+ a| 
+CBID、S3KY、HTRH
+ a| 
+link:supd-s3-metadata-updated.html["SUBPD：S3中繼資料已更新"]
+
+|===
+
+
+== 範例：S3中繼資料更新
+
+此範例顯示更新現有S3物件中繼資料的成功交易。
+
+
+
+=== SUBPD：S3中繼資料更新
+
+S3 用戶端會(`x-amz-meta-\*`針對 S3 物件（ S3KY ）提出更新指定中繼資料的要求（ SUPD ）。在此範例中、要求標頭會包含在欄位中、因為它已設定為稽核傳輸協定標頭（*組態*>*監控*>*稽核與系統記錄伺服器*）。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+
+[listing]
+----
+2017-07-11T21:54:03.157462 [AUDT:[RSLT(FC32):SUCS][TIME(UI64):17631][SAIP(IPAD):"10.96.100.254"]
+[HTRH(CSTR):"{\"accept-encoding\":\"identity\",\"authorization\":\"AWS LIUF17FGJARQHPY2E761:jul/hnZs/uNY+aVvV0lTSYhEGts=\",
+\"content-length\":\"0\",\"date\":\"Tue, 11 Jul 2017 21:54:03 GMT\",\"host\":\"10.96.99.163:18082\",
+\"user-agent\":\"aws-cli/1.9.20 Python/2.7.6 Linux/3.13.0-119-generic botocore/1.3.20\",
+\"x-amz-copy-source\":\"/testbkt1/testobj1\",\"x-amz-metadata-directive\":\"REPLACE\",\"x-amz-meta-city\":\"Vancouver\"}"]
+[S3AI(CSTR):"20956855414285633225"][SACC(CSTR):"acct1"][S3AK(CSTR):"SGKHyyv9ZQqWRbJSQc5vI7mgioJwrdplShE02AUaww=="]
+[SUSR(CSTR):"urn:sgws:identity::20956855414285633225:root"]
+[SBAI(CSTR):"20956855414285633225"][SBAC(CSTR):"acct1"][S3BK(CSTR):"testbkt1"]
+[S3KY(CSTR):"testobj1"][CBID(UI64):0xCB1D5C213434DD48][CSIZ(UI64):10][AVER(UI32):10]
+[ATIM(UI64):1499810043157462][ATYP(FC32):SUPD][ANID(UI32):12258396][AMID(FC32):S3RQ]
+[ATID(UI64):8987436599021955788]]
+----

@@ -1,0 +1,62 @@
+---
+indexpage:
+  title: 使用 StorageGRID 租戶和用戶端
+  summary: 完成初始設定後、 StorageGRID 租戶帳戶可以建立貯體、並使用 S3 用戶端應用程式來擷取、擷取及刪除物件。
+  keywords: use tenant, manage tenant group, manage tenant user, manage s3 access
+    key, manage s3 bucket, use tenant features, use s3 rest api
+  lead: 完成初始設定後、 StorageGRID 租戶帳戶可以建立貯體、並使用 S3 用戶端應用程式來擷取、擷取及刪除物件。
+  tiles:
+  - title: 瞭解租戶
+    links:
+    - title: 什麼是租戶？
+      url: "../tenant/index.html"
+    - title: 登入租戶管理程式
+      url: "../tenant/signing-in-to-tenant-manager.html"
+    - title: 監控租戶帳戶
+      url: "../tenant/understanding-tenant-manager-dashboard.html"
+    - title: 使用租戶管理 API
+      url: "../tenant/understanding-tenant-management-api.html"
+  - title: 管理租戶群組和使用者
+    links:
+    - title: 使用身分識別聯盟
+      url: "../tenant/using-identity-federation.html"
+    - title: 建立 S3 群組
+      url: "../tenant/creating-groups-for-s3-tenant.html"
+    - title: 租戶管理權限
+      url: "../tenant/tenant-management-permissions.html"
+    - title: 管理本機使用者
+      url: "../tenant/managing-local-users.html"
+  - title: 管理 S3 存取金鑰和儲存區
+    links:
+    - title: 管理S3存取金鑰
+      url: "../tenant/managing-s3-access-keys.html"
+    - title: 建立貯體
+      url: "../tenant/creating-s3-bucket.html"
+    - title: 檢視貯體詳細資料
+      url: "../tenant/viewing-s3-bucket-details.html"
+    - title: 刪除貯體
+      url: "../tenant/deleting-s3-bucket.html"
+  - title: 使用租戶功能
+    links:
+    - title: 帳戶複製
+      url: "../tenant/grid-federation-account-clone.html"
+    - title: 跨網格複寫
+      url: "../tenant/grid-federation-manage-cross-grid-replication.html"
+    - title: 平台服務
+      url: "../tenant/considerations-for-platform-services.html"
+    - title: S3物件鎖定
+      url: "../tenant/using-s3-object-lock.html"
+  - title: 使用S3 REST API
+    links:
+    - title: 快速參考：支援的 S3 API 要求
+      url: "../s3/quick-reference-support-for-aws-apis.html"
+    - title: 在貯體上作業
+      url: "../s3/operations-on-buckets.html"
+    - title: 物件上的作業
+      url: "../s3/operations-on-objects.html"
+    - title: 儲存庫和群組存取原則
+      url: "../s3/bucket-and-group-access-policies.html"
+  - title: 使用 Swift REST API （生命週期結束）
+    links:
+    - title: 使用Swift
+      url: "../swift/index.html"

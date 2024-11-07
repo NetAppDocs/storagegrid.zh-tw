@@ -1,0 +1,125 @@
+---
+permalink: primer/quick-start.html 
+sidebar: sidebar 
+keywords: storagegrid quick start, tasks 
+summary: 請依照這些高階步驟來設定及使用任何 StorageGRID 系統。 
+---
+= StorageGRID 快速入門
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+請依照這些高階步驟來設定及使用任何 StorageGRID 系統。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]學習、規劃及收集資料
+[role="quick-margin-para"]
+與 NetApp 客戶代表合作、瞭解選項並規劃新的 StorageGRID 系統。請思考以下類型的問題：
+
+[role="quick-margin-list"]
+* 您預期最初和之後會儲存多少物件資料？
+* 您需要多少個網站？
+* 每個站台需要多少個節點、以及哪些類型的節點？
+* 您會使用哪些 StorageGRID 網路？
+* 誰會使用您的網格來儲存物件？他們會使用哪些應用程式？
+* 您是否有任何特殊的安全性或儲存需求？
+* 您是否需要遵守任何法律或法規要求？
+
+
+[role="quick-margin-para"]
+您也可以選擇與 NetApp 專業服務顧問合作、存取 NetApp ConfigBuilder 工具、以完成組態工作簿、以便在安裝和部署新系統時使用。您也可以使用此工具來協助自動化任何 StorageGRID 應用裝置的組態。請參閱。 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/automating-appliance-installation-and-configuration.html["自動化應用裝置的安裝與組態"^]
+
+[role="quick-margin-para"]
+檢閱link:index.html["深入瞭解StorageGRID"]和link:../network/index.html["網路準則"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]安裝節點
+[role="quick-margin-para"]
+StorageGRID 系統由個別的硬體型和軟體型節點所組成。您必須先為每個應用裝置節點安裝硬體、然後設定每個 Linux 或 VMware 主機。
+
+[role="quick-margin-para"]
+若要完成安裝、請在每個應用裝置或軟體主機上安裝 StorageGRID 軟體、並將節點連接至網格。在此步驟中、您會提供 NTP 和 DNS 伺服器的站台和節點名稱、子網路詳細資料和 IP 位址。
+
+[role="quick-margin-para"]
+瞭解如何：
+
+[role="quick-margin-list"]
+* https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["安裝應用裝置硬體"^]
+* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
+* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
+* link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]登入並檢查系統健全狀況
+[role="quick-margin-para"]
+一旦安裝主要管理節點、您就可以登入 Grid Manager 。從這裡、您可以檢閱新系統的一般健全狀況、啟用 AutoSupport 和警示電子郵件、以及設定 S3 端點網域名稱。
+
+[role="quick-margin-para"]
+瞭解如何：
+
+[role="quick-margin-list"]
+* link:../admin/signing-in-to-grid-manager.html["登入Grid Manager"]
+* link:../monitor/monitoring-system-health.html["監控系統健全狀況"]
+* link:../admin/configure-autosupport-grid-manager.html["設定AutoSupport 功能"]
+* link:../monitor/email-alert-notifications.html["設定警示的電子郵件通知"]
+* link:../admin/configuring-s3-api-endpoint-domain-names.html["設定 S3 端點網域名稱"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]設定與管理
+[role="quick-margin-para"]
+您需要為新的 StorageGRID 系統執行的組態工作、取決於您使用網格的方式。您至少需要設定系統存取、使用 FabricPool 和 S3 精靈、以及管理各種儲存和安全性設定。
+
+[role="quick-margin-para"]
+瞭解如何：
+
+[role="quick-margin-list"]
+* link:../admin/controlling-storagegrid-access.html["控制StorageGRID 功能存取"]
+* link:../admin/use-s3-setup-wizard.html["使用 S3 設定精靈"]
+* link:../fabricpool/use-fabricpool-setup-wizard.html["使用 FabricPool 設定精靈"]
+* link:../admin/manage-security.html["管理安全性"]
+* link:../harden/index.html["系統強化"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]設定 ILM
+[role="quick-margin-para"]
+您可以設定由一或多個 ILM 規則組成的資訊生命週期管理（ ILM ）原則、來控制 StorageGRID 系統中每個物件的放置和持續時間。ILM 規則會指示 StorageGRID 如何建立及散佈物件資料複本、以及如何隨時間管理這些複本。
+
+[role="quick-margin-para"]
+瞭解如何：link:../ilm/index.html["使用ILM管理物件"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 使用 StorageGRID
+[role="quick-margin-para"]
+完成初始組態後、 StorageGRID 租戶帳戶可以使用 S3 用戶端應用程式來擷取、擷取及刪除物件。
+
+[role="quick-margin-para"]
+瞭解如何：
+
+[role="quick-margin-list"]
+* link:../tenant/index.html["使用租戶帳戶"]
+* link:../s3/index.html["使用 S3 REST API"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]監控和疑難排解
+[role="quick-margin-para"]
+當系統啟動並執行時、您應該定期監控其活動、並疑難排解及解決任何警示。您可能也想要設定外部 Syslog 伺服器、使用 SNMP 監控或收集其他資料。
+
+[role="quick-margin-para"]
+瞭解如何：
+
+[role="quick-margin-list"]
+* link:../monitor/index.html["監控 StorageGRID"]
+* link:../troubleshoot/index.html["疑難排解 StorageGRID"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["八"]擴充、維護及恢復
+[role="quick-margin-para"]
+您可以新增節點或站台來擴充系統的容量或功能。您也可以執行各種維護程序、以從故障中恢復、或讓 StorageGRID 系統保持最新狀態並有效率地執行。
+
+[role="quick-margin-para"]
+瞭解如何：
+
+[role="quick-margin-list"]
+* link:../landing-expand/index.html["展開網格"]
+* link:../landing-maintain/index.html["維護您的網格"]
+* link:../maintain/warnings-and-considerations-for-grid-node-recovery.html["恢復節點"]
+

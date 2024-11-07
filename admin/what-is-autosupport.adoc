@@ -1,0 +1,236 @@
+---
+permalink: admin/what-is-autosupport.html 
+sidebar: sidebar 
+keywords: autosupport, technical support, storagegrid health, system status, Active IQ 
+summary: AutoSupport 功能可讓 StorageGRID 將健全狀況和狀態套件傳送至 NetApp 技術支援。 
+---
+= 什麼是AutoSupport 功能？
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 功能可讓 StorageGRID 將健全狀況和狀態套件傳送至 NetApp 技術支援。
+
+使用 AutoSupport 可以大幅加速問題的判斷與解決。技術支援也能監控系統的儲存需求、協助您判斷是否需要新增節點或站台。您也可以設定 AutoSupport 套件、將其傳送至其他目的地。
+
+StorageGRID 有兩種類型的 AutoSupport ：
+
+* * StorageGRID AutoSupport * 回報 StorageGRID 軟體問題。在您第一次安裝 StorageGRID 時、預設為啟用。如有需要、您可以link:configure-autosupport-grid-manager.html["變更預設的 AutoSupport 組態"]。
++
+
+NOTE: 如果未啟用 StorageGRID AutoSupport 、則會在 Grid Manager 儀表板上顯示訊息。此訊息包含AutoSupport 指向「資訊功能」組態頁面的連結。如果您關閉訊息、它將不會再次出現、直到您的瀏覽器快取被清除為止、即使AutoSupport 停用的是停用的。
+
+* * 設備硬體 AutoSupport * 回報 StorageGRID 應用裝置問題。您必須link:configure-autosupport-grid-manager.html#autosupport-for-appliances["在每個應用裝置上設定硬體 AutoSupport"]。
+
+
+
+
+== 什麼是Active IQ 功能？
+
+NetApp是雲端型數位顧問、運用NetApp安裝基礎上的預測分析和社群智慧。Active IQ其持續風險評估、預測性警示、說明性指引及自動化行動、可協助您在問題發生之前預防問題發生、進而改善系統健全狀況並提高系統可用度。
+
+如果您想要在 NetApp 支援網站 上使用 Active IQ 儀表板和功能、您必須啟用 AutoSupport 。
+
+https://docs.netapp.com/us-en/active-iq/index.html["Active IQ Digital Advisor 數位顧問文件"^]
+
+
+
+== AutoSupport 套件中包含的資訊
+
+AutoSupport 套件包含下列檔案和詳細資料。
+
+[cols="2a,2a,3a"]
+|===
+| 檔案名稱 | 欄位 | 說明 
+
+
+ a| 
+AutoSupport 歷史記錄 .xml
+ a| 
+AutoSupport 序號 + 此 AutoSupport 的目的地 + 交付狀態 + 交付嘗試 + AutoSupport 主旨 + 交付 URI + 上次錯誤 + AutoSupport Put 檔案名稱 + 產生時間 + AutoSupport 壓縮大小 + AutoSupport 解壓縮大小 + 總收集時間（毫秒）
+ a| 
+AutoSupport 歷程檔案。
+
+
+
+ a| 
+AutoSupport .xml
+ a| 
+節點 + 通訊協定：聯絡支援 + 支援網址（ HTTP/HTTPS ） + 支援位址 + AutoSupport 隨選狀態 + AutoSupport 隨選伺服器 URL + AutoSupport 隨選輪詢間隔
+ a| 
+AutoSupport 狀態檔案。提供使用的通訊協定、技術支援 URL 和位址、輪詢間隔、以及啟用或停用的隨選 AutoSupport 等詳細資料。
+
+
+
+ a| 
+buckets 。 xml
+ a| 
+貯體 ID + 帳戶 ID + 建置版本 + 位置限制組態 + 啟用法規遵循組態 + 啟用 S3 物件鎖定 + S3 物件鎖定組態 + 一致性組態 + 啟用 CORS 組態 + 啟用上次存取時間 + 啟用原則組態 + 啟用通知 + 啟用通知組態 + 啟用雲端鏡射組態 + 啟用搜尋組態標記 + 啟用貯體組態版本設定
+ a| 
+提供貯體層級的組態詳細資料和統計資料。貯體組態範例包括平台服務、法規遵循及貯體一致性。
+
+
+
+ a| 
+GRID 組態 .xml
+ a| 
+屬性 ID + 屬性名稱 + 值 + 索引 + 表格 ID + 表格名稱
+ a| 
+全網格組態資訊檔案。包含有關網格憑證、中繼資料保留空間、網格範圍組態設定（符合性、 S3 物件鎖定、物件壓縮、警示、系統記錄和 ILM 組態）、銷毀編碼設定檔詳細資料、 DNS 名稱和link:../primer/nodes-and-services.html#storagegrid-services["NMS 名稱"]的資訊。
+
+
+
+ a| 
+GRE-SPEC.xml
+ a| 
+網格規格、原始 XML
+ a| 
+用於設定及部署 StorageGRID 。包含網格規格、 NTP 伺服器 IP 、 DNS 伺服器 IP 、網路拓撲和節點的硬體設定檔。
+
+
+
+ a| 
+GRID 工作 .xml
+ a| 
+節點 + 服務路徑 + 屬性 ID + 屬性名稱 + 值 + 索引 + 表格 ID + 表格名稱
+ a| 
+網格工作（維護程序）狀態檔案。提供網格作用中、終止、完成、失敗及擱置工作的詳細資料。
+
+
+
+ a| 
+GRB.JSON
+ a| 
+Grid + Revision + 軟體版本 + 說明 + 授權 + 密碼 + DNS + NTP + 站台 + 節點
+ a| 
+網格資訊。
+
+
+
+ a| 
+ILM 組態 .xml
+ a| 
+屬性 ID + 屬性名稱 + 值 + 索引 + 表格 ID + 表格名稱
+ a| 
+ILM 組態的屬性清單。
+
+
+
+ a| 
+ILM-STATUS.xml
+ a| 
+節點 + 服務路徑 + 屬性 ID + 屬性名稱 + 值 + 索引 + 表格 ID + 表格名稱
+ a| 
+ILM 計量資訊檔案。包含每個節點的 ILM 評估率、以及全網格的計量。
+
+
+
+ a| 
+ILM 。 xml
+ a| 
+ILM 原始 XML
+ a| 
+ILM 作用中原則檔案。包含使用中 ILM 原則的詳細資料、例如儲存池 ID 、擷取行為、篩選器、規則和說明。
+
+
+
+ a| 
+log.Tgz
+ a| 
+_n_
+ a| 
+可下載的記錄檔。包含 `bycast-err.log`和 `servermanager.log`來自每個節點。
+
+
+
+ a| 
+Manifest.xml
+ a| 
+此資料的收集順序 + AutoSupport 內容檔名 + 此資料項目的說明 + 收集的位元組數 + 收集時間 + 此資料項目的狀態 + 此資料的錯誤說明 + AutoSupport 內容類型 +
+ a| 
+包含 AutoSupport 中繼資料及所有 AutoSupport 檔案的簡短說明。
+
+
+
+ a| 
+NMS-Entitys.xml
+ a| 
+屬性索引 + 實體 OID + 節點 ID + 裝置型號 ID + 裝置機型版本 + 實體名稱
+ a| 
+中的群組和服務實體link:../primer/nodes-and-services.html#storagegrid-services["NMS 樹狀結構"]。提供網格拓撲詳細資料。節點可根據節點上執行的服務來決定。
+
+
+
+ a| 
+objectS-status.xml
+ a| 
+節點 + 服務路徑 + 屬性 ID + 屬性名稱 + 值 + 索引 + 表格 ID + 表格名稱
+ a| 
+物件狀態、包括背景掃描狀態、作用中傳輸、傳輸率、總傳輸率、刪除率、毀損的片段、遺失物件、遺失物件、嘗試修復、掃描速度、預估掃描期間、以及修復完成狀態。
+
+
+
+ a| 
+Server-status.xml
+ a| 
+節點 + 服務路徑 + 屬性 ID + 屬性名稱 + 值 + 索引 + 表格 ID + 表格名稱
+ a| 
+伺服器組態。包含每個節點的下列詳細資料：平台類型、作業系統、安裝的記憶體、可用記憶體、儲存設備連線、儲存設備機箱序號、儲存控制器故障磁碟機數、運算控制器機箱溫度、運算硬體、運算控制器序號、電源供應器、磁碟機大小和磁碟機類型。
+
+
+
+ a| 
+service-status.xml
+ a| 
+節點 + 服務路徑 + 屬性 ID + 屬性名稱 + 值 + 索引 + 表格 ID + 表格名稱
+ a| 
+服務節點資訊檔案。包含詳細資料、例如分配的表格空間、可用的表格空間、資料庫的 Reaper 指標、區段修復持續時間、修復工作持續時間、自動重新啟動工作、以及自動終止工作。
+
+
+
+ a| 
+儲存等級 .xml
+ a| 
+儲存等級 ID + 儲存等級名稱 + 儲存節點 ID + 儲存節點路徑
+ a| 
+每個儲存節點的儲存等級定義檔。
+
+
+
+ a| 
+摘要屬性 .xml
+ a| 
+群組 OID + 群組路徑 + 摘要屬性 ID + 摘要屬性名稱 + 值 + 索引 + 表格 ID + 表格名稱
+ a| 
+彙總 StorageGRID 使用資訊的高階系統狀態資料。提供詳細資料、例如網格名稱、網站名稱、每個網格和每個網站的儲存節點數量、授權類型、授權容量和使用量、軟體支援條款、以及 S3 作業的詳細資料。
+
+
+
+ a| 
+system-alerts.xml
+ a| 
+名稱 + 嚴重性 + 節點名稱 + 警示狀態 + 站台名稱 + 警示觸發時間 + 警示解決時間 + 規則 ID + 節點 ID + 站台 ID + 靜音 + 其他附註 + 其他標籤
+ a| 
+指出 StorageGRID 系統中潛在問題的目前系統警示。
+
+
+
+ a| 
+USERAGENTS.xml
+ a| 
+使用者代理程式 + 天數 + HTTP 要求總計 + 擷取的總位元組 + 擷取的總位元組 + 放置要求 + 取得要求 + 刪除要求 + 前端要求 + 後端要求 + 選項要求 + 平均要求時間（毫秒） + 平均擱置要求時間（毫秒） + 平均要求後時間（毫秒） + 平均要求時間（毫秒） + 平均要求時間（毫秒）選項
+ a| 
+以應用程式使用者代理程式為基礎的統計資料。例如、每個使用者代理程式的放置 / 取得 / 刪除 / 顯示頭作業數、以及每項作業的總位元組大小。
+
+
+
+ a| 
+X-header-data
+ a| 
+NetApp asup-General-on + NetApp asup-hostname + NetApp asup-OS 版本 + NetApp asup-SERIAL -num + NetApp asup-Subject + NetApp asup-system-id + NetApp asup-model 名稱 +
+ a| 
+AutoSupport 標頭資料。
+
+|===

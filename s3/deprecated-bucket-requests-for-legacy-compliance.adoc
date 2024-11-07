@@ -1,0 +1,43 @@
+---
+permalink: s3/deprecated-bucket-requests-for-legacy-compliance.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, deprecated bucket requests 
+summary: 您可能需要使用StorageGRID Sfs3 REST API來管理使用舊版Compliance功能所建立的儲存區。 
+---
+= 已過時的資源桶要求、適用於舊版法規遵循
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可能需要使用StorageGRID Sfs3 REST API來管理使用舊版Compliance功能所建立的儲存區。
+
+
+
+== 法規遵循功能已過時
+
+先前版本的不支援《支援不符合要求》功能、現已由S3物件鎖定取代。StorageGRID StorageGRID
+
+如果您先前已啟用「全域符合性」設定、StorageGRID 則會在「支援物件鎖定」中啟用「全域S3物件鎖定」設定。您不再能夠在啟用「法規遵循」的情況下建立新的儲存庫、不過、您可以視需要使用StorageGRID 「S3 REST API」來管理任何現有的符合舊規範的儲存庫。
+
+* link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]
+* link:../ilm/index.html["使用ILM管理物件"]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp知識庫：如何管理StorageGRID 支援老舊的知識庫、請參閱《知識庫文章"^]
+
+
+過時的法規遵循要求：
+
+* link:../s3/deprecated-put-bucket-request-modifications-for-compliance.html["已過時-將資源桶要求修改以符合法規要求"]
++
+SGCompliance XML元素已過時。先前、您可以將StorageGRID 此等不必要的自訂元素納入可選的XML要求內容中、以建立符合法規的儲存庫要求。
+
+* link:../s3/deprecated-get-bucket-compliance-request.html["已過時 - 取得 Bucket 法規遵循"]
++
+Get Bucket法規遵循要求已過時。不過、您可以繼續使用此要求來判斷現有舊版相容儲存區目前有效的法規遵循設定。
+
+* link:../s3/deprecated-put-bucket-compliance-request.html["已過時 - 符合 Put Bucket 規範"]
++
+「放入時段」法規遵循要求已過時。不過、您可以繼續使用此要求來修改現有舊版相容桶的法規遵循設定。例如、您可以將現有的貯體置於合法持有狀態、或是延長保留期間。
+
+

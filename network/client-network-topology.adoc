@@ -1,0 +1,27 @@
+---
+permalink: network/client-network-topology.html 
+sidebar: sidebar 
+keywords: client network topology 
+summary: 擁有用戶端網路為選用功能。使用用戶端網路可將用戶端網路流量（例如 S3\ ）與網格內部流量分開、使網格網路更安全。未設定管理網路時、用戶端或網格網路均可處理管理流量。 
+---
+= 用戶端網路拓撲
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+擁有用戶端網路為選用功能。使用用戶端網路可將用戶端網路流量（例如 S3 ）與網格內部流量分開、使網格網路更安全。未設定管理網路時、用戶端或網格網路均可處理管理流量。
+
+當您設定用戶端網路時、會為所設定節點的eth2介面建立主機IP位址、子網路遮罩和閘道IP位址。每個節點的用戶端網路可以獨立於任何其他節點上的用戶端網路。
+
+如果您在安裝期間為節點設定用戶端網路、節點的預設閘道會在安裝完成時從Grid Network閘道切換至Client Network閘道。如果稍後新增用戶端網路、則節點的預設閘道交換器會採用相同的方式。
+
+在此範例中、用戶端網路用於 S3 用戶端要求和管理功能、而 Grid Network 則專用於內部物件管理作業。
+
+image::../media/grid_client_networks.png[網格用戶端網路]
+
+image::../media/grid_client_networks_ips.png[網格用戶端網路IP]
+
+.相關資訊
+link:../maintain/changing-nodes-network-configuration.html["變更節點網路組態"]

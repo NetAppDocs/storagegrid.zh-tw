@@ -1,0 +1,54 @@
+---
+permalink: admin/troubleshooting-autosupport-messages.html 
+sidebar: sidebar 
+keywords: troubleshoot autosupport, asup package 
+summary: 如果嘗試傳送 AutoSupport 套件失敗、 StorageGRID 系統會根據 AutoSupport 套件類型採取不同的動作。您可以選取「支援」 >> 「工具」 >> 「 AutoSupport 」 >> 「結果」來檢查 AutoSupport 套件的狀態。 
+---
+= 疑難排解 AutoSupport 套件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果嘗試傳送 AutoSupport 套件失敗、 StorageGRID 系統會根據 AutoSupport 套件類型採取不同的動作。您可以選擇 * 支援 * > * 工具 * > * AutoSupport * > * 結果 * 來檢查 AutoSupport 套件的狀態。
+
+當 AutoSupport 套件無法傳送時、「失敗」會出現在 * AutoSupport * 頁面的 * 結果 * 索引標籤上。
+
+
+NOTE: 如果您將代理伺服器設定為將 AutoSupport 套件轉送至 NetApp link:configuring-admin-proxy-settings.html["確認 Proxy 伺服器組態設定正確無誤"]、您應該。
+
+
+
+== 每週 AutoSupport 套件故障
+
+如果每週 AutoSupport 套件無法傳送、 StorageGRID 系統會採取下列動作：
+
+. 將最新的結果屬性更新為「Retrying（重新執行）」。
+. 每四分鐘嘗試重新傳送 AutoSupport 套件 15 次、持續一小時。
+. 傳送失敗一小時後、將最近的「結果」屬性更新為「失敗」。
+. 嘗試在下一次排程時間再次傳送 AutoSupport 套件。
+. 如果套件因為 NMS 服務無法使用而失敗、且套件在七天內傳送、則會維持正常的 AutoSupport 排程。
+. 當 NMS 服務再次可用時、如果一個套件尚未傳送超過七天、就會立即傳送 AutoSupport 套件。
+
+
+
+
+== 使用者觸發或事件觸發的 AutoSupport 套件故障
+
+如果使用者觸發或事件觸發的 AutoSupport 套件無法傳送、 StorageGRID 系統會採取下列動作：
+
+. 如果已知錯誤、則顯示錯誤訊息。例如、如果使用者選取 SMTP 傳輸協定而未提供正確的電子郵件組態設定、則會顯示下列錯誤： `AutoSupport packages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
+. 不會再次嘗試傳送套件。
+. 將錯誤記錄在中 `nms.log`。
+
+
+如果發生故障且選擇了 SMTP 傳輸協定、請確認 StorageGRID 系統的電子郵件伺服器已正確設定、且您的電子郵件伺服器正在執行（ * 支援 * > * 警示（舊版） * > * 舊版電子郵件設定 * ）。AutoSupport 頁面上可能會出現下列錯誤訊息： `AutoSupport packages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
+
+瞭解如何link:../monitor/email-alert-notifications.html["設定電子郵件伺服器設定"]。
+
+
+
+== 修正 AutoSupport 套件故障
+
+如果發生故障且選擇了使用SMTP,請確認StorageGRID 該系統的電子郵件伺服器已正確設定,而且您的電子郵件伺服器正在執行中。AutoSupport 頁面上可能會出現下列錯誤訊息： `AutoSupport packages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`

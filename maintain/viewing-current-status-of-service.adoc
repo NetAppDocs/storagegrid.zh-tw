@@ -1,0 +1,38 @@
+---
+permalink: maintain/viewing-current-status-of-service.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, service, status 
+summary: 您可以隨時檢視在網格節點上執行的服務目前狀態。 
+---
+= 檢視服務的目前狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以隨時檢視在網格節點上執行的服務目前狀態。
+
+.開始之前
+您有 `Passwords.txt`檔案。
+
+.步驟
+. 登入網格節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 檢視在網格節點上執行的服務目前狀態：「*服務_servicename_狀態*報告在網格節點上執行的要求服務目前狀態（執行中或非執行中）。例如：
++
+[listing]
+----
+cmn running for 1d, 14h, 21m, 2s
+----
+. 登出命令 Shell ： `*exit*`
+

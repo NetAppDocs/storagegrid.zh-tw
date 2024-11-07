@@ -1,0 +1,76 @@
+---
+permalink: audit/client-read-audit-messages.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, messages, client read, S3SL, SGET, SHEA, WGET, WHEA, S3, swift 
+summary: S3 用戶端應用程式要求擷取物件時、會記錄用戶端讀取稽核訊息。 
+---
+= 用戶端讀取稽核訊息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3 用戶端應用程式要求擷取物件時、會記錄用戶端讀取稽核訊息。
+
+[cols="1a,3a,1a,1a"]
+|===
+| 程式碼 | 說明 | 使用者 | 請參閱 
+
+
+ a| 
+S3SL
+ a| 
+S3 Select 要求：將 S3 Select 要求傳回用戶端後、記錄完成。S3SL 訊息可能包含錯誤訊息和錯誤代碼詳細資料。要求可能未成功。
+ a| 
+S3用戶端
+ a| 
+link:s3-select-request.html["S3SL ： S3 Select 要求"]
+
+
+
+ a| 
+SGET
+ a| 
+S3 Get：記錄成功的交易、以擷取物件或列出儲存區中的物件。
+
+*附註：*如果交易是在子資源上進行、則稽核訊息會包含S3SR欄位。
+ a| 
+S3用戶端
+ a| 
+link:sget-s3-get.html["SGET：S3取得"]
+
+
+
+ a| 
+Shea
+ a| 
+S3標頭：記錄成功的交易、以檢查物件或儲存區是否存在。
+ a| 
+S3用戶端
+ a| 
+link:shea-s3-head.html["Shea：S3負責人"]
+
+
+
+ a| 
+WGet
+ a| 
+Swift Get：記錄成功的交易、以擷取物件或列出容器中的物件。
+ a| 
+Swift用戶端
+ a| 
+link:wget-swift-get.html["WGet：Swift Get"]
+
+
+
+ a| 
+WHA
+ a| 
+Swift標頭：記錄成功的交易、以檢查物件或容器是否存在。
+ a| 
+Swift用戶端
+ a| 
+link:whea-swift-head.html["WHA：Swift刀頭"]
+
+|===

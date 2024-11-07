@@ -1,0 +1,72 @@
+---
+permalink: audit/audit-message-examples.html 
+sidebar: sidebar 
+keywords: audit message examples, audit.log, atyp, sput, s3 put 
+summary: 您可以在每個稽核訊息中找到詳細資訊。所有稽核訊息都使用相同的格式。 
+---
+= 稽核訊息範例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在每個稽核訊息中找到詳細資訊。所有稽核訊息都使用相同的格式。
+
+以下是檔案中可能出現的稽核訊息範例 `audit.log`：
+
+[listing]
+----
+2014-07-17T21:17:58.959669
+[AUDT:[RSLT(FC32):SUCS][TIME(UI64):246979][S3AI(CSTR):"bc644d
+381a87d6cc216adcd963fb6f95dd25a38aa2cb8c9a358e8c5087a6af5f"][
+S3AK(CSTR):"UJXDKKQOXB7YARDS71Q2"][S3BK(CSTR):"s3small1"][S3K
+Y(CSTR):"hello1"][CBID(UI64):0x50C4F7AC2BC8EDF7][CSIZ(UI64):0
+][AVER(UI32):10][ATIM(UI64):1405631878959669][ATYP(FC32):SPUT
+][ANID(UI32):12872812][AMID(FC32):S3RQ][ATID(UI64):1579224144
+102530435]]
+----
+稽核訊息包含所記錄事件的相關資訊、以及稽核訊息本身的相關資訊。
+
+若要識別稽核訊息所記錄的事件、請尋找ATYP屬性（反白顯示如下）：
+
+[listing, subs="specialcharacters,quotes"]
+----
+2014-07-17T21:17:58.959669
+[AUDT:[RSLT(FC32):SUCS][TIME(UI64):246979][S3AI(CSTR):"bc644d
+381a87d6cc216adcd963fb6f95dd25a38aa2cb8c9a358e8c5087a6af5f"][
+S3AK(CSTR):"UJXDKKQOXB7YARDS71Q2"][S3BK(CSTR):"s3small1"][S3K
+Y(CSTR):"hello1"][CBID(UI64):0x50C4F7AC2BC8EDF7][CSIZ(UI64):0
+][AVER(UI32):10][ATIM(UI64):1405631878959669][*ATYP(FC32):SP*
+*UT*][ANID(UI32):12872812][AMID(FC32):S3RQ][ATID(UI64):1579224
+144102530435]]
+----
+ATYP屬性的值為SPUT。link:sput-s3-put.html["SPUT"]代表 S3 Put 交易、將物件的擷取記錄到儲存區。
+
+下列稽核訊息也會顯示物件關聯的儲存區：
+
+[listing, subs="specialcharacters,quotes"]
+----
+2014-07-17T21:17:58.959669
+[AUDT:[RSLT(FC32):SUCS][TIME(UI64):246979][S3AI(CSTR):"bc644d
+381a87d6cc216adcd963fb6f95dd25a38aa2cb8c9a358e8c5087a6af5f"][
+S3AK(CSTR):"UJXDKKQOXB7YARDS71Q2"][*S3BK\(CSTR\):"s3small1"*][S3
+KY(CSTR):"hello1"][CBID(UI64):0x50C4F7AC2BC8EDF7][CSIZ(UI64):
+0][AVER(UI32):10][ATIM(UI64):1405631878959669][ATYP(FC32):SPU
+T][ANID(UI32):12872812][AMID(FC32):S3RQ][ATID(UI64):157922414
+4102530435]]
+----
+若要瞭解放置事件發生的時間、請在稽核訊息開頭記下通用協調時間（UTC）時間戳記。此值是稽核訊息本身的 ATIM 屬性的人類可讀版本：
+
+[listing, subs="specialcharacters,quotes"]
+----
+*2014-07-17T21:17:58.959669*
+[AUDT:[RSLT(FC32):SUCS][TIME(UI64):246979][S3AI(CSTR):"bc644d
+381a87d6cc216adcd963fb6f95dd25a38aa2cb8c9a358e8c5087a6af5f"][
+S3AK(CSTR):"UJXDKKQOXB7YARDS71Q2"][S3BK(CSTR):"s3small1"][S3K
+Y(CSTR):"hello1"][CBID(UI64):0x50C4F7AC2BC8EDF7][CSIZ(UI64):0
+][AVER(UI32):10][*ATIM\(UI64\):1405631878959669*][ATYP(FC32):SP
+UT][ANID(UI32):12872812][AMID(FC32):S3RQ][ATID(UI64):15792241
+44102530435]]
+----
+ATIM會記錄UNIX時代開始以來的時間（以微秒為單位）。在此範例中、此值 `1405631878959669`會轉譯為 2014 年 7 月 17 日星期四 21 ： 17 ： 59 UTC 。

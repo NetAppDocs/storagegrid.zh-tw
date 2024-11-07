@@ -1,0 +1,50 @@
+---
+permalink: maintain/viewing-server-manager-status-and-version.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, server manager, status, version 
+summary: 對於每個網格節點、您可以檢視該網格節點上執行的伺服器管理程式目前狀態和版本。您也可以取得在該網格節點上執行之所有服務的目前狀態。 
+---
+= 檢視伺服器管理員狀態和版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對於每個網格節點、您可以檢視該網格節點上執行的伺服器管理程式目前狀態和版本。您也可以取得在該網格節點上執行之所有服務的目前狀態。
+
+.開始之前
+您有 `Passwords.txt`檔案。
+
+.步驟
+. 登入網格節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 檢視網格節點上執行的 Server Manager 目前狀態： `*service servermanager status*`
++
+報告網格節點上執行的伺服器管理員目前狀態（執行中或非執行中）。如果 Server Manager 的狀態為 `running`、則會列出其自上次啟動以來的執行時間。例如：
+
++
+[listing]
+----
+servermanager running for 1d, 13h, 0m, 30s
+----
+. 檢視網格節點上執行的 Server Manager 目前版本： `*service servermanager version*`
++
+列出目前的版本。例如：
+
++
+[listing]
+----
+11.1.0-20180425.1905.39c9493
+----
+. 登出命令 Shell ： `*exit*`
+

@@ -1,0 +1,70 @@
+---
+permalink: admin/changing-browser-session-timeout-interface.html 
+sidebar: sidebar 
+keywords: security, browser inactivity timeout, management API stack track 
+summary: 介面安全性設定可讓您控制使用者是否在超過指定時間的非作用中狀態下登出、以及是否在 API 錯誤回應中包含堆疊追蹤。 
+---
+= 變更介面安全性設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+介面安全性設定可讓您控制使用者是否在超過指定時間的非作用中狀態下登出、以及是否在 API 錯誤回應中包含堆疊追蹤。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有 link:admin-group-permissions.html["root 存取權限"]。
+
+
+.關於這項工作
+「 * 安全性設定 * 」頁面包含 * 瀏覽器閒置逾時 * 和 * 管理 API 堆疊追蹤 * 設定。
+
+瀏覽器閒置逾時:: 指出使用者的瀏覽器在登出之前可以停用多久。預設值為 15 分鐘。
++
+--
+瀏覽器閒置逾時也由下列項目控制：
+
+* 另有一個不可設定StorageGRID 的獨立式計時功能、可用於系統安全性。每個使用者的驗證權杖會在使用者登入後 16 小時過期。當使用者的驗證過期時、該使用者會自動登出、即使瀏覽器閒置逾時已停用、或瀏覽器逾時的值尚未達到。若要續約權杖、使用者必須重新登入。
+* 假設 StorageGRID 已啟用單一登入（ SSO ）、則身分識別提供者的逾時設定。
++
+如果啟用 SSO 且使用者的瀏覽器逾時、使用者必須重新輸入其 SSO 認證、才能再次存取 StorageGRID 。請參閱。 link:configuring-sso.html["設定單一登入"]
+
+
+
+--
+管理 API 堆疊追蹤:: 控制是否在 Grid Manager 和 Tenant Manager API 錯誤回應中傳回堆疊追蹤。
++
+--
+此選項預設為停用、但您可能想要在測試環境中啟用此功能。一般而言、您應該在正式作業環境中停用堆疊追蹤、以避免在 API 錯誤發生時顯示內部軟體詳細資料。
+
+--
+
+
+.步驟
+. 選擇 * 組態 * > * 安全性 * > * 安全性設定 * 。
+. 選擇 * 介面 * 標籤。
+. 若要變更瀏覽器閒置逾時的設定：
++
+.. 展開折疊。
+.. 若要變更逾時期間、請指定介於 60 秒到 7 天之間的值。預設逾時為 15 分鐘。
+.. 若要停用此功能、請取消選取核取方塊。
+.. 選擇*保存*。
++
+新設定不會影響目前登入的使用者。使用者必須重新登入或重新整理瀏覽器、新的逾時設定才會生效。
+
+
+
+. 若要變更管理 API 堆疊追蹤的設定：
++
+.. 展開折疊。
+.. 選取此核取方塊可在 Grid Manager 和 Tenant Manager API 錯誤回應中傳回堆疊追蹤。
++
+
+CAUTION: 在正式作業環境中停用堆疊追蹤、以避免在 API 錯誤發生時顯示內部軟體詳細資料。
+
+.. 選擇*保存*。
+
+
+

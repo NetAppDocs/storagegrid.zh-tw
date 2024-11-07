@@ -1,0 +1,36 @@
+---
+permalink: network/network-installation-and-provisioning.html 
+sidebar: sidebar 
+keywords: network install, network provisioning 
+summary: 您必須瞭解在節點部署和網格組態期間、如何使用Grid Network以及選用的管理和用戶端網路。 
+---
+= 網路安裝與資源配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須瞭解在節點部署和網格組態期間、如何使用Grid Network以及選用的管理和用戶端網路。
+
+
+
+== 節點的初始部署
+
+當您第一次部署節點時、必須將節點附加至Grid Network、並確保其具有主要管理節點的存取權。如果網格網路已隔離、您可以在主要管理節點上設定管理網路、以便從網格網路外部進行組態和安裝存取。
+
+在部署期間、已設定閘道的Grid Network會成為節點的預設閘道。預設閘道可讓個別子網路上的網格節點在設定網格之前、先與主要管理節點通訊。
+
+如有必要、也可將包含NTP伺服器或需要存取Grid Manager或API的子網路設定為網格子網路。
+
+
+
+== 使用主要管理節點自動登錄節點
+
+部署節點之後、他們會使用Grid Network向主要管理節點註冊。然後、您可以使用 Grid Manager 、 Python 指令碼或安裝 API 來設定網格、 `configure-storagegrid.py`並核准已登錄的節點。在網格組態期間、您可以設定多個網格子網路。完成網格組態時、將會在每個節點上建立經由網格網路閘道通往這些子網路的靜態路由。
+
+
+
+== 停用管理網路或用戶端網路
+
+如果您想要停用管理網路或用戶端網路、您可以在節點核准程序期間從這些網路或用戶端網路移除組態、或是在安裝完成後使用變更 IP 工具（請參閱link:../maintain/configuring-ip-addresses.html["設定IP位址"]）。

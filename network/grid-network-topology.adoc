@@ -1,0 +1,29 @@
+---
+permalink: network/grid-network-topology.html 
+sidebar: sidebar 
+keywords: grid network topology 
+summary: 最簡單的網路拓撲是透過僅設定Grid Network來建立。 
+---
+= 網格網路拓撲
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+最簡單的網路拓撲是透過僅設定Grid Network來建立。
+
+當您設定Grid Network時、會為每個網格節點的eth0介面建立主機IP位址、子網路遮罩和閘道IP位址。
+
+在組態期間、您必須將所有網格網路子網路新增至網格網路子網路清單（GNSL）。此清單包含所有站台的所有子網路、也可能包含外部子網路、可讓您存取NTP、DNS或LDAP等關鍵服務。
+
+安裝時、Grid Network介面會針對GNSL中的所有子網路套用靜態路由、並設定節點通往Grid Network閘道的預設路由（如果已設定）。如果沒有用戶端網路、而Grid Network閘道是節點的預設路由、則不需要GNSL。也會產生通往網格中所有其他節點的主機路由。
+
+在此範例中、所有流量都共用相同的網路、包括與 S3 用戶端要求相關的流量、以及管理和維護功能。
+
+
+NOTE: 此拓撲適用於外部無法使用的單一站台部署、概念驗證或測試部署、或協力廠商負載平衡器做為用戶端存取界限。如有可能、網格網路應僅用於內部流量。管理網路和用戶端網路都有額外的防火牆限制、可封鎖外部的內部服務流量。支援將Grid Network用於外部用戶端流量、但這種使用方式可提供較少的保護層。
+
+image::../media/grid_network.png[網格網路]
+
+image::../media/grid_network_ips.png[網格網路IP]

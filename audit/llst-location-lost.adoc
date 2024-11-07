@@ -1,0 +1,99 @@
+---
+permalink: audit/llst-location-lost.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, LLST, Location Lost 
+summary: 只要找不到物件複本的位置（複寫或刪除編碼 \ ）、就會產生此訊息。 
+---
+= LLST：位置遺失
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+每當找不到物件複本（複寫或刪除編碼）的位置時、就會產生此訊息。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+CBIL
+ a| 
+CBID
+ a| 
+受影響的CBID。
+
+
+
+ a| 
+ECPR
+ a| 
+銷毀編碼設定檔
+ a| 
+用於以銷毀編碼的物件資料。使用的銷毀編碼設定檔 ID 。
+
+
+
+ a| 
+LTYP
+ a| 
+位置類型
+ a| 
+CLDI（線上）：適用於複寫的物件資料
+
+CLEC（線上）：用於以銷毀編碼的物件資料
+
+CLNL（Nearline）：用於歸檔的複寫物件資料
+
+
+
+ a| 
+NOID
+ a| 
+來源節點ID
+ a| 
+遺失位置的節點ID。
+
+
+
+ a| 
+PCLD
+ a| 
+複寫物件的路徑
+ a| 
+通往遺失物件資料之磁碟位置的完整路徑。只有當LTYP的值為CLDI（即複寫物件）時才會傳回。
+
+採取這種形式 `/var/local/rangedb/2/p/13/13/00oJs6X%{h{U)SeUFxE@`
+
+
+
+ a| 
+RSRLT
+ a| 
+結果
+ a| 
+永遠無。RSRLT為必填訊息欄位、但與此訊息無關。使用「無」而非「無」、以不篩選此訊息。
+
+
+
+ a| 
+TSRC
+ a| 
+觸發來源
+ a| 
+使用者：使用者觸發
+
+Syst：系統觸發
+
+
+
+ a| 
+UUID
+ a| 
+通用唯一ID
+ a| 
+受影響物件在StorageGRID 整個作業系統中的識別碼。
+
+|===

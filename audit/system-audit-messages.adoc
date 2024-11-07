@@ -1,0 +1,172 @@
+---
+permalink: audit/system-audit-messages.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, messages, system, ECOC, ETAF, GNRG, GNUR, GTED, GTST, GTSU, LLST, OLST, SADD, SADE, SVRF, SVRU, SYSD, SYST, SYSU, VLST 
+summary: 屬於系統稽核類別的稽核訊息用於與稽核系統本身、網格節點狀態、全系統工作活動（網格工作）和服務備份作業相關的事件。 
+---
+= 系統稽核訊息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+屬於系統稽核類別的稽核訊息用於與稽核系統本身、網格節點狀態、全系統工作活動（網格工作）和服務備份作業相關的事件。
+
+[cols="1a,2a,1a"]
+|===
+| 程式碼 | 訊息標題與說明 | 請參閱 
+
+
+ a| 
+ECMC
+ a| 
+遺失抹除編碼資料片段：表示偵測到遺失的銷毀編碼資料片段。
+ a| 
+link:ecmc-missing-erasure-coded-data-fragment.html["ECMC ：遺失抹除編碼資料片段"]
+
+
+
+ a| 
+ECOC
+ a| 
+毀損的刪除編碼資料片段：表示偵測到毀損的刪除編碼資料片段。
+ a| 
+link:ecoc-corrupt-erasure-coded-data-fragment.html["ECOC ：毀損的刪除編碼資料片段"]
+
+
+
+ a| 
+ETAF
+ a| 
+安全驗證失敗：使用傳輸層安全性（TLS）的連線嘗試失敗。
+ a| 
+link:etaf-security-authentication-failed.html["ETAF：安全驗證失敗"]
+
+
+
+ a| 
+GNRG
+ a| 
+GNDS登錄：一項服務、更新或註冊StorageGRID 了有關其本身在本系統中的資訊。
+ a| 
+link:gnrg-gnds-registration.html["GNRG：GNDS登錄"]
+
+
+
+ a| 
+GNur
+ a| 
+GNDS取消登錄：服務已從StorageGRID 這個系統中取消登錄。
+ a| 
+link:gnur-gnds-unregistration.html["GNur：GNDS取消登錄"]
+
+
+
+ a| 
+GTED
+ a| 
+網格工作已結束：CMN服務已完成網格工作的處理。
+ a| 
+link:gted-grid-task-ended.html["GTED：網格工作已結束"]
+
+
+
+ a| 
+GTSt
+ a| 
+網格工作已開始：CMN服務已開始處理網格工作。
+ a| 
+link:gtst-grid-task-started.html["GTST：網格工作已開始"]
+
+
+
+ a| 
+GTSU
+ a| 
+已提交網格工作：已將網格工作提交至CMN服務。
+ a| 
+link:gtsu-grid-task-submitted.html["GTSU：已提交Grid工作"]
+
+
+
+ a| 
+LLST
+ a| 
+位置遺失：此稽核訊息會在位置遺失時產生。
+ a| 
+link:llst-location-lost.html["LLST：位置遺失"]
+
+
+
+ a| 
+OLST
+ a| 
+物件遺失：要求的物件無法位於StorageGRID 整個系統內。
+ a| 
+link:olst-system-detected-lost-object.html["OLST：系統偵測到遺失物件"]
+
+
+
+ a| 
+Sadd
+ a| 
+安全稽核停用：稽核訊息記錄已關閉。
+ a| 
+link:sadd-security-audit-disable.html["Sadd：停用安全性稽核"]
+
+
+
+ a| 
+SAade
+ a| 
+啟用安全性稽核：稽核訊息記錄已還原。
+ a| 
+link:sade-security-audit-enable.html["SAade：啟用安全性稽核"]
+
+
+
+ a| 
+SVRF
+ a| 
+物件存放區驗證失敗：內容區塊驗證檢查失敗。
+ a| 
+link:svrf-object-store-verify-fail.html["SVRF：物件存放區驗證失敗"]
+
+
+
+ a| 
+SVRU
+ a| 
+物件存放區驗證不明：在物件存放區中偵測到非預期的物件資料。
+ a| 
+link:svru-object-store-verify-unknown.html["SVRU：物件存放區驗證不明"]
+
+
+
+ a| 
+SYSD
+ a| 
+節點停止：要求關機。
+ a| 
+link:sysd-node-stop.html["SYSD：節點停止"]
+
+
+
+ a| 
+系統
+ a| 
+節點停止：服務啟動正常停止。
+ a| 
+link:syst-node-stopping.html["Syst：節點停止"]
+
+
+
+ a| 
+SYSU
+ a| 
+節點啟動：服務已啟動；先前關機的性質會在訊息中指出。
+ a| 
+link:sysu-node-start.html["SYSU：節點啟動"]
+
+|===

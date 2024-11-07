@@ -1,0 +1,96 @@
+---
+permalink: maintain/monitor-repairs.html 
+sidebar: sidebar 
+keywords: restore replicated data, restore erasure-coded data, recover appliance storage node, recover storage volume 
+summary: '您可以從命令列使用指令碼來監控修復工作的狀態 `repair-data`。' 
+---
+= 監控修復資料工作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從命令列使用指令碼來監控修復工作的狀態 `repair-data`。
+
+這些工作包括您手動起始的工作、或是 StorageGRID 在取消委任程序中自動起始的工作。
+
+
+NOTE: 如果您正在執行 Volume 還原工作、請改為執行link:../maintain/restoring-volume.html["在 Grid Manager 中監控這些工作的進度並檢視其歷史記錄"]。
+
+根據您是使用 * 複寫資料 * 、 * 刪除編碼（ EC ）資料 * 或兩者來監控工作的狀態 `repair-data`。
+
+[role="tabbed-block"]
+====
+.複寫資料
+--
+* 若要取得複寫修復的估計完成百分比、請將選項新增 `show-replicated-repair-status`至 repair 資料命令。
++
+`repair-data show-replicated-repair-status`
+
+* 若要判斷維修是否完成：
++
+.. 選擇*節點*>*要修復的儲存節點*>* ILM *。
+.. 檢閱「評估」區段中的屬性。當修復完成時、「*等待-全部*」屬性會指出0個物件。
+
+
+* 若要更詳細地監控維修：
++
+.. 選取*支援*>*工具*>*網格拓撲*。
+.. 選擇*網格_*>*要修復的儲存節點_*>* LdR*>*資料儲存*。
+.. 請使用下列屬性組合來判斷複寫的修復是否完成、以及可能的情況。
++
+
+NOTE: Cassandra 可能存在不一致之處、無法追蹤失敗的維修。
+
++
+*** *嘗試的維修（XRPA）*：使用此屬性來追蹤複寫的維修進度。每次儲存節點嘗試修復高風險物件時、此屬性都會增加。如果此屬性的增加時間不超過目前掃描期間（由*掃描期間-預估*屬性提供）、表示ILM掃描未發現任何需要在任何節點上修復的高風險物件。
++
+
+NOTE: 高風險物件是可能完全遺失的物件。這不包括不符合其 ILM 組態的物件。
+
+*** *掃描期間-預估（XSCM）*：使用此屬性來預估原則變更何時會套用至先前擷取的物件。如果*已嘗試的維修*屬性在一段時間內沒有增加、則可能是因為複寫的維修已經完成。請注意、掃描期間可能會變更。「*掃描期間-預估（XSCM）*」屬性適用於整個網格、是所有節點掃描期間的上限。您可以查詢網格的*掃描期間-預估*屬性歷程記錄、以判斷適當的時間範圍。
+
+
+
+
+
+
+--
+.銷毀編碼（ EC ）資料
+--
+若要監控銷毀編碼資料的修復、然後重試任何可能失敗的要求：
+
+. 判斷銷毀編碼資料修復的狀態：
++
+** 選取* support*>* Tools *>* Metrics *以檢視目前工作的預估完成時間和完成百分比。然後在Grafana區段中選取* EC Overview *。請參閱* Grid EC工作預估完成時間*和* Grid EC工作百分比已完成*儀表板。
+** 使用此命令查看特定作業的狀態 `repair-data`：
++
+`repair-data show-ec-repair-status --repair-id repair ID`
+
+** 使用此命令列出所有修復：
++
+`repair-data show-ec-repair-status`
+
++
+輸出會列出所有先前和目前正在執行的修復的資訊、包括 `repair ID`。
+
+
+
+. 如果輸出顯示修復作業失敗、請使用 `--repair-id`選項重試修復。
++
+此命令會使用修復ID 6949309319275667690、重試失敗的節點修復：
+
++
+`repair-data start-ec-node-repair --repair-id 6949309319275667690`
+
++
+此命令會使用修復ID 6949309319275667690重試失敗的Volume修復：
+
++
+`repair-data start-ec-volume-repair --repair-id 6949309319275667690`
+
+
+
+--
+====

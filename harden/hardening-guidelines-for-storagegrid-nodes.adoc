@@ -1,0 +1,129 @@
+---
+permalink: harden/hardening-guidelines-for-storagegrid-nodes.html 
+sidebar: sidebar 
+keywords: hardening guidelines, nodes, security 
+summary: 可在VMware虛擬機器、Linux主機上的容器引擎內或專屬硬體設備上部署支援節點。StorageGRID每種類型的平台和每種類型的節點都有自己的強化最佳實務做法。 
+---
+= 強化有關節點的準則StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可在VMware虛擬機器、Linux主機上的容器引擎內或專屬硬體設備上部署支援節點。StorageGRID每種類型的平台和每種類型的節點都有自己的強化最佳實務做法。
+
+
+
+== 控制對 BMC 的遠端 IPMI 存取
+
+您可以為所有包含 BMC 的應用裝置啟用或停用遠端 IPMI 存取。遠端 IPMI 介面可讓任何擁有 BMC 帳戶和密碼的人、對您的 StorageGRID 應用裝置進行低階硬體存取。如果不需要對 BMC 進行遠端 IPMI 存取、請停用此選項。
+
+* 若要在 Grid Manager 中控制對 BMC 的遠端 IPMI 存取、請前往 * 組態 * > * 安全性 * > * 安全性設定 * > * 設備 * ：
++
+** 清除 * 啟用遠端 IPMI 存取 * 核取方塊、以停用對 BMC 的 IPMI 存取。
+** 選中 *Enable remote IPMI access* （啓用遠程 IPMI 訪問 * ）複選框以啓用對 BMC 的 IPMI 訪問。
+
+
+
+
+
+
+== 防火牆組態
+
+在系統強化程序中、您必須檢閱外部防火牆組態並加以修改、以便只接受來自IP位址和嚴格需要的連接埠的流量。
+
+StorageGRID 在每個節點上都包含內部防火牆、可讓您控制對節點的網路存取、藉此增強網格的安全性。除了特定網格部署所需的連接埠之外、您應該link:../admin/manage-firewall-controls.html["管理內部防火牆控制"]防止所有連接埠上的網路存取。您在「防火牆控制」頁面上所做的組態變更會部署到每個節點。
+
+具體而言、您可以管理以下領域：
+
+* * 貴賓位址 * ：您可以允許選取的 IP 位址或子網路存取「管理外部存取」索引標籤上的設定所關閉的連接埠。
+* * 管理外部存取 * ：您可以關閉預設開啟的連接埠、或重新開啟先前關閉的連接埠。
+* * 不受信任的用戶端網路 * ：您可以指定節點是否信任來自用戶端網路的傳入流量、以及在設定不受信任的用戶端網路時、您要開啟的其他連接埠。
+
+
+雖然此內部防火牆提供額外的保護層來抵禦某些常見的威脅、但它並不免除外部防火牆的需求。
+
+如需 StorageGRID 使用的所有內部和外部連接埠清單，請參閱link:../network/network-port-reference.html["網路連接埠參考"]。
+
+
+
+== 停用未使用的服務
+
+對於所有StorageGRID 的支援節點、您應該停用或封鎖未使用服務的存取。例如、如果您不打算使用 DHCP 、請使用 Grid Manager 來關閉連接埠 68 。選擇 * 組態 * > * 防火牆控制 * > * 管理外部存取 * 。然後將連接埠 68 的狀態切換從 * 開啟 * 變更為 * 關閉 * 。
+
+
+
+== 虛擬化、容器和共享硬體
+
+對於所有StorageGRID 的物件節點、請避免在StorageGRID 不受信任的軟體所在的實體硬體上執行不可靠的功能。如果 StorageGRID 和惡意軟體位於同一實體硬體上、請勿假設 Hypervisor 保護措施可防止惡意軟體存取 StorageGRID 保護的資料。例如、Meltdown和Spetter攻擊會利用現代處理器的重大弱點、讓程式在同一部電腦的記憶體中竊取資料。
+
+
+
+== 在安裝期間保護節點
+
+安裝節點時、請勿允許不受信任的使用者透過網路存取 StorageGRID 節點。節點必須先加入網格、才能完全安全無虞。
+
+
+
+== 管理節點準則
+
+管理節點提供系統組態、監控及記錄等管理服務。當您登入Grid Manager或租戶管理程式時、即連線至管理節點。
+
+請遵循以下準則、將管理節點安全地存放在StorageGRID 您的一套系統上：
+
+* 保護不受信任用戶端（例如開放式網際網路上的用戶端）的所有管理節點。確保任何不受信任的用戶端都無法存取Grid Network、管理網路或用戶端網路上的任何管理節點。
+* 可控制Grid Manager和Tenant Manager功能的存取權限。StorageGRID授予每個使用者群組其角色所需的最低權限、並使用唯讀存取模式來防止使用者變更組態。
+* 使用StorageGRID 動態負載平衡器端點時、請針對不受信任的用戶端流量、使用閘道節點而非管理節點。
+* 如果您有不受信任的租戶、請勿允許他們直接存取租戶管理器或租戶管理 API 。而是讓任何不受信任的租戶使用與租戶管理API互動的租戶入口網站或外部租戶管理系統。
+* 您也可以選擇使用管理 Proxy 、以更有效地控制從管理節點到 NetApp 支援的 AutoSupport 通訊。請參閱的步驟link:../admin/configuring-admin-proxy-settings.html["建立管理 Proxy"]。
+* 您也可以選擇使用受限的843和9443連接埠來分隔Grid Manager和Tenant Manager通訊。封鎖共享連接埠443、並將租戶要求限制為連接埠9443以提供額外保護。
+* 您也可以為網格管理員和租戶使用者使用個別的管理節點。
+
+
+如需詳細資訊，請參閱的說明link:../admin/index.html["管理StorageGRID"]。
+
+
+
+== 儲存節點準則
+
+儲存節點可管理及儲存物件資料和中繼資料。請遵循以下準則、將儲存節點固定在StorageGRID 您的一套系統上。
+
+* 請勿允許不受信任的用戶端直接連線至儲存節點。使用由閘道節點或協力廠商負載平衡器提供服務的負載平衡器端點。
+* 請勿為不受信任的租戶啟用外傳服務。例如、為不受信任的租戶建立帳戶時、請勿允許租戶使用自己的身分識別來源、也不允許使用平台服務。請參閱的步驟link:../admin/creating-tenant-account.html["建立租戶帳戶"]。
+* 針對不受信任的用戶端流量使用協力廠商負載平衡器。第三方負載平衡可提供更多控制能力、並提供額外的層級保護、防止攻擊。
+* 您也可以選擇使用儲存 Proxy 、以更有效地控制雲端儲存池、以及從儲存節點到外部服務的平台服務通訊。請參閱的步驟link:../admin/configuring-storage-proxy-settings.html["建立儲存 Proxy"]。
+* 您也可以選擇使用用戶端網路連線至外部服務。然後，選擇 * 組態 * > * 安全性 * > * 防火牆控制 * > * 不受信任的用戶端網路 * ，並指出儲存節點上的用戶端網路不受信任。儲存節點不再接受用戶端網路上的任何傳入流量、而是繼續允許平台服務的傳出要求。
+
+
+
+
+== 閘道節點準則
+
+閘道節點提供選用的負載平衡介面、用戶端應用程式可用來連接StorageGRID 到VMware。請遵循下列準則、保護StorageGRID 您的整個作業系統中的任何閘道節點：
+
+* 設定及使用負載平衡器端點。請參閱。 link:../admin/managing-load-balancing.html["負載平衡考量"]
+* 對於不受信任的用戶端流量、請在用戶端與閘道節點或儲存節點之間使用協力廠商負載平衡器。第三方負載平衡可提供更多控制能力、並提供額外的層級保護、防止攻擊。如果您確實使用協力廠商負載平衡器、網路流量仍可選擇性地設定為透過內部負載平衡器端點、或直接傳送至儲存節點。
+* 如果您使用負載平衡器端點、可選擇讓用戶端透過用戶端網路連線。然後，選擇 * 組態 * > * 安全性 * > * 防火牆控制 * > * 不受信任的用戶端網路 * ，並指出閘道節點上的用戶端網路不受信任。閘道節點僅接受明確設定為負載平衡器端點之連接埠上的傳入流量。
+
+
+
+
+== 硬體應用裝置節點準則
+
+用作作業系統的各種硬體應用。StorageGRID StorageGRID有些應用裝置可做為儲存節點。其他應用裝置可做為管理節點或閘道節點。您可以將應用裝置節點與軟體型節點結合使用、或是部署設計完善的全應用裝置網格。
+
+請遵循下列準則、確保StorageGRID 您的整個作業系統中的任何硬體應用裝置節點安全無虞：
+
+* 如果應用SANtricity 程式使用NetApp系統管理程式來管理儲存控制器、請避免不受信任的用戶端SANtricity 透過網路存取《系統管理程式》。
+* 如果應用裝置有基板管理控制器（BMC）、請注意BMC管理連接埠允許低階硬體存取。僅將BMC管理連接埠連接至安全、受信任的內部管理網路。如果沒有此類網路可用、請將BMC管理連接埠保持未連線或封鎖狀態、除非技術支援部門要求BMC連線。
+* 如果應用裝置使用智慧型平台管理介面（IPMI）標準、支援透過乙太網路遠端管理控制器硬體、請封鎖連接埠623上不受信任的流量。
+
+
+
+NOTE: 您可以為所有包含 BMC 的應用裝置啟用或停用遠端 IPMI 存取。遠端 IPMI 介面可讓任何擁有 BMC 帳戶和密碼的人、對您的 StorageGRID 應用裝置進行低階硬體存取。如果您不需要遠端 IPMI 存取 BMC 、請使用下列其中一種方法停用此選項： + 在網格管理員中、前往 * 組態 * > * 安全性 * > * 安全性設定 * > * 設備 * 、並清除 * 啟用遠端 IPMI 存取 * 核取方塊。+ 在 Grid 管理 API 中、使用私有端點： `PUT /private/bmc`。
+
+* 對於包含 SED 、 FDE 或 FIPS NL-SAS 磁碟機的應用裝置機型、您可以使用 SANtricity System Manager 來管理 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/accessing-and-configuring-santricity-system-manager.html["啟用和設定 SANtricity 磁碟機安全性"^]。
+* 對於包含 SED 或 FIPS NVMe SSD 的應用裝置機型、您可以使用 StorageGRID 應用裝置安裝程式和 Grid Manager 來管理 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html["啟用及設定 StorageGRID 磁碟機加密"^]。
+* 對於沒有 SED 、 FDE 或 FIPS 磁碟機的應用裝置、請啟用並設定 StorageGRID 軟體節點加密 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html#enable-node-encryption["使用金鑰管理伺服器（ KMS ）"^]。
+

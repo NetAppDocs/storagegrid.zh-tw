@@ -1,0 +1,65 @@
+---
+permalink: maintain/reviewing-ilm-policy-and-storage-configuration.html 
+sidebar: sidebar 
+keywords: storagegrid, restore, ilm policy, storage configuration 
+summary: 如果您打算取消委任儲存節點、則在StorageGRID 開始汰換程序之前、應先檢閱您的一套NetApp系統的ILM原則。 
+---
+= 檢閱ILM原則和儲存組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您打算取消委任儲存節點、則在StorageGRID 開始解除委任程序之前、應先檢閱您的一套NetApp系統的ILM原則。
+
+在汰換期間、所有物件資料都會從停用的儲存節點移轉至其他儲存節點。
+
+
+NOTE: 您在取消委任期間擁有的ILM原則將是取消委任後使用的ILM原則。在開始取消委任之前及取消委任完成後、您都必須確保此原則符合您的資料需求。
+
+您應該檢閱每個規則link:../ilm/creating-ilm-policy.html["主動式 ILM 原則"]、以確保 StorageGRID 系統將繼續擁有足夠容量的正確類型和正確位置、以容納儲存節點的汰換。
+
+請考慮下列事項：
+
+* ILM評估服務是否能複製物件資料、以符合ILM規則？
+* 當停用進行中的站台暫時無法使用時、會發生什麼情況？是否可以在其他位置製作其他複本？
+* 汰換程序如何影響內容的最終發佈？如中所述link:consolidating-storage-nodes.html["整合儲存節點"]、您應該link:../expand/index.html["新增儲存節點"]在汰換舊的前置作業。如果您在解除委任較小的儲存節點之後新增較大的替換儲存節點、舊的儲存節點可能接近容量、而新的儲存節點幾乎沒有內容。新物件資料的大部分寫入作業會導向新的儲存節點、進而降低系統作業的整體效率。
+* 系統是否會隨時包含足夠的儲存節點、以滿足使用中的 ILM 原則？
++
+
+NOTE: 無法滿足的 ILM 原則會導致待處理記錄和警示、並可能停止 StorageGRID 系統的運作。
+
+
+
+評估表中列出的區域、確認解除委任程序所產生的建議拓撲符合 ILM 原則。
+
+[cols="1a,2a"]
+|===
+| 需要評估的領域 | 考量事項 
+
+
+ a| 
+可用容量
+ a| 
+是否有足夠的儲存容量來容納儲存在 StorageGRID 系統中的所有物件資料、包括目前儲存在要停用的儲存節點上的物件資料永久複本？
+
+在完成停用後、是否有足夠的容量來處理預估的儲存物件資料成長時間、以達到合理的時間間隔？
+
+
+
+ a| 
+儲存位置
+ a| 
+如果StorageGRID 整個恆指系統仍有足夠的容量、那麼該容量是否位於適當位置、以滿足StorageGRID 該系統的業務規則？
+
+
+
+ a| 
+儲存類型
+ a| 
+取消委任完成後、是否會有足夠的適當類型儲存空間？
+
+例如、 ILM 規則可能會將內容從一種儲存設備移至另一種儲存設備、做為內容老化的方式。在這種情況下、您必須確保 StorageGRID 系統的最終組態中有足夠的適當類型儲存空間。
+
+|===

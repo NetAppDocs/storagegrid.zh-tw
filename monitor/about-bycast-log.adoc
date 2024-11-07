@@ -1,0 +1,1394 @@
+---
+permalink: monitor/about-bycast-log.html 
+sidebar: sidebar 
+keywords: bycast, log 
+summary: '檔案/var/local/log/bycast.log是StorageGRID 適用於整個解決程序的主要疑難排解檔案。每個網格節點都有一個 `bycast.log`檔案。檔案包含該網格節點的特定訊息。' 
+---
+= 關於bycast.log
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+檔案 `/var/local/log/bycast.log`是 StorageGRID 軟體的主要疑難排解檔案。每個網格節點都有一個 `bycast.log`檔案。檔案包含該網格節點的特定訊息。
+
+檔案 `/var/local/log/bycast-err.log`是的子集 `bycast.log`。其中包含嚴重性錯誤和嚴重的訊息。
+
+您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+
+
+
+== bycast.log的檔案旋轉
+
+當檔案達到 1 GB 時 `bycast.log`、會儲存現有檔案、並啟動新的記錄檔。
+
+保存的文件將被重命名，新文件將被 `bycast.log.1`命名爲 `bycast.log`。當新的容量達到 1 GB `bycast.log.1` 時， `bycast.log`會重新命名並壓縮成 `bycast.log.2.gz`，並 `bycast.log`重新命名 `bycast.log.1`。
+
+的旋轉限制 `bycast.log`為 21 個檔案。建立第 22 版 `bycast.log`檔案時、會刪除最舊的檔案。
+
+的旋轉限制 `bycast-err.log`為七個檔案。
+
+
+NOTE: 如果記錄檔已壓縮、則不得將其解壓縮至寫入的相同位置。將檔案解壓縮到相同位置可能會干擾記錄檔的旋轉指令碼。
+
+您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+
+.相關資訊
+link:collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]
+
+
+
+== bycast.log中的訊息
+
+中的訊息 `bycast.log`是由 ADE （非同步分散式環境）所寫入。ade是每個網格節點服務所使用的執行時間環境。
+
+ADE訊息範例：
+
+[listing]
+----
+May 15 14:07:11 um-sec-rg1-agn3 ADE: |12455685    0357819531
+SVMR EVHR 2019-05-05T27T17:10:29.784677| ERROR 0906 SVMR: Health
+check on volume 3 has failed with reason 'TOUT'
+----
+ade訊息包含下列資訊：
+
+[cols="1a,2a"]
+|===
+| 訊息區段 | 範例中的值 
+
+
+ a| 
+節點 ID
+| 12455685 
+
+
+ a| 
+ade程序ID
+| 0357819531 
+
+
+ a| 
+模組名稱
+| SVMR 
+
+
+ a| 
+訊息識別碼
+| EVHR 
+
+
+ a| 
+UTC系統時間
+| 2019 年 5 月 5 日 T27T17 ： 10 ： 29.784677 （ YYYY-MM-DDTHH ： MM ： SS.uuuuuu ） 
+
+
+ a| 
+嚴重性等級
+| 錯誤 
+
+
+ a| 
+內部追蹤編號
+| 0906 
+
+
+ a| 
+訊息
+| SVMR：磁碟區3的健全狀況檢查失敗、原因為「tout」 
+|===
+
+
+== bycast.log中的訊息嚴重性
+
+中的訊息 `bycast.log`會指派嚴重性等級。
+
+例如：
+
+* *通知*：應記錄的事件已發生。大多數記錄訊息都屬於此層級。
+* *警告*：發生非預期的情況。
+* *錯誤*：發生重大錯誤、會影響作業。
+* *臨界*：發生異常狀況、停止正常作業。您應該立即解決基本條件。
+
+
+
+
+== 中的錯誤代碼 `bycast.log`
+
+中的大多數錯誤訊息都 `bycast.log`包含錯誤代碼。
+
+下表列出中常見的非數字代碼 `bycast.log`。非數字代碼的確切含義取決於報告它的環境。
+
+[cols="1a,1a"]
+|===
+| 錯誤代碼 | 意義 
+
+
+ a| 
+SUCS
+ a| 
+無錯誤
+
+
+
+ a| 
+GERR
+ a| 
+不明
+
+
+
+ a| 
+取消
+ a| 
+已取消
+
+
+
+ a| 
+ABRT
+ a| 
+已中止
+
+
+
+ a| 
+宣傳
+ a| 
+逾時
+
+
+
+ a| 
+INVl
+ a| 
+無效
+
+
+
+ a| 
+NFND
+ a| 
+找不到
+
+
+
+ a| 
+版本
+ a| 
+版本
+
+
+
+ a| 
+會議
+ a| 
+組態
+
+
+
+ a| 
+失敗
+ a| 
+失敗
+
+
+
+ a| 
+ICPL
+ a| 
+不完整
+
+
+
+ a| 
+完成
+ a| 
+完成
+
+
+
+ a| 
+SUN駒 方案
+ a| 
+服務無法使用
+
+|===
+下表列出中的數值錯誤代碼 `bycast.log`。
+
+[cols="1a,2a,3a"]
+|===
+| 錯誤編號 | 錯誤代碼 | 意義 
+
+
+ a| 
+001
+ a| 
+EPERM
+ a| 
+不允許操作
+
+
+
+ a| 
+002
+ a| 
+ENOENT
+ a| 
+無此類檔案或目錄
+
+
+
+ a| 
+003
+ a| 
+ESRCH
+ a| 
+沒有這種程序
+
+
+
+ a| 
+004
+ a| 
+EINTR
+ a| 
+系統通話中斷
+
+
+
+ a| 
+005
+ a| 
+EIO
+ a| 
+I/O錯誤
+
+
+
+ a| 
+006
+ a| 
+ENXIO
+ a| 
+無此類裝置或位址
+
+
+
+ a| 
+007
+ a| 
+E2BIG
+ a| 
+引數清單太長
+
+
+
+ a| 
+008
+ a| 
+ENOEXEC
+ a| 
+執行格式錯誤
+
+
+
+ a| 
+009
+ a| 
+EBADF
+ a| 
+錯誤的檔案編號
+
+
+
+ a| 
+010
+ a| 
+ECHILD
+ a| 
+無子程序
+
+
+
+ a| 
+011
+ a| 
+EAGAIN
+ a| 
+請再試一次
+
+
+
+ a| 
+012
+ a| 
+ENOMEM
+ a| 
+記憶體不足
+
+
+
+ a| 
+013
+ a| 
+EACCES
+ a| 
+權限遭拒
+
+
+
+ a| 
+014
+ a| 
+預設
+ a| 
+地址錯誤
+
+
+
+ a| 
+015
+ a| 
+ENOTBK
+ a| 
+需要區塊裝置
+
+
+
+ a| 
+016
+ a| 
+EBUSY
+ a| 
+裝置或資源忙碌中
+
+
+
+ a| 
+017
+ a| 
+EEXIST
+ a| 
+檔案存在
+
+
+
+ a| 
+018
+ a| 
+EXDEV
+ a| 
+跨裝置連結
+
+
+
+ a| 
+019
+ a| 
+ENODEV
+ a| 
+無此類裝置
+
+
+
+ a| 
+020
+ a| 
+ENOTDIR
+ a| 
+不是目錄
+
+
+
+ a| 
+021
+ a| 
+EISDIR
+ a| 
+是目錄
+
+
+
+ a| 
+022
+ a| 
+EINVAL
+ a| 
+無效的引數
+
+
+
+ a| 
+023
+ a| 
+ENFILE
+ a| 
+檔案表溢位
+
+
+
+ a| 
+024
+ a| 
+EMFILE
+ a| 
+開啟的檔案太多
+
+
+
+ a| 
+025
+ a| 
+ENOTY
+ a| 
+不是打字機
+
+
+
+ a| 
+026
+ a| 
+ETXTBSY
+ a| 
+文字檔忙碌中
+
+
+
+ a| 
+027
+ a| 
+EFBIG
+ a| 
+檔案太大
+
+
+
+ a| 
+028
+ a| 
+ENOSPC
+ a| 
+裝置上沒有剩餘空間
+
+
+
+ a| 
+029
+ a| 
+EIPE
+ a| 
+非法搜尋
+
+
+
+ a| 
+030
+ a| 
+EROFS
+ a| 
+唯讀檔案系統
+
+
+
+ a| 
+031
+ a| 
+EMLINK
+ a| 
+連結過多
+
+
+
+ a| 
+032
+ a| 
+EPIPE
+ a| 
+管路毀損
+
+
+
+ a| 
+033
+ a| 
+益登
+ a| 
+數學引數超出func網域
+
+
+
+ a| 
+034
+ a| 
+ERANGE
+ a| 
+無法呈現數學結果
+
+
+
+ a| 
+035
+ a| 
+EDEADLK
+ a| 
+將會發生資源死鎖
+
+
+
+ a| 
+036
+ a| 
+ENAMETOOLON
+ a| 
+檔案名稱太長
+
+
+
+ a| 
+037
+ a| 
+ENOLCK
+ a| 
+沒有可用的記錄鎖定
+
+
+
+ a| 
+038
+ a| 
+ENOSYS
+ a| 
+功能未實作
+
+
+
+ a| 
+039
+ a| 
+ENOTEMPTY
+ a| 
+目錄不是空的
+
+
+
+ a| 
+040
+ a| 
+ELOOP
+ a| 
+遇到過多符號連結
+
+
+
+ a| 
+041
+ a| 
+ a| 
+
+
+
+ a| 
+042
+ a| 
+ENOMSG
+ a| 
+無所需類型的訊息
+
+
+
+ a| 
+043
+ a| 
+EIDRM
+ a| 
+已移除識別碼
+
+
+
+ a| 
+044
+ a| 
+ECHRNG
+ a| 
+通道號碼超出範圍
+
+
+
+ a| 
+045
+ a| 
+EL2NSYNC
+ a| 
+第2級未同步
+
+
+
+ a| 
+046
+ a| 
+EL3HLT
+ a| 
+層級 3 停止
+
+
+
+ a| 
+047
+ a| 
+EL3RST
+ a| 
+第3級重設
+
+
+
+ a| 
+048
+ a| 
+ELNRNG
+ a| 
+連結號碼超出範圍
+
+
+
+ a| 
+049
+ a| 
+EUNATCH
+ a| 
+未附加傳輸協定驅動程式
+
+
+
+ a| 
+050
+ a| 
+ENOCI
+ a| 
+無可用的csi架構
+
+
+
+ a| 
+051
+ a| 
+EL2HLT
+ a| 
+層級 2 停止
+
+
+
+ a| 
+052
+ a| 
+EBADE
+ a| 
+無效的交換
+
+
+
+ a| 
+053
+ a| 
+EBADR
+ a| 
+無效的要求描述元
+
+
+
+ a| 
+054
+ a| 
+非常棒
+ a| 
+Exchange已滿
+
+
+
+ a| 
+055
+ a| 
+ENOANO
+ a| 
+無陽極
+
+
+
+ a| 
+056
+ a| 
+EBADRQc
+ a| 
+申請代碼無效
+
+
+
+ a| 
+057
+ a| 
+EBADSLT-
+ a| 
+無效插槽
+
+
+
+ a| 
+058
+ a| 
+ a| 
+
+
+
+ a| 
+059
+ a| 
+EBFONT
+ a| 
+字型檔案格式錯誤
+
+
+
+ a| 
+060
+ a| 
+ENOSTR
+ a| 
+裝置不是串流
+
+
+
+ a| 
+061
+ a| 
+ENODATA
+ a| 
+無可用資料
+
+
+
+ a| 
+062
+ a| 
+電子時間
+ a| 
+定時器已過期
+
+
+
+ a| 
+063
+ a| 
+ENOSR
+ a| 
+資料流不足資源
+
+
+
+ a| 
+064
+ a| 
+ENONET
+ a| 
+機器不在網路上
+
+
+
+ a| 
+065
+ a| 
+ENOPKG
+ a| 
+未安裝套件
+
+
+
+ a| 
+066
+ a| 
+EREMOTE
+ a| 
+物件是遠端的
+
+
+
+ a| 
+067
+ a| 
+ENOLINK
+ a| 
+連結已中斷
+
+
+
+ a| 
+068
+ a| 
+EADV
+ a| 
+通告錯誤
+
+
+
+ a| 
+069
+ a| 
+ESRMNT
+ a| 
+Srsmount錯誤
+
+
+
+ a| 
+070
+ a| 
+EComm
+ a| 
+傳送時發生通訊錯誤
+
+
+
+ a| 
+071
+ a| 
+EPROTO
+ a| 
+傳輸協定錯誤
+
+
+
+ a| 
+072
+ a| 
+EMULOTIHOP
+ a| 
+已嘗試多跳
+
+
+
+ a| 
+073
+ a| 
+EDOTDOT
+ a| 
+RFS特定錯誤
+
+
+
+ a| 
+074
+ a| 
+EBADMSG
+ a| 
+不是資料訊息
+
+
+
+ a| 
+075
+ a| 
+EOVERFLOW
+ a| 
+對於已定義的資料類型、值太大
+
+
+
+ a| 
+076
+ a| 
+ENOTUNIQ
+ a| 
+名稱在網路上不是唯一的
+
+
+
+ a| 
+077
+ a| 
+EBADFD
+ a| 
+檔案描述元處於錯誤狀態
+
+
+
+ a| 
+078
+ a| 
+EREMCHG
+ a| 
+遠端位址已變更
+
+
+
+ a| 
+079
+ a| 
+ELIBAC
+ a| 
+無法存取所需的共用程式庫
+
+
+
+ a| 
+080
+ a| 
+ELIBBAD
+ a| 
+存取毀損的共用程式庫
+
+
+
+ a| 
+081
+ a| 
+ELIBSCN
+ a| 
+
+
+
+ a| 
+082
+ a| 
+ELIBMAX
+ a| 
+嘗試連結過多的共用程式庫
+
+
+
+ a| 
+083
+ a| 
+ELIB執行
+ a| 
+無法直接執行共用程式庫
+
+
+
+ a| 
+084
+ a| 
+EILSEQ
+ a| 
+不合法的位元組順序
+
+
+
+ a| 
+085
+ a| 
+ERESTART
+ a| 
+中斷的系統通話應重新啟動
+
+
+
+ a| 
+086
+ a| 
+ESTRPIPE
+ a| 
+串流管道錯誤
+
+
+
+ a| 
+087
+ a| 
+EUSER
+ a| 
+使用者過多
+
+
+
+ a| 
+088
+ a| 
+ENOTSOCK-
+ a| 
+插槽在非插槽上運作
+
+
+
+ a| 
+089
+ a| 
+EDESTADDRREQ
+ a| 
+目的地位址為必填
+
+
+
+ a| 
+090
+ a| 
+EMSGSIZ
+ a| 
+訊息太長
+
+
+
+ a| 
+091
+ a| 
+EPROTOTYPE
+ a| 
+套接字的傳輸協定類型錯誤
+
+
+
+ a| 
+092
+ a| 
+ENOPROTOOPT
+ a| 
+傳輸協定無法使用
+
+
+
+ a| 
+093
+ a| 
+EPROTONOSUPPORT
+ a| 
+不支援傳輸協定
+
+
+
+ a| 
+094
+ a| 
+ESOSKTNOSOUPPORT
+ a| 
+不支援套接字類型
+
+
+
+ a| 
+095
+ a| 
+EOPNOT支持
+ a| 
+傳輸端點不支援作業
+
+
+
+ a| 
+096
+ a| 
+EPFNOSOUPPORT
+ a| 
+不支援傳輸協定系列
+
+
+
+ a| 
+097
+ a| 
+EAFFNOSOUPPORT
+ a| 
+通訊協定不支援的位址系列
+
+
+
+ a| 
+098
+ a| 
+EADDRINUSE
+ a| 
+位址已在使用中
+
+
+
+ a| 
+099
+ a| 
+EADDRNOTAVAIL
+ a| 
+無法指派要求的位址
+
+
+
+ a| 
+100
+ a| 
+ENETDOWN
+ a| 
+網路中斷
+
+
+
+ a| 
+101
+ a| 
+ENETUNREACH
+ a| 
+無法連線至網路
+
+
+
+ a| 
+102
+ a| 
+ENETRESET
+ a| 
+網路因為重設而中斷連線
+
+
+
+ a| 
+103
+ a| 
+ECONNABORTED
+ a| 
+軟體導致連線終止
+
+
+
+ a| 
+104
+ a| 
+ECONNRESET
+ a| 
+由對等端點重設連線
+
+
+
+ a| 
+105
+ a| 
+ENOBEufs
+ a| 
+無可用的緩衝區空間
+
+
+
+ a| 
+106
+ a| 
+EISCONN
+ a| 
+傳輸端點已連線
+
+
+
+ a| 
+107
+ a| 
+ENOTCONN
+ a| 
+傳輸端點未連線
+
+
+
+ a| 
+108
+ a| 
+ESHUTDOWN
+ a| 
+傳輸端點關機後無法傳送
+
+
+
+ a| 
+109
+ a| 
+ETOOMANYREFS
+ a| 
+參考過多：無法接合
+
+
+
+ a| 
+110
+ a| 
+ETIMEDOUT
+ a| 
+連線逾時
+
+
+
+ a| 
+111
+ a| 
+ECONNREFUSED
+ a| 
+連線遭拒
+
+
+
+ a| 
+112
+ a| 
+EHOSTDOWN
+ a| 
+主機當機
+
+
+
+ a| 
+113
+ a| 
+EHOSTUNREACH
+ a| 
+沒有通往主機的路由
+
+
+
+ a| 
+114
+ a| 
+EALREADY
+ a| 
+作業已在進行中
+
+
+
+ a| 
+115
+ a| 
+EINPROGRESS
+ a| 
+目前正在運作中
+
+
+
+ a| 
+116
+ a| 
+ a| 
+
+
+
+ a| 
+117
+ a| 
+EUCULEAN
+ a| 
+結構需要清理
+
+
+
+ a| 
+118
+ a| 
+ENOTNAM
+ a| 
+不是Xenix命名類型檔案
+
+
+
+ a| 
+119
+ a| 
+ENAVAIL
+ a| 
+沒有Xenix半馬
+
+
+
+ a| 
+120
+ a| 
+EISNAM
+ a| 
+為命名類型檔案
+
+
+
+ a| 
+121
+ a| 
+EREMOTEIO
+ a| 
+遠端I/O錯誤
+
+
+
+ a| 
+122
+ a| 
+EDCOT
+ a| 
+已超過配額
+
+
+
+ a| 
+123
+ a| 
+ENOMEDIUM
+ a| 
+找不到媒體
+
+
+
+ a| 
+124
+ a| 
+EMEDIUMTYPE
+ a| 
+錯誤的媒體類型
+
+
+
+ a| 
+125
+ a| 
+ECANCELED
+ a| 
+作業已取消
+
+
+
+ a| 
+126
+ a| 
+ENOKEY
+ a| 
+所需的金鑰無法使用
+
+
+
+ a| 
+127
+ a| 
+EKEYEXPIRED
+ a| 
+金鑰已過期
+
+
+
+ a| 
+128
+ a| 
+EKEYREVOKED
+ a| 
+金鑰已撤銷
+
+
+
+ a| 
+129
+ a| 
+EKEYREJECTED
+ a| 
+金鑰已遭服務拒絕
+
+
+
+ a| 
+130
+ a| 
+EOWNERDEAD
+ a| 
+若需健全的互鎖：擁有者已死亡
+
+
+
+ a| 
+131
+ a| 
+ENOTRECOVERABE
+ a| 
+對於強大的互鎖：狀態不可恢復
+
+|===

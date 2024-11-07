@@ -1,0 +1,31 @@
+---
+permalink: maintain/assess-hotfix-requirement-during-primary-admin-node-recovery.html 
+sidebar: sidebar 
+keywords: storagegrid, primary admin node, hotfix 
+summary: 在恢復主管理節點之後，確定是否需要應用修復程序。 
+---
+= 判斷主要管理節點的 Hotfix 需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在恢復主管理節點之後，確定是否需要應用修復程序。
+
+.開始之前
+主要管理節點恢復已完成。
+
+.步驟
+. 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+. 選擇*節點*。
+. 從左側清單中選取主要管理節點。
+. 在「總覽」索引標籤上、記下「*軟體版本*」欄位中顯示的版本。
+. 選取任何其他網格節點。
+. 在「總覽」索引標籤上、記下「*軟體版本*」欄位中顯示的版本。
++
+** 如果 * 軟體版本 * 欄位中顯示的版本相同、您就不需要套用 Hotfix 。
+** 如果 * 軟體版本 * 欄位中顯示的版本不同、您必須link:storagegrid-hotfix-procedure.html["套用 Hotfix"]將復原的主要管理節點更新為相同版本。
+
+
+

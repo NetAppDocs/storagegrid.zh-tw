@@ -1,0 +1,120 @@
+---
+permalink: ubuntu/example-node-configuration-files.html 
+sidebar: sidebar 
+keywords: example node configuration files 
+summary: 您可以使用範例節點組態檔來協助設定StorageGRID 適用於您的整套系統的節點組態檔。這些範例顯示所有類型網格節點的節點組態檔。 
+---
+= 節點組態檔範例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用範例節點組態檔來協助設定StorageGRID 適用於您的整套系統的節點組態檔。這些範例顯示所有類型網格節點的節點組態檔。
+
+對於大多數節點、您可以在使用Grid Manager或安裝API設定網格時、新增管理和用戶端網路定址資訊（IP、遮罩、閘道等）。例外情況是主要管理節點。若要瀏覽至主要管理節點的管理網路IP以完成網格組態（例如、網格網路未路由傳送）、您必須在其節點組態檔中設定主要管理節點的管理網路連線。範例中顯示了這一點。
+
+
+NOTE: 在這些範例中、用戶端網路目標已設定為最佳實務做法、即使用戶端網路預設為停用。
+
+
+
+== 主管理節點範例
+
+* 範例檔案名稱 * ： `/etc/storagegrid/nodes/dc1-adm1.conf`
+
+*範例檔案內容：*
+
+[listing]
+----
+NODE_TYPE = VM_Admin_Node
+ADMIN_ROLE = Primary
+TEMPORARY_PASSWORD_TYPE = Use custom password
+CUSTOM_TEMPORARY_PASSWORD = Passw0rd
+BLOCK_DEVICE_VAR_LOCAL = /dev/mapper/dc1-adm1-var-local
+BLOCK_DEVICE_AUDIT_LOGS = /dev/mapper/dc1-adm1-audit-logs
+BLOCK_DEVICE_TABLES = /dev/mapper/dc1-adm1-tables
+GRID_NETWORK_TARGET = bond0.1001
+ADMIN_NETWORK_TARGET = bond0.1002
+CLIENT_NETWORK_TARGET = bond0.1003
+
+GRID_NETWORK_IP = 10.1.0.2
+GRID_NETWORK_MASK = 255.255.255.0
+GRID_NETWORK_GATEWAY = 10.1.0.1
+
+ADMIN_NETWORK_CONFIG = STATIC
+ADMIN_NETWORK_IP = 192.168.100.2
+ADMIN_NETWORK_MASK = 255.255.248.0
+ADMIN_NETWORK_GATEWAY = 192.168.100.1
+ADMIN_NETWORK_ESL = 192.168.100.0/21,172.16.0.0/21,172.17.0.0/21
+----
+
+
+== 儲存節點範例
+
+* 範例檔案名稱： * `/etc/storagegrid/nodes/dc1-sn1.conf`
+
+*範例檔案內容：*
+
+[listing]
+----
+NODE_TYPE = VM_Storage_Node
+ADMIN_IP = 10.1.0.2
+BLOCK_DEVICE_VAR_LOCAL = /dev/mapper/dc1-sn1-var-local
+BLOCK_DEVICE_RANGEDB_00 = /dev/mapper/dc1-sn1-rangedb-0
+BLOCK_DEVICE_RANGEDB_01 = /dev/mapper/dc1-sn1-rangedb-1
+BLOCK_DEVICE_RANGEDB_02 = /dev/mapper/dc1-sn1-rangedb-2
+BLOCK_DEVICE_RANGEDB_03 = /dev/mapper/dc1-sn1-rangedb-3
+GRID_NETWORK_TARGET = bond0.1001
+ADMIN_NETWORK_TARGET = bond0.1002
+CLIENT_NETWORK_TARGET = bond0.1003
+
+GRID_NETWORK_IP = 10.1.0.3
+GRID_NETWORK_MASK = 255.255.255.0
+GRID_NETWORK_GATEWAY = 10.1.0.1
+----
+
+
+== 閘道節點範例
+
+* 範例檔案名稱： * `/etc/storagegrid/nodes/dc1-gw1.conf`
+
+*範例檔案內容：*
+
+[listing]
+----
+NODE_TYPE = VM_API_Gateway
+ADMIN_IP = 10.1.0.2
+BLOCK_DEVICE_VAR_LOCAL = /dev/mapper/dc1-gw1-var-local
+GRID_NETWORK_TARGET = bond0.1001
+ADMIN_NETWORK_TARGET = bond0.1002
+CLIENT_NETWORK_TARGET = bond0.1003
+GRID_NETWORK_IP = 10.1.0.5
+GRID_NETWORK_MASK = 255.255.255.0
+GRID_NETWORK_GATEWAY = 10.1.0.1
+----
+
+
+== 非主要管理節點的範例
+
+* 範例檔案名稱： * `/etc/storagegrid/nodes/dc1-adm2.conf`
+
+*範例檔案內容：*
+
+[listing]
+----
+NODE_TYPE = VM_Admin_Node
+ADMIN_ROLE = Non-Primary
+ADMIN_IP = 10.1.0.2
+BLOCK_DEVICE_VAR_LOCAL = /dev/mapper/dc1-adm2-var-local
+BLOCK_DEVICE_AUDIT_LOGS = /dev/mapper/dc1-adm2-audit-logs
+BLOCK_DEVICE_TABLES = /dev/mapper/dc1-adm2-tables
+GRID_NETWORK_TARGET = bond0.1001
+ADMIN_NETWORK_TARGET = bond0.1002
+CLIENT_NETWORK_TARGET = bond0.1003
+
+GRID_NETWORK_IP = 10.1.0.6
+GRID_NETWORK_MASK = 255.255.255.0
+GRID_NETWORK_GATEWAY = 10.1.0.1
+----

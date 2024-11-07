@@ -1,0 +1,33 @@
+---
+permalink: rhel/specifying-grid-network-subnets.html 
+sidebar: sidebar 
+keywords: how to specify Grid Network subnets 
+summary: 您必須指定網格網路上使用的子網路。 
+---
+= 指定網格網路子網路
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須指定網格網路上使用的子網路。
+
+.關於這項工作
+子網路項目包括 StorageGRID 系統中每個站台的網格網路子網路、以及任何需要透過網格網路存取的子網路。
+
+如果您有多個網格子網路、則需要網格網路閘道。指定的所有網格子網路都必須透過此閘道才能連線。
+
+.步驟
+. 在*子網路1*文字方塊中、指定至少一個網格網路的CIDR網路位址。
+. 按一下最後一個項目旁的加號、以新增額外的網路項目。您必須為 Grid Network 中的所有站台指定所有子網路。
++
+** 如果您已部署至少一個節點、請按一下*探索網格網路子網路*、自動填入網格網路子網路清單、其中包含已向網格管理程式註冊之網格節點所報告的子網路。
+** 您必須手動新增 NTP 、 DNS 、 LDAP 或其他透過網格網路閘道存取的外部伺服器的任何子網路。
++
+image::../media/4_gmi_installer_grid_network_page.gif[指定子網路]
+
+
+
+. 單擊 * 下一步 * 。
+

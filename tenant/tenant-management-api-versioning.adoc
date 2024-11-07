@@ -1,0 +1,101 @@
+---
+permalink: tenant/tenant-management-api-versioning.html 
+sidebar: sidebar 
+keywords: tenant management api version 
+summary: 租戶管理API使用版本管理來支援不中斷營運的升級。 
+---
+= 租戶管理API版本管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+租戶管理API使用版本管理來支援不中斷營運的升級。
+
+例如、此 Request URL 會指定 API 的版本 4 。
+
+`https://_hostname_or_ip_address_/api/v4/authorize`
+
+當進行與舊版不相容的變更時、 API 的主要版本會增加。當進行與舊版相容的變更時、會增加 API 的次要版本。相容的變更包括新增端點或新屬性。
+
+下列範例說明如何根據所做的變更類型來提高API版本。
+
+[cols="1a,1a,1a"]
+|===
+| API變更類型 | 舊版本 | 新版本 
+
+
+ a| 
+與舊版相容
+ a| 
+2.1
+ a| 
+2.2
+
+
+
+ a| 
+與舊版不相容
+ a| 
+2.1
+ a| 
+3.0
+
+
+
+ a| 
+3.0
+ a| 
+4.0
+
+|===
+第一次安裝 StorageGRID 軟體時、只會啟用最新版的 API 。不過、當您升級StorageGRID 至全新的功能版本的更新版時、您仍可繼續存取舊版的API、以取得至少一個StorageGRID 版本的更新功能。
+
+
+NOTE: 您可以設定支援的版本。如需詳細資訊、請參閱 Swagger API 文件的 * 組態 * 一節link:../admin/using-grid-management-api.html["網格管理API"]。您應該在更新所有 API 用戶端以使用較新版本之後、停用舊版的支援。
+
+過時的要求會以下列方式標示為已過時：
+
+* 回應標頭為「deprecated：true」
+* Json回應本文包含「deprecated」：true
+* NMS.log中會新增已過時的警告。例如：
++
+[listing]
+----
+Received call to deprecated v2 API at POST "/api/v2/authorize"
+----
+
+
+
+
+== 判斷目前版本支援哪些API版本
+
+使用 `GET /versions` API 要求傳回支援的 API 主要版本清單。此要求位於 Swagger API 文件的 * 組態 * 區段。
+
+[listing]
+----
+GET https://{{IP-Address}}/api/versions
+{
+  "responseTime": "2023-06-27T22:13:50.750Z",
+  "status": "success",
+  "apiVersion": "4.0",
+  "data": [
+    2,
+    3,
+    4
+  ]
+}
+----
+
+
+== 指定要求的API版本
+
+您可以使用路徑參數(`/api/v4`（）或標頭(`Api-Version: 4`（）來指定 API 版本。如果您同時提供這兩個值、則標頭值會覆寫路徑值。
+
+[listing]
+----
+curl https://[IP-Address]/api/v4/grid/accounts
+
+curl -H "Api-Version: 4" https://[IP-Address]/api/grid/accounts
+----

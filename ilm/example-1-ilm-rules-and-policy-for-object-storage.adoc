@@ -1,0 +1,125 @@
+---
+permalink: ilm/example-1-ilm-rules-and-policy-for-object-storage.html 
+sidebar: sidebar 
+keywords: example ILM rule, information lifecycle rule examples 
+summary: 定義ILM原則以符合物件保護和保留需求時、您可以使用下列範例規則和原則作為起點。 
+---
+= 範例1：物件儲存的ILM規則與原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+定義ILM原則以符合物件保護和保留需求時、您可以使用下列範例規則和原則作為起點。
+
+
+CAUTION: 下列ILM規則和原則僅為範例。有許多方法可以設定ILM規則。在啟動新原則之前、請先進行模擬、確認其運作方式符合保護內容免於遺失的目的。
+
+
+
+== ILM 規則 1 例如 1 ：將物件資料複製到兩個站台
+
+此範例 ILM 規則會將物件資料複製到兩個站台的儲存集區。
+
+[cols="1a,2a"]
+|===
+| 規則定義 | 範例值 
+
+
+ a| 
+單站台儲存集區
+ a| 
+兩個儲存資源池、每個資源池包含不同的站台、分別命名為站台 1 和站台 2 。
+
+
+
+ a| 
+規則名稱
+ a| 
+兩份複本、兩個站台
+
+
+
+ a| 
+參考時間
+ a| 
+擷取時間
+
+
+
+ a| 
+刊登位置
+ a| 
+在第 0 天至永遠、請在站台 1 保留一個複寫複本、並在站台 2 保留一個複寫複本。
+
+|===
+保留圖的規則分析區段說明：
+
+* StorageGRID 站台遺失保護將在本規則期間適用。
+* ILM 不會刪除此規則處理的物件。
+
+
+image::../media/ilm_rule_two_copies_two_data_centers.png[ILM 規則 1 例如 1 ：將物件資料複製到兩個站台]
+
+
+
+== ILM 規則 2 範例 1 ：含貯體比對的銷毀編碼設定檔
+
+此 ILM 規則範例使用抹除編碼設定檔和 S3 儲存區、來判斷物件的儲存位置和儲存時間。
+
+[cols="1a,2a"]
+|===
+| 規則定義 | 範例值 
+
+
+ a| 
+具有多個站台的儲存池
+ a| 
+* 跨三個站台（站台 1 、 2 、 3 ）建立一個儲存池
+* 使用6+3銷毀編碼方案
+
+
+
+
+ a| 
+規則名稱
+ a| 
+S3 Bucket 財務記錄
+
+
+
+ a| 
+參考時間
+ a| 
+擷取時間
+
+
+
+ a| 
+刊登位置
+ a| 
+對於 S3 儲存貯體中名為財務記錄的物件、請在銷毀編碼設定檔所指定的儲存池中建立一個銷毀編碼複本。請保留此複本。
+
+|===
+image::../media/ilm_rule_ec_for_s3_bucket_finance_records.png[ILM 規則 2 範例 1 ：含貯體比對的銷毀編碼設定檔]
+
+
+
+== ILM原則（例如1）
+
+實際上、大部分的 ILM 原則都很簡單、即使 StorageGRID 系統允許您設計複雜且複雜的 ILM 原則。
+
+多站台網格的一般 ILM 原則可能包括 ILM 規則、例如：
+
+* 在擷取時、將屬於 S3 儲存區（名稱為）的所有物件 `finance-records`儲存在包含三個站台的儲存池中。使用 6+3 銷毀編碼。
+* 如果物件不符合第一個 ILM 規則、請使用原則的預設 ILM 規則、兩個複本兩個資料中心、將該物件的一個複本儲存在站台 1 、一個複本儲存在站台 2 。
++
+image::../media/policy_1_configured_policy.png[ILM原則（例如1）]
+
+
+
+.相關資訊
+* link:ilm-policy-overview.html["使用 ILM 原則"]
+* link:creating-ilm-policy.html["建立 ILM 原則"]
+

@@ -1,0 +1,8 @@
+---
+permalink: s3/how-storagegrid-ilm-rules-manage-objects.html 
+redirect: storagegrid/ilm/index.html 
+---
+= 
+:allow-uri-read: 
+
+

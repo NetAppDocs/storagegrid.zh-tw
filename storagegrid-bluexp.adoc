@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: storagegrid-bluexp.html 
+keywords: storagegrid, how to enable, third-party solutions, tools, applications, examples 
+summary: 瞭解如何使用 Grid Manager 從 BlueXP  管理您的 StorageGRID 系統、並使用 BlueXP 的資料服務來進行備份、資料分層等。 
+---
+= 如何使用 BlueXP  管理 StorageGRID
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+請移至 https://docs.netapp.com/us-en/bluexp-storagegrid/index.html["使用 BlueXP 進行 StorageGRID 管理"^] 以瞭解如何使用 Grid Manager 從 BlueXP  管理您的 StorageGRID 系統、並使用 BlueXP 的資料服務來進行備份、資料分層等。

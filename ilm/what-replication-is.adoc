@@ -1,0 +1,31 @@
+---
+permalink: ilm/what-replication-is.html 
+sidebar: sidebar 
+keywords: replication, object copies 
+summary: 複寫是 StorageGRID 用來儲存物件資料的兩種方法之一。當物件符合使用複寫的 ILM 規則時、系統會建立物件資料的精確複本、並將複本儲存在儲存節點上。 
+---
+= 什麼是複寫？
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+複寫是 StorageGRID 用來儲存物件資料的兩種方法之一（抹除編碼是另一種方法）。當物件符合使用複寫的 ILM 規則時、系統會建立物件資料的精確複本、並將複本儲存在儲存節點上。
+
+當您設定ILM規則以建立複寫複本時、請指定應建立多少複本、應將複本放置在何處、以及複本應儲存在每個位置的時間。
+
+在下列範例中、ILM規則指定將每個物件的兩個複寫複本放在包含三個儲存節點的儲存資源池中。
+
+image::../media/ilm_replication_make_2_copies.png[建立2份複本規則]
+
+當物件符合此規則時、它會建立物件的兩個複本、並將每個複本放在儲存資源池中的不同儲存節點上。StorageGRID這兩份複本可以放在三個可用儲存節點的任兩個上。在此情況下、規則會將物件複本放在儲存節點2和3上。因為有兩個複本、所以如果儲存資源池中的任何節點故障、就可以擷取物件。
+
+
+NOTE: 在任何指定的儲存節點上、僅能儲存一個物件的複本複本。StorageGRID如果您的網格包含三個儲存節點、而且您建立了一個4份複本ILM規則、則只會製作三份複本、每個儲存節點只會製作一份複本。觸發「無法實現的ILM放置」警示、表示無法完全套用ILM規則。
+
+.相關資訊
+* link:what-erasure-coding-is.html["什麼是銷毀編碼"]
+* link:what-storage-pool-is.html["什麼是儲存池"]
+* link:using-multiple-storage-pools-for-cross-site-replication.html["使用複寫和銷毀編碼來啟用站台遺失保護"]
+

@@ -1,0 +1,108 @@
+---
+permalink: tenant/viewing-s3-bucket-details.html 
+sidebar: sidebar 
+keywords: how to view bucket details 
+summary: 您可以檢視租戶帳戶中的貯體。 
+---
+= 檢視貯體詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視租戶帳戶中的貯體。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["root 存取權、管理所有貯體、或檢視所有貯體權限"]。這些權限會覆寫群組或儲存區原則中的權限設定。
+
+
+.步驟
+. 從儀表板選取 * 檢視貯體 * 、或選取 * 儲存空間（ S3 ） * > * 鏟斗 * 。
++
+此時會出現「鏟斗」頁面。
+
+. 檢視每個貯體的摘要表。
++
+視需要、您可以依任何欄排序資訊、也可以在清單中前後翻頁。
+
++
+
+NOTE: 顯示的物件計數、使用空間和使用率值為估計值。這些預估值會受到擷取時間、網路連線能力和節點狀態的影響。如果儲存區已啟用版本管理、則刪除的物件版本會包含在物件數中。
+
++
+名稱:: 貯體的獨特名稱、無法變更。
+啟用的功能:: 已啟用貯體功能的清單。
+S3物件鎖定:: 儲存區是否啟用 S3 物件鎖定。
++
+--
+只有在網格啟用 S3 物件鎖定時、才會顯示此欄。此欄也會顯示任何舊版相容桶的資訊。
+
+--
+區域:: 庫位的區域、無法變更。此欄預設為隱藏。
+物件數:: 此貯體中的物件數目。如果已啟用版本設定功能、則此值會包含非目前物件版本。
++
+--
+新增或刪除物件時、此值可能不會立即更新。
+
+--
+已用空間:: 貯體中所有物件的邏輯大小。邏輯大小不包含複寫或銷毀編碼複本或物件中繼資料所需的實際空間。
++
+--
+此值最多可能需要 10 分鐘才能更新。
+
+--
+使用量:: 如果已設定容量上限、則為貯體容量上限的使用百分比。
++
+--
+使用率值是根據內部預估、在某些情況下可能會超出。例如、當租戶開始上傳物件時、 StorageGRID 會檢查容量限制（如果已設定）、如果租戶已超過容量限制、則會拒絕新的擷取到此貯體。不過、 StorageGRID 在判斷是否超過容量上限時、並未考慮目前上傳的大小。如果刪除物件、可能會暫時禁止租戶將新物件上傳至此貯體、直到重新計算容量限制使用量為止。計算可能需要 10 分鐘或更長時間。
+
+此值表示邏輯大小、而非儲存物件及其中繼資料所需的實體大小。
+
+--
+容量:: 如果已設定、則為貯體的容量上限。
+建立日期:: 建立庫位的日期與時間。此欄預設為隱藏。
+
+
+. 若要檢視特定貯體的詳細資料、請從表格中選取貯體名稱。
++
+.. 檢視網頁頂端的摘要資訊、以確認貯體的詳細資料、例如區域和物件計數。
+.. 檢視容量限制使用率列。如果使用率為 100% 或接近 100% 、請考慮增加限制或刪除部分物件。
+.. 視需要選取 * 刪除貯體中的物件 * 和 * 刪除貯體 * 。
++
+[CAUTION]
+====
+請密切注意在您選取這些選項時所出現的注意事項。如需詳細資訊、請參閱：
+
+*** link:deleting-s3-bucket-objects.html["刪除貯體中的所有物件"]
+*** link:deleting-s3-bucket.html["刪除貯體"]（貯體必須為空）
+
+
+====
+.. 視需要檢視或變更每個標籤中的貯體設定。
++
+*** *S3 控制檯 * ：查看桶的對象。如需詳細資訊、請 link:use-s3-console.html["使用 S3 Console"]參閱。
+*** * 鏟斗選項 * ：檢視或變更選項設定。建立貯體後、某些設定（例如 S3 物件鎖定）無法變更。
++
+**** link:manage-bucket-consistency.html["管理貯體一致性"]
+**** link:enabling-or-disabling-last-access-time-updates.html["上次存取時間更新"]
+**** link:../tenant/creating-s3-bucket.html#capacity-limit["容量限制"]
+**** link:changing-bucket-versioning.html["物件版本管理"]
+**** link:using-s3-object-lock.html["S3物件鎖定"]
+**** link:update-default-retention-settings.html["預設貯體保留"]
+**** link:grid-federation-manage-cross-grid-replication.html["管理跨網格複寫"]（如果租戶允許）
+
+
+*** * 平台服務 * ：link:considerations-for-platform-services.html["管理平台服務"]（如果租戶允許）
+*** * 鏟斗存取 * ：檢視或變更選項設定。您必須擁有特定的存取權限。
++
+**** 進行設定link:configuring-cross-origin-resource-sharing-cors.html["跨來源資源共享（CORS）"]、讓其他網域的 Web 應用程式可以存取貯體中的貯體和物件。
+**** link:../tenant/manage-bucket-policy.html["控制使用者存取"]適用於 S3 貯體和該貯體中的物件。
+
+
+
+
+
+
+

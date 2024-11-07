@@ -1,0 +1,46 @@
+---
+permalink: audit/ilm-audit-messages.html 
+sidebar: sidebar 
+keywords: audit messages, ILM, IDEL, LKCU, ORLM 
+summary: 屬於 ILM 稽核類別的稽核訊息是用於資訊生命週期作業的相關事件。 
+---
+= ILM 稽核訊息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+屬於 ILM 稽核類別的稽核訊息會用於與資訊生命週期管理 (ILM) 作業相關的事件。
+
+[cols="1a,3a,1a"]
+|===
+| 程式碼 | 訊息標題與說明 | 請參閱 
+
+
+ a| 
+理想
+ a| 
+ILM初始化刪除：此稽核訊息是在ILM開始刪除物件的程序時產生。
+ a| 
+link:idel-ilm-initiated-delete.html["表意：ILM啟動刪除"]
+
+
+
+ a| 
+LKCU
+ a| 
+覆寫物件清除。此稽核訊息會在自動移除覆寫的物件以釋放儲存空間時產生。
+ a| 
+link:lkcu-overwritten-object-cleanup.html["LKCU：覆寫物件清理"]
+
+
+
+ a| 
+ORLM
+ a| 
+符合的物件規則：此稽核訊息會在物件資料依照 ILM 規則指定儲存時產生。
+ a| 
+link:orlm-object-rules-met.html["ORLM：符合物件規則"]
+
+|===

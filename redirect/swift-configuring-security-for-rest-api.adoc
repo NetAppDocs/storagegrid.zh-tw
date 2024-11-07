@@ -1,0 +1,8 @@
+---
+permalink: swift/configuring-security-for-rest-api.html 
+redirect: storagegrid/admin/security-for-clients.html 
+---
+= 
+:allow-uri-read: 
+
+

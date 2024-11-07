@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: earlier-versions.html 
+keywords: storagegrid, earlier version, documentation, doc site, 11.8, 11.7, 11.6, 11.5, 11.4 
+summary: 您可以在此找到 NetApp StorageGRID 軟體其他版本的文件。 
+---
+= 其他版本的 NetApp StorageGRID 文件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在這裡找到其他 NetApp StorageGRID 軟體版本的文件：
+
+* https://docs.netapp.com/us-en/storagegrid-118/index.html["StorageGRID 11.8 文件"^]
+* https://docs.netapp.com/us-en/storagegrid-117/index.html["StorageGRID 11.7 文件"^]
+* https://docs.netapp.com/us-en/storagegrid-116/index.html["StorageGRID 11.6 文件"^]
+* https://docs.netapp.com/us-en/storagegrid-115/index.html["StorageGRID 11.5 文件"^]
+* https://docs.netapp.com/sgws-114/index.jsp["VMware文件中心StorageGRID"^]
+* https://docs.netapp.com/sgws-113/index.jsp["StorageGRID 11.3 文件中心"^]
+

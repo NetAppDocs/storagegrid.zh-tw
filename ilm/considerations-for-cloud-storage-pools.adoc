@@ -1,0 +1,128 @@
+---
+permalink: ilm/considerations-for-cloud-storage-pools.html 
+sidebar: sidebar 
+keywords: what is a cloud storage pool, considerations for a cloud storage pool 
+summary: 如果您打算使用雲端儲存資源池將物件移出StorageGRID 整個作業系統、則必須檢閱設定和使用雲端儲存資源池的考量事項。 
+---
+= 雲端儲存資源池的考量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您打算使用雲端儲存資源池將物件移出StorageGRID 整個作業系統、則必須檢閱設定和使用雲端儲存資源池的考量事項。
+
+
+
+== 一般考量
+
+* 一般而言、Amazon S3 Glacier或Azure Blob儲存設備等雲端歸檔儲存設備、是儲存物件資料的廉價場所。然而、從雲端歸檔儲存設備擷取資料的成本相對較高。若要達到最低的整體成本、您必須考慮何時及多久存取雲端儲存池中的物件。建議僅針對您預期不常存取的內容使用雲端儲存池。
+* 由於從雲端儲存資源池目標擷取物件的延遲增加、因此不支援使用FabricPool 含有支援功能的雲端儲存資源池。
+* 啟用 S3 物件鎖定的物件無法放置在雲端儲存資源池中。
+* 如果雲端儲存池的目的地 S3 儲存區已啟用 S3 物件鎖定、則設定儲存區複寫（ PuttBucketReplication ）的嘗試將會失敗、並出現 AccessDenied 錯誤。
+* Cloud Storage Pool 不支援以下平台、驗證及具有 S3 物件鎖定的傳輸協定組合：
++
+** * 平台 * ： Google Cloud Platform 與 Azure
+** * 驗證類型 * ： IAM 角色隨處可及匿名存取
+** * 傳輸協定 * ： HTTP
+
+
+
+
+
+
+== 雲端儲存資源池所用連接埠的考量事項
+
+若要確保ILM規則可將物件移入或移出指定的Cloud Storage Pool、您必須設定包含系統儲存節點的網路。您必須確保下列連接埠可與Cloud Storage Pool通訊。
+
+根據預設、Cloud Storage Pool會使用下列連接埠：
+
+* *80*：適用於以http開頭的端點URI
+* * 443*：適用於以https開頭的端點URI
+
+
+您可以在建立或編輯雲端儲存資源池時、指定不同的連接埠。
+
+如果您使用非透明 Proxy 伺服器、也必須link:../admin/configuring-storage-proxy-settings.html["設定儲存 Proxy"]允許訊息傳送至外部端點、例如網際網路上的端點。
+
+
+
+== 成本考量
+
+若要使用雲端儲存資源池存取雲端儲存設備、需要透過網路連線才能連線至雲端。您必須考量存取雲端所需的網路基礎架構成本、並根據使用StorageGRID Cloud Storage Pool在介於流通於流通的資料量、適當地配置雲端。
+
+當連接到外部雲端儲存資源池端點時StorageGRID 、它會發出各種要求來監控連線能力、並確保它能執行所需的作業。雖然這些要求會帶來一些額外成本、但監控雲端儲存資源池的成本只應是S3或Azure中儲存物件的整體成本的一小部分。
+
+如果您需要將物件從外部Cloud Storage Pool端點移回StorageGRID 至物件、可能會產生更高的成本。在StorageGRID 下列任一情況下、物件都可能移回物件的不執行功能：
+
+* 物件的唯一複本是在Cloud Storage Pool中、您決定將物件儲存StorageGRID 在物件中、改為將物件儲存在物件中。在這種情況下、您可以重新設定 ILM 規則和原則。進行ILM評估時StorageGRID 、此功能會發出多個要求、要求從Cloud Storage Pool擷取物件。然後、在本機建立指定數量的複製或銷毀編碼複本。StorageGRID物件移回StorageGRID 物件後、雲端儲存池中的複本即會刪除。
+* 物件會因為儲存節點故障而遺失。如果物件的唯一剩餘複本位於Cloud Storage Pool中、StorageGRID 則由NetApp暫時還原物件、並在恢復的儲存節點上建立新複本。
+
+
+
+NOTE: 當物件從StorageGRID 雲端儲存資源池移回支援區時StorageGRID 、針對每個物件向雲端儲存資源池端點發出多個要求。在搬移大量物件之前、請聯絡技術支援部門、以協助評估時間範圍及相關成本。
+
+
+
+== S3：Cloud Storage Pool儲存區所需的權限
+
+用於雲端儲存池的外部 S3 儲存區原則必須授予 StorageGRID 權限、才能將物件移至儲存區、取得物件狀態、在需要時從 Glacier 儲存區還原物件等。理想情況下、 StorageGRID 應擁有對儲存庫的完全控制存取權(`s3:*`）；不過、如果無法做到這點、儲存庫原則必須將下列 S3 權限授予 StorageGRID ：
+
+* `s3:AbortMultipartUpload`
+* `s3:DeleteObject`
+* `s3:GetObject`
+* `s3:ListBucket`
+* `s3:ListBucketMultipartUploads`
+* `s3:ListMultipartUploadParts`
+* `s3:PutObject`
+* `s3:RestoreObject`
+
+
+
+
+== S3：外部儲存庫生命週期的考量事項
+
+StorageGRID 和雲端儲存資源池中指定的外部 S3 儲存區之間的物件移動、是由 ILM 規則和 StorageGRID 中的主動 ILM 原則所控制。相反地、從雲端儲存資源池中指定的外部S3儲存區、移轉至Amazon S3 Glacier或S3 Glacier Deep歸檔（或移轉至實作Glacier儲存類別的儲存解決方案）的物件、則是由該儲存區的生命週期組態所控制。
+
+如果您想要從雲端儲存池移轉物件、則必須在外部 S3 儲存區上建立適當的生命週期組態、而且您必須使用實作 Glacier 儲存類別並支援 S3 RestoreObject API 的儲存解決方案。
+
+例如、假設您想StorageGRID 要將從靜止移至雲端儲存資源池的所有物件立即轉換至Amazon S3 Glacier儲存設備。您可以在外部S3儲存區上建立生命週期組態、以指定下列單一動作（* Transition *）：
+
+[listing]
+----
+<LifecycleConfiguration>
+  <Rule>
+    <ID>Transition Rule</ID>
+    <Filter>
+       <Prefix></Prefix>
+    </Filter>
+    <Status>Enabled</Status>
+    <Transition>
+      <Days>0</Days>
+      <StorageClass>GLACIER</StorageClass>
+    </Transition>
+  </Rule>
+</LifecycleConfiguration>
+----
+這項規則會在所有庫位物件建立之日（亦即、在StorageGRID 物件從旁移至雲端儲存池當日）、將其全部移轉至Amazon S3 Glacier。
+
+
+CAUTION: 設定外部儲存庫的生命週期時、切勿使用* Expiration*動作來定義物件何時過期。過期動作會導致外部儲存系統刪除過期的物件。如果您稍後嘗試從StorageGRID 無法存取過期的物件、將無法找到刪除的物件。
+
+如果您想要將雲端儲存池中的物件移轉至 S3 Glacier Deep Archive （而非 Amazon S3 Glacier ）、請在貯體生命週期中指定 `<StorageClass>DEEP_ARCHIVE</StorageClass>`。不過、請注意、您無法使用該 `Expedited`階層來還原 S3 Glacier Deep Archive 中的物件。
+
+
+
+== Azure：存取層的考量
+
+當您設定Azure儲存帳戶時、可以將預設的存取層設定為「Hot」（熱）或「Cool」（冷）。建立用於雲端儲存資源池的儲存帳戶時、您應該使用熱層做為預設層。即使將物件移至雲端儲存資源池時、將層級立即設定為「歸檔」、但使用預設的Hot（熱）設定、可確保您不會在30天內收取從冷卻層移除物件的早期刪除費用。StorageGRID
+
+
+
+== Azure：不支援生命週期管理
+
+請勿將 Azure Blob 儲存生命週期管理用於與雲端儲存池搭配使用的容器。生命週期作業可能會干擾Cloud Storage Pool作業。
+
+.相關資訊
+link:creating-cloud-storage-pool.html["建立雲端儲存資源池"]

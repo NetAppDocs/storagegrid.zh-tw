@@ -1,0 +1,8 @@
+---
+permalink: maintain/rebooting-grid-node.html 
+redirect: storagegrid/maintain/grid-node-procedures.html 
+---
+= 
+:allow-uri-read: 
+
+

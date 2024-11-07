@@ -1,0 +1,80 @@
+---
+permalink: maintain/restoring-network-connectivity-for-isolated-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, network connection, restore network connection, isolated node, restore isolated node connection 
+summary: 在某些情況下、一或多個節點群組可能無法與網格的其他部分聯絡。例如、站台或網格範圍內的 IP 位址變更可能會導致隔離節點。 
+---
+= 還原隔離節點的網路連線能力
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在某些情況下、一或多個節點群組可能無法與網格的其他部分聯絡。例如、站台或網格範圍內的 IP 位址變更可能會導致隔離節點。
+
+.關於這項工作
+節點隔離以下列方式表示：
+
+* 警示、例如 * 無法與節點 * 通訊（ * 警示 * > * 目前 * ）
+* 連線相關診斷（ * 支援 * > * 工具 * > * 診斷 * ）
+
+
+隔離節點的部分後果包括：
+
+* 如果隔離多個節點、您可能無法登入或存取Grid Manager。
+* 如果隔離多個節點、則租戶管理程式儀表板上顯示的儲存使用量和配額值可能已過期。當網路連線恢復時、總計將會更新。
+
+
+若要解決隔離問題、您可以在每個隔離節點或群組中的一個節點（子網路中不含主要管理節點的所有節點）上執行命令列公用程式、這些節點與網格隔離。公用程式會在網格中提供節點的非隔離節點IP位址、讓隔離的節點或節點群組能夠再次聯絡整個網格。
+
+
+NOTE: 如果網路中停用多點傳送網域名稱系統（ mDNS ）、您可能必須在每個隔離節點上執行命令列公用程式。
+
+.步驟
+只有部分服務離線或回報通訊錯誤時、此程序不適用。
+
+. 存取節點並檢查 `/var/local/log/dynip.log`隔離訊息。
++
+例如：
+
++
+[listing]
+----
+[2018-01-09T19:11:00.545] UpdateQueue - WARNING -- Possible isolation, no contact with other nodes.
+If this warning persists, manual action might be required.
+----
++
+如果您使用的是VMware主控台、它會顯示一則訊息、指出該節點可能已隔離。
+
++
+在 Linux 部署中、隔離訊息會出現在 `/var/log/storagegrid/node/<nodename>.log`檔案中。
+
+. 如果隔離訊息是重複且持續的、請執行下列命令：
++
+`add_node_ip.py <address>`
+
++
+其中 `<address>`是連線至網格的遠端節點的 IP 位址。
+
++
+[listing]
+----
+# /usr/sbin/add_node_ip.py  10.224.4.210
+
+Retrieving local host information
+Validating remote node at address 10.224.4.210
+Sending node IP hint for 10.224.4.210 to local node
+Local node found on remote node. Update complete.
+----
+. 針對先前隔離的每個節點、驗證下列項目：
++
+** 節點的服務已啟動。
+** 執行命令後、動態 IP 服務的狀態為「執行中」 `storagegrid-status`。
+** 在「節點」頁面上、節點不再與網格的其他部分中斷連線。
+
+
+
+
+
+NOTE: 如果執行 `add_node_ip.py`命令無法解決問題、可能還有其他網路問題需要解決。

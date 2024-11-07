@@ -1,0 +1,98 @@
+= 
+:allow-uri-read: 
+
+
+[cols="1a,1a"]
+|===
+| 路徑和檔案名稱 | 說明 
+
+
+| /vSphere/README  a| 
+說明StorageGRID 包含在更新檔中的所有檔案的文字檔。
+
+
+
+| ./vSphere/NLF000000.txt  a| 
+不提供產品任何支援權利的免費授權。
+
+
+
+| /vSphere/NetApp-SG-version -SHA-vmdk  a| 
+用來做為建立網格節點虛擬機器範本的虛擬機器磁碟檔案。
+
+
+
+| /vSphere/vSphere-primer-admin.OVF ./vSphere/vSphere-prime-admin.mf  a| 
+開放式虛擬化格式模板文件(`.mf`）(`.ovf`和清單文件），用於部署主管理節點。
+
+
+
+| /vSphere/vSphere-non-prime-admin.OVF ./vSphere/vSphere-non-prime-admin.mf  a| 
+模板文件(`.mf`）(`.ovf`和清單文件），用於部署非主管理員節點。
+
+
+
+| /vSphere/vSphere-gateway.OVF ./vSphere/vSphere-gateway.mf  a| 
+模板文件(`.mf`）(`.ovf`和清單文件），用於部署網關節點。
+
+
+
+| /vSphere/vSphere-storage。OVF ./vSphere/vSphere-storage  a| 
+模板文件(`.mf`）(`.ovf`和清單文件），用於部署基於虛擬機的存儲節點。
+
+
+
+| 部署指令碼工具 | 說明 
+
+
+| ./vSphere/deploy-vsphere-ovftool.sh  a| 
+Bash Shell指令碼、用於自動化虛擬網格節點的部署。
+
+
+
+| ./vSphere/deploy-vsphere-ovftool-sample.ini  a| 
+用於指令碼的範例組態檔 `deploy-vsphere-ovftool.sh`。
+
+
+
+| ./vSphere/configure-storagegrid.py  a| 
+Python指令碼、用於自動化StorageGRID 組態的功能。
+
+
+
+| ./vSphere/configure-sga.py  a| 
+Python指令碼、用於自動化StorageGRID 設定不必要的應用程式。
+
+
+
+| ./vSphere/storagegrid-ssoauth.py  a| 
+啟用單一登入（ SSO ）時、您可以使用 Python 指令碼範例登入 Grid Management API 。您也可以使用此指令碼來進行 Ping 聯合整合。
+
+
+
+| /vSphere/configure-storagegrid、same.json  a| 
+用於指令碼的範例組態檔 `configure-storagegrid.py`。
+
+
+
+| /vSphere/configure-storagegrid、blank.json  a| 
+用於指令碼的空白組態檔 `configure-storagegrid.py`。
+
+
+
+| ./vSphere/storagegrid-ssoauth-azure.py  a| 
+使用 Active Directory 或 Ping 聯合啟用單一登入（ SSO ）時、可以用來登入 Grid Management API 的 Python 指令碼範例。
+
+
+
+| ./svSphere/storagegRID -soauth-azure.js  a| 
+由搭配 Python 指令碼所呼叫的輔助程式指令碼 `storagegrid-ssoauth-azure.py`、用於執行與 Azure 的 SSO 互動。
+
+
+
+| /vSphere/Extras / API架構  a| 
+API架構StorageGRID 。
+
+* 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
+
+|===

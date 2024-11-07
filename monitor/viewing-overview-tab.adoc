@@ -1,0 +1,62 @@
+---
+permalink: monitor/viewing-overview-tab.html 
+sidebar: sidebar 
+keywords: overview tab 
+summary: 「總覽」索引標籤提供每個節點的基本資訊。也會顯示目前影響節點的任何警示。 
+---
+= 檢視「總覽」索引標籤
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「總覽」索引標籤提供每個節點的基本資訊。也會顯示目前影響節點的任何警示。
+
+「總覽」索引標籤會顯示所有節點。
+
+
+
+== 節點資訊
+
+「概觀」索引標籤的「節點資訊」區段會列出有關節點的基本資訊。
+
+image::../media/nodes_page_overview_tab.png[節點頁面總覽索引標籤]
+
+節點的總覽資訊包括下列項目：
+
+* * 顯示名稱 * （僅當節點已重新命名時顯示）：節點的目前顯示名稱。請使用link:../maintain/rename-grid-site-node-overview.html["重新命名網格、站台和節點"]程序來更新此值。
+* * 系統名稱 * ：您在安裝期間為節點輸入的名稱。系統名稱用於內部 StorageGRID 作業、無法變更。
+* * 類型 * ：節點類型 - 管理節點、主要管理節點、儲存節點或閘道節點。
+* * ID*：節點的唯一識別碼、也稱為UUID。
+* *連線狀態*：三種狀態之一。此時會顯示最嚴重狀態的圖示。
++
+** * 未知 * image:../media/icon_alarm_blue_unknown.png["藍色問號圖示"]：由於未知原因，節點未連接到網格，或一個或多個服務意外關閉。例如、節點之間的網路連線已中斷、電源中斷或服務中斷。也可能會觸發*無法與node*通訊警示。其他警示也可能處於作用中狀態。這種情況需要立即注意。
++
+
+NOTE: 在託管關機作業期間、節點可能會顯示為「未知」。在這些情況下、您可以忽略「未知」狀態。
+
+** *administratively down* image:../media/icon_alarm_gray_administratively_down.png["灰色問號圖示"]（管理性關閉 * ）：由於預期的原因，節點未連接到網格。例如、節點或節點上的服務已正常關機、節點正在重新開機、或軟體正在升級。一個或多個警示也可能處於作用中狀態。
+** *Connected * image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]：節點已連接至網格。
+
+
+* *使用的儲存設備*：僅適用於儲存節點。
++
+** *物件資料*：儲存節點上已使用之物件資料的可用空間總計百分比。
+** *物件中繼資料*：儲存節點上已使用之物件中繼資料的總允許空間百分比。
+
+
+* *軟體版本*：StorageGRID 安裝在節點上的版本。
+* * HA Groups *：僅適用於管理節點和閘道節點。顯示節點上的網路介面是否包含在高可用度群組中、以及該介面是否為主要介面。
+* * IP位址*：節點的IP位址。按一下「*顯示其他IP位址*」以檢視節點的IPv6位址和介面對應。
+
+
+
+
+== 警示
+
+Overview （概述）選項卡的 Alerts link:monitoring-system-health.html#view-current-and-resolved-alerts["目前影響此節點且尚未靜音的警示"]（警報）部分列出了任何。選取警示名稱以檢視其他詳細資料和建議的動作。
+
+image::../media/nodes_page_alerts_table.png[節點頁面警示表]
+
+也包含的警示link:monitoring-system-health.html#monitor-node-connection-states["節點連線狀態"]。

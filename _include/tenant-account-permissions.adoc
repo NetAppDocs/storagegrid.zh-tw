@@ -1,0 +1,31 @@
+= 
+:allow-uri-read: 
+
+
+[cols="1a,3a"]
+|===
+| 權限 | 如果選取 ... 
+
+
+ a| 
+允許平台服務
+ a| 
+租戶可以使用 S3 平台服務、例如 CloudMirror 。請參閱。 link:../admin/manage-platform-services-for-tenants.html["管理S3租戶帳戶的平台服務"]
+
+
+
+ a| 
+使用自己的身分識別來源
+ a| 
+租戶可以為同盟群組和使用者設定及管理自己的身分識別來源。如果您的 StorageGRID 系統有此選項、則此選項會停用link:../admin/configuring-sso.html["已設定 SSO"]。
+
+
+
+ a| 
+允許 S3 Select
+ a| 
+租戶可以發出 S3 SelectObjectContent API 要求、以篩選及擷取物件資料。請參閱。 link:../admin/manage-s3-select-for-tenant-accounts.html["管理用戶帳戶的S3 Select"]
+
+* 重要 * ： SelectObjectContent 要求可降低所有 S3 用戶端和所有租戶的負載平衡器效能。只有在必要時才啟用此功能、而且僅適用於信任的租戶。
+
+|===

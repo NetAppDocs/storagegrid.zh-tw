@@ -1,0 +1,26 @@
+---
+permalink: tenant/deleting-group.html 
+sidebar: sidebar 
+keywords: how to delete tenant group 
+summary: 您可以從系統中刪除群組。只屬於該群組的任何使用者將無法再登入租戶管理程式或使用租戶帳戶。 
+---
+= 刪除群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從系統中刪除群組。只屬於該群組的任何使用者將無法再登入租戶管理程式或使用租戶帳戶。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有「根目錄」存取權限的使用者群組。請參閱。 link:tenant-management-permissions.html["租戶管理權限"]
+
+
+.步驟
+. 選擇*存取管理*>*群組*。
+. 選取您要刪除的每個群組的核取方塊。
+. 選擇*操作*>*刪除群組*。
+. 選取 * 刪除群組 * 。
+

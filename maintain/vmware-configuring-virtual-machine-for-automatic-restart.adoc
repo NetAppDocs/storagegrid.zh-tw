@@ -1,0 +1,22 @@
+---
+permalink: maintain/vmware-configuring-virtual-machine-for-automatic-restart.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, vmware, automatic restart, auto restart, configure automatic restart, configure auto restart 
+summary: 如果虛擬機器在VMware vSphere Hypervisor重新啟動後未重新啟動、您可能需要設定虛擬機器以自動重新啟動。 
+---
+= VMware：設定虛擬機器以自動重新啟動
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果虛擬機器在VMware vSphere Hypervisor重新啟動後未重新啟動、您可能需要設定虛擬機器以自動重新啟動。
+
+如果您注意到在恢復網格節點或執行其他維護程序時、虛擬機器並未重新啟動、則應執行此程序。
+
+.步驟
+. 在VMware vSphere Client樹狀結構中、選取尚未啟動的虛擬機器。
+. 在虛擬機器上按一下滑鼠右鍵、然後選取*「Power On*（開機*）」。
+. 設定VMware vSphere Hypervisor以在未來自動重新啟動虛擬機器。
+

@@ -1,0 +1,176 @@
+---
+permalink: s3/create-s3-lifecycle-configuration.html 
+sidebar: sidebar 
+keywords: s3 lifecycle, object deletion, bucket 
+summary: 您可以建立S3生命週期組態、以控制何時從StorageGRID 作業系統刪除特定物件。 
+---
+= 建立S3生命週期組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立S3生命週期組態、以控制何時從StorageGRID 作業系統刪除特定物件。
+
+本節的簡單範例說明S3生命週期組態如何控制從特定S3儲存區刪除（過期）特定物件的時間。本節範例僅供說明用途。如需建立 S3 生命週期組態的完整詳細資料、請參閱 https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html["Amazon Simple Storage Service 使用者指南：物件生命週期管理"^]。請注意StorageGRID 、僅支援過期行動、不支援轉換行動。
+
+
+
+== 什麼是生命週期組態
+
+生命週期組態是套用至特定S3儲存區中物件的一組規則。每個規則都會指定受影響的物件、以及這些物件何時到期（在特定日期或幾天之後）。
+
+在生命週期組態中、支援多達1、000個生命週期規則。StorageGRID每個規則可包含下列XML元素：
+
+* 過期：在達到指定日期或達到指定天數時刪除物件、從擷取物件開始算起。
+* 非目前版本過期：在達到指定天數時刪除物件、從物件變成非目前的開始算起。
+* 篩選器（前置、標記）
+* 狀態
+* ID
+
+
+每個物件都遵循 S3 儲存區生命週期或 ILM 原則的保留設定。當 S3 貯體生命週期設定完成時、生命週期到期動作會覆寫符合貯體生命週期篩選器之物件的 ILM 原則。不符合貯體生命週期篩選器的物件、會使用 ILM 原則的保留設定。如果物件符合貯體生命週期篩選器、且未明確指定到期動作、則不會使用 ILM 原則的保留設定、而且會暗示物件版本會永遠保留。請參閱。 link:../ilm/example-8-priorities-for-s3-bucket-lifecycle-and-ilm-policy.html["S3 儲存區生命週期和 ILM 原則的優先順序範例"]
+
+因此、即使ILM規則中的放置指示仍套用至物件、也可能從網格中移除物件。或者、即使物件的任何ILM放置指示失效、物件仍可能保留在網格上。如需詳細資訊、請參閱 link:../ilm/how-ilm-operates-throughout-objects-life.html["ILM在物件生命週期內的運作方式"]。
+
+
+NOTE: 庫位生命週期組態可搭配已啟用S3物件鎖定的庫位使用、但庫位生命週期組態不支援舊型符合標準的庫位。
+
+支援使用下列庫位作業來管理生命週期組態：StorageGRID
+
+* 刪除 BucketLifecycle
+* GetBucketLifecycleConfiguration
+* PuttBucketLifecycleConfiguration
+
+
+
+
+== 建立生命週期組態
+
+建立生命週期組態的第一步、就是建立一個包含一或多個規則的Json檔案。例如、此Json檔案包含三個規則、如下所示：
+
+. 規則 1 僅適用於符合前置碼/ 且 `key2`值為 `tag2`的物件 `category1`。此 `Expiration`參數指定符合篩選條件的物件將於 2020 年 8 月 22 日午夜到期。
+. 規則 2 僅適用於符合前置碼/ 的物件 `category2`。此 `Expiration`參數指定符合篩選條件的物件將在擷取後 100 天過期。
++
+
+CAUTION: 指定天數的規則是相對於擷取物件的時間。如果目前日期超過擷取日期加上天數、則在套用生命週期組態後、部分物件可能會立即從儲存庫中移除。
+
+. 規則 3 僅適用於符合前置/ 的物件 `category3`。此 `Expiration`參數會指定任何非目前版本的相符物件會在非目前版本之後 50 天過期。
+
+
+[listing]
+----
+{
+	"Rules": [
+        {
+		    "ID": "rule1",
+			"Filter": {
+                "And": {
+                    "Prefix": "category1/",
+                    "Tags": [
+                        {
+                            "Key": "key2",
+							"Value": "tag2"
+                        }
+                    ]
+                }
+            },
+			"Expiration": {
+                "Date": "2020-08-22T00:00:00Z"
+            },
+            "Status": "Enabled"
+        },
+		{
+            "ID": "rule2",
+			"Filter": {
+                "Prefix": "category2/"
+            },
+			"Expiration": {
+                "Days": 100
+            },
+            "Status": "Enabled"
+        },
+		{
+            "ID": "rule3",
+			"Filter": {
+                "Prefix": "category3/"
+            },
+			"NoncurrentVersionExpiration": {
+                "NoncurrentDays": 50
+            },
+            "Status": "Enabled"
+        }
+    ]
+}
+----
+
+
+== 將生命週期組態套用至貯體
+
+建立生命週期組態檔案之後、您可以發出 PuttBucketLifecycleConfiguration 要求、將其套用至儲存庫。
+
+此要求會將範例檔案中的生命週期組態套用至名為的貯體中的物件 `testbucket`。
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> put-bucket-lifecycle-configuration
+--bucket testbucket --lifecycle-configuration file://bktjson.json
+----
+若要驗證已成功將生命週期組態套用至貯體、請發出 GetBucketLifecycleConfiguration 要求。例如：
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configuration
+ --bucket testbucket
+----
+成功的回應會列出您剛套用的生命週期組態。
+
+
+
+== 驗證目標是否適用庫位生命週期到期
+
+您可以在發出 PutObject 、 HeadObject 或 GetObject 要求時、判斷生命週期組態中的到期規則是否適用於特定物件。如果套用規則、回應會包含一個 `Expiration`參數、指出物件何時過期、以及相符的到期規則。
+
+
+NOTE: 由於貯體生命週期會覆寫 ILM 、因此 `expiry-date`所顯示的是物件將被刪除的實際日期。如需詳細資訊、請參閱 link:../ilm/how-object-retention-is-determined.html["如何判斷物件保留"]。
+
+例如、本 PutObject 申請於 2020 年 6 月 22 日發出、並在貯體中放置物件 `testbucket`。
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> put-object
+--bucket testbucket --key obj2test2 --body bktjson.json
+----
+成功回應表示物件將在100天（2020年10月1日）後過期、且符合生命週期組態的規則2。
+
+[listing, subs="specialcharacters,quotes"]
+----
+{
+      *"Expiration": "expiry-date=\"Thu, 01 Oct 2020 09:07:49 GMT\", rule-id=\"rule2\"",
+      "ETag": "\"9762f8a803bc34f5340579d4446076f7\""
+}
+----
+例如、此 HeadObject 要求用於取得 testBucket 儲存區中相同物件的中繼資料。
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> head-object
+--bucket testbucket --key obj2test2
+----
+成功回應包括物件的中繼資料、指出物件將在100天內過期、且符合規則2。
+
+[listing, subs="specialcharacters,quotes"]
+----
+{
+      "AcceptRanges": "bytes",
+      *"Expiration": "expiry-date=\"Thu, 01 Oct 2020 09:07:48 GMT\", rule-id=\"rule2\"",
+      "LastModified": "2020-06-23T09:07:48+00:00",
+      "ContentLength": 921,
+      "ETag": "\"9762f8a803bc34f5340579d4446076f7\""
+      "ContentType": "binary/octet-stream",
+      "Metadata": {}
+}
+----
+
+NOTE: 對於啟用版本控制的儲存區、 `x-amz-expiration`回應標頭僅適用於物件的目前版本。

@@ -1,0 +1,33 @@
+---
+permalink: maintain/checking-systems-condition-before-applying-hotfix.html 
+sidebar: sidebar 
+keywords: storagegrid, hotfix 
+summary: 您必須驗證系統是否已準備好容納此修復程式。 
+---
+= 在套用修補程式之前、請先檢查系統狀況
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須驗證系統是否已準備好容納此修復程式。
+
+. 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+. 如有可能、請確定系統正常運作、且所有網格節點均已連接至網格。
++
+連接的節點在「節點」頁面上有綠色核取記號image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]。
+
+. 如有可能、請檢查並解決任何目前的警示。
+. 確保沒有其他維護程序在進行中、例如升級、恢復、擴充或取消委任程序。
++
+在套用修補程式之前、您應該先等待任何作用中的維護程序完成。
+
++
+當另一個維護程序正在執行時、您無法套用 StorageGRID Hotfix 。例如、在執行取消委任、擴充或還原程序時、您無法套用 Hotfix 。
+
++
+
+NOTE: 如果link:pausing-and-resuming-decommission-process-for-storage-nodes.html["取消委任程序已暫停"]是節點或站點，則可以安全地應用修復程序。此外、StorageGRID 您也可以在更新程序的最後階段套用修補程式。請參閱的說明link:../upgrade/index.html["升級 StorageGRID 軟體"]。
+
+

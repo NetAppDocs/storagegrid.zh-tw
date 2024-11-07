@@ -1,0 +1,21 @@
+---
+permalink: monitor/using-task-tab-to-reboot-grid-node.html 
+sidebar: sidebar 
+keywords: Tasks tab, rename node, reboot node, maintenance mode 
+summary: 所有節點都會顯示「工作」標籤。您可以使用此索引標籤來重新命名或重新開機節點、或將應用裝置節點置於維護模式。 
+---
+= 使用工作索引標籤
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+所有節點都會顯示「工作」標籤。您可以使用此索引標籤來重新命名或重新開機節點、或將應用裝置節點置於維護模式。
+
+如需此索引標籤上每個選項的完整需求和指示、請參閱下列內容：
+
+* link:../maintain/rename-grid-site-node-overview.html["重新命名網格、站台和節點"]
+* link:../maintain/rebooting-grid-node-from-grid-manager.html["重新開機網格節點"]
+* https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["將應用裝置置於維護模式"^]
+

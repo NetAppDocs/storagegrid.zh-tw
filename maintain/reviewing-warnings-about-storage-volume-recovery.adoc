@@ -1,0 +1,39 @@
+---
+permalink: maintain/reviewing-warnings-about-storage-volume-recovery.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, volume warning 
+summary: 在恢復儲存節點的故障儲存磁碟區之前、您必須檢閱下列警告。 
+---
+= 儲存磁碟區恢復警告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在恢復儲存節點的故障儲存磁碟區之前、請先檢閱下列警告。
+
+儲存節點中的儲存磁碟區（或rangedbs）會以稱為Volume ID的十六進位數字來識別。例如、0000是第一個Volume、000F是第16個Volume。每個儲存節點上的第一個物件存放區（Volume 0）會使用高達4 TB的空間進行物件中繼資料和Cassandra資料庫作業；該磁碟區上的任何剩餘空間都會用於物件資料。所有其他儲存磁碟區僅用於物件資料。
+
+如果Volume 0故障且需要恢復、則Cassandra資料庫可能會在磁碟區恢復程序中重新建立。Cassandra也可能在下列情況下重建：
+
+* 在離線超過15天之後、儲存節點便會恢復上線。
+* 系統磁碟機和一或多個儲存磁碟區故障並恢復。
+
+
+重新建立Cassandra時、系統會使用其他儲存節點的資訊。如果有太多儲存節點離線、部分Cassandra資料可能無法使用。如果最近重新建置Cassandra、則整個網格的Cassandra資料可能尚未一致。如果Cassandra重新建置的儲存節點太多離線、或是在15天內重建兩個或多個儲存節點、就可能發生資料遺失。
+
+
+CAUTION: 如果有多個儲存節點故障（或離線）、請聯絡技術支援部門。請勿執行下列恢復程序。資料可能會遺失。
+
+
+CAUTION: 如果這是儲存節點故障或恢復後15天內的第二個儲存節點故障、請聯絡技術支援部門。在15天內重建兩個以上儲存節點上的Cassandra、可能會導致資料遺失。
+
+
+NOTE: 如果站台上的多個儲存節點發生故障、可能需要執行站台還原程序。請參閱。 link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"]
+
+
+CAUTION: 如果ILM規則設定為僅儲存一個複寫複本、且複本存在於故障的儲存磁碟區、您將無法恢復物件。
+
+.相關資訊
+link:warnings-and-considerations-for-grid-node-recovery.html["網格節點還原的警告與考量"]

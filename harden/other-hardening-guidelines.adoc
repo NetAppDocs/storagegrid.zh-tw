@@ -1,0 +1,70 @@
+---
+permalink: harden/other-hardening-guidelines.html 
+sidebar: sidebar 
+keywords: Hardening guidelines, security 
+summary: 除了遵循StorageGRID 有關「不二網」和「節點」的強化準則、您還應遵循StorageGRID 「不二網」系統其他區域的強化準則。 
+---
+= 其他強化準則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+除了遵循StorageGRID 有關「不二網」和「節點」的強化準則、您還應遵循StorageGRID 「不二網」系統其他區域的強化準則。
+
+
+
+== 暫時安裝密碼
+
+若要在安裝期間保護 StorageGRID 系統、請在 StorageGRID 安裝 UI 或安裝 API 的暫存安裝程式密碼頁面上設定密碼。設定此密碼時、會套用至所有安裝 StorageGRID 的方法、包括使用者介面、安裝 API 和 `configure-storagegrid.py`指令碼。
+
+如需詳細資訊、請參閱：
+
+* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
+* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
+* link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
+* https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["安裝 StorageGRID 應用裝置"^]
+
+
+
+
+== 記錄與稽核訊息
+
+請務必StorageGRID 以安全的方式保護不間斷記錄和稽核訊息輸出。從支援和系統可用度的觀點來看、支援記錄和稽核訊息可提供寶貴的資訊。StorageGRID此外StorageGRID 、包含在「資訊記錄」和「稽核訊息」輸出中的資訊和詳細資料、通常屬於敏感性質。
+
+設定StorageGRID 將安全事件傳送至外部syslog伺服器。如果使用syslog匯出、請選取TLS和RELP/TLS做為傳輸傳輸傳輸傳輸傳輸傳輸協定。
+
+如需 StorageGRID 記錄的詳細資訊、請參閱link:../monitor/logs-files-reference.html["記錄檔參考"]。如需 StorageGRID 稽核訊息的詳細資訊、請參閱link:../audit/audit-messages-main.html["稽核訊息"]。
+
+
+
+== NetApp AutoSupport
+
+StorageGRID 的 AutoSupport 功能可讓您主動監控系統健全狀況、並自動將套件傳送至 NetApp 支援網站 、貴組織的內部支援團隊或支援合作夥伴。根據預設、第一次設定 StorageGRID 時、會啟用傳送 AutoSupport 套件至 NetApp 。
+
+可停用此功能。AutoSupport不過、NetApp建議您啟用此功能、因為AutoSupport 當StorageGRID 您的作業系統發生問題時、支援使用支援功能來加速問題識別與解決。
+
+支援HTTPS、HTTP和SMTP傳輸傳輸傳輸傳輸傳輸協定。AutoSupport由於 AutoSupport 套件的敏感性質、 NetApp 強烈建議使用 HTTPS 做為傳送 AutoSupport 套件至 NetApp 的預設傳輸通訊協定。
+
+
+
+== 跨來源資源共享（ CORS ）
+
+如果您想讓其他網域中的 Web 應用程式能夠存取 S3 貯體中的貯體和物件、則可以為 S3 貯體設定跨來源資源共享（ CORS ）。一般而言、除非需要、否則請勿啟用 CORS 。如果需要CORS、請將其限制在信任的來源。
+
+請參閱的步驟link:../tenant/configuring-cross-origin-resource-sharing-cors.html["設定跨來源資源共享（ CORS ）"]。
+
+
+
+== 外部安全裝置
+
+完整的強化解決方案必須能解決StorageGRID 不屬於其他功能的安全機制問題。使用額外的基礎架構裝置來篩選及限制StorageGRID 存取功能、是建立及維持嚴苛安全態勢的有效方法。這些外部安全裝置包括防火牆、入侵防禦系統（IPS）和其他安全裝置。
+
+不受信任的用戶端流量建議使用協力廠商負載平衡器。第三方負載平衡可提供更多控制能力、並提供額外的層級保護、防止攻擊。
+
+
+
+== 勒索軟體緩解
+
+遵循中的建議、協助保護物件資料免遭勒索軟體攻擊 https://www.netapp.com/media/69498-tr-4921.pdf["使用 StorageGRID 進行勒索軟體防禦"^]。

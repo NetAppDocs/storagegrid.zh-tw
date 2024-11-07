@@ -1,0 +1,131 @@
+---
+permalink: audit/wget-swift-get.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, WGET, Swift GET 
+summary: 當Swift用戶端發出Get交易時、會要求擷取物件、列出容器中的物件、或列出帳戶中的容器。如果交易成功、伺服器就會發出此訊息。 
+---
+= WGet：Swift Get
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當Swift用戶端發出Get交易時、會要求擷取物件、列出容器中的物件、或列出帳戶中的容器。如果交易成功、伺服器就會發出此訊息。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+CBID
+ a| 
+內容區塊識別碼
+ a| 
+所要求內容區塊的唯一識別碼。如果CBID未知、此欄位會設定為0。帳戶和容器上的作業不包含此欄位。
+
+
+
+ a| 
+CSIZ
+ a| 
+內容大小
+ a| 
+擷取物件的大小（以位元組為單位）。帳戶和容器上的作業不包含此欄位。
+
+
+
+ a| 
+HTRH
+ a| 
+HTTP要求標頭
+ a| 
+設定期間選取的記錄HTTP要求標頭名稱和值清單。
+
+ `X-Forwarded-For`如果存在於要求中、且值與要求寄件者 IP 位址（ SAIP 稽核欄位）不同、則會自動納入 `X-Forwarded-For`。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果代碼
+ a| 
+Get交易的結果。結果永遠是
+
+SUCS：成功
+
+
+
+ a| 
+SAIP
+ a| 
+要求用戶端的IP位址
+ a| 
+發出要求的用戶端應用程式IP位址。
+
+
+
+ a| 
+時間
+ a| 
+時間
+ a| 
+申請的總處理時間（以微秒為單位）。
+
+
+
+ a| 
+TLIP
+ a| 
+信任的負載平衡器IP位址
+ a| 
+如果要求是由信任的第7層負載平衡器路由、則為負載平衡器的IP位址。
+
+
+
+ a| 
+UUID
+ a| 
+通用唯一識別碼
+ a| 
+物件在StorageGRID 整個系統內的識別碼。
+
+
+
+ a| 
+WAC
+ a| 
+Swift帳戶ID
+ a| 
+由支援系統指定的唯一帳戶ID StorageGRID 。
+
+
+
+ a| 
+WCON
+ a| 
+Swift Container
+ a| 
+Swift容器名稱。帳戶的營運不包含此欄位。
+
+
+
+ a| 
+WOBJ
+ a| 
+Swift物件
+ a| 
+Swift物件識別碼。帳戶和容器上的作業不包含此欄位。
+
+
+
+ a| 
+WUSR
+ a| 
+Swift帳戶使用者
+ a| 
+Swift帳戶使用者名稱、可唯一識別執行交易的用戶端。
+
+|===

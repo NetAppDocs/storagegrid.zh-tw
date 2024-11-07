@@ -1,0 +1,42 @@
+---
+permalink: ubuntu/starting-storagegrid-host-service.html 
+sidebar: sidebar 
+keywords: how to start host service 
+summary: 若要啟動StorageGRID 您的支援節點、並確保在主機重新開機後重新啟動節點、您必須啟用StorageGRID 並啟動該支援中心服務。 
+---
+= 啟動StorageGRID 「支援服務」
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要啟動StorageGRID 您的支援節點、並確保在主機重新開機後重新啟動節點、您必須啟用StorageGRID 並啟動該支援中心服務。
+
+.步驟
+. 在每個主機上執行下列命令：
++
+[listing]
+----
+sudo systemctl enable storagegrid
+sudo systemctl start storagegrid
+----
+. 執行下列命令以確保部署繼續進行：
++
+[listing]
+----
+sudo storagegrid node status node-name
+----
+. 如果有任何節點傳回「未執行」或「已停止」的狀態、請執行下列命令：
++
+[listing]
+----
+sudo storagegrid node start node-name
+----
+. 如果您先前已啟用並啟動StorageGRID 了「支援服務」（或如果您不確定服務是否已啟用並啟動）、請同時執行下列命令：
++
+[listing]
+----
+sudo systemctl reload-or-restart storagegrid
+----
+

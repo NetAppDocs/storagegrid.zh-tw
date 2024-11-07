@@ -1,0 +1,158 @@
+---
+permalink: audit/orlm-object-rules-met.html 
+sidebar: sidebar 
+keywords: audit message, ORLM, Object Rules Met, ilm rule 
+summary: 此訊息是在物件依照ILM規則所指定的方式成功儲存及複製時產生。 
+---
+= ORLM：符合物件規則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此訊息是在物件依照ILM規則所指定的方式成功儲存及複製時產生。
+
+
+NOTE: 如果原則中的另一個規則使用「物件大小」進階篩選器、則預設的「製作2份複本」規則會成功儲存物件時、不會產生ORLM訊息。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+BUID
+ a| 
+鏟斗接頭
+ a| 
+「庫位ID」欄位。用於內部作業。僅當「立即給藥」為PRGD時才會顯示。
+
+
+
+ a| 
+CBID
+ a| 
+內容區塊識別碼
+ a| 
+物件的CBID。
+
+
+
+ a| 
+CSIZ
+ a| 
+內容大小
+ a| 
+物件大小（以位元組為單位）。
+
+
+
+ a| 
+LOCS
+ a| 
+位置
+ a| 
+物件資料在StorageGRID 整個作業系統中的儲存位置。如果物件沒有位置（例如、已刪除）、LOCS的值為「」。
+
+CLEC ：對於銷毀編碼物件、抹除編碼設定檔 ID 、以及套用至物件資料的銷毀編碼群組 ID 。
+
+CLDI：對於複寫的物件、則為該物件位置的LDR節點ID和Volume ID。
+
+CLNL：物件資料歸檔時物件位置的旋轉節點ID。
+
+
+
+ a| 
+路徑
+ a| 
+S3 鏟斗 / 金鑰
+ a| 
+S3 貯體名稱和 S3 金鑰名稱。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果
+ a| 
+ILM作業的結果。
+
+SUCS：ILM作業成功。
+
+
+
+ a| 
+規則
+ a| 
+規則標籤
+ a| 
+套用至此物件之ILM規則的人工讀取標籤。
+
+
+
+ a| 
+SEGC
+ a| 
+容器 UUID
+ a| 
+分割物件容器的 UUID 。此值僅在物件分段時可用。
+
+
+
+ a| 
+SGCB
+ a| 
+容器 CBID
+ a| 
+分割物件容器的 CBID 。此值僅適用於分段和多部分物件。
+
+
+
+ a| 
+立即
+ a| 
+狀態
+ a| 
+ILM作業的狀態。
+
+完成：針對物件的ILM作業已完成。
+
+DFER：此物件已標記為未來ILM重新評估。
+
+PRGD：此物件已從StorageGRID 該系統中刪除。
+
+NLOC：物件資料無法再在StorageGRID 整個系統中找到。此狀態可能表示物件資料的所有複本遺失或損壞。
+
+
+
+ a| 
+UUID
+ a| 
+通用唯一識別碼
+ a| 
+物件在StorageGRID 整個系統內的識別碼。
+
+
+
+ a| 
+VSID
+ a| 
+版本ID
+ a| 
+在版本控制儲存區中建立的新物件版本ID。對非版本化貯體中的貯體和物件的作業不包括此欄位。
+
+|===
+ORLM 稽核訊息可針對單一物件發出多次。例如、只要發生下列其中一項事件、就會發出此訊息：
+
+* 物件的ILM規則永遠都能滿足。
+* 在此時期、物件的ILM規則已符合要求。
+* ILM規則已刪除物件。
+* 背景驗證程序會偵測複寫物件資料的複本是否毀損。該系統會執行ILM評估、以取代毀損的物件。StorageGRID
+
+
+.相關資訊
+* link:object-ingest-transactions.html["物件擷取交易"]
+* link:object-delete-transactions.html["物件刪除交易"]
+

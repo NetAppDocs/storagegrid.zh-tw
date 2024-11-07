@@ -1,0 +1,38 @@
+---
+permalink: monitor/removing-custom-alert-rules.html 
+sidebar: sidebar 
+keywords: how to disable alert rules, how to remove a custom alert rule 
+summary: 如果您不想再使用自訂警示規則、可以將其移除。 
+---
+= 移除自訂警示規則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不想再使用自訂警示規則、可以將其移除。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:../admin/admin-group-permissions.html["管理警示或根目錄存取權限"]。
+
+
+.步驟
+. 選取*警示*>*規則*。
++
+此時會出現警示規則頁面。
+
+. 選取您要移除之自訂警示規則的選項按鈕。
++
+您無法移除預設的警示規則。
+
+. 選取*移除自訂規則*。
++
+隨即顯示確認對話方塊。
+
+. 選擇*確定*以移除警示規則。
++
+警示的任何作用中執行個體都會在10分鐘內解決。
+
+

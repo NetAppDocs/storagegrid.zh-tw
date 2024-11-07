@@ -1,0 +1,84 @@
+---
+permalink: s3/configuring-tenant-accounts-and-connections.html 
+sidebar: sidebar 
+keywords: aws cli, test s3 client connection 
+summary: 您可以使用 Amazon Web Services 命令列介面（ AWS CLI ）來測試與系統的連線、並驗證您是否可以讀寫物件。 
+---
+= 測試 S3 REST API 組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Amazon Web Services 命令列介面（ AWS CLI ）來測試與系統的連線、並驗證您是否可以讀寫物件。
+
+.開始之前
+* 您已從下載並安裝 AWS CLI https://aws.amazon.com/cli["aws.amazon.com/cli"^] 。
+* 您也可以選擇link:../admin/configuring-load-balancer-endpoints.html["已建立負載平衡器端點"]使用。否則、您就知道要連線的儲存節點 IP 位址、以及要使用的連接埠號碼。請參閱。 link:../admin/summary-ip-addresses-and-ports-for-client-connections.html["用戶端連線的 IP 位址和連接埠"]
+* 您有 link:../admin/creating-tenant-account.html["已建立 S3 租戶帳戶"]。
+* 您已登入租戶和link:../tenant/creating-your-own-s3-access-keys.html["已建立存取金鑰"]。
+
+
+如需這些步驟的詳細link:../admin/configuring-client-connections.html["設定用戶端連線"]資訊，請參閱。
+
+.步驟
+. 設定 AWS CLI 設定以使用您在 StorageGRID 系統中建立的帳戶：
++
+.. 進入組態模式： `aws configure`
+.. 輸入您所建立帳戶的存取金鑰 ID 。
+.. 輸入您所建立帳戶的秘密存取金鑰。
+.. 輸入要使用的預設區域。例如 `us-east-1`：。
+.. 輸入要使用的預設輸出格式、或按* Enter *選取Json。
+
+
+. 建立儲存庫。
++
+本範例假設您已將負載平衡器端點設定為使用 IP 位址 10.96.101.17 和連接埠 10443 。
+
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443
+--no-verify-ssl create-bucket --bucket testbucket
+----
++
+如果成功建立了儲存區、則會傳回儲存區的位置、如下列範例所示：
+
++
+[listing]
+----
+"Location": "/testbucket"
+----
+. 上傳物件。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+put-object --bucket testbucket --key s3.pdf --body C:\s3-test\upload\s3.pdf
+----
++
+如果物件上傳成功、則會傳回Etag、這是物件資料的雜湊。
+
+. 列出儲存區的內容、以驗證物件是否已上傳。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+list-objects --bucket testbucket
+----
+. 刪除物件。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+delete-object --bucket testbucket --key s3.pdf
+----
+. 刪除儲存庫。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+delete-bucket --bucket testbucket
+----
+

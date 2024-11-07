@@ -1,0 +1,53 @@
+---
+permalink: maintain/stopping-service.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, stop service, service 
+summary: 有些維護程序會要求您停止單一服務、同時讓網格節點上的其他服務保持執行狀態。只有在維護程序指示時、才會停止個別服務。 
+---
+= 停止服務
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+有些維護程序會要求您停止單一服務、同時讓網格節點上的其他服務保持執行狀態。只有在維護程序指示時、才會停止個別服務。
+
+.開始之前
+您有 `Passwords.txt`檔案。
+
+.關於這項工作
+當您使用這些步驟「管理性停止」服務時、伺服器管理員不會自動重新啟動服務。您必須手動啟動單一服務、或重新啟動伺服器管理員。
+
+如果您需要停止儲存節點上的LDR服務、請注意、如果有作用中的連線、可能需要一段時間才能停止服務。
+
+.步驟
+. 登入網格節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 停止個別服務： `service _servicename_ stop`
++
+例如：
+
++
+[listing]
+----
+service ldr stop
+----
++
+
+NOTE: 服務最多可能需要11分鐘的時間才能停止。
+
+. 登出命令 Shell ： `exit`
+
+
+.相關資訊
+link:forcing-service-to-terminate.html["強制服務終止"]

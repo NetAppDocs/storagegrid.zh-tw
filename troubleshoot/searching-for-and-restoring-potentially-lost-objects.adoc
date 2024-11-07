@@ -1,0 +1,221 @@
+---
+permalink: troubleshoot/searching-for-and-restoring-potentially-lost-objects.html 
+sidebar: sidebar 
+keywords: how to search lost object, how to restore lost object, how to find lost object 
+summary: 您可能會找到並還原已觸發 * 物件遺失 * 警示和舊有遺失物件（遺失）警示的物件、以及您已識別為可能遺失的物件。 
+---
+= 搜尋並還原可能遺失的物件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可能會找到並還原已觸發 * 物件遺失 * 警示和舊有遺失物件（遺失）警示的物件、以及您已識別為可能遺失的物件。
+
+.開始之前
+* 您擁有任何遺失物件的 UUID link:../troubleshoot/investigating-lost-objects.html["調查遺失的物件"]、如中所述。
+* 您有 `Passwords.txt`檔案。
+
+
+.關於這項工作
+您可以遵循此程序、在網格的其他位置尋找遺失物件的複寫複本。在大多數情況下、找不到遺失的物件。不過、在某些情況下、如果您採取了提示行動、可能會找到並還原遺失的複寫物件。
+
+
+CAUTION: 如需此程序的協助、請聯絡技術支援部門。
+
+.步驟
+. 從管理節點搜尋稽核記錄、找出可能的物件位置：
++
+.. 登入網格節點：
++
+... 輸入下列命令： `ssh admin@grid_node_IP`
+... 輸入檔案中列出的密碼 `Passwords.txt`。
+... 輸入以下命令切換到 root ： `su -`
+... 輸入檔案中列出的密碼 `Passwords.txt`。當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+.. 變更至稽核記錄所在的目錄： `cd /var/local/log/`
++
+[NOTE]
+====
+link:../monitor/configure-audit-messages.html#select-audit-information-destinations["瞭解稽核資訊的目的地"]。
+
+====
+.. 使用 Grep 擷取link:../audit/object-ingest-transactions.html["稽核與潛在遺失物件相關的訊息"]並將其傳送至輸出檔案。輸入： `grep uuid-value audit_file_name > output_file_name`
++
+例如：
+
++
+[listing]
+----
+Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > messages_about_lost_object.txt
+----
+.. 使用Grep擷取此輸出檔案中的「位置遺失（LLST）」稽核訊息。輸入： `grep LLST output_file_name`
++
+例如：
+
++
+[listing]
+----
+Admin: # grep LLST messages_about_lost_objects.txt
+----
++
+LLST 稽核訊息看起來像這個範例訊息。
+
++
+[listing]
+----
+[AUDT:\[NOID\(UI32\):12448208\][CBIL(UI64):0x38186FE53E3C49A5]
+[UUID(CSTR):"926026C4-00A4-449B-AC72-BCCA72DD1311"][LTYP(FC32):CLDI]
+[PCLD\(CSTR\):"/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%\#3tN6"\]
+[TSRC(FC32):SYST][RSLT(FC32):NONE][AVER(UI32):10][ATIM(UI64):
+1581535134379225][ATYP(FC32):LLST][ANID(UI32):12448208][AMID(FC32):CLSM]
+[ATID(UI64):7086871083190743409]]
+----
+.. 在LLST訊息中尋找PCLD欄位和NOID欄位。
++
+如果存在、PCLD的值是磁碟上遺失複寫物件複本的完整路徑。NOID的值是可能找到物件複本的LDR節點ID。
+
++
+如果找到物件位置、您可能可以還原物件。
+
+.. 尋找與此 LDR 節點 ID 相關的儲存節點。在Grid Manager中、選取*支援*>*工具*>* Grid topology *。然後選取「*資料中心_*>*儲存節點_*>* LdR*」。
++
+LDR 服務的節點 ID 位於 Node Information （節點資訊）表格中。檢閱每個儲存節點的資訊、直到找到裝載此LDR的儲存節點為止。
+
+
+
+. 判斷稽核訊息中指出的儲存節點上是否存在物件：
++
+.. 登入網格節點：
++
+... 輸入下列命令： `ssh admin@grid_node_IP`
+... 輸入檔案中列出的密碼 `Passwords.txt`。
+... 輸入以下命令切換到 root ： `su -`
+... 輸入檔案中列出的密碼 `Passwords.txt`。
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+
+.. 判斷物件的檔案路徑是否存在。
++
+對於物件的檔案路徑、請使用LLST稽核訊息中的PCLD值。
+
++
+例如、輸入：
+
++
+[listing]
+----
+ls '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6'
+----
++
+
+NOTE: 請務必在命令中以單引號括住物件檔案路徑、以避免任何特殊字元。
+
++
+*** 如果找不到物件路徑、則物件會遺失、無法使用此程序還原。聯絡技術支援。
+*** 如果找到物件路徑、請繼續下一步。您可以嘗試將找到的物件還原StorageGRID 回原地。
+
+
+
+
+. 如果找到物件路徑、請嘗試將物件還原StorageGRID 至下列項目：
++
+.. 從同一個儲存節點、變更物件檔案的擁有權、以便StorageGRID 由支援部門進行管理。輸入： `chown ldr-user:bycast 'file_path_of_object'`
+.. 以遠端登入localhost 1402以存取LMR主控台。輸入： `telnet 0 1402`
+.. 輸入： `cd /proc/STOR`
+.. 輸入： `Object_Found 'file_path_of_object'`
++
+例如、輸入：
+
++
+[listing]
+----
+Object_Found '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6'
+----
++
+發出 `Object_Found`命令會通知網格該物件的位置。它也會觸發作用中的 ILM 原則、並依照每個原則中的指定、製作額外的複本。
+
++
+
+NOTE: 如果找到物件的儲存節點離線、您可以將物件複製到任何線上的儲存節點。將物件放在線上儲存節點的任何/var/local/rangedb目錄中。然後、使用該物件的檔案路徑發出 `Object_Found`命令。
+
++
+*** 如果物件無法還原、則 `Object_Found`命令會失敗。聯絡技術支援。
+*** 如果物件成功還原StorageGRID 至物件、則會顯示成功訊息。例如：
++
+[listing]
+----
+ade 12448208: /proc/STOR > Object_Found '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6'
+
+ade 12448208: /proc/STOR > Object found succeeded.
+First packet of file was valid. Extracted key: 38186FE53E3C49A5
+Renamed '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6' to '/var/local/rangedb/1/p/17/11/00rH0%DkRt78Ila#3udu'
+----
++
+繼續下一步。
+
+
+
+
+
+. 如果物件已成功還原至 StorageGRID 、請確認已建立新的位置：
++
+.. 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+.. 選取* ILM *>*物件中繼資料查詢*。
+.. 輸入 UUID 、然後選取 * 查詢 * 。
+.. 檢閱中繼資料、並確認新位置。
+
+
+. 從管理節點搜尋稽核記錄、尋找此物件的ORLM稽核訊息、以確認資訊生命週期管理（ILM）已視需要放置複本。
++
+.. 登入網格節點：
++
+... 輸入下列命令： `ssh admin@grid_node_IP`
+... 輸入檔案中列出的密碼 `Passwords.txt`。
+... 輸入以下命令切換到 root ： `su -`
+... 輸入檔案中列出的密碼 `Passwords.txt`。當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+.. 變更至稽核記錄所在的目錄： `cd /var/local/log/`
+.. 使用Grep將與物件相關的稽核訊息擷取至輸出檔案。輸入： `grep uuid-value audit_file_name > output_file_name`
++
+例如：
+
++
+[listing]
+----
+Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > messages_about_restored_object.txt
+----
+.. 使用Grep從這個輸出檔案擷取符合物件規則（ORLM）的稽核訊息。輸入： `grep ORLM output_file_name`
++
+例如：
+
++
+[listing]
+----
+Admin: # grep ORLM messages_about_restored_object.txt
+----
++
+ORLM 稽核訊息看起來像這個範例訊息。
+
++
+[listing]
+----
+[AUDT:[CBID(UI64):0x38186FE53E3C49A5][RULE(CSTR):"Make 2 Copies"]
+[STAT(FC32):DONE][CSIZ(UI64):0][UUID(CSTR):"926026C4-00A4-449B-AC72-BCCA72DD1311"]
+[LOCS(CSTR):"**CLDI 12828634 2148730112**, CLDI 12745543 2147552014"]
+[RSLT(FC32):SUCS][AVER(UI32):10][ATYP(FC32):ORLM][ATIM(UI64):1563398230669]
+[ATID(UI64):15494889725796157557][ANID(UI32):13100453][AMID(FC32):BCMS]]
+----
+.. 在稽核訊息中尋找LOCS欄位。
++
+如果存在、LOCS中的CLDI值即為節點ID和建立物件複本的Volume ID。此訊息顯示ILM已套用、而且已在網格的兩個位置建立兩個物件複本。
+
+
+
+. link:resetting-lost-and-missing-object-counts.html["重設遺失和遺失的物件計數"]在 Grid Manager 中。
+

@@ -1,0 +1,232 @@
+---
+permalink: monitor/logs-files-reference.html 
+sidebar: sidebar 
+keywords: log, logs, log files 
+summary: 提供記錄、可用來擷取事件、診斷訊息和錯誤狀況。StorageGRID系統可能會要求您收集記錄檔、並將其轉送至技術支援部門、以協助進行疑難排解。 
+---
+= 記錄檔參考
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供記錄、可用來擷取事件、診斷訊息和錯誤狀況。StorageGRID系統可能會要求您收集記錄檔、並將其轉送至技術支援部門、以協助進行疑難排解。
+
+記錄的分類如下：
+
+* link:storagegrid-software-logs.html["軟體記錄StorageGRID"]
+* link:deployment-and-maintenance-logs.html["部署與維護記錄"]
+* link:about-bycast-log.html["關於bycast.log"]
+
+
+
+NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術支援人員進行進階疑難排解。使用稽核記錄和應用程式記錄檔來重新建構問題歷程記錄的進階技術、已超出本指示的範圍。
+
+
+
+== 存取記錄
+
+若要存取記錄檔、您可以從一個或多個節點、將記錄link:collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]檔歸檔為單一記錄檔。或者、如果主要管理節點無法使用或無法連線至特定節點、您可以依下列方式存取每個網格節點的個別記錄檔：
+
+. 輸入下列命令： `ssh admin@grid_node_IP`
+. 輸入檔案中列出的密碼 `Passwords.txt`。
+. 輸入以下命令切換到 root ： `su -`
+. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
+
+
+== 將記錄匯出至 Syslog 伺服器
+
+將記錄匯出至 Syslog 伺服器可提供下列功能：
+
+* 除了 S3 和 Swift 要求之外、還能收到所有 Grid Manager 和 Tenant Manager 要求的清單。
+* 更清楚地瞭解傳回錯誤的 S3 要求、而不會受到稽核記錄方法所造成的效能影響。
+* 存取容易剖析的 HTTP 層要求和錯誤代碼。
+* 對於負載平衡器上的流量分類器所封鎖的要求、可提供更好的可見度。
+
+
+若要匯出記錄檔、請參閱link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]。
+
+
+
+== 記錄檔類別
+
+包含針對每個類別所描述的記錄檔、以及包含度量和偵錯命令輸出的其他檔案。StorageGRID
+
+[cols="1a,3a"]
+|===
+| 歸檔位置 | 說明 
+
+
+| 稽核  a| 
+稽核在正常系統作業期間所產生的訊息。
+
+
+
+| 基礎作業系統記錄  a| 
+基本作業系統資訊、包括StorageGRID 不含影像版本的資訊。
+
+
+
+| 套裝組合  a| 
+全域組態資訊（套裝組合）。
+
+
+
+| Cassandra  a| 
+Cassandra資料庫資訊和Reaper修復記錄。
+
+
+
+| EC  a| 
+VCSs 有關目前節點和 EC 群組資訊的資訊（依設定檔 ID ）。
+
+
+
+| 網格  a| 
+一般網格記錄(`bycast.log`、包括除錯）和 `servermanager`記錄。
+
+
+
+| GRB.json  a| 
+所有節點共用的網格組態檔。此外、 `node.json`也專屬於目前節點。
+
+
+
+| 還價  a| 
+高可用度群組指標與記錄。
+
+
+
+| 安裝  a| 
+`Gdu-server`並安裝記錄檔。
+
+
+
+| Lambda-仲裁 人  a| 
+與S3 Select Proxy要求相關的記錄。
+
+
+
+| lumberjack.log  a| 
+偵錯與記錄收集相關的訊息。
+
+
+
+| 指標  a| 
+Grafana、Jaeger、節點輸出程式和Prometheus的服務記錄。
+
+
+
+| 誤用  a| 
+Miscd存取與錯誤記錄。
+
+
+
+| MySQL  a| 
+MariaDB資料庫組態及相關記錄。
+
+
+
+| 網路  a| 
+由網路相關指令碼和Dynip服務所產生的記錄。
+
+
+
+| 恩靈思  a| 
+負載平衡器和網格同盟組態檔案和記錄。也包括Grid Manager和Tenant Manager流量記錄。
+
+
+
+| 恩靈思- GW  a| 
+* `access.log`： Grid Manager 和 Tenant Manager 會要求記錄訊息。
++
+** 使用 Syslog 匯出時、這些訊息會以前置 `mgmt:`方式顯示。
+** 這些記錄訊息的格式為 `[$time_iso8601] $remote_addr $status $bytes_sent $request_length $request_time "$endpointId" "$request" "$http_host" "$http_user_agent" "$http_referer"`
+
+
+* `cgr-access.log.gz`：傳入的跨網格複寫要求。
++
+** 使用 Syslog 匯出時、這些訊息會以前置 `cgr:`方式顯示。
+** 這些記錄訊息的格式為 `[$time_iso8601] $remote_addr $status $bytes_sent $request_length $request_time "$endpointId" "$upstream_addr" "$request" "$http_host"`
+
+
+* `endpoint-access.log.gz`： S3 和 Swift 要求負載平衡器端點。
++
+** 使用 Syslog 匯出時、這些訊息會以前置 `endpoint:`方式顯示。
+** 這些記錄訊息的格式為 `[$time_iso8601] $remote_addr $status $bytes_sent $request_length $request_time "$endpointId" "$upstream_addr" "$request" "$http_host"`
+
+
+* `nginx-gw-dns-check.log`：與新的 DNS 檢查警示有關。
+
+
+
+
+| NTP  a| 
+NTP組態檔案和記錄。
+
+
+
+ a| 
+孤立物件
+ a| 
+與孤立物件相關的記錄。
+
+
+
+| 作業系統  a| 
+節點和網格狀態文件，包括服務 `pid`。
+
+
+
+| 其他  a| 
+其他資料夾中未收集的記錄檔 `/var/local/log`。
+
+
+
+| 效能  a| 
+CPU、網路和磁碟I/O的效能資訊
+
+
+
+| Prometheus-data  a| 
+目前的Prometheus指標（如果記錄收集包含Prometheus資料）。
+
+
+
+| 資源配置  a| 
+與網格資源配置程序相關的記錄。
+
+
+
+| 漂流  a| 
+平台服務所用的來自於raft叢集的記錄。
+
+
+
+| SSH  a| 
+與 SSH 組態和服務相關的記錄。
+
+
+
+| SNMP  a| 
+用於傳送 SNMP 通知的 SNMP 代理程式組態。
+
+
+
+| 套接字資料  a| 
+用於網路偵錯的通訊端資料。
+
+
+
+| system-commands.txt  a| 
+輸出示例容器命令。StorageGRID包含系統資訊、例如網路和磁碟使用量。
+
+
+
+| Synchrone-recovery 套件  a| 
+與維護所有管理節點和主控 ADC 服務的儲存節點上最新恢復套件的一致性有關。
+
+|===

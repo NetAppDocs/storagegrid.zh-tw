@@ -1,0 +1,28 @@
+---
+permalink: troubleshoot/object-store-storage-volume-failures.html 
+sidebar: sidebar 
+keywords: how to confirm object location, object metadata lookup 
+summary: 儲存節點上的基礎儲存設備分為物件存放區。物件存放區也稱為儲存磁碟區。 
+---
+= 物件存放區（儲存磁碟區）故障
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存節點上的基礎儲存設備分為物件存放區。物件存放區也稱為儲存磁碟區。
+
+您可以檢視每個儲存節點的物件存放區資訊。物件存放區顯示在*節點*>*儲存節點*>*儲存設備*頁面的底部。
+
+image::../media/nodes_page_storage_nodes_storage_tables.png[節點頁面儲存節點儲存表格]
+
+若要查看更多link:../monitor/viewing-grid-topology-tree.html["每個儲存節點的詳細資料"]資訊、請遵循下列步驟：
+
+. 選取*支援*>*工具*>*網格拓撲*。
+. 選擇*站台_*>*儲存節點_*>*儲存設備*>*總覽*>*主要*。
+
+
+image::../media/storage_node_object_stores.png[儲存節點物件存放區]
+
+視故障的性質而定、儲存磁碟區的故障可能會反映在link:../monitor/alerts-reference.html["儲存磁碟區警示"]中。如果儲存磁碟區故障、您應該修復故障的儲存磁碟區、以便儘快將儲存節點還原為完整功能。如有必要、您可以移至 * 組態 * 索引標籤、link:../maintain/checking-storage-state-after-recovering-storage-volumes.html["將儲存節點置於唯讀狀態"]以便 StorageGRID 系統在準備伺服器的完整還原時、可以使用它來擷取資料。

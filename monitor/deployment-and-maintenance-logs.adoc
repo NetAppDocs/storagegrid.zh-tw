@@ -1,0 +1,75 @@
+---
+permalink: monitor/deployment-and-maintenance-logs.html 
+sidebar: sidebar 
+keywords: deployment, logs, Maintenance 
+summary: 您可以使用部署和維護記錄來疑難排解問題。 
+---
+= 部署與維護記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用部署和維護記錄來疑難排解問題。
+
+[cols="1a,3a,1a"]
+|===
+| 檔案名稱 | 附註 | 找到 
+
+
+| /var/local/log/install.log  a| 
+在軟體安裝期間建立。包含安裝事件的記錄。
+ a| 
+所有節點
+
+
+
+| /var/local/log/expansion-progress.log  a| 
+在擴充作業期間建立。包含擴充事件的記錄。
+ a| 
+儲存節點
+
+
+
+| /var/local/log/pa-move.log  a| 
+執行指令碼時建立 `pa-move.sh`。
+ a| 
+主要管理節點
+
+
+
+| /var/local/log/pa-move-new_pa.log  a| 
+執行指令碼時建立 `pa-move.sh`。
+ a| 
+主要管理節點
+
+
+
+| /var/local/log/pa-move-old_pa.log  a| 
+執行指令碼時建立 `pa-move.sh`。
+ a| 
+主要管理節點
+
+
+
+| /var/local/log/gdu-server.log  a| 
+由GDU服務建立。包含與主管理節點管理的資源配置和維護程序相關的事件。
+ a| 
+主要管理節點
+
+
+
+| /var/local/log/send_admin_hw.log  a| 
+安裝期間建立。包含與節點與主要管理節點通訊相關的偵錯資訊。
+ a| 
+所有節點
+
+
+
+| /var/local/log/upgrade.log  a| 
+在軟體升級期間建立。包含軟體更新事件的記錄。
+ a| 
+所有節點
+
+|===

@@ -1,0 +1,260 @@
+---
+permalink: maintain/remounting-and-reformatting-storage-volumes-manual-steps.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, appliance storage volume, appliance volume, remount manually, reformat manually 
+summary: 您必須手動執行兩個指令碼、以重新掛載保留的儲存磁碟區、並重新格式化任何故障的儲存磁碟區。第一個指令碼會重新掛載已正確格式化為StorageGRID 「循環儲存磁碟區」的磁碟區。第二個指令碼會重新格式化任何未掛載的磁碟區、視需要重新建置Cassandra、然後啟動服務。 
+---
+= 重新掛載及重新格式化儲存磁碟區（手動步驟）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須手動執行兩個指令碼、以重新掛載保留的儲存磁碟區、並重新格式化任何故障的儲存磁碟區。第一個指令碼會重新掛載已正確格式化為StorageGRID 「循環儲存磁碟區」的磁碟區。第二個指令碼會重新格式化任何未掛載的磁碟區、視需要重新建置Cassandra、然後啟動服務。
+
+.開始之前
+* 您已更換硬體、以更換已知需要更換的任何故障儲存磁碟區。
++
+執行 `sn-remount-volumes`指令碼可能有助於識別其他故障的儲存磁碟區。
+
+* 您已檢查儲存節點汰換是否在進行中、或您已暫停節點取消委任程序。（在Grid Manager中、選取* maintenance *>* Tasks *>* Decompress*。）
+* 您已檢查擴充是否在進行中。（在Grid Manager中、選取* maintenance *>* Tasks *>* Expansion *。）
+* 您有 link:reviewing-warnings-for-system-drive-recovery.html["已查看Storage Node系統磁碟機恢復的警告"]。
++
+
+CAUTION: 如果有多個儲存節點離線、或是此網格中的儲存節點在過去15天內已重建、請聯絡技術支援部門。請勿執行 `sn-recovery-postinstall.sh`指令碼。在兩個或多個儲存節點上重建Cassandra、彼此之間的時間不超過15天、可能會導致資料遺失。
+
+
+
+.關於這項工作
+若要完成此程序、請執行下列高階工作：
+
+* 登入恢復的儲存節點。
+* 執行 `sn-remount-volumes`指令碼以重新掛載格式正確的儲存磁碟區。執行此指令碼時、會執行下列動作：
++
+** 掛載和卸載每個儲存磁碟區、以重新播放XFS日誌。
+** 執行XFS檔案一致性檢查。
+** 如果檔案系統一致、請判斷儲存磁碟區是否為格式正確StorageGRID 的等化儲存磁碟區。
+** 如果儲存磁碟區格式正確、請重新掛載儲存磁碟區。磁碟區上的任何現有資料均保持不變。
+
+
+* 檢閱指令碼輸出並解決任何問題。
+* 執行 `sn-recovery-postinstall.sh`指令碼。執行此指令碼時、會執行下列動作。
++
+
+CAUTION: 執行之前、請勿在恢復期間重新開機儲存節點 `sn-recovery-postinstall.sh`、以重新格式化故障的儲存磁碟區並還原物件中繼資料。在完成前重新啟動儲存節點 `sn-recovery-postinstall.sh`會導致服務發生錯誤、導致 StorageGRID 應用裝置節點離開維護模式。請參閱的步驟<<post-install-script-step,安裝後指令碼>>。
+
++
+** 重新格式化指令碼無法掛載或發現格式不正確的任何儲存磁碟區 `sn-remount-volumes`。
++
+
+NOTE: 如果重新格式化儲存磁碟區、則該磁碟區上的任何資料都會遺失。您必須執行其他程序、從網格中的其他位置還原物件資料、前提是ILM規則已設定為儲存多個物件複本。
+
+** 視需要在節點上重新建置Cassandra資料庫。
+** 啟動儲存節點上的服務。
+
+
+
+
+.步驟
+. 登入恢復的儲存節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 執行第一個指令碼、重新掛載任何格式正確的儲存磁碟區。
++
+
+NOTE: 如果所有的儲存磁碟區都是新的且需要格式化、或是所有的儲存磁碟區都失敗、您可以跳過此步驟並執行第二個指令碼、重新格式化所有未掛載的儲存磁碟區。
+
++
+.. 執行指令碼： `sn-remount-volumes`
++
+此指令碼可能需要數小時才能在含有資料的儲存磁碟區上執行。
+
+.. 指令碼執行時、請檢閱輸出並回答任何提示。
++
+
+NOTE: 根據需要，您可以使用 `tail -f`命令來監控腳本日誌文件的內容(`/var/local/log/sn-remount-volumes.log`）。記錄檔包含的資訊比命令列輸出更詳細。
+
++
+[listing]
+----
+root@SG:~ # sn-remount-volumes
+The configured LDR noid is 12632740
+
+====== Device /dev/sdb ======
+Mount and unmount device /dev/sdb and checking file system consistency:
+The device is consistent.
+Check rangedb structure on device /dev/sdb:
+Mount device /dev/sdb to /tmp/sdb-654321 with rangedb mount options
+This device has all rangedb directories.
+Found LDR node id 12632740, volume number 0 in the volID file
+Attempting to remount /dev/sdb
+Device /dev/sdb remounted successfully
+
+====== Device /dev/sdc ======
+Mount and unmount device /dev/sdc and checking file system consistency:
+Error: File system consistency check retry failed on device /dev/sdc.
+You can see the diagnosis information in the /var/local/log/sn-remount-volumes.log.
+
+This volume could be new or damaged. If you run sn-recovery-postinstall.sh,
+this volume and any data on this volume will be deleted. If you only had two
+copies of object data, you will temporarily have only a single copy.
+StorageGRID will attempt to restore data redundancy by making
+additional replicated copies or EC fragments, according to the rules in
+the active ILM policies.
+
+Don't continue to the next step if you believe that the data remaining on
+this volume can't be rebuilt from elsewhere in the grid (for example, if
+your ILM policy uses a rule that makes only one copy or if volumes have
+failed on multiple nodes). Instead, contact support to determine how to
+recover your data.
+
+====== Device /dev/sdd ======
+Mount and unmount device /dev/sdd and checking file system consistency:
+Failed to mount device /dev/sdd
+This device could be an uninitialized disk or has corrupted superblock.
+File system check might take a long time. Do you want to continue? (y or n) [y/N]? y
+
+Error: File system consistency check retry failed on device /dev/sdd.
+You can see the diagnosis information in the /var/local/log/sn-remount-volumes.log.
+
+This volume could be new or damaged. If you run sn-recovery-postinstall.sh,
+this volume and any data on this volume will be deleted. If you only had two
+copies of object data, you will temporarily have only a single copy.
+StorageGRID will attempt to restore data redundancy by making
+additional replicated copies or EC fragments, according to the rules in
+the active ILM policies.
+
+Don't continue to the next step if you believe that the data remaining on
+this volume can't be rebuilt from elsewhere in the grid (for example, if
+your ILM policy uses a rule that makes only one copy or if volumes have
+failed on multiple nodes). Instead, contact support to determine how to
+recover your data.
+
+====== Device /dev/sde ======
+Mount and unmount device /dev/sde and checking file system consistency:
+The device is consistent.
+Check rangedb structure on device /dev/sde:
+Mount device /dev/sde to /tmp/sde-654321 with rangedb mount options
+This device has all rangedb directories.
+Found LDR node id 12000078, volume number 9 in the volID file
+Error: This volume does not belong to this node. Fix the attached volume and re-run this script.
+----
++
+在範例輸出中、已成功重新掛載一個儲存磁碟區、三個儲存磁碟區發生錯誤。
+
++
+*** `/dev/sdb`通過 XFS 檔案系統一致性檢查、並具有有效的磁碟區結構、因此已成功重新掛載。由指令碼重新掛載的裝置上的資料會保留下來。
+*** `/dev/sdc`XFS 檔案系統一致性檢查失敗、因為儲存磁碟區是新的或毀損。
+*** `/dev/sdd`無法掛載、因為磁碟未初始化或磁碟的超級區塊毀損。當指令碼無法掛載儲存磁碟區時、它會詢問您是否要執行檔案系統一致性檢查。
++
+**** 如果儲存磁碟區已附加至新磁碟、請在提示字元中回答* N*。您不需要檢查新磁碟上的檔案系統。
+**** 如果儲存磁碟區已附加至現有磁碟、請在提示字元中回答* Y*。您可以使用檔案系統檢查的結果來判斷毀損的來源。結果會儲存在記錄檔中 `/var/local/log/sn-remount-volumes.log`。
+
+
+*** `/dev/sde`通過 XFS 檔案系統一致性檢查、並具有有效的 Volume 結構；然而、 volID 檔案中的 LDR 節點 ID 與此儲存節點的 ID 不符（ `configured LDR noid`顯示於頂端）。此訊息表示此磁碟區屬於另一個儲存節點。
+
+
+
+
+. 檢閱指令碼輸出並解決任何問題。
++
+
+CAUTION: 如果儲存磁碟區未通過XFS檔案系統一致性檢查或無法掛載、請仔細檢閱輸出中的錯誤訊息。您必須瞭解在這些磁碟區上執行指令碼的影響 `sn-recovery-postinstall.sh`。
+
++
+.. 檢查以確定結果包含您所預期所有磁碟區的項目。如果未列出任何磁碟區、請重新執行指令碼。
+.. 檢閱所有掛載裝置的訊息。請確定沒有錯誤指出儲存磁碟區不屬於此儲存節點。
++
+在範例中、的輸出 `/dev/sde`包含下列錯誤訊息：
+
++
+[listing]
+----
+Error: This volume does not belong to this node. Fix the attached volume and re-run this script.
+----
++
+
+CAUTION: 如果儲存磁碟區被回報為屬於其他儲存節點、請聯絡技術支援部門。如果您執行 `sn-recovery-postinstall.sh`指令碼、儲存磁碟區將會重新格式化、這可能會導致資料遺失。
+
+.. 如果無法掛載任何儲存裝置、請記下裝置名稱、然後修復或更換裝置。
++
+
+NOTE: 您必須修復或更換任何無法掛載的儲存裝置。
+
++
+您將使用裝置名稱來查詢 Volume ID 、這是執行指令碼將物件資料還原至磁碟區時所需的輸入 `repair-data`（下一個程序）。
+
+.. 修復或更換所有無法掛載的裝置之後、請再次執行 `sn-remount-volumes`指令碼、確認所有可重新掛載的儲存磁碟區都已重新掛載。
++
+
+CAUTION: 如果儲存磁碟區無法掛載或格式化不當、而您繼續下一步、則磁碟區和磁碟區上的任何資料都會遭到刪除。如果您有兩份物件資料複本、則在完成下一個程序（還原物件資料）之前、只會有一份複本。
+
+
+
++
+
+CAUTION: 如果您認為故障儲存磁碟區上的剩餘資料無法從網格中的其他位置重建、請勿執行 `sn-recovery-postinstall.sh`指令碼（例如、如果您的 ILM 原則使用的規則只製作一份複本、或是如果磁碟區在多個節點上發生故障）。請聯絡技術支援部門、以決定如何恢復資料。
+
+. 執行 `sn-recovery-postinstall.sh`指令碼： `sn-recovery-postinstall.sh`
++
+此指令碼會重新格式化任何無法掛載或被發現格式不正確的儲存磁碟區；如有需要、可在節點上重新建置Cassandra資料庫；並在儲存節點上啟動服務。
+
++
+請注意下列事項：
+
++
+** 指令碼可能需要數小時才能執行。
+** 一般而言、您應該在指令碼執行時、單獨保留SSH工作階段。
+** SSH 工作階段作用中時、請勿按 * Ctrl+C* 。
+** 如果發生網路中斷、指令碼會在背景執行、並終止SSH工作階段、但您可以從「恢復」頁面檢視進度。
+** 如果儲存節點使用的是RSM服務、則當節點服務重新啟動時、指令碼可能會停滯5分鐘。每當首次啟動RSM服務時、預期會有5分鐘的延遲時間。
+
+
++
+
+NOTE: 其中包含了ADC服務的儲存節點上有此RSM服務。
+
++
+
+NOTE: 部分StorageGRID 還原程序會使用Reaper來處理Cassandra的修復作業。一旦相關或必要的服務開始、系統就會自動進行修復。您可能會注意到指令碼輸出中提到「 reaper 」或「 Cassandra repair 」。如果您看到指出修復失敗的錯誤訊息、請執行錯誤訊息中指出的命令。
+
+. [[post-install-script-step ]] 指令碼執行時 `sn-recovery-postinstall.sh`、請在 Grid Manager 中監控「恢復」頁面。
++
+「恢復」頁面上的進度列和「階段」欄位可提供指令碼的高層級狀態 `sn-recovery-postinstall.sh`。
+
++
+image::../media/recovering_cassandra.png[顯示Grid Management Interface恢復進度的快照]
+
+. 指令碼在節點上啟動服務之後 `sn-recovery-postinstall.sh`、您可以將物件資料還原至指令碼格式化的任何儲存磁碟區。
++
+指令碼會詢問您是否要使用 Grid Manager Volume 還原程序。
+
++
+** 在大多數情況下link:../maintain/restoring-volume.html["使用 Grid Manager 還原物件資料"]，您應該。使用 Grid Manager 的答案 `y`。
+** 在極少數情況下、例如在技術支援的指示下、或當您知道更換節點的物件儲存可用磁碟區比原始節點少時、您必須link:restoring-object-data-to-storage-volume.html["手動還原物件資料"]使用 `repair-data`指令碼。如果其中一種情況適用、請回答 `n`。
++
+[NOTE]
+====
+如果您回答 `n`使用 Grid Manager Volume 還原程序（手動還原物件資料）：
+
+*** 您無法使用 Grid Manager 還原物件資料。
+*** 您可以使用 Grid Manager 來監控手動還原工作的進度。
+
+
+====
++
+完成選擇後、指令碼會完成、並顯示後續步驟以恢復物件資料。檢閱這些步驟後、按下任意鍵即可返回命令列。
+
+
+
+

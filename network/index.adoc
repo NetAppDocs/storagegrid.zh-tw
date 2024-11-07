@@ -1,0 +1,62 @@
+---
+permalink: network/index.html 
+sidebar: sidebar 
+keywords: storagegrid, network, networking, ethernet, subnet, routing 
+summary: 請使用這些準則來瞭StorageGRID 解有關架構和網路拓撲的資訊、並瞭解網路組態和資源配置的需求。 
+---
+= 網路準則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+請使用這些準則來瞭StorageGRID 解有關架構和網路拓撲的資訊、並瞭解網路組態和資源配置的需求。
+
+
+
+== 關於這些指示
+
+這些準則提供您在StorageGRID 部署和設定StorageGRID 節點之前、可用來建立「資訊」網路基礎架構的資訊。使用這些準則有助於確保網格中的所有節點之間、網格與外部用戶端和服務之間都能進行通訊。
+
+外部用戶端和外部服務需要連線StorageGRID 至無法分享的網路、才能執行下列功能：
+
+* 儲存及擷取物件資料
+* 接收電子郵件通知
+* 存取StorageGRID 功能完善的管理介面（Grid Manager與Tenant Manager）
+* 存取稽核共用區（選用）
+* 提供下列服務：
++
+** 網路時間傳輸協定（NTP）
+** 網域名稱系統（ DNS ）
+** 金鑰管理伺服器（KMS）
+
+
+
+
+必須適當設定以處理這些功能及其他功能的流量。StorageGRID
+
+
+
+== 開始之前
+
+若要設定StorageGRID 適用於某個效能不穩定系統的網路功能、需要具備乙太網路交換、TCP/IP網路、子網路、網路路由和防火牆等豐富經驗。
+
+設定網路之前、請先熟悉 StorageGRID 架構link:../primer/index.html["深入瞭解StorageGRID"]、如所述。
+
+在您決定StorageGRID 要使用哪些靜態網路、以及如何設定這些網路之後、StorageGRID 您可以依照適當的指示來安裝和設定這些節點。
+
+.安裝應用裝置節點
+* https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["安裝應用裝置硬體"^]
+
+
+.安裝軟體型節點
+* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
+* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
+* link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
+
+
+.設定及管理StorageGRID 功能
+* link:../admin/index.html["管理StorageGRID"]
+* link:../release-notes/index.html["版本資訊"]
+

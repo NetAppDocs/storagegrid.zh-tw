@@ -1,0 +1,139 @@
+---
+permalink: network/linux-deployments.html 
+sidebar: sidebar 
+keywords: linux network, container engine, red hat enterprise linux rhel network, ubuntu network 
+summary: 為了提高效率、可靠性和安全性、StorageGRID 此功能可在Linux上執行、作為容器引擎的集合。在一個不需要與容器引擎相關的StorageGRID 網路組態設定的情況下、 
+---
+= Linux部署
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為了提高效率、可靠性和安全性、StorageGRID 此功能可在Linux上執行、作為容器引擎的集合。在一個不需要與容器引擎相關的StorageGRID 網路組態設定的情況下、
+
+將非連結裝置（例如VLAN或虛擬乙太網路（varth）配對）用於容器網路介面。將此裝置指定為節點組態檔中的網路介面。
+
+
+CAUTION: 請勿直接使用連結或橋接裝置做為容器網路介面。這樣做可能會因為在Container命名空間中使用含Bond和Bridge裝置的Macvlan時發生核心問題、而導致節點無法啟動。
+
+請參閱或link:../ubuntu/index.html["Ubuntu或DEBIAN"]部署的安裝指示link:../rhel/index.html["Red Hat Enterprise Linux"]。
+
+
+
+== 用於容器引擎部署的主機網路組態
+
+在StorageGRID 容器引擎平台上開始進行功能性部署之前、請先判斷每個節點將使用哪些網路（Grid、管理、用戶端）。您必須確保每個節點的網路介面都設定在正確的虛擬或實體主機介面上、而且每個網路都有足夠的頻寬。
+
+
+
+=== 實體主機
+
+如果您使用實體主機來支援網格節點：
+
+* 確保所有主機都對每個節點介面使用相同的主機介面。此策略可簡化主機組態、並可在未來進行節點移轉。
+* 取得實體主機本身的IP位址。
++
+
+NOTE: 主機上的實體介面可由主機本身和主機上執行的一或多個節點使用。使用此介面指派給主機或節點的任何IP位址都必須是唯一的。主機和節點無法共用 IP 位址。
+
+* 開啟主機所需的連接埠。
+* 如果您打算在StorageGRID 支援中使用VLAN介面、主機必須有一個或多個主幹介面、才能存取所需的VLAN。這些介面可以以eth0、eth2或其他介面的形式傳送到節點容器。若要新增主幹或存取介面、請參閱下列內容：
++
+** * RHEL （安裝節點之前） * ：link:../rhel/creating-node-configuration-files.html["建立節點組態檔"]
+** * Ubuntu 或 Debian （安裝節點之前） * ：link:../ubuntu/creating-node-configuration-files.html["建立節點組態檔"]
+** * RHEL 、 Ubuntu 或 Debian （安裝節點之後） * ：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux：新增主幹或存取介面至節點"]
+
+
+
+
+
+
+=== 建議的最低頻寬
+
+下表針對每種類型的 StorageGRID 節點和每種類型的網路、提供最低 LAN 頻寬建議。您必須為每部實體或虛擬主機配置足夠的網路頻寬、以符合StorageGRID 您計畫在該主機上執行的所有節點數和類型的總頻寬需求。
+
+[cols="1a,1a,1a,1a"]
+|===
+| 節點類型 3+| 網路類型 
+
+
+ a| 
+ a| 
+網格
+ a| 
+管理
+ a| 
+用戶端
+
+
+
+ a| 
+ a| 
+* 最小 LAN 頻寬 *
+
+
+
+ a| 
+管理
+ a| 
+10 Gbps
+ a| 
+1 Gbps
+ a| 
+1 Gbps
+
+
+
+ a| 
+閘道
+ a| 
+10 Gbps
+ a| 
+1 Gbps
+ a| 
+10 Gbps
+
+
+
+ a| 
+儲存設備
+ a| 
+10 Gbps
+ a| 
+1 Gbps
+ a| 
+10 Gbps
+
+
+
+ a| 
+歸檔
+ a| 
+10 Gbps
+ a| 
+1 Gbps
+ a| 
+10 Gbps
+
+|===
+
+NOTE: 此表不包含存取共享儲存設備所需的SAN頻寬。如果您使用透過乙太網路存取的共享儲存設備（iSCSI或FCoE）、則應在每個主機上配置個別的實體介面、以提供足夠的SAN頻寬。為了避免出現瓶頸、特定主機的SAN頻寬應大致符合該主機上執行之所有儲存節點的Aggregate Storage Node網路頻寬。
+
+請根據StorageGRID 您計畫在該主機上執行的各個節點數量和類型、使用表格來判斷每個主機上要配置的網路介面數量下限。
+
+例如、若要在單一主機上執行一個管理節點、一個閘道節點和一個儲存節點：
+
+* 連接管理節點上的網格和管理網路（需要10 + 1 = 11 Gbps）
+* 在閘道節點上連接網格和用戶端網路（需要10 + 10 = 20 Gbps）
+* 連接儲存節點上的網格網路（需要10 Gbps）
+
+
+在此案例中、您應提供至少11 + 20 + 10 = 41 Gbps的網路頻寬、 可由兩個40 Gbps介面或五個10 Gbps介面滿足、這些介面可能會集合成主幹、然後由三個以上的VLAN共用、這些VLAN會將Grid、Admin和用戶端子網路裝載到包含主機的實體資料中心。
+
+如需在StorageGRID 您的叢集中的主機上設定實體和網路資源以準備StorageGRID 進行支援的建議方法、請參閱下列內容：
+
+* link:../rhel/configuring-host-network.html["設定主機網路（ Red Hat Enterprise Linux ）"]
+* link:../ubuntu/configuring-host-network.html["設定主機網路（Ubuntu或DEBIANK）"]
+

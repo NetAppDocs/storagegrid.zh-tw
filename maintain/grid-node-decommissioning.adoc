@@ -1,0 +1,62 @@
+---
+permalink: maintain/grid-node-decommissioning.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission, remove grid node 
+summary: 您可以使用節點取消委任程序、在一或多個站台上移除一或多個網格節點。您無法取消委任主管理節點。 
+---
+= 網格節點取消委任
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用節點取消委任程序、在一或多個站台上移除一或多個網格節點。您無法取消委任主要管理節點。
+
+
+
+== 何時取消委任節點
+
+當下列任一情況成立時、請使用節點取消委任程序：
+
+* 您在擴充中新增了較大的儲存節點、並想要移除一個或多個較小的儲存節點、同時保留物件。
++
+
+TIP: 如果您想要以較新的應用裝置來更換較舊的應用裝置、請考慮不要在擴充設備中新增新的應用裝置、然後將舊的應用裝置汰換 https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/how-appliance-node-cloning-works.html["複製應用裝置節點"^]。
+
+* 您所需的總儲存容量較少。
+* 您不再需要閘道節點。
+* 您不再需要非主要管理節點。
+* 您的網格包含一個中斷連線的節點、您無法恢復或恢復連線。
+* 您的網格包含歸檔節點。
+
+
+
+
+== 如何取消委任節點
+
+您可以取消委任連接的網格節點或中斷連線的網格節點。
+
+取消委任已連線的節點:: 一般而言、只有當網格節點連線至 StorageGRID 系統、且所有節點都處於正常健全狀況時、您才應該取消委任它們（ * 節點 * 頁面和 * 取消配置節點 * 頁面上有綠色圖示）。
++
+--
+有關說明，請參閱link:decommissioning-connected-grid-nodes.html["取消委任連線的網格節點"]。
+
+--
+取消委任中斷連線的節點:: 在某些情況下、您可能需要取消委任目前未連線至網格的網格節點（健全狀況為未知或管理性關閉的節點）。
++
+--
+有關說明，請參閱link:decommissioning-disconnected-grid-nodes.html["取消委任中斷連線的網格節點"]。
+
+--
+
+
+
+
+== 淘汰節點之前應考慮的事項
+
+在執行任一程序之前、請先檢閱每種節點類型的考量事項：
+
+* link:considerations-for-decommissioning-admin-or-gateway-nodes.html["管理或閘道節點取消委任的考量事項"]
+* link:considerations-for-decommissioning-storage-nodes.html["儲存節點取消委任的考量事項"]
+

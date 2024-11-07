@@ -1,0 +1,44 @@
+---
+permalink: admin/networking-and-ports-for-platform-services.html 
+sidebar: sidebar 
+keywords: platform services, ports for platform services, 443, 80 
+summary: 如果您允許S3租戶使用平台服務、則必須設定網格的網路連線、以確保平台服務訊息可傳送至目的地。 
+---
+= 平台服務的網路和連接埠
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您允許S3租戶使用平台服務、則必須設定網格的網路連線、以確保平台服務訊息可傳送至目的地。
+
+您可以在建立或更新租戶帳戶時、為S3租戶帳戶啟用平台服務。如果已啟用平台服務、租戶可以建立端點、做為CloudMirror複寫、事件通知或從S3儲存區搜尋整合訊息的目的地。這些平台服務訊息會從執行ADC服務的儲存節點傳送至目的地端點。
+
+例如、租戶可能會設定下列類型的目的地端點：
+
+* 本機代管的彈性搜尋叢集
+* 支援接收 Amazon Simple Notification Service 訊息的本機應用程式
+* 本地託管的 Kafka 叢集
+* 本地託管的S3儲存區位於StorageGRID 相同或其他的例子
+* 外部端點、例如Amazon Web Services上的端點。
+
+
+若要確保平台服務訊息能夠傳送、您必須設定含有「ADC儲存節點」的網路。您必須確保下列連接埠可用於傳送平台服務訊息至目的地端點。
+
+根據預設、平台服務訊息會在下列連接埠上傳送：
+
+* *80* ：適用於以 http 開頭的端點 URI （大多數端點）
+* *443* ：適用於以 https 開頭的端點 URI （大多數端點）
+* *9092* ：適用於以 http 或 https 開頭的端點 URI （僅限 Kafka 端點）
+
+
+租戶在建立或編輯端點時、可以指定不同的連接埠。
+
+
+NOTE: 如果StorageGRID 將某個支援區部署做為CloudMirror複寫的目的地、則複寫訊息可能會在80或443以外的連接埠接收。確保StorageGRID 端點中已指定目的地支援的S3連接埠。
+
+如果您使用非透明 Proxy 伺服器、也必須link:configuring-storage-proxy-settings.html["設定儲存Proxy設定"]允許訊息傳送至外部端點、例如網際網路上的端點。
+
+.相關資訊
+link:../tenant/index.html["使用租戶帳戶"]

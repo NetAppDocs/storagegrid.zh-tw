@@ -1,0 +1,72 @@
+---
+permalink: fabricpool/creating-s3-bucket-and-access-key.html 
+sidebar: sidebar 
+keywords: fabricPool, S3 bucket, bucket, access key, secret access key 
+summary: 在將StorageGRID 支援FabricPool 功能與功能性工作負載一起使用之前、您必須先建立S3儲存庫來儲存FabricPool 您的功能性資料。您也需要取得將用於FabricPool 執行此功能的租戶帳戶的存取金鑰和秘密存取金鑰。 
+---
+= 建立 S3 儲存區並取得存取金鑰
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在將StorageGRID 支援FabricPool 功能與功能性工作負載一起使用之前、您必須先建立S3儲存庫來儲存FabricPool 您的功能性資料。您也需要取得將用於FabricPool 執行此功能的租戶帳戶的存取金鑰和秘密存取金鑰。
+
+有關此任務的詳細信息，請參閱link:../tenant/creating-s3-bucket.html["建立S3儲存區"]和link:../tenant/creating-your-own-s3-access-keys.html["建立自己的S3存取金鑰"]。要使用 FabricPool 安裝嚮導完成此任務，請轉至link:use-fabricpool-setup-wizard-steps.html["存取並完成 FabricPool 設定精靈"]。
+
+.開始之前
+* 您已建立一個可供FabricPool 使用的租戶帳戶。
+* 您擁有租戶帳戶的「根目錄」存取權。
+
+
+.步驟
+. 登入租戶管理程式。
++
+您可以執行下列其中一項：
+
++
+** 在Grid Manager的「租戶帳戶」頁面中、選取租戶的*登入*連結、然後輸入您的認證資料。
+** 在網頁瀏覽器中輸入租戶帳戶的URL、然後輸入您的認證資料。
+
+
+. 建立S3儲存庫以供FabricPool 資料使用。
++
+您必須為ONTAP 計畫使用的每個叢集建立獨特的儲存庫。
+
++
+.. 從儀表板選取 * 檢視貯體 * 、或選取 * 儲存空間（ S3 ） * > * 鏟斗 * 。
+.. 選取*建立桶*。
+.. 輸入您要搭配 FabricPool 使用的 StorageGRID 貯體名稱。例如 `fabricpool-bucket`：。
++
+
+TIP: 您無法在建立貯體之後變更貯體名稱。
+
+.. 選取此儲存區的區域。
++
+依預設、所有貯體都會建立在區域中 `us-east-1`。
+
+.. 選擇*繼續*。
+.. 選取*建立桶*。
++
+
+NOTE: 請勿為 FabricPool 貯體選取 * 啟用物件版本管理 * 。同樣地、請勿編輯 FabricPool 儲存庫以使用 * 可用 * 或非預設一致性。FabricPool 儲存區的建議儲存區一致性為 * 新寫入後讀取 * 、這是新儲存區的預設一致性。
+
+
+
+. 建立存取金鑰和秘密存取金鑰。
++
+.. 選擇*儲存設備（S3）*>*我的存取金鑰*。
+.. 選取*建立金鑰*。
+.. 選取*建立存取金鑰*。
+.. 將存取金鑰ID和秘密存取金鑰複製到安全位置、或選取*下載.csv*以儲存內含存取金鑰ID和秘密存取金鑰的試算表檔案。
++
+當您將「靜態」設定為「雲端層」時、將會在ONTAP 「靜態」中輸入這些值StorageGRID 。FabricPool
+
++
+
+TIP: 如果您未來在 StorageGRID 中產生新的存取金鑰和秘密存取金鑰、請先在 ONTAP 中輸入新金鑰、然後再從 StorageGRID 刪除舊值。否則、 ONTAP 可能會暫時失去對 StorageGRID 的存取權。
+
+
+
+

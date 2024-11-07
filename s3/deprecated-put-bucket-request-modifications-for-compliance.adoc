@@ -1,0 +1,31 @@
+---
+permalink: s3/deprecated-put-bucket-request-modifications-for-compliance.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, deprecated bucket requests for compliance 
+summary: SGCompliance XML元素已過時。以前、您可以將此 StorageGRID 自訂元素納入 CreateBucket 要求的選用 XML 要求本文、以建立符合法規的儲存區。 
+---
+= 已過時：為符合性而修改 CreateBucket 要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SGCompliance XML元素已過時。以前、您可以將此 StorageGRID 自訂元素納入 CreateBucket 要求的選用 XML 要求本文、以建立符合法規的儲存區。
+
+[NOTE]
+====
+先前版本的不支援《支援不符合要求》功能、現已由S3物件鎖定取代。StorageGRID StorageGRID如需詳細資訊、請參閱下列內容：
+
+* link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp知識庫：如何管理StorageGRID 支援老舊的知識庫、請參閱《知識庫文章"^]
+
+
+====
+您無法再建立啟用「法規遵循」的新庫位。如果您嘗試使用 CreateBucket 要求修改來建立新的相容貯體、則會傳回下列錯誤訊息：
+
+[listing]
+----
+The Compliance feature is deprecated.
+Contact your StorageGRID administrator if you need to create new Compliant buckets.
+----

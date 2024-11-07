@@ -1,0 +1,45 @@
+---
+indexpage:
+  title: 監控 StorageGRID 系統並進行疑難排解
+  summary: 當系統啟動並執行時、您應該定期監控其活動、並疑難排解及解決任何警示。您可能也想要設定外部 Syslog 伺服器、使用 SNMP 監控或收集其他資料。
+  keywords: monitor, troubleshoot
+  lead: 當系統啟動並執行時、您應該定期監控其活動、並疑難排解及解決任何警示。您可能也想要設定外部 Syslog 伺服器、使用 SNMP 監控或收集其他資料。
+  tiles:
+  - title: 監控您的系統
+    links:
+    - title: 管理儀表板
+      url: "../monitor/viewing-dashboard.html"
+    - title: 檢視節點頁面
+      url: "../monitor/viewing-nodes-page.html"
+    - title: 監控系統健全狀況
+      url: "../monitor/monitoring-system-health.html"
+    - title: 監控儲存容量
+      url: "../monitor/monitoring-storage-capacity.html"
+  - title: 管理警示和通知
+    links:
+    - title: 管理警示
+      url: "../monitor/managing-alerts.html"
+    - title: 建立自訂警示
+      url: "../monitor/creating-custom-alert-rules.html"
+    - title: 管理警示電子郵件
+      url: "../monitor/email-alert-notifications.html"
+    - title: 使用SNMP監控
+      url: "../monitor/using-snmp-monitoring.html"
+  - title: 使用稽核訊息和其他記錄
+    links:
+    - title: 設定稽核訊息
+      url: "../monitor/configure-audit-messages.html"
+    - title: 使用外部 Syslog 伺服器
+      url: "../monitor/considerations-for-external-syslog-server.html"
+    - title: 檢閱稽核記錄
+      url: "../audit/index.html"
+    - title: 記錄檔參考
+      url: "../monitor/logs-files-reference.html"
+  - title: 診斷與疑難排解
+    links:
+    - title: 檢視支援指標
+      url: "../monitor/reviewing-support-metrics.html"
+    - title: 執行診斷
+      url: "../monitor/running-diagnostics.html"
+    - title: 疑難排解常見問題
+      url: "../troubleshoot/index.html"

@@ -1,0 +1,47 @@
+---
+permalink: maintain/replacing-storage-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, replace storage node, replacing storage node 
+summary: 如果系統磁碟機故障、您必須先更換儲存節點。 
+---
+= 更換儲存節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果系統磁碟機故障、您必須先更換儲存節點。
+
+您必須為平台選取節點更換程序。所有類型的網格節點、更換節點的步驟都相同。
+
+
+NOTE: 此程序僅適用於軟體型儲存節點。您必須遵循不同的程序link:recovering-storagegrid-appliance-storage-node.html["恢復應用裝置儲存節點"]。
+
+* Linux ： * 如果您不確定系統磁碟機是否故障、請依照指示更換節點、以判斷需要哪些恢復步驟。
+
+[cols="1a,2a"]
+|===
+| 平台 | 程序 
+
+
+ a| 
+VMware
+ a| 
+link:all-node-types-replacing-vmware-node.html["更換VMware節點"]
+
+
+
+ a| 
+Linux
+ a| 
+link:all-node-types-replacing-linux-node.html["更換Linux節點"]
+
+
+
+ a| 
+OpenStack
+ a| 
+NetApp提供的OpenStack虛擬機器磁碟檔案和指令碼不再支援還原作業。如果您需要恢復在OpenStack部署中執行的節點、請下載適用於您Linux作業系統的檔案。然後，請遵循的程序link:all-node-types-replacing-linux-node.html["更換 Linux 節點"]。
+
+|===

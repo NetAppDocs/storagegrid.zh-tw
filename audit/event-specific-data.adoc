@@ -1,0 +1,23 @@
+---
+permalink: audit/event-specific-data.html 
+sidebar: sidebar 
+keywords: audit message, event, shea, s3 head 
+summary: 稽核日誌中的每個稽核訊息都會記錄特定於系統事件的資料。 
+---
+= 事件特定資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+稽核日誌中的每個稽核訊息都會記錄特定於系統事件的資料。
+
+在識別訊息本身的開啟容器之後 `[AUDT:`、下一組屬性會提供有關稽核訊息所描述的事件或動作的資訊。這些屬性會在下列範例中反白顯示：
+
+[]
+====
+2018-12-05T08：24：45.921845 [AUDT：*\[RSALT\（FC32\）：SUCS\**\[Time（UI64\）：11454\[SAIP\（ipad\）："10.224.0.100"\[S3AI（CStr\）："4196920499* Stls6400c64T64"S=Cs=S64T64T1T64"S=Cs=Cs=S64T64T1T1T64T64T64"1T64T1T1"S=S="S64T64"S=Cs=Cs=S64"S64T1=Cs=Cs=C64T64T64T64T1T1T1T1T1T1="S64T1=Cs=C64T64T64T1=C64"S=Cs="S64T1=C64T1="S64T64T1=C64T64T64T1"S="S
+
+====
+ `ATYP`元素（在範例中加上底線）會識別產生訊息的事件。此範例訊息包含link:shea-s3-head.html["Shea"]訊息代碼（ [ATYP(FC32):Shea ）、表示它是由成功的 S3 頭部要求所產生。

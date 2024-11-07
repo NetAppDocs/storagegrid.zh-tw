@@ -1,0 +1,43 @@
+---
+permalink: maintain/preparing-appliance-storage-node-for-reinstallation.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, appliance, reinstallation appliance, reinstall appliance 
+summary: 恢復應用裝置儲存節點時、您必須先準備好應用裝置以重新安裝StorageGRID 還原軟體。 
+---
+= 準備設備儲存節點以重新安裝
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+恢復應用裝置儲存節點時、您必須先準備好應用裝置以重新安裝StorageGRID 還原軟體。
+
+.步驟
+. 登入故障儲存節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 準備應用裝置儲存節點以安裝 StorageGRID 軟體。 `sgareinstall`
+. 當系統提示您繼續時、請輸入： `y`
++
+設備會重新開機、SSH工作階段也會結束。雖然有時您可能需要等待30分鐘、但使用起來通常需要5分鐘才能StorageGRID 使用《不知如何使用的應用程式」。
+
++
+
+CAUTION: 請勿嘗試透過循環電源或以其他方式重設應用裝置來加速重新開機。您可能會中斷自動 BIOS 、 BMC 或其他韌體升級。
+
++
+將重設此功能、儲存節點上的資料將無法再存取。StorageGRID在原始安裝程序期間所設定的IP位址應保持不變；不過、建議您在程序完成時確認。
+
++
+執行命令後 `sgareinstall`、所有 StorageGRID 提供的帳戶、密碼和 SSH 金鑰都會移除、並產生新的主機金鑰。
+
+

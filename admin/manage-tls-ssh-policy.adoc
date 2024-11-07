@@ -1,0 +1,135 @@
+---
+permalink: admin/manage-tls-ssh-policy.html 
+sidebar: sidebar 
+keywords: TLS and SSH policy, secure connection, FIPS, Common Criteria 
+summary: TLS 和 SSH 原則決定使用哪些通訊協定和加密程式來建立與用戶端應用程式的安全 TLS 連線、以及安全的 SSH 連線至內部 StorageGRID 服務。 
+---
+= 管理 TLS 和 SSH 原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+TLS 和 SSH 原則決定使用哪些通訊協定和加密程式來建立與用戶端應用程式的安全 TLS 連線、以及安全的 SSH 連線至內部 StorageGRID 服務。
+
+安全性原則控制 TLS 和 SSH 如何加密移動中的資料。一般而言、請使用現代化相容性（預設）原則、除非您的系統需要符合一般準則、或您需要使用其他密碼。
+
+
+NOTE: 某些 StorageGRID 服務尚未更新、無法在這些原則中使用密碼。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:admin-group-permissions.html["root 存取權限"]。
+
+
+
+
+== 選取安全性原則
+
+.步驟
+. 選擇 * 組態 * > * 安全性 * > * 安全性設定 * 。
++
+「 *TLS 與 SSH 原則 * 」標籤會顯示可用的原則。目前作用中的原則會在原則方塊上以綠色核取記號表示。
+
++
+image::../media/securitysettings_tls_ssh_policies_current.png[TLS 和 SSH 原則]
+
+. 檢閱方塊以瞭解可用的原則。
++
+[cols="1a,2a"]
+|===
+| 原則 | 說明 
+
+
+ a| 
+現代化相容性（預設）
+ a| 
+如果您需要增強式加密、而且沒有特殊要求、請使用預設原則。此原則與大多數 TLS 和 SSH 用戶端相容。
+
+
+
+ a| 
+舊版相容性
+ a| 
+如果您需要舊版用戶端的其他相容性選項、請使用此原則。此原則中的其他選項可能會使其比現代相容性原則更不安全。
+
+
+
+ a| 
+一般準則
+ a| 
+如果您需要通用準則認證、請使用此原則。
+
+
+
+ a| 
+FIPS 嚴格
+ a| 
+如果您需要通用準則認證、而且需要使用 NetApp 密碼編譯安全模組 3.0.8 來連接負載平衡器端點、租戶管理器和 Grid Manager 、請使用此原則。使用此原則可能會降低效能。
+
+* 注意 * ：選取此原則之後、所有節點都必須link:../maintain/rolling-reboot-procedure.html["以不連續的方式重新開機"]啟動 NetApp 密碼編譯安全模組。使用 * 維護 * > * 循環重新開機 * 來啟動和監控重新開機。
+
+
+
+ a| 
+自訂
+ a| 
+如果您需要套用自己的密碼、請建立自訂原則。
+
+|===
+. 若要查看每個原則的密碼、通訊協定和演算法的詳細資料、請選取 * 檢視詳細資料 * 。
+. 若要變更目前的原則、請選取 * 使用原則 * 。
++
+原則方塊上的 * 目前原則 * 旁會出現綠色核取記號。
+
+
+
+
+
+== 建立自訂安全性原則
+
+如果您需要套用自己的密碼、可以建立自訂原則。
+
+.步驟
+. 從最類似您要建立之自訂原則的原則方塊中、選取 * 檢視詳細資料 * 。
+. 選取 * 複製到剪貼簿 * 、然後選取 * 取消 * 。
++
+image::../media/securitysettings-custom-security-policy-copy.png[複製現有原則以建立自訂原則]
+
+. 從 * 自訂原則 * 方塊中、選取 * 設定與使用 * 。
+. 貼上您複製的 JSON 、然後進行任何必要的變更。
+. 選取 * 使用原則 * 。
++
+「自訂原則」方塊的 * 目前原則 * 旁會出現綠色核取記號。
+
+. 您也可以選擇 * 編輯組態 * 來對新的自訂原則進行更多變更。
+
+
+
+
+== 暫時恢復為預設的安全性原則
+
+如果您設定了自訂安全性原則、如果設定的 TLS 原則與不相容link:global-certificate-types.html["已設定的伺服器憑證"]、您可能無法登入 Grid Manager 。
+
+您可以暫時還原為預設的安全性原則。
+
+.步驟
+. 登入管理節點：
++
+.. 輸入下列命令： `ssh admin@_Admin_Node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+
+. 執行下列命令：
++
+`restore-default-cipher-configurations`
+
+. 從網頁瀏覽器存取同一個管理節點上的Grid Manager。
+. 請依照中的步驟<<select-a-security-policy,選取安全性原則>>重新設定原則。
+

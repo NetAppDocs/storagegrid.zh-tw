@@ -1,0 +1,8 @@
+---
+permalink: maintain/decommissioning-disconnected-storage-nodes.html 
+redirect: storagegrid/maintain/considerations-for-decommissioning-storage-nodes.html 
+---
+= 
+:allow-uri-read: 
+
+

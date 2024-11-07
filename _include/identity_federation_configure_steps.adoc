@@ -1,0 +1,126 @@
+= 測試連線並儲存組態
+:allow-uri-read: 
+
+
+. 選取*啟用身分識別聯盟*。
+. 在LDAP服務類型區段中、選取您要設定的LDAP服務類型。
++
+image::../media/ldap_service_type.png[顯示LDAP服務類型選項的「身分識別聯盟」頁面]
+
++
+選擇*其他*以設定使用Oracle Directory Server的LDAP伺服器值。
+
+. 如果選擇*其他*、請填寫「LDAP屬性」區段中的欄位。否則、請前往下一步。
++
+** *使用者唯一名稱*：含有LDAP使用者唯一識別碼的屬性名稱。此屬性相當於 `sAMAccountName` Active Directory 和 `uid` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `uid`。
+** *使用者UUID *：含有LDAP使用者永久唯一識別碼的屬性名稱。此屬性相當於 `objectGUID` Active Directory 和 `entryUUID` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `nsuniqueid`。指定屬性的每個使用者值必須是16位元組或字串格式的32位數十六進位數字、連字號會被忽略。
+** *群組唯一名稱*：包含LDAP群組唯一識別碼的屬性名稱。此屬性相當於 `sAMAccountName` Active Directory 和 `cn` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `cn`。
+** *群組UUID *：包含LDAP群組永久唯一識別碼的屬性名稱。此屬性相當於 `objectGUID` Active Directory 和 `entryUUID` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `nsuniqueid`。指定屬性的每個群組值必須是16位元組或字串格式的32位數十六進位數字、連字號會被忽略。
+
+
+. 對於所有LDAP服務類型、請在「設定LDAP伺服器」區段中輸入所需的LDAP伺服器和網路連線資訊。
++
+** *主機名稱*：LDAP伺服器的完整網域名稱（FQDN）或IP位址。
+** *連接埠*：用於連接LDAP伺服器的連接埠。
++
+
+NOTE: STARTTLS的預設連接埠為389、LDAPS的預設連接埠為636。不過、只要防火牆設定正確、您就可以使用任何連接埠。
+
+** *使用者名稱*：將連線至LDAP伺服器之使用者的辨別名稱（DN）完整路徑。
++
+對於Active Directory、您也可以指定低層級的登入名稱或使用者主要名稱。
+
++
+指定的使用者必須擁有列出群組和使用者的權限、並可存取下列屬性：
+
++
+*** `sAMAccountName`或 `uid`
+*** `objectGUID`、 `entryUUID`或 `nsuniqueid`
+*** `cn`
+*** `memberOf`或 `isMemberOf`
+*** * Active Directory* ： `objectSid`、 `primaryGroupID`、 `userAccountControl`和 `userPrincipalName`
+*** * Azure * ： `accountEnabled`及 `userPrincipalName`
+
+
+** *密碼*：與使用者名稱相關的密碼。
++
+
+NOTE: 如果您在未來變更密碼、您必須在此頁面上更新密碼。
+
+** *群組基礎DN*：您要搜尋群組之LDAP子樹狀結構的辨別名稱（DN）完整路徑。在Active Directory範例（如下）中、識別名稱相對於基礎DN（DC=storagegRID、DC=example、DC=com）的所有群組均可做為聯盟群組使用。
++
+
+NOTE: 「群組唯一名稱*」值必須在所屬的*群組基礎DN*中是唯一的。
+
+** *使用者基礎DN*：您要搜尋使用者之LDAP子樹狀目錄的辨別名稱（DN）完整路徑。
++
+
+NOTE: *使用者唯一名稱*值必須在其所屬的*使用者基礎DN*內是唯一的。
+
+** * 連結使用者名稱格式 * （選用）：如果無法自動判斷模式、則應使用預設的使用者名稱模式 StorageGRID 。
++
+建議提供*連結使用者名稱格式*、因為StorageGRID 如果無法連結服務帳戶、使用者可以登入。
+
++
+輸入下列其中一種模式：
+
++
+*** * UserPrincipalName 模式（ Active Directory 和 Azure ） * ： `[USERNAME]@_example_.com`
+*** * 低階登入名稱模式（ Active Directory 和 Azure ） * ： `_example_\[USERNAME]`
+*** * 辨別名稱模式 * ： `CN=[USERNAME],CN=Users,DC=_example_,DC=com`
++
+請準確附上所寫的*（使用者名稱）*。
+
+
+
+
+
+. 在傳輸層安全性（TLS）區段中、選取安全性設定。
++
+** *使用ARTTLS*：使用ARTTLS來保護與LDAP伺服器的通訊安全。這是Active Directory、OpenLDAP或其他的建議選項、但Azure不支援此選項。
+** *使用LDAPS*：LDAPS（LDAP over SSL）選項使用TLS建立與LDAP伺服器的連線。您必須為Azure選取此選項。
+** *請勿使用TLS*：StorageGRID 不保護介於整個系統與LDAP伺服器之間的網路流量。Azure不支援此選項。
++
+
+NOTE: 如果Active Directory伺服器強制執行LDAP簽署、則不支援使用*「不使用TLS*」選項。您必須使用ARTTLS或LDAPS。
+
+
+
+. 如果您選取了ARTTLS或LDAPS、請選擇用來保護連線安全的憑證。
++
+** *使用作業系統CA憑證*：使用作業系統上安裝的預設Grid CA憑證來保護連線安全。
+** *使用自訂CA憑證*：使用自訂安全性憑證。
++
+如果選取此設定、請將自訂安全性憑證複製並貼到CA憑證文字方塊中。
+
+
+
+
+
+
+
+=== 測試連線並儲存組態
+
+輸入所有值之後、您必須先測試連線、才能儲存組態。如果您提供LDAP伺服器的連線設定和連結使用者名稱格式、則可透過此驗證。StorageGRID
+
+.步驟
+. 選擇*測試連線*。
+. 如果您未提供連結使用者名稱格式：
++
+** 如果連線設定有效、就會出現「測試連線成功」訊息。選取*「Save（儲存）」*以儲存組態。
+** 如果連線設定無效、就會出現「無法建立測試連線」訊息。選擇*關閉*。然後、解決所有問題、並再次測試連線。
+
+
+. 如果您提供連結使用者名稱格式、請輸入有效同盟使用者的使用者名稱和密碼。
++
+例如、輸入您自己的使用者名稱和密碼。請勿在使用者名稱中包含任何特殊字元、例如 @ 或 / 。
+
++
+image::../media/identity_federation_test_connection.png[驗證繫結使用者名稱格式的身分識別聯盟提示]
+
++
+** 如果連線設定有效、就會出現「測試連線成功」訊息。選取*「Save（儲存）」*以儲存組態。
+** 如果連線設定、連結使用者名稱格式或測試使用者名稱和密碼無效、則會出現錯誤訊息。解決所有問題、然後再次測試連線。
+
+
+

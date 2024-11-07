@@ -1,0 +1,21 @@
+---
+permalink: maintain/decommissioning-multiple-storage-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission nodes, storage node, multiple storage nodes 
+summary: 如果您需要移除多個儲存節點、可以依序或平行取消委任。 
+---
+= 取消委任多個儲存節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您需要移除多個儲存節點、可以依序或平行取消委任。
+
+
+CAUTION: 在包含僅軟體中繼資料節點的網格中取消委任儲存節點時、請務必謹慎。如果您取消委任所有設定為儲存物件和中繼資料的節點、則儲存物件的能力會從網格中移除。如需僅中繼資料儲存節點的詳細資訊、請參閱link:../primer/what-storage-node-is.html#types-of-storage-nodes["儲存節點類型"]。
+
+* 如果您依序取消委任儲存節點、則必須等到第一個儲存節點完成解除委任之後、才能開始取消委任下一個儲存節點。
+* 如果您平行取消委任儲存節點、則儲存節點會同時處理所有停用儲存節點的取消委任工作。這可能會導致檔案的所有永久複本都標示為「唯讀」、並在啟用此功能的網格中暫時停用刪除功能。
+

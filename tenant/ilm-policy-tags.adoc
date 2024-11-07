@@ -1,0 +1,59 @@
+---
+permalink: tenant/ilm-policy-tags.html 
+sidebar: sidebar 
+keywords: how to assign ilm policy tag to bucket 
+summary: 根據您的物件儲存需求、選擇 ILM 原則標籤指派給貯體。 
+---
+= 將 ILM 原則標籤套用至貯體
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根據您的物件儲存需求、選擇要套用至儲存區的 ILM 原則標籤。
+
+ILM 原則可控制物件資料的儲存位置、以及是否在一段時間後刪除。您的網格管理員會建立 ILM 原則、並在使用多個作用中原則時將其指派給 ILM 原則標籤。
+
+
+NOTE: 避免經常重新指派貯體的原則標籤。否則可能會發生效能問題。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["root 存取權、管理所有貯體、或檢視所有貯體權限"]。這些權限會覆寫群組或儲存區原則中的權限設定。
+
+
+.步驟
+. 從儀表板選取 * 檢視貯體 * 、或選取 * 儲存空間（ S3 ） * > * 鏟斗 * 。
++
+此時會出現「鏟斗」頁面。視需要、您可以依任何欄排序資訊、也可以在清單中前後翻頁。
+
+. 選取您要指派 ILM 原則標籤的儲存區名稱。
++
+您也可以變更已指派標記之貯體的 ILM 原則標記指派。
+
++
+
+NOTE: 所顯示的「物件數」和「已用空間」值為預估值。這些預估值會受到擷取時間、網路連線能力和節點狀態的影響。如果儲存區已啟用版本管理、則刪除的物件版本會包含在物件數中。
+
+. 在「 Bucket 選項」索引標籤中、展開 ILM 原則標籤折疊式。只有當您的網格管理員已啟用使用自訂原則標籤時、才會出現此折疊面板。
+. 請閱讀每個原則標籤的說明、以判斷應將哪個標籤套用至貯體。
++
+
+CAUTION: 變更貯體的 ILM 原則標籤將會觸發 ILM 重新評估貯體中的所有物件。如果新原則保留物件的時間有限、舊物件將會刪除。
+
+. 針對您要指派給貯體的標記、選取選項按鈕。
+. 選取*儲存變更*。新的 S3 儲存貯體標籤將會在儲存貯體上設定、並提供 ILM 原則標籤名稱的金鑰 `NTAP-SG-ILM-BUCKET-TAG`和值。
++
+
+CAUTION: 確保 S3 應用程式不會意外置換或刪除新的 Bucket 標記。如果在將新的 TagSet 套用至貯體時省略此標記、則貯體中的物件會還原為根據預設的 ILM 原則進行評估。
+
++
+
+CAUTION: 僅使用通過 ILM 原則標籤驗證的租戶管理員或租戶管理器 API 來設定及修改 ILM 原則標籤。請勿使用 S3 PuttBucketTaggingTaggingAPI 或 S3 DeletBucketaggingTaggingAPI 來修改 `NTAP-SG-ILM-BUCKET-TAG` ILM 原則標籤。
+
++
+
+NOTE: 變更指派給貯體的原則標籤會暫時影響效能、同時使用新的 ILM 原則重新評估物件。
+
+

@@ -1,0 +1,17 @@
+---
+section: harden
+title: 系統強化
+entries:
+- title: 一般考量
+  pdf-filename: 系統強化StorageGRID
+  url: "/harden/index.html"
+- title: 強化升級準則
+  url: "/harden/hardening-guidelines-for-software-upgrades.html"
+- title: 強化網路準則
+  url: "/harden/hardening-guidelines-for-storagegrid-networks.html"
+- title: 節點強化準則
+  url: "/harden/hardening-guidelines-for-storagegrid-nodes.html"
+- title: TLS 和 SSH 的強化準則
+  url: "/harden/hardening-guideline-for-server-certificates.html"
+- title: 其他強化準則
+  url: "/harden/other-hardening-guidelines.html"

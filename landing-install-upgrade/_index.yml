@@ -1,0 +1,63 @@
+---
+indexpage:
+  title: 安裝、升級及 Hotfix StorageGRID
+  summary: StorageGRID 系統由個別的硬體型和軟體型節點所組成。您必須先為每個應用裝置節點安裝硬體、然後設定每個 Linux 或 VMware
+    主機。然後、在每個應用裝置或軟體主機上安裝 StorageGRID 軟體、並將節點連接至網格。
+  keywords: install, upgrade, hotfix
+  lead: StorageGRID 系統由個別的硬體型和軟體型節點所組成。您必須先為每個應用裝置節點安裝硬體、然後設定每個 Linux 或 VMware 主機。然後、在每個應用裝置或軟體主機上安裝
+    StorageGRID 軟體、並將節點連接至網格。
+  tiles:
+  - title: 快速入門
+    links:
+    - title: 應用裝置硬體
+      url: https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html
+    - title: Red Hat Enterprise Linux
+      url: "../rhel/index.html"
+    - title: Ubuntu或DEBIAN
+      url: "../ubuntu/index.html"
+    - title: VMware
+      url: "../vmware/index.html"
+  - title: 準備材料
+    links:
+    - title: Red Hat Enterprise Linux
+      url: "../rhel/required-materials.html"
+    - title: Ubuntu或DEBIAN
+      url: "../ubuntu/required-materials.html"
+    - title: VMware
+      url: "../vmware/required-materials.html"
+  - title: 自動化安裝
+    links:
+    - title: Red Hat Enterprise Linux
+      url: "../rhel/automating-installation.html"
+    - title: Ubuntu或DEBIAN
+      url: "../ubuntu/automating-installation.html"
+    - title: VMware
+      url: "../vmware/automating-grid-node-deployment-in-vmware-vsphere.html"
+  - title: 部署節點
+    links:
+    - title: Red Hat Enterprise Linux
+      url: "../rhel/creating-node-configuration-files.html"
+    - title: Ubuntu或DEBIAN
+      url: "../ubuntu/creating-node-configuration-files.html"
+    - title: VMware
+      url: "../vmware/collecting-information-about-your-deployment-environment.html"
+  - title: 完成節點安裝
+    links:
+    - title: Red Hat Enterprise Linux
+      url: "../rhel/navigating-to-grid-manager.html"
+    - title: Ubuntu或DEBIAN
+      url: "../ubuntu/navigating-to-grid-manager.html"
+    - title: VMware
+      url: "../vmware/navigating-to-grid-manager.html"
+  - title: 升級或 Hotfix
+    links:
+    - title: 新增功能
+      url: "../upgrade/whats-new.html"
+    - title: 預估完成時間
+      url: "../upgrade/estimating-time-to-complete-upgrade.html"
+    - title: 系統在升級期間的影響
+      url: "../upgrade/how-your-system-is-affected-during-upgrade.html"
+    - title: 升級快速入門
+      url: "../upgrade/upgrade-workflow.html"
+    - title: 套用修補程式
+      url: "../maintain/storagegrid-hotfix-procedure.html"

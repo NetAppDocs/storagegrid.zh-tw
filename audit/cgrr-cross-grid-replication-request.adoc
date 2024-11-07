@@ -1,0 +1,98 @@
+---
+permalink: audit/cgrr-cross-grid-replication-request.html 
+sidebar: sidebar 
+keywords: cgrr, cross-grid replication request, audit message, 
+summary: 當 StorageGRID 嘗試跨網格複寫作業來複寫網格同盟連線中的資料桶之間的物件時、就會產生此訊息。 
+---
+= CGRR ：跨網格複寫要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當 StorageGRID 嘗試跨網格複寫作業來複寫網格同盟連線中的資料桶之間的物件時、就會產生此訊息。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+CSIZ
+ a| 
+物件大小
+ a| 
+物件大小（以位元組為單位）。
+
+StorageGRID 11.8 引進了 CSEZ 屬性。因此、跨越 StorageGRID 11.7 至 11.8 升級的跨網格複寫要求、可能會有不正確的物件總大小。
+
+
+
+ a| 
+S3AI
+ a| 
+S3 租戶帳戶 ID
+ a| 
+擁有要複寫物件之桶的租戶帳戶 ID 。
+
+
+
+ a| 
+GFID
+ a| 
+網格同盟連線 ID
+ a| 
+用於跨網格複寫的網格同盟連線 ID 。
+
+
+
+ a| 
+操作者
+ a| 
+CGR 作業
+ a| 
+嘗試的跨網格複寫作業類型：
+
+* 0 = 複寫物件
+* 1 = 複寫多個部分物件
+* 2 = 複寫刪除標記
+
+
+
+
+ a| 
+S3BK
+ a| 
+S3 貯體
+ a| 
+S3儲存區名稱。
+
+
+
+ a| 
+S3KY
+ a| 
+S3金鑰
+ a| 
+S3金鑰名稱、不含儲存區名稱。
+
+
+
+ a| 
+VSID
+ a| 
+版本ID
+ a| 
+正在複寫之物件之特定版本的版本 ID 。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果代碼
+ a| 
+傳回成功（ SUCS ）或一般錯誤（ GERR ）。
+
+|===

@@ -1,0 +1,52 @@
+---
+permalink: admin/editing-traffic-classification-policy.html 
+sidebar: sidebar 
+keywords: edit traffic classification policy 
+summary: 您可以編輯流量分類原則來變更其名稱或說明、或建立、編輯或刪除原則的任何規則或限制。 
+---
+= 編輯流量分類原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯流量分類原則來變更其名稱或說明、或建立、編輯或刪除原則的任何規則或限制。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:admin-group-permissions.html["root 存取權限"]。
+
+
+.步驟
+. 選擇*組態*>*網路*>*流量分類*。
++
+此時會出現「流量分類原則」頁面、並在表格中列出現有的原則。
+
+. 使用「動作」功能表或「詳細資料」頁面編輯原則。請參閱link:../admin/creating-traffic-classification-policies.html["建立流量分類原則"]以瞭解要輸入的內容。
++
+[role="tabbed-block"]
+====
+.「行動」功能表
+--
+.. 選取原則的核取方塊。
+.. 選取 * 動作 * > * 編輯 * 。
+
+
+--
+.詳細資料頁面
+--
+.. 選取原則名稱。
+.. 選取原則名稱旁邊的 * 編輯 * 按鈕。
+
+
+--
+====
+. 對於 Enter policy name （輸入策略名稱）步驟，可選擇編輯策略名稱或說明，然後選擇 *Continue* 。
+. 對於 Add matched rules （添加匹配規則）步驟，可選擇添加規則或編輯現有規則的 *Type* 和 *Match Value* ，然後選擇 *Continue* 。
+. 對於設定限制步驟、您可以選擇性地新增、編輯或刪除限制、然後選取 * 繼續 * 。
+. 檢閱更新的原則、然後選取 * 儲存並繼續 * 。
++
+您對原則所做的變更將會儲存、而且網路流量現在會根據流量分類原則來處理。您可以檢視交通路況圖表、並驗證原則是否強制執行預期的流量限制。
+
+

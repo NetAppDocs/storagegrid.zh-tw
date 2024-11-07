@@ -1,0 +1,36 @@
+---
+indexpage:
+  title: 開始使用 StorageGRID 系統
+  summary: 在安裝和使用 StorageGRID 系統之前、請先花點時間瞭解 StorageGRID 。
+  keywords: learn about StorageGRID, introduction to StorageGRID, get started with
+    StorageGRID
+  lead: 在安裝和使用 StorageGRID 系統之前、請先花點時間瞭解 StorageGRID 。
+  tiles:
+  - title: 學習與探索
+    links:
+    - title: 什麼是StorageGRID 功能？
+      url: "../primer/index.html"
+    - title: 架構與網路拓撲
+      url: "../primer/storagegrid-architecture-and-network-topology.html"
+    - title: StorageGRID 如何管理資料？
+      url: "../primer/how-storagegrid-manages-data.html"
+    - title: 瀏覽Grid Manager
+      url: "../primer/exploring-grid-manager.html"
+    - title: 探索租戶管理程式
+      url: "../primer/exploring-tenant-manager.html"
+  - title: 網路準則
+    links:
+    - title: 網路類型
+      url: "../network/storagegrid-network-types.html"
+    - title: 網路需求
+      url: "../network/networking-requirements-and-guidelines.html"
+    - title: 內部網格節點通訊
+      url: "../network/internal-grid-node-communications.html"
+    - title: 外部通訊
+      url: "../network/external-communications.html"
+  - title: 開始使用
+    links:
+    - title: StorageGRID 快速入門
+      url: "../primer/quick-start.html"
+    - title: 網頁瀏覽器需求
+      url: "../admin/web-browser-requirements.html"

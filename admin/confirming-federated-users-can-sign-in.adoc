@@ -1,0 +1,68 @@
+---
+permalink: admin/confirming-federated-users-can-sign-in.html 
+sidebar: sidebar 
+keywords: sso configuration 
+summary: 啟用單一登入（SSO）之前、您必須確認至少有一位同盟使用者可以登入Grid Manager、並登入任何現有租戶帳戶的租戶管理程式。 
+---
+= 確認同盟使用者可以登入
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟用單一登入（SSO）之前、您必須確認至少有一位同盟使用者可以登入Grid Manager、並登入任何現有租戶帳戶的租戶管理程式。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有 link:admin-group-permissions.html["特定存取權限"]。
+* 您已設定身分識別聯盟。
+
+
+.步驟
+. 如果有現有的租戶帳戶、請確認沒有租戶使用自己的身分識別來源。
++
+
+TIP: 啟用SSO時、在租戶管理程式中設定的身分識別來源會被在Grid Manager中設定的身分識別來源覆寫。屬於租戶身分識別來源的使用者將無法再登入、除非他們擁有Grid Manager身分識別來源的帳戶。
+
++
+.. 登入每個租戶帳戶的租戶管理程式。
+.. 選擇*存取管理*>*身分識別聯盟*。
+.. 確認未選取 * 啟用身分識別聯盟 * 核取方塊。
+.. 如果是、請確認不再需要此租戶帳戶使用的任何聯盟群組、清除核取方塊、然後選取 * 儲存 * 。
+
+
+. 確認聯盟使用者可以存取Grid Manager：
++
+.. 從Grid Manager中、選取*組態*>*存取控制*>*管理群組*。
+.. 請確定至少已從Active Directory身分識別來源匯入一個同盟群組、而且已將其指派為「根」存取權限。
+.. 登出。
+.. 確認您可以以聯盟群組中的使用者身分重新登入Grid Manager。
+
+
+. 如果有現有的租戶帳戶、請確認擁有root存取權限的聯盟使用者可以登入：
++
+.. 從Grid Manager中選取*租戶*。
+.. 選取租戶帳戶、然後選取*「Actions」（動作）*>*「Edit」（編輯）*。
+.. 在Enter details（輸入詳細資料）選項卡上、選取* Continue（繼續）*。
+.. 如果選中 * 使用自己的身份來源 * 複選框，則取消選中該複選框並選擇 * 保存 * 。
++
+image::../media/sso_uses_own_identity_source_for_tenant.png[編輯浮動授權帳戶 > 使用自己的身分識別來源核取方塊未選取]
+
++
+隨即顯示「租戶」頁面。
+
+.. 選取租戶帳戶、選取*登入*、然後以本機root使用者身分登入租戶帳戶。
+.. 在租戶管理程式中、選取*存取管理*>*群組*。
+.. 請確定至少已指派Grid Manager中的一個聯盟群組給此租戶的根存取權限。
+.. 登出。
+.. 確認您可以以同盟群組中的使用者身分重新登入租戶。
+
+
+
+
+.相關資訊
+* link:requirements-for-sso.html["單一登入的要求與考量"]
+* link:managing-admin-groups.html["管理管理群組"]
+* link:../tenant/index.html["使用租戶帳戶"]
+

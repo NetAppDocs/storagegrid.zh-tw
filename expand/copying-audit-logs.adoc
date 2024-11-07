@@ -1,0 +1,98 @@
+---
+permalink: expand/copying-audit-logs.html 
+sidebar: sidebar 
+keywords: copy audit log, Admin Node expansion, 
+summary: 當您透過擴充程序新增管理節點時、其AMS服務只會記錄加入系統後發生的事件和動作。視需要、您可以將稽核記錄從先前安裝的管理節點複製到新的擴充管理節點、以便與StorageGRID 其他的支援系統同步。 
+---
+= 複製稽核記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您透過擴充程序新增管理節點時、其AMS服務只會記錄加入系統後發生的事件和動作。視需要、您可以將稽核記錄從先前安裝的管理節點複製到新的擴充管理節點、以便與StorageGRID 其他的支援系統同步。
+
+.開始之前
+* 您已完成新增管理節點所需的擴充步驟。
+* 您有 `Passwords.txt`檔案。
+
+
+.關於這項工作
+若要在新的管理節點上提供歷史稽核訊息、您必須手動將稽核記錄檔從現有的管理節點複製到擴充管理節點。
+
+[NOTE]
+====
+根據預設、稽核資訊會傳送至管理節點上的稽核記錄。如果下列任一項適用、您都可以跳過這些步驟：
+
+* 您已設定外部syslog伺服器、稽核記錄現在會傳送至syslog伺服器、而非管理節點。
+* 您明確指定稽核訊息只能儲存在產生這些訊息的本機節點上。
+
+
+如需詳細資訊、請參閱 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"] 。
+
+====
+.步驟
+. 登入主要管理節點：
++
+.. 輸入下列命令： `ssh _admin@_primary_Admin_Node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+
+. 停止 AMS 服務以防止其建立新檔案： `service ams stop`
+. 瀏覽至稽核匯出目錄：
++
+`cd /var/local/log`
+
+. 重新命名來源 `audit.log`檔案、以確保它不會覆寫您複製到的擴充管理節點上的檔案：
++
+[listing]
+----
+ls -l
+mv audit.log _new_name_.txt
+----
+. 將所有稽核記錄檔複製到擴充管理節點上的目的地位置：
++
+`scp -p * _IP_address_:/var/local/log`
+
+. 如果系統提示您輸入的密碼 `/root/.ssh/id_rsa`、請輸入檔案中所列主要管理節點的 SSH 存取密碼 `Passwords.txt`。
+. 還原原始 `audit.log`檔案：
++
+`mv _new_name_.txt audit.log`
+
+. 啟動AMS服務：
++
+`service ams start`
+
+. 從伺服器登出：
++
+`exit`
+
+. 登入擴充管理節點：
++
+.. 輸入下列命令： `ssh admin@_expansion_Admin_Node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+
+. 更新稽核記錄檔的使用者和群組設定：
++
+`cd /var/local/log`
+
++
+`chown ams-user:bycast *`
+
+. 從伺服器登出：
++
+`exit`
+
+

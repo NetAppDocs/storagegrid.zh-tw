@@ -1,0 +1,35 @@
+---
+permalink: maintain/checking-storage-state-after-recovering-storage-node-system-drive.html 
+sidebar: sidebar 
+keywords: storagegrid, storage node recovery, system drive, storage state 
+summary: 恢復儲存節點的系統磁碟機後、您必須確認儲存節點的所需狀態已設定為「線上」、並確保在重新啟動儲存節點伺服器時、狀態預設為「線上」。 
+---
+= 恢復儲存節點系統磁碟機後、請檢查儲存狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+恢復儲存節點的系統磁碟機後、您必須確認儲存節點的所需狀態已設定為「線上」、並確保在重新啟動儲存節點伺服器時、狀態預設為「線上」。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 儲存節點已恢復、資料恢復完成。
+
+
+.步驟
+. 選取*支援*>*工具*>*網格拓撲*。
+. 檢查*恢復的儲存節點*>*儲存設備*>*儲存設備狀態-所需*和*儲存設備狀態-目前*的值。
++
+這兩個屬性的值都應該是「線上」。
+
+. 如果「Storage State」（儲存狀態）-「期望」設定為唯讀、請完成下列步驟：
++
+.. 單擊 * Configuration （配置） * 選項卡。
+.. 從*儲存狀態-所需*下拉式清單中、選取*線上*。
+.. 按一下*套用變更*。
+.. 按一下「*總覽*」索引標籤、確認「*儲存狀態-所需*」和「*儲存狀態-目前*」的值已更新為「線上」。
+
+
+

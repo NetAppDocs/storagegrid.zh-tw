@@ -1,0 +1,49 @@
+---
+permalink: admin/viewing-storagegrid-license-information.html 
+sidebar: sidebar 
+keywords: storagegrid license, view license, licensed capacity of grid 
+summary: 您可以視StorageGRID 需要檢視您的支援資訊、例如網格的最大儲存容量。 
+---
+= 檢視StorageGRID 本授權資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以視StorageGRID 需要檢視您的支援資訊、例如網格的最大儲存容量。
+
+.開始之前
+您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+
+.關於這項工作
+如果此 StorageGRID 系統的軟體授權有問題、儀表板上的健全狀況狀態卡會包含授權狀態圖示和 * 授權 * 連結。此數字表示授權相關問題的數量。
+
+image::../media/dashboard_health_panel_license_status.png[儀表板健全狀況狀態卡授權狀態]
+
+.步驟
+. 執行下列其中一項動作、即可存取「授權」頁面：
++
+** 選擇*維護*>*系統*>*授權*。
+** 從儀表板上的「健全狀況」狀態卡中、選取「授權狀態」圖示或「 * 授權 * 」連結。
++
+僅當授權發生問題時、才會顯示此連結。
+
+
+
+. 檢視目前授權的唯讀詳細資料：
++
+** 系統ID、這是此安裝的唯一識別號碼StorageGRID StorageGRID
+** 授權序號
+** 授權類型、 * 永久 * 或 * 訂閱 *
+** 網格的授權儲存容量
+** 支援的儲存容量
+** 授權結束日期。* 不適用 * 代表永久授權。
+** 支援結束日期
++
+此日期是從目前的使用許可檔案讀取 , 如果您在取得使用許可檔案之後延長或續約支援服務合約 , 則可能已過期。若要更新此值，請參閱link:updating-storagegrid-license-information.html["更新StorageGRID 版本的授權資訊"]。您也可以使用 Active IQ 檢視實際的合約結束日期。
+
+** 授權文字檔的內容
+
+
+

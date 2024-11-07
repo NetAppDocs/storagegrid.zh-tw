@@ -1,0 +1,211 @@
+---
+permalink: upgrade/removed-or-deprecated-features.html 
+sidebar: sidebar 
+keywords:  
+summary: 在此版本中、某些功能已移除或過時。請檢閱這些項目、瞭解升級前是否需要更新用戶端應用程式或修改組態。 
+---
+= 已移除或已過時的功能和功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在此版本中、某些功能已移除或過時。請檢閱這些項目、瞭解升級前是否需要更新用戶端應用程式或修改組態。
+
+
+
+== 定義
+
+已過時:: 此功能 * 不應 * 用於新的正式作業環境。現有的正式作業環境可以繼續使用此功能。
+生命週期終止:: 支援此功能的上次出貨版本。在某些情況下、此功能的文件可能會在此階段移除。
+已移除:: * 不 * 支援此功能的第一個版本。
+
+
+
+
+== StorageGRID 功能支援結束
+
+在 N+1 主要版本中、已過時的功能將會移除。例如、如果在版本 N 中某項功能已過時（例如 6.3 ）、則該功能將存在的最後一個版本為 N+1 （例如 6.4 ）。版本 N+1 （例如 6.5 ）是產品中不存在此功能的第一個版本。
+
+如需其他資訊、請參閱 https://mysupport.netapp.com/site/info/version-support["軟體版本支援頁面"^]。
+
+
+NOTE: 在某些情況下、 NetApp 可能會比指定時間更快終止對特定功能的支援。
+
+[cols="2a,1a,1a,1a,3a"]
+|===
+| 功能 | 已過時 | 生命週期終止 | 已移除 | 先前文件的連結 
+
+
+ a| 
+舊版警示（ _ 非警示 _ ）
+ a| 
+11.7
+ a| 
+11.8
+ a| 
+11.9
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/monitor/alarms-reference.html["警告參考資料（ StorageGRID 11.8 ）"^]
+
+
+
+ a| 
+歸檔節點支援
+ a| 
+11.7
+ a| 
+11.8
+ a| 
+11.9
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html["汰換歸檔節點的考量（ StorageGRID 11.8 ）"^]
+
+* 注意 * ：開始升級之前、您必須：
+
+. 取消委任所有歸檔節點。請參閱。 https://docs.netapp.com/us-en/storagegrid-118/maintain/grid-node-decommissioning.html["Grid 節點汰換（ StorageGRID 11.8 doc 網站）"^]
+. 從儲存資源池和 ILM 原則中移除所有歸檔節點參照。請參閱。 https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["NetApp 知識庫： StorageGRID 11.9 軟體升級解決方案指南"^]
+
+
+
+
+ a| 
+透過 CIFS/Samba 進行稽核匯出
+ a| 
+11.1
+ a| 
+11.6
+ a| 
+11.7
+ a| 
+
+
+
+ a| 
+CLB 服務
+ a| 
+11.4.11.4
+ a| 
+11.6
+ a| 
+11.7
+ a| 
+
+
+
+ a| 
+Docker Container Engine
+ a| 
+11.8
+ a| 
+11.9
+ a| 
+待定
+ a| 
+將 Docker 作為僅限軟體部署的容器引擎的支援已過時。Docker 將在未來版本中以另一個 Container 引擎取代。請參閱link:../ubuntu/software-requirements.html#docker-versions-tested["目前支援的 Docker 版本清單"]。
+
+
+
+ a| 
+NFS 稽核匯出
+ a| 
+11.8
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-audit-client-access.html["設定 NFS 的稽核用戶端存取（ StorageGRID 11.8 ）"^]
+
+
+
+ a| 
+Swift API 支援
+ a| 
+11.7
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/swift/index.html["使用 Swift REST API （ StorageGRID 11.8 ）"^]
+
+
+
+ a| 
+RHEL 8.8
+ a| 
+11.9
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+
+
+
+ a| 
+RHEL 9.0
+ a| 
+11.9
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+
+
+
+ a| 
+RHEL 9.2
+ a| 
+11.9
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+
+
+
+ a| 
+Ubuntu 18.04
+ a| 
+11.9
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+
+
+
+ a| 
+Ubuntu 20.04
+ a| 
+11.9
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+
+
+
+ a| 
+DEBIAN11
+ a| 
+11.9
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+
+|===
+另請參閱：
+
+* link:../upgrade/changes-to-grid-management-api.html["網格管理API的變更"]
+* link:../upgrade/changes-to-tenant-management-api.html["租戶管理API變更"]
+

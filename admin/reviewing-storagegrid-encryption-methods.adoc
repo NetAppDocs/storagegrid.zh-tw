@@ -1,0 +1,146 @@
+---
+permalink: admin/reviewing-storagegrid-encryption-methods.html 
+sidebar: sidebar 
+keywords: encryption, encrypting data, best practices 
+summary: StorageGRID 提供數種加密資料的選項。您應該檢閱可用的方法、以判斷哪些方法符合您的資料保護需求。 
+---
+= 檢閱StorageGRID 功能加密方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 提供數種加密資料的選項。您應該檢閱可用的方法、以判斷哪些方法符合您的資料保護需求。
+
+下表提供StorageGRID 有關支援的加密方法的高階摘要。
+
+[cols="1a,1a,1a"]
+|===
+| 加密選項 | 運作方式 | 適用於 
+
+
+ a| 
+Grid Manager中的金鑰管理伺服器（KMS）
+ a| 
+link:kms-configuring.html["設定金鑰管理伺服器"]適用於 StorageGRID 網站和 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html["啟用應用裝置的節點加密"^]的。然後、應用裝置節點會連線至KMS、以要求金鑰加密金鑰（KEK）。此金鑰會加密及解密每個Volume上的資料加密金鑰（DEK）。
+ a| 
+安裝期間啟用*節點加密*的應用裝置節點。應用裝置上的所有資料都能受到保護、避免資料中心的實體遺失或移除。
+
+* 注意 * ：使用 KMS 管理加密金鑰僅支援儲存節點和服務應用裝置。
+
+
+
+ a| 
+StorageGRID 應用裝置安裝程式中的磁碟機加密頁面
+ a| 
+如果應用裝置包含支援硬體加密的磁碟機、您可以在安裝期間設定磁碟機複雜密碼。當您設定磁碟機密碼時、除非任何人知道密碼短語、否則無法從已從系統移除的磁碟機中恢復有效資料。開始安裝之前、請移至 * 設定硬體 * > * 磁碟機加密 * 、設定適用於節點中所有 StorageGRID 管理的自我加密磁碟機的磁碟機密碼。
+ a| 
+包含自我加密磁碟機的應用裝置。安全磁碟機上的所有資料都能受到保護、避免實體遺失或從資料中心移除。
+
+磁碟機加密不適用於 SANtricity 管理的磁碟機。如果您的儲存設備具有自我加密磁碟機和 SANtricity 控制器、則可以在 SANtricity 中啟用磁碟機安全性。
+
+
+
+ a| 
+在《支援資料保護系統》中提升安全性SANtricity
+ a| 
+如果您的 StorageGRID 應用裝置已啟用磁碟機安全功能、您可以使用來 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/accessing-and-configuring-santricity-system-manager.html["系統管理程式SANtricity"^]建立及管理安全金鑰。存取受保護磁碟機上的資料需要金鑰。
+ a| 
+具有全磁碟加密（ FDE ）磁碟機或自我加密磁碟機的儲存設備。安全磁碟機上的所有資料都能受到保護、避免實體遺失或從資料中心移除。無法與某些儲存設備或任何服務應用裝置搭配使用。
+
+
+
+ a| 
+儲存的物件加密
+ a| 
+您可以在 Grid Manager 中啟用link:changing-network-options-object-encryption.html["儲存的物件加密"]選項。啟用時、在貯體層級或物件層級未加密的任何新物件、都會在擷取期間加密。
+ a| 
+新擷取的 S3 物件資料。
+
+現有儲存的物件不會加密。物件中繼資料和其他敏感資料不會加密。
+
+
+
+ a| 
+S3儲存區加密
+ a| 
+您發出 PuttBucketEncryption 要求、以啟用貯體的加密。在物件層級未加密的任何新物件、都會在擷取期間加密。
+ a| 
+僅限新擷取的S3物件資料。
+
+必須為儲存區指定加密。現有的貯體物件不會加密。物件中繼資料和其他敏感資料不會加密。
+
+link:../s3/operations-on-buckets.html["在貯體上作業"]
+
+
+
+ a| 
+S3物件伺服器端加密（SSe）
+ a| 
+您發出 S3 要求來儲存物件並加入 `x-amz-server-side-encryption`要求標頭。
+ a| 
+僅限新擷取的S3物件資料。
+
+必須為物件指定加密。物件中繼資料和其他敏感資料不會加密。
+
+可管理金鑰。StorageGRID
+
+link:../s3/using-server-side-encryption.html["使用伺服器端加密"]
+
+
+
+ a| 
+S3物件伺服器端加密、使用客戶提供的金鑰（SSE-C）
+ a| 
+您發出S3要求以儲存物件、並包含三個要求標頭。
+
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`
+
+ a| 
+僅限新擷取的S3物件資料。
+
+必須為物件指定加密。物件中繼資料和其他敏感資料不會加密。
+
+金鑰是在StorageGRID 非功能性的範圍內管理。
+
+link:../s3/using-server-side-encryption.html["使用伺服器端加密"]
+
+
+
+ a| 
+外部Volume或資料存放區加密
+ a| 
+如果StorageGRID 您的部署平台支援、您可以使用不屬於支援的加密方法來加密整個磁碟區或資料存放區。
+ a| 
+所有物件資料、中繼資料和系統組態資料、假設每個磁碟區或資料存放區都已加密。
+
+外部加密方法可更嚴密地控制加密演算法和金鑰。可與其他列出的方法結合使用。
+
+
+
+ a| 
+物件加密不StorageGRID 包括在內
+ a| 
+您可以在StorageGRID 物件資料和中繼資料被擷取到StorageGRID 資料之前、使用非功能性的加密方法來加密物件資料和中繼資料。
+ a| 
+僅限物件資料和中繼資料（系統組態資料未加密）。
+
+外部加密方法可更嚴密地控制加密演算法和金鑰。可與其他列出的方法結合使用。
+
+https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html["Amazon Simple Storage Service - 使用者指南：使用用戶端加密來保護資料"^]
+
+|===
+
+
+== 使用多種加密方法
+
+視您的需求而定、您一次可以使用多種加密方法。例如：
+
+* 您可以使用 KMS 來保護應用裝置節點、也可以使用 SANtricity 系統管理員中的磁碟機安全功能、在同一個應用裝置中的自我加密磁碟機上「雙重加密」資料。
+* 您可以使用 KMS 來保護應用裝置節點上的資料、也可以使用儲存的物件加密選項來加密擷取的所有物件。
+
+
+如果只有一小部分物件需要加密、請考慮改為在儲存區或個別物件層級控制加密。啟用多層加密會增加效能成本。

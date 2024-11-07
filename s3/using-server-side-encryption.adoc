@@ -1,0 +1,113 @@
+---
+permalink: s3/using-server-side-encryption.html 
+sidebar: sidebar 
+keywords: server side encryption, encryption, operations on objects, objects 
+summary: 伺服器端加密可讓您保護閒置的物件資料。當資料寫入物件時、系統會加密資料、並在您存取物件時解密資料。StorageGRID 
+---
+= 使用伺服器端加密
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+伺服器端加密可讓您保護閒置的物件資料。當資料寫入物件時、系統會加密資料、並在您存取物件時解密資料。StorageGRID
+
+如果您想要使用伺服器端加密、您可以根據加密金鑰的管理方式、選擇兩個互不相容的選項之一：
+
+* * SSE（使用StorageGRID管理金鑰的伺服器端加密）*：當您發出S3要求以儲存物件時StorageGRID 、用唯一的金鑰來加密物件。當您發出S3要求以擷取物件時StorageGRID 、則會使用儲存的金鑰來解密物件。
+* * SSE-C（使用客戶提供的金鑰進行伺服器端加密）*：當您發出S3要求以儲存物件時、您會提供自己的加密金鑰。擷取物件時、您提供的加密金鑰與要求的一部分相同。如果兩個加密金鑰相符、則會解密物件並傳回物件資料。
++
+雖然此功能可管理所有物件加密與解密作業、但您必須管理所提供的加密金鑰。StorageGRID
+
++
+
+CAUTION: 您提供的加密金鑰永遠不會儲存。如果您遺失加密金鑰、就會遺失對應的物件。
+
++
+
+NOTE: 如果物件是以SSE或SSE-C加密、則會忽略任何儲存區層級或網格層級的加密設定。
+
+
+
+
+
+== 使用SS
+
+若要使用StorageGRID 由支援此功能的唯一金鑰來加密物件、請使用下列要求標頭：
+
+`x-amz-server-side-encryption`
+
+下列物件作業可支援SSe要求標頭：
+
+* link:put-object.html["PuttObject"]
+* link:put-object-copy.html["CopyObject"]
+* link:initiate-multipart-upload.html["建立多個部分上傳"]
+
+
+
+
+== 使用SSE-C
+
+若要使用您管理的唯一金鑰來加密物件、請使用三個要求標頭：
+
+[cols="1a,2a"]
+|===
+| 要求標頭 | 說明 
+
+
+ a| 
+`x-amz-server-side​-encryption​-customer-algorithm`
+ a| 
+指定加密演算法。標頭值必須是 `AES256`。
+
+
+
+ a| 
+`x-amz-server-side​-encryption​-customer-key`
+ a| 
+指定將用於加密或解密物件的加密金鑰。金鑰的值必須是256位元、已編碼的base64。
+
+
+
+ a| 
+`x-amz-server-side​-encryption​-customer-key-MD5`
+ a| 
+根據RFC 1321指定加密金鑰的md5摘要、以確保傳輸加密金鑰時不會發生錯誤。md5摘要的值必須是以64編碼的128位元。
+
+|===
+下列物件作業可支援SSE-C要求標頭：
+
+* link:get-object.html["GetObject"]
+* link:head-object.html["標題物件"]
+* link:put-object.html["PuttObject"]
+* link:put-object-copy.html["CopyObject"]
+* link:initiate-multipart-upload.html["建立多個部分上傳"]
+* link:upload-part.html["上傳零件"]
+* link:upload-part-copy.html["上傳PartCopy"]
+
+
+
+
+== 使用伺服器端加密搭配客戶提供的金鑰（SSE-C）時的考量
+
+使用SSE-C之前、請注意下列考量事項：
+
+* 您必須使用https。
++
+
+CAUTION: StorageGRID 會拒絕在使用 SSE-C 時透過 http 提出的任何要求。基於安全考量、您應該考慮使用 http 意外傳送的任何金鑰是否遭到入侵。捨棄按鍵、然後視需要旋轉。
+
+* 回應中的ETag不是物件資料的MD5。
+* 您必須管理加密金鑰與物件之間的對應關係。不儲存加密金鑰。StorageGRID您必須負責追蹤為每個物件提供的加密金鑰。
+* 如果您的儲存區已啟用版本管理功能、則每個物件版本都應該擁有自己的加密金鑰。您負責追蹤每個物件版本所使用的加密金鑰。
+* 由於您管理用戶端的加密金鑰、因此也必須管理用戶端上的任何其他安全防護措施、例如金鑰輪替。
++
+
+CAUTION: 您提供的加密金鑰永遠不會儲存。如果您遺失加密金鑰、就會遺失對應的物件。
+
+* 如果為貯體設定了跨網格複寫或 CloudMirror 複寫、您就無法擷取 SSE-C 物件。擷取作業將會失敗。
+
+
+.相關資訊
+https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html["Amazon S3 使用者指南：使用伺服器端加密搭配客戶提供的金鑰（ SSE-C ）"^]

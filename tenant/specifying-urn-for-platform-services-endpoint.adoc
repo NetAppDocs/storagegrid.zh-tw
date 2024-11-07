@@ -1,0 +1,166 @@
+---
+permalink: tenant/specifying-urn-for-platform-services-endpoint.html 
+sidebar: sidebar 
+keywords: how to specify platform services urn 
+summary: 當您建立平台服務端點時、必須指定唯一的資源名稱（URN）。當您為平台服務建立組態 XML 時、您將使用 URN 來參考端點。每個端點的URN必須是唯一的。 
+---
+= 指定平台服務端點的URN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您建立平台服務端點時、必須指定唯一的資源名稱（URN）。當您為平台服務建立組態 XML 時、您將使用 URN 來參考端點。每個端點的URN必須是唯一的。
+
+當您建立平台服務端點時、此功能會驗證它們。StorageGRID在建立平台服務端點之前、請先確認端點中指定的資源是否存在、以及是否可以到達該端點。
+
+
+
+== urnElements
+
+平台服務端點的 URN 必須以或 `urn:mysite`開頭 `arn:aws`、如下所示：
+
+* 如果服務是在 Amazon Web Services （ AWS ）上代管、請使用 `arn:aws`
+* 如果服務是在 Google Cloud Platform （ GCP ）上代管、請使用 `arn:aws`
+* 如果服務是在本機代管、請使用 `urn:mysite`
+
+
+例如、如果您要為 StorageGRID 上託管的 CloudMirror 端點指定 URN 、則 URN 可能會以開頭 `urn:sgws`。
+
+URN的下一個元素會指定平台服務的類型、如下所示：
+
+[cols="2a,1a"]
+|===
+| 服務 | 類型 
+
+
+ a| 
+CloudMirror複寫
+ a| 
+`s3`
+
+
+
+ a| 
+通知
+ a| 
+`sns`或 `kafka`
+
+
+
+ a| 
+搜尋整合
+ a| 
+`es`
+
+|===
+例如、若要繼續指定 StorageGRID 上所託管之 CloudMirror 端點的 URN 、您可以新增 `s3`至 GET `urn:sgws:s3`。
+
+URN的最後一個元素會在目的地URI上識別特定的目標資源。
+
+[cols="1a,2a"]
+|===
+| 服務 | 特定資源 
+
+
+ a| 
+CloudMirror複寫
+ a| 
+`bucket-name`
+
+
+
+ a| 
+通知
+ a| 
+`sns-topic-name`或 `kafka-topic-name`
+
+
+
+ a| 
+搜尋整合
+ a| 
+`domain-name/index-name/type-name`
+
+*注意：*如果Elasticsearch叢集*未*設定為自動建立索引、則必須在建立端點之前手動建立索引。
+
+|===
+
+
+== 提供AWS和GCP上的服務
+
+對於AWS和GCP實體而言、完整的URN是有效的AWS ARN。例如：
+
+* CloudMirror複寫：
++
+[listing]
+----
+arn:aws:s3:::bucket-name
+----
+* 通知：
++
+[listing]
+----
+arn:aws:sns:region:account-id:topic-name
+----
+* 搜尋整合：
++
+[listing]
+----
+arn:aws:es:region:account-id:domain/domain-name/index-name/type-name
+----
++
+
+NOTE: 對於 AWS 搜尋整合端點、 `domain-name`必須包含文字字串 `domain/`、如下所示。
+
+
+
+
+
+== 適用於本機代管服務
+
+使用本機代管服務而非雲端服務時、只要URN在第三和最後的位置中包含必要的元素、您就可以以任何方式指定URN、以建立有效且獨特的URN。您可以將選用的元素保留空白、也可以以任何方式指定這些元素、協助您識別資源並使URN成為唯一的。例如：
+
+* CloudMirror複寫：
++
+[listing]
+----
+urn:mysite:s3:optional:optional:bucket-name
+----
++
+對於託管在 StorageGRID 上的 CloudMirror 端點、您可以指定以下列開頭的有效 URN `urn:sgws` ：
+
++
+[listing]
+----
+urn:sgws:s3:optional:optional:bucket-name
+----
+* 通知：
++
+指定 Amazon Simple Notification Service 端點：
+
++
+[listing]
+----
+urn:mysite:sns:optional:optional:sns-topic-name
+----
++
+指定 Kafka 端點：
+
++
+[listing]
+----
+urn:mysite:kafka:optional:optional:kafka-topic-name
+----
+* 搜尋整合：
++
+[listing]
+----
+urn:mysite:es:optional:optional:domain-name/index-name/type-name
+----
++
+
+NOTE: 對於本地託管的搜尋整合端點、 `domain-name`只要端點的 URN 是唯一的、元素就可以是任何字串。
+
+

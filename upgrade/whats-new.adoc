@@ -1,0 +1,174 @@
+---
+permalink: upgrade/whats-new.html 
+sidebar: sidebar 
+keywords: what is new in StorageGRID 11.9 
+summary: 本版StorageGRID 的《產品介紹》介紹下列功能。 
+---
+= StorageGRID 11.9 的新功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此 StorageGRID 版本引進下列功能和功能變更。
+
+
+
+== 擴充性
+
+
+
+=== 純資料儲存節點
+
+爲了實現更精細的擴展，您現在可以安裝link:../primer/what-storage-node-is.html#types-of-storage-nodes["純資料儲存節點"]。在中繼資料處理不重要的情況下、您可以以符合成本效益的方式最佳化基礎架構。這種靈活度有助於因應不同的工作負載和成長模式。
+
+
+
+== 雲端儲存池增強功能
+
+
+
+=== IAM 角色隨處可用
+
+StorageGRID 現在使用支援短期認證link:../ilm/creating-cloud-storage-pool.html["Amazon S3 for Cloud Storage Pool 中的 IAM 角色"]。
+
+如果這些認證遭到入侵、使用長期認證來存取 S3 儲存區會帶來安全風險。短期認證具有有限的生命週期、可降低未經授權存取的風險。
+
+
+
+=== S3 物件鎖定貯體
+
+您現在可以了link:../ilm/creating-cloud-storage-pool.html["使用 Amazon S3 端點設定雲端儲存池"]。S3 物件鎖定有助於防止意外或惡意刪除物件。如果您將 StorageGRID 的資料分層到 Amazon S3 、則在兩個系統上啟用物件鎖定功能、可在資料生命週期中強化資料保護。
+
+
+
+== 多租戶
+
+
+
+=== 貯體限制
+
+透過link:../tenant/creating-s3-bucket.html["設定 S3 貯體的限制"]、您可以防止租戶壟斷容量。此外、不受控制的成長也可能導致非預期的成本。藉由定義限制、您可以更有效地估計租戶儲存費用。
+
+
+
+=== 每位租戶有 5 、 000 個貯體
+
+為了提升擴充性、 StorageGRID 現在支援高達link:../s3/operations-on-buckets.html["每位租戶有 5 、 000 個 S3 貯體"]。每個網格最多可有 100,000 個貯體。
+
+若要支援 5 、 000 個貯體、網格中的每個儲存節點至少必須有 64 GB 的 RAM 。
+
+
+
+== S3 物件鎖定改善功能
+
+個別租戶組態功能可在靈活度與資料安全性之間取得適當平衡。您現在可以設定個別租戶保留設定、以便：
+
+* 允許或不允許規範模式
+* 設定最長保留期間
+
+
+請參閱：
+
+* link:../ilm/managing-objects-with-s3-object-lock.html["使用S3物件鎖定來管理物件"]
+* link:../ilm/how-object-retention-is-determined.html#how-grid-administrators-control-object-retention["網格管理員如何控制物件保留"]
+* link:../admin/creating-tenant-account.html["建立租戶帳戶"]
+
+
+
+
+== S3 相容性
+
+
+
+=== x-amz-checksum － sha256 checksum
+
+* S3 REST API 現在支援連結： ../s3/operations-on-objects.html[`x-amz-checksum-sha256` checksum 。 ]
+* StorageGRID 現在提供 SHA-256 Checksum 支援、可執行 PUT 、 GET 和 HEAD 作業。這些校驗和可增強資料完整性。
+
+
+
+
+=== S3 傳輸協定支援的變更
+
+* 新增 Amazon S3 的掛載點支援、可讓應用程式直接連線到 S3 儲存區、就像是本機檔案系統一樣。現在您可以將 StorageGRID 用於更多應用程式和更多使用案例。
+* 作爲增加對 mountpoint 的支持的一部分， StorageGRID 11.9 包含link:../s3/index.html#updates-to-rest-api-support["S3 傳輸協定支援的其他變更"]。
+
+
+
+
+== 維護與支援
+
+
+
+=== AutoSupport
+
+link:../admin/what-is-autosupport.html["AutoSupport"]現在自動為舊版應用裝置建立硬體故障案例。
+
+
+
+=== 擴充節點複製作業
+
+節點複製可用度已擴充、可支援更大的儲存節點。
+
+
+
+=== 改進了對過期刪除標記的 ILM 處理
+
+ILM 擷取時間規則加上一段時間、現在也會移除過期的物件刪除標記。刪除標記只有在經過一段時間的天數、且目前的刪除製作者已過期（沒有非目前版本）時才會移除。
+
+請參閱link:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["如何刪除S3版本控制物件"]和link:../ilm/example-8-priorities-for-s3-bucket-lifecycle-and-ilm-policy.html#example-of-bucket-lifecycle-taking-priority-over-ilm-policy["儲存庫生命週期的範例優先於 ILM 原則"]。
+
+
+
+=== 改善節點汰換
+
+為了順利且有效率地移轉至 StorageGRID 新一代硬體link:../maintain/grid-node-decommissioning.html["節點汰換"]、我們已經改善。
+
+
+
+=== 負載平衡器端點的 Syslog
+
+負載平衡器端點存取記錄包含疑難排解資訊、例如 HTTP 狀態代碼。StorageGRID 現在支援link:../monitor/configure-audit-messages.html["將這些記錄匯出至外部 Syslog 伺服器"]。這項增強功能可讓記錄管理更有效率、並與現有的監控和警示系統整合。
+
+
+
+=== 維護與支援的其他增強功能
+
+* 計量 UI 更新
+* 新的作業系統資格
+* 支援新的協力廠商元件
+
+
+
+
+== 安全性
+
+
+
+=== SSH 存取金鑰旋轉
+
+網格管理員現在可以link:../admin/change-ssh-access-passwords.html["更新及旋轉 SSH 金鑰"]。旋轉 SSH 金鑰的能力是最佳的安全性做法、也是主動式防禦機制。
+
+
+
+=== 根登入警示
+
+當未知實體以 root 身分登入 Grid Manager 時link:../monitor/alerts-reference.html["觸發警示"]、。監控根 SSH 登入是保護基礎架構的前瞻性步驟。
+
+
+
+== Grid Manager 增強功能
+
+
+
+=== 抹除編碼設定檔頁面已移動
+
+「刪除編碼設定檔」頁面現在位於 * 組態 * > * 系統 * > * 刪除編碼 * 。它曾經出現在 ILM 功能表中。
+
+
+
+=== 搜尋增強功能
+
+link:../primer/exploring-grid-manager.html#search-field["Grid Manager 中的搜尋欄位"]現在包含更好的比對邏輯、可讓您搜尋常用縮寫和頁面中特定設定的名稱來尋找頁面。您也可以搜尋更多類型的項目、例如節點、使用者和租戶帳戶。

@@ -1,0 +1,198 @@
+---
+permalink: expand/deploying-new-grid-nodes.html 
+sidebar: sidebar 
+keywords: expansion, add nodes 
+summary: 在擴充中部署新網格節點的步驟、與第一次安裝網格時所用的步驟相同。您必須先部署所有新的網格節點、才能執行擴充。 
+---
+= 部署新的網格節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在擴充中部署新網格節點的步驟、與第一次安裝網格時所用的步驟相同。您必須先部署所有新的網格節點、才能執行擴充。
+
+展開網格時、您新增的節點不必符合現有的節點類型。您可以新增VMware節點、Linux Container型節點或應用裝置節點。
+
+
+
+== VMware：部署網格節點
+
+您必須在VMware vSphere中為要新增至擴充的每個VMware節點部署虛擬機器。
+
+.步驟
+. link:../vmware/deploying-storagegrid-node-as-virtual-machine.html["將新節點部署為虛擬機器"]並將其連線至一或多個 StorageGRID 網路。
++
+部署節點時、您可以選擇重新對應節點連接埠、或增加CPU或記憶體設定。
+
+. 部署完所有新的 VMware 節點之後link:performing-expansion.html["執行擴充程序"]，。
+
+
+
+
+== Linux：部署網格節點
+
+您可以在新的Linux主機或現有的Linux主機上部署網格節點。如果您需要額外的Linux主機來支援StorageGRID 您要新增至網格之支撐節點的CPU、RAM和儲存需求、請依照您第一次安裝主機時的準備方式來準備這些主機。然後、您可以依照安裝期間部署網格節點的相同方式來部署擴充節點。
+
+.開始之前
+* 您有安裝StorageGRID 適用於您的Linux版本的指令、也已檢閱硬體與儲存需求。
++
+** link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
+** link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
+
+
+* 如果您打算在現有主機上部署新的網格節點、則表示您已確認現有主機具有足夠的CPU、RAM和儲存容量、可用於其他節點。
+* 您有計畫將故障網域降至最低。例如、您不應該在單一實體主機上部署所有閘道節點。
++
+
+CAUTION: 在正式作業部署中、請勿在單一實體或虛擬主機上執行多個儲存節點。使用每個儲存節點的專屬主機、可提供隔離的故障網域。
+
+* 如果 StorageGRID 節點使用從 NetApp ONTAP 系統指派的儲存設備、請確認該磁碟區未啟用 FabricPool 分層原則。停用FabricPool 與物件節點搭配使用的磁碟區的分層StorageGRID 功能、可簡化疑難排解和儲存作業。
+
+
+.步驟
+. 如果您要新增主機、請參閱部署StorageGRID 節點的安裝說明。
+. 若要部署新主機、請依照主機準備指示進行。
+. 若要建立節點組態檔案並驗證StorageGRID 此功能的組態、請遵循部署網格節點的指示。
+. 如果您要將節點新增至新的Linux主機、請啟動StorageGRID 「支援服務」。
+. 如果您要將節點新增至現有的 Linux 主機、請使用 StorageGRID 主機服務 CLI 啟動新節點：``sudo storagegrid node start [<node name\>]``
+
+
+.完成後
+部署所有新的網格節點之後link:performing-expansion.html["執行擴充"]、您可以。
+
+
+
+== 設備：部署儲存設備、閘道或非主要管理節點
+
+若要在StorageGRID 應用裝置節點上安裝此功能、請使用StorageGRID 產品隨附的《應用程式安裝程式（介紹）：在擴充過程中、每個儲存設備都會以單一儲存節點的形式運作、而每個服務應用裝置則會以單一閘道節點或非主要管理節點的形式運作。任何應用裝置都可以連線至Grid Network、管理網路和用戶端網路。
+
+.開始之前
+* 設備已安裝在機架或機櫃中、並已連接至您的網路、並已開啟電源。
+* 您已完成這些 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-hardware.html["設定硬體"^]步驟。
++
+設定應用裝置硬體包括設定 StorageGRID 連線（網路連結和 IP 位址）所需的步驟、以及啟用節點加密、變更 RAID 模式和重新對應網路連接埠的選用步驟。
+
+* 列出在《IP組態》頁面StorageGRID 上的所有Grid Network子網路、均已在主要管理節點的Grid Network Subnet List（網格網路子網路清單）中定義。
+* 替換應用裝置上的《解決方法安裝程式韌體與目前在網格上執行的《解決方法與應用程式的更新版本相容。StorageGRID StorageGRID如果版本不相容、您必須升級 StorageGRID 應用裝置安裝程式韌體。
+* 您的服務型筆記型電腦配備link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您知道指派給應用裝置運算控制器的其中一個IP位址。您可以將IP位址用於任何附加StorageGRID 的靜態網路。
+
+
+.關於這項工作
+在StorageGRID 應用裝置節點上安裝過程有下列階段：
+
+* 您可以指定或確認主要管理節點的IP位址、以及應用裝置節點的名稱。
+* 您可以開始安裝、並在磁碟區已設定且已安裝軟體時等待。
++
+在執行設備安裝工作時、安裝會暫停。若要繼續安裝、請登入Grid Manager、核准所有網格節點、並完成StorageGRID 安裝程序。
+
++
+
+NOTE: 如果您需要一次部署多個應用裝置節點、可以使用 Appliance 安裝指令碼來自動化安裝程序 `configure-sga.py`。
+
+
+
+.步驟
+. 開啟瀏覽器、然後輸入應用裝置運算控制器的其中一個IP位址。
++
+`https://_Controller_IP_:8443`
+
++
+畫面會出現「the不再安裝StorageGRID 程式」首頁。
+
+. 在「*主要管理節點*連線」區段中、判斷您是否需要指定主要管理節點的IP位址。
++
+如果您先前已在此資料中心安裝其他節點、StorageGRID 則當主管理節點或至少有一個已設定ADD_IP的其他網格節點出現在同一個子網路上時、即可自動探索此IP位址。
+
+. 如果未顯示此IP位址、或您需要變更它、請指定位址：
++
+[cols="1a,2a"]
+|===
+| 選項 | 說明 
+
+
+ a| 
+手動輸入IP
+ a| 
+.. 清除 * 啟用管理節點探索 * 核取方塊。
+.. 手動輸入IP位址。
+.. 按一下「 * 儲存 * 」。
+.. 等待連線狀態、讓新的IP位址準備就緒。
+
+
+
+
+ a| 
+自動探索所有連線的主要管理節點
+ a| 
+.. 選中 * 啓用管理節點發現 * 複選框。
+.. 等待顯示已發現的IP位址清單。
+.. 選取要部署此應用裝置儲存節點的網格主要管理節點。
+.. 按一下「 * 儲存 * 」。
+.. 等待連線狀態、讓新的IP位址準備就緒。
+
+
+|===
+. 在*節點名稱*欄位中、輸入您要用於此應用裝置節點的名稱、然後選取*儲存*。
++
+節點名稱會指派給StorageGRID 此應用裝置節點的功能。它會顯示在Grid Manager的節點頁面（總覽索引標籤）上。如果需要、您可以在核准節點時變更名稱。
+
+. 在 * 安裝 * 區段中、確認目前狀態為「準備好開始將節點名稱 _ 安裝至具有主要管理節點 _admin_ip_ 的網格」、且 * 開始安裝 * 按鈕已啟用。
++
+如果*開始安裝*按鈕未啟用、您可能需要變更網路組態或連接埠設定。如需相關指示、請參閱產品的維護指示。
+
+. 從「the Some Appliance Installer」首頁選取「*開始安裝*」StorageGRID 。
++
+image::../media/appliance_installer_home_start_installation_enabled.gif[此映像是由周遭文字所描述。]
+
++
+目前狀態會變更為「安裝進行中」、並顯示「監控安裝」頁面。
+
+. 如果您的擴充包含多個應用裝置節點、請針對每個應用裝置重複上述步驟。
++
+
+NOTE: 如果您需要一次部署多個應用裝置儲存節點、可以使用configure-sga.py應用裝置安裝指令碼來自動化安裝程序。
+
+. 如果您需要手動存取「監視器安裝」頁面、請從功能表列中選取*監視器安裝*。
++
+「監視器安裝」頁面會顯示安裝進度。
+
++
+image::../media/monitor_installation_configure_storage.gif[此影像由周邊文字說明。]
+
++
+藍色狀態列會指出目前正在進行的工作。綠色狀態列表示已成功完成的工作。
+
++
+
+NOTE: 安裝程式可確保先前安裝中完成的工作不會重新執行。如果您正在重新執行安裝、任何不需要重新執行的工作都會顯示綠色狀態列和「略過」狀態。
+
+. 檢閱前兩個安裝階段的進度。
++
+*1.設定應用裝置*
+
++
+在此階段中、會發生下列其中一個程序：
+
++
+** 對於儲存設備、安裝程式會連線至儲存控制器、清除任何現有的組態、與 SANtricity OS 通訊以設定磁碟區、以及設定主機設定。
+** 對於服務應用裝置、安裝程式會從運算控制器中的磁碟機清除任何現有的組態、並設定主機設定。
+
+
++
+*2.安裝作業系統*
+
++
+在此階段、安裝程式會將基礎作業系統映像複製到StorageGRID 應用裝置中以供使用。
+
+. 繼續監控安裝進度、直到主控台視窗出現訊息、提示您使用Grid Manager核准節點。
++
+
+NOTE: 請等到您在此擴充中新增的所有節點都已準備好核准、再前往Grid Manager核准節點。
+
++
+image::../media/monitor_installation_install_sgws.gif[此影像由周邊文字說明。]
+
+

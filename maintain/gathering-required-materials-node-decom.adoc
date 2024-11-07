@@ -1,0 +1,49 @@
+---
+permalink: maintain/gathering-required-materials-node-decom.html 
+sidebar: sidebar 
+keywords: storagegrid, node decommission, decommission 
+summary: 在執行網格節點取消委任之前、您必須先取得下列資訊。 
+---
+= 收集所需資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在執行網格節點取消委任之前、您必須先取得下列資訊。
+
+[cols="1a,2a"]
+|===
+| 項目 | 附註 
+
+
+ a| 
+恢復套件 `.zip`檔案
+ a| 
+您必須link:downloading-recovery-package.html["下載最新的恢復套件"] `.zip`歸檔(`sgws-recovery-package-_id-revision_.zip`）。如果發生故障、您可以使用「恢復套件」檔案來還原系統。
+
+
+
+ a| 
+`Passwords.txt`檔案
+ a| 
+此檔案包含存取命令列上網格節點所需的密碼、並包含在「恢復套件」中。
+
+
+
+ a| 
+資源配置通關密碼
+ a| 
+當StorageGRID 首次安裝此功能時、系統會建立並記錄密碼。資源配置複雜密碼不在 `Passwords.txt`檔案中。
+
+
+
+ a| 
+汰換之前、請先說明StorageGRID 這個系統的拓撲
+ a| 
+如有、請取得任何說明系統目前拓撲的文件。
+
+|===
+.相關資訊
+link:../admin/web-browser-requirements.html["網頁瀏覽器需求"]

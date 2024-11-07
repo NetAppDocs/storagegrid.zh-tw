@@ -1,0 +1,8 @@
+---
+permalink: monitor/configuring-syslog-server.html 
+redirect: storagegrid/monitor/configure-audit-messages.html 
+---
+= 
+:allow-uri-read: 
+
+

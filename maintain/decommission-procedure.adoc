@@ -1,0 +1,24 @@
+---
+permalink: maintain/decommission-procedure.html 
+sidebar: sidebar 
+keywords: how to decommission 
+summary: 您可以執行取消委任程序、將網格節點或整個站台從StorageGRID 整套系統中永久移除。 
+---
+= 取消委任節點或站台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行取消委任程序、將網格節點或整個站台從StorageGRID 整套系統中永久移除。
+
+若要移除網格節點或站台、請執行下列取消委任程序之一：
+
+* 執行link:grid-node-decommissioning.html["網格節點取消委任"]以移除一個或多個節點、這些節點可以位於一個或多個站台。您移除的節點可以連線至StorageGRID 線上、也可以離線或中斷連線。
+* 執行link:considerations-for-removing-site.html["站台取消委任"]以移除站台。如果所有節點都連接到 StorageGRID 、您就可以執行 * 已連線的站台取消委任 * 。如果所有節點都與 StorageGRID 中斷連線、您可以執行 * 中斷連線的站台取消委任 * 。如果站台混合了已連線和已中斷連線的節點、您必須將所有離線節點重新上線。
++
+
+CAUTION: 在執行中斷連線的站台取消委任之前、請聯絡您的 NetApp 客戶代表。NetApp將在取消委任網站精靈中啟用所有步驟之前、先審查您的需求。如果您認為可以從站台恢復或從站台恢復物件資料、則不應嘗試中斷站台的停用。
+
+

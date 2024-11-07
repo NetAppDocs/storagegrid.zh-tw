@@ -1,0 +1,32 @@
+---
+permalink: ilm/how-ilm-operates-throughout-objects-life.html 
+sidebar: sidebar 
+keywords: ilm lifecycle, object lifecycle and ILM 
+summary: 瞭解StorageGRID 如何在物件生命週期的每個階段使用ILM來管理物件、有助於您設計更有效的原則。 
+---
+= ILM如何在整個物件生命週期內運作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解StorageGRID 如何在物件生命週期的每個階段使用ILM來管理物件、有助於您設計更有效的原則。
+
+* * 擷取 * ：擷取從 S3 用戶端應用程式建立連線以將物件儲存至 StorageGRID 系統開始、並在 StorageGRID 將「擷取成功」訊息傳回用戶端時完成。物件資料在擷取期間會受到保護、方法是立即套用ILM指令（同步放置）、或是建立過渡複本、並在稍後套用ILM（雙重提交）、視ILM需求的指定方式而定。
+* *複製管理*：建立ILM放置說明中所指定的物件複本數量和類型之後StorageGRID 、此功能可管理物件位置、並保護物件免於遺失。
++
+** * ILM 掃描與評估 * ： StorageGRID 會持續掃描儲存在網格中的物件清單、並檢查目前的複本是否符合 ILM 要求。當需要不同類型、數字或物件複本位置時、StorageGRID 會視需要建立、刪除或移動複本。
+** * 背景驗證 * ： StorageGRID 會持續執行背景驗證、以檢查物件資料的完整性。如果發現問題、StorageGRID 則在符合目前ILM需求的位置、由NetApp自動建立新的物件複本或替換的銷毀編碼物件片段。請參閱。 link:../troubleshoot/verifying-object-integrity.html["驗證物件完整性"]
+
+
+* *物件刪除*：當所有複本都從StorageGRID 作業系統中移除時、物件的管理就會結束。物件可因為用戶端的刪除要求而移除、或是因為ILM刪除或S3儲存區生命週期到期而刪除。
++
+
+NOTE: 如果儲存庫中的物件處於合法保留狀態、或是指定了保留日期但尚未達到、則無法刪除已啟用 S3 物件鎖定的物件。
+
+
+
+此圖摘要說明ILM在物件生命週期內的運作方式。
+
+image::../media/overview_of_object_lifecycle.png[物件生命週期總覽]

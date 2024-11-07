@@ -1,0 +1,247 @@
+---
+permalink: s3/put-object.html 
+sidebar: sidebar 
+keywords: object, add object, put, PutObject request 
+summary: 您可以使用 S3 PuttObject 要求、將物件新增至貯體。 
+---
+= PuttObject
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 S3 PuttObject 要求、將物件新增至貯體。
+
+
+
+== 解決衝突
+
+衝突的用戶端要求（例如兩個寫入同一個金鑰的用戶端）會以「最新致勝」的方式解決。「最新致勝」評估的時間取決於StorageGRID 何時由VMware系統完成指定的要求、而非S3用戶端開始作業的時間。
+
+
+
+== 物件大小
+
+單一 PutObject 作業的最大大小 _ 建議 _ 為 5 GiB （ 5 、 368 、 709 、 120 位元組）。如果物件大於 5 GiB 、請改用link:operations-for-multipart-uploads.html["多部分上傳"]。
+
+單一 PutObject 作業的最大 _ 支援 _ 大小為 5 TiB （ 5 、 497 、 558 、 138 、 880 位元組）。
+
+
+NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳超過 5 GiB 的物件時、會觸發 S3 「將物件大小設得太大」警示。如果您有新的 StorageGRID 11.7 或 11.8 安裝、在這種情況下不會觸發警示。不過、為了符合 AWS S3 標準、未來的 StorageGRID 版本不支援上傳大於 5 GiB 的物件。
+
+
+
+== 使用者中繼資料大小
+
+Amazon S3會將每個PUT要求標頭內使用者定義的中繼資料大小限制為2 KB。支援範圍將使用者中繼資料限制為24 KiB。StorageGRID使用者定義的中繼資料大小是以每個金鑰和值的utf-8編碼方式、計算出位元組數的總和。
+
+
+
+== 使用者中繼資料中的UTF-8字元
+
+如果要求在使用者定義的中繼資料金鑰名稱或值中包含（未轉義）utf-8值、StorageGRID 則無法定義任何不正常的行為。
+
+不剖析或解譯使用者定義之中繼資料的金鑰名稱或值中包含的轉義式utf-8字元。StorageGRID轉義的UTF-8字元會視為Ascii字元：
+
+* 如果使用者定義的中繼資料包含轉義式 UTF-8 字元、則 PutObject 、 CopyObject 、 GetObject 和 HeadObject 要求會成功。
+* 如果金鑰名稱或值的解譯值包含不可列印字元、則 StorageGRID 不會傳回 `x-amz-missing-meta`標頭。
+
+
+
+
+== 物件標籤限制
+
+您可以在上傳新物件時新增標記、也可以將標記新增至現有物件。每個物件最多可支援10個標記的支援功能。StorageGRID與物件相關聯的標記必須具有唯一的標記金鑰。標籤金鑰長度最多可達128個UNICODE字元、標籤值長度最多可達256個UNICODE字元。金鑰和值區分大小寫。
+
+
+
+== 物件擁有權
+
+在功能區中StorageGRID 、所有物件均歸庫位擁有者帳戶所有、包括非擁有者帳戶或匿名使用者所建立的物件。
+
+
+
+== 支援的要求標頭
+
+支援下列要求標頭：
+
+* `Cache-Control`
+* `Content-Disposition`
+* `Content-Encoding`
++
+當您為 ``Content-Encoding``StorageGRID 指定時、 `aws-chunked`不會驗證下列項目：
+
++
+** StorageGRID 不會根據區塊資料來驗證 `chunk-signature`。
+** StorageGRID 不會驗證您針對物件所提供的值 `x-amz-decoded-content-length`。
+
+
+* `Content-Language`
+* `Content-Length`
+* `Content-MD5`
+* `Content-Type`
+* `Expires`
+* `Transfer-Encoding`
++
+如果同時使用有效負載簽署、則支援分區傳輸編碼 `aws-chunked`。
+
+* `x-amz-checksum-sha256`
+* `x-amz-meta-`，然後是包含使用者定義中繼資料的名稱值配對。
++
+為使用者定義的中繼資料指定名稱值配對時、請使用以下一般格式：
+
++
+[listing, subs="specialcharacters,quotes"]
+----
+x-amz-meta-_name_: _value_
+----
++
+如果您要使用 * 使用者定義的建立時間 * 選項做為 ILM 規則的參考時間、則必須使用 `creation-time`做為物件建立時所記錄的中繼資料名稱。例如：
+
++
+[listing]
+----
+x-amz-meta-creation-time: 1443399726
+----
++
+的值 `creation-time`會從 1970 年 1 月 1 日起計算為秒數。
+
++
+
+NOTE: ILM 規則不能同時使用 * 使用者定義的建立時間 * 作為參考時間、也不能同時使用平衡或嚴格擷取選項。建立ILM規則時會傳回錯誤。
+
+* `x-amz-tagging`
+* S3物件鎖定要求標頭
++
+** `x-amz-object-lock-mode`
+** `x-amz-object-lock-retain-until-date`
+** `x-amz-object-lock-legal-hold`
++
+如果要求是在沒有這些標頭的情況下提出、則貯體預設保留設定會用於計算物件版本模式並保留至最新日期。請參閱。 link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]
+
+
+
+* SSe要求標頭：
++
+** `x-amz-server-side-encryption`
+** `x-amz-server-side-encryption-customer-key-MD5`
+** `x-amz-server-side-encryption-customer-key`
+** `x-amz-server-side-encryption-customer-algorithm`
++
+請參閱 <<要求伺服器端加密的標頭>>
+
+
+
+
+
+
+
+== 不支援的要求標頭
+
+不支援下列要求標頭：
+
+* `x-amz-acl`
+* `x-amz-sdk-checksum-algorithm`
+* `x-amz-trailer`
+* `x-amz-website-redirect-location`
++
+ `x-amz-website-redirect-location`報頭返回 `XNotImplemented`。
+
+
+
+
+
+== 儲存類別選項
+
+ `x-amz-storage-class`支援要求標頭。提交的值 `x-amz-storage-class`會影響 StorageGRID 在擷取期間保護物件資料的方式、而不會影響儲存在 StorageGRID 系統中的物件持續複本數量（由 ILM 決定）。
+
+如果符合擷取物件的 ILM 規則使用嚴格擷取選項、則 `x-amz-storage-class`標頭不會生效。
+
+下列值可用於 `x-amz-storage-class`：
+
+* `STANDARD`（預設）
++
+** *雙重提交*：如果ILM規則指定「內嵌行為」的「雙重提交」選項、則只要物件擷取到另一個物件複本、就會建立該物件的第二個複本、並將其分散到不同的儲存節點（雙重提交）。評估 ILM 時、 StorageGRID 會判斷這些初始過渡複本是否符合規則中的放置指示。如果沒有、則可能需要在不同位置製作新的物件複本、而且可能需要刪除初始過渡複本。
+** *Balanced * ：如果 ILM 規則指定 Balanced 選項、而 StorageGRID 無法立即製作規則中指定的所有複本、 StorageGRID 會在不同的儲存節點上製作兩個臨時複本。
++
+如果 StorageGRID 可以立即建立 ILM 規則中指定的所有物件複本（同步放置）、則 `x-amz-storage-class`標頭不會生效。
+
+
+
+* `REDUCED_REDUNDANCY`
++
+** *雙重提交*：如果ILM規則指定擷取行為的雙重提交選項、StorageGRID 則會在擷取物件時建立單一的過渡複本（單一提交）。
+** *Balanced * ：如果 ILM 規則指定 Balanced 選項、則 StorageGRID 只會在系統無法立即製作規則中指定的所有複本時、才製作單一的臨時複本。如果能夠執行同步放置、則此標頭不會有任何影響。StorageGRID `REDUCED_REDUNDANCY`當符合物件的 ILM 規則建立單一複寫複本時、最好使用此選項。在這種情況下、使用 `REDUCED_REDUNDANCY`可避免在每次擷取作業中不必要地建立和刪除額外的物件複本。
+
+
++
+在其他情況下不建議使用此 `REDUCED_REDUNDANCY`選項。 `REDUCED_REDUNDANCY`增加擷取期間物件資料遺失的風險。例如、如果單一複本一開始儲存在無法進行ILM評估的儲存節點上、則可能會遺失資料。
+
+
+
+
+CAUTION: 在任何時間段只複寫一個複本、會使資料面臨永久遺失的風險。如果只有一個物件複寫複本存在、則當儲存節點故障或發生重大錯誤時、該物件就會遺失。在升級等維護程序期間、您也會暫時失去物件的存取權。
+
+指定 `REDUCED_REDUNDANCY`僅會影響首次擷取物件時所建立的複本數量。它不會影響使用中 ILM 原則評估物件時所製作的物件複本數量、也不會導致資料儲存在 StorageGRID 系統中較低的備援層級。
+
+
+NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體、則會忽略此 `REDUCED_REDUNDANCY`選項。如果您正在將物件擷取至舊版的「符合標準」貯體、 `REDUCED_REDUNDANCY`則選項會傳回錯誤。執行「雙重承諾」的程序時、務必確保符合法規遵循要求。StorageGRID
+
+
+
+== 要求伺服器端加密的標頭
+
+您可以使用下列要求標頭、以伺服器端加密來加密物件。「SSE」和「SSE-C」選項互不相關。
+
+* * SSE-*：如果您想使用StorageGRID 由支援的唯一金鑰來加密物件、請使用下列標頭。
++
+** `x-amz-server-side-encryption`
++
+如果 `x-amz-server-side-encryption` PuttObject 要求中未包含標頭、則 PuttObject 回應中會省略網格範圍link:../admin/changing-network-options-object-encryption.html["儲存的物件加密設定"]。
+
+
+
+* * SSE-C*：如果您想使用您提供及管理的唯一金鑰來加密物件、請使用這三個標頭。
++
+** `x-amz-server-side-encryption-customer-algorithm`：指定 `AES256`。
+** `x-amz-server-side-encryption-customer-key`：指定新物件的加密金鑰。
+** `x-amz-server-side-encryption-customer-key-MD5`：指定新對象加密密鑰的 MD5 摘要。
+
+
+
+
+
+CAUTION: 您提供的加密金鑰永遠不會儲存。如果您遺失加密金鑰、就會遺失對應的物件。在使用客戶提供的金鑰來保護物件資料之前，請先檢閱的考量事項link:using-server-side-encryption.html["使用伺服器端加密"]。
+
+
+NOTE: 如果物件是以SSE或SSE-C加密、則會忽略任何儲存區層級或網格層級的加密設定。
+
+
+
+== 版本管理
+
+如果已啟用貯體的版本設定功能、則會針對儲存的物件版本自動產生唯一的 `versionId`版本。這 `versionId`也會在回應中使用回應標頭傳回 `x-amz-version-id`。
+
+如果版本控制暫停、物件版本會以 null 儲存 `versionId`、如果空版本已經存在、則會覆寫該版本。
+
+
+
+== 授權標頭的簽名計算
+
+使用 `Authorization`標頭驗證要求時、 StorageGRID 與 AWS 的差異如下：
+
+* StorageGRID 不需要 `host`在中包含標頭 `CanonicalHeaders`。
+* StorageGRID 不需要 `Content-Type`包含在 `CanonicalHeaders`中。
+* StorageGRID 不需要 `x-amz-*`在中包含標頭 `CanonicalHeaders`。
+
+
+
+NOTE: 一般最佳實務做法是、務必在中加入這些標頭 `CanonicalHeaders`、以確保其已通過驗證；不過、如果您排除這些標頭、 StorageGRID 不會傳回錯誤。
+
+如需詳細資訊、請 https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html["授權標頭的簽名計算：在單一區塊中傳輸有效負載（ AWS 簽名版本 4 ）"^]參閱。
+
+.相關資訊
+* link:../ilm/index.html["使用ILM管理物件"]
+* link:https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html["Amazon Simple Storage Service API 參考資料： PutObject"^]
+

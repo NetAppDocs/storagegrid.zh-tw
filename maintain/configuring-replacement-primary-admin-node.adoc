@@ -1,0 +1,60 @@
+---
+permalink: maintain/configuring-replacement-primary-admin-node.html 
+sidebar: sidebar 
+keywords: storagegrid, primary admin node, replace primary admin node, replacing primary admin node 
+summary: 更換節點必須設定為StorageGRID 適用於您的整套系統的主要管理節點。 
+---
+= 設定替換的主要管理節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+更換節點必須設定為StorageGRID 適用於您的整套系統的主要管理節點。
+
+.開始之前
+* 對於虛擬機器上託管的主要管理節點、虛擬機器已部署、開機及初始化。
+* 對於服務應用裝置上裝載的主要管理節點、您已更換應用裝置並安裝軟體。請參閱 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["應用裝置的安裝指示"^]。
+* 您擁有恢復軟件包文件的最新備份(`sgws-recovery-package-_id-revision_.zip`）。
+* 您有資源配置通關密碼。
+
+
+.步驟
+. 開啟網頁瀏覽器並瀏覽至 `\https://primary_admin_node_ip`。
+. 視需要管理臨時安裝程式密碼：
++
+** 如果已使用下列其中一種方法設定密碼、請輸入密碼以繼續。
++
+*** 使用者在先前存取安裝程式時設定密碼
+*** 對於裸機系統、密碼會自動從位於的節點組態檔案匯入 `/etc/storagegrid/nodes/_<node_name>_.conf`
+*** 對於 VM 、 SSH/ 主控台密碼會自動從 OVF 內容匯入
+
+
+** 如果尚未設定密碼、請選擇性地設定密碼以保護 StorageGRID 安裝程式。
+
+
+. 單擊*恢復故障的主管理節點*。
++
+image::../media/install_or_recover_primary_admin_node.png[安裝或恢復主管理節點]
+
+. 上傳最新的恢復套件備份：
++
+.. 按一下*瀏覽*。
+.. 找到StorageGRID 適用於您的還原系統的最新還原套件檔案、然後按一下*「Open*（開啟*）」。
+
+
+. 輸入資源配置通關密碼。
+. 單擊*開始恢復*。
++
+恢復程序隨即開始。網格管理程式可能會在所需服務啟動後的數分鐘內無法使用。恢復完成後、會顯示登入頁面。
+
+. 如果StorageGRID 您的支援系統啟用單一登入（SSO）、且您所恢復之管理節點的依賴方信任已設定為使用預設管理介面憑證、請更新（或刪除及重新建立）節點在Active Directory Federation Services（AD FS）中的依賴方信任。使用在管理節點還原程序期間所產生的新預設伺服器憑證。
++
+
+NOTE: 若要設定信賴方信任、請參閱link:../admin/configuring-sso.html["設定單一登入"]。若要存取預設伺服器憑證、請登入管理節點的命令Shell。移至 `/var/local/mgmt-api`目錄、然後選取 `server.crt`檔案。
+
+
+
+
+CAUTION: 在恢復主管理節點之後link:assess-hotfix-requirement-during-primary-admin-node-recovery.html["判斷您是否需要套用 Hotfix"]，。

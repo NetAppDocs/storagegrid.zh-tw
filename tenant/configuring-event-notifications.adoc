@@ -1,0 +1,136 @@
+---
+permalink: tenant/configuring-event-notifications.html 
+sidebar: sidebar 
+keywords: how to configure event notifications, bucket notification 
+summary: 您可以建立通知組態 XML 、並使用 Tenant Manager 將 XML 套用至貯體、以啟用貯體的通知。 
+---
+= 設定事件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立通知組態 XML 、並使用 Tenant Manager 將 XML 套用至貯體、以啟用貯體的通知。
+
+.開始之前
+* StorageGRID 管理員已為您的租戶帳戶啟用平台服務。
+* 您已建立一個儲存庫做為通知來源。
+* 您打算用作事件通知目的地的端點已經存在、而且您擁有它的 URN 。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["管理所有貯體或根目錄存取權限"]。這些權限會在使用租戶管理程式設定儲存區時、覆寫群組或儲存區原則中的權限設定。
+
+
+.關於這項工作
+您可以將通知組態 XML 與來源貯體建立關聯、以設定事件通知。通知組態 XML 遵循 S3 慣例來設定貯體通知、目的地 Kafka 或 Amazon SNS 主題則指定為端點的 URN 。
+
+如需事件通知及如何設定的一般資訊，請參閱 https://docs.aws.amazon.com/s3/["Amazon 文件"^]。如需 StorageGRID 如何實作 S3 儲存區通知組態 API 的相關資訊link:../s3/index.html["實作S3用戶端應用程式的指示"]、請參閱。
+
+為貯體設定事件通知時、請注意下列需求和特性：
+
+* 當您建立並套用有效的通知組態 XML 時、它必須針對每個目的地使用事件通知端點的 URN 。
+* 雖然可以在啟用 S3 物件鎖定的儲存貯體上設定事件通知、但通知訊息中不會包含物件的 S3 物件鎖定中繼資料（包括保留截止日期和合法保留狀態）。
+* 設定事件通知之後、每當來源儲存區中的物件發生指定事件時、就會產生通知、並傳送至使用做為目的地端點的 Amazon SNS 或 Kafka 主題。
+* 如果您為包含物件的儲存區啟用事件通知、則通知僅會針對儲存通知組態後所執行的動作傳送。
+
+
+.步驟
+. 啟用來源儲存區的通知：
++
+** 使用文字編輯器建立啟用事件通知所需的通知組態XML、如S3通知API所指定。
+** 設定XML時、請使用事件通知端點的URN作為目的地主題。
++
+[listing]
+----
+<NotificationConfiguration>
+  <TopicConfiguration>
+     <Id>Image-created</Id>
+     <Filter>
+        <S3Key>
+          <FilterRule>
+            <Name>prefix</Name>
+            <Value>images/</Value>
+          </FilterRule>
+        </S3Key>
+    </Filter>
+    <Topic>arn:aws:sns:us-east-1:050340950352:sgws-topic</Topic>
+    <Event>s3:ObjectCreated:*</Event>
+   </TopicConfiguration>
+ </NotificationConfiguration>
+----
+
+
+. 在租戶管理程式中、選取*儲存設備（S3）*>*桶*。
+. 選取來源儲存區的名稱。
++
+此時會顯示「庫位詳細資料」頁面。
+
+. 選擇*平台服務*>*事件通知*。
+. 選中 * 啓用事件通知 * 複選框。
+. 將通知組態XML貼到文字方塊中、然後選取*儲存變更*。
++
+
+NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Grid Management API的管理員啟用平台服務。如果您儲存組態XML時發生錯誤、請聯絡StorageGRID 您的管理員。
+
+. 確認事件通知設定正確：
++
+.. 對來源儲存區中符合觸發通知要求的物件執行動作、如組態XML中所設定。
++
+在範例中、每當使用前置碼建立物件時、就會傳送事件通知 `images/`。
+
+.. 確認已傳送通知至目的地 Amazon SNS 或 Kafka 主題。
++
+例如、如果您的目的地主題是在 Amazon SNS 上代管、您可以設定服務、以便在傳送通知時傳送電子郵件給您。
+
++
+[listing]
+----
+{
+   "Records":[
+      {
+         "eventVersion":"2.0",
+         "eventSource":"sgws:s3",
+         "eventTime":"2017-08-08T23:52:38Z",
+         "eventName":"ObjectCreated:Put",
+         "userIdentity":{
+            "principalId":"1111111111111111111"
+         },
+         "requestParameters":{
+            "sourceIPAddress":"193.51.100.20"
+         },
+         "responseElements":{
+            "x-amz-request-id":"122047343"
+         },
+         "s3":{
+            "s3SchemaVersion":"1.0",
+            "configurationId":"Image-created",
+            "bucket":{
+               "name":"test1",
+               "ownerIdentity":{
+                  "principalId":"1111111111111111111"
+               },
+               "arn":"arn:sgws:s3:::test1"
+            },
+            "object":{
+               "key":"images/cat.jpg",
+               "size":0,
+               "eTag":"d41d8cd98f00b204e9800998ecf8427e",
+               "sequencer":"14D90402421461C7"
+            }
+         }
+      }
+   ]
+}
+----
++
+如果在目的地主題收到通知、表示您已成功設定來源庫位以供StorageGRID 發出資訊通知。
+
+
+
+
+
+.相關資訊
+link:understanding-notifications-for-buckets.html["瞭解庫存箱通知"]
+
+link:../s3/index.html["使用S3 REST API"]
+
+link:creating-platform-services-endpoint.html["建立平台服務端點"]

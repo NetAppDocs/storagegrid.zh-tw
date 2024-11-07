@@ -1,0 +1,47 @@
+---
+permalink: admin/manage-security.html 
+sidebar: sidebar 
+keywords: how to manage security 
+summary: 您可以從Grid Manager設定各種安全性設定、以協助保護StorageGRID 您的作業系統。 
+---
+= 管理安全性
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從Grid Manager設定各種安全性設定、以協助保護StorageGRID 您的作業系統。
+
+
+
+== 管理加密
+
+StorageGRID 提供數種加密資料的選項。您應該link:reviewing-storagegrid-encryption-methods.html["檢閱可用的加密方法"]判斷哪些符合資料保護需求。
+
+
+
+== 管理憑證
+
+您可以link:using-storagegrid-security-certificates.html["設定及管理伺服器憑證"]使用 HTTP 連線或用戶端憑證來驗證伺服器的用戶端或使用者身分識別。
+
+
+
+== 設定金鑰管理伺服器
+
+使用link:kms-configuring.html["金鑰管理伺服器"]可讓您保護 StorageGRID 資料、即使設備已從資料中心移除也沒問題。應用裝置磁碟區加密後、除非節點可以與 KMS 通訊、否則您無法存取應用裝置上的任何資料。
+
+
+NOTE: 若要使用加密金鑰管理、您必須在安裝期間、在將應用裝置新增至網格之前、為每個應用裝置啟用*節點加密*設定。
+
+
+
+== 管理Proxy設定
+
+如果您使用的是 S3 平台服務或雲端儲存資源池、您可以在儲存節點和外部 S3 端點之間設定link:configuring-storage-proxy-settings.html["儲存 Proxy 伺服器"]。如果您使用 HTTPS 或 HTTP 傳送 AutoSupport 套件、您可以在管理節點和技術支援之間設定link:configuring-admin-proxy-settings.html["管理 Proxy 伺服器"]。
+
+
+
+== 控制防火牆
+
+若要增強系統的安全性、您可以在開啟或關閉特定連接埠link:controlling-access-through-firewalls.html["外部防火牆"]、以控制對 StorageGRID 管理節點的存取。您也可以設定每個節點的網路存取link:manage-firewall-controls.html["內部防火牆"]。您可以防止存取所有連接埠、但部署所需的連接埠除外。

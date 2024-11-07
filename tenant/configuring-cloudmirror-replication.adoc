@@ -1,0 +1,101 @@
+---
+permalink: tenant/configuring-cloudmirror-replication.html 
+sidebar: sidebar 
+keywords: how to configure CloudMirror replication, replication xml 
+summary: 您可以建立貯體複寫組態 XML 、並使用 Tenant Manager 將 XML 套用至貯體、以啟用某個貯體的 CloudMirror 複寫功能。 
+---
+= 設定CloudMirror複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要為某個貯體啟用 CloudMirror 複寫、您需要建立並套用有效的貯體複寫組態 XML 。
+
+.開始之前
+* StorageGRID 管理員已為您的租戶帳戶啟用平台服務。
+* 您已建立一個儲存區作為複寫來源。
+* 您打算用作 CloudMirror 複寫目的地的端點已經存在、而且您有它的 URN 。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["管理所有貯體或根目錄存取權限"]。這些權限會在使用租戶管理程式設定儲存區時、覆寫群組或儲存區原則中的權限設定。
+
+
+.關於這項工作
+CloudMirror複寫會將物件從來源儲存區複製到端點中指定的目的地儲存區。
+
+有關貯體複寫及如何設定的一般資訊，請參閱 https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html["Amazon Simple Storage Service （ S3 ）文件：複寫物件"^]。如需 StorageGRID 如何實作 GetBucketReplication 、 DeleteBucketReplication 和 PuttBucketReplication 的相關資訊，請參閱link:../s3/operations-on-buckets.html["在貯體上作業"]。
+
+
+NOTE: CloudMirror 複寫與跨網格複寫功能有重要的相似之處和差異。若要深入瞭解link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["比較跨網格複寫和 CloudMirror 複寫"]、請參閱。
+
+設定 CloudMirror 複寫時、請注意下列需求和特性：
+
+* 當您建立並套用有效的貯體複寫組態 XML 時、它必須為每個目的地使用 S3 貯體端點的 URN 。
+* 啟用S3物件鎖定的來源或目的地桶不支援複寫。
+* 如果您在包含物件的貯體上啟用 CloudMirror 複寫、則會複寫新增至該貯體的物件、但不會複寫該貯體中的現有物件。您必須更新現有物件、才能觸發複寫。
+* 如果您在複寫組態XML中指定儲存類別、StorageGRID 則當針對目的地S3端點執行作業時、會使用該類別。目的地端點也必須支援指定的儲存類別。請務必遵循目的地系統廠商所提供的任何建議。
+
+
+.步驟
+. 啟用來源儲存區的複寫：
++
+** 使用文字編輯器建立所需的複寫組態XML、以啟用S3複寫API中指定的複寫。
+** 設定XML時：
++
+*** 請注意StorageGRID 、僅支援V1複寫組態。這表示 StorageGRID 不支援將元素用於規則、也不支援 `Filter`刪除物件版本的 V1 慣例。如需詳細資訊、請參閱Amazon複寫組態文件。
+*** 使用S3貯體端點的URN作為目的地。
+*** 選擇性地新增 `<StorageClass>`元素、並指定下列其中一項：
++
+****  `STANDARD`：預設儲存類別。如果上傳物件時未指定儲存類別、則會使用儲存類別 `STANDARD`。
+**** `STANDARD_IA`：（標準 - 不常存取。）使用此儲存類別來存取較不頻繁的資料、但仍需要在需要時快速存取。
+**** `REDUCED_REDUNDANCY`：使用此儲存類別來儲存非關鍵且可重現的資料、其備援性比儲存類別低 `STANDARD`。
+
+
+*** 如果您在組態 XML 中指定 `Role`、則會忽略。此值不供StorageGRID 下列項目使用：
++
+[listing]
+----
+<ReplicationConfiguration>
+    <Role></Role>
+    <Rule>
+        <Status>Enabled</Status>
+        <Prefix>2020</Prefix>
+        <Destination>
+           <Bucket>urn:sgws:s3:::2017-records</Bucket>
+           <StorageClass>STANDARD</StorageClass>
+         </Destination>
+     </Rule>
+</ReplicationConfiguration>
+----
+
+
+
+
+. 從儀表板選取 * 檢視貯體 * 、或選取 * 儲存空間（ S3 ） * > * 鏟斗 * 。
+. 選取來源儲存區的名稱。
++
+此時會顯示「庫位詳細資料」頁面。
+
+. 選擇*平台服務*>*複寫*。
+. 選中 * 啓用複製 * 複選框。
+. 將複寫組態XML貼到文字方塊中、然後選取*儲存變更*。
++
+
+NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Grid Management API的管理員啟用平台服務。如果您儲存組態XML時發生錯誤、請聯絡StorageGRID 您的管理員。
+
+. 確認複寫設定正確：
++
+.. 將符合複寫組態中所指定之複寫需求的物件新增至來源儲存區。
++
+在前面所示的範例中、會複寫符合前置字元「 2020 」的物件。
+
+.. 確認物件已複寫至目的地儲存區。
++
+對於小型物件、複寫作業很快就會完成。
+
+
+
+
+
+.相關資訊
+link:creating-platform-services-endpoint.html["建立平台服務端點"]

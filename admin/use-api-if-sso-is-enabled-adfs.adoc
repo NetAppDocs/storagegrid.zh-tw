@@ -1,0 +1,318 @@
+---
+permalink: admin/use-api-if-sso-is-enabled-adfs.html 
+sidebar: sidebar 
+keywords: how to access storagegrid API if SSO is enabled with ADFS 
+summary: 如果您已設定並啟用單一登入（SSO）、且使用Active Directory做為SSO供應商、則必須發出一系列API要求、以取得適用於Grid Management API或租戶管理API的驗證權杖。 
+---
+= 如果啟用單一登入、請使用API（Active Directory）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您擁有 link:../admin/configuring-sso.html["已設定並啟用單一登入（SSO）"]Active Directory 並使用它做為 SSO 提供者、則必須發出一系列 API 要求、以取得 Grid Management API 或 Tenant Management API 有效的驗證權杖。
+
+
+
+== 如果啟用單一登入、請登入API
+
+如果您使用Active Directory做為SSO身分識別供應商、則適用這些指示。
+
+.開始之前
+* 您知道屬於StorageGRID 某個位向使用者群組的聯盟使用者的SSO使用者名稱和密碼。
+* 如果您想要存取租戶管理API、就知道租戶帳戶ID。
+
+
+.關於這項工作
+若要取得驗證權杖、您可以使用下列其中一個範例：
+
+*  `storagegrid-ssoauth.py`Python 指令碼位於 Red Hat Enterprise Linux 、 Ubuntu 或 Debian 及 `./vsphere` VMware 的 `./debs` StorageGRID 安裝檔案目錄中(`./rpms`。
+* Curl要求的工作流程範例。
++
+如果執行速度太慢、捲曲工作流程可能會逾時。您可能會看到以下錯誤： `A valid SubjectConfirmation was not found on this Response`。
+
++
+
+NOTE: 範例Curl工作流程無法防止其他使用者看到密碼。
+
+
+
+如果您遇到 URL 編碼問題，可能會看到以下錯誤： `Unsupported SAML version`。
+
+.步驟
+. 選取下列方法之一以取得驗證權杖：
++
+** 使用 `storagegrid-ssoauth.py` Python 指令碼。前往步驟 2 。
+** 使用Curl要求。前往步驟 3 。
+
+
+. 如果您想要使用 `storagegrid-ssoauth.py`指令碼、請將指令碼傳送至 Python 解譯器、然後執行指令碼。
++
+出現提示時、請輸入下列引數的值：
+
++
+** SSO方法。輸入「ADFS」或「ADFS」。
+** SSO使用者名稱
+** 安裝了鏡面的網域StorageGRID
+** 解決這個StorageGRID 問題
+** 租戶帳戶ID（如果您要存取租戶管理API）。
++
+image::../media/sso_auth_python_script_adfs.png[AD FS的SSO驗證指令碼]
+
++
+輸出中提供了驗證權杖。StorageGRID您現在可以將權杖用於其他要求、類似於未使用SSO時使用API的方式。
+
+
+
+. 如果您要使用捲髮要求、請使用下列程序。
++
+.. 宣告登入所需的變數。
++
+[source, bash]
+----
+export SAMLUSER='my-sso-username'
+export SAMLPASSWORD='my-password'
+export SAMLDOMAIN='my-domain'
+export TENANTACCOUNTID='12345'
+export STORAGEGRID_ADDRESS='storagegrid.example.com'
+export AD_FS_ADDRESS='adfs.example.com'
+----
++
+
+NOTE: 若要存取 Grid Management API 、請使用 0 做為 `TENANTACCOUNTID`。
+
+.. 若要接收簽署的驗證 URL 、請向發出 POST 要求 `/api/v3/authorize-saml`、並從回應中移除其他 JSON 編碼。
++
+此範例顯示的是簽署驗證 URL 的 POST 要求 `TENANTACCOUNTID`。結果將傳送至 `python -m json.tool`以移除 JSON 編碼。
+
++
+[source, bash]
+----
+curl -X POST "https://$STORAGEGRID_ADDRESS/api/v3/authorize-saml" \
+  -H "accept: application/json" -H  "Content-Type: application/json" \
+  --data "{\"accountId\": \"$TENANTACCOUNTID\"}" | python -m json.tool
+----
++
+此範例的回應包含URL編碼的已簽署URL、但不包含其他JSON-encoding層。
+
++
+[listing]
+----
+{
+    "apiVersion": "3.0",
+    "data": "https://adfs.example.com/adfs/ls/?SAMLRequest=fZHLbsIwEEV%2FJTuv7...sSl%2BfQ33cvfwA%3D&RelayState=12345",
+    "responseTime": "2018-11-06T16:30:23.355Z",
+    "status": "success"
+}
+----
+.. 儲存 `SAMLRequest`來自回應的以供後續命令使用。
++
+[source, bash]
+----
+export SAMLREQUEST='fZHLbsIwEEV%2FJTuv7...sSl%2BfQ33cvfwA%3D'
+----
+.. 取得完整的URL、其中包含AD FS的用戶端要求ID。
++
+其中一個選項是使用先前回應的URL來要求登入表單。
+
++
+[source, bash]
+----
+curl "https://$AD_FS_ADDRESS/adfs/ls/?SAMLRequest=$SAMLREQUEST&RelayState=$TENANTACCOUNTID" | grep 'form method="post" id="loginForm"'
+----
++
+回應包括用戶端要求ID：
+
++
+[listing]
+----
+<form method="post" id="loginForm" autocomplete="off" novalidate="novalidate" onKeyPress="if (event && event.keyCode == 13) Login.submitLoginRequest();" action="/adfs/ls/?
+SAMLRequest=fZHRToMwFIZfhb...UJikvo77sXPw%3D%3D&RelayState=12345&client-request-id=00000000-0000-0000-ee02-0080000000de" >
+----
+.. 從回應中儲存用戶端要求ID。
++
+[source, bash]
+----
+export SAMLREQUESTID='00000000-0000-0000-ee02-0080000000de'
+----
+.. 將您的認證資料傳送至先前回應的表單動作。
++
+[source, bash]
+----
+curl -X POST "https://$AD_FS_ADDRESS/adfs/ls/?SAMLRequest=$SAMLREQUEST&RelayState=$TENANTACCOUNTID&client-request-id=$SAMLREQUESTID" \
+--data "UserName=$SAMLUSER@$SAMLDOMAIN&Password=$SAMLPASSWORD&AuthMethod=FormsAuthentication" --include
+----
++
+AD FS會傳回302重新導向、並在標頭中顯示其他資訊。
+
++
+
+NOTE: 如果您的SSO系統已啟用多因素驗證（MFA）、則表單POST也會包含第二個密碼或其他認證資料。
+
++
+[listing]
+----
+HTTP/1.1 302 Found
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Location: https://adfs.example.com/adfs/ls/?SAMLRequest=fZHRToMwFIZfhb...UJikvo77sXPw%3D%3D&RelayState=12345&client-request-id=00000000-0000-0000-ee02-0080000000de
+Set-Cookie: MSISAuth=AAEAADAvsHpXk6ApV...pmP0aEiNtJvWY=; path=/adfs; HttpOnly; Secure
+Date: Tue, 06 Nov 2018 16:55:05 GMT
+----
+.. 儲存 `MSISAuth`回應中的 Cookie 。
++
+[source, bash]
+----
+export MSISAuth='AAEAADAvsHpXk6ApV...pmP0aEiNtJvWY='
+----
+.. 從驗證貼文傳送內含Cookie的Get要求至指定位置。
++
+[source, bash]
+----
+curl "https://$AD_FS_ADDRESS/adfs/ls/?SAMLRequest=$SAMLREQUEST&RelayState=$TENANTACCOUNTID&client-request-id=$SAMLREQUESTID" \
+--cookie "MSISAuth=$MSISAuth" --include
+----
++
+回應標頭會包含AD FS工作階段資訊、以供日後登出使用、而回應本文會在隱藏表單欄位中包含SAMLResponse。
+
++
+[listing]
+----
+HTTP/1.1 200 OK
+Cache-Control: no-cache,no-store
+Pragma: no-cache
+Content-Length: 5665
+Content-Type: text/html; charset=utf-8
+Expires: -1
+Server: Microsoft-HTTPAPI/2.0
+P3P: ADFS doesn't have P3P policy, please contact your site's admin for more details
+Set-Cookie: SamlSession=a3dpbnRlcnMtUHJpbWFyeS1BZG1pbi0xNzgmRmFsc2Umcng4NnJDZmFKVXFxVWx3bkl1MnFuUSUzZCUzZCYmJiYmXzE3MjAyZTA5LThmMDgtNDRkZC04Yzg5LTQ3NDUxYzA3ZjkzYw==; path=/adfs; HttpOnly; Secure
+Set-Cookie: MSISAuthenticated=MTEvNy8yMDE4IDQ6MzI6NTkgUE0=; path=/adfs; HttpOnly; Secure
+Set-Cookie: MSISLoopDetectionCookie=MjAxOC0xMS0wNzoxNjozMjo1OVpcMQ==; path=/adfs; HttpOnly; Secure
+Date: Wed, 07 Nov 2018 16:32:59 GMT
+
+<form method="POST" name="hiddenform" action="https://storagegrid.example.com:443/api/saml-response">
+  <input type="hidden" name="SAMLResponse" value="PHNhbWxwOlJlc3BvbnN...1scDpSZXNwb25zZT4=" /><input type="hidden" name="RelayState" value="12345" />
+----
+.. 從隱藏欄位儲存 `SAMLResponse`：
++
+[source, bash]
+----
+export SAMLResponse='PHNhbWxwOlJlc3BvbnN...1scDpSZXNwb25zZT4='
+----
+.. 使用已儲存的 `SAMLResponse`、發出 StorageGRID``/api/saml-response`` 要求以產生 StorageGRID 驗證權杖。
++
+對於 `RelayState`、如果您想登入 Grid Management API 、請使用租戶帳戶 ID 或使用 0 。
+
++
+[source, bash]
+----
+curl -X POST "https://$STORAGEGRID_ADDRESS:443/api/saml-response" \
+  -H "accept: application/json" \
+  --data-urlencode "SAMLResponse=$SAMLResponse" \
+  --data-urlencode "RelayState=$TENANTACCOUNTID" \
+  | python -m json.tool
+----
++
+回應包括驗證權杖。
+
++
+[listing]
+----
+{
+    "apiVersion": "3.0",
+    "data": "56eb07bf-21f6-40b7-af0b-5c6cacfb25e7",
+    "responseTime": "2018-11-07T21:32:53.486Z",
+    "status": "success"
+}
+----
+.. 將回應中的驗證權杖另存為 `MYTOKEN`。
++
+[source, bash]
+----
+export MYTOKEN="56eb07bf-21f6-40b7-af0b-5c6cacfb25e7"
+----
++
+您現在可以用於其他要求、類似於未使用 SSO 時使用 `MYTOKEN` API 的方式。
+
+
+
+
+
+
+
+== 如果啟用單一登入、請登出API
+
+如果已啟用單一登入（SSO）、您必須發出一系列API要求、以登出Grid Management API或租戶管理API。如果您使用Active Directory做為SSO身分識別供應商、則適用這些指示
+
+.關於這項工作
+如果需要、您可以登出組織的單一登出頁面、登出 StorageGRID API 。或者、您也可以觸發StorageGRID 來自下列項目的單一登出（SLO）：需要有效StorageGRID 的SESO承載權杖。
+
+.步驟
+. 若要產生已簽署的登出要求、請將「 Cookie 」「 SSO=true 」傳給 SLO API ：
++
+[source, bash]
+----
+curl -k -X DELETE "https://$STORAGEGRID_ADDRESS/api/v3/authorize" \
+-H "accept: application/json" \
+-H "Authorization: Bearer $MYTOKEN" \
+--cookie "sso=true" \
+| python -m json.tool
+----
++
+會傳回登出URL：
+
++
+[listing]
+----
+{
+    "apiVersion": "3.0",
+    "data": "https://adfs.example.com/adfs/ls/?SAMLRequest=fZDNboMwEIRfhZ...HcQ%3D%3D",
+    "responseTime": "2018-11-20T22:20:30.839Z",
+    "status": "success"
+}
+----
+. 儲存登出URL。
++
+[source, bash]
+----
+export LOGOUT_REQUEST='https://adfs.example.com/adfs/ls/?SAMLRequest=fZDNboMwEIRfhZ...HcQ%3D%3D'
+----
+. 傳送要求至登出URL以觸發SLO並重新導向StorageGRID 至還原。
++
+[source, bash]
+----
+curl --include "$LOGOUT_REQUEST"
+----
++
+會傳回302回應。重新導向位置不適用於純API登出。
+
++
+[listing]
+----
+HTTP/1.1 302 Found
+Location: https://$STORAGEGRID_ADDRESS:443/api/saml-logout?SAMLResponse=fVLLasMwEPwVo7ss%...%23rsa-sha256
+Set-Cookie: MSISSignoutProtocol=U2FtbA==; expires=Tue, 20 Nov 2018 22:35:03 GMT; path=/adfs; HttpOnly; Secure
+----
+. 刪除StorageGRID 不記名權杖。
++
+刪除StorageGRID 此不含SSO的不含支援權杖的方式相同。如果未提供「 Cookie 」「 SSO = True 」、則使用者會登出 StorageGRID 而不會影響 SSO 狀態。
+
++
+[source, bash]
+----
+curl -X DELETE "https://$STORAGEGRID_ADDRESS/api/v3/authorize" \
+-H "accept: application/json" \
+-H "Authorization: Bearer $MYTOKEN" \
+--include
+----
++
+ `204 No Content`回應表示使用者現在已登出。
+
++
+[listing]
+----
+HTTP/1.1 204 No Content
+----
+

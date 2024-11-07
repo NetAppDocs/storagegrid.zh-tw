@@ -1,0 +1,8 @@
+---
+permalink: network/network-port-reference.html 
+redirect: storagegrid/network/internal-grid-node-communications.html 
+---
+= 
+:allow-uri-read: 
+
+

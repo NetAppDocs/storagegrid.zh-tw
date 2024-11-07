@@ -1,0 +1,8 @@
+---
+permalink: tenant/changing-consistency-level.html 
+redirect: storagegrid/tenant/manage-bucket-consistency.html 
+---
+= 
+:allow-uri-read: 
+
+

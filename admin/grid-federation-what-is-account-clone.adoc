@@ -1,0 +1,116 @@
+---
+permalink: admin/grid-federation-what-is-account-clone.html 
+sidebar: sidebar 
+keywords: account clone, tenant replication, disaster recovery, grid federation 
+summary: 帳戶複製是自動複寫租戶帳戶、租戶群組、租戶使用者、以及選擇性的 在網格同盟連線中的 StorageGRID 系統之間使用 S3 存取金鑰。 
+---
+= 什麼是帳戶複製？
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+帳戶複製是在中的 StorageGRID 系統之間自動複寫租戶帳戶、租戶群組、租戶使用者、以及選擇性的 S3 存取金鑰link:grid-federation-overview.html["網格同盟連線"]。
+
+需要複製帳戶link:grid-federation-what-is-cross-grid-replication.html["跨網格複寫"]。將帳戶資訊從來源 StorageGRID 系統複製到目的地 StorageGRID 系統、可確保租戶使用者和群組能夠存取任一網格上的對應儲存區和物件。
+
+
+
+== 帳戶複製工作流程
+
+工作流程圖顯示網格管理員和允許的租戶設定帳戶複製所需執行的步驟。這些步驟會在之後執行link:grid-federation-create-connection.html["已設定網格同盟連線"]。
+
+image::../media/grid-federation-account-clone-workflow.png[帳戶複製工作流程]
+
+
+
+== Grid 管理工作流程
+
+網格管理員執行的步驟取決於使用單一登入（ SSO ）或身分識別聯盟中的 StorageGRID 系統link:grid-federation-overview.html["網格同盟連線"]。
+
+
+
+=== [[account-clone-SSO ]] 設定帳戶複製的 SSO （選用）
+
+如果網格同盟連線中的任一 StorageGRID 系統使用 SSO 、則兩個網格都必須使用 SSO 。在建立網格同盟的租戶帳戶之前、租戶來源和目的地網格的網格管理員必須執行這些步驟。
+
+.步驟
+. 為兩個網格設定相同的身分識別來源。請參閱。 link:using-identity-federation.html["使用身分識別聯盟"]
+. 為兩個網格設定相同的 SSO 身分識別提供者（ IDP ）。請參閱。 link:configuring-sso.html["設定單一登入"]
+. link:managing-admin-groups.html["建立相同的管理群組"]在兩個網格上匯入相同的同盟群組。
++
+當您建立租戶時、您將會選取此群組、以取得來源和目的地租戶帳戶的初始根存取權限。
+
++
+
+NOTE: 如果在您建立租戶之前、這兩個網格上都不存在這個管理群組、則租戶不會複寫到目的地。
+
+
+
+
+
+=== [[account-clone-identity-Federation ]] 設定帳戶複製的網格層級身分識別同盟（選用）
+
+如果任一 StorageGRID 系統使用無 SSO 的身分識別聯盟、則兩個網格都必須使用身分識別聯盟。在建立網格同盟的租戶帳戶之前、租戶來源和目的地網格的網格管理員必須執行這些步驟。
+
+.步驟
+. 為兩個網格設定相同的身分識別來源。請參閱。 link:using-identity-federation.html["使用身分識別聯盟"]
+. 或者、如果同盟群組在兩個網格上都有來源和目的地租戶帳戶的初始根存取權限link:managing-admin-groups.html["建立相同的管理群組"]、請匯入相同的同盟群組。
++
+
+NOTE: 如果您將「根」存取權限指派給兩個網格上都不存在的同盟群組、則租用戶不會複寫到目的地網格。
+
+. 如果您不想讓同盟群組擁有兩個帳戶的初始根目錄存取權限、請指定本機根目錄使用者的密碼。
+
+
+
+
+=== 建立允許的 S3 租戶帳戶
+
+在選擇性設定 SSO 或身分識別聯盟之後、網格管理員會執行這些步驟、以判斷哪些租戶可以將儲存區物件複寫到其他 StorageGRID 系統。
+
+.步驟
+. 判斷您要做為租戶來源網格的網格、以進行帳戶複製作業。
++
+最初建立租戶的網格稱為租戶的 _ 來源網格 _ 。複寫租戶的網格稱為租戶的 _ 目的地網格 _ 。
+
+. 在該網格上、建立新的 S3 租戶帳戶或編輯現有帳戶。
+. 指派 * 使用網格同盟連線 * 權限。
+. 如果租戶帳戶要管理自己的同盟使用者、請指派 * 使用自己的身分識別來源 * 權限。
++
+如果指派此權限、來源和目的地租戶帳戶必須先設定相同的身分識別來源、才能建立同盟群組。新增至來源租用戶的同盟群組無法複製到目的地租戶、除非兩個網格都使用相同的身分識別來源。
+
+. 選取特定的網格同盟連線。
+. 儲存新的或修改過的租戶。
++
+儲存具有 * 使用網格同盟連線 * 權限的新租用戶時、 StorageGRID 會自動在其他網格上建立該租用戶的複本、如下所示：
+
++
+** 兩個租戶帳戶都具有相同的帳戶 ID 、名稱、儲存配額和指派的權限。
+** 如果您選取同盟群組以擁有租用戶的根存取權限、則該群組會複製到目的地租戶。
+** 如果您選取本機使用者來擁有租用戶的根存取權限、則該使用者會複製到目的地租戶。不過、該使用者的密碼並未複製。
+
+
+
+
+如需詳細資訊、請參閱 link:grid-federation-manage-tenants.html["管理網格同盟的允許租戶"]。
+
+
+
+== 允許的租戶帳戶工作流程
+
+將具有 * 使用網格同盟連線 * 權限的租戶複寫到目的地網格之後、允許的租戶帳戶可以執行這些步驟來複製租戶群組、使用者和 S3 存取金鑰。
+
+.步驟
+. 登入租戶來源網格上的租戶帳戶。
+. 如果允許、請在來源和目的地租戶帳戶上設定識別聯盟。
+. 在來源租戶上建立群組和使用者。
++
+在來源租戶上建立新群組或使用者時、 StorageGRID 會自動將其複製到目的地租戶、但不會從目的地複製到來源。
+
+. 建立 S3 存取金鑰。
+. 或者、也可以將 S3 存取金鑰從來源租戶複製到目的地租戶。
+
+
+如需有關授權租戶帳戶工作流程的詳細資訊、以及如何複製群組、使用者和 S3 存取金鑰、請參閱link:../tenant/grid-federation-account-clone.html["複製租戶群組和使用者"]和link:../tenant/grid-federation-clone-keys-with-api.html["使用 API 複製 S3 存取金鑰"]。

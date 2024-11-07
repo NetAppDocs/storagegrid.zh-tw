@@ -1,0 +1,73 @@
+---
+permalink: audit/olst-system-detected-lost-object.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, OLST, System Detected Lost Object 
+summary: 當DDS服務找不到StorageGRID 任何物件的複本時、就會產生此訊息。 
+---
+= OLST：系統偵測到遺失物件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當 DDS 服務找不到 StorageGRID 系統中物件的任何複本時、就會產生此訊息。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+CBID
+ a| 
+內容區塊識別碼
+ a| 
+遺失物件的CBID。
+
+
+
+ a| 
+NOID
+ a| 
+節點 ID
+ a| 
+如果可用、則為遺失物件的最後一個已知直接或近線位置。如果無法取得磁碟區資訊、則只能使用沒有Volume ID的節點ID。
+
+
+
+ a| 
+路徑
+ a| 
+S3 鏟斗 / 金鑰
+ a| 
+S3 儲存區名稱和 S3 金鑰名稱（如果有）。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果
+ a| 
+此欄位的值為「無」。RSRLT為必填訊息欄位、但與此訊息無關。使用「無」而非「無」、以不篩選此訊息。
+
+
+
+ a| 
+UUID
+ a| 
+通用唯一ID
+ a| 
+在整個系統中遺失物件的識別碼StorageGRID 。
+
+
+
+ a| 
+VOLI
+ a| 
+Volume ID
+ a| 
+如果可用、儲存節點的 Volume ID 會顯示遺失物件的最後已知位置。
+
+|===

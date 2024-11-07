@@ -1,0 +1,416 @@
+---
+permalink: monitor/storagegrid-software-logs.html 
+sidebar: sidebar 
+keywords: logs 
+summary: 您可以使用StorageGRID 資訊檔來疑難排解問題。 
+---
+= 軟體記錄StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用StorageGRID 資訊檔來疑難排解問題。
+
+
+NOTE: 如果您想要將記錄傳送至外部 Syslog 伺服器、或變更稽核資訊的目的地、例如 `bycast.log`和、 `nms.log`請參閱link:../monitor/configure-audit-messages.html#["設定稽核訊息和記錄目的地"]。
+
+
+
+== 一般StorageGRID 資訊記錄
+
+[cols="3a,3a,2a"]
+|===
+| 檔案名稱 | 附註 | 找到 
+
+
+| /var/local/log/bycast.log  a| 
+主要StorageGRID 的故障排除檔案。選取*支援*>*工具*>*網格拓撲*。然後選擇「*站台_*>*節點_*>* SUS*>*事件*」。
+ a| 
+所有節點
+
+
+
+| /var/local/log/bycast-err.log  a| 
+包含的子集 `bycast.log`（嚴重性錯誤和嚴重的訊息）。重要訊息也會顯示在系統中。選取*支援*>*工具*>*網格拓撲*。然後選擇「*站台_*>*節點_*>* SUS*>*事件*」。
+ a| 
+所有節點
+
+
+
+| /var/local/core  a| 
+包含在程式異常終止時所建立的任何核心傾印檔案。可能的原因包括聲明失敗、違規或執行緒逾時。
+
+* 附註 * ：檔案 ``/var/local/core/kexec_cmd`通常存在於應用裝置節點上、並不表示發生錯誤。
+ a| 
+所有節點
+
+|===
+
+
+== 密碼相關記錄
+
+[cols="3a,3a,2a"]
+|===
+| 檔案名稱 | 附註 | 找到 
+
+
+| /var/local/log/ssh-config-generation.log  a| 
+包含與產生 SSH 組態和重新載入 SSH 服務相關的記錄。
+ a| 
+所有節點
+
+
+
+| /var/local/log/Ngins/config-generation.log  a| 
+包含與產生 Nginx 組態及重新載入 Nginx 服務相關的記錄。
+ a| 
+所有節點
+
+
+
+| /var/local/log/Nginx) config-generation.log  a| 
+包含與產生 Nginx) 組態（以及重新載入 Nginx) 相關的記錄檔。
+ a| 
+管理和閘道節點
+
+
+
+| /var/local/log/update-cipher-configurations.log  a| 
+包含與設定 TLS 和 SSH 原則相關的記錄。
+ a| 
+所有節點
+
+|===
+
+
+== 網格同盟記錄
+
+[cols="3a,3a,2a"]
+|===
+| 檔案名稱 | 附註 | 找到 
+
+
+| /var/local/log/update_grid_federation_config.log  a| 
+包含與產生網格同盟連線的 Nginx 和 Nginx) 組態相關的記錄。
+ a| 
+所有節點
+
+|===
+
+
+== NMS記錄
+
+[cols="3a,3a,2a"]
+|===
+| 檔案名稱 | 附註 | 找到 
+
+
+| /var/local/log/nms.log  a| 
+* 從Grid Manager和Tenant Manager擷取通知。
+* 擷取與 NMS 服務運作相關的事件。例如、電子郵件通知和組態變更。
+* 包含因系統中所做的組態變更而產生的XML套裝組合更新。
+* 包含一天執行一次屬性降級取樣的相關錯誤訊息。
+* 包含Java Web伺服器錯誤訊息、例如頁面產生錯誤和HTTP狀態500錯誤。
+
+ a| 
+管理節點
+
+
+
+| /var/local/log/nms.errlog  a| 
+包含與MySQL資料庫升級相關的錯誤訊息。
+
+包含對應服務的標準錯誤（stderr）串流。每個服務有一個記錄檔。除非服務有問題、否則這些檔案通常是空的。
+ a| 
+管理節點
+
+
+
+| /var/local/log/nms.requestlog  a| 
+包含有關從管理API傳出連線至內部StorageGRID 支援服務的資訊。
+ a| 
+管理節點
+
+|===
+
+
+== 伺服器管理員記錄
+
+[cols="3a,3a,2a"]
+|===
+| 檔案名稱 | 附註 | 找到 
+
+
+| /var/local/log/servermanager.log  a| 
+伺服器管理程式應用程式的記錄檔。
+ a| 
+所有節點
+
+
+
+| /var/local/log/GridstatBackend.errlog  a| 
+伺服器管理員GUI後端應用程式的記錄檔。
+ a| 
+所有節點
+
+
+
+| /var/local/log/gratstat.errlog  a| 
+伺服器管理員GUI的記錄檔。
+ a| 
+所有節點
+
+|===
+
+
+== StorageGRID 服務記錄
+
+[cols="3a,3a,2a"]
+|===
+| 檔案名稱 | 附註 | 找到 
+
+
+| /var/local/log/acct.errlog  a| 
+ a| 
+執行ADC服務的儲存節點
+
+
+
+| /var/local/log/ADC.errlog  a| 
+包含對應服務的標準錯誤（stderr）串流。每個服務有一個記錄檔。除非服務有問題、否則這些檔案通常是空的。
+ a| 
+執行ADC服務的儲存節點
+
+
+
+| /var/local/log/AMS  a| 
+ a| 
+管理節點
+
+
+
+| /var/local/log/cassandra / system.log  a| 
+當新增儲存節點時發生問題、或當節點修復工作停止時、可使用的中繼資料存放區（Cassandra資料庫）資訊。
+ a| 
+儲存節點
+
+
+
+| /var/local/log/cassandra-reaper.log  a| 
+Cassandra Reaper服務的相關資訊、可用來修復Cassandra資料庫中的資料。
+ a| 
+儲存節點
+
+
+
+| /var/local/log/cassandra － reaper.errlog  a| 
+Cassandra Reaper服務的錯誤資訊。
+ a| 
+儲存節點
+
+
+
+| /var/local/log/cchk.errlog  a| 
+ a| 
+儲存節點
+
+
+
+| /var/local/log/CMN.errlog  a| 
+ a| 
+管理節點
+
+
+
+| /var/local/log/cms.errlog  a| 
+此記錄檔可能存在於已從StorageGRID 舊版的更新版本的系統上。其中包含舊有資訊。
+ a| 
+儲存節點
+
+
+
+| /var/local/log/Ds.errlog  a| 
+ a| 
+儲存節點
+
+
+
+| /var/local/log/DMV.errlog  a| 
+ a| 
+儲存節點
+
+
+
+| /var/local/log/Dynip*  a| 
+包含與dynip服務相關的記錄、該服務會監控網格是否有動態IP變更及更新本機組態。
+ a| 
+所有節點
+
+
+
+| /var/local/log/grafana.log  a| 
+與Grafana服務相關的記錄、用於Grid Manager中的度量視覺化。
+ a| 
+管理節點
+
+
+
+| /var/local/log/hagroups.log  a| 
+與高可用度群組相關的記錄。
+ a| 
+管理節點和閘道節點
+
+
+
+| /var/local/log/hagroups_events.log  a| 
+追蹤狀態變更、例如從備份轉換為主要或故障。
+ a| 
+管理節點和閘道節點
+
+
+
+| /var/local/log/idnt.errlog  a| 
+ a| 
+執行ADC服務的儲存節點
+
+
+
+| /var/local/log/jaeger.log  a| 
+與用於追蹤收集的jaeger服務相關聯的記錄。
+ a| 
+所有節點
+
+
+
+| /var/local/log/kstn.errlog  a| 
+ a| 
+執行ADC服務的儲存節點
+
+
+
+| /var/local/log/lambda*  a| 
+包含S3 Select服務的記錄。
+ a| 
+管理和閘道節點
+
+只有特定的管理節點和閘道節點包含此記錄。請參閱link:../admin/manage-s3-select-for-tenant-accounts.html["S3選取管理和閘道節點的需求和限制"]。
+
+
+
+| /var/local/log/LDR.errlog  a| 
+ a| 
+儲存節點
+
+
+
+| /var/local/log/miscd/*.log  a| 
+包含MISCd服務（Information Service Control Daemon）的記錄、此服務提供介面、可用於查詢及管理其他節點上的服務、以及管理節點上的環境組態、例如查詢其他節點上執行的服務狀態。
+ a| 
+所有節點
+
+
+
+| /var/local/log/Ngins/*.log  a| 
+包含用於Nginx服務的記錄、可做為各種網格服務（例如Prometheus和Dynip）的驗證與安全通訊機制、以便透過HTTPS API與其他節點上的服務進行交談。
+ a| 
+所有節點
+
+
+
+| /var/local/log/Nginx)  a| 
+包含與 Nginx) -GW 服務相關的一般記錄、包括錯誤記錄、以及管理節點上受限管理連接埠的記錄。
+ a| 
+管理節點和閘道節點
+
+
+
+| /var/local/log/Nginx) cgr-access.log.gz  a| 
+包含與跨網格複寫流量相關的存取記錄。
+ a| 
+管理節點、閘道節點、或兩者、以網格同盟組態為基礎。只能在目標網格上找到用於跨網格複寫的資料。
+
+
+
+| /var/local/log/Nginx) endpoint-access.log.gz  a| 
+包含負載平衡器服務的存取記錄、可提供從用戶端到儲存節點的 S3 流量負載平衡。
+ a| 
+管理節點和閘道節點
+
+
+
+| /var/local/log/persistent*  a| 
+包含「持續性」服務的記錄、此服務會管理根磁碟上需要在重新開機後持續存在的檔案。
+ a| 
+所有節點
+
+
+
+| /var/local/log/prometheus.log  a| 
+針對所有節點、包含節點資料輸出器服務記錄和AD-Exporter度量服務記錄。
+
+對於管理節點、也包含Prometheus和Alert Manager服務的記錄。
+ a| 
+所有節點
+
+
+
+| /var/local/log/raft.log  a| 
+包含RSM服務 用於raft傳輸協定的程式庫輸出。
+ a| 
+儲存節點搭配RSM服務
+
+
+
+| /var/local/log/rms.errlog  a| 
+包含用於S3平台服務的複寫狀態機器服務（RSM）服務記錄。
+ a| 
+儲存節點搭配RSM服務
+
+
+
+| /var/local/log/sm.errlog  a| 
+ a| 
+所有節點
+
+
+
+| /var/local/log/update-s3vs-domains.log  a| 
+包含處理S3虛擬託管網域名稱組態更新的相關記錄。請參閱實作S3用戶端應用程式的指示。
+ a| 
+管理和閘道節點
+
+
+
+| /var/local/log/update-snmp-firewall.*  a| 
+包含與SNMP管理的防火牆連接埠相關的記錄。
+ a| 
+所有節點
+
+
+
+| /var/local/log/update-sysl.log  a| 
+包含與系統syslog組態變更相關的記錄。
+ a| 
+所有節點
+
+
+
+| /var/local/log/update-traffic-classes.log  a| 
+包含與流量分類器組態變更相關的記錄。
+ a| 
+管理和閘道節點
+
+
+
+| /var/local/log/update-utcn.log  a| 
+包含與此節點上不受信任的用戶端網路模式相關的記錄。
+ a| 
+所有節點
+
+|===
+.相關資訊
+* link:about-bycast-log.html["關於bycast.log"]
+* link:../s3/index.html["使用S3 REST API"]
+

@@ -1,0 +1,21 @@
+= 
+:allow-uri-read: 
+
+
+[cols="1a,1a"]
+|===
+| 路徑和檔案名稱 | 說明 
+
+
+| ./cebs/storagegrid-webscale-images-version-SHA.deb  a| 
+DEB套件可在StorageGRID 您的應用裝置上安裝不含節點的影像。
+
+
+
+| ./cebs/storagegrid-webscale-images-version-SHA.deb.md5  a| 
+檔案的 MD5 Checksum `/debs/storagegridwebscale-
+images-version-SHA.deb` 。
+
+|===
+
+NOTE: 在設備安裝方面、只有在您需要避免網路流量時才需要這些檔案。應用裝置可從主要管理節點下載所需的檔案。

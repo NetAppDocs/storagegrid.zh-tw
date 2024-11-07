@@ -1,0 +1,7 @@
+= 
+:allow-uri-read: 
+
+
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip`
+
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz`

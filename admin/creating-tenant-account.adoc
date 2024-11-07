@@ -1,0 +1,328 @@
+---
+permalink: admin/creating-tenant-account.html 
+sidebar: sidebar 
+keywords: create tenant, tenant account 
+summary: 您必須建立至少一個租戶帳戶、以控制StorageGRID 對您的作業系統儲存設備的存取。 
+---
+= 建立租戶帳戶
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須建立至少一個租戶帳戶、以控制StorageGRID 對您的作業系統儲存設備的存取。
+
+建立租戶帳戶的步驟會因是否已設定及link:configuring-sso.html["單一登入"]所設定、以及您用來建立租戶帳戶的 Grid Manager 帳戶是否屬於具有「根」存取權限的管理群組而異link:using-identity-federation.html["身分識別聯盟"]。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:admin-group-permissions.html["root 存取權或 Tenant 帳戶權限"]。
+* 如果租戶帳戶將使用為Grid Manager設定的身分識別來源、而您想要將租戶帳戶的根存取權限授予聯盟群組、則表示您已將該聯盟群組匯入Grid Manager。您不需要指派任何 Grid Manager 權限給此管理群組。請參閱。 link:managing-admin-groups.html["管理管理群組"]
+* 如果您想要允許 S3 租戶複製帳戶資料、並使用網格聯盟連線將貯體物件複寫到其他網格：
++
+** 您有 link:grid-federation-create-connection.html["已設定網格同盟連線"]。
+** 連線狀態為 * 已連線 * 。
+** 您擁有root存取權限。
+** 您已檢閱的考量事項link:grid-federation-manage-tenants.html["管理 Grid Federation 的允許租戶"]。
+** 如果租戶帳戶將使用為 Grid Manager 設定的身分識別來源、則您已將相同的聯盟群組匯入兩個網格上的 Grid Manager 。
++
+當您建立租戶時、您將會選取此群組、以取得來源和目的地租戶帳戶的初始根存取權限。
+
++
+
+TIP: 如果在您建立租戶之前、這兩個網格上都不存在這個管理群組、則租戶不會複寫到目的地。
+
+
+
+
+
+
+
+== 存取精靈
+
+.步驟
+. 選取*租戶*。
+. 選擇* Create *（建立*）。
+
+
+
+
+== 輸入詳細資料
+
+.步驟
+. 輸入租戶的詳細資料。
++
+[cols="1a,3a"]
+|===
+| 欄位 | 說明 
+
+
+ a| 
+名稱
+ a| 
+租戶帳戶的名稱。租戶名稱不一定是唯一的。建立租戶帳戶時、它會收到唯一的 20 位數帳戶 ID 。
+
+
+
+ a| 
+說明（選用）
+ a| 
+協助識別租戶的說明。
+
+如果您要建立將使用網格同盟連線的租用戶、請選擇性使用此欄位來協助識別來源租戶和目的地租戶。例如、對於在 Grid 1 上建立的租戶、此描述也會顯示給複製到 Grid 2 的租戶：「此租戶是在 Grid 1 上建立的。」
+
+
+
+ a| 
+用戶端類型
+ a| 
+此租戶將使用的用戶端傳輸協定類型、可以是 * S2* 或 * Swift * 。
+
+* 附註 * ： Swift 用戶端應用程式的支援已過時、將於未來版本中移除。
+
+
+
+ a| 
+儲存配額（選用）
+ a| 
+如果您想要此租用戶擁有儲存配額、則需要配額和單位的數值。
+
+|===
+. 選擇*繼續*。
+
+
+
+
+== [[admin-租 戶選取權限 ]] 選取權限
+
+.步驟
+. 或者、選取您希望此租用戶擁有的基本權限。
++
+
+NOTE: 其中有些權限有額外的需求。如需詳細資料、請選取每個權限的說明圖示。
+
++
+[cols="1a,3a"]
+|===
+| 權限 | 如果選取 ... 
+
+
+ a| 
+允許平台服務
+ a| 
+租戶可以使用 S3 平台服務、例如 CloudMirror 。請參閱。 link:../admin/manage-platform-services-for-tenants.html["管理S3租戶帳戶的平台服務"]
+
+
+
+ a| 
+使用自己的身分識別來源
+ a| 
+租戶可以為同盟群組和使用者設定及管理自己的身分識別來源。如果您的 StorageGRID 系統有此選項、則此選項會停用link:../admin/configuring-sso.html["已設定 SSO"]。
+
+
+
+ a| 
+允許 S3 Select
+ a| 
+租戶可以發出 S3 SelectObjectContent API 要求、以篩選及擷取物件資料。請參閱。 link:../admin/manage-s3-select-for-tenant-accounts.html["管理用戶帳戶的S3 Select"]
+
+* 重要 * ： SelectObjectContent 要求可降低所有 S3 用戶端和所有租戶的負載平衡器效能。只有在必要時才啟用此功能、而且僅適用於信任的租戶。
+
+|===
+. 或者、選取您希望此租用戶擁有的進階權限。
++
+[cols="1a,3a"]
+|===
+| 權限 | 如果選取 ... 
+
+
+ a| 
+網格同盟連線
+ a| 
+租戶可以使用網格同盟連線、該連線：
+
+** 使此租用戶和新增至帳戶的所有租戶群組和使用者、從這個網格（ _ 來源網格 _ ）複製到所選連線（ _ 目的地網格 _ ）的其他網格。
+** 允許此租戶在每個網格上對應的儲存格之間設定跨網格複寫。
+
+
+請參閱。 link:../admin/grid-federation-manage-tenants.html["管理 Grid Federation 的允許租戶"]
+
+
+
+ a| 
+S3物件鎖定
+ a| 
+允許租戶使用 S3 物件鎖定的特定功能：
+
+** * 設定最大保留期間 * 定義新增至此貯體的物件應保留多久、從擷取開始算起。
+** * 允許規範模式 * 可防止使用者在保留期間覆寫或刪除受保護的物件版本。
+
+
+|===
+. 選擇*繼續*。
+
+
+
+
+== 定義 root 存取權並建立租戶
+
+.步驟
+. 根據您的 StorageGRID 系統是使用身分識別聯盟、單一登入（ SSO ）或兩者、定義租戶帳戶的根存取權。
++
+[cols="1a,2a"]
+|===
+| 選項 | 請這麼做 
+
+
+ a| 
+如果未啟用身分識別聯盟
+ a| 
+指定當以本機根使用者身分登入租戶時所使用的密碼。
+
+
+
+ a| 
+如果已啟用身分識別聯盟
+ a| 
+.. 選取現有的同盟群組以擁有租用戶的根存取權限。
+.. 您也可以選擇指定當以本機根使用者身分登入租用戶時要使用的密碼。
+
+
+
+
+ a| 
+如果同時啟用身分識別聯盟和單一登入（ SSO ）
+ a| 
+選取現有的同盟群組以擁有租用戶的根存取權限。沒有本機使用者可以登入。
+
+|===
+. 選取*建立租戶*。
++
+成功訊息隨即出現、新的租戶會列在租戶頁面上。若要瞭解如何檢視租戶詳細資料及監控租戶活動，請參閱link:../monitor/monitoring-tenant-activity.html["監控租戶活動"]。
+
++
+
+NOTE: 根據網路連線能力、節點狀態和 Cassandra 作業、在整個網格套用租戶設定可能需要 15 分鐘或更長的時間。
+
+. 如果您為租用戶選取 * 使用網格同盟連線 * 權限：
++
+.. 確認已將相同的租戶複寫到連線中的其他網格。兩個網格上的租戶將擁有相同的 20 位數帳戶 ID 、名稱、說明、配額和權限。
++
+
+NOTE: 如果您看到錯誤訊息「 Tenant Created without a clone 」、請參閱中的指示link:grid-federation-troubleshoot.html["疑難排解網格同盟錯誤"]。
+
+.. 如果您在定義根目錄存取時提供本機根目錄使用者密碼link:changing-password-for-tenant-local-root-user.html["變更本機 root 使用者的密碼"]給複寫的租戶。
++
+
+TIP: 在變更密碼之前、本機根使用者無法在目的地網格上登入租戶管理程式。
+
+
+
+
+
+
+
+== 登入租戶（選用）
+
+視需要、您可以立即登入新租戶以完成組態、或是稍後登入租戶。登入步驟取決於您是使用預設連接埠（ 443 ）還是受限連接埠登入 Grid Manager 。請參閱。 link:controlling-access-through-firewalls.html["控制外部防火牆的存取"]
+
+
+
+=== 立即登入
+
+[cols="1a,3a"]
+|===
+| 如果您使用... | 執行此動作... 
+
+
+ a| 
+連接埠 443 和您為本機 root 使用者設定密碼
+ a| 
+. 選取 * 以 root 登入 * 。
++
+當您登入時、會出現連結以設定貯體、身分識別聯盟、群組和使用者。
+
+. 選取連結以設定租戶帳戶。
++
+每個連結都會在租戶管理程式中開啟對應的頁面。若要完成此頁面，請參閱link:../tenant/index.html["租戶帳戶使用說明"]。
+
+
+
+
+
+ a| 
+連接埠 443 並未設定本機根使用者的密碼
+ a| 
+選取 * 登入 * 、然後在根存取聯盟群組中輸入使用者的認證。
+
+
+
+ a| 
+受限連接埠
+ a| 
+. 選擇 * 完成 *
+. 請在「租戶」表格中選取 * 限制 * 、以深入瞭解如何存取此租戶帳戶。
++
+租戶管理程式的URL格式如下：
+
++
+`https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_/`
+
++
+** `_FQDN_or_Admin_Node_IP_`是管理節點的完整網域名稱或 IP 位址
+** `_port_`是僅租戶連接埠
+** `_20-digit-account-id_`是租戶的唯一帳戶 ID
+
+
+
+
+|===
+
+
+=== 稍後登入
+
+[cols="1a,3a"]
+|===
+| 如果您使用... | 請執行下列其中一項... 
+
+
+ a| 
+連接埠 443
+ a| 
+* 從Grid Manager中選取*租戶*、然後選取租戶名稱右側的*登入*。
+* 在網頁瀏覽器中輸入租戶的URL：
++
+`https://_FQDN_or_Admin_Node_IP_/?accountId=_20-digit-account-id_/`
+
++
+** `_FQDN_or_Admin_Node_IP_`是管理節點的完整網域名稱或 IP 位址
+** `_20-digit-account-id_`是租戶的唯一帳戶 ID
+
+
+
+
+
+
+ a| 
+受限連接埠
+ a| 
+* 從Grid Manager中選取*租戶*、然後選取*受限*。
+* 在網頁瀏覽器中輸入租戶的URL：
++
+`https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_`
+
++
+** `_FQDN_or_Admin_Node_IP_`是管理節點的完整網域名稱或 IP 位址
+** `_port_`是僅限租戶的限制連接埠
+** `_20-digit-account-id_`是租戶的唯一帳戶 ID
+
+
+
+
+|===
+
+
+== 設定租戶
+
+請遵循中的指示link:../tenant/index.html["使用租戶帳戶"]、管理租戶群組和使用者、 S3 存取金鑰、工作區、平台服務、帳戶複製和跨網格複寫。

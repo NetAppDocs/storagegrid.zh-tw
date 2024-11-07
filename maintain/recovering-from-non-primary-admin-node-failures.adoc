@@ -1,0 +1,24 @@
+---
+permalink: maintain/recovering-from-non-primary-admin-node-failures.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, non-primary admin node failure 
+summary: 您必須完成下列工作、才能從非主要管理節點故障中恢復。一個管理節點裝載組態管理節點（CMN\）服務、稱為主要管理節點。雖然您可以擁有多個管理節點、但每StorageGRID 個支援系統僅包含一個主要管理節點。所有其他管理節點均為非主要管理節點。 
+---
+= 從非主要管理節點故障中恢復
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須完成下列工作、才能從非主要管理節點故障中恢復。一個管理節點裝載組態管理節點（CMN）服務、稱為主要管理節點。雖然您可以擁有多個管理節點、但每StorageGRID 個支援系統僅包含一個主要管理節點。所有其他管理節點均為非主要管理節點。
+
+請遵循下列高階步驟來恢復非主要管理節點：
+
+. link:copying-audit-logs-from-failed-non-primary-admin-node.html["從故障的非主要管理節點複製稽核記錄"]
+. link:replacing-non-primary-admin-node.html["更換非主要管理節點"]
+. link:selecting-start-recovery-to-configure-non-primary-admin-node.html["選取「開始恢復」以設定非主要管理節點"]
+. link:restoring-audit-log-on-recovered-non-primary-admin-node.html["在恢復的非主管理節點上還原稽核記錄"]
+. link:restoring-admin-node-database-non-primary-admin-node.html["還原非主要管理節點時、請還原管理節點資料庫"]
+. link:restoring-prometheus-metrics-non-primary-admin-node.html["還原非主要管理節點時的 Prometheus 指標"]
+

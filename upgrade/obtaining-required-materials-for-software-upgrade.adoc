@@ -1,0 +1,67 @@
+---
+permalink: upgrade/obtaining-required-materials-for-software-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, requirements, rhel, red hat, linux, ubuntu, debian 
+summary: 開始軟體升級之前、請先取得所有必要資料。 
+---
+= 取得軟體升級所需的資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+開始軟體升級之前、請先取得所有必要資料。
+
+[cols="1a,3a"]
+|===
+| 項目 | 附註 
+
+
+ a| 
+服務筆記型電腦
+ a| 
+服務型筆記型電腦必須具備：
+
+* 網路連接埠
+* SSH用戶端（例如Putty）
+
+
+
+
+ a| 
+link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]
+ a| 
+瀏覽器支援通常會針對每StorageGRID 個版本進行變更。請確定您的瀏覽器與新StorageGRID 版的更新版本相容。
+
+
+
+ a| 
+資源配置通關密碼
+ a| 
+當StorageGRID 首次安裝此功能時、系統會建立並記錄密碼。資源配置複雜密碼未列在 `Passwords.txt`檔案中。
+
+
+
+ a| 
+Linux RPM 或 Deb 歸檔
+ a| 
+如果在 Linux 主機上部署了任何節點、則必須link:linux-installing-rpm-or-deb-package-on-all-hosts.html["在所有主機上下載並安裝 RPM 或 Deb 套件"]在開始升級之前進行。
+
+確保您的作業系統符合 StorageGRID 的最低核心版本需求：
+
+* link:../rhel/installing-linux.html["在 Red Hat Enterprise Linux 主機上安裝 StorageGRID"]
+* link:../ubuntu/installing-linux.html["在 Ubuntu 或 Debian 主機上安裝 StorageGRID"]
+
+
+
+
+ a| 
+本文檔StorageGRID
+ a| 
+* link:../release-notes/index.html["版本資訊"]適用於 StorageGRID 11.9 （需要登入）。開始升級之前、請務必仔細閱讀這些資訊。
+* https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["StorageGRID 軟體升級解決方案指南"^]對於您要升級的主要版本（需要登入）
+* 其他 https://docs.netapp.com/us-en/storagegrid-family/index.html["本文檔StorageGRID"^]、視需要。
+
+
+|===

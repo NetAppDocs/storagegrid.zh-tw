@@ -1,0 +1,204 @@
+---
+permalink: admin/grid-federation-retry-failed-replication.html 
+sidebar: sidebar 
+keywords: grid federation, troubleshoot 
+summary: 解決跨網格複寫永久性故障警示後、您應該判斷是否有任何物件或刪除標記無法複寫到其他網格。接著您可以重新擷取這些物件、或使用 Grid Management API 來重試複寫。 
+---
+= 識別並重試失敗的複寫作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+解決 *Cross-Grid 複寫永久性失敗 * 警示之後、您應該判斷是否有任何物件或刪除標記無法複寫到其他網格。接著您可以重新擷取這些物件、或使用 Grid Management API 來重試複寫。
+
+「 *Cross-Grid 複寫永久失敗 * 」警示表示租戶物件無法在兩個網格上的貯體之間複寫、原因是需要使用者介入才能解決。此警示通常是由來源或目的地貯體變更所造成。如需詳細資訊、請參閱 link:grid-federation-troubleshoot.html["疑難排解網格同盟錯誤"]。
+
+
+
+== 判斷是否有任何物件無法複寫
+
+若要判斷是否有任何物件或刪除標記尚未複寫至其他網格、您可以在稽核記錄中搜尋link:../audit/cgrr-cross-grid-replication-request.html["CGRR （跨網格複寫要求）"]訊息。當 StorageGRID 無法將物件、多個零件物件或刪除標記複寫至目的地儲存區時、此訊息會新增至記錄檔。
+
+您可以使用link:../audit/using-audit-explain-tool.html["稽核說明工具"]將結果轉換成更容易閱讀的格式。
+
+.開始之前
+* 您擁有root存取權限。
+* 您有 `Passwords.txt`檔案。
+* 您知道主要管理節點的 IP 位址。
+
+
+.步驟
+. 登入主要管理節點：
++
+.. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+
+. 在 audit.log 中搜尋 CGRR 訊息、並使用稽核說明工具來格式化結果。
++
+例如、此命令會在過去 30 分鐘內為所有 CGRR 訊息提供 Greps 、並使用稽核說明工具。
+
++
+`# awk -vdate=$(date -d "30 minutes ago" '+%Y-%m-%dT%H:%M:%S') '$1$2 >= date { print }' audit.log | grep CGRR | audit-explain`
+
++
+此命令的結果將類似於此範例、其中包含六個 CGRR 訊息的項目。在範例中、所有跨網格複寫要求都會傳回一般錯誤、因為物件無法複寫。前三個錯誤是用於「複寫物件」作業、最後三個錯誤是用於「複寫刪除標記」作業。
+
++
+[listing]
+----
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate object" bucket:bucket123 object:"audit-0" version:QjRBNDIzODAtNjQ3My0xMUVELTg2QjEtODJBMjAwQkI3NEM4 error:general error
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate object" bucket:bucket123 object:"audit-3" version:QjRDOTRCOUMtNjQ3My0xMUVELTkzM0YtOTg1MTAwQkI3NEM4 error:general error
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-1" version:NUQ0OEYxMDAtNjQ3NC0xMUVELTg2NjMtOTY5NzAwQkI3NEM4 error:general error
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-5" version:NUQ1ODUwQkUtNjQ3NC0xMUVELTg1NTItRDkwNzAwQkI3NEM4 error:general error
+----
++
+每個項目都包含下列資訊：
+
++
+[cols="1a,2a"]
+|===
+| 欄位 | 說明 
+
+
+| CGRR 跨網格複寫要求  a| 
+要求的名稱
+
+
+
+| 租戶  a| 
+租戶的帳戶 ID
+
+
+
+| 連線  a| 
+網格同盟連線的 ID
+
+
+
+| 營運  a| 
+嘗試的複寫作業類型：
+
+** Replicate 物件
+** 複寫刪除標記
+** 複寫多個部分物件
+
+
+
+
+| 鏟斗  a| 
+貯體名稱
+
+
+
+| 物件  a| 
+物件名稱
+
+
+
+| 版本  a| 
+物件的版本 ID
+
+
+
+| 錯誤  a| 
+錯誤類型。如果跨網格複寫失敗、則錯誤為「一般錯誤」。
+
+|===
+
+
+
+
+== 重試失敗的複製
+
+產生物件清單並刪除未複寫至目的地儲存區的標記、並解決基礎問題之後、您可以使用下列兩種方法重試複寫：
+
+* 將每個物件重新擷取至來源貯體。
+* 如所述、使用 Grid Management 私有 API 。
+
+
+.步驟
+. 從 Grid Manager 頂端選取說明圖示、然後選取 * API 文件 * 。
+. 選取 * 前往私有 API 文件 * 。
++
+
+NOTE: 標示為「私有」的 StorageGRID API 端點如有變更、恕不另行通知。私有端點也會忽略該要求的API版本。StorageGRID
+
+. 在 *Cross-GRID 複寫 - advanci* 區段中、選取下列端點：
++
+`POST /private/cross-grid-replication-retry-failed`
+
+. 選擇*試用*。
+. 在 * 本文 * 文字方塊中、將 * 版本 ID* 的範例項目取代為 audit.log 的版本 ID 、該版本 ID 對應於失敗的跨網格複寫要求。
++
+請務必保留字串周圍的雙引號。
+
+. 選擇*執行*。
+. 確認伺服器回應碼為 *204* 、表示物件或刪除標記已標記為待定、以便跨網格複寫至其他網格。
++
+
+NOTE: 擱置表示已將跨網格複寫要求新增至內部佇列以進行處理。
+
+
+
+
+
+== 監控複寫重試次數
+
+您應該監控複寫重試作業、以確保其完成。
+
+
+TIP: 物件或刪除標記複寫到另一個網格可能需要幾個小時或更久的時間。
+
+您可以使用下列兩種方式來監控重試作業：
+
+* 使用 S3 link:../s3/head-object.html["標題物件"] 或link:../s3/get-object.html["GetObject"]要求。回應包含 StorageGRID 專屬回應標頭、其中包含 `x-ntap-sg-cgr-replication-status`下列其中一個值：
++
+[cols="1a,2a"]
+|===
+| 網格 | 複寫狀態 
+
+
+ a| 
+來源
+ a| 
+** * 已完成 * ：複寫成功。
+** * 擱置 * ：物件尚未複寫。
+** * 失敗 * ：複寫失敗且持續失敗。使用者必須解決此錯誤。
+
+
+
+
+ a| 
+目的地
+ a| 
+* 複本 * ：物件已從來源網格複寫。
+
+|===
+* 如所述、使用 Grid Management 私有 API 。
+
+
+.步驟
+. 在私有 API 文件的 * 跨網格複寫進階 * 區段中、選取下列端點：
++
+`GET /private/cross-grid-replication-object-status/{id}`
+
+. 選擇*試用*。
+. 在「參數」區段中、輸入您在申請中使用的版本 ID `cross-grid-replication-retry-failed` 。
+. 選擇*執行*。
+. 確認伺服器回應碼為 *200* 。
+. 檢閱複寫狀態、這將是下列其中一項：
++
+** * 擱置 * ：物件尚未複寫。
+** * 已完成 * ：複寫成功。
+** * 失敗 * ：複寫失敗且永久失敗。使用者必須解決此錯誤。
+
+
+

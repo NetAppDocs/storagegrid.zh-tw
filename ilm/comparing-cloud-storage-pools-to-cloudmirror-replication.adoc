@@ -1,0 +1,105 @@
+---
+permalink: ilm/comparing-cloud-storage-pools-to-cloudmirror-replication.html 
+sidebar: sidebar 
+keywords: cloud storage pools, cloudmirror replication 
+summary: 開始使用Cloud Storage Pool時、瞭解Cloud Storage Pool與StorageGRID VMware CloudMirror複寫服務之間的相似點和差異可能會有所幫助。 
+---
+= 比較雲端儲存資源池和CloudMirror複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+開始使用Cloud Storage Pool時、瞭解Cloud Storage Pool與StorageGRID VMware CloudMirror複寫服務之間的相似點和差異可能會有所幫助。
+
+[cols="1a,3a,3a"]
+|===
+|  | 雲端儲存資源池 | CloudMirror複寫服務 
+
+
+ a| 
+主要目的為何？
+ a| 
+做為歸檔目標。Cloud Storage Pool中的物件複本可以是物件的唯一複本、也可以是其他複本。也就是說、您可以在 StorageGRID 中保留一份複本、並將複本傳送至雲端儲存池、而不是將兩份複本保留在現場。
+ a| 
+可讓租戶自動將物件從 StorageGRID （來源）的貯體複寫到外部 S3 貯體（目的地）。在個別 S3 基礎架構中建立物件的個別複本。
+
+
+
+ a| 
+如何設定？
+ a| 
+使用 Grid Manager 或 Grid Management API 、以與儲存資源池相同的方式定義。可在 ILM 規則中選取作為放置位置。雖然儲存資源池由一組儲存節點組成、但雲端儲存資源池是使用遠端S3或Azure端點（IP位址、認證等）來定義。
+ a| 
+租戶使用者link:../tenant/configuring-cloudmirror-replication.html["設定CloudMirror複寫"]可以使用 Tenant Manager 或 S3 API 定義 CloudMirror 端點（ IP 位址、認證等）。設定CloudMirror端點之後、該租戶帳戶擁有的任何儲存區都可設定為指向CloudMirror端點。
+
+
+
+ a| 
+誰負責設定？
+ a| 
+通常是網格管理員
+ a| 
+通常是租戶使用者
+
+
+
+ a| 
+目的地為何？
+ a| 
+* 任何相容的S3基礎架構（包括Amazon S3）
+* Azure Blob歸檔層
+* Google Cloud Platform（GCP）
+
+ a| 
+* 任何相容的S3基礎架構（包括Amazon S3）
+* Google Cloud Platform（GCP）
+
+
+
+
+ a| 
+什麼原因會將物件移至目的地？
+ a| 
+主動式 ILM 原則中的一或多個 ILM 規則。ILM規則定義StorageGRID 哪些物件會移至雲端儲存資源池、以及物件移動的時間。
+ a| 
+將新物件擷取至已設定 CloudMirror 端點的來源貯體的動作。除非經過修改、否則不會複寫在使用 CloudMirror 端點設定儲存區之前存在於來源儲存區中的物件。
+
+
+
+ a| 
+如何擷取物件？
+ a| 
+應用程式必須要求StorageGRID 提供物件以擷取已移至雲端儲存資源池的物件。如果物件的唯一複本已轉換為歸檔儲存設備、StorageGRID 則由部門管理還原物件的程序、以便擷取物件。
+ a| 
+由於目標儲存區中的鏡射複本是獨立複本、因此應用程式可以要求StorageGRID 將物件擷取至S庫 或S3目的地。例如、假設您使用CloudMirror複寫將物件鏡射到合作夥伴組織。合作夥伴可以使用自己的應用程式、直接從S3目的地讀取或更新物件。不需要使用此功能。StorageGRID
+
+
+
+ a| 
+您可以直接從目的地讀取嗎？
+ a| 
+否。移至雲端儲存池的物件是由 StorageGRID 管理。讀取要求必須導向StorageGRID 至指令集（StorageGRID 而非指令集將負責從雲端儲存池擷取）。
+ a| 
+是的、因為鏡射複本是獨立的複本。
+
+
+
+ a| 
+如果物件從來源中刪除、會發生什麼情況？
+ a| 
+此物件也會從雲端儲存池中刪除。
+ a| 
+刪除動作不會複寫。刪除的物件已不再存在StorageGRID 於這個物件庫中、但仍存在於目的地庫位中。同樣地、也可以刪除目的地儲存區中的物件、而不會影響來源。
+
+
+
+ a| 
+災難發生後如何存取物件StorageGRID （無法運作的不支援系統）？
+ a| 
+故障StorageGRID 的無法修復節點必須恢復。在此程序期間、複寫物件的複本可以使用Cloud Storage Pool中的複本來還原。
+ a| 
+CloudMirror目的地中的物件複本不受StorageGRID 支援、因此可在StorageGRID 還原物件節點之前直接存取。
+
+|===

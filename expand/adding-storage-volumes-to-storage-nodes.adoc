@@ -1,0 +1,50 @@
+---
+permalink: expand/adding-storage-volumes-to-storage-nodes.html 
+sidebar: sidebar 
+keywords: storage volumes, expand, expansion, add, storage nodes, adding storage capacity 
+summary: 您可以新增額外的儲存磁碟區、以擴充儲存磁碟區容量（儲存磁碟區數量少於16個）的儲存節點。您可能需要將儲存磁碟區新增至多個儲存節點、以滿足複寫或銷毀編碼複本的ILM需求。 
+---
+= 將儲存磁碟區新增至儲存節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以新增額外的儲存磁碟區、以擴充儲存磁碟區容量（儲存磁碟區數量少於16個）的儲存節點。您可能需要將儲存磁碟區新增至多個儲存節點、以滿足複寫或銷毀編碼複本的ILM需求。
+
+.開始之前
+在新增儲存磁碟區之前、請先檢閱link:guidelines-for-adding-object-capacity.html["新增物件容量的準則"]、以確保您知道在何處新增磁碟區、以符合 ILM 原則的要求。
+
+
+NOTE: 這些說明僅適用於軟體型儲存節點。請參閱 https://docs.netapp.com/us-en/storagegrid-appliances/sg6000/adding-expansion-shelf-to-deployed-sg6060.html["將擴充機櫃新增至部署的 SG6060"^]或 https://docs.netapp.com/us-en/storagegrid-appliances/sg6100/adding-expansion-shelf-to-deployed-sg6160.html["將擴充機櫃新增至部署的 SG6160"^]、瞭解如何安裝擴充機櫃、將儲存磁碟區新增至 SG6060 或 SG6160 。其他應用裝置儲存節點無法擴充。
+
+.關於這項工作
+儲存節點的基礎儲存空間分為儲存磁碟區。儲存磁碟區是以區塊為基礎的儲存裝置、由StorageGRID 作業系統格式化並掛載以儲存物件。每個儲存節點最多可支援16個儲存磁碟區、在Grid Manager中稱為「物件存放區」。
+
+
+NOTE: 物件中繼資料一律儲存在物件存放區0中。
+
+每個物件存放區都會掛載到與其ID相對應的磁碟區上。例如、 ID 為 0000 的物件存放區對應於 `/var/local/rangedb/0`裝載點。
+
+在新增儲存磁碟區之前、請使用Grid Manager來檢視每個儲存節點的目前物件存放區、以及對應的掛載點。您可以在新增儲存磁碟區時使用此資訊。
+
+.步驟
+. 選擇*節點*>*站台*>*儲存節點*>*儲存設備*。
+. 向下捲動以檢視每個Volume和物件存放區的可用儲存容量。
++
+對於應用裝置儲存節點、每個磁碟的全球名稱會與您在 SANtricity OS （連接至應用裝置儲存控制器的管理軟體）中檢視標準 Volume 內容時所顯示的全域 Volume 識別碼（ WWID ）相符。
+
++
+為了協助您解讀磁碟讀取及寫入與磁碟區掛載點相關的統計資料、「磁碟裝置」表格*名稱*欄（即_sdc_、_sdd_、_sde_等）中顯示的名稱第一部分、會與「磁碟區」表格*「裝置*」欄中顯示的值相符。
+
++
+image::../media/nodes_page_storage_tables_vol_expansion.png[節點頁面儲存表格]
+
+. 依照平台的指示、將新的儲存磁碟區新增至儲存節點。
++
+** link:vmware-adding-storage-volumes-to-storage-node.html["VMware：將儲存磁碟區新增至儲存節點"]
+** link:linux-adding-direct-attached-or-san-volumes-to-storage-node.html["Linux：將直接附加或SAN磁碟區新增至儲存節點"]
+
+
+

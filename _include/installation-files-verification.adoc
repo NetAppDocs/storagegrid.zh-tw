@@ -1,0 +1,55 @@
+= 
+:allow-uri-read: 
+
+
+. 從驗證套件擷取成品：
++
+`tar -xf StorageGRID_11.9.0_Code_Signature_Verification_Package.tar.gz`
+
+. 確保擷取這些假影：
++
+** 葉證書： `Leaf-Cert.pem`
+** 憑證鏈結： `CA-Int-Cert.pem`
+** 時間戳記回應鏈： `TS-Cert.pem`
+** Checksum 檔案： `sha256sum`
+** Checksum 簽章： `sha256sum.sig`
+** 時間戳記回應檔案： `sha256sum.sig.tsr`
+
+
+. 使用鏈結來確認葉憑證有效。
++
+* 範例 * ： `openssl verify -CAfile CA-Int-Cert.pem Leaf-Cert.pem`
+
++
+* 預期輸出 * ： `Leaf-Cert.pem: OK`
+
+. 如果步驟 _2_ 因為過期的葉憑證而失敗、請使用 `tsr`檔案來驗證。
++
+* 範例 * ： `openssl ts -CAfile CA-Int-Cert.pem -untrusted TS-Cert.pem -verify -data sha256sum.sig -in sha256sum.sig.tsr`
+
++
+* 預期輸出包括 * ： `Verification: OK`
+
+. 從葉憑證建立公開金鑰檔案。
++
+* 範例 * ： `openssl x509 -pubkey -noout -in Leaf-Cert.pem > Leaf-Cert.pub`
+
++
+* 預期輸出 * ： _none_
+
+. 使用公開金鑰來對照驗證 `sha256sum`檔案 `sha256sum.sig`。
++
+* 範例 * ： `openssl dgst -sha256 -verify Leaf-Cert.pub -signature sha256sum.sig sha256sum`
+
++
+* 預期輸出 * ： `Verified OK`
+
+. 對照新建立的校驗和來驗證 `sha256sum`檔案內容。
++
+* 範例 * ： `sha256sum -c sha256sum`
+
++
+* 預期輸出 * ： `_<filename>_: OK` +
+`_<filename>_` 是您下載的歸檔檔案名稱。
+
+

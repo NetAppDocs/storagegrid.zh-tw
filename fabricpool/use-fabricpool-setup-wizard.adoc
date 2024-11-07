@@ -1,0 +1,122 @@
+---
+permalink: fabricpool/use-fabricpool-setup-wizard.html 
+sidebar: sidebar 
+keywords: fabricPool, FabricPool setup wizard, ontap system manager 
+summary: 您可以使用 FabricPool 設定精靈、將 StorageGRID 設定為 FabricPool 雲端層的物件儲存系統。完成安裝精靈後、您可以在 ONTAP 系統管理員中輸入必要的詳細資料。 
+---
+= 使用 FabricPool 安裝精靈：考量與需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 FabricPool 設定精靈、將 StorageGRID 設定為 FabricPool 雲端層的物件儲存系統。完成安裝精靈後、您可以在 ONTAP 系統管理員中輸入必要的詳細資料。
+
+
+
+== 何時使用 FabricPool 設定精靈
+
+FabricPool 安裝精靈會引導您完成設定 StorageGRID 以搭配 FabricPool 使用的每個步驟、並自動為您設定特定實體、例如 ILM 和流量分類原則。完成精靈時、您可以下載檔案、以便在 ONTAP 系統管理員中輸入值。使用精靈可更快速地設定系統、並確保您的設定符合 StorageGRID 和 FabricPool 最佳實務做法。
+
+假設您具有「根目錄」存取權限、則可以在開始使用 StorageGRID Grid Manager 時完成 FabricPool 安裝精靈、或是在任何時候存取並完成精靈。視您的需求而定、您也可以手動設定部分或全部必要項目、然後使用精靈將 ONTAP 所需的值組合到單一檔案中。
+
+
+TIP: 除非您知道自己有特殊需求、否則請使用 FabricPool 安裝精靈、否則實作將需要大量自訂。
+
+
+
+== 使用精靈之前
+
+確認您已完成這些必要步驟。
+
+
+
+=== 檢視最佳實務做法
+
+* 您大致瞭解link:information-needed-to-attach-storagegrid-as-cloud-tier.html["將 StorageGRID 附加為雲端層所需的資訊"]。
+* 您已檢閱 FabricPool 最佳實務做法、瞭解：
++
+** link:best-practices-for-high-availability-groups.html["高可用度（ HA ）群組"]
+** link:best-practices-for-load-balancing.html["負載平衡"]
+** link:best-practices-ilm.html["ILM 規則與原則"]
+
+
+
+
+
+
+=== 取得 IP 位址並設定 VLAN 介面
+
+如果您要設定 HA 群組、就會知道 ONTAP 將連接哪些節點、以及將使用哪個 StorageGRID 網路。您也知道要輸入哪些子網路 CIDR 、閘道 IP 位址和虛擬 IP （ VIP ）位址值。
+
+如果您打算使用虛擬 LAN 來分隔 FabricPool 流量、則表示您已經設定了 VLAN 介面。請參閱。 link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]
+
+
+
+=== 設定身分識別聯盟和 SSO
+
+如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道哪個同盟群組應該擁有 ONTAP 將使用之租戶帳戶的根存取權。請參閱link:../admin/using-identity-federation.html["使用身分識別聯盟"]和link:../admin/configuring-sso.html["設定單一登入"]。
+
+
+
+=== 取得及設定網域名稱
+
+* 您知道 StorageGRID 要使用哪個完整網域名稱（ FQDN ）。網域名稱伺服器（ DNS ）項目會將此 FQDN 對應到您使用精靈建立的 HA 群組的虛擬 IP （ VIP ）位址。請參閱。 link:../fabricpool/configure-dns-server.html["設定 DNS 伺服器"]
+* 如果您打算使用 S3 虛擬託管式要求link:../admin/configuring-s3-api-endpoint-domain-names.html["已設定 S3 端點網域名稱"]、您有。ONTAP 預設會使用路徑樣式的 URL 、但建議使用虛擬託管樣式的要求。
+
+
+
+
+=== 檢閱負載平衡器和安全性憑證需求
+
+如果您打算使用 StorageGRID 負載平衡器，則已查看了常規link:../admin/managing-load-balancing.html["負載平衡考量"]。您擁有要上傳的憑證或產生憑證所需的值。
+
+如果您打算使用外部（第三方）負載平衡器端點、則該負載平衡器具有完整網域名稱（ FQDN ）、連接埠和憑證。
+
+
+
+=== 確認 ILM 儲存池組態
+
+如果您最初安裝的是 StorageGRID 11.6 或更早版本、則表示您已設定要使用的儲存池。一般而言、您應該為將用於儲存 ONTAP 資料的每個 StorageGRID 站台建立儲存池。
+
+
+NOTE: 如果您最初安裝的是 StorageGRID 11.7 或 11.8 、則不適用此先決條件。當您最初安裝其中任一版本時、系統會自動為每個站台建立儲存資源池。
+
+
+
+== ONTAP 與 StorageGRID 雲端層之間的關係
+
+FabricPool 精靈會引導您完成建立單一 StorageGRID 雲端層的程序、其中包括一個 StorageGRID 租戶、一組存取金鑰和一個 StorageGRID 貯體。您可以將此 StorageGRID 雲端層附加到一或多個 ONTAP 本機層。
+
+將單一雲端層附加到叢集中的多個本機層是一般最佳實務做法。不過、視您的需求而定、您可能會想要在單一叢集中的本機層使用多個貯體、甚至多個 StorageGRID 租戶。使用不同的貯體和租戶、可讓您隔離 ONTAP 本機層之間的資料和資料存取、但設定和管理的複雜度較高。
+
+NetApp 不建議將單一雲端層附加到多個叢集中的本機層。
+
+
+NOTE: 有關將 StorageGRID 與 NetApp MetroCluster ™和 FabricPool 鏡像配合使用的最佳做法，請參閱 https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598 ： ONTAP 中的 FabricPool 最佳實務做法"^]。
+
+
+
+=== 選用：為每個本機層使用不同的貯體
+
+若要在 ONTAP 叢集中的本機階層使用多個儲存區、請在 ONTAP 中新增多個 StorageGRID 雲端層。每個雲端層都共用相同的 HA 群組、負載平衡器端點、租戶和存取金鑰、但使用不同的容器（ StorageGRID 貯體）。請遵循下列一般步驟：
+
+. 在 StorageGRID Grid Manager 中、完成第一個雲端層的 FabricPool 設定精靈。
+. 從 ONTAP 系統管理員新增雲端層、並使用您從 StorageGRID 下載的檔案來提供必要的值。
+. 從 StorageGRID 租戶管理員登入精靈所建立的租戶、然後建立第二個貯體。
+. 再次完成 FabricPool 精靈。選取現有的 HA 群組、負載平衡器端點和租戶。然後、選取您手動建立的新貯體。為新的貯體建立新的 ILM 規則、並啟動 ILM 原則以納入該規則。
+. 從 ONTAP 新增第二個雲端層、但提供新的儲存區名稱。
+
+
+
+
+=== 選用：為每個本機層使用不同的租戶和貯體
+
+若要為 ONTAP 叢集中的本機層使用多個租戶和不同的存取金鑰集、請在 ONTAP 中新增多個 StorageGRID 雲端層。每個雲端層共用相同的 HA 群組、負載平衡器端點、但使用不同的租戶、存取金鑰和容器（ StorageGRID 貯體）。請遵循下列一般步驟：
+
+. 在 StorageGRID Grid Manager 中、完成第一個雲端層的 FabricPool 設定精靈。
+. 從 ONTAP 系統管理員新增雲端層、並使用您從 StorageGRID 下載的檔案來提供必要的值。
+. 再次完成 FabricPool 精靈。選取現有的 HA 群組和負載平衡器端點。建立新的租戶和貯體。為新的貯體建立新的 ILM 規則、並啟動 ILM 原則以納入該規則。
+. 從 ONTAP 新增第二層雲端、但提供新的存取金鑰、秘密金鑰和儲存庫名稱。
+

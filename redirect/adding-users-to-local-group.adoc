@@ -1,0 +1,8 @@
+---
+permalink: tenant/adding-users-to-local-group.html 
+redirect: storagegrid/tenant/manage-groups.html#view-or-edit-group 
+---
+= 
+:allow-uri-read: 
+
+

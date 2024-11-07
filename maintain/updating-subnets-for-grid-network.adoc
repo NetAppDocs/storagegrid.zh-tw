@@ -1,0 +1,83 @@
+---
+permalink: maintain/updating-subnets-for-grid-network.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, subnet, grid network, update subnets 
+summary: 此技術可維護網格網路（eth0）上用於在網格節點之間進行通訊的網路子網路清單。StorageGRID這些項目包括StorageGRID 您的系統所在站台用於Grid Network的子網路、以及透過Grid Network閘道存取的NTP、DNS、LDAP或其他外部伺服器所使用的任何子網路。當您在擴充中新增網格節點或新站台時、可能需要更新或新增子網路至網格網路。 
+---
+= 更新Grid Network的子網路
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此技術可維護網格網路（eth0）上用於在網格節點之間進行通訊的網路子網路清單。StorageGRID這些項目包括StorageGRID 您的系統所在站台用於Grid Network的子網路、以及透過Grid Network閘道存取的NTP、DNS、LDAP或其他外部伺服器所使用的任何子網路。當您在擴充中新增網格節點或新站台時、可能需要更新或新增子網路至網格網路。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:../admin/admin-group-permissions.html["維護或根存取權限"]。
+* 您有資源配置通關密碼。
+* 您可以使用CIDR表示法來設定要設定的子網路位址。
+
+
+.關於這項工作
+如果您執行的擴充活動包括新增子網路、則必須在開始擴充程序之前、將新的子網路新增至 Grid Network 子網路清單。否則、您必須取消擴充、新增子網路、然後重新開始擴充。
+
+
+
+== 新增子網路
+
+.步驟
+. 選擇*維護*>*網路*>*網格網路*。
+. 選取 * 新增其他子網路 * 、以 CIDR 表示法新增子網路。
++
+例如，輸入 `10.96.104.0/22`。
+
+. 輸入資源配置通關密碼、然後選取*「Save*（儲存*）」。
+. 等到套用變更後、再下載新的恢復套件。
++
+.. 選擇* maintenance *>* System*>* Recovery套件*。
+.. 輸入*配置密碼*。
++
+
+CAUTION: 必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。它也用於恢復主管理節點。
+
+
+
+
+
+您指定的子網路會自動設定為StorageGRID 適用於您的整個系統。
+
+
+
+== 編輯子網路
+
+.步驟
+. 選擇*維護*>*網路*>*網格網路*。
+. 選取您要編輯的子網路、然後進行必要的變更。
+. 輸入資源配置密碼短語、然後選取 * 儲存 * 。
+. 在確認對話方塊中選取*是*。
+. 等到套用變更後、再下載新的恢復套件。
++
+.. 選擇* maintenance *>* System*>* Recovery套件*。
+.. 輸入*配置密碼*。
+
+
+
+
+
+
+== 刪除子網路
+
+.步驟
+. 選擇*維護*>*網路*>*網格網路*。
+. 選取子網路旁的刪除圖示image:../media/icon-x-to-remove.png["刪除圖示"]。
+. 輸入資源配置密碼短語、然後選取 * 儲存 * 。
+. 在確認對話方塊中選取*是*。
+. 等到套用變更後、再下載新的恢復套件。
++
+.. 選擇* maintenance *>* System*>* Recovery套件*。
+.. 輸入*配置密碼*。
+
+
+

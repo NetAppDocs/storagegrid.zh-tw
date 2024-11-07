@@ -1,0 +1,61 @@
+---
+permalink: fabricpool/best-practices-for-load-balancing.html 
+sidebar: sidebar 
+keywords: fabricPool, load balancer endpoint, load balancing, Layer 7, best practices, certificate, CA, certificate authority, tls, ssl 
+summary: 在將 StorageGRID 附加為 FabricPool 雲端層之前、請先檢閱搭配 FabricPool 使用負載平衡器的最佳實務做法。 
+---
+= FabricPool 負載平衡的最佳實務做法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在將 StorageGRID 附加為 FabricPool 雲端層之前、請先檢閱搭配 FabricPool 使用負載平衡器的最佳實務做法。
+
+若要深入瞭解 StorageGRID 負載平衡器和負載平衡器憑證的一般資訊，請參閱link:../admin/managing-load-balancing.html["負載平衡考量"]。
+
+
+
+== 租戶存取用於 FabricPool 的負載平衡器端點的最佳實務做法
+
+您可以控制哪些租戶可以使用特定負載平衡器端點來存取其貯體。您可以允許所有租戶、允許某些租戶、或封鎖某些租戶。建立 FabricPool 使用的負載平衡端點時、請選取 * 允許所有租戶 * 。ONTAP 會加密放置在 StorageGRID 儲存區中的資料、因此這種額外的安全層幾乎不會提供額外的安全性。
+
+
+
+== 安全性憑證的最佳實務做法
+
+當您建立用於 FabricPool 的 StorageGRID 負載平衡器端點時、您會提供安全性憑證、讓 ONTAP 能夠使用 StorageGRID 進行驗證。
+
+在大多數情況下、 ONTAP 和 StorageGRID 之間的連線應該使用傳輸層安全性（ TLS ）加密。支援不使用 TLS 加密的 FabricPool 、但不建議使用。當您選取 StorageGRID 負載平衡器端點的網路傳輸協定時、請選取 *HTTPS* 。然後提供安全性憑證、允許 ONTAP 驗證 StorageGRID 。
+
+若要深入瞭解負載平衡端點的伺服器憑證：
+
+* link:../admin/using-storagegrid-security-certificates.html["管理安全性憑證"]
+* link:../admin/managing-load-balancing.html["負載平衡考量"]
+* link:../harden/hardening-guideline-for-server-certificates.html["伺服器憑證的強化準則"]
+
+
+
+
+=== 將憑證新增至 ONTAP
+
+當您將 StorageGRID 新增為 FabricPool 雲端層時、必須在 ONTAP 叢集上安裝相同的憑證、包括根憑證和任何次級憑證授權單位（ CA ）憑證。
+
+
+
+=== 管理憑證過期
+
+
+CAUTION: 如果用於保護 ONTAP 與 StorageGRID 之間連線的憑證過期、 FabricPool 將暫時停止運作、 ONTAP 將暫時失去對 StorageGRID 階層資料的存取權。
+
+若要避免憑證過期問題、請遵循下列最佳實務做法：
+
+* 請仔細監控任何警告即將到期的憑證、例如 * 負載平衡器端點憑證到期 * 和 * S3 API* 警示的通用伺服器憑證到期日。
+* 請務必保持憑證的 StorageGRID 和 ONTAP 版本同步。如果您更換或續約用於負載平衡器端點的憑證、則必須更換或續約 ONTAP 用於雲端層的同等憑證。
+* 使用公開簽署的 CA 憑證。如果您使用 CA 簽署的憑證、則可以使用 Grid Management API 來自動化憑證輪換。這可讓您在不中斷營運的情況下、更換即將到期的憑證。
+* 如果您已產生自我簽署的 StorageGRID 憑證、且該憑證即將過期、則必須在現有憑證過期之前、手動在 StorageGRID 和 ONTAP 中置換憑證。如果自我簽署的憑證已經過期、請在 ONTAP 中關閉憑證驗證、以防止存取遺失。
++
+如需相關指示、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_a_new_StorageGRID_self-signed_server_certificate_on_an_existing_ONTAP_FabricPool_deployment["NetApp 知識庫：如何在現有的 ONTAP FabricPool 部署上設定新的 StorageGRID 自我簽署伺服器憑證"^]。
+
+

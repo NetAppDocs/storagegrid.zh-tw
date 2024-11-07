@@ -1,0 +1,8 @@
+---
+permalink: network/client-network-requirements.html 
+redirect: storagegrid/network/network-specific-requirements.html 
+---
+= 
+:allow-uri-read: 
+
+

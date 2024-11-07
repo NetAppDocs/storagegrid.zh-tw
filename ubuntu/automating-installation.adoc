@@ -1,0 +1,139 @@
+---
+permalink: ubuntu/automating-installation.html 
+sidebar: sidebar 
+keywords: how to automate ubuntu or debian installation 
+summary: 您可以自動化StorageGRID 安裝支援服務和網格節點的組態。 
+---
+= 自動化安裝（Ubuntu或DEBIAN]）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以自動化StorageGRID 安裝支援服務和網格節點的組態。
+
+.關於這項工作
+在下列任一情況下、自動化部署可能會很有用：
+
+* 您已經使用標準協調架構（例如Ansible、Puppet或Chef）來部署及設定實體或虛擬主機。
+* 您打算部署多StorageGRID 個實例。
+* 您正在部署一個龐大且複雜StorageGRID 的實體執行個體。
+
+
+這個支援服務是由套件安裝、並由組態檔案驅動、可在手動安裝期間互動建立、或是預先準備（或以程式設計方式）、以使用標準協調架構進行自動化安裝。StorageGRIDStorageGRID 提供選用的 Python 指令碼、可將 StorageGRID 應用裝置和整個 StorageGRID 系統（「網格」）的組態自動化。您可以直接使用這些指令碼、也可以檢查這些指令碼、瞭解如何在StorageGRID 您自行開發的網格部署和組態工具中使用《安裝REST API》。
+
+
+
+== 自動化StorageGRID 安裝及設定整套的支援服務
+
+您可以StorageGRID 使用Ansible、Puppet、Chef、Fabric或SaltStack等標準協調架構來自動化安裝支援服務。
+
+這個支援功能封裝在Deb中、由組態檔案驅動、這些檔案可預先準備（或以程式設計方式）以啟用自動安裝。StorageGRID如果您已經使用標準的協調架構來安裝及設定Ubuntu或DEBIAN,那麼在StorageGRID 您的教戰手冊或食譜中加入一些功能就應該很簡單。
+
+您可以將這些工作自動化：
+
+. 安裝Linux
+. 設定Linux
+. 設定主機網路介面以滿足StorageGRID 需求
+. 設定主機儲存設備以滿足StorageGRID 需求
+. 安裝Docker
+. 安裝StorageGRID 支援服務
+. 在中建立 StorageGRID 節點組態檔案 `/etc/storagegrid/nodes`
+. 正在驗StorageGRID 證節點組態檔案
+. 啟動StorageGRID 支援服務
+
+
+
+
+=== Ansible角色與方針範例
+
+範例 Ansible 角色和教戰手冊隨附於資料夾中的安裝封存 `/extras`。Ansible 教戰手冊說明角色如何 `storagegrid`準備主機、並將 StorageGRID 安裝到目標伺服器上。您可以視需要自訂角色或方針。
+
+
+
+== 自動化StorageGRID 功能組態
+
+部署完網格節點之後、您可以自動化StorageGRID 設定該系統。
+
+.開始之前
+* 您可以從安裝歸檔中得知下列檔案的位置。
++
+[cols="1a,1a"]
+|===
+| 檔案名稱 | 說明 
+
+
+| configure-storagegrid.py  a| 
+Python指令碼用於自動化組態
+
+
+
+| 設定-storagegrid。same.json  a| 
+用於指令碼的組態檔範例
+
+
+
+| 設定-storagegrid。blank.json  a| 
+與指令碼搭配使用的空白組態檔
+
+|===
+* 您已建立 `configure-storagegrid.json`組態檔案。要創建此文件，您可以修改示例配置文件(`configure-storagegrid.blank.json`）(`configure-storagegrid.sample.json`或空白配置文件）。
+
+
+.關於這項工作
+您可以使用 `configure-storagegrid.py` Python 指令碼和 `configure-storagegrid.json`組態檔來自動化 StorageGRID 系統的組態。
+
+
+NOTE: 您也可以使用Grid Manager或安裝API來設定系統。
+
+.步驟
+. 登入您用來執行Python指令碼的Linux機器。
+. 切換至您擷取安裝歸檔的目錄。
++
+例如：
+
++
+[listing]
+----
+cd StorageGRID-Webscale-version/platform
+----
++
+其中 `platform`是 `debs`、 `rpms`或 `vsphere`。
+
+. 執行Python指令碼並使用您建立的組態檔。
++
+例如：
+
++
+[listing]
+----
+./configure-storagegrid.py ./configure-storagegrid.json --start-install
+----
+
+
+.結果
+恢復套件 `.zip`檔案會在組態程序期間產生、並下載到執行安裝和組態程序的目錄。您必須備份「恢復套件」檔案、以便StorageGRID 在一個或多個網格節點故障時、恢復該系統。例如、將其複製到安全的備份網路位置、以及安全的雲端儲存位置。
+
+
+CAUTION: 必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。
+
+如果您指定應產生隨機密碼、請開啟檔案、 `Passwords.txt`並尋找存取 StorageGRID 系統所需的密碼。
+
+[listing]
+----
+######################################################################
+##### The StorageGRID "Recovery Package" has been downloaded as: #####
+#####           ./sgws-recovery-package-994078-rev1.zip          #####
+#####   Safeguard this file as it will be needed in case of a    #####
+#####                 StorageGRID node recovery.                 #####
+######################################################################
+----
+系統會在顯示確認訊息時安裝及設定您的系統。StorageGRID
+
+[listing]
+----
+StorageGRID has been configured and installed.
+----
+.相關資訊
+link:overview-of-installation-rest-api.html["安裝 REST API"]

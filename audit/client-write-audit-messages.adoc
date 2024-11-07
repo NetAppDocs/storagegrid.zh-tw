@@ -1,0 +1,100 @@
+---
+permalink: audit/client-write-audit-messages.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, messages, client write, OVWR, SDEL, SPOS, SPUT, SUPD, WDEL, WPUT, S3 
+summary: S3 用戶端應用程式要求建立或修改物件時、會記錄用戶端寫入稽核訊息。 
+---
+= 用戶端寫入稽核訊息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3 用戶端應用程式要求建立或修改物件時、會記錄用戶端寫入稽核訊息。
+
+[cols="1a,3a,1a,1a"]
+|===
+| 程式碼 | 說明 | 使用者 | 請參閱 
+
+
+ a| 
+VW寫入
+ a| 
+物件覆寫：記錄交易、以其他物件覆寫一個物件。
+ a| 
+S3 和 Swift 用戶端
+ a| 
+link:ovwr-object-overwrite.html["OW寫入：物件覆寫"]
+
+
+
+ a| 
+SDEL
+ a| 
+S3刪除：記錄成功的交易以刪除物件或儲存區。
+
+*附註：*如果交易是在子資源上進行、則稽核訊息會包含S3SR欄位。
+ a| 
+S3用戶端
+ a| 
+link:sdel-s3-delete.html["SDEL：S3刪除"]
+
+
+
+ a| 
+SPOS
+ a| 
+S3 POST：記錄成功的交易、將物件從AWS Glacier儲存設備還原至雲端儲存池。
+ a| 
+S3用戶端
+ a| 
+link:spos-s3-post.html["SPOS：S3 POST"]
+
+
+
+ a| 
+SPUT
+ a| 
+S3 PUT：記錄成功的交易、以建立新的物件或儲存區。
+
+*附註：*如果交易是在子資源上進行、則稽核訊息會包含S3SR欄位。
+ a| 
+S3用戶端
+ a| 
+link:sput-s3-put.html["SPUT：S3"]
+
+
+
+ a| 
+SUPD
+ a| 
+S3中繼資料已更新：記錄成功的交易、以更新現有物件或儲存區的中繼資料。
+ a| 
+S3用戶端
+ a| 
+link:supd-s3-metadata-updated.html["SUBPD：S3中繼資料已更新"]
+
+
+
+ a| 
+WDEL
+ a| 
+Swift刪除：記錄成功的交易以刪除物件或容器。
+ a| 
+Swift用戶端
+ a| 
+link:wdel-swift-delete.html["WDEL：Swift刪除"]
+
+
+
+ a| 
+WUT
+ a| 
+Swift PUT：記錄成功的交易、以建立新的物件或容器。
+ a| 
+Swift用戶端
+ a| 
+link:wput-swift-put.html["WUTT：Swift Put"]
+
+|===

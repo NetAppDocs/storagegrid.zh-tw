@@ -1,0 +1,53 @@
+---
+permalink: s3/upload-part-copy.html 
+sidebar: sidebar 
+keywords: UploadPart, UploadPartCopy, multipart uploads, uploads, 
+summary: 上傳 PartCopy 作業會將現有物件的資料複製為資料來源、以上傳物件的一部分。 
+---
+= 上傳PartCopy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+上傳 PartCopy 作業會將現有物件的資料複製為資料來源、以上傳物件的一部分。
+
+所有 Amazon S3 REST API 行為都會實作上傳 PartCopy 作業。如有變更、恕不另行通知。
+
+此要求會讀寫 StorageGRID 系統內指定的物件資料 `x-amz-copy-source-range`。
+
+支援下列要求標頭：
+
+* `x-amz-copy-source-if-match`
+* `x-amz-copy-source-if-none-match`
+* `x-amz-copy-source-if-unmodified-since`
+* `x-amz-copy-source-if-modified-since`
+
+
+
+
+== 要求伺服器端加密的標頭
+
+如果您為 CreateMultpartUpload 要求指定了 SSE-C 加密、則每個 UploadPartCopy 要求中也必須包含下列要求標頭：
+
+* `x-amz-server-side-encryption-customer-algorithm`：指定 `AES256`。
+* `x-amz-server-side-encryption-customer-key`：指定您在 CreateMultpartUpload 要求中提供的相同加密金鑰。
+* `x-amz-server-side-encryption-customer-key-MD5`：指定您在 CreateMultpartUpload 要求中提供的相同 MD5 摘要。
+
+
+如果來源物件是使用客戶提供的金鑰（ SSE-C ）加密、則必須在上傳 PartCopy 要求中包含下列三個標頭、以便將物件解密後再複製：
+
+* `x-amz-copy-source​-server-side​-encryption​-customer-algorithm`：指定 `AES256`。
+* `x-amz-copy-source​-server-side-encryption-customer-key`：指定創建源對象時提供的加密密鑰。
+* `x-amz-copy-source​-server-side-encryption-customer-key-MD5`：指定在創建源對象時提供的 MD5 摘要。
+
+
+
+CAUTION: 您提供的加密金鑰永遠不會儲存。如果您遺失加密金鑰、就會遺失對應的物件。在使用客戶提供的金鑰來保護物件資料之前，請先檢閱中的考量事項link:using-server-side-encryption.html["使用伺服器端加密"]。
+
+
+
+== 版本管理
+
+多部分上傳包含不同的作業、可用於初始化上傳、列出上傳內容、上傳零件、組裝上傳的零件、以及完成上傳。執行「 CompleteMultpartUpload 」（ CompleteMultpartUpload ）作業時、即會建立物件（並在適用的情況下進行版本控制）。

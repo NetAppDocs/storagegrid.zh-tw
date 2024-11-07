@@ -1,0 +1,61 @@
+---
+permalink: s3/recommendations-for-implementing-s3-rest-api.html 
+sidebar: sidebar 
+keywords: implement s3 rest api 
+summary: 實作S3 REST API以搭配StorageGRID 使用時、請遵循以下建議。 
+---
+= 實作S3 REST API的建議
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+實作S3 REST API以搭配StorageGRID 使用時、請遵循以下建議。
+
+
+
+== 針對不存在物件的使用者提出建議
+
+如果應用程序例行檢查某個對象是否存在於您不希望該對象實際存在的路徑中，則應使用 " 可用 " link:consistency-controls.html["一致性"]。例如、如果您的應用程式在放置前先找到某個位置、則應使用「可用」一致性。
+
+否則、如果前端作業找不到物件、如果同一站台上有兩個或多個儲存節點無法使用、或遠端站台無法連線、您可能會收到大量 500 個內部伺服器錯誤。
+
+您可以使用要求為每個貯體設定「可用」一致性link:put-bucket-consistency-request.html["實現庫位一致性"]、或是在個別 API 作業的要求標頭中指定一致性。
+
+
+
+== 物件金鑰建議
+
+請根據第一次建立貯體的時間、遵循下列物件金鑰名稱建議。
+
+.在 StorageGRID 11.4 或更早版本中建立的貯體
+* 請勿使用隨機值做為物件金鑰的前四個字元。這與前AWS關於金鑰前置碼的建議不同。請改用非隨機、非唯一的前置字元、例如 `image`。
+* 如果您遵循前 AWS 的建議、在金鑰首碼中使用隨機和唯一字元、請在物件金鑰前加上目錄名稱。也就是使用此格式：
++
+`mybucket/mydir/f8e3-image3132.jpg`
+
++
+而非此格式：
+
++
+`mybucket/f8e3-image3132.jpg`
+
+
+
+.在 StorageGRID 11.4 或更新版本中建立的貯體
+不需要限制物件金鑰名稱以符合效能最佳實務做法。在大多數情況下、您可以對物件金鑰名稱的前四個字元使用隨機值。
+
+
+TIP: S3 工作負載的例外情況是、它會在一段短時間後持續移除所有物件。為了將此使用案例的效能影響降至最低、請將金鑰名稱的前置部分變更為每數千個物件、例如日期。例如、假設 S3 用戶端通常每秒寫入 2 、 000 個物件、而 ILM 或儲存庫生命週期原則則會在三天後移除所有物件。若要將效能影響降至最低、您可以使用如下模式命名金鑰： `/mybucket/mydir/_yyyymmddhhmmss_-_random_UUID_.jpg`
+
+
+
+== 「範圍讀取」建議
+
+如果link:../admin/configuring-stored-object-compression.html["用於壓縮儲存物件的全域選項"]啟用、 S3 用戶端應用程式應避免執行 GetObject 作業、以指定傳回位元組範圍。這些「範圍讀取」作業效率不彰、因為 StorageGRID 必須有效地解壓縮物件以存取要求的位元組。從非常大的物件要求少量位元組的 GetObject 作業尤其缺乏效率、例如從 50 GB 壓縮物件讀取 10 MB 範圍是效率不彰的。
+
+如果從壓縮物件讀取範圍、用戶端要求可能會逾時。
+
+
+NOTE: 如果您需要壓縮物件、而用戶端應用程式必須使用範圍讀取、請增加應用程式的讀取逾時。

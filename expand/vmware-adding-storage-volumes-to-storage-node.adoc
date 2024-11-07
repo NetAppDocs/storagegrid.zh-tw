@@ -1,0 +1,112 @@
+---
+permalink: expand/vmware-adding-storage-volumes-to-storage-node.html 
+sidebar: sidebar 
+keywords: expand, expansion, storage node, add storage volumes, VMware 
+summary: 如果儲存節點包含少於16個儲存磁碟區、您可以使用VMware vSphere來新增磁碟區、藉此增加其容量。 
+---
+= VMware：將儲存磁碟區新增至儲存節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果儲存節點包含少於16個儲存磁碟區、您可以使用VMware vSphere來新增磁碟區、藉此增加其容量。
+
+.開始之前
+* 您可以取得安裝StorageGRID VMware部署用的VMware解決方案的說明。
++
+** link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
+
+
+* 您有 `Passwords.txt`檔案。
+* 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
+
+
+
+CAUTION: 當軟體升級、還原程序或其他擴充程序處於作用中狀態時、請勿嘗試將儲存磁碟區新增至儲存節點。
+
+.關於這項工作
+當您新增儲存磁碟區時、儲存節點會暫時無法使用。您應一次在一個儲存節點上執行此程序、以避免影響面向用戶端的網格服務。
+
+.步驟
+. 如有必要、請安裝新的儲存硬體並建立新的VMware資料存放區。
+. 將一或多個硬碟新增至虛擬機器、以做為儲存設備（物件存放區）。
++
+.. 開啟VMware vSphere Client。
+.. 編輯虛擬機器設定以新增一或多個額外的硬碟。
+
+
++
+硬碟通常設定為虛擬機器磁碟（VMDK）。VMDK 更常使用、更容易管理、而 RDM 則可為使用較大物件大小（例如大於 100 MB ）的工作負載提供更好的效能。如需將硬碟新增至虛擬機器的詳細資訊、請參閱VMware vSphere文件。
+
+. 使用 VMware vSphere Client 中的 * 重新啟動來賓作業系統 * 選項、或在連往虛擬機器的 ssh 工作階段中輸入下列命令、以重新啟動虛擬機器：``sudo reboot``
++
+
+NOTE: 請勿使用 * 關機 * 或 * 重設 * 來重新啟動虛擬機器。
+
+. 設定儲存節點使用的新儲存設備：
++
+.. 登入網格節點：
++
+... 輸入下列命令： `ssh admin@_grid_node_IP_`
+... 輸入檔案中列出的密碼 `Passwords.txt`。
+... 輸入以下命令切換到 root ： `su -`
+... 輸入檔案中列出的密碼 `Passwords.txt`。當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+.. 設定新的儲存磁碟區：
++
+`sudo add_rangedbs.rb`
+
++
+此指令碼會尋找任何新的儲存磁碟區、並提示您進行格式化。
+
+.. 輸入* y*以接受格式化。
+.. 如果任何磁碟區先前已格式化、請決定是否要重新格式化。
++
+*** 輸入* y*重新格式化。
+*** 輸入* n*跳過重新格式化。
+
+
+
+
++
+ `setup_rangedbs.sh`指令碼會自動執行。
+
+. 檢查服務是否正確啟動：
++
+.. 檢視伺服器上所有服務的狀態清單：
++
+`sudo storagegrid-status`
+
++
+狀態會自動更新。
+
+.. 請等到所有服務都在執行或已驗證為止。
+.. 結束狀態畫面：
++
+`Ctrl+C`
+
+
+
+. 確認儲存節點已上線：
++
+.. 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+.. 選取*支援*>*工具*>*網格拓撲*。
+.. 選擇「*站台_*>*儲存節點_*>* LdR*>*儲存設備*」。
+.. 選取*組態*索引標籤、然後選取*主要*索引標籤。
+.. 如果*儲存狀態-所需*下拉式清單設定為唯讀或離線、請選取*線上*。
+.. 選取*套用變更*。
+
+
+. 若要查看新的物件存放區：
++
+.. 選擇*節點*>*站台*>*儲存節點*>*儲存設備*。
+.. 在*物件存放區*表格中檢視詳細資料。
+
+
+
+
+.結果
+您可以使用儲存節點的擴充容量來儲存物件資料。

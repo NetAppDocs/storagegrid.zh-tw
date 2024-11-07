@@ -1,0 +1,109 @@
+---
+permalink: maintain/identifying-and-unmounting-failed-storage-volumes.html 
+sidebar: sidebar 
+keywords: storagegrid, storage volume, failed storage volume, unmount failed volume 
+summary: 在恢復儲存磁碟區故障的儲存節點時、您必須識別並卸載故障的磁碟區。您必須確認只有故障的儲存磁碟區才會重新格式化為還原程序的一部分。 
+---
+= 識別並卸載故障的儲存磁碟區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在恢復儲存磁碟區故障的儲存節點時、您必須識別並卸載故障的磁碟區。您必須確認只有故障的儲存磁碟區才會重新格式化為還原程序的一部分。
+
+.開始之前
+您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+
+.關於這項工作
+您應該儘快恢復故障的儲存磁碟區。
+
+恢復程序的第一步是偵測已分離、需要卸載或發生I/O錯誤的磁碟區。如果故障的磁碟區仍附加在磁碟區中、但檔案系統隨機毀損、則系統可能無法偵測到磁碟未使用或未分配的部分有任何毀損。
+
+
+NOTE: 您必須先完成此程序、再執行手動步驟來恢復磁碟區、例如新增或重新連接磁碟、停止節點、啟動節點或重新開機。否則、當您執行指令碼時 `reformat_storage_block_devices.rb`、可能會遇到檔案系統錯誤、導致指令碼當機或失敗。
+
+
+NOTE: 在執行命令之前、請先修復硬體並正確連接磁碟 `reboot`。
+
+
+CAUTION: 請仔細識別故障的儲存磁碟區。您將使用此資訊來驗證哪些磁碟區必須重新格式化。磁碟區重新格式化之後、磁碟區上的資料將無法還原。
+
+若要正確恢復故障的儲存磁碟區、您必須知道故障儲存磁碟區的裝置名稱及其Volume ID。
+
+安裝時、每個儲存設備都會指派一個檔案系統通用唯一識別碼（UUID）、並使用指派的檔案系統UUID掛載至儲存節點上的rangedb目錄。檔案中會列出檔案系統 UUID 和 rangedb 目錄 `/etc/fstab`。Grid Manager中會顯示裝置名稱、rangedb目錄、以及掛載磁碟區的大小。
+
+在以下範例中、裝置 `/dev/sdc`的磁碟區大小為 4 TB 、會使用檔案中的/`etc/fstab`裝置名稱 `/dev/disk/by-uuid/822b0547-3b2b-472e-ad5e-e1cf1809faba`掛載至 `/var/local/rangedb/0`：
+
+image::../media/mounting_storage_devices.gif[Volume 大小範例]
+
+.步驟
+. 完成下列步驟、記錄故障的儲存磁碟區及其裝置名稱：
++
+.. 選取*支援*>*工具*>*網格拓撲*。
+.. 選擇*站台*>*故障儲存節點*>* LdR*>*儲存設備*>*總覽*>*主節點*、然後尋找具有警示的物件存放區。
++
+image::../media/ldr_storage_object_stores.gif[物件存放區區區段]
+
+.. 選擇*站台*>*故障儲存節點*>* SES*>*資源*>*總覽*>*主節點*。確定上一步中識別的每個故障儲存磁碟區的掛載點和磁碟區大小。
++
+物件存放區以六角表示法編號。例如、0000是第一個Volume、000F是第16個Volume。在範例中、識別碼為 0000 的物件存放區對應於 `/var/local/rangedb/0`裝置名稱 sdc 、大小為 107 GB 。
+
++
+image::../media/ssm_storage_volumes.gif[顯示物件存放區和掛載點的範例]
+
+
+
+. 登入故障儲存節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 執行下列指令碼以卸載故障的儲存磁碟區：
++
+`sn-unmount-volume object_store_ID`
+
++
+ `object_store_ID`是故障儲存磁碟區的 ID 。例如、在命令中指定 `0` ID 為 0000 的物件存放區。
+
+. 如果出現提示、請按 * y* 停止 Cassandra 服務、視儲存磁碟區 0 而定。
++
+
+NOTE: 如果 Cassandra 服務已停止、系統不會提示您。Cassandra服務僅針對Volume 0停止。
+
++
+[listing]
+----
+root@Storage-180:~/var/local/tmp/storage~ # sn-unmount-volume 0
+Services depending on storage volume 0 (cassandra) aren't down.
+Services depending on storage volume 0 must be stopped before running this script.
+Stop services that require storage volume 0 [y/N]? y
+Shutting down services that require storage volume 0.
+Services requiring storage volume 0 stopped.
+Unmounting /var/local/rangedb/0
+/var/local/rangedb/0 is unmounted.
+----
++
+幾秒鐘後、磁碟區就會卸載。畫面上會出現訊息、指出程序的每個步驟。最後一則訊息表示磁碟區已卸載。
+
+. 如果卸載因磁碟區忙碌而失敗、您可以使用下列選項強制卸載 `--use-umountof`：
++
+
+NOTE: 使用選項強制卸載 `--use-umountof`可能會導致使用磁碟區的處理程序或服務發生非預期的行為或當機。
+
++
+[listing]
+----
+root@Storage-180:~ # sn-unmount-volume --use-umountof /var/local/rangedb/2
+Unmounting /var/local/rangedb/2 using umountof
+/var/local/rangedb/2 is unmounted.
+Informing LDR service of changes to storage volumes
+----
+

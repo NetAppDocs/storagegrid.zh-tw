@@ -1,0 +1,184 @@
+---
+permalink: maintain/powering-off-and-on-all-nodes-in-grid.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, power nodes, power on nodes, power off nodes, power down nodes 
+summary: 例如、如果您要搬移資料中心、可能需要關閉整個StorageGRID 的整套功能。這些步驟提供建議的執行管制關機和開機順序的高階概觀。 
+---
+= 關閉和開啟網格中的所有節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+例如、如果您要搬移資料中心、可能需要關閉整個StorageGRID 的整套功能。這些步驟提供建議的執行管制關機和開機順序的高階概觀。
+
+當您關閉站台或網格中的所有節點時、當儲存節點離線時、將無法存取擷取的物件。
+
+
+
+== 停止服務並關閉網格節點
+
+在您關閉StorageGRID 某個VMware系統之前、您必須先停止每個網格節點上執行的所有服務、然後關閉所有VMware虛擬機器、Container引擎和StorageGRID VMware應用程式。
+
+.關於這項工作
+先停止管理節點和閘道節點上的服務、然後停止儲存節點上的服務。
+
+此方法可讓您使用主要管理節點、盡可能長時間監控其他網格節點的狀態。
+
+
+NOTE: 如果單一主機包含多個網格節點、請在停止該主機上的所有節點之前、不要關閉主機。如果主機包含主要管理節點、請最後關閉該主機。
+
+
+NOTE: 如果需要、您可以link:linux-migrating-grid-node-to-new-host.html["將節點從一個Linux主機移轉至另一個主機"]執行主機維護、而不會影響網格的功能或可用度。
+
+.步驟
+. 停止所有用戶端應用程式存取網格。
+. [[log_in_to _GN]登入每個閘道節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. [[stop_all_services ]] 停止在節點上執行的所有服務： `service servermanager stop`
++
+服務關機最多需要15分鐘、您可能想要從遠端登入系統、以監控關機程序。
+
+. 重複上述兩個步驟、停止所有儲存節點和非主要管理節點上的服務。
++
+您可以依任何順序停止這些節點上的服務。
+
++
+
+NOTE: 如果您發出 `service servermanager stop`命令來停止應用裝置儲存節點上的服務、則必須關閉應用裝置電源再重新啟動節點。
+
+. 對於主管理節點，請重複和<<stop_all_services,停止節點上的所有服務>>的步驟<<log_in_to_gn,登入節點>>。
+. 對於在Linux主機上執行的節點：
++
+.. 登入主機作業系統。
+.. 停止節點： `storagegrid node stop`
+.. 關閉主機作業系統。
+
+
+. 對於在 VMware 虛擬機器和應用裝置儲存節點上執行的節點、請發出關機命令： `shutdown -h now`
++
+無論命令的結果為何、都請執行此步驟 `service servermanager stop`。
+
++
+對於應用裝置、此命令會關閉運算控制器、但應用裝置仍會開啟電源。您必須完成下一步。
+
+. 如果您有應用裝置節點、請依照應用裝置的步驟進行。
++
+[role="tabbed-block"]
+====
+.SG110 或 SG1100
+--
+.. 關閉產品電源。
+.. 等待藍色電源LED燈關閉。
+
+
+--
+.SG100 或 SG1000
+--
+.. 關閉產品電源。
+.. 等待藍色電源LED燈關閉。
+
+
+--
+.SG6160
+--
+.. 關閉 SG6100-CN 儲存控制器的電源。
+.. 等待 SG6100-CN 儲存控制器上的藍色電源 LED 熄滅。
+
+
+--
+.SGF6112
+--
+.. 關閉產品電源。
+.. 等待藍色電源LED燈關閉。
+
+
+--
+.SG6000
+--
+.. 等待儲存控制器背面的綠色快取作用中LED關閉。
++
+當需要將快取的資料寫入磁碟機時、此LED會亮起。您必須等待此LED燈關閉、才能關閉電源。
+
+.. 關閉產品電源、然後等待藍色電源LED燈關閉。
+
+
+--
+.SG5800
+--
+.. 等待儲存控制器背面的綠色快取作用中LED關閉。
++
+當需要將快取的資料寫入磁碟機時、此LED會亮起。您必須等待此LED燈關閉、才能關閉電源。
+
+.. 從「SView System Manager」首頁SANtricity 選取*「View Operations in progress*」。
+.. 請確認所有作業均已完成、然後再繼續下一步。
+.. 關閉控制器機櫃上的兩個電源開關、並等待控制器機櫃上的所有 LED 燈熄滅。
+
+
+--
+.SG5700
+--
+.. 等待儲存控制器背面的綠色快取作用中LED關閉。
++
+當需要將快取的資料寫入磁碟機時、此LED會亮起。您必須等待此LED燈關閉、才能關閉電源。
+
+.. 關閉產品電源、並等待所有LED和七段顯示活動停止。
+
+
+--
+====
+. 如有必要、請登出命令 Shell ： `exit`
++
+此功能現已關閉。StorageGRID
+
+
+
+
+
+== 啟動網格節點
+
+
+CAUTION: 如果整個網格已關閉超過15天、您必須在啟動任何網格節點之前聯絡技術支援部門。請勿嘗試重建 Cassandra 資料的還原程序。否則可能導致資料遺失。
+
+如果可能、請依下列順序開啟網格節點：
+
+* 先將電力套用至管理節點。
+* 最後將電力套用至閘道節點。
+
+
+
+NOTE: 如果主機包含多個網格節點、則當您開啟主機電源時、節點會自動恢復連線。
+
+.步驟
+. 開啟主要管理節點和任何非主要管理節點的主機。
++
+
+NOTE: 在重新啟動儲存節點之前、您將無法登入管理節點。
+
+. 開啟所有儲存節點的主機電源。
++
+您可以依任何順序開啟這些節點。
+
+. 開啟所有閘道節點的主機電源。
+. 登入Grid Manager。
+. 選取*節點*並監控網格節點的狀態。確認節點名稱旁沒有警示圖示。
+
+
+.相關資訊
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg6100/index.html["SGF6112 和 SG6160 儲存設備"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg110-1100/index.html["SG110 和 SG1100 服務應用裝置"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg100-1000/index.html["SG100 和 SG1000 服務應用裝置"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg6000/index.html["SG6000 儲存設備"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg5800/index.html["SG5800 儲存設備"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg5700/index.html["SG5700 儲存設備"^]
+

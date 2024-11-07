@@ -1,0 +1,36 @@
+---
+permalink: monitor/reviewing-audit-messages.html 
+sidebar: sidebar 
+keywords: how to review audit messages, how to view audit messages 
+summary: 稽核訊息可協助您更深入瞭解StorageGRID 您的作業系統的詳細操作。您可以使用稽核記錄來疑難排解問題、並評估效能。 
+---
+= 檢閱稽核訊息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+稽核訊息可協助您更深入瞭解StorageGRID 您的作業系統的詳細操作。您可以使用稽核記錄來疑難排解問題、並評估效能。
+
+在正常系統運作期間、所有StorageGRID 的支援服務都會產生稽核訊息、如下所示：
+
+* 系統稽核訊息與稽核系統本身、網格節點狀態、全系統工作活動及服務備份作業有關。
+* 物件儲存稽核訊息與StorageGRID 儲存及管理物件相關、包括物件儲存與擷取、網格節點對網格節點的傳輸及驗證。
+* S3 用戶端應用程式要求建立、修改或擷取物件時、會記錄用戶端讀寫稽核訊息。
+* 管理稽核訊息會記錄使用者對管理API的要求。
+
+
+每個管理節點都會將稽核訊息儲存在文字檔中。稽核共用區包含使用中檔案（稽核記錄）、以及前幾天的壓縮稽核記錄。網格中的每個節點也會儲存節點上產生的稽核資訊複本。
+
+您可以直接從管理節點的命令列存取稽核記錄檔。
+
+StorageGRID 預設可以傳送稽核資訊、也可以變更目的地：
+
+* StorageGRID 預設為本機節點稽核目的地。
+* Grid Manager 和 Tenant Manager 稽核記錄項目可能會傳送至儲存節點。
+* 您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。
+* link:../monitor/configure-audit-messages.html["瞭解如何設定稽核訊息和記錄目的地"]。
+
+
+如需稽核記錄檔、稽核訊息格式、稽核訊息類型及分析稽核訊息可用工具的詳細資訊，請參閱link:../audit/index.html["檢閱稽核記錄"]。

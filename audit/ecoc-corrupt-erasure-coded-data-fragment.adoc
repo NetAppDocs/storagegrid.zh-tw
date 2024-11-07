@@ -1,0 +1,55 @@
+---
+permalink: audit/ecoc-corrupt-erasure-coded-data-fragment.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, ECOC, Corrupt Erasure-Coded Data Fragment 
+summary: 此稽核訊息表示系統偵測到毀損的銷毀編碼資料片段。 
+---
+= ECOC ：毀損的刪除編碼資料片段
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此稽核訊息表示系統偵測到毀損的銷毀編碼資料片段。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+VCCO
+ a| 
+VCS ID
+ a| 
+包含毀損區塊的VCS名稱。
+
+
+
+ a| 
+VLID
+ a| 
+Volume ID
+ a| 
+包含毀損的銷毀編碼片段的R地理DB Volume。
+
+
+
+ a| 
+CCID
+ a| 
+區塊ID
+ a| 
+毀損的銷毀編碼片段的識別碼。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果
+ a| 
+此欄位的值為「無」。RSRLT為必填訊息欄位、但與此特定訊息無關。使用「無」而非「UCS」、因此不會篩選此訊息。
+
+|===

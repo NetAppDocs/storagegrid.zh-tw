@@ -1,0 +1,40 @@
+---
+permalink: ubuntu/configuring-docker-storage-volume.html 
+sidebar: sidebar 
+keywords: how to configure Docker storage volume 
+summary: 在安裝Docker之前、您可能需要格式化Docker儲存磁碟區、並將其裝入/var/lib/Docker。 
+---
+= 設定Container Engine儲存Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝Container引擎（Docker或Podman）之前、您可能需要先格式化儲存磁碟區並加以掛載。
+
+
+NOTE: 將 Docker 作為僅限軟體部署的容器引擎的支援已過時。Docker 將在未來版本中以另一個 Container 引擎取代。
+
+.關於這項工作
+如果您計畫將本機儲存空間用於 Docker 儲存磁碟區、並且在包含的主機分割區上有足夠的可用空間、則可以略過這些步驟 `/var/lib`。
+
+.步驟
+. 在Docker儲存磁碟區上建立檔案系統：
++
+[listing]
+----
+sudo mkfs.ext4 docker-storage-volume-device
+----
+. 掛載Docker儲存磁碟區：
++
+[listing]
+----
+sudo mkdir -p /var/lib/docker
+sudo mount docker-storage-volume-device /var/lib/docker
+----
+. 將Docker儲存磁碟區裝置的項目新增至/etc/Fstab。
++
+此步驟可確保儲存磁碟區在主機重新開機後自動重新掛載。
+
+

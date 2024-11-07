@@ -1,0 +1,69 @@
+---
+permalink: tenant/update-default-retention-settings.html 
+sidebar: sidebar 
+keywords: update default retention for s3 object lock bucket, default retention mode, default retention period, compliance, governance 
+summary: 如果您在建立貯體時啟用 S3 物件鎖定、則可以編輯貯體以變更預設保留設定。您可以啟用（或停用）預設保留、並設定預設保留模式和保留期間。 
+---
+= 更新 S3 物件鎖定預設保留
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您在建立貯體時啟用 S3 物件鎖定、則可以編輯貯體以變更預設保留設定。您可以啟用（或停用）預設保留、並設定預設保留模式和保留期間。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["管理所有貯體或根目錄存取權限"]。這些權限會覆寫群組或儲存區原則中的權限設定。
+* S3 物件鎖定已在 StorageGRID 系統中全域啟用、您在建立儲存貯體時啟用 S3 物件鎖定。請參閱。 link:using-s3-object-lock.html["使用 S3 物件鎖定來保留物件"]
+
+
+.步驟
+. 從儀表板選取 * 檢視貯體 * 、或選取 * 儲存空間（ S3 ） * > * 鏟斗 * 。
+. 從表格中選取貯體名稱。
++
+此時會顯示「庫位詳細資料」頁面。
+
+. 從 *Bucket options* 標籤中、選取 *S3 Object Lock* 折疊式。
+. 或者、啟用或停用此貯體的 * 預設保留 * 。
++
+對此設定所做的變更不適用於已在貯體中的物件、也不適用於可能有其本身保留期間的任何物件。
+
+. 如果啟用 * 預設保留 * 、請為貯體指定 * 預設保留模式 * 。
++
+[cols="1a,2a"]
+|===
+| 預設保留模式 | 說明 
+
+
+ a| 
+治理
+ a| 
+** 擁有權限的使用者 `s3:BypassGovernanceRetention`可以使用 `x-amz-bypass-governance-retention: true`要求標頭來略過保留設定。
+** 這些使用者可以在達到物件版本的保留截止日期之前刪除物件版本。
+** 這些使用者可以增加、減少或移除物件的保留到目前為止。
+
+
+
+
+ a| 
+法規遵循
+ a| 
+** 直到達到物件的保留日期、才能刪除物件。
+** 物件的保留日期可以增加、但不能減少。
+** 直到達到該日期為止、才能移除物件的保留日期。
+
+
+* 注意 * ：您的網格管理員必須允許您使用法規遵循模式。
+
+|===
+. 如果啟用 * 預設保留 * 、請指定貯體的 * 預設保留期間 * 。
++
+「 * 預設保留期間 * 」表示新增至此貯體的物件應保留多久、從擷取開始算起。指定小於或等於租用戶保留期間上限的值、如網格管理員所設定。
+
++
+網格管理員建立租戶時、會設定 _ 最大 _ 保留期間（可為 1 天至 100 年）。當您設定 _default_ 保留期間時、其值不得超過保留期間上限的設定值。如有需要、請要求您的網格管理員增加或縮短最長保留期間。
+
+. 選取*儲存變更*。
+

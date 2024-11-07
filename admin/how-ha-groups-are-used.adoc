@@ -1,0 +1,78 @@
+---
+permalink: admin/how-ha-groups-are-used.html 
+sidebar: sidebar 
+keywords: ha groups, high availability group 
+summary: 您可以使用高可用度（HA）群組、為StorageGRID 物件資料和管理用途提供高可用度的連接至物件資料。 
+---
+= 如何使用HA群組？
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用高可用度（HA）群組、為StorageGRID 物件資料和管理用途提供高可用度的連接至物件資料。
+
+* HA群組可提供高可用度的管理連線至Grid Manager或Tenant Manager。
+* HA 群組可為 S3 用戶端提供高可用度的資料連線。
+* 僅包含一個介面的HA群組可讓您提供多個VIP位址、並明確設定IPv6位址。
+
+
+只有當群組中包含的所有節點都提供相同的服務時、HA群組才能提供高可用度。建立HA群組時、請從提供所需服務的節點類型新增介面。
+
+* *管理節點*：包括負載平衡器服務、並可存取Grid Manager或租戶管理程式。
+* * 閘道節點 * ：包括負載平衡器服務。
+
+
+[cols="1a,2a"]
+|===
+| HA群組的用途 | 將此類型的節點新增至HA群組 
+
+
+ a| 
+存取Grid Manager
+ a| 
+* 主管理節點（*主*）
+* 非主要管理節點
+
+
+*附註：*主要管理節點必須是主要介面。部分維護程序只能從主要管理節點執行。
+
+
+
+ a| 
+僅限租戶管理程式存取
+ a| 
+* 主要或非主要管理節點
+
+
+
+
+ a| 
+S3 用戶端存取 -- 負載平衡器服務
+ a| 
+* 管理節點
+* 閘道節點
+
+
+
+
+ a| 
+的 S3 用戶端存取link:../admin/manage-s3-select-for-tenant-accounts.html["S3 Select"]
+ a| 
+* 服務應用裝置
+* VMware軟體節點
+
+
+*附註*：使用S3 Select時建議使用HA群組、但不需要。
+
+|===
+
+
+== 搭配Grid Manager或Tenant Manager使用HA群組的限制
+
+如果Grid Manager或Tenant Manager服務失敗、HA群組容錯移轉就不會觸發。
+
+如果您在容錯移轉發生時登入Grid Manager或租戶管理程式、系統將會登出、您必須再次登入才能繼續執行工作。
+
+當主要管理節點無法使用時、無法執行某些維護程序。容錯移轉期間、您可以使用Grid Manager監控StorageGRID 您的作業系統。

@@ -1,0 +1,23 @@
+---
+permalink: admin/administering-storagegrid-system.html 
+sidebar: sidebar 
+keywords: administration overview 
+summary: 請使用這些指示來設定及管理StorageGRID 一套功能完善的系統。 
+---
+= 管理StorageGRID 一套系統
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+請使用這些指示來設定及管理StorageGRID 一套功能完善的系統。
+
+這些指示說明如何使用 Grid Manager 來設定群組和使用者、建立租戶帳戶、以允許 S3 用戶端應用程式儲存和擷取物件、設定和管理 StorageGRID 網路、設定 AutoSupport 、管理節點設定等。
+
+這些指示適用於StorageGRID 安裝好後、將會設定、管理及支援某個系統的技術人員。
+
+.開始之前
+* 您大致瞭StorageGRID 解整個系統。
+* 您對Linux命令Shell、網路及伺服器硬體設定與組態擁有相當詳細的知識。
+

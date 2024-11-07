@@ -1,0 +1,36 @@
+---
+permalink: maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission admin node, decommission gateway node 
+summary: 檢閱解除委任管理節點或閘道節點的考量事項。 
+---
+= 解除委任管理節點或閘道節點的考量事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+檢閱解除委任管理節點或閘道節點的考量事項。
+
+
+
+== 管理節點的考量事項
+
+* 您無法取消委任主要管理節點。
+* 如果管理節點的其中一個網路介面是高可用度（ HA ）群組的一部分、則無法取消委任管理節點。您必須先從HA群組移除網路介面。請參閱的說明link:../admin/managing-high-availability-groups.html["管理 HA 群組"]。
+* 視需要、您可以在解除委任管理節點的同時、安全地變更 ILM 原則。
+* 如果您取消委任管理節點、並啟用StorageGRID 單一登入（SSO）來啟用您的支援、您必須記得從Active Directory Federation Services（AD FS）移除節點的信賴方信任。
+* 如果您使用link:../admin/grid-federation-overview.html["網格同盟"]、請確定您要停用的節點的 IP 位址未指定給網格同盟連線。
+* 當您取消委任已中斷連線的管理節點時、將會遺失該節點的稽核記錄；不過、這些記錄也應該存在於主要管理節點上。
+
+
+
+
+== 閘道節點的考量事項
+
+* 如果閘道節點的其中一個網路介面是高可用度（ HA ）群組的一部分、您就無法取消委任該節點。您必須先從HA群組移除網路介面。請參閱的說明link:../admin/managing-high-availability-groups.html["管理 HA 群組"]。
+* 視需要、您可以在解除委任閘道節點的同時、安全地變更 ILM 原則。
+* 如果您使用link:../admin/grid-federation-overview.html["網格同盟"]、請確定您要停用的節點的 IP 位址未指定給網格同盟連線。
+* 您可以在閘道節點中斷連線時安全地取消委任。
+

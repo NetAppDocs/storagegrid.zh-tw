@@ -1,0 +1,220 @@
+---
+permalink: maintain/restoring-existing-nodes.html 
+sidebar: sidebar 
+keywords: recover, restore node to host, node configuration file, start host service 
+summary: 若要將故障的網格節點還原至新的 Linux 主機、請執行下列步驟來還原節點組態檔案。 
+---
+= 將網格節點還原至主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要將故障的網格節點還原至新的 Linux 主機、請執行下列步驟來還原節點組態檔案。
+
+. <<restore-validate-grid-nodes,還原並驗證節點>>還原節點組態檔案。對於新安裝、您可以為要安裝在主機上的每個網格節點建立節點組態檔案。將網格節點還原至替換主機時、您可以還原或取代任何故障網格節點的節點組態檔。
+. <<start-storagegrid-host-service,啟動StorageGRID 「支援服務」>>。
+. 如有需要<<recover-nodes-fail-start,復原無法啟動的任何節點>>、。
+
+
+如果任何區塊儲存磁碟區是從先前的主機保留下來、您可能必須執行其他的還原程序。本節中的命令可協助您決定需要哪些額外程序。
+
+
+
+== 還原及驗證網格節點
+
+您必須還原任何故障網格節點的網格組態檔、然後驗證網格組態檔並解決任何錯誤。
+
+.關於這項工作
+您可以匯入任何應存在於主機上的網格節點、只要該節點的 `/var/local`磁碟區不會因前一主機故障而遺失。例如、 `/var/local`如果您將共用儲存設備用於 StorageGRID 系統資料磁碟區、則磁碟區可能仍存在、如適用於 Linux 作業系統的 StorageGRID 安裝指示所述。匯入節點會將其節點組態檔還原至主機。
+
+如果無法匯入遺失的節點、您必須重新建立它們的網格組態檔案。
+
+然後您必須驗證網格組態檔案、並解決任何可能發生的網路或儲存問題、才能繼續重新啟動StorageGRID 更新。當您重新建立節點的組態檔時、您必須使用與您要還原之節點相同的替換節點名稱。
+
+如需有關節點磁碟區位置的詳細資訊、請參閱安裝指示 `/var/local`。
+
+* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
+* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
+
+
+.步驟
+. 在復原主機的命令列中、列出所有目前設定的 StorageGRID 節點：``sudo storagegrid node list``
++
+如果未設定任何網格節點、則不會有任何輸出。如果已設定某些網格節點、則預期輸出格式如下：
+
++
+[listing]
+----
+Name               Metadata-Volume
+================================================================
+dc1-adm1           /dev/mapper/sgws-adm1-var-local
+dc1-gw1            /dev/mapper/sgws-gw1-var-local
+dc1-sn1            /dev/mapper/sgws-sn1-var-local
+dc1-arc1           /dev/mapper/sgws-arc1-var-local
+----
++
+如果未列出應在主機上設定的部分或全部網格節點、則需要還原遺失的網格節點。
+
+. 若要匯入具有磁碟區的網格節點 `/var/local`：
++
+.. 針對您要匯入的每個節點執行下列命令：``sudo storagegrid node import node-var-local-volume-path``
++
+ `storagegrid node import`只有當目標節點在上次執行的主機上正常關機時、命令才會成功。如果情況並非如此、您將會發現類似下列的錯誤：
+
++
+`This node (_node-name_) appears to be owned by another host (UUID host-uuid).`
+
++
+`Use the --force flag if you are sure import is safe.`
+
+.. 如果您看到其他主機所擁有的節點發生錯誤、請再次執行命令並加上 `--force`旗標、以完成匯入：``sudo storagegrid --force node import node-var-local-volume-path``
++
+
+NOTE: 任何以旗標匯入的節點都 `--force`需要額外的恢復步驟、才能重新加入網格link:whats-next-performing-additional-recovery-steps-if-required.html["接下來：視需要執行其他恢復步驟"]、如所述。
+
+
+
+. 對於沒有磁碟區的網格節點 `/var/local`、請重新建立節點的組態檔案、將其還原至主機。如需相關指示、請參閱：
++
+** link:../rhel/creating-node-configuration-files.html["為 Red Hat Enterprise Linux 建立節點組態檔案"]
+** link:../ubuntu/creating-node-configuration-files.html["為 Ubuntu 或 Debian 建立節點組態檔案"]
++
+
+NOTE: 當您重新建立節點的組態檔時、您必須使用與您要還原之節點相同的替換節點名稱。對於Linux部署、請確定組態檔名稱包含節點名稱。您應該盡可能使用相同的網路介面、區塊裝置對應和IP位址。這種做法可將恢復期間需要複製到節點的資料量降至最低、這可能會使恢復速度大幅加快（在某些情況下、是幾分鐘而非數週）。
+
++
+
+NOTE: 如果您使用任何新的區塊裝置（ StorageGRID 節點先前未使用的裝置）做為任何組態變數的值、而這些設定變數是在重新建立節點的組態檔案時開始的 `BLOCK_DEVICE_`、請遵循中的準則<<fix-block-errors,修正遺失的區塊裝置錯誤>>。
+
+
+
+. 在恢復的主機上執行下列命令、列出所有StorageGRID 的支援節點。
++
+`sudo storagegrid node list`
+
+. 驗證StorageGRID 每個網格節點的節點組態檔、其名稱會顯示在「節點清單」輸出中：
++
+`sudo storagegrid node validate _node-name_`
+
++
+您必須先解決任何錯誤或警告、才能開始StorageGRID 執行「支援服務」。以下各節將詳細說明在恢復期間可能具有特殊意義的錯誤。
+
+
+
+
+
+=== 修正遺失的網路介面錯誤
+
+如果主機網路未正確設定或名稱拼錯、 StorageGRID 會在檢查檔案中指定的對應時發生錯誤 `/etc/storagegrid/nodes/_node-name_.conf`。
+
+您可能會看到與此模式相符的錯誤或警告：
+
+[listing]
+----
+Checking configuration file /etc/storagegrid/nodes/<node-name>.conf for node <node-name>...
+ERROR: <node-name>: GRID_NETWORK_TARGET = <host-interface-name>
+       <node-name>: Interface <host-interface-name>' does not exist
+----
+可能會針對Grid Network、管理網路或用戶端網路回報錯誤。此錯誤表示檔案會 `/etc/storagegrid/nodes/_node-name_.conf`將指定的 StorageGRID 網路對應到名為的主機介面、但目前主機上沒有使用該名稱的介面 `_host-interface-name_`。
+
+如果收到此錯誤，請確認您已完成中的步驟link:deploying-new-linux-hosts.html["部署新的Linux主機"]。對所有主機介面使用與原始主機相同的名稱。
+
+如果無法命名主機介面以符合節點組態檔、您可以編輯節點組態檔、並變更GRID_NETWORD_target、ADD_NETWORD_target或用戶端網路目標的值、以符合現有的主機介面。
+
+確定主機介面可存取適當的實體網路連接埠或VLAN、而且介面不會直接參照連結或橋接裝置。您必須在主機上的連結裝置上設定VLAN（或其他虛擬介面）、或使用橋接器和虛擬乙太網路（vith）配對。
+
+
+
+=== 修正遺失的區塊裝置錯誤
+
+系統會檢查每個還原的節點是否對應到有效的區塊裝置特殊檔案、或是區塊裝置特殊檔案的有效軟體連結。如果 StorageGRID 在檔案中找到無效的對應 `/etc/storagegrid/nodes/_node-name_.conf`、就會顯示遺失區塊裝置錯誤。
+
+如果您發現與此模式相符的錯誤：
+
+[listing]
+----
+Checking configuration file /etc/storagegrid/nodes/<node-name>.conf for node <node-name>...
+ERROR: <node-name>: BLOCK_DEVICE_PURPOSE = <path-name>
+       <node-name>: <path-name> does not exist
+----
+這表示會 `/etc/storagegrid/nodes/_node-name_.conf`將 _node-name_ 使用的區塊裝置對應到 Linux 檔案系統中的指定路徑名稱、但該位置沒有有效的區塊 `PURPOSE`裝置特殊檔案或區塊裝置特殊檔案的軟連結。
+
+確認您已完成中的步驟link:deploying-new-linux-hosts.html["部署新的Linux主機"]。對所有區塊裝置使用與原始主機相同的持續裝置名稱。
+
+如果您無法還原或重新建立遺失的區塊裝置特殊檔案、您可以分配適當大小和儲存類別的新區塊裝置、並編輯節點組態檔案、將值變更 `BLOCK_DEVICE_PURPOSE`為指向新區塊裝置特殊檔案。
+
+使用適用於 Linux 作業系統的表格、判斷適當的大小和儲存類別：
+
+* link:../rhel/storage-and-performance-requirements.html["Red Hat Enterprise Linux 的儲存與效能需求"]
+* link:../ubuntu/storage-and-performance-requirements.html["Ubuntu 或 Debian 的儲存與效能需求"]
+
+
+在繼續更換區塊裝置之前、請先檢閱設定主機儲存設備的建議：
+
+* link:../rhel/configuring-host-storage.html["設定 Red Hat Enterprise Linux 的主機儲存設備"]
+* link:../ubuntu/configuring-host-storage.html["設定 Ubuntu 或 Debian 的主機儲存設備"]
+
+
+
+NOTE: 如果您必須為任何組態檔案變數提供新的區塊儲存裝置、從開始、因為原始區塊裝置在發生故障的主機上遺失、請確保新的區 `BLOCK_DEVICE_`塊裝置未格式化、然後再嘗試進一步的恢復程序。如果您使用共享儲存設備並已建立新的Volume、則新的區塊裝置將不會格式化。如果您不確定、請針對任何新的區塊儲存設備特殊檔案執行下列命令。
+
+[CAUTION]
+====
+僅針對新的區塊儲存裝置執行下列命令。如果您認為區塊儲存區仍包含要還原之節點的有效資料、請勿執行此命令、因為裝置上的任何資料都會遺失。
+
+`sudo dd if=/dev/zero of=/dev/mapper/my-block-device-name bs=1G count=1`
+
+====
+
+
+== 啟動StorageGRID 支援服務
+
+若要啟動StorageGRID 您的支援節點、並確保在主機重新開機後重新啟動節點、您必須啟用StorageGRID 並啟動該支援中心服務。
+
+.步驟
+. 在每個主機上執行下列命令：
++
+[listing]
+----
+sudo systemctl enable storagegrid
+sudo systemctl start storagegrid
+----
+. 執行下列命令以確保部署繼續進行：
++
+[listing]
+----
+sudo storagegrid node status node-name
+----
+. 如果有任何節點傳回「未執行」或「已停止」的狀態、請執行下列命令：
++
+[listing]
+----
+sudo storagegrid node start node-name
+----
+. 如果您先前已啟用並啟動StorageGRID 了「支援服務」（或如果您不確定服務是否已啟用並啟動）、請同時執行下列命令：
++
+[listing]
+----
+sudo systemctl reload-or-restart storagegrid
+----
+
+
+
+
+== 恢復無法正常啟動的節點
+
+如果 StorageGRID 節點無法正常重新加入網格、且未顯示為可還原、則可能已毀損。您可以強制節點進入恢復模式。
+
+.步驟
+. 確認節點的網路組態正確無誤。
++
+由於網路介面對應不正確、或網格網路 IP 位址或閘道不正確、因此節點可能無法重新加入網格。
+
+. 如果網路組態正確、請發出 `force-recovery`命令：
++
+`sudo storagegrid node force-recovery _node-name_`
+
+. 執行節點的其他恢復步驟。請參閱。 link:whats-next-performing-additional-recovery-steps-if-required.html["接下來：視需要執行其他恢復步驟"]
+

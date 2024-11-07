@@ -1,0 +1,1371 @@
+---
+permalink: s3/bucket-and-group-access-policies.html 
+sidebar: sidebar 
+keywords: bucket access policies, group access policies 
+summary:  
+---
+= 使用貯體和群組存取原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援使用Amazon Web Services（AWS）原則語言、讓S3租戶能夠控制對這些儲存區內的儲存區和物件的存取。StorageGRID此系統實作S3 REST API原則語言的子集。StorageGRIDS3 API的存取原則是以Json撰寫。
+
+
+
+== 存取原則總覽
+
+支援的存取原則有兩種。StorageGRID
+
+* * Bucket Policies * 、使用 GetBucketPolicy 、 PuttBucketPolicy 及 DeleteBucketPolicy S3 API 作業或 Tenant Manager 或 Tenant Management API 來管理。庫位原則會附加至庫位、因此這些原則可設定為控制庫位擁有者帳戶或其他帳戶中的使用者對庫位及其中物件的存取。庫位原則僅適用於一個庫位、可能也適用於多個群組。
+* *群組原則*、使用租戶管理程式或租戶管理API進行設定。群組原則會附加至帳戶中的群組、因此這些原則會設定為允許該群組存取該帳戶所擁有的特定資源。群組原則僅適用於一個群組、可能也適用於多個儲存區。
+
+
+
+NOTE: 群組原則和儲存庫原則之間的優先順序沒有差異。
+
+根據Amazon定義的特定語法、執行庫位和群組原則。StorageGRID每個原則內部都有一組原則聲明、每個陳述都包含下列元素：
+
+* 對帳單ID（Sid）（選用）
+* 效果
+* 委託人/未委託人
+* 資源/未資源
+* 行動/未行動
+* 條件（選用）
+
+
+原則陳述是使用此結構來指定權限：在套用<condition>時，授與<effect>允許/拒絕<Principe>執行<Action"。
+
+每個原則元素都用於特定功能：
+
+[cols="1a,2a"]
+|===
+| 元素 | 說明 
+
+
+ a| 
+SID
+ a| 
+Sid元素為選用項目。Sid僅供使用者說明使用。它會儲存、但StorageGRID 不會被作業系統解讀。
+
+
+
+ a| 
+效果
+ a| 
+使用effect元素來確定是否允許或拒絕指定的作業。您必須使用支援的Action元素關鍵字、識別您允許（或拒絕）的貯體或物件作業。
+
+
+
+ a| 
+委託人/未委託人
+ a| 
+您可以允許使用者、群組和帳戶存取特定資源並執行特定動作。如果要求中未包含S3簽名、則可指定萬用字元（*）做為主體、以匿名存取。根據預設、只有root帳戶可以存取該帳戶擁有的資源。
+
+您只需要在庫位原則中指定主要元素。對於群組原則而言、附加原則的群組是內含的主體元素。
+
+
+
+ a| 
+資源/未資源
+ a| 
+資源元素可識別儲存區和物件。您可以使用Amazon資源名稱（ARN）來允許或拒絕貯體和物件的權限、以識別資源。
+
+
+
+ a| 
+行動/未行動
+ a| 
+「行動」和「效果」元素是權限的兩個元件。當群組要求資源時、系統會將資源的存取權限授予或拒絕。除非您特別指派權限、否則存取會遭拒、但您可以使用明確拒絕來覆寫其他原則所授予的權限。
+
+
+
+ a| 
+條件
+ a| 
+條件元素為選用項目。條件可讓您建置運算式、以判斷何時應套用原則。
+
+|===
+在Action元素中、您可以使用萬用字元（*）來指定所有作業或作業子集。例如、此動作會比對S3：GetObject、S3：PuttObject和S3：Delete物件等權限。
+
+[listing]
+----
+s3:*Object
+----
+在資源元素中、您可以使用萬用字元（\*）和（？）。星號（*）與0個以上的字元相符、但問號（？） 符合任何單一字元。
+
+在 Principal 元素中、除了設定匿名存取外、不支援萬用字元、這會將權限授予每個人。例如、您將萬用字元（*）設為主要值。
+
+[listing]
+----
+"Principal":"*"
+----
+[listing]
+----
+"Principal":{"AWS":"*"}
+----
+在下列範例中、陳述式使用的是「效果」、「主要」、「行動」和「資源」元素。此範例顯示完整的庫位原則聲明、使用「允許」效果授予主體、管理群組 `federated-group/admin`和財務群組 `federated-group/finance`、對該庫位 `mybucket`內所有物件執行「動作」的 `s3:GetObject`權限、以及對該庫位內所有物件執行「動作」的權限 `s3:ListBucket`。
+
+[listing]
+----
+{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::27233906934684427525:federated-group/admin",
+          "arn:aws:iam::27233906934684427525:federated-group/finance"
+        ]
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::mybucket",
+        "arn:aws:s3:::mybucket/*"
+      ]
+    }
+  ]
+}
+----
+儲存區原則的大小上限為20、480個位元組、而且群組原則的大小上限為5、120個位元組。
+
+
+
+== 原則的一致性
+
+根據預設、您對群組原則所做的任何更新最終都是一致的。當群組原則變得一致時、由於原則快取、變更可能需要額外 15 分鐘才能生效。根據預設、您對儲存庫原則所做的任何更新都是非常一致的。
+
+您可以視需要變更庫位原則更新的一致性保證。例如、您可能想要在站台中斷期間變更貯體原則。
+
+在這種情況下、您可以在 PuttBucketPolicy 要求中設定 `Consistency-Control`標頭、也可以使用 Put Bucket 一致性要求。當貯體原則變得一致時、由於原則快取、變更可能需要額外 8 秒的時間才能生效。
+
+
+NOTE: 如果您將一致性設定為不同的值來因應暫時情況、請務必在完成時將貯體層級設定恢復為原始值。否則、所有未來的貯體要求都會使用修改後的設定。
+
+
+
+== 在原則聲明中使用ARN
+
+在原則聲明中、ARN用於主要和資源元素。
+
+* 使用此語法來指定S3資源ARN：
++
+[listing]
+----
+arn:aws:s3:::bucket-name
+arn:aws:s3:::bucket-name/object_key
+----
+* 使用此語法來指定身分識別資源ARN（使用者和群組）：
++
+[listing]
+----
+arn:aws:iam::account_id:root
+arn:aws:iam::account_id:user/user_name
+arn:aws:iam::account_id:group/group_name
+arn:aws:iam::account_id:federated-user/user_name
+arn:aws:iam::account_id:federated-group/group_name
+----
+
+
+其他考量事項：
+
+* 您可以使用星號（*）做為萬用字元、以比對物件金鑰內的零個或多個字元。
+* 可以在物件金鑰中指定的國際字元、應使用Json utf-8或Json \u轉義序列進行編碼。不支援百分比編碼。
++
+https://www.ietf.org/rfc/rfc2141.txt["RFC 2141 URN語法"^]
+
++
+PuttBucketPolicy 作業的 HTTP 要求主體必須以 charset=UTF-8 編碼。
+
+
+
+
+
+== 在原則中指定資源
+
+在原則聲明中、您可以使用資源元素來指定允許或拒絕權限的儲存區或物件。
+
+* 每個原則聲明都需要資源元素。在原則中、資源會以元素表示、或是以排除方式 `NotResource`表示 `Resource`。
+* 您可以使用S3資源ARN來指定資源。例如：
++
+[listing]
+----
+"Resource": "arn:aws:s3:::mybucket/*"
+----
+* 您也可以在物件機碼內使用原則變數。例如：
++
+[listing]
+----
+"Resource": "arn:aws:s3:::mybucket/home/${aws:username}/*"
+----
+* 資源值可以指定在建立群組原則時尚未存在的儲存區。
+
+
+
+
+== 在原則中指定主體
+
+使用主體元素來識別原則聲明允許/拒絕存取資源的使用者、群組或租戶帳戶。
+
+* 庫位原則中的每個原則聲明都必須包含主要元素。群組原則中的原則聲明不需要 Principal 元素、因為群組被理解為主體。
+* 在原則中、主體會以元素「 Principal 」表示、或是以「 NotPrincipal 」表示排除。
+* 帳戶型身分識別必須使用ID或ARN來指定：
++
+[listing]
+----
+"Principal": { "AWS": "account_id"}
+"Principal": { "AWS": "identity_arn" }
+----
+* 此範例使用租戶帳戶ID 27233906934684427525、其中包含帳戶root和帳戶中的所有使用者：
++
+[listing]
+----
+ "Principal": { "AWS": "27233906934684427525" }
+----
+* 您只能指定帳戶根目錄：
++
+[listing]
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:root" }
+----
+* 您可以指定特定的聯盟使用者（「Alex」）：
++
+[listing]
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:federated-user/Alex" }
+----
+* 您可以指定特定的聯盟群組（「經理」）：
++
+[listing]
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:federated-group/Managers"  }
+----
+* 您可以指定匿名主體：
++
+[listing]
+----
+"Principal": "*"
+----
+* 為了避免混淆、您可以使用使用者UUID、而非使用者名稱：
++
+[listing]
+----
+arn:aws:iam::27233906934684427525:user-uuid/de305d54-75b4-431b-adb2-eb6b9e546013
+----
++
+例如、假設 Alex 離開組織並刪除使用者名稱 `Alex`。如果有新的 Alex 加入組織並指派相同的 `Alex`使用者名稱、新使用者可能會不小心繼承授予原始使用者的權限。
+
+* 主要值可以指定建立儲存區原則時尚未存在的群組/使用者名稱。
+
+
+
+
+== 在原則中指定權限
+
+在原則中、會使用Action元素來允許/拒絕資源的權限。您可以在原則中指定一組權限、以元素「Action」表示、或是以「NotAction」表示排除權限。每個元素都對應到特定的S3 REST API作業。
+
+這些表格列出套用至儲存區的權限、以及套用至物件的權限。
+
+
+NOTE: Amazon S3 現在會針對 PuttBucketReplication 和 DeleteBucketReplication 動作使用 S3:PutReplicationConfiguration 權限。針對每個行動使用不同的權限、這與原始的Amazon S3規格相符。StorageGRID
+
+
+NOTE: 使用 Put 覆寫現有值時會執行刪除。
+
+
+
+=== 套用至貯體的權限
+
+[cols="2a,2a,1a"]
+|===
+| 權限 | S3 REST API作業 | 客製StorageGRID 化以供選擇 
+
+
+ a| 
+S3：建立桶
+ a| 
+建立庫位
+ a| 
+是的。
+
+* 附註 * ：僅用於群組原則。
+
+
+
+ a| 
+S3：刪除資源桶
+ a| 
+刪除Bucket
+ a| 
+
+
+
+ a| 
+S3：刪除BucketMetadata通知
+ a| 
+刪除時段中繼資料通知組態
+ a| 
+是的
+
+
+
+ a| 
+S3：刪除BucketPolicy
+ a| 
+刪除BucketPolicy
+ a| 
+
+
+
+ a| 
+S3：刪除複製組態
+ a| 
+刪除 BucketReplication
+ a| 
+是、請分別授予和刪除權限
+
+
+
+ a| 
+S3：GetBucketAcl
+ a| 
+GetBucketAcl
+ a| 
+
+
+
+ a| 
+S3：GetBucketCompliance
+ a| 
+取得資源桶法規遵循（已過時）
+ a| 
+是的
+
+
+
+ a| 
+S3：GetBucketConsistency
+ a| 
+取得庫位一致性
+ a| 
+是的
+
+
+
+ a| 
+S3：GetBucketCORS
+ a| 
+GetBucketCors
+ a| 
+
+
+
+ a| 
+S3：GetEncryptionConfiguration
+ a| 
+GetBucketEncryption
+ a| 
+
+
+
+ a| 
+S3：GetBucketLastAccessTime
+ a| 
+取得時段上次存取時間
+ a| 
+是的
+
+
+
+ a| 
+S3：GetBucketLocation
+ a| 
+GetBucketLocation
+ a| 
+
+
+
+ a| 
+S3：GetBucketMetadata通知
+ a| 
+取得Bucket中繼資料通知組態
+ a| 
+是的
+
+
+
+ a| 
+S3：GetBucketNotification
+ a| 
+GetBucketNotificationConfiguration
+ a| 
+
+
+
+ a| 
+S3：GetBucketObjectLockConfiguration
+ a| 
+GetObjectLockConfiguration
+ a| 
+
+
+
+ a| 
+S3：GetBucketPolicy
+ a| 
+GetBucketPolicy
+ a| 
+
+
+
+ a| 
+S3：GetBucketting
+ a| 
+GetBucketTagging
+ a| 
+
+
+
+ a| 
+S3：GetBucketVersion
+ a| 
+GetBucketVersion
+ a| 
+
+
+
+ a| 
+S3：Get生命 週期組態
+ a| 
+GetBucketLifecycleConfiguration
+ a| 
+
+
+
+ a| 
+S3：GetReplicationConfiguration
+ a| 
+GetBucketReplication
+ a| 
+
+
+
+ a| 
+S3：ListAllMyb桶
+ a| 
+* 列表桶
+* 取得儲存使用量
+
+ a| 
+是的、用於取得儲存使用量。
+
+* 附註 * ：僅用於群組原則。
+
+
+
+ a| 
+S3：清單庫
+ a| 
+* 清單物件
+* 標題庫
+* RestoreObject
+
+ a| 
+
+
+
+ a| 
+S3：listBucketMultiPartUploads
+ a| 
+* ListMultipartUploads
+* RestoreObject
+
+ a| 
+
+
+
+ a| 
+S3：listBucketVerions
+ a| 
+取得Bucket版本
+ a| 
+
+
+
+ a| 
+S3：PuttBucketCompliance
+ a| 
+符合資源桶規範（已過時）
+ a| 
+是的
+
+
+
+ a| 
+S3：PuttBucketConsistency
+ a| 
+實現庫位一致性
+ a| 
+是的
+
+
+
+ a| 
+S3：PuttBucketCORS
+ a| 
+* 刪除 BucketCors †
+* PuttBucketCors
+
+ a| 
+
+
+
+ a| 
+S3：PuttEncryptionConfiguration
+ a| 
+* 刪除 BucketEncryption
+* PuttBucketEncryption
+
+ a| 
+
+
+
+ a| 
+S3：PuttBucketLastAccessTime
+ a| 
+將資源桶放在最後存取時間
+ a| 
+是的
+
+
+
+ a| 
+S3：PuttBucketMetadata通知
+ a| 
+放置時段中繼資料通知組態
+ a| 
+是的
+
+
+
+ a| 
+S3：PuttBucketNotification
+ a| 
+PutBucketNotificationConfiguration
+ a| 
+
+
+
+ a| 
+S3：PuttBucketObjectLockConfiguration
+ a| 
+* 具有要求標頭的 CreateBucket `x-amz-bucket-object-lock-enabled: true` （也需要 S3:CreateBucket 權限）
+* PutObjectLockConfiguration
+
+ a| 
+
+
+
+ a| 
+S3：PuttBucketPolicy
+ a| 
+PuttBucketPolicy
+ a| 
+
+
+
+ a| 
+S3：PuttBucketting
+ a| 
+* 刪除標籤†
+* PuttBucketTagging
+
+ a| 
+
+
+
+ a| 
+S3：PuttBucketVersion
+ a| 
+PuttBucketVersion
+ a| 
+
+
+
+ a| 
+S3：Putt升降 器組態
+ a| 
+* 刪除 BucketLifecycle †
+* PuttBucketLifecycleConfiguration
+
+ a| 
+
+
+
+ a| 
+S3：PuttReplicationConfiguration
+ a| 
+PutBucketReplication
+ a| 
+是、請分別授予和刪除權限
+
+|===
+
+
+=== 套用至物件的權限
+
+[cols="2a,2a,1a"]
+|===
+| 權限 | S3 REST API作業 | 客製StorageGRID 化以供選擇 
+
+
+ a| 
+S3：中止多重角色上傳
+ a| 
+* AbortMultiPart上 傳
+* RestoreObject
+
+ a| 
+
+
+
+ a| 
+S3：BypassGovernanceRetention
+ a| 
+* 刪除物件
+* 刪除物件
+* PutObjectRetention
+
+ a| 
+
+
+
+ a| 
+S3：刪除物件
+ a| 
+* 刪除物件
+* 刪除物件
+* RestoreObject
+
+ a| 
+
+
+
+ a| 
+S3：刪除ObjectTagging
+ a| 
+刪除ObjectTagging
+ a| 
+
+
+
+ a| 
+S3：刪除ObjectVersion標記
+ a| 
+刪除物件標籤（物件的特定版本）
+ a| 
+
+
+
+ a| 
+S3：刪除ObjectVersion
+ a| 
+DeleteObject （物件的特定版本）
+ a| 
+
+
+
+ a| 
+S3：GetObject
+ a| 
+* GetObject
+* 標題物件
+* RestoreObject
+* 選取物件內容
+
+ a| 
+
+
+
+ a| 
+S3：GetObjectAcl
+ a| 
+GetObjectAcl
+ a| 
+
+
+
+ a| 
+S3：GetObjectLegalHold
+ a| 
+GetObjectLegalHold
+ a| 
+
+
+
+ a| 
+S3：GetObjectRetention
+ a| 
+GetObjectRetention
+ a| 
+
+
+
+ a| 
+S3：GetObjectTagging
+ a| 
+GetObjectTagging
+ a| 
+
+
+
+ a| 
+S3：GetObjectVersion標記
+ a| 
+GetObjectTagging( 物件的特定版本 )
+ a| 
+
+
+
+ a| 
+S3：GetObjectVersion
+ a| 
+GetObject （物件的特定版本）
+ a| 
+
+
+
+ a| 
+S3：列出多個零件上傳零件
+ a| 
+ListParts 、 RestoreObject
+ a| 
+
+
+
+ a| 
+S3：PuttObject
+ a| 
+* PuttObject
+* CopyObject
+* RestoreObject
+* 建立多個部分上傳
+* 完成多個部分上傳
+* 上傳零件
+* 上傳PartCopy
+
+ a| 
+
+
+
+ a| 
+S3：PuttObjectLegalHold
+ a| 
+PutObjectLegalHold
+ a| 
+
+
+
+ a| 
+S3：PuttObjectRetention
+ a| 
+PutObjectRetention
+ a| 
+
+
+
+ a| 
+S3：PuttObjectTagging
+ a| 
+PuttObjectTagging
+ a| 
+
+
+
+ a| 
+S3：PuttObjectVersion標記
+ a| 
+PutObjectTagging( 物件的特定版本 )
+ a| 
+
+
+
+ a| 
+S3：PuttOverwriteObject
+ a| 
+* PuttObject
+* CopyObject
+* PuttObjectTagging
+* 刪除ObjectTagging
+* 完成多個部分上傳
+
+ a| 
+是的
+
+
+
+ a| 
+S3：恢復物件
+ a| 
+RestoreObject
+ a| 
+
+|===
+
+
+== 使用PuttOverwriteObject權限
+
+S3：PuttOverwriteObject權限是套StorageGRID 用至建立或更新物件之作業的自訂功能。此權限的設定決定用戶端是否可以覆寫物件的資料、使用者定義的中繼資料或S3物件標記。
+
+此權限的可能設定包括：
+
+* *允許*：用戶端可以覆寫物件。這是預設設定。
+* * 拒絕 * ：用戶端無法覆寫物件。設為「拒絕」時、PuttOverwriteObject權限的運作方式如下：
++
+** 如果在同一路徑找到現有物件：
++
+*** 物件的資料、使用者定義的中繼資料或 S3 物件標記無法覆寫。
+*** 任何進行中的擷取作業都會取消、並傳回錯誤。
+*** 如果啟用 S3 版本設定、則「拒絕」設定會防止 PutObjectTagging 或 DeleteObjectTagging 作業修改物件及其非目前版本的 TagSet 。
+
+
+** 如果找不到現有的物件、此權限將不會生效。
+
+
+* 當此權限不存在時、效果與「允許」設定相同。
+
+
+
+NOTE: 如果目前的 S3 原則允許覆寫、而 PutOverwriteObject 權限設定為拒絕、則用戶端無法覆寫物件的資料、使用者定義的中繼資料或物件標記。此外、如果選取 * 禁止用戶端修改 * 核取方塊（ * 組態 * > * 安全性設定 * > * 網路和物件 * ）、則該設定會覆寫 PutOverwriteObject 權限的設定。
+
+
+
+== 在原則中指定條件
+
+條件會定義原則的生效時間。條件包括運算子和金鑰值配對。
+
+條件使用金鑰值配對進行評估。條件元素可以包含多個條件、而且每個條件可以包含多個金鑰值配對。條件區塊使用下列格式：
+
+[listing, subs="specialcharacters,quotes"]
+----
+Condition: {
+     _condition_type_: {
+          _condition_key_: _condition_values_
+----
+在下列範例中、ipAddress條件使用SourceIp條件金鑰。
+
+[listing]
+----
+"Condition": {
+    "IpAddress": {
+      "aws:SourceIp": "54.240.143.0/24"
+		...
+},
+		...
+----
+
+
+=== 支援的條件運算子
+
+條件運算子的分類如下：
+
+* 字串
+* 數字
+* 布林值
+* IP 位址
+* null檢查
+
+
+[cols="1a,2a"]
+|===
+| 條件運算子 | 說明 
+
+
+ a| 
+擷取等量資料
+ a| 
+根據完全相符（區分大小寫）、將金鑰與字串值進行比較。
+
+
+
+ a| 
+擷取NotEquals
+ a| 
+根據否定比對（區分大小寫）、將金鑰與字串值進行比較。
+
+
+
+ a| 
+StringEqualsIgnoreCase
+ a| 
+根據完全相符的結果（忽略大小寫）、將金鑰與字串值進行比較。
+
+
+
+ a| 
+StringNotEqualsIgnoreCase
+ a| 
+根據否定比對（忽略大小寫）、將金鑰與字串值進行比較。
+
+
+
+ a| 
+StringLike
+ a| 
+根據完全相符（區分大小寫）、將金鑰與字串值進行比較。可以包含 * 和 ? 萬用字元。
+
+
+
+ a| 
+StringNotLike
+ a| 
+根據否定比對（區分大小寫）、將金鑰與字串值進行比較。可以包含 * 和 ? 萬用字元。
+
+
+
+ a| 
+分子等量
+ a| 
+根據完全相符的結果、將金鑰與數值進行比較。
+
+
+
+ a| 
+NumericNotEquals
+ a| 
+根據已否定的比對、將金鑰與數值進行比較。
+
+
+
+ a| 
+數值資料
+ a| 
+根據「大於」比對、將金鑰與數值進行比較。
+
+
+
+ a| 
+NumericGreaterThang Equals
+ a| 
+根據「大於或等於」比對、將金鑰與數值進行比較。
+
+
+
+ a| 
+數字LessThan
+ a| 
+根據「小於」比對、將金鑰與數值進行比較。
+
+
+
+ a| 
+NumericLessThang Equals
+ a| 
+根據「小於或等於」比對、將金鑰與數值進行比較。
+
+
+
+ a| 
+布爾
+ a| 
+根據 "TRUE 或 FALSE" 比對、將金鑰與布林值進行比較。
+
+
+
+ a| 
+IP地址
+ a| 
+比較金鑰與IP位址或IP位址範圍。
+
+
+
+ a| 
+NotIppAddress
+ a| 
+根據已否定的比對、將金鑰與IP位址或IP位址範圍進行比較。
+
+
+
+ a| 
+null
+ a| 
+檢查條件金鑰是否存在於目前的要求內容中。
+
+|===
+
+
+=== 支援的條件金鑰
+
+[cols="1a,1a,2a"]
+|===
+| 條件金鑰 | 行動 | 說明 
+
+
+ a| 
+AWS：來源Ip
+ a| 
+IP營運者
+ a| 
+將會與傳送要求的IP位址進行比較。可用於庫位或物件作業。
+
+*附註：*如果S3要求是透過管理節點和閘道節點上的負載平衡器服務傳送、則這會與負載平衡器服務上游的IP位址進行比較。
+
+*附註*：如果使用第三方、不透明的負載平衡器、則會比較該負載平衡器的IP位址。任何標頭都 `X-Forwarded-For`將被忽略、因為無法確定其有效性。
+
+
+
+ a| 
+AWS：使用者名稱
+ a| 
+資源/身分識別
+ a| 
+將會比較傳送者的使用者名稱、以從中傳送要求。可用於庫位或物件作業。
+
+
+
+ a| 
+S3：分隔符號
+ a| 
+S3：清單儲存庫和
+
+S3：listBucketVerions權限
+ a| 
+將與 ListObjects 或 ListObjectVerions 要求中指定的分隔參數進行比較。
+
+
+
+ a| 
+S3 ： <tag-key>
+ a| 
+S3：刪除ObjectTagging
+
+S3：刪除ObjectVersion標記
+
+S3：GetObject
+
+S3：GetObjectAcl
+
+3 ： GetObjectTagging
+
+S3：GetObjectVersion
+
+S3：GetObjectVerionAcl
+
+S3：GetObjectVersion標記
+
+S3 ： PutObjectAcl
+
+S3：PuttObjectTagging
+
+S3 ： PutObjectVersionAcl
+
+S3：PuttObjectVersion標記
+ a| 
+需要現有物件具有特定的標記金鑰和值。
+
+
+
+ a| 
+S3：金鑰上限
+ a| 
+S3：清單儲存庫和
+
+S3：listBucketVerions權限
+ a| 
+將與 ListObjects 或 ListObjectVerions 要求中指定的 max-keys 參數進行比較。
+
+
+
+ a| 
+S3：物件鎖定剩餘保留天數
+ a| 
+S3：PuttObject
+ a| 
+與要求標頭中指定的保留截止日期比較 `x-amz-object-lock-retain-until-date`、或是根據貯體預設保留期間計算、以確保這些值在下列要求的允許範圍內：
+
+* PuttObject
+* CopyObject
+* 建立多個部分上傳
+
+
+
+
+ a| 
+S3：物件鎖定剩餘保留天數
+ a| 
+S3：PuttObjectRetention
+ a| 
+與 PutObjectRetention 要求中指定的保留截止日期進行比較、以確保其在允許範圍內。
+
+
+
+ a| 
+S3：前置碼
+ a| 
+S3：清單儲存庫和
+
+S3：listBucketVerions權限
+ a| 
+將與 ListObjects 或 ListObjectVerions 要求中指定的前置參數進行比較。
+
+
+
+ a| 
+<tag-key>
+ a| 
+S3：PuttObject
+
+S3：PuttObjectTagging
+
+S3：PuttObjectVersion標記
+ a| 
+當物件要求包含標記時、需要特定的標記金鑰和值。
+
+|===
+
+
+== 在原則中指定變數
+
+您可以在原則中使用變數、在原則可用時填入原則資訊。您可以在元素中使用原則變數、也可以在元素中使用 `Resource`字串比較 `Condition`。
+
+在此範例中、變數 `${aws:username}`是 Resource 元素的一部分：
+
+[listing]
+----
+"Resource": "arn:aws:s3:::bucket-name/home/${aws:username}/*"
+----
+在此範例中、變數 `${aws:username}`是條件區塊中條件值的一部分：
+
+[listing]
+----
+"Condition": {
+    "StringLike": {
+      "s3:prefix": "${aws:username}/*"
+		...
+},
+		...
+----
+[cols="1a,2a"]
+|===
+| 變動 | 說明 
+
+
+ a| 
+`${aws:SourceIp}`
+ a| 
+使用來源Ip金鑰作為提供的變數。
+
+
+
+ a| 
+`${aws:username}`
+ a| 
+使用UserName金鑰做為提供的變數。
+
+
+
+ a| 
+`${s3:prefix}`
+ a| 
+使用服務專屬的前置碼作為提供的變數。
+
+
+
+ a| 
+`${s3:max-keys}`
+ a| 
+使用服務專屬的最大金鑰作為提供的變數。
+
+
+
+ a| 
+`${*}`
+ a| 
+特殊字元。使用字元做為文字*字元。
+
+
+
+ a| 
+`${?}`
+ a| 
+特殊字元。使用字元做為文字字元。
+
+
+
+ a| 
+`${$}`
+ a| 
+特殊字元。使用字元做為文字$字元。
+
+|===
+
+
+== 建立需要特殊處理的原則
+
+有時候原則可能會授與安全性危險或危險的權限、以便繼續執行作業、例如封鎖帳戶的root使用者。在原則驗證期間、不像Amazon、StorageGRID 執行「支援S3 REST API」的限制較少、但在原則評估期間同樣嚴格。
+
+[cols="2a,1a,2a,2a"]
+|===
+| 原則說明 | 原則類型 | Amazon行為 | 運作方式StorageGRID 
+
+
+ a| 
+拒絕root帳戶的任何權限
+ a| 
+鏟斗
+ a| 
+有效且強制、但root使用者帳戶保留所有S3儲存區原則作業的權限
+ a| 
+相同
+
+
+
+ a| 
+拒絕對使用者/群組擁有任何權限
+ a| 
+群組
+ a| 
+有效且強制
+ a| 
+相同
+
+
+
+ a| 
+允許外部帳戶群組擁有任何權限
+ a| 
+鏟斗
+ a| 
+無效的主體
+ a| 
+有效、但原則允許時、所有S3儲存區原則作業的權限都會傳回「不允許使用405方法」錯誤
+
+
+
+ a| 
+允許外部帳戶root或使用者擁有任何權限
+ a| 
+鏟斗
+ a| 
+有效、但原則允許時、所有S3儲存區原則作業的權限都會傳回「不允許使用405方法」錯誤
+ a| 
+相同
+
+
+
+ a| 
+允許每個人都有權執行所有動作
+ a| 
+鏟斗
+ a| 
+有效、但所有S3儲存區原則作業的權限都會傳回異帳戶根目錄和使用者不允許的「405方法」錯誤
+ a| 
+相同
+
+
+
+ a| 
+拒絕所有人對所有動作的權限
+ a| 
+鏟斗
+ a| 
+有效且強制、但root使用者帳戶保留所有S3儲存區原則作業的權限
+ a| 
+相同
+
+
+
+ a| 
+主體是不存在的使用者或群組
+ a| 
+鏟斗
+ a| 
+無效的主體
+ a| 
+有效
+
+
+
+ a| 
+資源是不存在的S3儲存區
+ a| 
+群組
+ a| 
+有效
+ a| 
+相同
+
+
+
+ a| 
+主體是本機群組
+ a| 
+鏟斗
+ a| 
+無效的主體
+ a| 
+有效
+
+
+
+ a| 
+原則會授與非擁有者帳戶（包括匿名帳戶）權限、以放置物件。
+ a| 
+鏟斗
+ a| 
+有效。物件由建立者帳戶擁有、且庫位原則不適用。建立者帳戶必須使用物件ACL來授與物件的存取權限。
+ a| 
+有效。物件由庫位擁有者帳戶擁有。適用庫位政策。
+
+|===
+
+
+== 一次寫入多讀（WORM）保護
+
+您可以建立一次寫入多次讀取（WORM）儲存區、以保護資料、使用者定義的物件中繼資料、以及S3物件標記。您可以設定WORM儲存區、以允許建立新物件、並防止覆寫或刪除現有內容。請使用本文所述的其中一種方法。
+
+為了確保覆寫永遠被拒絕、您可以：
+
+* 從 Grid Manager 移至 * 組態 * > * 安全性 * > * 安全性設定 * > * 網路和物件 * 、然後選取 * 禁止用戶端修改 * 核取方塊。
+* 套用下列規則和S3原則：
++
+** 將PuttOverwriteObject拒絕作業新增至S3原則。
+** 將刪除物件拒絕作業新增至S3原則。
+** 將 PutObject 允許作業新增至 S3 原則。
+
+
+
+
+
+NOTE: 在 S3 原則中將 DeleteObject 設定為拒絕、並不會在存在「 30 天後零複本」等規則時、阻止 ILM 刪除物件。
+
+
+NOTE: 即使套用了所有這些規則和原則、也無法防範並行寫入（請參閱情況 A ）。它們確實能防止連續完成的覆寫（請參閱情況B）。
+
+*情況A*：並行寫入（不受保護）
+
+[listing]
+----
+/mybucket/important.doc
+PUT#1 ---> OK
+PUT#2 -------> OK
+----
+*情況B*：連續完成覆寫（防範）
+
+[listing]
+----
+/mybucket/important.doc
+PUT#1 -------> PUT#2 ---X (denied)
+----
+.相關資訊
+* link:how-storagegrid-ilm-rules-manage-objects.html["如何利用ILM規則來管理物件StorageGRID"]
+* link:example-bucket-policies.html["貯體原則範例"]
+* link:example-group-policies.html["群組原則範例"]
+* link:../ilm/index.html["使用ILM管理物件"]
+* link:../tenant/index.html["使用租戶帳戶"]
+

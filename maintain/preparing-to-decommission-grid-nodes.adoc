@@ -1,0 +1,14 @@
+---
+permalink: maintain/preparing-to-decommission-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission 
+summary: 您必須檢閱移除網格節點的考量事項、並確認未針對銷毀編碼資料啟用任何修復工作。 
+---
+= 準備取消委任網格節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須檢閱移除網格節點的考量事項、並確認未針對銷毀編碼資料啟用任何修復工作。

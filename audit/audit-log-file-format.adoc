@@ -1,0 +1,49 @@
+---
+permalink: audit/audit-log-file-format.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, log file formats, log formats, log file format, log format 
+summary: 稽核記錄檔位於每個管理節點、並包含個別稽核訊息的集合。 
+---
+= 稽核記錄檔格式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+稽核記錄檔位於每個管理節點、並包含個別稽核訊息的集合。
+
+每個稽核訊息都包含下列項目：
+
+* 觸發ISO 8601格式稽核訊息（ATIM）的事件協調世界時間（UTC）、後面接著空格：
++
+`_YYYY-MM-DDTHH:MM:SS.UUUUUU_`，其中 `_UUUUUU_`是微秒。
+
+* 稽核訊息本身，包含在方括號內，開頭為 `AUDT`。
+
+
+下列範例顯示稽核記錄檔中的三個稽核訊息（換行符號會新增以方便閱讀）。當租戶建立S3儲存區並將兩個物件新增至該儲存區時、就會產生這些訊息。
+
+[listing]
+----
+2019-08-07T18:43:30.247711
+[AUDT:[RSLT(FC32):SUCS][CNID(UI64):1565149504991681][TIME(UI64):73520][SAIP(IPAD):"10.224.2.255"][S3AI(CSTR):"17530064241597054718"]
+[SACC(CSTR):"s3tenant"][S3AK(CSTR):"SGKH9100SCkNB8M3MTWNt-PhoTDwB9JOk7PtyLkQmA=="][SUSR(CSTR):"urn:sgws:identity::17530064241597054718:root"]
+[SBAI(CSTR):"17530064241597054718"][SBAC(CSTR):"s3tenant"][S3BK(CSTR):"bucket1"][AVER(UI32):10][ATIM(UI64):1565203410247711]
+[ATYP(FC32):SPUT][ANID(UI32):12454421][AMID(FC32):S3RQ][ATID(UI64):7074142142472611085]]
+
+2019-08-07T18:43:30.783597
+[AUDT:[RSLT(FC32):SUCS][CNID(UI64):1565149504991696][TIME(UI64):120713][SAIP(IPAD):"10.224.2.255"][S3AI(CSTR):"17530064241597054718"]
+[SACC(CSTR):"s3tenant"][S3AK(CSTR):"SGKH9100SCkNB8M3MTWNt-PhoTDwB9JOk7PtyLkQmA=="][SUSR(CSTR):"urn:sgws:identity::17530064241597054718:root"]
+[SBAI(CSTR):"17530064241597054718"][SBAC(CSTR):"s3tenant"][S3BK(CSTR):"bucket1"][S3KY(CSTR):"fh-small-0"]
+[CBID(UI64):0x779557A069B2C037][UUID(CSTR):"94BA6949-38E1-4B0C-BC80-EB44FB4FCC7F"][CSIZ(UI64):1024][AVER(UI32):10]
+[ATIM(UI64):1565203410783597][ATYP(FC32):SPUT][ANID(UI32):12454421][AMID(FC32):S3RQ][ATID(UI64):8439606722108456022]]
+
+2019-08-07T18:43:30.784558
+[AUDT:[RSLT(FC32):SUCS][CNID(UI64):1565149504991693][TIME(UI64):121666][SAIP(IPAD):"10.224.2.255"][S3AI(CSTR):"17530064241597054718"]
+[SACC(CSTR):"s3tenant"][S3AK(CSTR):"SGKH9100SCkNB8M3MTWNt-PhoTDwB9JOk7PtyLkQmA=="][SUSR(CSTR):"urn:sgws:identity::17530064241597054718:root"]
+[SBAI(CSTR):"17530064241597054718"][SBAC(CSTR):"s3tenant"][S3BK(CSTR):"bucket1"][S3KY(CSTR):"fh-small-2000"]
+[CBID(UI64):0x180CBD8E678EED17][UUID(CSTR):"19CE06D0-D2CF-4B03-9C38-E578D66F7ADD"][CSIZ(UI64):1024][AVER(UI32):10]
+[ATIM(UI64):1565203410784558][ATYP(FC32):SPUT][ANID(UI32):12454421][AMID(FC32):S3RQ][ATID(UI64):13489590586043706682]]
+----
+稽核記錄檔中的稽核訊息是預設格式、不易讀取或解讀。您可以使用link:using-audit-explain-tool.html["稽核說明工具"]取得稽核記錄中稽核訊息的簡化摘要。您可以使用link:using-audit-sum-tool.html["稽核總和工具"]來總結記錄的寫入、讀取和刪除作業數、以及這些作業所需的時間。

@@ -1,0 +1,26 @@
+---
+permalink: vmware/adding-sites.html 
+sidebar: sidebar 
+keywords: how to add sites 
+summary: 安裝StorageGRID 時、您必須至少建立一個站台。您可以建立額外的站台、以提升StorageGRID 您的作業系統的可靠性和儲存容量。 
+---
+= 新增站台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝StorageGRID 時、您必須至少建立一個站台。您可以建立額外的站台、以提升StorageGRID 您的作業系統的可靠性和儲存容量。
+
+.步驟
+. 在「站台」頁面上、輸入*站台名稱*。
+. 若要新增其他站台、請按一下最後一個站台項目旁的加號、然後在新的*站台名稱*文字方塊中輸入名稱。
++
+根據網格拓撲的需求新增更多站台。您最多可以新增16個站台。
+
++
+image::../media/3_gmi_installer_sites_page.gif[此影像由周邊文字說明。]
+
+. 單擊 * 下一步 * 。
+

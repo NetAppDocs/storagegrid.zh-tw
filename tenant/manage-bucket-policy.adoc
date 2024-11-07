@@ -1,0 +1,37 @@
+---
+permalink: tenant/manage-bucket-policy.html 
+sidebar: sidebar 
+keywords: how to create S3 tenant groups, federated group, local group 
+summary: 您可以控制 S3 貯體和該貯體中物件的使用者存取。 
+---
+= 管理貯體原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以控制 S3 貯體和該貯體中物件的使用者存取。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["root 存取權限"]。「檢視所有貯體」和「管理所有貯體」權限僅允許檢視。
+* 您已確認所需的儲存節點和站台數量可用。如果任一站台內沒有兩個以上的儲存節點、或站台無法使用、則這些設定的變更可能無法使用。
+
+
+.步驟
+. 選擇 * 鏟斗 * 、然後選擇您要管理的鏟斗。
+. 在貯體詳細資料頁面上、選取 * 貯體存取 * > * 貯體原則 * 。
+. 執行下列其中一項：
++
+** 選取「 * 啟用原則 * 」核取方塊以輸入貯體原則。然後輸入有效的 JSON 格式字串。
++
+每個儲存區原則的大小上限為 20 、 480 位元組。
+
+** 編輯字串以修改現有原則。
+** 取消選取 * 啟用原則 * 以停用原則。
+
+
+
+
+如需有關儲存庫原則的詳細資訊、包括語言語法和範例link:../s3/example-bucket-policies.html["貯體原則範例"]、請參閱。

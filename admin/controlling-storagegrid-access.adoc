@@ -1,0 +1,47 @@
+---
+permalink: admin/controlling-storagegrid-access.html 
+sidebar: sidebar 
+keywords: administrator access, single sign on, sso, users, groups, client certificates, passwords, passphrase 
+summary: 您可以透過StorageGRID 建立或匯入群組和使用者、並指派權限給每個群組、來控制哪些人可以存取功能、以及使用者可以執行哪些工作。您也可以選擇啟用單一登入（SSO）、建立用戶端憑證、以及變更網格密碼。 
+---
+= 控制StorageGRID 功能存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以透過StorageGRID 建立或匯入群組和使用者、並指派權限給每個群組、來控制哪些人可以存取功能、以及使用者可以執行哪些工作。您也可以選擇啟用單一登入（SSO）、建立用戶端憑證、以及變更網格密碼。
+
+
+
+== 控制對Grid Manager的存取
+
+您可以透過從身分識別聯盟服務匯入群組和使用者、或設定本機群組和本機使用者、來判斷誰可以存取Grid Manager和Grid Management API。
+
+使用link:using-identity-federation.html["身分識別聯盟"]可 link:managing-users.html["使用者"]加快設定link:managing-admin-groups.html["群組"]速度、並可讓使用者使用熟悉的認證登入 StorageGRID 。如果您使用Active Directory、OpenLDAP或Oracle Directory Server、則可以設定身分識別聯盟。
+
+
+NOTE: 如果您想要使用另一項LDAP v3服務、請聯絡技術支援部門。
+
+您可以將不同的工作指派給每個群組、以決定每個使用者可以執行哪些工作link:admin-group-permissions.html["權限"]。例如、您可能希望某個群組中的使用者能夠管理ILM規則、以及其他群組中的使用者執行維護工作。使用者必須屬於至少一個群組才能存取系統。
+
+您也可以將群組設定為唯讀。唯讀群組中的使用者只能檢視設定和功能。他們無法在 Grid Manager 或 Grid Management API 中進行任何變更或執行任何作業。
+
+
+
+== 啟用單一登入
+
+支援使用安全聲明標記語言2.0（SAML 2.0）標準的單一登入（SSO）StorageGRID 。之後link:configuring-sso.html["設定並啟用 SSO"]、所有使用者都必須先由外部身分識別供應商驗證、才能存取 Grid Manager 、 Tenant Manager 、 Grid Management API 或 Tenant Management API 。本機使用者無法登入 StorageGRID 。
+
+
+
+== 變更資源配置複雜密碼
+
+許多安裝與維護程序、以及下載StorageGRID 「還原套件」時、都需要使用資源配置密碼。也需要通關密碼才能下載適用於StorageGRID 整個系統的網格拓撲資訊和加密金鑰備份。您可以link:changing-provisioning-passphrase.html["變更複雜密碼"]視需要進行。
+
+
+
+== 變更節點主控台密碼
+
+網格中的每個節點都有唯一的節點主控台密碼、您必須以「 admin 」的身分使用 SSH 登入節點、或是以 VM/ 實體主控台連線的根使用者登入。您可以視需要link:change-node-console-password.html["變更節點主控台密碼"]為每個節點執行。

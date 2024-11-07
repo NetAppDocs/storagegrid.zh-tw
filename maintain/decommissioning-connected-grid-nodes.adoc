@@ -1,0 +1,132 @@
+---
+permalink: maintain/decommissioning-connected-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission, connected nodes, decommission node 
+summary: 您可以取消委任並永久移除連接至網格的節點。 
+---
+= 取消委任連線的網格節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以取消委任並永久移除連接至網格的節點。
+
+.開始之前
+* 您瞭解停用的考量事項及停用link:considerations-for-decommissioning-storage-nodes.html["儲存節點"]的考量link:considerations-for-decommissioning-admin-or-gateway-nodes.html["管理和閘道節點"]事項。
+* 您已收集所有必要資料。
+* 您已確保沒有任何資料修復工作處於作用中狀態。
+* 您已確認儲存節點還原在網格中的任何位置均未進行。如果是、請等到任何 Cassandra 重建作業完成後再執行恢復。然後您可以繼續解除委任。
+* 您已確保在節點取消委任程序執行期間不會執行其他維護程序、除非節點取消委任程序暫停。
+* 您有資源配置通關密碼。
+* 網格節點已連線。
+* 要取消委任的節點的 * 取消委任可能 * 欄包含綠色核取標記。
++
+
+NOTE: 如果一個或多個磁碟區離線（未掛載）、或是它們在線上（掛載）但處於錯誤狀態、則無法啟動解除委任。
+
++
+
+NOTE: 如果一個或多個磁碟區在取消委任期間離線、則在這些磁碟區重新上線後、取消委任程序就會完成。
+
+* 所有網格節點都有正常（綠色）健全狀況image:../media/icon_alert_green_checkmark.png["綠色核取記號圖示"]。如果您在「* Health *」（*健全狀況*）欄中看到下列其中一個圖示、您必須嘗試解決此問題：
++
+[cols="1a,1a,3a"]
+|===
+| 圖示 | 色彩 | 嚴重性 
+
+
+ a| 
+image:../media/icon_alarm_yellow_notice.gif["黃色方塊圖示"]
+ a| 
+黃色
+ a| 
+注意
+
+
+
+ a| 
+image:../media/icon_alert_yellow_minor.png["淺橘鑽石圖示"]
+ a| 
+淡橘色
+ a| 
+次要
+
+
+
+ a| 
+image:../media/icon_alert_orange_major.png["暗橘鑽石圖示"]
+ a| 
+暗橘色
+ a| 
+主要
+
+
+
+ a| 
+image:../media/icon_alert_red_critical.png["紅色x圖示"]
+ a| 
+紅色
+ a| 
+關鍵
+
+|===
+* 如果您先前已停用中斷連線的儲存節點、則資料修復工作都已成功完成。請參閱。 link:checking-data-repair-jobs.html["檢查資料修復工作"]
+
+
+
+CAUTION: 請勿移除網格節點的虛擬機器或其他資源、直到本程序指示您移除這些資源為止。
+
+
+CAUTION: 在包含僅軟體中繼資料節點的網格中取消委任儲存節點時、請務必謹慎。如果您取消委任所有設定為儲存物件和中繼資料的節點、則儲存物件的能力會從網格中移除。如需僅中繼資料儲存節點的詳細資訊、請參閱link:../primer/what-storage-node-is.html#types-of-storage-nodes["儲存節點類型"]。
+
+.關於這項工作
+當節點停用時、其服務會停用、節點會自動關機。
+
+.步驟
+. 從「取消委任節點」頁面、選取您要取消委任的每個網格節點的核取方塊。
+. 輸入資源配置通關密碼。
++
+「*開始取消委任*」按鈕已啟用。
+
+. 選取 * 開始取消委任 * 。
+. 檢閱確認對話方塊中的節點清單、然後選取 * 確定 * 。
++
+節點取消委任程序隨即開始、並顯示每個節點的進度。
+
++
+
+CAUTION: 取消委任程序開始後、請勿將儲存節點離線。變更狀態可能會導致部分內容無法複製到其他位置。
+
+. 一旦新的恢復軟件包可用，請在標題欄中選擇恢復軟件包鏈接，或選擇 *maintenance * > *System* > *Recovery package* 以訪問恢復軟件包頁面。然後下載 `.zip`檔案。
++
+請參閱。 link:downloading-recovery-package.html["正在下載恢復套件"]
+
++
+
+NOTE: 請盡快下載恢復套件、以確保在取消委任程序期間發生問題時、您可以恢復網格。
+
+. 定期監控「取消委任節點」頁面、確保所有選取的節點都能順利停用。
++
+
+TIP: 儲存節點可能需要數天或數週的時間才能取消委任。
+
++
+當所有工作都完成時、會重新顯示節點選擇清單、並顯示成功訊息。
+
+
+
+.完成後
+完成節點取消委任程序後、請完成下列步驟：
+
+. 請依照您的平台所需的適當步驟進行。例如：
++
+** * Linux *：您可能想要分離磁碟區、並刪除安裝期間建立的節點組態檔。請參閱link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]和link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]。
+** * VMware* ：您可能想使用 vCenter 的「從磁碟刪除」選項來刪除虛擬機器。您可能還需要刪除任何獨立於虛擬機器的資料磁碟。
+** * StorageGRID 《*》應用裝置*：應用裝置節點會自動恢復為未部署狀態、您可在此存取StorageGRID 《應用程式安裝程式》。您可以關閉產品電源、或將其新增至StorageGRID 其他的系統。
+
+
+. 請確保已淘汰的網格節點磁碟機已清除。使用市售的資料抹除工具或服務、永久且安全地移除磁碟機中的資料。
+. 如果您停用了某個應用裝置節點、但設備上的資料是使用節點加密來保護、請使用StorageGRID 此應用裝置安裝程式來清除金鑰管理伺服器組態（清除KMS）。如果您要將應用裝置新增至其他網格、則必須清除KMS組態。有關說明，請參閱 https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/monitoring-node-encryption-in-maintenance-mode.html["在維護模式中監控節點加密"^]。
+

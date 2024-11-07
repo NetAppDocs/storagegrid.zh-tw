@@ -1,0 +1,61 @@
+---
+permalink: maintain/vmware-adding-trunk-or-access-interfaces-to-node.html 
+sidebar: sidebar 
+keywords: add extra interface to node, access interface, VM interface 
+summary: 安裝VM節點之後、您可以將額外的主幹或存取介面新增至該節點。您新增的介面會顯示在「VLAN介面」頁面和「HA群組」頁面上。 
+---
+= VMware：新增主幹或存取介面至節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在安裝節點之後、將主幹或存取介面新增至VM節點。您新增的介面會顯示在「VLAN介面」頁面和「HA群組」頁面上。
+
+.開始之前
+* 您可以存取的指示link:../vmware/index.html["在 VMware 平台上安裝 StorageGRID"]。
+* 您擁有管理節點和閘道節點VMware虛擬機器。
+* 您的網路子網路未被用作 Grid 、 Admin 或 Client Network 。
+* 您有 `Passwords.txt`檔案。
+* 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
+
+
+
+CAUTION: 當軟體升級、還原程序或擴充程序作用中時、請勿嘗試將介面新增至節點。
+
+.關於這項工作
+安裝節點之後、請使用這些步驟將一個或多個額外介面新增至VMware節點。例如、您可能想要將主幹介面新增至管理或閘道節點、以便使用VLAN介面來分隔屬於不同應用程式或租戶的流量。或者、您可能想要新增存取介面、以便在高可用度（HA）群組中使用。
+
+如果您新增主幹介面、則必須在StorageGRID 功能鏈路的資訊鏈路中設定VLAN介面。如果您新增存取介面、可以直接將介面新增至 HA 群組、而不需要設定 VLAN 介面。
+
+新增介面時、節點可能會暫時無法使用。
+
+.步驟
+. 在vCenter中、將新的網路介面卡（輸入VMXNET3）新增至管理節點和閘道節點VM。選中 * Connected * （已連接 * ）和 * Connect at Power On* （開機時連接）複選框。
++
+image::../media/vcenter.png[vCenter]
+
+. 使用SSH登入管理節點或閘道節點。
+. 用於 `ip link show`確認偵測到新的網路介面 ens256 。
++
+[listing]
+----
+ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:50:56:a0:4e:5b brd ff:ff:ff:ff:ff:ff
+3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:50:56:a0:fa:ce brd ff:ff:ff:ff:ff:ff
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:50:56:a0:d6:87 brd ff:ff:ff:ff:ff:ff
+5: ens256: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master ens256vrf state UP mode DEFAULT group default qlen 1000
+    link/ether 00:50:56:a0:ea:88 brd ff:ff:ff:ff:ff:ff
+----
+
+
+.完成後
+* 如果您新增了一或多個主幹介面、請前往link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]為每個新的父介面設定一個或多個 VLAN 介面。
+* 如果您新增一或多個存取介面、請前往link:../admin/configure-high-availability-group.html["設定高可用度群組"]、將新介面直接新增至 HA 群組。
+

@@ -1,0 +1,38 @@
+---
+permalink: monitor/viewing-storage-tab.html 
+sidebar: sidebar 
+keywords: storage tab 
+summary: 「Storage（儲存設備）」索引標籤摘要說明儲存可用度和其他儲存指標。 
+---
+= 檢視「儲存設備」索引標籤
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「Storage（儲存設備）」索引標籤摘要說明儲存可用度和其他儲存指標。
+
+所有節點、每個站台及整個網格都會顯示「儲存」索引標籤。
+
+
+
+== 儲存使用的圖表
+
+對於儲存節點、每個站台及整個網格、「儲存」索引標籤會顯示物件資料和物件中繼資料一段時間以來使用的儲存容量圖表。
+
+
+NOTE: 當節點未連線至網格時、例如在升級期間或中斷連線狀態時、某些度量可能無法使用或排除在站台和網格總計之外。節點重新連線至網格之後、請等待數分鐘、讓值穩定下來。
+
+image::../media/nodes_storage_node_storage_tab.png[節點>儲存節點>儲存索引標籤]
+
+
+
+== 磁碟裝置、磁碟區和物件會儲存資料表
+
+對於所有節點、「Storage（儲存）」索引標籤包含節點上磁碟裝置和磁碟區的詳細資料。對於儲存節點、「物件存放區」表格提供每個儲存磁碟區的相關資訊。
+
+image::../media/nodes_page_storage_tables.png[節點頁面儲存表格]
+
+.相關資訊
+link:monitoring-storage-capacity.html["監控儲存容量"]

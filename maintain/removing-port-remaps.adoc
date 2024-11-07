@@ -1,0 +1,46 @@
+---
+permalink: maintain/removing-port-remaps.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, remove port remap, removing port remap, port remap 
+summary: 如果您想要設定負載平衡器服務的端點、而且想要使用已設定為連接埠重新對應對應對應對應對應對應對應對應對應對應的連接埠、則必須先移除現有的連接埠重新對應、否則端點將無法生效。您必須在每個具有衝突的重新對應連接埠的管理節點和閘道節點上執行指令碼、才能移除節點的所有連接埠重新對應。 
+---
+= 移除連接埠重新對應
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想要設定負載平衡器服務的端點、而且想要使用已設定為連接埠重新對應對應對應對應對應對應對應對應對應對應的連接埠、則必須先移除現有的連接埠重新對應、否則端點將無法生效。您必須在每個具有衝突的重新對應連接埠的管理節點和閘道節點上執行指令碼、才能移除節點的所有連接埠重新對應。
+
+.關於這項工作
+此程序會移除所有連接埠重新對應。如果您需要保留部分重新對應、請聯絡技術支援部門。
+
+如需設定負載平衡器端點的相關資訊，請參閱link:../admin/configuring-load-balancer-endpoints.html["設定負載平衡器端點"]。
+
+
+NOTE: 如果連接埠重新對應提供用戶端存取、請將用戶端重新設定為使用不同的連接埠做為負載平衡器端點、以避免服務中斷。否則、移除連接埠對應將導致用戶端存取中斷、並應適當排程。
+
+
+NOTE: 此程序不適用於StorageGRID 以容器形式部署在裸機主機上的作業系統。請參閱的說明link:removing-port-remaps-on-bare-metal-hosts.html["移除裸機主機上的連接埠重新對應"]。
+
+.步驟
+. 登入節點。
++
+.. 輸入下列命令： `ssh -p 8022 admin@node_IP`
++
+連接埠8022是基礎作業系統的SSH連接埠、而連接埠22則是執行StorageGRID 支援的Container引擎SSH連接埠。
+
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+
+. 執行下列指令碼： `remove-port-remap.sh`
+. 重新啟動節點： `reboot`
+. 登出命令 Shell ： `exit`
+. 在每個重新對應連接埠發生衝突的管理節點和閘道節點上重複這些步驟。
+

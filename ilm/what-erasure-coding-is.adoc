@@ -1,0 +1,38 @@
+---
+permalink: ilm/what-erasure-coding-is.html 
+sidebar: sidebar 
+keywords: what is erasure coding, what is ec 
+summary: 銷毀編碼是 StorageGRID 用來儲存物件資料的兩種方法之一。當物件符合使用抹除編碼的 ILM 規則時、這些物件會切換成資料片段、會計算額外的同位元區隔片段、而且每個片段都會儲存在不同的儲存節點上。 
+---
+= 什麼是銷毀編碼？
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+銷毀編碼是 StorageGRID 用來儲存物件資料的兩種方法之一（複寫是另一種方法）。當物件符合使用抹除編碼的 ILM 規則時、這些物件會切換成資料片段、會計算額外的同位元區隔片段、而且每個片段都會儲存在不同的儲存節點上。
+
+存取物件時、會使用儲存的片段重新組裝物件。如果資料或同位元檢查片段毀損或遺失、則銷毀編碼演算法可利用其餘資料和同位元檢查片段的子集來重新建立該片段。
+
+建立 ILM 規則時、 StorageGRID 會建立支援這些規則的銷毀編碼設定檔。您可以檢視抹除編碼設定檔清單、link:manage-erasure-coding-profiles.html#rename-an-erasure-coding-profile["重新命名抹除編碼設定檔"]或link:manage-erasure-coding-profiles.html#deactivate-an-erasure-coding-profile["如果目前未在任何 ILM 規則中使用抹除編碼設定檔、請停用該設定檔"]。
+
+以下範例說明在物件資料上使用銷毀編碼演算法。在此範例中、ILM規則使用4+2銷毀編碼方案。每個物件會分割成四個等量資料片段、並從物件資料計算兩個同位元檢查片段。這六個片段中的每個片段都儲存在三個資料中心站台的不同節點上、以針對節點故障或站台遺失提供資料保護。
+
+image::../media/ec_three_sites_4_plus_2.png[銷毀編碼三個站台4 Plus 2]
+
+4+2 銷毀編碼方案可透過各種方式進行設定。例如、您可以設定包含六個儲存節點的單一站台儲存池。對於link:using-multiple-storage-pools-for-cross-site-replication.html["站台遺失保護"]、您可以使用包含三個站台的儲存池、每個站台有三個儲存節點。只要六個片段（資料或同位元檢查）中的任四個仍然可用、就能擷取物件。最多可遺失兩個片段、而不會遺失物件資料。如果整個站台遺失、只要所有其他片段仍可存取、仍可擷取或修復物件。
+
+image::../media/ec_recoverable_4_plus_2.png[可恢復的銷毀編碼4 Plus 2]
+
+如果遺失兩個以上的儲存節點、則無法擷取物件。
+
+image::../media/ec_unrecoverable_4_plus_2.png[無法恢復的銷毀編碼4 Plus 2]
+
+.相關資訊
+* link:what-replication-is.html["什麼是複寫"]
+* link:what-storage-pool-is.html["什麼是儲存池"]
+* link:what-erasure-coding-schemes-are.html["什麼是銷毀編碼方案"]
+* link:manage-erasure-coding-profiles.html#rename-an-erasure-coding-profile["重新命名抹除編碼設定檔"]
+* link:manage-erasure-coding-profiles.html#deactivate-an-erasure-coding-profile["停用抹除編碼設定檔"]
+

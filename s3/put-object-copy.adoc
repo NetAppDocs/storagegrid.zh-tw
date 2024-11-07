@@ -1,0 +1,185 @@
+---
+permalink: s3/put-object-copy.html 
+sidebar: sidebar 
+keywords: put object copy, CopyObject 
+summary: 您可以使用 S3 CopyObject 要求來建立已儲存在 S3 中的物件複本。CopyObject 作業與執行 GET 、然後執行 Put 相同。 
+---
+= CopyObject
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 S3 CopyObject 要求來建立已儲存在 S3 中的物件複本。CopyObject 作業與執行 GetObject 之後的 PutObject 相同。
+
+
+
+== 解決衝突
+
+衝突的用戶端要求（例如兩個寫入同一個金鑰的用戶端）會以「最新致勝」的方式解決。「最新致勝」評估的時間取決於StorageGRID 何時由VMware系統完成指定的要求、而非S3用戶端開始作業的時間。
+
+
+
+== 物件大小
+
+單一 PutObject 作業的最大大小 _ 建議 _ 為 5 GiB （ 5 、 368 、 709 、 120 位元組）。如果物件大於 5 GiB 、請改用link:operations-for-multipart-uploads.html["多部分上傳"]。
+
+單一 PutObject 作業的最大 _ 支援 _ 大小為 5 TiB （ 5 、 497 、 558 、 138 、 880 位元組）。
+
+
+NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳超過 5 GiB 的物件時、會觸發 S3 「將物件大小設得太大」警示。如果您有新的 StorageGRID 11.7 或 11.8 安裝、在這種情況下不會觸發警示。不過、為了符合 AWS S3 標準、未來的 StorageGRID 版本不支援上傳大於 5 GiB 的物件。
+
+
+
+== 使用者中繼資料中的UTF-8字元
+
+如果要求在使用者定義的中繼資料金鑰名稱或值中包含（未轉義）utf-8值、StorageGRID 則無法定義任何不正常的行為。
+
+不剖析或解譯使用者定義之中繼資料的金鑰名稱或值中包含的轉義式utf-8字元。StorageGRID轉義的UTF-8字元會視為Ascii字元：
+
+* 如果使用者定義的中繼資料包含轉義的utf-8字元、則要求會成功。
+* 如果金鑰名稱或值的解譯值包含不可列印字元、則 StorageGRID 不會傳回 `x-amz-missing-meta`標頭。
+
+
+
+
+== 支援的要求標頭
+
+支援下列要求標頭：
+
+* `Content-Type`
+* `x-amz-copy-source`
+* `x-amz-copy-source-if-match`
+* `x-amz-copy-source-if-none-match`
+* `x-amz-copy-source-if-unmodified-since`
+* `x-amz-copy-source-if-modified-since`
+* `x-amz-meta-`，然後是包含使用者定義中繼資料的名稱值配對
+* `x-amz-metadata-directive`：預設值為 `COPY`，可讓您複製物件及相關的中繼資料。
++
+您可以指定 `REPLACE`在複製物件時覆寫現有的中繼資料、或是更新物件中繼資料。
+
+* `x-amz-storage-class`
+* `x-amz-tagging-directive`：預設值為 `COPY`，可讓您複製物件和所有標籤。
++
+您可以指定 `REPLACE`在複製物件時覆寫現有的標記、或是更新標記。
+
+* S3物件鎖定要求標頭：
++
+** `x-amz-object-lock-mode`
+** `x-amz-object-lock-retain-until-date`
+** `x-amz-object-lock-legal-hold`
++
+如果要求是在沒有這些標頭的情況下提出、則貯體預設保留設定會用於計算物件版本模式並保留至最新日期。請參閱。 link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]
+
+
+
+* SSe要求標頭：
++
+** `x-amz-copy-source​-server-side​-encryption​-customer-algorithm`
+** `x-amz-copy-source​-server-side-encryption-customer-key`
+** `x-amz-copy-source​-server-side-encryption-customer-key-MD5`
+** `x-amz-server-side-encryption`
+** `x-amz-server-side-encryption-customer-key-MD5`
+** `x-amz-server-side-encryption-customer-key`
+** `x-amz-server-side-encryption-customer-algorithm`
++
+請參閱 <<要求伺服器端加密的標頭>>
+
+
+
+
+
+
+
+== 不支援的要求標頭
+
+不支援下列要求標頭：
+
+* `Cache-Control`
+* `Content-Disposition`
+* `Content-Encoding`
+* `Content-Language`
+* `Expires`
+* `x-amz-checksum-algorithm`
++
+當您複製物件時、如果來源物件有 Checksum 、 StorageGRID 就不會將該 Checksum 值複製到新物件。無論您是否嘗試在物件要求中使用、都會套用此行為 `x-amz-checksum-algorithm`。
+
+* `x-amz-website-redirect-location`
+
+
+
+
+== 儲存類別選項
+
+ `x-amz-storage-class`如果匹配的 ILM 規則使用雙提交或平衡，則會支持請求標頭link:../ilm/data-protection-options-for-ingest.html["擷取選項"]，並影響 StorageGRID 創建的對象複製數量。
+
+* `STANDARD`
++
+（預設）當ILM規則使用雙重提交選項、或平衡選項回到建立臨時複本時、指定雙重提交擷取作業。
+
+* `REDUCED_REDUNDANCY`
++
+當ILM規則使用雙重提交選項、或平衡選項回到建立過渡複本時、指定單一提交擷取作業。
+
++
+
+NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體、則會忽略此 `REDUCED_REDUNDANCY`選項。如果您正在將物件擷取至舊版的「符合標準」貯體、 `REDUCED_REDUNDANCY`則選項會傳回錯誤。執行「雙重承諾」的程序時、務必確保符合法規遵循要求。StorageGRID
+
+
+
+
+
+== 在 CopyObject 中使用 x-amz-copy-source
+
+如果在標頭中指定的來源貯體和金鑰與目的地貯體和金鑰不同、則 `x-amz-copy-source`會將來源物件資料的複本寫入目的地。
+
+如果來源和目的地相符、且 `x-amz-metadata-directive`標頭指定為 `REPLACE`、則物件的中繼資料會以要求中提供的中繼資料值進行更新。在這種情況StorageGRID 下、無法重新擷取物件。這有兩個重要後果：
+
+* 您無法使用 CopyObject 來加密現有物件、或變更現有物件的加密。如果您提供 `x-amz-server-side-encryption`標頭或 `x-amz-server-side-encryption-customer-algorithm`標頭、 StorageGRID 會拒絕要求並傳回 `XNotImplemented`。
+* 不會使用相符ILM規則中指定的擷取行為選項。當ILM由正常背景ILM程序重新評估時、會對更新所觸發的物件放置位置進行任何變更。
++
+這表示、如果 ILM 規則使用嚴格選項來擷取行為、則無法在無法進行所需物件放置時（例如、因為新要求的位置無法使用）、就不會採取任何行動。更新後的物件會保留其目前的放置位置、直到能夠放置所需的位置為止。
+
+
+
+
+
+== 要求伺服器端加密的標頭
+
+如果link:using-server-side-encryption.html["使用伺服器端加密"]是、您提供的要求標頭取決於來源物件是否已加密、以及您是否打算加密目標物件。
+
+* 如果來源物件是使用客戶提供的金鑰（ SSE-C ）加密、則必須在 CopyObject 要求中包含下列三個標頭、以便將物件解密後再複製：
++
+** `x-amz-copy-source​-server-side​-encryption​-customer-algorithm`：指定 `AES256`。
+** `x-amz-copy-source​-server-side-encryption-customer-key`：指定創建源對象時提供的加密密鑰。
+** `x-amz-copy-source​-server-side-encryption-customer-key-MD5`：指定在創建源對象時提供的 MD5 摘要。
+
+
+* 如果您要使用您提供及管理的唯一金鑰來加密目標物件（複本）、請包含下列三個標頭：
++
+** `x-amz-server-side-encryption-customer-algorithm`：指定 `AES256`。
+** `x-amz-server-side-encryption-customer-key`：爲目標對象指定新的加密密鑰。
+** `x-amz-server-side-encryption-customer-key-MD5`：指定新加密金鑰的 MD5 摘要。
+
+
++
+
+CAUTION: 您提供的加密金鑰永遠不會儲存。如果您遺失加密金鑰、就會遺失對應的物件。在使用客戶提供的金鑰來保護物件資料之前，請先檢閱的考量事項link:using-server-side-encryption.html["使用伺服器端加密"]。
+
+* 如果您要使用由 StorageGRID （ SSE ）管理的唯一金鑰來加密目標物件（複本）、請在 CopyObject 要求中加入此標頭：
++
+** `x-amz-server-side-encryption`
++
+
+NOTE:  `server-side-encryption`物件的值無法更新。相反，請使用以下命令以新值 `x-amz-metadata-directive`複製副本 `server-side-encryption`： `REPLACE`。
+
+
+
+
+
+
+
+== 版本管理
+
+如果來源貯體已版本化、您可以使用 `x-amz-copy-source`標頭來複製物件的最新版本。若要複製物件的特定版本、您必須使用 SubResource 明確指定要複製的版本 `versionId`。如果目的地貯體已版本化、則會在回應標頭中傳回產生的版本 `x-amz-version-id`。如果目標貯體的版本設定已暫停、則 `x-amz-version-id`會傳回「 null 」值。

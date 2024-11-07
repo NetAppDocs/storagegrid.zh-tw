@@ -1,0 +1,47 @@
+---
+permalink: audit/audit-message-format.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message formats, message format 
+summary: 在這個系統內交換的稽核訊息StorageGRID 包括所有訊息通用的標準資訊、以及說明所報告事件或活動的特定內容。 
+---
+= 稽核訊息格式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在這個系統內交換的稽核訊息StorageGRID 包括所有訊息通用的標準資訊、以及說明所報告事件或活動的特定內容。
+
+如果和link:using-audit-sum-tool.html["稽核總和"]工具提供的摘要資訊link:using-audit-explain-tool.html["稽核說明"]不足、請參閱本節以瞭解所有稽核訊息的一般格式。
+
+以下是稽核記錄檔中可能出現的稽核訊息範例：
+
+[listing]
+----
+2014-07-17T03:50:47.484627
+[AUDT:[RSLT(FC32):VRGN][AVER(UI32):10][ATIM(UI64):1405569047484627][ATYP(FC32):SYSU][ANID(UI32):11627225][AMID(FC32):ARNI][ATID(UI64):9445736326500603516]]
+----
+每個稽核訊息都包含一串屬性元素。整個字符串包含在方括號(`[ ]`中），字符串中的每個屬性元素具有以下特徵：
+
+* 括在支架中 `[ ]`
+* 由字串引入 `AUDT`、表示稽核訊息
+* 不含分隔符號（不含逗號或空格）
+* 以換行字元結束 `\n`
+
+
+每個元素都包含屬性代碼、資料類型及以下列格式報告的值：
+
+[listing]
+----
+[ATTR(type):value][ATTR(type):value]...
+[ATTR(type):value]\n
+----
+訊息中的屬性元素數目取決於訊息的事件類型。屬性元素不會以任何特定順序列出。
+
+下列清單說明屬性元素：
+
+* `ATTR`為所報告屬性的四個字元代碼。有些屬性是所有稽核訊息和其他特定事件的常見屬性。
+* `type`為值之程式設計資料類型的四個字元識別碼、例如 UI64 、 FC32 等。該類型以括號括 `( )`住。
+* `value`是屬性的內容、通常是數值或文字值。值始終以冒號(`:`結尾）。資料類型 CStr 的值會以雙引號 " " 括住。
+

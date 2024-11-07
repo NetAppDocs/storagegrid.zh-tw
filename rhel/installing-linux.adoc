@@ -1,0 +1,88 @@
+---
+permalink: rhel/installing-linux.html 
+sidebar: sidebar 
+keywords: how to install on red hat linux 
+summary: 您必須在所有 Red Hat Enterprise Linux 網格主機上安裝 StorageGRID 。如需支援版本的清單、請使用 NetApp 互通性對照表工具。 
+---
+= 安裝Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在所有 Red Hat Enterprise Linux 網格主機上安裝 StorageGRID 。如需支援版本的清單、請使用 NetApp 互通性對照表工具。
+
+.開始之前
+確保您的作業系統符合 StorageGRID 的最低核心版本需求、如下所列。使用命令 `uname -r`取得作業系統的核心版本、或洽詢作業系統廠商。
+
+[cols="1a,2a,2a"]
+|===
+| Red Hat Enterprise Linux 版本 | 最低核心版本 | 核心套件名稱 
+
+
+ a| 
+8.8 （已過時）
+ a| 
+4.18.0-477.10.1.el8_8.x86_64
+ a| 
+核心 -4.18.0-477.10.1.el8_8.x86_64
+
+
+
+ a| 
+8.10
+ a| 
+4.18.0-553.el8_10.x86_64
+ a| 
+kernel-4.18.0-553.el8_10.x86_64
+
+
+
+ a| 
+9.0 （已過時）
+ a| 
+5.14.0-70.22.1.el9_0.x86_64
+ a| 
+kernel-5.14.0-70.22.1.el9_0.x86_64
+
+
+
+ a| 
+9.2 （已過時）
+ a| 
+5.14.0-284.11.1.el9_2.x86_64
+ a| 
+kernel-5.14.0-284.11.1.el9_2.x86_64
+
+
+
+ a| 
+9.4
+ a| 
+5.14.0-427.18.1.el9_4.x86_64
+ a| 
+kernel-5.14.0-427.18.1.el9_4.x86_64
+
+|===
+.步驟
+. 根據代理商的指示或您的標準程序、在所有實體或虛擬網格主機上安裝Linux。
++
+
+NOTE: 如果您使用的是標準 Linux 安裝程式、請選取「運算節點」軟體組態（如果有）或「最小安裝」基礎環境。請勿安裝任何圖形化桌面環境。
+
+. 確保所有主機都能存取套件儲存庫、包括Extras通道。
++
+稍後在安裝程序中可能需要這些額外的套件。
+
+. 如果已啟用交換：
++
+.. 執行下列命令： `$ sudo swapoff --all`
+.. 移除中的所有交換項目 `/etc/fstab`、以保留設定。
+
+
++
+
+NOTE: 如果無法完全停用交換、可能會嚴重降低效能。
+
+

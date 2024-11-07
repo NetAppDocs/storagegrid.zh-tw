@@ -1,0 +1,53 @@
+---
+permalink: harden/hardening-guideline-for-server-certificates.html 
+sidebar: sidebar 
+keywords: Hardening guidelines, certificates 
+summary: 您應該取代安裝期間建立的預設憑證、並為 TLS 和 SSH 連線選取適當的安全性原則。 
+---
+= TLS 和 SSH 的強化準則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該取代安裝期間建立的預設憑證、並為 TLS 和 SSH 連線選取適當的安全性原則。
+
+
+
+== 證書強化準則
+
+您應該使用自己的自訂憑證來取代安裝期間建立的預設憑證。
+
+對於許多組織而言StorageGRID 、自我簽署的數位憑證不符合其資訊安全政策。在正式作業系統上、您應該安裝CA簽署的數位憑證、以用於驗證StorageGRID 功能。
+
+具體而言、您應該使用自訂伺服器憑證、而非下列預設憑證：
+
+* *管理介面認證*：用於安全存取Grid Manager、租戶管理程式、Grid Management API及租戶管理API。
+* * S3 API 憑證 * ：用於保護儲存節點和閘道節點的存取安全、 S3 用戶端應用程式會使用這些節點來上傳和下載物件資料。
+
+
+如需詳細資訊和指示、請參閱link:../admin/using-storagegrid-security-certificates.html["管理安全性憑證"]。
+
+
+NOTE: 可分別管理負載平衡器端點所使用的憑證。StorageGRID若要設定負載平衡器憑證，請參閱link:../admin/configuring-load-balancer-endpoints.html["設定負載平衡器端點"]。
+
+使用自訂伺服器憑證時、請遵循下列準則：
+
+* 憑證應具有 `_subjectAltName_`符合 StorageGRID DNS 項目的。如需詳細資訊、請參閱中的第 4.2.1.6 節「主旨替代名稱」 https://tools.ietf.org/html/rfc5280#section-4.2.1.6["RFC 5280：PKIX憑證與CRL設定檔"^]。
+* 如有可能、請避免使用萬用字元憑證。此準則的例外情況是 S3 虛擬託管樣式端點的憑證、如果庫位名稱事先不清楚、則需要使用萬用字元。
+* 當您必須在憑證中使用萬用字元時、應採取其他步驟來降低風險。請使用萬用字元模式、例如 `*.s3.example.com`、而不要 `s3.example.com`將後置字元用於其他應用程式。此模式也適用於路徑樣式的 S3 存取、例如 `dc1-s1.s3.example.com/mybucket`。
+* 將憑證到期時間設為短（例如2個月）、然後使用Grid Management API自動執行憑證輪替。這對萬用字元憑證特別重要。
+
+
+此外、用戶端在與StorageGRID NetApp通訊時、應使用嚴格的主機名稱檢查。
+
+
+
+== TLS 和 SSH 原則的強化準則
+
+您可以選取安全性原則、以決定使用哪些通訊協定和加密程式來建立與用戶端應用程式的安全 TLS 連線、以及安全的 SSH 連線至內部 StorageGRID 服務。
+
+安全性原則控制 TLS 和 SSH 如何加密移動中的資料。最佳做法是停用應用程式相容性不需要的加密選項。請使用預設的現代化原則、除非您的系統需要符合一般準則、或您需要使用其他密碼。
+
+如需詳細資訊和指示、請參閱link:../admin/manage-tls-ssh-policy.html["管理 TLS 和 SSH 原則"]。

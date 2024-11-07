@@ -1,0 +1,99 @@
+---
+permalink: admin/guidelines-for-storagegrid-networks.html 
+sidebar: sidebar 
+keywords: admin network, client network, grid network, access interface, trunk interface 
+summary: 支援每個網格節點最多三個網路介面、可讓您為每個網格節點設定網路、以符合您的安全性和存取需求。StorageGRID 
+---
+= 關於鏈路的準則StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Grid Manager來設定及管理StorageGRID 各種不一致的網路和連線。
+
+請參閱link:configuring-client-connections.html["設定 S3 用戶端連線"]以瞭解如何連接 S3 用戶端。
+
+
+
+== 預設StorageGRID 的網路
+
+根據預設StorageGRID 、每個網格節點支援三個網路介面、可讓您針對每個個別網格節點設定網路、以符合安全性和存取需求。
+
+如需網路拓撲的詳細資訊，請參閱link:../network/index.html["網路準則"]。
+
+
+
+=== 網格網路
+
+必要。Grid Network用於所有內部StorageGRID 的資訊流量。它可在網格中的所有節點之間、跨所有站台和子網路提供連線功能。
+
+
+
+=== 管理網路
+
+選用。管理網路通常用於系統管理和維護。也可用於用戶端傳輸協定存取。管理網路通常是私有網路、不需要在站台之間進行路由傳送。
+
+
+
+=== 用戶端網路
+
+選用。用戶端網路是一種開放式網路、通常用於提供 S3 用戶端應用程式的存取、因此 Grid Network 可以隔離和保護。用戶端網路可透過本機閘道與任何可連線的子網路進行通訊。
+
+
+
+== 準則
+
+* 每個 StorageGRID 節點都需要專屬的網路介面、 IP 位址、子網路遮罩、以及指派給它的每個網路的閘道。
+* 網格節點在網路上不能有多個介面。
+* 每個網路支援單一閘道、每個網格節點、而且必須與節點位於相同的子網路上。您可以視需要在閘道中實作更複雜的路由。
+* 在每個節點上、每個網路都會對應至特定的網路介面。
++
+[cols="1a,1a"]
+|===
+| 網路 | 介面名稱 
+
+
+ a| 
+網格
+ a| 
+eth0
+
+
+
+ a| 
+管理（選用）
+ a| 
+eth1
+
+
+
+ a| 
+用戶端（選用）
+ a| 
+eth2
+
+|===
+* 如果節點連接StorageGRID 到某個ENetApp應用裝置、則每個網路都會使用特定的連接埠。如需詳細資訊、請參閱應用裝置的安裝說明。
+* 系統會自動針對每個節點產生預設路由。如果啟用eth2、則0.00.0.0/0會使用eth2上的用戶端網路。如果未啟用eth2、則0.00.0.0/0會在eth0上使用Grid Network。
+* 在網格節點加入網格之前、用戶端網路不會運作
+* 管理網路可在網格節點部署期間進行設定、以便在網格完全安裝之前、能夠存取安裝使用者介面。
+
+
+
+
+== 選用介面
+
+或者、您也可以將額外的介面新增至節點。例如、您可能想要將主幹介面新增至管理節點或閘道節點、以便用來link:../admin/configure-vlan-interfaces.html["VLAN 介面"]分隔屬於不同應用程式或租戶的流量。或者，您可能想要新增存取介面以在中使用link:../admin/configure-high-availability-group.html["高可用度（HA）群組"]。
+
+若要新增主幹或存取介面、請參閱下列內容：
+
+* * VMware （安裝節點之後） * ：link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["VMware：新增主幹或存取介面至節點"]
++
+** * Red Hat Enterprise Linux （安裝節點之前） * ：link:../rhel/creating-node-configuration-files.html["建立節點組態檔"]
+** * Ubuntu 或 Debian （安裝節點之前） * ：link:../ubuntu/creating-node-configuration-files.html["建立節點組態檔"]
+** * RHEL 、 Ubuntu 或 Debian （安裝節點之後） * ：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux：新增主幹或存取介面至節點"]
+
+
+

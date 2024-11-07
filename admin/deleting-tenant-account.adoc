@@ -1,0 +1,37 @@
+---
+permalink: admin/deleting-tenant-account.html 
+sidebar: sidebar 
+keywords: tenant, delete, remove tenant 
+summary: 若要永久移除租戶對系統的存取權、您可以刪除租戶帳戶。 
+---
+= 刪除租戶帳戶
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要永久移除租戶對系統的存取權、您可以刪除租戶帳戶。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有 link:admin-group-permissions.html["特定存取權限"]。
+* 您已移除與租戶帳戶相關的所有 S3 儲存區和物件。
+* 如果租戶可以使用網格同盟連線，您已檢閱的考量事項link:grid-federation-manage-tenants.html["刪除具有使用網格同盟連線權限的租用戶"]。
+
+
+.步驟
+. 選取*租戶*。
+. 找出您要刪除的租戶帳戶。
++
+使用搜尋方塊、依名稱或租戶 ID 搜尋租戶。
+
+. 若要刪除多個租戶、請選取核取方塊、然後選取 * 動作 * > * 刪除 * 。
+. 若要刪除單一租戶、請執行下列其中一項：
++
+** 選取核取方塊、然後選取 * 動作 * > * 刪除 * 。
+** 選取租戶名稱以顯示詳細資料頁面、然後選取 * 動作 * > * 刪除 * 。
+
+
+. 選擇*是*。
+

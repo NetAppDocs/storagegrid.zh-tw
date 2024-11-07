@@ -1,0 +1,22 @@
+---
+permalink: tenant/managing-s3-access-keys.html 
+sidebar: sidebar 
+keywords: how to manage s3 access key 
+summary: S3租戶帳戶的每位使用者都必須擁有存取金鑰、才能在StorageGRID 這個系統中儲存及擷取物件。存取金鑰包含存取金鑰ID和秘密存取金鑰。 
+---
+= 管理S3存取金鑰
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3租戶帳戶的每位使用者都必須擁有存取金鑰、才能在StorageGRID 這個系統中儲存及擷取物件。存取金鑰包含存取金鑰ID和秘密存取金鑰。
+
+S3存取金鑰的管理方式如下：
+
+* 擁有 * 管理您自己的 S3 認證 * 權限的使用者可以建立或移除自己的 S3 存取金鑰。
+* 擁有 * 根存取 * 權限的使用者可以管理 S3 根帳戶和所有其他使用者的存取金鑰。根存取金鑰可讓租戶完整存取所有的貯體和物件、除非已明確停用貯體原則。
+
+
+支援簽名版本2和簽名版本4驗證。StorageGRID除非庫位原則明確啟用、否則不允許跨帳戶存取。

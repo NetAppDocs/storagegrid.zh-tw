@@ -1,0 +1,22 @@
+---
+permalink: monitor/creating-custom-monitoring-applications.html 
+sidebar: sidebar 
+keywords: custom monitoring, monitoring, dashboard 
+summary: 您可以使用StorageGRID Grid Management API提供的功能表來建置自訂的監控應用程式和儀表板。 
+---
+= 建立自訂監控應用程式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用StorageGRID Grid Management API提供的功能表來建置自訂的監控應用程式和儀表板。
+
+如果您想要監控 Grid Manager 現有頁面上未顯示的度量、或是想要為 StorageGRID 建立自訂儀表板、您可以使用 Grid Management API 來查詢 StorageGRID 度量。
+
+您也可以使用外部監控工具（例如Grafana）直接存取Prometheus指標。使用外部工具時、您必須上傳或產生管理用戶端憑證StorageGRID 、才能讓驗證工具的安全性。請參閱link:../admin/index.html["關於管理StorageGRID 功能的說明"]。
+
+若要檢視度量API作業、包括可用度量的完整清單、請前往Grid Manager。從頁面頂端選取說明圖示、然後選取 * API 文件 * > * 計量 * 。image:../media/help_api_docs_metrics.png["「說明 API 文件指標」一節"]
+
+如何實作自訂監控應用程式的詳細資料不在本文件的範圍之內。

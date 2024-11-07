@@ -1,0 +1,162 @@
+---
+permalink: admin/configure-vlan-interfaces.html 
+sidebar: sidebar 
+keywords: how to configure vlan interfaces, vlan interfaces, trunk interface 
+summary: 您可以在管理節點和閘道節點上建立虛擬LAN（VLAN）介面、並在HA群組和負載平衡器端點中使用這些介面來隔離和分割流量、以確保安全性、靈活度和效能。 
+---
+= 設定VLAN介面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在管理節點和閘道節點上建立虛擬LAN（VLAN）介面、並在HA群組和負載平衡器端點中使用這些介面來隔離和分割流量、以確保安全性、靈活度和效能。
+
+
+
+== VLAN介面考量
+
+* 您可以輸入VLAN ID、然後在一個或多個節點上選擇父介面、藉此建立VLAN介面。
+* 父介面必須設定為交換器的主幹介面。
+* 父介面可以是Grid Network（eth0）、Client Network（eth2）、或VM或裸機主機的其他主幹介面（例如、ens256）。
+* 對於每個VLAN介面、您只能為指定節點選取一個父介面。例如、您無法在同一個 VLAN 的父介面上、同時使用 Grid Network 介面和 Client Network 介面。
+* 如果VLAN介面適用於管理節點流量、包括與Grid Manager和租戶管理程式相關的流量、請選取「僅管理節點」上的介面。
+* 如果 VLAN 介面用於 S3 用戶端流量、請選取管理節點或閘道節點上的介面。
+* 如果您需要新增主幹介面、請參閱下列詳細資料：
++
+** * VMware （安裝節點之後） * ：link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["VMware：新增主幹或存取介面至節點"]
+** * RHEL （安裝節點之前） * ：link:../rhel/creating-node-configuration-files.html["建立節點組態檔"]
+** * Ubuntu 或 Debian （安裝節點之前） * ：link:../ubuntu/creating-node-configuration-files.html["建立節點組態檔"]
+** * RHEL 、 Ubuntu 或 Debian （安裝節點之後） * ：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux：新增主幹或存取介面至節點"]
+
+
+
+
+
+
+== 建立VLAN介面
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:admin-group-permissions.html["root 存取權限"]。
+* 已在網路中設定主幹介面、並附加至VM或Linux節點。您知道主幹介面的名稱。
+* 您知道正在設定的VLAN ID。
+
+
+.關於這項工作
+您的網路管理員可能已設定一或多個主幹介面和一或多個VLAN、以隔離屬於不同應用程式或租戶的用戶端或管理流量。每個VLAN都會以數字ID或標記來識別。例如、您的網路可能會使用VLAN 100作為FabricPool 不二次流量傳輸、而使用VLAN 200作為歸檔應用程式。
+
+您可以使用Grid Manager建立VLAN介面、讓用戶端能夠在StorageGRID 特定VLAN上存取功能。當您建立VLAN介面時、請指定VLAN ID並選取一或多個節點上的父（主幹）介面。
+
+
+
+=== 存取精靈
+
+.步驟
+. 選擇*組態*>*網路*>* VLAN介面*。
+. 選擇* Create *（建立*）。
+
+
+
+
+=== 輸入VLAN介面的詳細資料
+
+.步驟
+. 指定網路中VLAN的ID。您可以輸入介於1和4094之間的任何值。
++
+VLAN ID 不一定是唯一的。例如、您可以使用VLAN ID 200來管理某個站台的流量、使用相同的VLAN ID來處理另一個站台的用戶端流量。您可以在每個站台建立具有不同父介面的獨立VLAN介面組。不過、兩個 ID 相同的 VLAN 介面無法在節點上共用相同的介面。如果您指定已使用的ID、則會出現訊息。
+
+. （可選）輸入VLAN介面的簡短說明。
+. 選擇*繼續*。
+
+
+
+
+=== 選擇父介面
+
+下表列出網格中每個站台所有管理節點和閘道節點的可用介面。管理網路（ eth1 ）介面無法用作父介面、也無法顯示。
+
+.步驟
+. 選取一個或多個父介面來附加此VLAN。
++
+例如、您可能想要將VLAN附加至閘道節點和管理節點的用戶端網路（eth2）介面。
+
++
+image::../media/vlan-create-parent-interfaces.png[VLAN建立精靈父介面]
+
+. 選擇*繼續*。
+
+
+
+
+=== 確認設定
+
+.步驟
+. 檢閱組態並進行任何變更。
++
+** 如果您需要變更VLAN ID或說明、請選取頁面頂端的*輸入VLAN詳細資料*。
+** 如果您需要變更父介面、請選取頁面頂端的*選擇父介面*、或選取*上一個*。
+** 如果需要刪除父接口，請選擇回收站image:../media/icon-trash-can.png["垃圾桶圖示"]。
+
+
+. 選擇*保存*。
+. 等待5分鐘、讓新介面在「高可用度群組」頁面上顯示為選項、並在節點的*網路介面*表格中列出（*節點*>*父介面節點_*>*網路*）。
+
+
+
+
+== 編輯VLAN介面
+
+編輯VLAN介面時、您可以進行下列類型的變更：
+
+* 變更VLAN ID或說明。
+* 新增或移除父介面。
+
+
+例如、如果您打算取消委任關聯節點、可能會想要從VLAN介面移除父介面。
+
+請注意下列事項：
+
+* 如果在HA群組中使用VLAN介面、則無法變更VLAN ID。
+* 如果父介面用於HA群組、則無法移除該父介面。
++
+例如、假設 VLAN 200 已附加至節點 A 和 B 上的父介面。如果 HA 群組使用 VLAN 200 介面作為節點 A 和節點 B 的 eth2 介面、您可以移除節點 B 的未使用父介面、但無法移除節點 A 的已使用父介面
+
+
+
+.步驟
+. 選擇*組態*>*網路*>* VLAN介面*。
+. 選取您要編輯的 VLAN 介面核取方塊。然後選取*「動作*」>*「編輯*」。
+. 或者、請更新VLAN ID或說明。然後選擇*繼續*。
++
+如果在HA群組中使用VLAN、則無法更新VLAN ID。
+
+. 您也可以選取或清除核取方塊、以新增父介面或移除未使用的介面。然後選擇*繼續*。
+. 檢閱組態並進行任何變更。
+. 選擇*保存*。
+
+
+
+
+== 移除VLAN介面
+
+您可以移除一或多個VLAN介面。
+
+如果VLAN介面目前用於HA群組、則無法移除。您必須先從HA群組移除VLAN介面、才能將其移除。
+
+若要避免用戶端流量中斷、請考慮執行下列其中一項：
+
+* 移除此VLAN介面之前、請先將新的VLAN介面新增至HA群組。
+* 建立不使用此VLAN介面的新HA群組。
+* 如果您要移除的VLAN介面目前是作用中介面、請編輯HA群組。將您要移除的VLAN介面移至優先順序清單的底部。等到新的主要介面建立通訊之後、再從HA群組移除舊介面。最後、刪除該節點上的VLAN介面。
+
+
+.步驟
+. 選擇*組態*>*網路*>* VLAN介面*。
+. 選取您要移除之每個 VLAN 介面的核取方塊。然後選取*「動作*」>*「刪除*」。
+. 選擇*是*以確認您的選擇。
++
+您選取的所有VLAN介面都會移除。VLAN介面頁面上會出現綠色的成功橫幅。
+
+

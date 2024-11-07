@@ -1,0 +1,39 @@
+---
+permalink: audit/accessing-audit-log-file.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, log, log file, access, accessing 
+summary: 稽核共用包含作用中的audit.log檔案和任何壓縮的稽核記錄檔。您可以直接從管理節點的命令列存取稽核記錄檔。 
+---
+= 存取稽核記錄檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+稽核共用包含作用中 `audit.log`檔案和任何壓縮的稽核記錄檔。您可以直接從管理節點的命令列存取稽核記錄檔。
+
+.開始之前
+* 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
+* 您必須擁有 `Passwords.txt`檔案。
+* 您必須知道管理節點的IP位址。
+
+
+.步驟
+. 登入管理節點：
++
+.. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+
+
+. 移至包含稽核記錄檔的目錄：
++
+`cd /var/local/log`
+
+. 視需要檢視目前或已儲存的稽核記錄檔。
+

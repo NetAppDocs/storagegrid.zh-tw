@@ -1,0 +1,40 @@
+---
+permalink: audit/scmt-object-store-commit.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, SCMT, Object Store Commit 
+summary: 網格內容在提交（意即持續儲存）之前、無法使用或辨識為已儲存。持續儲存的內容已完全寫入磁碟、並通過相關的完整性檢查。此訊息會在內容區塊提交至儲存設備時發出。 
+---
+= SCMT：物件存放區提交
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在提交網格內容之前、網格內容將無法使用或辨識為儲存內容（亦即持續儲存）。持續儲存的內容已完全寫入磁碟、並通過相關的完整性檢查。此訊息會在內容區塊提交至儲存設備時發出。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+CBID
+ a| 
+內容區塊識別碼
+ a| 
+提交至永久儲存設備之內容區塊的唯一識別碼。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果代碼
+ a| 
+物件儲存至磁碟時的狀態：
+
+SUCS：物件已成功儲存。
+
+|===
+此訊息表示指定的內容區塊已完全儲存並驗證、現在可以要求。它可用於追蹤系統內的資料流。

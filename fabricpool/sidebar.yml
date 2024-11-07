@@ -1,0 +1,45 @@
+---
+section: fabricpool
+title: 設定StorageGRID 適用於FabricPool 靜態的
+entries:
+- title: 快速入門
+  pdf-filename: 設定StorageGRID 適用於FabricPool 靜態的
+  url: "/fabricpool/index.html"
+- title: 以StorageGRID 雲端層形式附加解決方案所需的資訊
+  url: "/fabricpool/information-needed-to-attach-storagegrid-as-cloud-tier.html"
+- title: 使用 FabricPool 設定精靈
+  entries:
+  - title: 考量與要求
+    url: "/fabricpool/use-fabricpool-setup-wizard.html"
+  - title: 存取並完成精靈
+    url: "/fabricpool/use-fabricpool-setup-wizard-steps.html"
+- title: 手動設定 StorageGRID
+  entries:
+  - title: 建立HA群組
+    url: "/fabricpool/creating-ha-group-for-fabricpool.html"
+  - title: 建立負載平衡器端點
+    url: "/fabricpool/creating-load-balancer-endpoint-for-fabricpool.html"
+  - title: 建立租戶帳戶
+    url: "/fabricpool/creating-tenant-account-for-fabricpool.html"
+  - title: 建立 S3 儲存區並取得存取金鑰
+    url: "/fabricpool/creating-s3-bucket-and-access-key.html"
+  - title: 設定 FabricPool 資料的 ILM
+    url: "/fabricpool/using-storagegrid-ilm-with-fabricpool-data.html"
+  - title: 建立流量分類原則
+    url: "/fabricpool/creating-traffic-classification-policy-for-fabricpool.html"
+- title: 設定 ONTAP 系統管理員
+  url: "/fabricpool/configure-ontap.html"
+- title: 設定 DNS 伺服器
+  url: "/fabricpool/configure-dns-server.html"
+- title: 適用於 FabricPool 的 StorageGRID 最佳實務做法
+  entries:
+  - title: HA群組的最佳實務做法
+    url: "/fabricpool/best-practices-for-high-availability-groups.html"
+  - title: FabricPool 負載平衡的最佳實務做法
+    url: "/fabricpool/best-practices-for-load-balancing.html"
+  - title: ILM 的最佳實務做法
+    url: "/fabricpool/best-practices-ilm.html"
+  - title: 其他最佳實務做法
+    url: "/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html"
+- title: 從 StorageGRID 移除 FabricPool 資料
+  url: "/fabricpool/remove-fabricpool-data.html"

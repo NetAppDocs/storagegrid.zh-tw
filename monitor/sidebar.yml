@@ -1,0 +1,136 @@
+---
+section: monitor
+title: 監控 StorageGRID 系統
+entries:
+- title: 監控工作
+  pdf-filename: 監控 StorageGRID 系統
+  url: "/monitor/index.html"
+- title: 檢視及管理儀表板
+  url: "/monitor/viewing-dashboard.html"
+- title: 檢視「節點」頁面
+  entries:
+  - title: 節點頁面內容
+    pdf-filename: 檢視「節點」頁面
+    url: "/monitor/viewing-nodes-page.html"
+  - title: 檢視「總覽」索引標籤
+    url: "/monitor/viewing-overview-tab.html"
+  - title: 檢視硬體索引標籤
+    url: "/monitor/viewing-hardware-tab.html"
+  - title: 檢視「網路」索引標籤
+    url: "/monitor/viewing-network-tab.html"
+  - title: 檢視「儲存設備」索引標籤
+    url: "/monitor/viewing-storage-tab.html"
+  - title: 檢視「物件」索引標籤
+    url: "/monitor/viewing-objects-tab.html"
+  - title: 檢視ILM索引標籤
+    url: "/monitor/viewing-ilm-tab.html"
+  - title: 使用工作索引標籤
+    url: "/monitor/using-task-tab-to-reboot-grid-node.html"
+  - title: 檢視負載平衡器索引標籤
+    url: "/monitor/viewing-load-balancer-tab.html"
+  - title: 檢視平台服務索引標籤
+    url: "/monitor/viewing-platform-services-tab.html"
+  - title: 檢視管理磁碟機索引標籤
+    url: "/monitor/viewing-manage-drives-tab.html"
+  - title: 檢視 SANtricity 標籤（僅限 E 系列）
+    url: "/monitor/viewing-santricity-system-manager-tab.html"
+- title: 定期監控的資訊
+  entries:
+  - title: 監控內容和時間
+    url: "/monitor/information-you-should-monitor-regularly.html"
+  - title: 監控系統健全狀況
+    url: "/monitor/monitoring-system-health.html"
+  - title: 監控儲存容量
+    url: "/monitor/monitoring-storage-capacity.html"
+  - title: 監控資訊生命週期管理
+    url: "/monitor/monitoring-information-lifecycle-management.html"
+  - title: 監控網路和系統資源
+    url: "/monitor/monitoring-network-connections-and-performance.html"
+  - title: 監控租戶活動
+    url: "/monitor/monitoring-tenant-activity.html"
+  - title: 監控 S3 用戶端作業
+    url: "/monitor/monitoring-object-ingest-and-retrieval-rates.html"
+  - title: 監控負載平衡作業
+    url: "/monitor/monitoring-load-balancing-operations.html"
+  - title: 監控網格同盟連線
+    url: "/monitor/grid-federation-monitor-connections.html"
+- title: 管理警示
+  entries:
+  - title: 警示系統
+    url: "/monitor/managing-alerts.html"
+  - title: 檢視警示規則
+    url: "/monitor/view-alert-rules.html"
+  - title: 建立自訂警示規則
+    url: "/monitor/creating-custom-alert-rules.html"
+  - title: 編輯警示規則
+    url: "/monitor/editing-alert-rules.html"
+  - title: 停用警示規則
+    url: "/monitor/disabling-alert-rules.html"
+  - title: 移除自訂警示規則
+    url: "/monitor/removing-custom-alert-rules.html"
+  - title: 管理警示通知
+    entries:
+    - title: 設定SNMP通知
+      url: "/monitor/snmp-alert-notifications.html"
+    - title: 設定電子郵件通知
+      url: "/monitor/email-alert-notifications.html"
+    - title: 靜音警示通知
+      url: "/monitor/silencing-alert-notifications.html"
+  - title: 警示參考資料
+    url: "/monitor/alerts-reference.html"
+  - title: 常用的Prometheus指標
+    url: "/monitor/commonly-used-prometheus-metrics.html"
+- title: 記錄檔參考
+  entries:
+  - title: 存取記錄檔
+    pdf-filename: 記錄檔參考
+    url: "/monitor/logs-files-reference.html"
+  - title: 軟體記錄StorageGRID
+    url: "/monitor/storagegrid-software-logs.html"
+  - title: 部署與維護記錄
+    url: "/monitor/deployment-and-maintenance-logs.html"
+  - title: 關於bycast.log
+    url: "/monitor/about-bycast-log.html"
+- title: 設定稽核訊息和記錄目的地
+  entries:
+  - title: 外部syslog伺服器的考量
+    url: "/monitor/considerations-for-external-syslog-server.html"
+  - title: 設定稽核訊息和外部 Syslog 伺服器
+    url: "/monitor/configure-audit-messages.html"
+- title: 使用SNMP監控
+  entries:
+  - title: SNMP監控
+    pdf-filename: 使用SNMP監控
+    url: "/monitor/using-snmp-monitoring.html"
+  - title: 設定SNMP代理程式
+    url: "/monitor/configuring-snmp-agent.html"
+  - title: 更新SNMP代理程式
+    url: "/monitor/updating-snmp-agent.html"
+  - title: 存取 MIB 檔案
+    url: "/monitor/access-snmp-mib.html"
+- title: 收集其他StorageGRID 的資料
+  entries:
+  - title: 使用圖表
+    url: "/monitor/using-charts-and-reports.html"
+  - title: 使用文字報告
+    url: "/monitor/types-of-text-reports.html"
+  - title: 監控成效、獲得效能
+    url: "/monitor/monitoring-put-and-get-performance.html"
+  - title: 監控物件驗證作業
+    url: "/monitor/monitoring-object-verification-operations.html"
+  - title: 監控事件
+    url: "/monitor/monitoring-events.html"
+  - title: 檢閱稽核訊息
+    url: "/monitor/reviewing-audit-messages.html"
+  - title: 收集記錄檔和系統資料
+    url: "/monitor/collecting-log-files-and-system-data.html"
+  - title: 手動觸發 AutoSupport 套件
+    url: "/monitor/manually-triggering-autosupport-message.html"
+  - title: 檢視Grid拓撲樹狀結構
+    url: "/monitor/viewing-grid-topology-tree.html"
+  - title: 檢視支援指標
+    url: "/monitor/reviewing-support-metrics.html"
+  - title: 執行診斷
+    url: "/monitor/running-diagnostics.html"
+  - title: 建立自訂監控應用程式
+    url: "/monitor/creating-custom-monitoring-applications.html"

@@ -1,0 +1,40 @@
+---
+permalink: audit/srem-object-store-remove.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, SREM, Object Store Remove 
+summary: 此訊息會在內容從持續儲存設備中移除時發出、而且無法再透過一般API存取。 
+---
+= Srem：物件存放區移除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此訊息會在內容從持續儲存設備中移除時發出、而且無法再透過一般API存取。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+CBID
+ a| 
+內容區塊識別碼
+ a| 
+從永久儲存設備刪除之內容區塊的唯一識別碼。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果代碼
+ a| 
+指出內容移除作業的結果。唯一定義的值是：
+
+SUCS：從持續儲存設備移除內容
+
+|===
+此稽核訊息表示已從節點刪除指定的內容區塊、因此無法再直接要求。此訊息可用於追蹤系統中刪除內容的流程。

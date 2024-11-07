@@ -1,0 +1,41 @@
+---
+permalink: maintain/preparing-appliance-for-reinstallation-platform-replacement-only.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, appliance, reinstallation appliance, reinstall appliance 
+summary: 在恢復服務應用裝置上裝載的網格節點時、您必須先準備好應用裝置以重新安裝StorageGRID 該軟體。 
+---
+= 準備設備以重新安裝（僅限平台更換）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在恢復服務應用裝置上裝載的網格節點時、您必須先準備好應用裝置以重新安裝StorageGRID 該軟體。
+
+只有在您要更換服務應用裝置上的故障節點時、才執行此程序。如果故障節點原本是託管在 VMware 或 Linux 主機上、請勿遵循這些步驟。
+
+.步驟
+. 登入故障的網格節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 準備好產品以安裝StorageGRID 資訊軟體。輸入： `sgareinstall`
+. 當系統提示您繼續時、請輸入： `y`
++
+設備會重新開機、SSH工作階段也會結束。雖然有時您可能需要等待30分鐘、但使用起來通常需要5分鐘才能StorageGRID 使用《不知如何使用的應用程式」。
+
++
+服務應用裝置已重設、網格節點上的資料將無法再存取。在原始安裝程序期間所設定的IP位址應保持不變；不過、建議您在程序完成時確認。
+
++
+執行命令後 `sgareinstall`、所有 StorageGRID 提供的帳戶、密碼和 SSH 金鑰都會移除、並產生新的主機金鑰。
+
+

@@ -1,0 +1,122 @@
+---
+permalink: fabricpool/configure-ontap.html 
+sidebar: sidebar 
+keywords: fabricPool, system manager, ONTAP CLI, add cloud tier 
+summary: 取得必要的 StorageGRID 資訊之後、您可以前往 ONTAP 將 StorageGRID 新增為雲端層。 
+---
+= 設定 ONTAP 系統管理員
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+取得必要的 StorageGRID 資訊之後、您可以前往 ONTAP 將 StorageGRID 新增為雲端層。
+
+.開始之前
+* 如果您已完成 FabricPool 安裝精靈、表示您已 `ONTAP_FabricPool_settings___bucketname__.txt`下載檔案。
+* 如果您手動設定 StorageGRID 、您會擁有 StorageGRID 所使用的完整網域名稱（ FQDN ）、或 StorageGRID HA 群組的虛擬 IP （ VIP ）位址、負載平衡器端點的連接埠編號、負載平衡器憑證、 租戶帳戶根使用者的存取金鑰 ID 和秘密金鑰、以及貯體 ONTAP 在該租戶中使用的名稱。
+
+
+
+
+== 存取 ONTAP 系統管理員
+
+這些指示說明如何使用 ONTAP 系統管理員將 StorageGRID 新增為雲端層。您可以使用 ONTAP CLI 完成相同的組態。如需相關指示、請前往 https://docs.netapp.com/us-en/ontap/fabricpool/index.html["適用於 FabricPool 的 ONTAP 文件"^]。
+
+.步驟
+. 存取要分層至 StorageGRID 之 ONTAP 叢集的系統管理員。
+. 以叢集管理員身分登入。
+. 瀏覽 * 儲存 * > * 階層 * > * 新增雲端階層 * 。
+. 從物件存放區提供者清單中選取 * StorageGRID * 。
+
+
+
+
+== 輸入 StorageGRID 值
+
+如需詳細資訊、請參閱 https://docs.netapp.com/us-en/ontap/fabricpool/index.html["適用於 FabricPool 的 ONTAP 文件"^] 。
+
+.步驟
+. 使用您手動取得的檔案或值、填寫「新增雲端層」表單 `ONTAP_FabricPool_settings___bucketname__.txt`。
++
+[cols="1a,3a"]
+|===
+| 欄位 | 說明 
+
+
+ a| 
+名稱
+ a| 
+輸入此雲端層的唯一名稱。您可以接受預設值。
+
+
+
+ a| 
+URL 樣式
+ a| 
+如果您link:../admin/configuring-s3-api-endpoint-domain-names.html["已設定 S3 端點網域名稱"]選擇 * 虛擬託管樣式 URL* 。
+
+* 路徑樣式 URL* 是 ONTAP 的預設值、但建議 StorageGRID 使用虛擬託管樣式的要求。如果您為 * 伺服器名稱（ FQDN ） * 欄位提供 IP 位址而非網域名稱、則必須使用 * 路徑樣式 URL* 。
+
+
+
+ a| 
+伺服器名稱（ FQDN ）
+ a| 
+輸入您用於 StorageGRID 的完整網域名稱（ FQDN ）、或 StorageGRID HA 群組的虛擬 IP （ VIP ）位址。例如 `s3.storagegrid.__company__.com`：。
+
+請注意下列事項：
+
+** 您在此處指定的 IP 位址或網域名稱必須符合您上傳或為 StorageGRID 負載平衡器端點產生的憑證。
+** 如果您提供網域名稱、則 DNS 記錄必須對應至您要用來連線至 StorageGRID 的每個 IP 位址。請參閱。 link:configure-dns-server.html["設定 DNS 伺服器"]
+
+
+
+
+ a| 
+SSL
+ a| 
+啟用（預設）。
+
+
+
+ a| 
+物件存放區憑證
+ a| 
+貼上您用於 StorageGRID 負載平衡器端點的憑證 PEM 、包括：
+`-----BEGIN CERTIFICATE-----`和 `-----END CERTIFICATE-----`。
+
+*附註：*如果中介CA核發StorageGRID 了此功能驗證、您必須提供中繼CA憑證。如果StorageGRID 此驗證是由根CA直接發出、您必須提供根CA憑證。
+
+
+
+ a| 
+連接埠
+ a| 
+輸入 StorageGRID 負載平衡器端點使用的連接埠。ONTAP 會在連線至 StorageGRID 時使用此連接埠。例如 10433 。
+
+
+
+ a| 
+存取金鑰和秘密金鑰
+ a| 
+輸入 StorageGRID 租戶帳戶根使用者的存取金鑰 ID 和秘密存取金鑰。
+
+* 提示 * ：如果您在未來在 StorageGRID 中產生新的存取金鑰和秘密存取金鑰、請在 ONTAP 中輸入新金鑰、然後再從 StorageGRID 刪除舊值。否則、 ONTAP 可能會暫時失去對 StorageGRID 的存取權。
+
+
+
+ a| 
+容器名稱
+ a| 
+輸入您建立用於此 ONTAP 層的 StorageGRID 貯體名稱。
+
+|===
+. 在 ONTAP 中完成最終的 FabricPool 組態。
++
+.. 將一或多個集合體附加至雲端層。
+.. 您也可以建立磁碟區分層原則。
+
+
+

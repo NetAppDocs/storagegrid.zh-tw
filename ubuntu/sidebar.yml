@@ -1,0 +1,85 @@
+---
+section: ubuntu
+title: 在 Ubuntu 或 Debian 上安裝 StorageGRID
+entries:
+- title: 快速入門
+  pdf-filename: 在 Ubuntu 或 Debian 上安裝 StorageGRID
+  url: "/ubuntu/index.html"
+- title: 規劃並準備在 Ubuntu 或 Debian 上安裝
+  entries:
+  - title: 必要資訊與資料
+    url: "/ubuntu/required-materials.html"
+  - title: 下載並解壓縮StorageGRID 安裝檔案
+    url: "/ubuntu/downloading-and-extracting-storagegrid-installation-files.html"
+  - title: 手動驗證安裝檔案
+    url: "/ubuntu/download-files-verify.html"
+  - title: 軟體需求
+    url: "/ubuntu/software-requirements.html"
+  - title: CPU與RAM需求
+    url: "/ubuntu/cpu-and-ram-requirements.html"
+  - title: 儲存與效能需求
+    url: "/ubuntu/storage-and-performance-requirements.html"
+  - title: 節點容器移轉需求
+    url: "/ubuntu/node-container-migration-requirements.html"
+  - title: 準備主機（Ubuntu或Debian）
+    entries:
+    - title: 全主機設定的變更方式
+      url: "/ubuntu/how-host-wide-settings-change.html"
+    - title: 安裝Linux
+      url: "/ubuntu/installing-linux.html"
+    - title: 安裝AppArmor設定檔
+      url: "/ubuntu/understanding-apparmor-profile-installation.html"
+    - title: 設定主機網路（Ubuntu或DEBIANK）
+      url: "/ubuntu/configuring-host-network.html"
+    - title: 設定主機儲存設備
+      url: "/ubuntu/configuring-host-storage.html"
+    - title: 設定Docker儲存磁碟區
+      url: "/ubuntu/configuring-docker-storage-volume.html"
+    - title: 安裝Docker
+      url: "/ubuntu/installing-docker.html"
+    - title: 安裝StorageGRID 支援主機服務
+      url: "/ubuntu/installing-storagegrid-webscale-host-services.html"
+- title: 自動化安裝（Ubuntu或DEBIAN]）
+  url: "/ubuntu/automating-installation.html"
+- title: 部署虛擬網格節點（Ubuntu或Debian）
+  entries:
+  - title: 為Ubuntu或Debian部署建立節點組態檔案
+    url: "/ubuntu/creating-node-configuration-files.html"
+  - title: 網格節點如何探索主要管理節點
+    url: "/ubuntu/how-grid-nodes-discover-primary-admin-node.html"
+  - title: 節點組態檔範例
+    url: "/ubuntu/example-node-configuration-files.html"
+  - title: 驗StorageGRID 證此組態
+    url: "/ubuntu/validating-storagegrid-configuration.html"
+  - title: 啟動StorageGRID 「支援服務」
+    url: "/ubuntu/starting-storagegrid-host-service.html"
+- title: 設定網格並完成安裝（Ubuntu或DEBIAN]）
+  entries:
+  - title: 瀏覽至Grid Manager
+    url: "/ubuntu/navigating-to-grid-manager.html"
+  - title: 指定授權資訊
+    url: "/ubuntu/specifying-storagegrid-license-information.html"
+  - title: 新增站台
+    url: "/ubuntu/adding-sites.html"
+  - title: 指定網格網路子網路
+    url: "/ubuntu/specifying-grid-network-subnets.html"
+  - title: 核准擱置的網格節點
+    url: "/ubuntu/approving-pending-grid-nodes.html"
+  - title: 指定 NTP 伺服器資訊
+    url: "/ubuntu/specifying-network-time-protocol-server-information.html"
+  - title: 指定 DNS 伺服器資訊
+    url: "/ubuntu/specifying-domain-name-system-server-information.html"
+  - title: 指定系統密碼
+    url: "/ubuntu/specifying-storagegrid-system-passwords.html"
+  - title: 檢閱組態並完成安裝
+    url: "/ubuntu/reviewing-your-configuration-and-completing-installation.html"
+  - title: 安裝後準則
+    url: "/ubuntu/post-installation-guidelines.html"
+- title: 安裝 REST API
+  url: "/ubuntu/overview-of-installation-rest-api.html"
+- title: 下一步
+  url: "/ubuntu/where-to-go-next.html"
+- title: 疑難排解安裝問題
+  url: "/ubuntu/troubleshooting-installation-issues.html"
+- title: 例如/etc/network/interfaces
+  url: "/ubuntu/example-etc-network-interfaces.html"

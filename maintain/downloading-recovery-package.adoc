@@ -1,0 +1,36 @@
+---
+permalink: maintain/downloading-recovery-package.html 
+sidebar: sidebar 
+keywords: storagegrid, recovery package 
+summary: 恢復套件檔案可讓您在StorageGRID 發生故障時還原整個系統。 
+---
+= 下載恢復套件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+恢復套件檔案可讓您在StorageGRID 發生故障時還原整個系統。
+
+.開始之前
+* 從主要管理節點、您可以使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有資源配置通關密碼。
+* 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
+
+
+在變更StorageGRID 網格拓撲以變更作業系統或升級軟體之前、請先下載目前的「恢復套件」檔案。然後、在變更網格拓撲或升級軟體之後、下載新的恢復套件複本。
+
+.步驟
+. 選擇* maintenance *>* System*>* Recovery套件*。
+. 輸入資源配置密碼、然後選取 * 開始下載 * 。
++
+下載隨即開始。
+
+. 下載完成後、請開啟 `.zip`檔案並確認您可以存取內容、包括 `Passwords.txt`檔案。
+. 將下載的恢復軟件包文件複製(`.zip`到兩個安全且獨立的位置。
++
+
+CAUTION: 必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。
+
+

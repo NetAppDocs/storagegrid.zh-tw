@@ -1,0 +1,268 @@
+---
+permalink: s3/use-s3-api-for-s3-object-lock.html 
+sidebar: sidebar 
+keywords: how to configure S3 object lock, object lock, default bucket retention, governance, compliance, retain-until-date, legal hold 
+summary: 如果 StorageGRID 系統已啟用全域 S3 物件鎖定設定、您可以在啟用 S3 物件鎖定的情況下建立儲存區。您可以針對每個物件版本、指定每個儲存區或保留設定的預設保留。 
+---
+= 使用 S3 REST API 來設定 S3 物件鎖定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 StorageGRID 系統已啟用全域 S3 物件鎖定設定、您可以在啟用 S3 物件鎖定的情況下建立儲存區。您可以針對每個物件版本、指定每個儲存區或保留設定的預設保留。
+
+
+
+== 如何為貯體啟用 S3 物件鎖定
+
+如果StorageGRID 您的整個S3物件鎖定設定已啟用、則您可以在建立每個儲存區時、選擇性地啟用S3物件鎖定。
+
+S3 物件鎖定是永久性設定、只有在建立貯體時才能啟用。建立貯體後、您無法新增或停用 S3 物件鎖定。
+
+若要為貯體啟用 S3 物件鎖定、請使用下列其中一種方法：
+
+* 使用租戶管理程式建立桶。請參閱。 link:../tenant/creating-s3-bucket.html["建立S3儲存區"]
+* 使用具有要求標頭的 CreateBucket 要求建立貯體 `x-amz-bucket-object-lock-enabled`。請參閱。 link:operations-on-buckets.html["在貯體上作業"]
+
+
+S3 物件鎖定需要儲存區版本設定、此功能會在建立儲存區時自動啟用。您無法暫停儲存區的版本設定。請參閱。 link:object-versioning.html["物件版本管理"]
+
+
+
+== 貯體的預設保留設定
+
+為貯體啟用 S3 物件鎖定時、您可以選擇性地啟用貯體的預設保留、並指定預設保留模式和預設保留期間。
+
+
+
+=== 預設保留模式
+
+* 在法規遵循模式中：
++
+** 直到達到物件的保留日期、才能刪除物件。
+** 物件的保留日期可以增加、但不能減少。
+** 直到達到該日期為止、才能移除物件的保留日期。
+
+
+* 在治理模式中：
++
+** 擁有權限的使用者 `s3:BypassGovernanceRetention`可以使用 `x-amz-bypass-governance-retention: true`要求標頭來略過保留設定。
+** 這些使用者可以在達到物件版本的保留截止日期之前刪除物件版本。
+** 這些使用者可以增加、減少或移除物件的保留到目前為止。
+
+
+
+
+
+
+=== 預設保留期間
+
+每個貯體都可以有一段以年或日為單位指定的預設保留期間。
+
+
+
+== 如何設定貯體的預設保留
+
+若要設定貯體的預設保留、請使用下列其中一種方法：
+
+* 從 Tenant Manager 管理貯體設定。請參閱link:../tenant/creating-s3-bucket.html["建立S3儲存區"]和link:../tenant/update-default-retention-settings.html["更新 S3 物件鎖定預設保留"]。
+* 針對貯體發出 PutObjectLockConfiguration 要求、以指定預設模式和預設天數或年數。
+
+
+
+
+=== PutObjectLockConfiguration
+
+PutObjectLockConfiguration 要求可讓您設定及修改已啟用 S3 物件鎖定的儲存區的預設保留模式和預設保留期間。您也可以移除先前設定的預設保留設定。
+
+將新的物件版本擷取至貯體時、若未指定、 `x-amz-object-lock-retain-until-date`則會套用預設保留模式 `x-amz-object-lock-mode`。如果未指定、則會使用預設保留期間來計算保留截止日期 `x-amz-object-lock-retain-until-date`。
+
+如果在擷取物件版本之後修改預設保留期間、則物件版本的保留截止日期將維持不變、且不會使用新的預設保留期間重新計算。
+
+您必須具有 `s3:PutBucketObjectLockConfiguration`權限或是帳戶根目錄、才能完成此作業。
+
+ `Content-MD5`必須在 PUT 要求中指定要求標頭。
+
+
+
+==== 申請範例
+
+此範例可為貯體啟用 S3 物件鎖定、並將預設保留模式設為符合法規、並將預設保留期間設為 6 年。
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /bucket?object-lock HTTP/1.1
+Accept-Encoding: identity
+Content-Length: 308
+Host: _host_
+Content-MD5: _request header_
+User-Agent: s3sign/1.0.0 requests/2.24.0 python/3.8.2
+X-Amz-Date: _date_
+X-Amz-Content-SHA256: _authorization-string_
+Authorization: _authorization-string_
+
+<ObjectLockConfiguration>
+    <ObjectLockEnabled>Enabled</ObjectLockEnabled>
+    <Rule>
+        <DefaultRetention>
+            <Mode>COMPLIANCE</Mode>
+            <Years>6</Years>
+        </DefaultRetention>
+    </Rule>
+</ObjectLockConfiguration>
+----
+
+
+== 如何決定貯體的預設保留
+
+若要判斷儲存區是否啟用 S3 物件鎖定、並查看預設保留模式和保留期間、請使用下列其中一種方法：
+
+* 在租戶管理器中檢視貯體。請參閱。 link:../tenant/viewing-s3-bucket-details.html["檢視 S3 儲存區"]
+* 發出 GetObjectLockConfiguration 要求。
+
+
+
+
+=== GetObjectLockConfiguration
+
+GetObjectLockConfiguration 要求可讓您判斷儲存區是否已啟用 S3 物件鎖定、如果已啟用、請查看儲存區是否已設定預設保留模式和保留期間。
+
+將新物件版本擷取至貯體時、如果未指定、則會套用預設保留模式 `x-amz-object-lock-mode`。如果未指定、則會使用預設保留期間來計算保留截止日期 `x-amz-object-lock-retain-until-date`。
+
+您必須具有 `s3:GetBucketObjectLockConfiguration`權限或是帳戶根目錄、才能完成此作業。
+
+
+
+==== 申請範例
+
+[listing, subs="specialcharacters,quotes"]
+----
+GET /bucket?object-lock HTTP/1.1
+Host: _host_
+Accept-Encoding: identity
+User-Agent: aws-cli/1.18.106 Python/3.8.2 Linux/4.4.0-18362-Microsoft botocore/1.17.29
+x-amz-date: _date_
+x-amz-content-sha256: _authorization-string_
+Authorization: _authorization-string_
+----
+
+
+==== 回應範例
+
+[listing]
+----
+HTTP/1.1 200 OK
+x-amz-id-2: iVmcB7OXXJRkRH1FiVq1151/T24gRfpwpuZrEG11Bb9ImOMAAe98oxSpXlknabA0LTvBYJpSIXk=
+x-amz-request-id: B34E94CACB2CEF6D
+Date: Fri, 04 Sep 2020 22:47:09 GMT
+Transfer-Encoding: chunked
+Server: AmazonS3
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjectLockConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <ObjectLockEnabled>Enabled</ObjectLockEnabled>
+    <Rule>
+        <DefaultRetention>
+            <Mode>COMPLIANCE</Mode>
+            <Years>6</Years>
+        </DefaultRetention>
+    </Rule>
+</ObjectLockConfiguration>
+----
+
+
+== 如何指定物件的保留設定
+
+啟用 S3 物件鎖定的貯體可包含物件組合、並具有或不含 S3 物件鎖定保留設定。
+
+物件層級保留設定是使用 S3 REST API 指定的。物件的保留設定會覆寫貯體的任何預設保留設定。
+
+您可以為每個物件指定下列設定：
+
+* * 保留模式 * ：法規遵循或治理。
+* * 截止日期 * ：指定 StorageGRID 必須保留物件版本多久的日期。
++
+** 在規範模式中、如果保留截止日期是未來、則可以擷取物件、但無法修改或刪除物件。保留截止日期可以增加、但無法減少或移除此日期。
+** 在治理模式中、具有特殊權限的使用者可以略過保留到最新的設定。他們可以在物件版本的保留期間結束之前刪除物件版本。他們也可以增加、減少或甚至移除截止日期的保留。
+
+
+* *合法持有*：將合法持有套用至物件版本、會立即鎖定該物件。例如、您可能需要對與調查或法律爭議相關的物件保留法律。合法持有沒有到期日、但在明確移除之前、仍會保留到位。
++
+物件的合法保留設定不受保留模式和保留截止日期的影響。如果物件版本處於合法保留狀態、則沒有人可以刪除該版本。
+
+
+
+若要在將物件版本新增至貯體時指定 S3 物件鎖定設定link:put-object.html["PuttObject"]、請發出、link:put-object-copy.html["CopyObject"]或link:initiate-multipart-upload.html["建立多個部分上傳"]要求。
+
+您可以使用下列項目：
+
+* `x-amz-object-lock-mode`，可以是法規遵循或治理（區分大小寫）。
++
+
+NOTE: 如果指定 `x-amz-object-lock-mode`，則還必須指定 `x-amz-object-lock-retain-until-date`。
+
+* `x-amz-object-lock-retain-until-date`
++
+** 保留截止日期值必須採用格式 `2020-08-10T21:46:00Z`。允許分數秒、但只保留3個小數位數（毫秒精度）。不允許其他 ISO 8601 格式。
+** 保留截止日期必須為未來日期。
+
+
+* `x-amz-object-lock-legal-hold`
++
+如果已開啟合法持有（區分大小寫）、則物件將置於合法持有之下。如果法律保留已關閉、則不會保留任何合法的保留。任何其他值都會導致400個錯誤要求（InvalidArgument）錯誤。
+
+
+
+如果您使用上述任一要求標頭、請注意下列限制：
+
+*  `Content-MD5`如果 PuttObject 要求中有任何要求標頭、則需要申請標頭 `x-amz-object-lock-*`。 `Content-MD5`複製物件或 CreateMultpartUpload 不需要。
+* 如果貯體未啟用 S3 物件鎖定、且 `x-amz-object-lock-*`存在要求標頭、則會傳回 400 錯誤要求（ InvalidRequest ）錯誤。
+* PutObject 要求支援使用 `x-amz-storage-class: REDUCED_REDUNDANCY`以符合 AWS 行為。然而、當物件被擷取至啟用S3物件鎖定的儲存區時StorageGRID 、則會一律執行雙重認可擷取。
+* 後續的 Get 或 HeadObject 版本回應將包括標頭 `x-amz-object-lock-mode`、和 `x-amz-object-lock-legal-hold`（如果已設定）、 `x-amz-object-lock-retain-until-date`以及要求寄件者是否擁有正確的 `s3:Get*`權限。
+
+
+您可以使用 `s3:object-lock-remaining-retention-days`原則條件金鑰來限制物件的最小和最大允許保留期間。
+
+
+
+== 如何更新物件的保留設定
+
+如果您需要更新現有物件版本的合法保留或保留設定、可以執行下列物件子資源作業：
+
+* `PutObjectLegalHold`
++
+如果新的合法持有值已開啟、則物件將置於合法持有之下。如果合法持有值為「關」、則合法持有將被解除。
+
+* `PutObjectRetention`
++
+** 模式值可以是法規遵循或治理（區分大小寫）。
+** 保留截止日期值必須採用格式 `2020-08-10T21:46:00Z`。允許分數秒、但只保留3個小數位數（毫秒精度）。不允許其他 ISO 8601 格式。
+** 如果物件版本有現有的截至日期保留、您只能增加。新的價值必須是未來的價值。
+
+
+
+
+
+
+== 如何使用治理模式
+
+擁有權限的使用者 `s3:BypassGovernanceRetention`可以略過使用治理模式之物件的作用中保留設定。任何刪除或 PutObjectRetention 作業都必須包含 `x-amz-bypass-governance-retention:true`要求標頭。這些使用者可以執行這些額外作業：
+
+* 執行 DeleteObject 或 DeleteObjects 作業、以在物件版本的保留期間結束之前刪除物件版本。
++
+合法持有的物件無法刪除。合法持有必須關閉。
+
+* 在物件的保留期間結束之前、執行 PutObjectRetention 作業、將物件版本的模式從治理模式變更為法規遵循模式。
++
+永遠不允許將模式從法規遵循變更為治理。
+
+* 執行 PutObjectRetention 作業以增加、減少或移除物件版本的保留期間。
+
+
+.相關資訊
+* link:../ilm/managing-objects-with-s3-object-lock.html["使用S3物件鎖定來管理物件"]
+* link:../tenant/using-s3-object-lock.html["使用 S3 物件鎖定來保留物件"]
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html["Amazon Simple Storage Service 使用者指南：鎖定物件"^]
+

@@ -1,0 +1,26 @@
+---
+permalink: troubleshoot/troubleshooting-lost-and-missing-object-data.html 
+sidebar: sidebar 
+keywords: how to troubleshoot lost object data, how to troubleshoot missing object data 
+summary: 物件可擷取的原因有多種、包括從用戶端應用程式讀取要求、複寫物件資料的背景驗證、ILM重新評估、以及在儲存節點還原期間還原物件資料。 
+---
+= 疑難排解遺失和遺失的物件資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+物件可擷取的原因有多種、包括從用戶端應用程式讀取要求、複寫物件資料的背景驗證、ILM重新評估、以及在儲存節點還原期間還原物件資料。
+
+此系統使用物件中繼資料中的位置資訊來判斷要從哪個位置擷取物件。StorageGRID如果在預期位置找不到物件複本、系統會嘗試從系統中其他位置擷取物件的另一個複本、假設ILM原則包含建立兩個或多個物件複本的規則。
+
+如果這項擷取成功、StorageGRID 則此資訊系統會取代遺失的物件複本。否則會觸發*物件遺失*警示、如下所示：
+
+* 對於複寫的複本、如果無法擷取另一個複本、則物件會視為遺失、並觸發警示。
+* 如果是以刪除方式編碼的複本、如果無法從預期位置擷取複本、則偵測到毀損的複本（ ECOR ）屬性會在嘗試從其他位置擷取複本之前遞增一次。如果找不到其他複本、則會觸發警示。
+
+
+您應該立即調查所有 * 物件遺失 * 警示、以判斷遺失的根本原因、並判斷該物件是否仍存在於離線或目前無法使用的儲存節點。請參閱。 link:../troubleshoot/investigating-lost-objects.html["調查遺失的物件"]
+
+如果沒有複本的物件資料遺失、則沒有恢復解決方案。不過、您必須重設「遺失物件」計數器、以防止已知的遺失物件遮罩任何新的遺失物件。請參閱。 link:resetting-lost-and-missing-object-counts.html["重設遺失和遺失的物件數"]

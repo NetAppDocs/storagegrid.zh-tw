@@ -1,0 +1,32 @@
+---
+permalink: admin/managing-full-storage-nodes.html 
+sidebar: sidebar 
+keywords: storage node is full 
+summary: 當儲存節點達到容量時、您必須StorageGRID 透過新增的儲存設備來擴充此功能。有三種選項可供選擇：新增儲存磁碟區、新增儲存擴充櫃、以及新增儲存節點。 
+---
+= 管理完整儲存節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當儲存節點達到容量時、您必須StorageGRID 透過新增的儲存設備來擴充此功能。有三種選項可供選擇：新增儲存磁碟區、新增儲存擴充櫃、以及新增儲存節點。
+
+
+
+== 新增儲存磁碟區
+
+每個儲存節點都支援最大數量的儲存磁碟區。所定義的最大值會因平台而異。如果儲存節點包含的儲存磁碟區數量少於最大儲存磁碟區數量、您可以新增磁碟區來增加其容量。請參閱的說明link:../expand/index.html["擴充StorageGRID 功能"]。
+
+
+
+== 新增儲存擴充櫃
+
+某些 StorageGRID 應用裝置儲存節點（例如 SG6060 或 SG6160 ）可支援額外的儲存櫃。如果StorageGRID 您擁有擴充功能尚未擴充至最大容量的不完整產品、您可以新增儲存櫃來增加容量。請參閱的說明link:../expand/index.html["擴充StorageGRID 功能"]。
+
+
+
+== 新增儲存節點
+
+您可以新增儲存節點來增加儲存容量。新增儲存設備時、必須仔細考量目前使用中的ILM規則和容量需求。請參閱的說明link:../expand/index.html["擴充StorageGRID 功能"]。

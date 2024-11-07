@@ -1,0 +1,60 @@
+---
+permalink: expand/contacting-technical-support.html 
+sidebar: sidebar 
+keywords: troubleshoot expansion, contact technical support 
+summary: 如果您在網格擴充程序期間遇到無法解決的錯誤、或網格工作失敗、請收集記錄檔並聯絡技術支援部門。 
+---
+= 疑難排解擴充問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您在網格擴充程序期間遇到無法解決的錯誤、或網格工作失敗、請收集記錄檔並聯絡技術支援部門。
+
+聯絡技術支援人員之前、請先收集必要的記錄檔、以協助進行疑難排解。
+
+.步驟
+. 連線至發生故障的擴充節點：
++
+.. 輸入下列命令：``ssh -p 8022 admin@_grid_node_IP_``
++
+
+NOTE: 連接埠8022是基礎作業系統的SSH連接埠、而連接埠22則是執行StorageGRID 支援的Container引擎SSH連接埠。
+
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+以 root 登入後、提示會從變更 `$`為 `#`。
+
+. 視安裝所到達的階段而定、擷取網格節點上可用的下列任何記錄：
++
+[cols="1a,2a"]
+|===
+| 平台 | 記錄 
+
+
+ a| 
+VMware
+ a| 
+** `/var/log/daemon.log`
+** `/var/log/storagegrid/daemon.log`
+** `/var/log/storagegrid/nodes/<node-name>.log`
+
+
+
+
+ a| 
+Linux
+ a| 
+** `/var/log/storagegrid/daemon.log`
+** `/etc/storagegrid/nodes/<node-name>.conf`（針對每個故障節點）
+** `/var/log/storagegrid/nodes/<node-name>.log`（對於每個故障節點、可能不存在）
+
+
+|===
+

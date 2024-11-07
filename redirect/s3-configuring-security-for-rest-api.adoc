@@ -1,0 +1,8 @@
+---
+permalink: s3/configuring-security-for-rest-api.html 
+redirect: storagegrid/admin/security-for-clients.html 
+---
+= 
+:allow-uri-read: 
+
+

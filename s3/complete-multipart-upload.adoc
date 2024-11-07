@@ -1,0 +1,87 @@
+---
+permalink: s3/complete-multipart-upload.html 
+sidebar: sidebar 
+keywords: multipart upload, object, object size 
+summary: 「 CompleteMultpartUpload 」（ CompleteMultpartupload ）作業可組合先前上傳的零件、完成物件的多部分上傳。 
+---
+= 完成多個部分上傳
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「 CompleteMultpartUpload 」（ CompleteMultpartupload ）作業可組合先前上傳的零件、完成物件的多部分上傳。
+
+
+NOTE: StorageGRID 透過 CompleteMultpartUpload 以遞增順序支援要求參數的非連續值 `partNumber`。此參數可以從任何值開始。
+
+
+
+== 解決衝突
+
+衝突的用戶端要求（例如兩個寫入同一個金鑰的用戶端）會以「最新致勝」的方式解決。「最新致勝」評估的時間取決於StorageGRID 何時由VMware系統完成指定的要求、而非S3用戶端開始作業的時間。
+
+
+
+== 支援的要求標頭
+
+支援下列要求標頭：
+
+* `x-amz-checksum-sha256`
+* `x-amz-storage-class`
++
+ `x-amz-storage-class`如果相符的 ILM 規則指定，則標頭會影響 StorageGRID 建立的物件複本數量link:../ilm/data-protection-options-for-ingest.html["雙重認可或平衡擷取選項"]。
+
+* `STANDARD`
++
+（預設）當ILM規則使用雙重提交選項、或平衡選項回到建立臨時複本時、指定雙重提交擷取作業。
+
+* `REDUCED_REDUNDANCY`
++
+當ILM規則使用雙重提交選項、或平衡選項回到建立過渡複本時、指定單一提交擷取作業。
+
++
+
+NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體、則會忽略此 `REDUCED_REDUNDANCY`選項。如果您正在將物件擷取至舊版的「符合標準」貯體、 `REDUCED_REDUNDANCY`則選項會傳回錯誤。執行「雙重承諾」的程序時、務必確保符合法規遵循要求。StorageGRID
+
+
+
+
+CAUTION: 如果多部分上傳未在15天內完成、則該作業會標示為非作用中、且所有相關資料都會從系統中刪除。
+
+
+NOTE:  `ETag`傳回的值不是資料的 MD5 總和、而是依照 Amazon S3 API 實作的 `ETag`多部分物件值。
+
+
+
+== 不支援的要求標頭
+
+不支援下列要求標頭：
+
+* `x-amz-sdk-checksum-algorithm`
+* `x-amz-trailer`
+
+
+
+
+== 版本管理
+
+此作業會完成多部份上傳。如果已啟用貯體的版本設定功能、則物件版本會在完成多重部分上傳後建立。
+
+如果已啟用貯體的版本設定功能、則會針對儲存的物件版本自動產生唯一的 `versionId`版本。這 `versionId`也會在回應中使用回應標頭傳回 `x-amz-version-id`。
+
+如果版本控制暫停、物件版本會以 null 儲存 `versionId`、如果空版本已經存在、則會覆寫該版本。
+
+
+NOTE: 當某個儲存區啟用版本管理時、完成多部份上傳會一律建立新版本、即使在同一個物件金鑰上同時完成多部份上傳也一樣。如果未針對某個儲存區啟用版本管理、則可以啟動多重部分上傳、然後在同一個物件金鑰上啟動並完成另一個多重部分上傳。在非版本的儲存區上、完成最後一次的多部分上傳優先。
+
+
+
+== 複寫失敗、通知或中繼資料通知
+
+如果平台服務已設定多重零件上傳的儲存區、即使相關的複寫或通知動作失敗、多重零件上傳仍會成功。
+
+租戶可透過更新物件的中繼資料或標記來觸發失敗的複寫或通知。租戶可以重新提交現有的值、以避免進行不必要的變更。
+
+請參閱 link:../admin/troubleshooting-platform-services.html["疑難排解平台服務"]。

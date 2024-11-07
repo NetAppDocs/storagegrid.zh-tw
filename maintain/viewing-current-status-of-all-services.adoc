@@ -1,0 +1,44 @@
+---
+permalink: maintain/viewing-current-status-of-all-services.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, service, status 
+summary: 您可以隨時檢視在網格節點上執行的所有服務目前狀態。 
+---
+= 檢視所有服務的目前狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以隨時檢視在網格節點上執行的所有服務目前狀態。
+
+.開始之前
+您有 `Passwords.txt`檔案。
+
+.步驟
+. 登入網格節點：
++
+.. 輸入下列命令： `ssh admin@_grid_node_IP_`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. 檢視網格節點上執行的所有服務狀態： `storagegrid-status`
++
+例如、主管理節點的輸出會顯示AMS、CMN和NMS服務目前的執行狀態。如果服務狀態變更、則會立即更新此輸出。
+
++
+image::../media/storagegrid_status_output.gif[儲存網格命令輸出的螢幕擷取畫面]
+
+. 返回命令列、按* Ctrl-+* C*。
+. 或者、您也可以檢視網格節點上執行的所有服務的靜態報告： `/usr/local/servermanager/reader.rb`
++
+此報告包含的資訊與持續更新的報告相同、但如果服務狀態變更、則不會更新報告。
+
+. 登出命令 Shell ： `exit`
+

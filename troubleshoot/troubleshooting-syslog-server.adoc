@@ -1,0 +1,148 @@
+---
+permalink: troubleshoot/troubleshooting-syslog-server.html 
+sidebar: sidebar 
+keywords: how to troubleshoot the external syslog server 
+summary: 下表說明可能與外部 Syslog 伺服器相關的錯誤訊息、並列出修正行動。 
+---
+= 排除外部syslog伺服器的故障
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+下表說明可能與外部 Syslog 伺服器相關的錯誤訊息、並列出修正行動。
+
+如需將稽核資訊傳送至外部 Syslog 伺服器的詳細資訊、請參閱：
+
+* link:../monitor/considerations-for-external-syslog-server.html["使用外部 Syslog 伺服器的考量事項"]
+* link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]
+
+
+[cols="1a,3a"]
+|===
+| 錯誤訊息 | 說明與建議行動 
+
+
+ a| 
+無法解析主機名稱
+ a| 
+您為syslog伺服器輸入的FQDN無法解析為IP位址。
+
+. 檢查您輸入的主機名稱。如果您輸入 IP 位址、請確定它是有效的 IP 位址、以 W.X.Y.Z （「點分十進制」）表示法表示。
+. 檢查DNS伺服器的設定是否正確。
+. 確認每個節點都可以存取DNS伺服器的IP位址。
+
+
+
+
+ a| 
+連線遭拒
+ a| 
+拒絕與syslog伺服器的TCP或TLS連線。主機的TCP或TLS連接埠可能沒有偵聽服務、或是防火牆可能封鎖存取。
+
+. 檢查您是否為syslog伺服器輸入正確的FQDN或IP位址、連接埠和傳輸協定。
+. 確認系統記錄服務的主機正在執行偵聽指定連接埠的系統記錄精靈。
+. 確認防火牆並未封鎖從節點到syslog伺服器IP和連接埠的TCP/IP連線存取。
+
+
+
+
+ a| 
+無法連線至網路
+ a| 
+syslog伺服器不在直接附加的子網路上。路由器傳回ICMP故障訊息、表示無法將測試訊息從列出的節點轉送到syslog伺服器。
+
+. 檢查您輸入的syslog伺服器FQDN或IP位址是否正確。
+. 針對列出的每個節點、檢查Grid Network Subnet List（網格網路子網路清單）、管理網路子網路清單和Client Network Gateways（用戶端網路閘道）。確認這些設定可透過預期的網路介面和閘道（Grid、Admin或Client）、將流量路由傳送至syslog伺服器。
+
+
+
+
+ a| 
+主機無法連線
+ a| 
+syslog伺服器位於直接附加的子網路（所列節點用於其Grid、Admin或Client IP位址的子網路）上。節點嘗試傳送測試訊息、但未收到針對syslog伺服器MAC位址的ARP要求回應。
+
+. 檢查您輸入的syslog伺服器FQDN或IP位址是否正確。
+. 檢查執行syslog服務的主機是否已啟動。
+
+
+
+
+ a| 
+連線逾時
+ a| 
+已嘗試進行TCP/IP連線、但系統記錄伺服器長時間未收到任何回應。可能是路由設定錯誤、或是防火牆在不傳送任何回應的情況下丟棄流量（通用組態）。
+
+. 檢查您輸入的syslog伺服器FQDN或IP位址是否正確。
+. 針對列出的每個節點、檢查Grid Network Subnet List（網格網路子網路清單）、管理網路子網路清單和Client Network Gateways（用戶端網路閘道）。確認這些設定是使用您預期可連線到 Syslog 伺服器的網路介面和閘道（ Grid 、 Admin 或 Client ）、將流量路由至 Syslog 伺服器。
+. 確認防火牆並未封鎖從所列節點存取到syslog伺服器IP和連接埠的TCP/IP連線。
+
+
+
+
+ a| 
+合作夥伴已關閉連線
+ a| 
+已成功建立與syslog伺服器的TCP連線、但後來關閉。原因可能包括：
+
+* 系統記錄伺服器可能已重新啟動或重新開機。
+* 節點和syslog伺服器可能有不同的TCP/IP設定。
+* 中間防火牆可能會關閉閒置的TCP連線。
+* 偵聽syslog伺服器連接埠的非syslog伺服器可能已關閉連線。
+
+
+若要解決此問題：
+
+. 檢查您是否為syslog伺服器輸入正確的FQDN或IP位址、連接埠和傳輸協定。
+. 如果您使用 TLS 、請確認 Syslog 伺服器也使用 TLS 。如果您使用 TCP 、請確認 Syslog 伺服器也使用 TCP 。
+. 檢查中繼防火牆是否未設定為關閉閒置的TCP連線。
+
+
+
+
+ a| 
+TLS憑證錯誤
+ a| 
+從syslog伺服器收到的伺服器憑證與您提供的CA憑證套件和用戶端憑證不相容。
+
+. 確認CA憑證套件組合和用戶端憑證（如果有）與syslog伺服器上的伺服器憑證相容。
+. 確認來自syslog伺服器之伺服器憑證中的身分識別包含預期的IP或FQDN值。
+
+
+
+
+ a| 
+轉送已暫停
+ a| 
+系統記錄不再轉送到系統記錄伺服器、StorageGRID 而且無法偵測原因。
+
+檢閱此錯誤所提供的偵錯記錄、以嘗試判斷根本原因。
+
+
+
+ a| 
+TLS工作階段已終止
+ a| 
+syslog伺服器終止TLS工作階段、StorageGRID 且無法偵測原因。
+
+. 檢閱此錯誤所提供的偵錯記錄、以嘗試判斷根本原因。
+. 檢查您是否為syslog伺服器輸入正確的FQDN或IP位址、連接埠和傳輸協定。
+. 如果您使用 TLS 、請確認 Syslog 伺服器也使用 TLS 。如果您使用 TCP 、請確認 Syslog 伺服器也使用 TCP 。
+. 確認CA憑證套件組合和用戶端憑證（如果有）與來自syslog伺服器的伺服器憑證相容。
+. 確認來自syslog伺服器之伺服器憑證中的身分識別包含預期的IP或FQDN值。
+
+
+
+
+ a| 
+結果查詢失敗
+ a| 
+用於系統記錄伺服器組態和測試的管理節點無法從列出的節點要求測試結果。一個或多個節點可能當機。
+
+. 請遵循標準疑難排解步驟、確保節點處於線上狀態、而且所有預期的服務都在執行中。
+. 在列出的節點上重新啟動misd服務。
+
+
+|===

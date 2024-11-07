@@ -1,0 +1,95 @@
+---
+permalink: admin/requirements-for-sso.html 
+sidebar: sidebar 
+keywords: sso requirements, single sign on requirements, identity federation requirements for sso, pingfederate, azure ad, ad fs 
+summary: 在啟用 StorageGRID 系統的單一登入之前、請先檢閱需求和考量事項。 
+---
+= 單一登入的要求與考量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為 StorageGRID 系統啟用單一登入（ SSO ）之前、請先檢閱需求和考量事項。
+
+
+
+== 身分識別供應商要求
+
+支援下列SSO身分識別供應商（IDP）StorageGRID ：
+
+* Active Directory Federation Service（AD FS）
+* Azure Active Directory（Azure AD）
+* PingFedate
+
+
+您必須先為StorageGRID 您的支援系統設定身分識別聯盟、才能設定SSO身分識別供應商。您用於身分識別聯盟的LDAP服務類型會控制您可以實作的SSO類型。
+
+[cols="1a,1a"]
+|===
+| 已設定的LDAP服務類型 | SSO身分識別供應商選項 
+
+
+ a| 
+Active Directory
+ a| 
+* Active Directory
+* Azure
+* PingFedate
+
+
+
+
+ a| 
+Azure
+ a| 
+Azure
+
+|===
+
+
+=== AD FS需求
+
+您可以使用下列任何版本的AD FS：
+
+* Windows Server 2022 AD FS
+* Windows Server 2019 AD FS
+* Windows Server 2016 AD FS
+
+
+
+NOTE: Windows Server 2016 應使用 https://support.microsoft.com/en-us/help/3201845/cumulative-update-for-windows-10-version-1607-and-windows-server-2016["KB3201845更新"^]、或更新版本。
+
+
+
+=== 其他需求
+
+* 傳輸層安全性（TLS）1.2或1.3
+* Microsoft .NET Framework版本3.5.1或更新版本
+
+
+
+
+=== Azure 的考量
+
+如果您使用 Azure 做為 SSO 類型、且使用者的使用者主體名稱不使用 sAMAccountName 做為首碼、則當 StorageGRID 失去與 LDAP 伺服器的連線時、可能會發生登入問題。若要允許使用者登入、您必須還原與 LDAP 伺服器的連線。
+
+
+
+== 伺服器憑證需求
+
+根據預設、StorageGRID 在每個管理節點上使用管理介面憑證、以安全存取Grid Manager、租戶管理程式、Grid Management API及租戶管理API。當您設定依賴方信任（AD FS）、企業應用程式（Azure）或服務供應商連線（PingFedate）以供StorageGRID 進行時、您可以使用伺服器憑證做為StorageGRID 簽署憑證來執行Sfor Suse要求。
+
+如果您還沒有link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["已為管理介面設定自訂憑證"]、現在就應該這麼做。當您安裝自訂伺服器憑證時、它會用於所有管理節點、您可以在StorageGRID 所有依賴方信任、企業應用程式或SP連線中使用。
+
+
+NOTE: 不建議在依賴方信任、企業應用程式或SP連線中使用管理節點的預設伺服器憑證。如果節點發生故障、而您要將其恢復、則會產生新的預設伺服器憑證。在登入還原的節點之前、您必須使用新的憑證來更新依賴方信任、企業應用程式或SP連線。
+
+您可以登入節點的命令 Shell 並前往目錄、以存取管理節點的伺服器憑證 `/var/local/mgmt-api`。自訂伺服器憑證的名稱為 `custom-server.crt`。節點的預設伺服器憑證命名為 `server.crt`。
+
+
+
+== 連接埠需求
+
+單一登入（SSO）無法在受限網格管理器或租戶管理器連接埠上使用。如果您想要使用者透過單一登入進行驗證、則必須使用預設的HTTPS連接埠（443）。請參閱。 link:controlling-access-through-firewalls.html["控制外部防火牆的存取"]

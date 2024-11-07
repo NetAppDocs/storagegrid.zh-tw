@@ -1,0 +1,19 @@
+---
+permalink: network/network-gateway-requirements.html 
+sidebar: sidebar 
+keywords: network gateway requirements 
+summary: 請遵循下列網路閘道或路由器的需求與準則。 
+---
+= 網路閘道需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+請遵循下列網路閘道或路由器的需求與準則。
+
+* 如果已設定、則指定網路的閘道必須位於特定網路的子網路內。
+* 如果使用靜態定址設定介面、則必須指定0.00.0以外的閘道位址。
+* 如果您沒有閘道、最佳做法是將閘道位址設定為網路介面的 IP 位址。
+

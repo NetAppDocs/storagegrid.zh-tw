@@ -1,0 +1,42 @@
+---
+permalink: audit/gtst-grid-task-started.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, GTST, Grid Task Started 
+summary: 此稽核訊息表示CMN服務已開始處理指定的網格工作。稽核訊息會緊接著Grid工作提交訊息、顯示內部Grid工作提交服務所啟動並選取自動啟動的網格工作。對於提交至「擱置」資料表的網格工作、此訊息會在使用者啟動網格工作時產生。 
+---
+= GTST：網格工作已開始
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此稽核訊息表示CMN服務已開始處理指定的網格工作。稽核訊息會緊接著Grid工作提交訊息、顯示內部Grid工作提交服務所啟動並選取自動啟動的網格工作。對於提交至「擱置」資料表的網格工作、此訊息會在使用者啟動網格工作時產生。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+TSID
+ a| 
+工作ID
+ a| 
+此欄位可唯一識別所產生的網格工作、並允許在其生命週期內管理該工作。
+
+*附註：*工作ID是在產生網格工作時指派、而非在提交時指派。指定的網格工作可以多次提交、在此情況下、「工作ID」欄位不足以唯一連結已提交、已啟動及已結束的稽核訊息。
+
+
+
+ a| 
+RSRLT
+ a| 
+結果
+ a| 
+結果。此欄位只有一個值：
+
+* SUCS：已成功啟動網格工作。
+
+
+|===

@@ -1,0 +1,78 @@
+= 
+:allow-uri-read: 
+
+
+[cols="1a,1a"]
+|===
+| 路徑和檔案名稱 | 說明 
+
+
+| ./rpms/README  a| 
+說明StorageGRID 包含在更新檔中的所有檔案的文字檔。
+
+
+
+| ./rpms/NLF000000.txt  a| 
+不提供產品任何支援權利的免費授權。
+
+
+
+| ./rpms/StorageGRID-Webscale-Images-_version_-SHA.rpm  a| 
+用於在 RHEL 主機上安裝 StorageGRID 節點映像的 RPM 套件。
+
+
+
+| ./rpms/StorageGRID-Webscale-Service-_version_-SHA.rpm  a| 
+用於在 RHEL 主機上安裝 StorageGRID 主機服務的 RPM 套件。
+
+
+
+| 部署指令碼工具 | 說明 
+
+
+| ./rpms/configure-storagegrid.py  a| 
+Python指令碼、用於自動化StorageGRID 組態的功能。
+
+
+
+| ./rpms/configure-sga.py  a| 
+Python指令碼、用於自動化StorageGRID 設定不必要的應用程式。
+
+
+
+| ./rpms/configure儲存格RID、same.json  a| 
+用於指令碼的範例組態檔 `configure-storagegrid.py`。
+
+
+
+| ./rpms/storagegrid-ssoauth.py  a| 
+啟用單一登入時、您可用來登入Grid Management API的Python指令碼範例。您也可以使用此指令碼來進行 Ping 聯合整合。
+
+
+
+| ./rpms/configure儲存格RID、blank、json  a| 
+用於指令碼的空白組態檔 `configure-storagegrid.py`。
+
+
+
+| ./rpms/Extas/Ansible  a| 
+範例 Ansible 角色和教戰手冊、用於設定 StorageGRID 容器部署的 RHEL 主機。您可以視需要自訂角色或方針。
+
+
+
+| ./rpms/storagegrid-ssoauth-azure.py  a| 
+使用 Active Directory 或 Ping 聯合啟用單一登入（ SSO ）時、可以用來登入 Grid Management API 的 Python 指令碼範例。
+
+
+
+| ./rpms/sstoragegrit-soauth-azure.js  a| 
+由搭配 Python 指令碼所呼叫的輔助程式指令碼 `storagegrid-ssoauth-azure.py`、用於執行與 Azure 的 SSO 互動。
+
+
+
+| ./rpms/Extps/API-架構  a| 
+API架構StorageGRID 。
+
+* 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
+
+|===

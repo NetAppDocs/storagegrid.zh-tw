@@ -1,0 +1,83 @@
+---
+permalink: s3/post-object-restore.html 
+sidebar: sidebar 
+keywords: post, RestoreObject, object 
+summary: 您可以使用 S3 RestoreObject 要求來還原儲存在雲端儲存池中的物件。 
+---
+= RestoreObject
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 S3 RestoreObject 要求來還原儲存在雲端儲存池中的物件。
+
+
+
+== 支援的要求類型
+
+StorageGRID 僅支援還原物件的 RestoreObject 要求。它不支援 `SELECT`還原類型。選擇要求退貨 `XNotImplemented`。
+
+
+
+== 版本管理
+
+您也可以選擇指定 `versionId`還原版本控制儲存區中物件的特定版本。如果未指定 `versionId`，則會還原物件的最新版本
+
+
+
+== Cloud Storage Pool 物件上的 RestoreObject 行為
+
+如果對象已儲存link:../ilm/what-cloud-storage-pool-is.html["雲端儲存資源池"]在中，則根據對象的狀態， RestoreObject 請求具有以下行爲。如需詳細資訊、請參閱link:head-object.html["標題物件"]。
+
+
+NOTE: 如果物件儲存在雲端儲存池中、且網格上也有一個或多個物件複本、則無需透過發出 RestoreObject 要求來還原物件。而是可以使用 GetObject 要求直接擷取本機複本。
+
+[cols="1a,2a"]
+|===
+| 物件狀態 | RestoreObject 的行為 
+
+
+ a| 
+物件擷取至StorageGRID 不受ILM評估、或物件不在雲端儲存資源池中
+ a| 
+`403 Forbidden`、 `InvalidObjectState`
+
+
+
+ a| 
+Cloud Storage Pool中的物件、但尚未轉換為無法擷取的狀態
+ a| 
+`200 OK`不做任何變更。
+
+* 注意 * ：在物件轉換為不可擷取的狀態之前、您無法變更其 `expiry-date`。
+
+
+
+ a| 
+物件移轉至無法擷取的狀態
+ a| 
+`202 Accepted`將物件的可擷取複本還原至 Cloud Storage Pool 、直到在要求本文中指定的天數。在此期間結束時、物件會返回無法擷取的狀態。
+
+（可選）使用 `Tier` request 元素來確定恢復作業完成(`Expedited`、 `Standard`或所 `Bulk`需的時間。如果未指定 `Tier`，則使用該 `Standard`層。
+
+* 重要 * ：如果物件已移轉至 S3 Glacier Deep Archive 、或雲端儲存池使用 Azure Blob 儲存設備、則無法使用該層還原 `Expedited`。返回以下錯誤 `403 Forbidden` `InvalidTier`： `Retrieval option is not supported by this storage class`。
+
+
+
+ a| 
+正在從無法擷取的狀態還原的物件
+ a| 
+`409 Conflict`、 `RestoreAlreadyInProgress`
+
+
+
+ a| 
+物件已完全還原至雲端儲存資源池
+ a| 
+`200 OK`
+
+* 注意： * 如果物件已還原為可擷取的狀態、您可以重新核發具有新值的 RestoreObject 要求來變更 `expiry-date`物件 `Days`。還原日期會根據申請時間而更新。
+
+|===

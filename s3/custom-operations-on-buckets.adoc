@@ -1,0 +1,98 @@
+---
+permalink: s3/custom-operations-on-buckets.html 
+sidebar: sidebar 
+keywords: operations, buckets, custom, storagegrid bucket operations 
+summary: StorageGRID 系統支援新增至 S3 REST API 的自訂作業。 
+---
+= StorageGRID 自訂作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 系統支援新增至 S3 REST API 的自訂作業。
+
+下表列出 StorageGRID 支援的自訂作業。
+
+[cols="1a,2a"]
+|===
+| 營運 | 說明 
+
+
+ a| 
+link:get-bucket-consistency-request.html["取得庫位一致性"]
+ a| 
+傳回套用至特定儲存區的一致性。
+
+
+
+ a| 
+link:put-bucket-consistency-request.html["實現庫位一致性"]
+ a| 
+設定套用至特定貯體的一致性。
+
+
+
+ a| 
+link:get-bucket-last-access-time-request.html["取得時段上次存取時間"]
+ a| 
+傳回是否為特定儲存區啟用或停用上次存取時間更新。
+
+
+
+ a| 
+link:put-bucket-last-access-time-request.html["將資源桶放在最後存取時間"]
+ a| 
+可讓您啟用或停用特定儲存區的上次存取時間更新。
+
+
+
+ a| 
+link:delete-bucket-metadata-notification-configuration-request.html["刪除時段中繼資料通知組態"]
+ a| 
+刪除與特定儲存區相關聯的中繼資料通知組態XML。
+
+
+
+ a| 
+link:get-bucket-metadata-notification-configuration-request.html["取得Bucket中繼資料通知組態"]
+ a| 
+傳回與特定儲存區相關聯的中繼資料通知組態XML。
+
+
+
+ a| 
+link:put-bucket-metadata-notification-configuration-request.html["放置時段中繼資料通知組態"]
+ a| 
+設定區段的中繼資料通知服務。
+
+
+
+ a| 
+link:get-storage-usage-request.html["取得儲存使用量"]
+ a| 
+告訴您帳戶使用的儲存空間總量、以及與帳戶相關的每個儲存區。
+
+
+
+ a| 
+link:deprecated-put-bucket-request-modifications-for-compliance.html["已過時：具有規範設定的 CreateBucket"]
+ a| 
+已過時且不受支援：您無法再建立啟用「符合性」的新儲存區。
+
+
+
+ a| 
+link:deprecated-get-bucket-compliance-request.html["已過時：取得 Bucket 法規遵循"]
+ a| 
+已過時但受支援：傳回現有舊版相容儲存區目前有效的法規遵循設定。
+
+
+
+ a| 
+link:deprecated-put-bucket-compliance-request.html["已過時：符合 Put Bucket 規範"]
+ a| 
+已過時但受支援：可讓您修改現有舊版相容儲存區的法規遵循設定。
+
+|===

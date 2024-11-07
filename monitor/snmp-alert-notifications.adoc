@@ -1,0 +1,28 @@
+---
+permalink: monitor/snmp-alert-notifications.html 
+sidebar: sidebar 
+keywords: how to use snmp notifications for alerts 
+summary: 如果您想StorageGRID 要在警示發生時傳送SNMP通知、您必須啟用StorageGRID 此功能、並設定一個或多個設陷目的地。 
+---
+= 設定SNMP警示通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想StorageGRID 要在警示發生時傳送SNMP通知、您必須啟用StorageGRID 此功能、並設定一個或多個設陷目的地。
+
+您可以使用Grid Manager中的*組態*>*監控*>* SNMP代理程式*選項、或是Grid Management API的SNMP端點、來啟用及設定StorageGRID SURE SNMP代理程式。SNMP代理程式支援所有三種版本的SNMP傳輸協定。
+
+若要瞭解如何設定 SNMP 代理程式，請參閱link:using-snmp-monitoring.html["使用SNMP監控"]。
+
+設定StorageGRID 完SURE SNMP代理程式後、即可傳送兩種事件導向通知：
+
+* 設陷是 SNMP 代理程式傳送的通知、不需要管理系統的認可。陷阱可讓管理系統知道StorageGRID 在某些情況下發生、例如觸發警示。SNMP的所有三個版本均支援陷阱。
+* 通知類似於陷阱、但需要管理系統確認。如果SNMP代理程式在一定時間內未收到確認訊息、則會重新傳送通知、直到收到確認訊息或達到最大重試值為止。在SNMPv2c和v3中支援通知。
+
+
+在任何嚴重性層級觸發預設或自訂警示時、都會傳送陷阱和通知。若要隱藏警示的SNMP通知、您必須設定警示的靜音。請參閱。 link:silencing-alert-notifications.html["靜音警示通知"]
+
+如果您的 StorageGRID 部署包含多個管理節點、則主要管理節點是警示通知、 AutoSupport 套件和 SNMP 設陷及通知的慣用寄件者。如果主要管理節點無法使用、則其他管理節點會暫時傳送通知。請參閱。 link:../primer/what-admin-node-is.html["什麼是管理節點？"]

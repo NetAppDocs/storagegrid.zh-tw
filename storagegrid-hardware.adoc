@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: storagegrid-hardware.html 
+keywords: storagegrid, software, grid 
+summary: 瞭解如何安裝、設定及使用 StorageGRID 應用裝置硬體。 
+---
+= StorageGRID 應用裝置
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+請移至 https://docs.netapp.com/us-en/storagegrid-appliances/index.html["StorageGRID 應用裝置文件"^]以瞭解如何安裝、設定及維護 StorageGRID 儲存設備和服務應用裝置。

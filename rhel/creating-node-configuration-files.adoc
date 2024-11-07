@@ -1,0 +1,1046 @@
+---
+permalink: rhel/creating-node-configuration-files.html 
+sidebar: sidebar 
+keywords: how to create red hat linux node configuration files, port, remap, port remap 
+summary: 節點組態檔案是小型的文字檔、可提供StorageGRID 支援此支援所需的資訊、以啟動節點並將其連線至適當的網路和區塊儲存資源。節點組態檔用於虛擬節點、不用於應用裝置節點。 
+---
+= 為 Red Hat Enterprise Linux 部署建立節點組態檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+節點組態檔案是小型的文字檔、可提供StorageGRID 支援此支援所需的資訊、以啟動節點並將其連線至適當的網路和區塊儲存資源。節點組態檔案用於虛擬節點、不用於應用裝置節點。
+
+
+
+== 節點組態檔案的位置
+
+將每個 StorageGRID 節點的組態檔放在要執行節點的主機上的目錄中 `/etc/storagegrid/nodes`。例如、如果您計畫在主機 A 上執行一個管理節點、一個閘道節點和一個儲存節點、則必須在主機 A 上放置三個節點組態檔案 `/etc/storagegrid/nodes`。
+
+您可以使用文字編輯器（例如vim或nANO）直接在每個主機上建立組態檔、也可以在其他位置建立組態檔、然後將其移至每個主機。
+
+
+
+== 節點組態檔案的命名
+
+組態檔的名稱很重要。格式為 `node-name.conf`、其中 `node-name`是您指派給節點的名稱。此名稱會顯示在StorageGRID 《Iserfor Installer（英文）：用於節點維護作業（例如節點移轉）。
+
+節點名稱必須遵循下列規則：
+
+* 必須是唯一的
+* 必須以字母開頭
+* 可以包含A到Z和a到z的字元
+* 可包含0到9的數字
+* 可包含一或多個連字號（-）
+* 不得超過 32 個字元、不包括 `.conf`副檔名
+
+
+主機服務不會剖析中任何不遵循這些命名慣例的檔案 `/etc/storagegrid/nodes`。
+
+如果您的網格規劃了多站台拓撲、則一般的節點命名方案可能是：
+
+`site-nodetype-nodenumber.conf`
+
+例如、您可以在 Data Center 1 中使用第一個管理節點、在 Data Center 2 中使用 `dc1-adm1.conf`第三個儲存節點 `dc2-sn3.conf`。不過、只要所有節點名稱都遵循命名規則、您就可以使用任何想要的配置。
+
+
+
+== 節點組態檔案的內容
+
+組態檔案包含金鑰 / 值配對、每行一個金鑰和一個值。針對每個金鑰 / 值配對、請遵循下列規則：
+
+* 密鑰和值必須用等號分隔(`=`）和可選空格。
+* 金鑰不得包含空格。
+* 這些值可以包含內嵌空格。
+* 任何前置或後置空白都會被忽略。
+
+
+下表定義所有支援金鑰的值。每個金鑰都有下列指定之一：
+
+* * 必要 * ：每個節點或指定節點類型都需要
+* * 最佳實務做法 * ：雖然建議選用
+* * 選用 * ：所有節點皆可選用
+
+
+
+
+=== 管理網路金鑰
+
+
+
+==== 管理IP
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+此節點所屬網格之主要管理節點的網格網路IPv6位址。使用您為GRID_NETWORD_IP所指定的相同值、表示網格節點的node_type = VM_admin_Node和admin_role = Primary。如果省略此參數、節點會嘗試使用mDNS探索主要管理節點。
+
+link:how-grid-nodes-discover-primary-admin-node.html["網格節點如何探索主要管理節點"]
+
+*附註*：此值會在主要管理節點上被忽略、而且可能被禁止。
+ a| 
+最佳實務做法
+
+|===
+
+
+==== admin_network_config
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+DHCP、靜態或停用
+ a| 
+選用
+
+|===
+
+
+==== admin_network_esl
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+以逗號分隔的子網路清單、以 CIDR 表示法表示此節點應使用管理網路閘道進行通訊。
+
+範例： `172.16.0.0/21,172.17.0.0/21`
+ a| 
+選用
+
+|===
+
+
+==== 管理網路閘道
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+此節點的本機管理網路閘道的IPv4位址。必須位於由admin_network_ip和admin_network_mask定義的子網路上。DHCP設定的網路會忽略此值。
+
+範例：
+
+`1.1.1.1`
+
+`10.224.4.81`
+ a| 
+如果指定、則為必 `ADMIN_NETWORK_ESL`填。否則為選用。
+
+|===
+
+
+==== admin_network_ip
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+管理網路上此節點的IPV4位址。只有當 Admin_network_config = 靜態時才需要此金鑰；請勿將其指定為其他值。
+
+範例：
+
+`1.1.1.1`
+
+`10.224.4.81`
+ a| 
+當 Admin_network_config = 靜態時為必填。
+
+否則為選用。
+
+|===
+
+
+==== admin_network_MAC
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+容器中管理網路介面的MAC位址。
+
+此欄位為選用欄位。如果省略、會自動產生MAC位址。
+
+必須為6對以分號分隔的十六進位數字。
+
+範例： `b2:9c:02:c2:27:10`
+ a| 
+選用
+
+|===
+
+
+==== admin_network_mask
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+管理網路上此節點的IPv4網路遮罩。當 Admin_network_config = 靜態時、請指定此機碼；不要指定其他值。
+
+範例：
+
+`255.255.255.0`
+
+`255.255.248.0`
+ a| 
+如果指定了 Admin_network_ip 且 Admin_network_config = static 、則為必填。
+
+否則為選用。
+
+|===
+
+
+==== admin_network_MTU
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+管理網路上此節點的最大傳輸單元（MTU）。如果 Admin_network_config = DHCP 、請勿指定。如果指定、則值必須介於1280和9216之間。如果省略、則使用1500。
+
+如果您要使用巨型框架、請將MTU設為適合巨型框架的值、例如9000。否則、請保留預設值。
+
+*重要*：網路的MTU值必須符合節點所連接之交換器連接埠上所設定的值。否則、可能會發生網路效能問題或封包遺失。
+
+範例：
+
+`1500`
+
+`8192`
+ a| 
+選用
+
+|===
+
+
+==== 管理網路目標
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+將用於StorageGRID 由節點存取管理網路的主機裝置名稱。僅支援網路介面名稱。一般而言、您使用的介面名稱不同於GRID_NETWORD_Target或用戶端網路目標所指定的介面名稱。
+
+* 注意 * ：請勿使用連結或橋接裝置作為網路目標。在連結裝置上設定VLAN（或其他虛擬介面）、或使用橋接器和虛擬乙太網路（vith）配對。
+
+*最佳實務做法*：即使此節點最初沒有管理網路IP位址、仍請指定值。然後、您可以在稍後新增管理網路IP位址、而不需重新設定主機上的節點。
+
+範例：
+
+`bond0.1002`
+
+`ens256`
+ a| 
+最佳實務做法
+
+|===
+
+
+==== 管理網路目標類型
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+介面（這是唯一支援的值。）
+ a| 
+選用
+
+|===
+
+
+==== 管理網路目標類型介面複製_MAC
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+是非題
+
+將金鑰設為「true」、以使用StorageGRID 管理網路上主機目標介面的MAC位址來使該容器失效。
+
+*最佳實務做法：*在需要混雜模式的網路中、請改用admin_network_target類型_interface_clone _MAC金鑰。
+
+如需更多有關MAC複製的詳細資訊：
+
+* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC 位址複製的考量與建議（ Red Hat Enterprise Linux ）"]
+* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製（Ubuntu或DEBIANE）的考量與建議"]
+
+ a| 
+最佳實務做法
+
+|===
+
+
+==== admin_role
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+主要或非主要
+
+只有當 node_type = vm_admin_Node 時、才需要此金鑰；請勿針對其他節點類型指定此金鑰。
+ a| 
+node_type = vm_admin_Node 時需要
+
+否則為選用。
+
+|===
+
+
+=== 封鎖裝置金鑰
+
+
+
+==== block_device_napping_logs
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+此節點將用於持續儲存稽核記錄的區塊裝置特殊檔案路徑和名稱。
+
+範例：
+
+`/dev/disk/by-path/pci-0000:03:00.0-scsi-0:0:0:0`
+
+`/dev/disk/by-id/wwn-0x600a09800059d6df000060d757b475fd`
+
+`/dev/mapper/sgws-adm1-audit-logs`
+ a| 
+節點的 node_type = vm_admin_Node 為必要項目。請勿為其他節點類型指定。
+
+|===
+
+
+==== block_device_RANGEDB_nnn
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+此節點將用於持續物件儲存的區塊裝置特殊檔案路徑和名稱。只有節點類型 = VM_Storage_Node 的節點才需要此金鑰；請勿針對其他節點類型指定此金鑰。
+
+只需要block_device_rNGedb_000；其餘的則為選用項目。為block_device_RANGEDB_000指定的區塊裝置必須至少為4 TB、其他的則可能較小。
+
+不要留下落差。如果您指定block_device_RANGEDB_005、您也必須指定block_device_RANGEDB_004。
+
+*附註*：為了與現有部署相容、升級的節點支援兩位數金鑰。
+
+範例：
+
+`/dev/disk/by-path/pci-0000:03:00.0-scsi-0:0:0:0`
+
+`/dev/disk/by-id/wwn-0x600a09800059d6df000060d757b475fd`
+
+`/dev/mapper/sgws-sn1-rangedb-000`
+ a| 
+必要：
+
+BLOCK_DEVICE_RANGEDB_000
+
+選用：
+
+BLOCK_DEVICE_RANGEDB_001
+
+BLOCK_DEVICE_RANGEDB_002
+
+BLOCK_DEVICE_RANGEDB_003
+
+BLOCK_DEVICE_RANGEDB_004
+
+BLOCK_DEVICE_RANGEDB_005
+
+BLOCK_DEVICE_RANGEDB_006
+
+BLOCK_DEVICE_RANGEDB_007
+
+BLOCK_DEVICE_RANGEDB_008
+
+BLOCK_DEVICE_RANGEDB_009
+
+BLOCK_DEVICE_RANGEDB_010
+
+BLOCK_DEVICE_RANGEDB_011
+
+BLOCK_DEVICE_RANGEDB_012
+
+BLOCK_DEVICE_RANGEDB_013
+
+BLOCK_DEVICE_RANGEDB_014
+
+BLOCK_DEVICE_RANGEDB_015
+
+|===
+
+
+==== block_device_Tables
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+此節點將用於持續儲存資料庫表格的區塊裝置特殊檔案路徑和名稱。只有節點類型 = VM_Admin_Node 的節點才需要此金鑰；請勿針對其他節點類型指定此金鑰。
+
+範例：
+
+`/dev/disk/by-path/pci-0000:03:00.0-scsi-0:0:0:0`
+
+`/dev/disk/by-id/wwn-0x600a09800059d6df000060d757b475fd`
+
+`/dev/mapper/sgws-adm1-tables`
+ a| 
+必要
+
+|===
+
+
+==== block_device_var_local
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+此節點將用於其持續儲存的區塊裝置特殊檔案路徑和名稱 `/var/local`。
+
+範例：
+
+`/dev/disk/by-path/pci-0000:03:00.0-scsi-0:0:0:0`
+
+`/dev/disk/by-id/wwn-0x600a09800059d6df000060d757b475fd`
+
+`/dev/mapper/sgws-sn1-var-local`
+ a| 
+必要
+
+|===
+
+
+=== 用戶端網路金鑰
+
+
+
+==== 用戶端網路組態
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+DHCP、靜態或停用
+ a| 
+選用
+
+|===
+
+
+==== 用戶端網路閘道
+
+[cols="4a,2a"]
+|===
+
+
+ a| 
+價值
+ a| 
+指定
+
+
+
+ a| 
+此節點的本機用戶端網路閘道的IPv4位址、必須位於用戶端網路IP和用戶端網路遮罩所定義的子網路上。DHCP設定的網路會忽略此值。
+
+範例：
+
+`1.1.1.1`
+
+`10.224.4.81`
+ a| 
+選用
+
+|===
+
+
+==== 用戶端網路IP
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+用戶端網路上此節點的IPv4位址。
+
+只有當 client_network_config = static 時才需要此金鑰；請勿將其指定為其他值。
+
+範例：
+
+`1.1.1.1`
+
+`10.224.4.81`
+ a| 
+client_network_config = 靜態時需要
+
+否則為選用。
+
+|===
+
+
+==== 用戶端網路_MAC
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+容器中用戶端網路介面的MAC位址。
+
+此欄位為選用欄位。如果省略、會自動產生MAC位址。
+
+必須為6對以分號分隔的十六進位數字。
+
+範例： `b2:9c:02:c2:27:20`
+ a| 
+選用
+
+|===
+
+
+==== 用戶端網路遮罩
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+用戶端網路上此節點的IPV4網路遮罩。
+
+當 client_network_config = static 時、請指定此機碼；不要指定其他值。
+
+範例：
+
+`255.255.255.0`
+
+`255.255.248.0`
+ a| 
+如果指定了 client_network_ip 且 client_network_config = static 、則為必要
+
+否則為選用。
+
+|===
+
+
+==== 用戶端網路MTU
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+用戶端網路上此節點的最大傳輸單位（MTU）。不要指定 client_network_config = DHCP 。如果指定、則值必須介於1280和9216之間。如果省略、則使用1500。
+
+如果您要使用巨型框架、請將MTU設為適合巨型框架的值、例如9000。否則、請保留預設值。
+
+*重要*：網路的MTU值必須符合節點所連接之交換器連接埠上所設定的值。否則、可能會發生網路效能問題或封包遺失。
+
+範例：
+
+`1500`
+
+`8192`
+ a| 
+選用
+
+|===
+
+
+==== 用戶端網路目標
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+供客戶端網路存取使用StorageGRID 的主機裝置名稱、由支援節點存取。僅支援網路介面名稱。一般而言、您使用的介面名稱不同於GRID_NETWORD_Target或admin_network_target所指定的介面名稱。
+
+* 注意 * ：請勿使用連結或橋接裝置作為網路目標。在連結裝置上設定VLAN（或其他虛擬介面）、或使用橋接器和虛擬乙太網路（vith）配對。
+
+*最佳實務做法：*指定值、即使此節點一開始不會有用戶端網路IP位址。之後您可以新增用戶端網路IP位址、而不需重新設定主機上的節點。
+
+範例：
+
+`bond0.1003`
+
+`ens423`
+ a| 
+最佳實務做法
+
+|===
+
+
+==== 用戶端網路目標類型
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+介面（僅支援此值）。
+ a| 
+選用
+
+|===
+
+
+==== 用戶端網路目標類型介面複製_MAC
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+是非題
+
+將金鑰設為「true」、使StorageGRID 「支援」容器使用用戶端網路上主機目標介面的MAC位址。
+
+*最佳實務做法：*在需要混雜模式的網路中、請改用用戶端網路連線目標類型介面介面複製_MAC金鑰。
+
+如需更多有關MAC複製的詳細資訊：
+
+* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC 位址複製的考量與建議（ Red Hat Enterprise Linux ）"]
+* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製（Ubuntu或DEBIANE）的考量與建議"]
+
+ a| 
+最佳實務做法
+
+|===
+
+
+=== 網格網路金鑰
+
+
+
+==== GRID_NET_CONFIG
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+靜態或DHCP
+
+如果未指定、則預設為靜態。
+ a| 
+最佳實務做法
+
+|===
+
+
+==== GRID_NET_gateway
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+此節點的本機網格網路閘道的IPv4位址、必須位於GRID_NETNET_IP和GRID_NET_MASK定義的子網路上。DHCP設定的網路會忽略此值。
+
+如果Grid Network是沒有閘道的單一子網路、請使用子網路的標準閘道位址（X YY.1）或此節點的GRID_NETNET_IP值；這兩個值都能簡化未來可能的Grid Network擴充。
+ a| 
+必要
+
+|===
+
+
+==== GRID_NET_IP
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+Grid Network上此節點的IPv4位址。只有當 GRIN_NETWORD_CONFIG = STATIC 時才需要此機碼；不要為其他值指定此機碼。
+
+範例：
+
+`1.1.1.1`
+
+`10.224.4.81`
+ a| 
+grid_network_config = 靜態時需要
+
+否則為選用。
+
+|===
+
+
+==== GRID_NET_MAC
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+容器中Grid Network介面的MAC位址。
+
+必須為6對以分號分隔的十六進位數字。
+
+範例： `b2:9c:02:c2:27:30`
+ a| 
+選用
+
+如果省略、會自動產生MAC位址。
+
+|===
+
+
+==== GRID_NET_MA遮 罩
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+Grid Network上此節點的IPV4網路遮罩。當 GRIN_NETWORD_CONFIG = 靜態時指定此機碼；不要為其他值指定此機碼。
+
+範例：
+
+`255.255.255.0`
+
+`255.255.248.0`
+ a| 
+指定 GRIDE_NETWORD_IP 且 GRID_NETWORD_CONFIG = 靜態時需要。
+
+否則為選用。
+
+|===
+
+
+==== GRID_NET_MTU
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_network_config = DHCP 。如果指定、則值必須介於1280和9216之間。如果省略、則使用1500。
+
+如果您要使用巨型框架、請將MTU設為適合巨型框架的值、例如9000。否則、請保留預設值。
+
+*重要*：網路的MTU值必須符合節點所連接之交換器連接埠上所設定的值。否則、可能會發生網路效能問題或封包遺失。
+
+*重要*：為獲得最佳網路效能、所有節點都應在其Grid Network介面上設定類似的MTU值。如果個別節點上Grid Network的MTU設定有顯著差異、則會觸發* Grid Network MTU mismis*警示。所有網路類型的 MTU 值都不一定相同。
+
+範例：
+
+`1500`
+
+`8192`
+ a| 
+選用
+
+|===
+
+
+==== GRID_NETWORD_target
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+您將用於StorageGRID 由節點存取Grid Network的主機裝置名稱。僅支援網路介面名稱。一般而言、您使用的介面名稱與針對admin_network_target或client_network_target所指定的介面名稱不同。
+
+* 注意 * ：請勿使用連結或橋接裝置作為網路目標。在連結裝置上設定VLAN（或其他虛擬介面）、或使用橋接器和虛擬乙太網路（vith）配對。
+
+範例：
+
+`bond0.1001`
+
+`ens192`
+ a| 
+必要
+
+|===
+
+
+==== GRID_NETWORD_TAR_type
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+介面（這是唯一支援的值。）
+ a| 
+選用
+
+|===
+
+
+==== GRID_NETWORD_PROM_type_interface_clone _MAC
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+是非題
+
+將金鑰的值設為「true」、使StorageGRID 該容器使用Grid Network上主機目標介面的MAC位址。
+
+*最佳實務做法：*在需要混雜模式的網路中、請改用GRID_NETNETWORD_TAR_AT_type_interface_clone _MAC金鑰。
+
+如需更多有關MAC複製的詳細資訊：
+
+* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC 位址複製的考量與建議（ Red Hat Enterprise Linux ）"]
+* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製（Ubuntu或DEBIANE）的考量與建議"]
+
+ a| 
+最佳實務做法
+
+|===
+
+
+=== 安裝密碼金鑰（暫時）
+
+
+
+==== Custom_Temporary 密碼雜湊
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+對於主要管理節點、請在安裝期間為 StorageGRID 安裝 API 設定預設的暫時密碼。
+
+* 注意 * ：僅在主要管理節點上設定安裝密碼。如果您嘗試在其他節點類型上設定密碼、節點組態檔案的驗證將會失敗。
+
+安裝完成後、設定此值不會生效。
+
+如果省略此金鑰、則預設不會設定暫存密碼。或者、您也可以使用 StorageGRID 安裝 API 來設定暫時密碼。
+
+密碼必須是 SHA-512 密碼雜湊、格式 `$6$<salt>$<password hash>`必須 `crypt()`至少 8 個字元、不得超過 32 個字元。
+
+此雜湊可以使用 CLI 工具產生、例如在 SHA-512 模式中使用 `openssl passwd`命令。
+ a| 
+最佳實務做法
+
+|===
+
+
+=== 介面金鑰
+
+
+
+==== interface_target_nnnn
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+要新增至此節點的額外介面名稱和選用說明。您可以為每個節點新增多個額外介面。
+
+對於 _nnn_ 、請為您要新增的每個 interface_target 項目指定唯一的編號。
+
+針對該值、指定裸機主機上實體介面的名稱。接著、您可以選擇性地新增一個逗號、並提供介面說明、該介面會顯示在「VLAN介面」頁面和「HA群組」頁面上。
+
+範例： `INTERFACE_TARGET_0001=ens256, Trunk`
+
+如果您新增主幹介面、則必須在StorageGRID 功能鏈路的資訊鏈路中設定VLAN介面。如果您新增存取介面、可以直接將介面新增至 HA 群組、而不需要設定 VLAN 介面。
+ a| 
+選用
+
+|===
+
+
+=== 最大 RAM 金鑰
+
+
+
+==== 最大RAM
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+允許此節點使用的最大RAM量。如果省略此金鑰、則節點沒有記憶體限制。為正式作業層級節點設定此欄位時、請指定至少24 GB、且16至32 GB的值、小於系統總RAM。
+
+*附註*：RAM值會影響節點的實際中繼資料保留空間。請參閱link:../admin/managing-object-metadata-storage.html["中繼資料保留空間的說明"]。
+
+此欄位的格式為 `_numberunit_`、其中 `_unit_`可以是 `b`、、 `k` `m`或 `g`。
+
+範例：
+
+`24g`
+
+`38654705664b`
+
+*附註*：如果您要使用此選項、則必須啟用記憶體cGroups的核心支援。
+ a| 
+選用
+
+|===
+
+
+=== 節點類型金鑰
+
+
+
+==== 節點類型
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+節點類型：
+
+* VM_admin_Node
+* VM_Storage_Node
+* VM_Archive_Node
+* VM_API_Gateway
+
+ a| 
+必要
+
+|===
+
+
+==== 儲存類型
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+定義儲存節點包含的物件類型。如需更多資訊、請參閱 link:../primer/what-storage-node-is.html#types-of-storage-nodes["儲存節點類型"]。只有節點類型 = VM_Storage_Node 的節點才需要此金鑰；請勿針對其他節點類型指定此金鑰。儲存類型：
+
+* 合併
+* 資料
+* 中繼資料
+
+
+* 注意 * ：如果未指定儲存節點類型、則預設會將儲存節點類型設為組合（資料和中繼資料）。
+ a| 
+選用
+
+|===
+
+
+=== 連接埠重新對應鍵
+
+
+
+==== 連接埠重新對應
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+重新對應節點用於內部網格節點通訊或外部通訊的任何連接埠。如果企業網路原則限制 StorageGRID 使用的一或多個連接埠link:../network/external-communications.html["外部通訊"]、則必須重新對應連接埠、如或中所述link:../network/internal-grid-node-communications.html["內部網格節點通訊"]。
+
+* 重要 * ：請勿重新對應您打算用來設定負載平衡器端點的連接埠。
+
+*附註*：如果只設定port_remap、則指定的對應會同時用於傳入和傳出通訊。如果也指定port_remap_inbound、則port_remap僅適用於傳出通訊。
+
+使用的格式為： `_network type_/_protocol_/_default port used by grid node_/_new port_`、其中 `_network type_`是網格、管理或用戶端、而且 `_protocol_`是 TCP 或 UDP 。
+
+範例： `PORT_REMAP = client/tcp/18082/443`
+
+您也可以使用以逗號分隔的清單來重新對應多個連接埠。
+
+範例： `PORT_REMAP = client/tcp/18082/443, client/tcp/18083/80`
+ a| 
+選用
+
+|===
+
+
+==== 連接埠_remap_inbound
+
+[cols="4a,2a"]
+|===
+| 價值 | 指定 
+
+
+ a| 
+將傳入通訊重新對應至指定的連接埠。如果您指定 port_remap_inbound 、但未指定 port_remap 值、則連接埠的輸出通訊將維持不變。
+
+* 重要 * ：請勿重新對應您打算用來設定負載平衡器端點的連接埠。
+
+使用的格式為： `_network type_/_protocol_/_remapped port_/_default port used by grid node_`、其中 `_network type_`是網格、管理或用戶端、而且 `_protocol_`是 TCP 或 UDP 。
+
+範例： `PORT_REMAP_INBOUND = grid/tcp/3022/22`
+
+您也可以使用以逗號分隔的清單來重新對應多個傳入連接埠。
+
+範例： `PORT_REMAP_INBOUND = grid/tcp/3022/22, admin/tcp/3022/22`
+ a| 
+選用
+
+|===

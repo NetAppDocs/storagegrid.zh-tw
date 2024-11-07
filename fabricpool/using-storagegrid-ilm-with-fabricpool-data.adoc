@@ -1,0 +1,154 @@
+---
+permalink: fabricpool/using-storagegrid-ilm-with-fabricpool-data.html 
+sidebar: sidebar 
+keywords: FabricPool, requirements, ILM, information lifecycle management, ILM rule, ILM rules, ILM policy, erasure coding, replication, cloud storage pool, glacier 
+summary: 您可以使用這個簡單的範例原則做為自己 ILM 規則和原則的起點。 
+---
+= 設定 FabricPool 資料的 ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用這個簡單的範例原則做為自己 ILM 規則和原則的起點。
+
+本範例假設您正在為StorageGRID 位於科羅拉多州丹佛的單一資料中心、擁有四個儲存節點的一套系統設計ILM規則和ILM原則。本範例中的 FabricPool 資料使用名為的貯體 `fabricpool-bucket`。
+
+
+CAUTION: 下列ILM規則和原則僅為範例。有許多方法可以設定ILM規則。在啟動新原則之前、請先進行模擬、確認其運作方式符合保護內容免於遺失的目的。若要深入瞭解link:../ilm/index.html["使用ILM管理物件"]、請參閱。
+
+
+CAUTION: 為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。將保留期間設為 * 永遠 * 、以確保 FabricPool 物件不會被 StorageGRID ILM 刪除。
+
+.開始之前
+* 您已檢閱link:best-practices-ilm.html["搭配 FabricPool 資料使用 ILM 的最佳實務做法"]。
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:../admin/admin-group-permissions.html["ILM 或 Root 存取權限"]。
+* 如果您從舊版 StorageGRID 升級至 StorageGRID 11.9 、表示您已設定要使用的儲存池。一般而言、您應該為將用於儲存資料的每個 StorageGRID 站台建立儲存池。
++
+
+NOTE: 如果您最初安裝的是 StorageGRID 11.7 或 11.8 、則不適用此先決條件。當您最初安裝其中任一版本時、系統會自動為每個站台建立儲存資源池。
+
+
+
+.步驟
+. 建立僅適用於中資料的 ILM 規則 `fabricpool-bucket`。此範例規則會建立銷毀編碼複本。
++
+[cols="1a,2a"]
+|===
+| 規則定義 | 範例值 
+
+
+ a| 
+規則名稱
+ a| 
+FabricPool 資料的 2+1 銷毀編碼
+
+
+
+ a| 
+儲存區名稱
+ a| 
+`fabricpool-bucket`
+
+您也可以篩選FabricPool 出這個帳戶。
+
+
+
+ a| 
+進階篩選器
+ a| 
+物件大小大於 0.2 MB 。
+
+* 注意： * FabricPool 只寫入 4 MB 物件、但您必須新增物件大小篩選器、因為此規則使用銷毀編碼。
+
+
+
+ a| 
+參考時間
+ a| 
+擷取時間
+
+
+
+ a| 
+時間週期和刊登位置
+ a| 
+從第 0 天起、永遠儲存
+
+在丹佛使用 2+1 EC 配置來銷毀編碼來儲存物件、並將這些物件永遠保留在 StorageGRID 中。
+
+
+CAUTION: 為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。
+
+
+
+ a| 
+擷取行為
+ a| 
+平衡
+
+|===
+. 建立預設的 ILM 規則、為第一個規則不相符的任何物件建立兩個複寫複本。請勿選擇基本篩選條件（租戶帳戶或貯體名稱）或任何進階篩選條件。
++
+[cols="1a,2a"]
+|===
+| 規則定義 | 範例值 
+
+
+ a| 
+規則名稱
+ a| 
+兩個複寫複本
+
+
+
+ a| 
+儲存區名稱
+ a| 
+_無_
+
+
+
+ a| 
+進階篩選器
+ a| 
+_無_
+
+
+
+ a| 
+參考時間
+ a| 
+擷取時間
+
+
+
+ a| 
+時間週期和刊登位置
+ a| 
+從第 0 天起、永遠儲存
+
+在丹佛複製 2 份複本以儲存物件。
+
+
+
+ a| 
+擷取行為
+ a| 
+平衡
+
+|===
+. 建立 ILM 原則並選取兩個規則。由於複寫規則不使用任何篩選器、因此它可以是原則的預設（最後）規則。
+. 將測試物件擷取至網格。
+. 使用測試物件模擬原則、以驗證行為。
+. 啟動原則。
+
+
+啟用此原則StorageGRID 時、將物件資料放置如下：
+
+* 從中的 FabricPool 階層式資料 `fabricpool-bucket`將使用 2+1 銷毀編碼方案進行銷毀編碼。兩個資料片段和一個同位元檢查片段將放置在三個不同的儲存節點上。
+* 所有其他儲存區中的所有物件都會複寫。將會建立兩個複本、並放置在兩個不同的儲存節點上。
+* 這些複本將永遠保留在 StorageGRID 中。StorageGRID ILM 不會刪除這些物件。
+

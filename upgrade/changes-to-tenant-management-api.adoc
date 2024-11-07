@@ -1,0 +1,25 @@
+---
+permalink: upgrade/changes-to-tenant-management-api.html 
+sidebar: sidebar 
+keywords: tenant management api, api, api version, swagger, rest api 
+summary: StorageGRID 11.9 使用租戶管理 API 的第 4 版。第 4 版取代第 3 版、但仍支援第 1 、 2 和 3 版。 
+---
+= 租戶管理API變更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11.9 使用租戶管理 API 的第 4 版。第 4 版取代第 3 版、但仍支援第 1 、 2 和 3 版。
+
+
+NOTE: 您可以繼續在 StorageGRID 11.9 中使用已過時的租戶管理 API 版本、但在未來的 StorageGRID 版本中、將會移除對這些 API 版本的支援。升級至 StorageGRID 11.9 之後、您可以使用 API 停用過時的 API `PUT /grid/config/management` 。
+
+若要深入瞭解link:../tenant/understanding-tenant-management-api.html["瞭解租戶管理API"]、請前往。
+
+
+
+== 適用於貯體容量限制的新 API
+
+您可以將 API 搭配 Get/Put 作業使用 `/org/containers/{bucketName}/quota-object-bytes`、以取得和設定貯體的儲存容量限制。

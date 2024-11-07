@@ -1,0 +1,42 @@
+---
+section: troubleshoot
+title: 疑難排解 StorageGRID 系統
+entries:
+- title: 疑難排解準則
+  pdf-filename: 疑難排解 StorageGRID 系統
+  url: "/troubleshoot/index.html"
+- title: 疑難排解物件和儲存問題
+  entries:
+  - title: 確認物件資料位置
+    url: "/troubleshoot/confirming-object-data-locations.html"
+  - title: 物件存放區故障
+    url: "/troubleshoot/object-store-storage-volume-failures.html"
+  - title: 驗證物件完整性
+    url: "/troubleshoot/verifying-object-integrity.html"
+  - title: 疑難排解 S3 「將物件大小放得太大」警示
+    url: "/troubleshoot/troubleshoot-s3-put-object-size-too-large-alert.html"
+  - title: 疑難排解遺失和遺失的物件資料
+    entries:
+    - title: 擷取物件的方法
+      pdf-filename: 疑難排解遺失和遺失的物件資料
+      url: "/troubleshoot/troubleshooting-lost-and-missing-object-data.html"
+    - title: 調查遺失的物件
+      url: "/troubleshoot/investigating-lost-objects.html"
+    - title: 搜尋並還原可能遺失的物件
+      url: "/troubleshoot/searching-for-and-restoring-potentially-lost-objects.html"
+    - title: 重設遺失和遺失的物件數
+      url: "/troubleshoot/resetting-lost-and-missing-object-counts.html"
+  - title: 疑難排解低物件資料儲存警示
+    url: "/troubleshoot/troubleshooting-low-object-data-storage-alert.html"
+  - title: 疑難排解低唯讀浮水印會覆寫警示
+    url: "/troubleshoot/troubleshoot-low-watermark-alert.html"
+- title: 疑難排解中繼資料問題
+  url: "/troubleshoot/troubleshooting-metadata-issues.html"
+- title: 疑難排解憑證錯誤
+  url: "/troubleshoot/troubleshooting-certificate-errors.html"
+- title: 疑難排解管理節點和使用者介面問題
+  url: "/troubleshoot/troubleshooting-admin-node-and-user-interface-issues.html"
+- title: 疑難排解網路、硬體及平台問題
+  url: "/troubleshoot/troubleshooting-network-hardware-and-platform-issues.html"
+- title: 疑難排解外部syslog伺服器
+  url: "/troubleshoot/troubleshooting-syslog-server.html"

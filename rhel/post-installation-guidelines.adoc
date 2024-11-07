@@ -1,0 +1,26 @@
+---
+permalink: rhel/post-installation-guidelines.html 
+sidebar: sidebar 
+keywords: post-installation guidelines red hat linux 
+summary: 完成網格節點部署與組態之後、請遵循下列原則進行DHCP定址和網路組態變更。 
+---
+= 安裝後準則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+完成網格節點部署與組態之後、請遵循下列原則進行DHCP定址和網路組態變更。
+
+* 如果使用DHCP來指派IP位址、請為使用中網路上的每個IP位址設定DHCP保留。
++
+您只能在部署階段設定DHCP。您無法在組態期間設定 DHCP 。
+
++
+
+NOTE: 當網格網路組態由 DHCP 變更時、節點會重新開機、如果 DHCP 變更同時影響多個節點、這可能會導致中斷運作。
+
+* 如果您想要變更網格節點的IP位址、子網路遮罩和預設閘道、則必須使用變更IP程序。請參閱。 link:../maintain/configuring-ip-addresses.html["設定IP位址"]
+* 如果您進行網路組態變更（包括路由和閘道變更）、則可能會失去與主要管理節點和其他網格節點的用戶端連線。視所套用的網路變更而定、您可能需要重新建立這些連線。
+

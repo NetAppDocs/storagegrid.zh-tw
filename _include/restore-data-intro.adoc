@@ -1,0 +1,86 @@
+= 我應該使用哪個程序？
+:allow-uri-read: 
+
+
+
+
+== 我應該使用哪個程序？
+
+請盡可能使用 Grid Manager 中的 * Volume 還原 * 頁面來還原物件資料。
+
+* 如果這些卷列在 *maintenance * > * Volume en還原 * > * 要還原的節點 * 中，請使用還原物件資料link:../maintain/restoring-volume.html["Grid Manager 中的 Volume 還原頁面"]。
+* 如果這些磁碟區未列於 * 維護 * > * 磁碟區還原 * > * 要還原的節點 * 、請依照下列步驟使用 `repair-data`指令碼來還原物件資料。
++
+如果恢復的儲存節點所包含的磁碟區數量少於它所取代的節點、則必須使用 `repair-data`指令碼。
+
+
+
+
+NOTE: 修復資料指令碼已過時、將在未來版本中移除。如有可能，請使用link:../maintain/restoring-volume.html["Grid Manager 中的 Volume 還原程序"]。
+
+
+
+== 使用 `repair-data`指令碼還原物件資料
+
+.開始之前
+* 您已確認、在 Grid Manager 的 * 節點 * > * 總覽 * 標籤上、復原的儲存節點的連線狀態為 * 已連線 * image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]。
+
+
+.關於這項工作
+物件資料可從其他儲存節點或雲端儲存池還原、前提是網格的 ILM 規則已設定為物件複本可用。
+
+請注意下列事項：
+
+* 如果ILM規則設定為只儲存一個複寫複本、且該複本存在於故障的儲存磁碟區上、您將無法恢復物件。
+* 如果物件的唯一剩餘複本位於Cloud Storage Pool中、StorageGRID 則必須向Cloud Storage Pool端點發出多個要求、才能還原物件資料。在執行此程序之前、請聯絡技術支援部門、以協助評估恢復時間範圍及相關成本。
+
+
+
+
+== 關於 `repair-data`指令碼
+
+若要還原物件資料、請執行 `repair-data`指令碼。此指令碼會開始還原物件資料的程序、並與ILM掃描搭配使用、以確保符合ILM規則。
+
+請選取下方的 * 複寫資料 * 或 * 刪除編碼（ EC ）資料 * 、根據您要還原複寫資料或刪除編碼資料、來瞭解指令碼的不同選項 `repair-data`。如果您需要還原這兩種類型的資料、則必須同時執行這兩組命令。
+
+
+NOTE: 如需指令碼的詳細資訊 `repair-data`、請從主要管理節點的命令列輸入 `repair-data --help`。
+
+
+NOTE: 修復資料指令碼已過時、將在未來版本中移除。如有可能，請使用link:../maintain/restoring-volume.html["Grid Manager 中的 Volume 還原程序"]。
+
+[role="tabbed-block"]
+====
+.複寫資料
+--
+根據您是需要修復整個節點、還是只需要修復節點上的特定磁碟區、有兩個命令可用於還原複寫資料：
+
+`repair-data start-replicated-node-repair`
+
+`repair-data start-replicated-volume-repair`
+
+您可以使用下列命令來追蹤複寫資料的修復：
+
+`repair-data show-replicated-repair-status`
+
+--
+.銷毀編碼（ EC ）資料
+--
+根據您是需要修復整個節點、還是只需要修復節點上的特定磁碟區、有兩個命令可用於還原銷毀編碼資料：
+
+`repair-data start-ec-node-repair`
+
+`repair-data start-ec-volume-repair`
+
+您可以使用下列命令來追蹤銷毀編碼資料的修復：
+
+`repair-data show-ec-repair-status`
+
+
+NOTE: 在某些儲存節點離線時、可以開始修復以銷毀編碼的資料。然而、如果無法計算所有的銷毀編碼資料、則無法完成維修。所有節點都可用後、修復作業即告完成。
+
+
+NOTE: EC修復工作會暫時保留大量的儲存空間。可能會觸發儲存警示、但會在修復完成時解決。如果保留的儲存空間不足、EC修復工作將會失敗。無論工作失敗或成功、儲存保留都會在EC修復工作完成時釋出。
+
+--
+====

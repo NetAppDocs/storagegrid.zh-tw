@@ -1,0 +1,29 @@
+---
+permalink: admin/identifying-primary-admin-node.html 
+sidebar: sidebar 
+keywords: primary admin node, configuration management node 
+summary: 主要管理節點提供的功能比非主要管理節點更多。例如、某些維護程序必須使用主要管理節點來執行。 
+---
+= 識別主要管理節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+主要管理節點提供的功能比非主要管理節點更多。例如、某些維護程序必須使用主要管理節點來執行。
+
+如需管理節點的詳細資訊、請參閱link:../primer/what-admin-node-is.html["什麼是管理節點"]。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有 link:admin-group-permissions.html["特定存取權限"]。
+
+
+.步驟
+. 選擇*節點*。
+. 在搜尋方塊中輸入 * primary * 。
++
+在搜尋結果中、以「類型」欄中顯示的「主要管理節點」來識別節點。應列出一個主要管理節點。
+
+

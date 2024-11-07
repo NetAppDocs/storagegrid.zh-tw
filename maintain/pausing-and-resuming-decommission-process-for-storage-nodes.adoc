@@ -1,0 +1,46 @@
+---
+permalink: maintain/pausing-and-resuming-decommission-process-for-storage-nodes.html 
+sidebar: sidebar 
+keywords: how to pause decommission 
+summary: 如果您需要執行第二個維護程序、可以在特定階段暫停儲存節點的取消委任程序。完成其他程序之後、您就可以繼續解除委任。 
+---
+= 暫停並恢復儲存節點的取消委任程序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您需要執行第二個維護程序、可以在特定階段暫停儲存節點的取消委任程序。完成其他程序之後、您就可以繼續解除委任。
+
+
+NOTE: 只有在達到ILM評估或銷毀編碼資料解除委任階段時、才會啟用*暫停*按鈕；不過、ILM評估（資料移轉）仍會在背景中繼續執行。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:../admin/admin-group-permissions.html["維護或根存取權限"]。
+
+
+.步驟
+. 選取*維護*>*工作*>*取消配置*。
++
+此時會出現「取消委任」頁面。
+
+. 選取*取消委任節點*。
++
+此時會出現「取消委任節點」頁面。當取消委任程序達到下列任一階段時、*暫停*按鈕就會啟用。
+
++
+** 評估ILM
+** 停用「刪除編碼資料」
+
+
+. 選取*暫停*以暫停程序。
++
+目前階段會暫停、並啟用*恢復*按鈕。
+
++
+image::../media/decommission_nodes_procedure_paused.png[取消委任節點程序暫停]
+
+. 完成其他維護程序之後、選取*恢復*以繼續取消委任。
+

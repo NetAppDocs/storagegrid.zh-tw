@@ -1,0 +1,127 @@
+---
+permalink: ubuntu/downloading-and-extracting-storagegrid-installation-files.html 
+sidebar: sidebar 
+keywords: how to download ubuntu or debian installation files 
+summary: 您必須下載StorageGRID 安裝檔案庫、並擷取所需的檔案。您也可以手動驗證安裝套件中的檔案。 
+---
+= 下載並解壓縮StorageGRID 安裝檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須下載StorageGRID 安裝檔案庫、並擷取所需的檔案。您也可以手動驗證安裝套件中的檔案。
+
+.步驟
+. 前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載頁StorageGRID 面"^]。
+. 選取下載最新版本的按鈕、或從下拉式功能表中選取其他版本、然後選取*執行*。
+. 以您NetApp帳戶的使用者名稱和密碼登入。
+. 如果出現「 Caution/MustRead 」說明、請閱讀並選取核取方塊。
++
+
+CAUTION: 安裝StorageGRID 完此版本的更新後、您必須套用所有必要的修補程式。如需詳細資訊、請參閱link:../maintain/storagegrid-hotfix-procedure.html["修復與維護指示中的修復程序程序"]
+
+. 閱讀終端使用者授權合約、選取核取方塊、然後選取 * 接受並繼續 * 。
+. 在 * 安裝 StorageGRID * 欄中、選取 Ubuntu 或 Debian 的 .tgz 或 .zip 安裝歸檔。
++
+
+NOTE: 如果您在服務筆記型電腦上執行 Windows 、請選取 `.zip`檔案。
+
+. 儲存安裝歸檔。
+. [[Ubuntu 下載驗證套件 ]] 如果您需要驗證安裝歸檔：
++
+.. 下載 StorageGRID 程式碼簽章驗證套件。此套件的檔案名稱使用格式 `StorageGRID_<version-number>_Code_Signature_Verification_Package.tar.gz`、其中 `<version-number>`是 StorageGRID 軟體版本。
+.. 請依照的步驟執行link:../ubuntu/download-files-verify.html["手動驗證安裝檔案"]。
+
+
+. 從安裝歸檔中擷取檔案。
+. 選擇您需要的檔案。
++
+您需要的檔案取決於您規劃的網格拓撲、以及 StorageGRID 系統的部署方式。
+
++
+
+NOTE: 表中列出的路徑是相對於擷取安裝歸檔所安裝的最上層目錄。
+
+
+
+[cols="1a,1a"]
+|===
+| 路徑和檔案名稱 | 說明 
+
+
+| 每個問題/讀我檔案  a| 
+說明StorageGRID 包含在更新檔中的所有檔案的文字檔。
+
+
+
+| ./cebs/NLF000000.txt  a| 
+非正式作業的NetApp授權檔案、可用於測試及概念驗證部署。
+
+
+
+| ./cebs/storagegrid-webscale-images-version-SHA.deb  a| 
+Deb套件、用於在StorageGRID Ubuntu或Debian主機上安裝不含節點的映像。
+
+
+
+| ./cebs/storagegrid-webscale-images-version-SHA.deb.md5  a| 
+檔案的 MD5 Checksum `/debs/storagegrid-webscale-images-version-SHA.deb` 。
+
+
+
+| ./cebs/storagegrid-webscale-service-version-SHA.deb  a| 
+Deb套件、用於在StorageGRID Ubuntu或Debian主機上安裝支援功能主機服務。
+
+
+
+| 部署指令碼工具 | 說明 
+
+
+| ./cebs/configure-storagegrid.py  a| 
+Python指令碼、用於自動化StorageGRID 組態的功能。
+
+
+
+| ./cebs/configure-sga.py  a| 
+Python指令碼、用於自動化StorageGRID 設定不必要的應用程式。
+
+
+
+| ./cebs/storagegrid-ssoauth.py  a| 
+啟用單一登入時、您可用來登入Grid Management API的Python指令碼範例。您也可以使用此指令碼來進行 Ping 聯合整合。
+
+
+
+| ./cebs/configure儲存格RID、same.json  a| 
+用於指令碼的範例組態檔 `configure-storagegrid.py`。
+
+
+
+| ./cebs/configure儲存格GRID、blank、json  a| 
+用於指令碼的空白組態檔 `configure-storagegrid.py`。
+
+
+
+| /扣款/額外費用/可選  a| 
+範例Ansible角色與方針、可用來設定Ubuntu或Debian主機以StorageGRID 進行列舉容器部署。您可以視需要自訂角色或方針。
+
+
+
+| ./debs/storagegrid-ssoauth-azure.py  a| 
+使用 Active Directory 或 Ping 聯合啟用單一登入（ SSO ）時、可以用來登入 Grid Management API 的 Python 指令碼範例。
+
+
+
+| /debs/storagegRID -soaut-azure.js  a| 
+由搭配 Python 指令碼所呼叫的輔助程式指令碼 `storagegrid-ssoauth-azure.py`、用於執行與 Azure 的 SSO 互動。
+
+
+
+| ./扣款/其他項目/ API架構  a| 
+API架構StorageGRID 。
+
+* 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
+
+|===

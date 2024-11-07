@@ -1,0 +1,48 @@
+---
+permalink: s3/get-bucket-last-access-time-request.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, GET last access time request 
+summary: 「取得時段上次存取時間」要求可讓您決定是否為個別的時區啟用或停用上次存取時間更新。 
+---
+= 取得時段上次存取時間
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「取得時段上次存取時間」要求可讓您決定是否為個別的時區啟用或停用上次存取時間更新。
+
+您必須具有S3：GetBucketLastAccessTime權限或帳戶根權限、才能完成此作業。
+
+
+
+== 申請範例
+
+[listing, subs="specialcharacters,quotes"]
+----
+GET /bucket?x-ntap-sg-lastaccesstime HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+
+
+== 回應範例
+
+此範例顯示已針對儲存庫啟用上次存取時間更新。
+
+[listing]
+----
+HTTP/1.1 200 OK
+Date: Sat, 29 Nov 2015 01:02:18 GMT
+Connection: CLOSE
+Server: StorageGRID/10.3.0
+x-amz-request-id: 12345
+Content-Length: 127
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<LastAccessTime xmlns="http://s3.storagegrid.com/doc/2015-02-01/">enabled
+</LastAccessTime>
+----

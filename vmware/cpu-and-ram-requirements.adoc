@@ -1,0 +1,36 @@
+---
+permalink: vmware/cpu-and-ram-requirements.html 
+sidebar: sidebar 
+keywords: cpu, ram, cpu cores 
+summary: 安裝StorageGRID 支援功能軟體之前、請先確認並設定硬體、使其準備好支援StorageGRID 該系統。 
+---
+= CPU與RAM需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝StorageGRID 支援功能軟體之前、請先確認並設定硬體、使其準備好支援StorageGRID 該系統。
+
+每StorageGRID 個支援節點都需要下列最低資源：
+
+* CPU核心：每個節點8個
+* RAM ：視可用的總 RAM 和系統上執行的非 StorageGRID 軟體數量而定
++
+** 一般而言、每個節點至少 24 GB 、比系統總 RAM 少 2 至 16 GB
+** 每個租戶至少 64 GB 、擁有約 5 、 000 個貯體
+
+
+
+
+VMware 支援每部虛擬機器一個節點。確保 StorageGRID 節點不超過可用的實體 RAM 。每個虛擬機器都必須專用於執行 StorageGRID 。
+
+
+CAUTION: 定期監控CPU和記憶體使用量、確保這些資源能持續因應您的工作負載。例如、將虛擬儲存節點的RAM和CPU配置加倍、可提供類似StorageGRID 於針對應用裝置節點所提供的資源。此外、如果每個節點的中繼資料量超過500 GB、請考慮將每個節點的RAM增加至48 GB以上。如需管理物件中繼資料儲存、增加中繼資料保留空間設定link:../admin/index.html["管理"]、以及監控 CPU 和記憶體使用量的相關資訊、請參閱、link:../monitor/index.html["監控"]和 link:../upgrade/index.html["升級"]StorageGRID 的指示。
+
+如果在基礎實體主機上啟用超執行緒、您可以為每個節點提供8個虛擬核心（4個實體核心）。如果基礎實體主機上未啟用超執行緒、則每個節點必須提供8個實體核心。
+
+如果您使用虛擬機器做為主機、並控制VM的大小和數量、您應該為每StorageGRID 個支援節點使用單一VM、並據此調整VM大小。
+
+另請參閱link:storage-and-performance-requirements.html["儲存與效能需求"]。

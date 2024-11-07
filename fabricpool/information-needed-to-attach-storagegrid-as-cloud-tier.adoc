@@ -1,0 +1,97 @@
+---
+permalink: fabricpool/information-needed-to-attach-storagegrid-as-cloud-tier.html 
+sidebar: sidebar 
+keywords: StorageGRID, fabricPool, ONTAP System Manager, ONTAP CLI, port, FQDN, object store name 
+summary: 您必須先在 StorageGRID 中執行組態步驟、並取得特定值、才能將 StorageGRID 附加為 FabricPool 的雲端層。 
+---
+= 以StorageGRID 雲端層形式附加解決方案所需的資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您將 StorageGRID 附加為 FabricPool 的雲端層之前、您必須先在 StorageGRID 中執行組態步驟、並取得特定值以用於 ONTAP 。
+
+
+
+== 我需要什麼價值？
+
+下表顯示您必須在 StorageGRID 中設定的值、以及 ONTAP 和 DNS 伺服器如何使用這些值。
+
+[cols="1a,1a,1a"]
+|===
+| 價值 | 其中已設定值 | 使用值的位置 
+
+
+ a| 
+虛擬 IP （ VIP ）位址
+ a| 
+StorageGRID > HA 群組
+ a| 
+DNS 項目
+
+
+
+ a| 
+連接埠
+ a| 
+StorageGRID > 負載平衡器端點
+ a| 
+ONTAP 系統管理員 > 新增雲端層
+
+
+
+ a| 
+SSL 憑證
+ a| 
+StorageGRID > 負載平衡器端點
+ a| 
+ONTAP 系統管理員 > 新增雲端層
+
+
+
+ a| 
+伺服器名稱（ FQDN ）
+ a| 
+StorageGRID > 負載平衡器端點
+ a| 
+DNS 項目
+
+
+
+ a| 
+存取金鑰 ID 和秘密存取金鑰
+ a| 
+StorageGRID > 租戶與貯體
+ a| 
+ONTAP 系統管理員 > 新增雲端層
+
+
+
+ a| 
+貯體 / 容器名稱
+ a| 
+StorageGRID > 租戶與貯體
+ a| 
+ONTAP 系統管理員 > 新增雲端層
+
+|===
+
+
+== 如何取得這些價值？
+
+視您的需求而定、您可以執行下列任一動作來取得所需資訊：
+
+* 使用link:use-fabricpool-setup-wizard.html["FabricPool 設定精靈"]。FabricPool 安裝精靈可協助您快速設定 StorageGRID 中所需的值、並輸出可用來設定 ONTAP 系統管理員的檔案。精靈會引導您完成必要步驟、並協助確保您的設定符合 StorageGRID 和 FabricPool 最佳實務做法。
+* 手動設定每個項目。然後、在 ONTAP 系統管理員或 ONTAP CLI 中輸入值。請遵循下列步驟：
++
+.. link:creating-ha-group-for-fabricpool.html["為 FabricPool 設定高可用度（ HA ）群組"]。
+.. link:creating-load-balancer-endpoint-for-fabricpool.html["建立FabricPool 負載平衡器端點以供使用"]。
+.. link:creating-tenant-account-for-fabricpool.html["建立一個客戶帳戶FabricPool 以供使用"]。
+.. 登入租戶帳戶、和link:creating-s3-bucket-and-access-key.html["為 root 使用者建立貯體和存取金鑰"]。
+.. 為 FabricPool 資料建立 ILM 規則、並將其新增至作用中的 ILM 原則。請參閱。 link:using-storagegrid-ilm-with-fabricpool-data.html["設定 FabricPool 資料的 ILM"]
+.. （可選）。link:creating-traffic-classification-policy-for-fabricpool.html["為 FabricPool 建立流量分類原則"]
+
+
+

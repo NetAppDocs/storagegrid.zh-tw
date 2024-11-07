@@ -1,0 +1,8 @@
+---
+permalink: admin/kms-viewing-details.html 
+redirect: storagegrid/admin/kms-managing.html 
+---
+= 
+:allow-uri-read: 
+
+

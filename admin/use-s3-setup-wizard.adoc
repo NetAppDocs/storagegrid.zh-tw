@@ -1,0 +1,58 @@
+---
+permalink: admin/use-s3-setup-wizard.html 
+sidebar: sidebar 
+keywords: S3, S3 setup wizard 
+summary: 您可以使用 S3 設定精靈、將 StorageGRID 設定為 S3 應用程式的物件儲存系統。 
+---
+= 使用 S3 設定精靈：考量與需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 S3 設定精靈、將 StorageGRID 設定為 S3 應用程式的物件儲存系統。
+
+
+
+== 何時使用 S3 設定精靈
+
+S3 安裝精靈會引導您完成每個步驟、設定 StorageGRID 以搭配 S3 應用程式使用。在完成精靈的過程中、您可以下載檔案、以便在 S3 應用程式中輸入值。使用精靈可更快速地設定您的系統、並確保您的設定符合 StorageGRID 最佳實務做法。
+
+如果您有link:admin-group-permissions.html["root 存取權限"]、可以在開始使用 StorageGRID Grid Manager 時完成 S3 設定精靈、也可以在稍後隨時存取並完成精靈。視您的需求而定、您也可以手動設定部分或全部必要項目、然後使用精靈來組合 S3 應用程式所需的值。
+
+
+
+== 使用精靈之前
+
+使用精靈之前、請確認您已完成這些先決條件。
+
+取得 IP 位址並設定 VLAN 介面:: 如果您要設定高可用度（ HA ）群組、就會知道 S3 應用程式將連線到哪些節點、以及將使用哪個 StorageGRID 網路。您也知道要輸入哪些子網路 CIDR 、閘道 IP 位址和虛擬 IP （ VIP ）位址值。
++
+--
+如果您打算使用虛擬 LAN 來分隔 S3 應用程式的流量、則表示您已經設定了 VLAN 介面。請參閱。 link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]
+
+--
+設定身分識別聯盟和 SSO:: 如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道 S3 應用程式將使用哪個同盟群組的租戶帳戶擁有 root 存取權。請參閱link:../admin/using-identity-federation.html["使用身分識別聯盟"]和link:../admin/configuring-sso.html["設定單一登入"]。
+取得及設定網域名稱:: 您知道 StorageGRID 要使用哪個完整網域名稱（ FQDN ）。網域名稱伺服器（ DNS ）項目會將此 FQDN 對應到您使用精靈建立的 HA 群組的虛擬 IP （ VIP ）位址。
++
+--
+如果您打算使用 S3 虛擬託管式要求、您應該要有link:../admin/configuring-s3-api-endpoint-domain-names.html["已設定 S3 端點網域名稱"]。建議使用虛擬託管式要求。
+
+--
+檢閱負載平衡器和安全性憑證需求:: 如果您計畫使用 StorageGRID 負載平衡器、您已檢閱負載平衡的一般考量事項。您擁有要上傳的憑證或產生憑證所需的值。
++
+--
+如果您打算使用外部（第三方）負載平衡器端點、則該負載平衡器具有完整網域名稱（ FQDN ）、連接埠和憑證。
+
+--
+設定任何網格同盟連線:: 如果您想要允許 S3 租戶複製帳戶資料、並使用網格同盟連線將貯體物件複寫到其他網格、請在啟動精靈之前確認下列事項：
++
+--
+* 您有 link:grid-federation-manage-connection.html["已設定網格同盟連線"]。
+* 連線狀態為 * 已連線 * 。
+* 您擁有root存取權限。
+
+
+--
+

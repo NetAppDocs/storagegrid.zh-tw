@@ -1,0 +1,47 @@
+---
+permalink: monitor/viewing-santricity-system-manager-tab.html 
+sidebar: sidebar 
+keywords: SANtricity System Manager tab, hardware diagnostics 
+summary: 「支援系統管理程式」索引標籤可讓您存取《支援系統管理程式》、而無需設定或連接儲存應用裝置的管理連接埠。SANtricity SANtricity您可以使用此索引標籤來檢閱硬體診斷與環境資訊、以及與磁碟機相關的問題。 
+---
+= 檢視 SANtricity 系統管理員標籤（僅限 E 系列）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「支援系統管理程式」索引標籤可讓您存取《支援系統管理程式》、而無需設定或連接儲存應用裝置的管理連接埠。SANtricity SANtricity您可以使用此索引標籤來檢閱硬體診斷與環境資訊、以及與磁碟機相關的問題。
+
+
+CAUTION: 從SANtricity Grid Manager存取「支援系統管理程式」通常只是為了監控應用裝置硬體、以及設定E系列AutoSupport 的功能。SANtricity 系統管理員中的許多功能和作業（例如升級韌體）不適用於監控 StorageGRID 應用裝置。為避免發生問題、請務必遵循設備的硬體維護指示。若要升級 SANtricity 韌體、請參閱 https://docs.netapp.com/us-en/storagegrid-appliances/landing-maintain-hdwr/index.html["維護組態程序"^]儲存設備的。
+
+
+NOTE: 只有使用 E 系列硬體的儲存設備節點才會顯示 SANtricity 系統管理員標籤。
+
+使用「系統管理程式」、您可以執行下列動作：SANtricity
+
+* 檢視儲存陣列層級效能、 I/O 延遲、儲存控制器 CPU 使用率和處理量等效能資料。
+* 檢查硬體元件狀態。
+* 執行支援功能、包括檢視診斷資料和設定 E 系列 AutoSupport 。
++
+
+NOTE: 若要使用 SANtricity 系統管理員來設定 E 系列 AutoSupport 的 Proxy 、請參閱link:../admin/sending-eseries-autosupport-messages-through-storagegrid.html["透過 StorageGRID 傳送 E 系列 AutoSupport 套件"]。
+
+
+
+若要透過 Grid Manager 存取 SANtricity 系統管理員、您必須擁有link:../admin/admin-group-permissions.html["儲存設備管理員或根存取權限"]。
+
+
+NOTE: 您必須擁有SANtricity 更新版本的韌體8.70才能SANtricity 使用Grid Manager存取《系統管理程式》。
+
+索引標籤會顯示SANtricity 「系統管理程式」的首頁。
+
+image::../media/nodes_page_santricity_tab.png[節點頁SANtricity 面「鏈結」索引標籤]
+
+
+NOTE: 您可以使用SANtricity 「更新系統管理程式」連結、在SANtricity 新的瀏覽器視窗中開啟「更新系統管理程式」、以便更輕鬆地檢視。
+
+若要查看儲存陣列層級效能和容量使用量的詳細資料、請將游標放在每個圖表上方。
+
+如需更多有關檢視可從 SANtricity 系統管理員標籤存取之資訊的詳細資訊，請參閱 https://docs.netapp.com/us-en/e-series-family/index.html["NetApp E系列與SANtricity 不完整的文件"^]。

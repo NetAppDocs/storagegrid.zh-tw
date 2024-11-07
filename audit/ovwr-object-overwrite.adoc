@@ -1,0 +1,93 @@
+---
+permalink: audit/ovwr-object-overwrite.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, OVWR, Object Overwrite 
+summary: 當外部（用戶端要求）作業導致一個物件被另一個物件覆寫時、就會產生此訊息。 
+---
+= OW寫入：物件覆寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當外部（用戶端要求）作業導致一個物件被另一個物件覆寫時、就會產生此訊息。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+CBID
+ a| 
+內容區塊識別碼（新增）
+ a| 
+新物件的CBID。
+
+
+
+ a| 
+CSIZ
+ a| 
+上一個物件大小
+ a| 
+被覆寫物件的大小（以位元組為單位）。
+
+
+
+ a| 
+OCBD
+ a| 
+內容區塊識別碼（上一頁）
+ a| 
+前一個物件的CBID。
+
+
+
+ a| 
+UUID
+ a| 
+通用唯一ID（新）
+ a| 
+更新物件的識別碼StorageGRID 。
+
+
+
+ a| 
+OUID
+ a| 
+通用唯一ID（先前）
+ a| 
+在整個過程中、先前物件在StorageGRID 整個過程中的識別碼。
+
+
+
+ a| 
+路徑
+ a| 
+S3 物件路徑
+ a| 
+S3 物件路徑同時用於上一個物件和新物件
+
+
+
+ a| 
+RSRLT
+ a| 
+結果代碼
+ a| 
+物件覆寫交易的結果。結果永遠是：
+
+SUCS：成功
+
+
+
+ a| 
+SGRP
+ a| 
+站台（群組）
+ a| 
+如果有覆寫的物件、則會在指定的站台刪除、而非擷取覆寫物件的站台。
+
+|===

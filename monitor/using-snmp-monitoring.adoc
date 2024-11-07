@@ -1,0 +1,122 @@
+---
+permalink: monitor/using-snmp-monitoring.html 
+sidebar: sidebar 
+keywords: snmp, monitoring 
+summary: 如果您想StorageGRID 要使用簡易網路管理傳輸協定（SNMP）監控效能、您必須設定StorageGRID 包含在更新中的SNMP代理程式。 
+---
+= 使用SNMP監控
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想StorageGRID 要使用簡單網路管理傳輸協定（SNMP）監控效能、您必須設定StorageGRID 包含在資訊區中的SNMP代理程式。
+
+* link:configuring-snmp-agent.html["設定SNMP代理程式"]
+* link:updating-snmp-agent.html["更新SNMP代理程式"]
+
+
+
+
+== 功能
+
+每個 StorageGRID 節點都會執行 SNMP 代理程式或常駐程式、提供 MIB 。StorageGRID MIB 包含警示的表格和通知定義。此外、也包含系統說明資訊、例如每個節點的平台和型號。每StorageGRID 個支援MIB-II物件的子集。
+
+
+NOTE: 查看link:access-snmp-mib.html["存取 MIB 檔案"]是否要在網格節點上下載 MIB 檔案。
+
+一開始、所有節點上的SNMP都會停用。當您設定SNMP代理程式時、所有StorageGRID 的Sing節點都會收到相同的組態。
+
+支援所有三種版本的SNMP傳輸協定的Sof SNMP代理程式。StorageGRID它可為查詢提供唯讀的MIB存取、並可將兩種事件導向通知傳送至管理系統：
+
+陷阱:: 設陷是 SNMP 代理程式傳送的通知、不需要管理系統的認可。陷阱可讓管理系統知道StorageGRID 在某些情況下發生、例如觸發警示。
++
+--
+SNMP的所有三個版本均支援陷阱。
+
+--
+通知:: 通知類似於陷阱、但需要管理系統確認。如果 SNMP 代理程式在一定時間內未收到回應、它會重新傳送通知、直到收到回應或達到最大重試值為止。
++
+--
+在SNMPv2c和v3中支援通知。
+
+--
+
+
+在下列情況下會傳送陷阱和通知：
+
+* 預設或自訂警示會在任何嚴重性層級觸發。若要隱藏警示的 SNMP 通知、您必須link:silencing-alert-notifications.html["設定靜音"]發出警示。警示通知會由傳送link:../primer/what-admin-node-is.html["偏好的寄件者管理節點"]。
++
+每個警示都會根據警示的嚴重性層級、對應到三種陷阱類型中的一種：activeMinorAlert、activeMajorAlert和activeCriticalAlert。如需觸發這些陷阱的警示清單，請參閱link:alerts-reference.html["警示參考資料"]。
+
+
+
+
+
+== SNMP 版本支援
+
+下表提供每個SNMP版本所支援項目的高層摘要。
+
+[cols="1a,2a,2a,2a"]
+|===
+|  | SNMPv1 | SNMPv2c | SNMPv3 
+
+
+ a| 
+查詢
+
+（ Get 和 GETNEXT ）
+ a| 
+唯讀的mib查詢
+ a| 
+唯讀的mib查詢
+ a| 
+唯讀的mib查詢
+
+
+
+ a| 
+查詢驗證
+ a| 
+社群字串
+ a| 
+社群字串
+ a| 
+使用者型安全模式（USM）使用者
+
+
+
+ a| 
+通知
+
+（陷阱與通知）
+ a| 
+僅設陷
+ a| 
+擷取並通知
+ a| 
+擷取並通知
+
+
+
+ a| 
+通知驗證
+ a| 
+每個陷阱目的地的預設陷阱社群或自訂社群字串
+ a| 
+每個陷阱目的地的預設陷阱社群或自訂社群字串
+ a| 
+每個陷阱目的地的USM使用者
+
+|===
+
+
+== 限制
+
+* 支援唯讀的mib存取。StorageGRID不支援讀寫存取。
+* 網格中的所有節點都會收到相同的組態。
+* v3：StorageGRID 不支援傳輸支援模式（TSM）。
+* v3：唯一支援的驗證傳輸協定是SHa（HMAC - SHA-96）。
+* v3：唯一支援的隱私權傳輸協定是AES。
+

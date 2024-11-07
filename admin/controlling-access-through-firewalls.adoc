@@ -1,0 +1,66 @@
+---
+permalink: admin/controlling-access-through-firewalls.html 
+sidebar: sidebar 
+keywords: firewall access, firewall ports, external firewall 
+summary: 您可以在外部防火牆開啟或關閉特定連接埠。 
+---
+= 控制外部防火牆的存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在外部防火牆開啟或關閉特定連接埠。
+
+您可以StorageGRID 在外部防火牆開啟或關閉特定連接埠、以控制對使用者介面和API的存取。例如、除了使用其他方法來控制系統存取之外、您可能還想要防止租戶連線到防火牆的Grid Manager。
+
+如果您想要設定 StorageGRID 內部防火牆，請參閱link:../admin/configure-firewall-controls.html["設定內部防火牆"]。
+
+[cols="1a,1a,2a"]
+|===
+| 連接埠 | 說明 | 如果連接埠已開啟... 
+
+
+ a| 
+443
+ a| 
+管理節點的預設HTTPS連接埠
+ a| 
+Web瀏覽器和管理API用戶端可存取Grid Manager、Grid Management API、租戶管理程式和租戶管理API。
+
+*附註：*連接埠443也用於部分內部流量。
+
+
+
+ a| 
+8443
+ a| 
+管理節點上的受限網格管理器連接埠
+ a| 
+* Web瀏覽器和管理API用戶端可使用HTTPS存取Grid Manager和Grid Management API。
+* Web 瀏覽器和管理 API 用戶端無法存取租戶管理員或租戶管理 API 。
+* 系統將拒絕內部內容的要求。
+
+
+
+
+ a| 
+9443
+ a| 
+管理節點上的受限租戶管理程式連接埠
+ a| 
+* Web瀏覽器和管理API用戶端可使用HTTPS存取租戶管理程式和租戶管理API。
+* Web 瀏覽器和管理 API 用戶端無法存取 Grid Manager 或 Grid Management API 。
+* 系統將拒絕內部內容的要求。
+
+
+|===
+
+TIP: 單一登入（SSO）無法在受限網格管理器或租戶管理器連接埠上使用。如果您想要使用者透過單一登入進行驗證、則必須使用預設的HTTPS連接埠（443）。
+
+.相關資訊
+* link:signing-in-to-grid-manager.html["登入Grid Manager"]
+* link:creating-tenant-account.html["建立租戶帳戶"]
+* link:../network/external-communications.html["外部通訊"]
+

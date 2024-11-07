@@ -1,0 +1,120 @@
+---
+permalink: monitor/grid-federation-monitor-connections.html 
+sidebar: sidebar 
+keywords: grid federation, monitor connection, cross grid replication metrics 
+summary: 您可以監控所有網格同盟連線的基本資訊、特定連線的詳細資訊、或是關於跨網格複寫作業的 Prometheus 指標。您可以從任一網格監控連線。 
+---
+= 監控網格同盟連線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以監控關於所有link:../admin/grid-federation-overview.html["網格同盟連線"]的基本資訊、特定連線的詳細資訊、或是關於跨網格複寫作業的 Prometheus 指標。您可以從任一網格監控連線。
+
+.開始之前
+* 您可以使用登入任一網格上的 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您擁有已登入的link:../admin/admin-group-permissions.html["root 存取權限"]網格。
+
+
+
+
+== 檢視所有連線
+
+「 Grid Federation 」頁面會顯示所有網格同盟連線的基本資訊、以及所有允許使用網格同盟連線的租戶帳戶。
+
+.步驟
+. 選擇 * 組態 * > * 系統 * > * 網格聯盟 * 。
++
+「 Grid Federation 」頁面隨即出現。
+
+. 若要查看此網格上所有連線的基本資訊、請選取 * 連線 * 索引標籤。
++
+您可以從這個索引標籤：
+
++
+** link:../admin/grid-federation-create-connection.html["建立新連線"]。
+** 選擇與的現有連線link:../admin/grid-federation-manage-connection.html["編輯或測試"]。
+
+
++
+image::../media/grid-federation-connections-tab.png[網格同盟連線索引標籤]
+
+. 若要查看此網格上具有「 * 使用網格同盟連線 * 」權限的所有租戶帳戶的基本資訊、請選取 * 允許租戶 * 索引標籤。
++
+您可以從這個索引標籤：
+
++
+** link:../monitor/monitoring-tenant-activity.html["檢視每個允許租戶的詳細資料頁面"]。
+** 檢視每個連線的詳細資料頁面。請參閱。 <<view-specific-connection,檢視特定連線>>
+** 選擇允許的租戶，然後選擇link:../admin/grid-federation-manage-tenants.html["移除權限"]。
+** 檢查跨網格複寫錯誤、並清除最後一個錯誤（如果有）。請參閱。 link:../admin/grid-federation-troubleshoot.html["疑難排解網格同盟錯誤"]
++
+image::../media/grid-federation-permitted-tenants-tab.png[Grid Federation 的「允許租戶」標籤]
+
+
+
+
+
+
+
+== [[view-specific 連線 ]] 檢視特定連線
+
+您可以檢視特定網格同盟連線的詳細資料。
+
+.步驟
+. 從「 Grid Federation 」頁面中選取任一索引標籤、然後從表格中選取連線名稱。
++
+從連線的詳細資料頁面、您可以：
+
++
+** 查看連線的基本狀態資訊、包括本機和遠端主機名稱、連接埠和連線狀態。
+** 選擇與的連線link:../admin/grid-federation-manage-connection.html["編輯、測試或移除"]。
+
+
+. 檢視特定連線時、請選取 * 允許的租戶 * 索引標籤、以檢視連線允許租戶的詳細資料。
++
+您可以從這個索引標籤：
+
++
+** link:../monitor/monitoring-tenant-activity.html["檢視每個允許租戶的詳細資料頁面"]。
+** link:../admin/grid-federation-manage-tenants.html["移除租戶權限"]以使用連線。
+** 檢查跨網格複寫錯誤、並清除最後一個錯誤。請參閱。 link:../admin/grid-federation-troubleshoot.html["疑難排解網格同盟錯誤"]
++
+image::../media/grid-federation-permitted-tenants-tab-for-connection.png[GRID - Federation 允許的租戶 - 標籤 - 連線]
+
+
+
+. 檢視特定連線時、請選取 * 憑證 * 索引標籤、以檢視此連線的系統產生伺服器和用戶端憑證。
++
+您可以從這個索引標籤：
+
++
+** link:../admin/grid-federation-manage-connection.html["旋轉連線憑證"]。
+** 選取 * 伺服器 * 或 * 用戶端 * 以檢視或下載相關的憑證、或複製憑證 PEM 。
++
+image::../media/grid-federation-certificates-tab.png[GRID 同盟憑證索引標籤]
+
+
+
+
+
+
+
+== 檢閱跨網格複寫指標
+
+您可以使用 Grafana 中的跨網格複寫儀表板來檢視 Prometheus 在您網格上跨網格複寫作業的計量。
+
+.步驟
+. 從 Grid Manager 中、選取 * 支援 * > * 工具 * > * 指標 * 。
++
+
+NOTE: 「指標」頁面上提供的工具僅供技術支援使用。這些工具中的某些功能和功能表項目會刻意無法運作、而且可能會有所變更。請參閱清單link:../monitor/commonly-used-prometheus-metrics.html["常用的Prometheus指標"]。
+
+. 在頁面的 Grafana 區段中、選取 * 跨網格複寫 * 。
++
+有關詳細說明，請參閱link:../monitor/reviewing-support-metrics.html["檢視支援指標"]。
+
+. 若要重試複寫無法複寫的物件、請參閱link:../admin/grid-federation-retry-failed-replication.html["識別並重試失敗的複寫作業"]。
+

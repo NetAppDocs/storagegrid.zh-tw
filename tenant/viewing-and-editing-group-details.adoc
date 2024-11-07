@@ -1,0 +1,62 @@
+---
+permalink: tenant/viewing-and-editing-group-details.html 
+sidebar: sidebar 
+keywords: how to view and edit group 
+summary: 當您檢視群組的詳細資料時，可以變更群組的顯示名稱、權限、原則及屬於群組的使用者。 
+---
+= 檢視及編輯群組詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您檢視群組的詳細資料時、可以變更群組的顯示名稱、權限、原則及屬於群組的使用者。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有「根目錄」存取權限的使用者群組。
+
+
+.步驟
+. 選擇*存取管理*>*群組*。
+. 選取您要檢視或編輯其詳細資料的群組名稱。
++
+或者、您也可以選取*「動作」*>*「檢視群組詳細資料」*。
+
++
+隨即顯示群組詳細資料頁面。以下範例顯示S3群組詳細資料頁面。
+
++
+image::../media/tenant_group_details.png[檢視群組詳細資料]
+
+. 視需要變更群組設定。
++
+
+TIP: 若要確保儲存變更、請在每個區段進行變更後、選取*儲存變更*。儲存變更時、頁面右上角會出現確認訊息。
+
++
+.. 或者、選取顯示名稱或編輯圖示image:../media/icon_edit_tm.png["編輯圖示"]以更新顯示名稱。
++
+您無法變更群組的唯一名稱。您無法編輯同盟群組的顯示名稱。
+
+.. 或者、請更新權限。
+.. 對於群組原則、請針對 S3 租戶進行適當的變更。
++
+*** 如果您正在編輯S3租戶的群組、請選擇不同的S3群組原則。如果您選取自訂S3原則、請視需要更新Json字串。
+*** 如果您正在編輯 Swift 租戶的群組、請選擇性地選取或清除 *Swift Administrator* 核取方塊。
++
+如需Swift Administrator權限的詳細資訊、請參閱建立Swift租戶群組的指示。
+
+
+
+.. 或者、新增或移除使用者。
+
+
+. 確認您已針對每個變更的區段選擇*儲存變更*。
+
+
+.相關資訊
+* link:creating-groups-for-s3-tenant.html["為S3租戶建立群組"]
+* link:creating-groups-for-swift-tenant.html["為Swift租戶建立群組"]
+

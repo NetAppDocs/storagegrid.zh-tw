@@ -1,0 +1,32 @@
+---
+permalink: tenant/deleting-your-own-s3-access-keys.html 
+sidebar: sidebar 
+keywords: how to delete S3 access key 
+summary: 如果您使用的是S3租戶、而且您擁有適當的權限、則可以刪除自己的S3存取金鑰。刪除存取金鑰之後、就無法再使用它來存取租戶帳戶中的物件和儲存區。 
+---
+= 刪除您自己的S3存取金鑰
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用的是S3租戶、而且您擁有適當的權限、則可以刪除自己的S3存取金鑰。刪除存取金鑰之後、就無法再使用它來存取租戶帳戶中的物件和儲存區。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:tenant-management-permissions.html["管理您自己的 S3 認證權限"]。
+
+
+
+CAUTION: 您可以使用租戶管理程式中顯示的帳戶存取金鑰ID和秘密存取金鑰、來存取屬於您帳戶的S3儲存區和物件。因此、請像保護密碼一樣保護存取金鑰。定期旋轉存取金鑰、從帳戶中移除任何未使用的金鑰、而且切勿與其他使用者共用。
+
+.步驟
+. 選擇*儲存設備（S3）*>*我的存取金鑰*。
+. 從「我的存取金鑰」頁面、選取您要移除的每個存取金鑰核取方塊。
+. 選取*刪除機碼*。
+. 從確認對話方塊中、選取 * 刪除機碼 * 。
++
+頁面右上角會出現確認訊息。
+
+

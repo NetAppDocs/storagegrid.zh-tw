@@ -1,0 +1,32 @@
+---
+permalink: s3/list-multipart-uploads.html 
+sidebar: sidebar 
+keywords: ListMultipartUploads, uploads, multipart uploads, bucket 
+summary: ListMultipartuploADS 作業會列出某個儲存庫的進行中多個部分上傳。 
+---
+= ListMultipartUploads
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ListMultipartuploADS 作業會列出某個儲存庫的進行中多個部分上傳。
+
+支援下列要求參數：
+
+* `encoding-type`
+* `key-marker`
+* `max-uploads`
+* `prefix`
+* `upload-id-marker`
+* `Host`
+* `Date`
+* `Authorization`
+
+
+
+
+== 版本管理
+
+多部分上傳包含不同的作業、可用於初始化上傳、列出上傳內容、上傳零件、組裝上傳的零件、以及完成上傳。執行「 CompleteMultpartUpload 」（ CompleteMultpartUpload ）作業時、即會建立物件（並在適用的情況下進行版本控制）。

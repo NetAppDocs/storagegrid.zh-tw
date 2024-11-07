@@ -1,0 +1,156 @@
+---
+permalink: audit/s3-select-request.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, S3SL, S3 Select request 
+summary: 此訊息表示使用者已起始 S3 Select 工作。 
+---
+= S3SL ： S3 Select 要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此訊息會在 S3 Select 要求傳回用戶端後記錄完成。S3SL 訊息可能包含錯誤訊息和錯誤代碼詳細資料。要求可能未成功。
+
+[cols="1a,1a,4a"]
+|===
+| 程式碼 | 欄位 | 說明 
+
+
+ a| 
+BYSC
+ a| 
+掃描的位元組數
+ a| 
+從儲存節點掃描（接收）的位元組數。
+
+如果物件經過壓縮、 BYSC 和 BYPR 可能會有所不同。如果物件經過壓縮、 BYSC 會有壓縮的位元組數、而 BYPR 會是解壓縮後的位元組數。
+
+
+
+ a| 
+BYPR
+ a| 
+已處理位元組
+ a| 
+處理的位元組數。指出 S3 Select 工作實際處理或處理多少位元組的「掃描位元組」。
+
+
+
+ a| 
+BYRT
+ a| 
+傳回位元組
+ a| 
+S3 Select 工作傳回用戶端的位元組數。
+
+
+
+ a| 
+重新報告
+ a| 
+已處理記錄
+ a| 
+S3 Select 工作從儲存節點接收的記錄或資料列數。
+
+
+
+ a| 
+RERT
+ a| 
+已傳回記錄
+ a| 
+S3 Select 工作傳回用戶端的記錄或列數。
+
+
+
+ a| 
+JOFI
+ a| 
+工作已完成
+ a| 
+指出 S3 Select 工作是否已完成處理。如果這是錯誤的、則工作無法完成、而且錯誤欄位中可能有資料。用戶端可能已收到部分結果、或根本沒有結果。
+
+
+
+ a| 
+Reid
+ a| 
+申請 ID
+ a| 
+S3 Select 要求的識別碼。
+
+
+
+ a| 
+EXTM
+ a| 
+執行時間
+ a| 
+S3 Select 工作完成所需的時間（以秒為單位）。
+
+
+
+ a| 
+ERMG
+ a| 
+錯誤訊息
+ a| 
+S3 Select 工作產生的錯誤訊息。
+
+
+
+ a| 
+很不一樣
+ a| 
+錯誤類型
+ a| 
+S3 Select 工作產生的錯誤類型。
+
+
+
+ a| 
+第
+ a| 
+Stacktrace 錯誤
+ a| 
+S3 Select 工作產生的錯誤堆疊追蹤。
+
+
+
+ a| 
+S3BK
+ a| 
+S3 貯體
+ a| 
+S3儲存區名稱。
+
+
+
+ a| 
+S3AK
+ a| 
+S3存取金鑰ID（要求傳送者）
+ a| 
+傳送要求之使用者的 S3 存取金鑰 ID 。
+
+
+
+ a| 
+S3AI
+ a| 
+S3租戶帳戶ID（要求寄件者）
+ a| 
+傳送要求之使用者的租戶帳戶ID。
+
+
+
+ a| 
+S3KY
+ a| 
+S3金鑰
+ a| 
+S3金鑰名稱、不含儲存區名稱。
+
+|===

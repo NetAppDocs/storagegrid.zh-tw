@@ -1,0 +1,23 @@
+---
+permalink: maintain/recovering-from-admin-node-failures.html 
+sidebar: sidebar 
+keywords: recover, admin node failure, workflow 
+summary: 管理節點的還原程序取決於它是主要管理節點還是非主要管理節點。 
+---
+= 主要或非主要管理節點恢復
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+管理節點的還原程序取決於它是主要管理節點還是非主要管理節點。
+
+恢復主管理節點或非主管理節點的高層步驟相同、不過步驟的詳細資料有所不同。
+
+請務必針對您要恢復的管理節點、執行正確的還原程序。程序看起來大致相同、但細節卻不同。
+
+.選擇
+* link:recovering-from-primary-admin-node-failures.html["從主要管理節點故障中恢復"]
+* link:recovering-from-non-primary-admin-node-failures.html["從非主要管理節點故障中恢復"]
+

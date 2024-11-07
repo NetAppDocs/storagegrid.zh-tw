@@ -1,0 +1,70 @@
+---
+permalink: tenant/changing-bucket-versioning.html 
+sidebar: sidebar 
+keywords: how to change bucket versioning, disabled versioning, enabled versioning, suspended versioning 
+summary: 如果您使用的是 S3 租戶、則可以變更 S3 儲存區的版本設定狀態。 
+---
+= 變更儲存區的物件版本設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用的是 S3 租戶、則可以變更 S3 儲存區的版本設定狀態。
+
+.開始之前
+* 您可以使用登入租戶管理程式link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有的使用者群組link:tenant-management-permissions.html["管理所有貯體或根目錄存取權限"]。這些權限會覆寫群組或儲存區原則中的權限設定。
+* 您已確認所需的儲存節點和站台數量可用。如果任一站台內沒有兩個以上的儲存節點、或站台無法使用、則這些設定的變更可能無法使用。
+
+
+.關於這項工作
+您可以啟用或暫停儲存區的物件版本管理。在您啟用貯體的版本設定之後、它就無法恢復至未版本化狀態。不過、您可以暫停儲存區的版本管理。
+
+* 停用：從未啟用版本管理
+* 已啟用：已啟用版本管理
+* 已暫停：先前已啟用版本管理、並已暫停
+
+
+如需詳細資訊、請參閱下列內容：
+
+* link:../s3/object-versioning.html["物件版本管理"]
+* link:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["S3版本化物件的ILM規則和原則（範例4）"]
+* link:../ilm/how-objects-are-deleted.html["如何刪除物件"]
+
+
+.步驟
+. 從儀表板選取 * 檢視貯體 * 、或選取 * 儲存空間（ S3 ） * > * 鏟斗 * 。
+. 從表格中選取貯體名稱。
++
+此時會顯示「庫位詳細資料」頁面。
+
+. 從 * 儲存庫選項 * 標籤中、選取 * 物件版本設定 * 折疊器。
+. 選取此儲存區中物件的版本管理狀態。
++
+物件版本設定功能必須保持啟用、才能用於跨網格複寫的儲存區。如果啟用S3物件鎖定或舊版規範、則會停用*物件版本管理*選項。
+
++
+[cols="1a,3a"]
+|===
+| 選項 | 說明 
+
+
+ a| 
+啟用版本管理
+ a| 
+如果您要儲存此儲存區中每個物件的每個版本、請啟用物件版本管理。然後您可以視需要擷取物件的舊版。
+
+使用者修改儲存庫中已有的物件時、將會對其進行版本控制。
+
+
+
+ a| 
+暫停版本管理
+ a| 
+如果您不想再建立新的物件版本、請暫停物件版本管理。您仍然可以擷取任何現有的物件版本。
+
+|===
+. 選取*儲存變更*。
+
