@@ -9761,7 +9761,6 @@
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">開放原始碼</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。</block>
-  <block id="0f47986745ce840c10499664283d7b6b" category="paragraph"><block ref="0f47986745ce840c10499664283d7b6b" category="inline-link-rx"></block></block>
   <block id="3dfff02e3cb803d1f2b51c6559e09b93" category="summary">當您存取Grid Manager中的「取消委任節點」頁面時、您可以一覽哪些節點可以停用。</block>
   <block id="35acb565e0420d61af96306b6a452bd0" category="doc">存取「取消委任節點」頁面</block>
   <block id="bd045462ee18e63d4b77b3058af88574" category="admonition">在包含僅軟體中繼資料節點的網格中取消委任儲存節點時、請務必謹慎。如果您取消委任所有設定為儲存物件和中繼資料的節點、則儲存物件的能力會從網格中移除。如需僅中繼資料儲存節點的詳細資訊、請參閱<block ref="8e49185a846f0d976af4a2b64adfc64f" category="inline-link-macro-rx"></block>。</block>
@@ -22073,4 +22072,5 @@
   <block id="9c4530f91dac5a70605fa05838af7d37" category="sidebar">規劃並準備在 VMware 上安裝</block>
   <block id="9341019b55764d5f593cd0200c56103f" category="sidebar">部署虛擬機器網格節點（VMware）</block>
   <block id="0f6d5554b15490c07bc95913e7162eb3" category="sidebar">設定網格並完成安裝（VMware）</block>
+  <block id="6aa2cc2f099a383774f35aa72c7c8c6d" category="paragraph"><block ref="6aa2cc2f099a383774f35aa72c7c8c6d" category="inline-link-rx"></block></block>
 </blocks>
