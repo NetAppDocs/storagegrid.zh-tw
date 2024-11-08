@@ -8,8 +8,8 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: false
-    hide_language_selector: true
-  langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
+    hide_language_selector: false
+  langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
 sidebar:
   entries:
   - title: StorageGRID 11.9 文件
