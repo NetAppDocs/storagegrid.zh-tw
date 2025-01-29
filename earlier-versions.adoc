@@ -20,6 +20,5 @@ summary: 您可以在此找到 NetApp StorageGRID 軟體其他版本的文件。
 * https://docs.netapp.com/us-en/storagegrid-117/index.html["StorageGRID 11.7 文件"^]
 * https://docs.netapp.com/us-en/storagegrid-116/index.html["StorageGRID 11.6 文件"^]
 * https://docs.netapp.com/us-en/storagegrid-115/index.html["StorageGRID 11.5 文件"^]
-* https://docs.netapp.com/sgws-114/index.jsp["VMware文件中心StorageGRID"^]
-* https://docs.netapp.com/sgws-113/index.jsp["StorageGRID 11.3 文件中心"^]
+* https://mysupport.netapp.com/documentation/docweb/index.html?productID=63374["VMware文件中心StorageGRID"^]
 

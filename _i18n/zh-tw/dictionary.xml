@@ -6481,9 +6481,6 @@
   <block id="6d307701f8a2621afa3c68f86b66b9f7" category="inline-link">StorageGRID 11.5 文件</block>
   <block id="57e1c48b034af2352e5a69534ab37dd2" category="list-text"><block ref="57e1c48b034af2352e5a69534ab37dd2" category="inline-link-rx"></block></block>
   <block id="50c142f8f9e19c4c84cb06dbc431b229" category="inline-link">VMware文件中心StorageGRID</block>
-  <block id="71be9d9e0df7c2f5699834ae68011996" category="list-text"><block ref="71be9d9e0df7c2f5699834ae68011996" category="inline-link-rx"></block></block>
-  <block id="bab03a68f7e57fdecf1481852ac62d80" category="inline-link">StorageGRID 11.3 文件中心</block>
-  <block id="d2ca6fb14c69e8ac834f4f43b0f0e9d8" category="list-text"><block ref="d2ca6fb14c69e8ac834f4f43b0f0e9d8" category="inline-link-rx"></block></block>
   <block id="5208ea2d7fef4547592b83bcd81c2e37" category="summary">您可以StorageGRID 新增新的網格節點至現有站台、以新增備援功能或其他功能至該系統。</block>
   <block id="6528e12a81667c9d5b35b16ec0e912e9" category="doc">新增網格節點以新增功能至系統</block>
   <block id="2bf9e1a6f3726dcb54f4b80fc1f3131b" category="paragraph">例如、您可以選擇新增要用於高可用度（ HA ）群組的閘道節點、或是在遠端站台新增管理節點、以允許使用本機節點進行監控。</block>
@@ -21755,7 +21752,6 @@
   <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">NetApp社群</block>
   <block id="8ba7e9fc95ff683b40e7c59130ea44da" category="sidebar">其他版本</block>
   <block id="9ccd79e77976b22b2105fd27f98d48e7" category="sidebar">StorageGRID 11.4 文件</block>
-  <block id="8c7a26ec02e66f37e540ca0eca6fd970" category="sidebar">StorageGRID 11.3 文件</block>
   <block id="2d294fa8c5c1e338f276c6d73fef64bc" category="sidebar">設定及管理 StorageGRID 系統</block>
   <block id="968d1b87721e1f0d94da98833546494e" category="sidebar">管理管理群組和使用者</block>
   <block id="64736a6a182f5535c5d38002b90b6364" category="sidebar">使用網格同盟</block>
@@ -22073,4 +22069,5 @@
   <block id="9341019b55764d5f593cd0200c56103f" category="sidebar">部署虛擬機器網格節點（VMware）</block>
   <block id="0f6d5554b15490c07bc95913e7162eb3" category="sidebar">設定網格並完成安裝（VMware）</block>
   <block id="6aa2cc2f099a383774f35aa72c7c8c6d" category="paragraph"><block ref="6aa2cc2f099a383774f35aa72c7c8c6d" category="inline-link-rx"></block></block>
+  <block id="b6db03b02a5517de79a9f3e95a62dcc5" category="list-text"><block ref="b6db03b02a5517de79a9f3e95a62dcc5" category="inline-link-rx"></block></block>
 </blocks>
