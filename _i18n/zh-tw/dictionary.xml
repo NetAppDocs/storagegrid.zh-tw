@@ -9294,8 +9294,6 @@
   <block id="30868fae92d89a9793e12292921235c3" category="paragraph">當您嘗試建立、編輯或刪除雲端儲存池時、可能會遇到此錯誤。如果貯體或容器包含標記檔案、但該檔案沒有包含預期 UUID 的中繼資料欄位、就會發生此錯誤<block ref="c4683c317ae318192c26b4511a6e85e9" prefix=" " category="inline-code"></block>。</block>
   <block id="3427e82447d636e44bf8b66d558973cc" category="paragraph">一般而StorageGRID 言、如果您正在建立新的Cloud Storage Pool、而另一個執行個體正在使用相同的Cloud Storage Pool、則只會看到此錯誤。</block>
   <block id="5c73aa491a47730f7386a8e266cdd4ce" category="paragraph">請嘗試下列步驟來修正問題：</block>
-  <block id="20564729782b8141c7a04e9c5a585b24" category="list-text">請確認貴組織中沒有人也使用此雲端儲存資源池。</block>
-  <block id="c392a96c42380011f536641d5ccb8a7b" category="list-text">刪除目標儲存區內的所有現有物件、包括檔案、<block ref="c4683c317ae318192c26b4511a6e85e9" prefix=" " category="inline-code"></block>然後再次嘗試設定 Cloud Storage Pool 。</block>
   <block id="6b7f55690053b8f4ddb5fc043ef8356c" category="section-title">錯誤：無法建立或更新雲端儲存池。端點發生錯誤</block>
   <block id="79ce9bc00a24c7bd48cecab70c2b1a19" category="paragraph">在下列情況下、您可能會遇到此錯誤：</block>
   <block id="b14283f1d92daa1b8e938e666f4d38db" category="list-text">當您嘗試建立或編輯雲端儲存池時。</block>
@@ -22070,4 +22068,9 @@
   <block id="0f6d5554b15490c07bc95913e7162eb3" category="sidebar">設定網格並完成安裝（VMware）</block>
   <block id="6aa2cc2f099a383774f35aa72c7c8c6d" category="paragraph"><block ref="6aa2cc2f099a383774f35aa72c7c8c6d" category="inline-link-rx"></block></block>
   <block id="b6db03b02a5517de79a9f3e95a62dcc5" category="list-text"><block ref="b6db03b02a5517de79a9f3e95a62dcc5" category="inline-link-rx"></block></block>
+  <block id="690b67e90a9e1ba6fd7c3d1323cd44d9" category="paragraph">請嘗試下列其中一個步驟來修正問題：</block>
+  <block id="c3fe71180f70e9f0b9529679b6e53e25" category="list-text">如果您正在設定新的 Cloud Storage Pool ，而該儲存區包含<block ref="c4683c317ae318192c26b4511a6e85e9" prefix=" " category="inline-code"></block>類似下列範例的檔案和其他物件金鑰，請建立新的儲存區，然後改用這個新的儲存區。</block>
+  <block id="770fbfd4043319c0e635afbe80bceff1" category="paragraph">其他物件金鑰範例：<block ref="dabbe37950e5e86b9594e09b6c8867c0" prefix=" " category="inline-code"></block></block>
+  <block id="85201768cf405bc4bf70556e00bd01a5" category="list-text">如果<block ref="c4683c317ae318192c26b4511a6e85e9" prefix=" " category="inline-code"></block>檔案是貯體中唯一的物件，請刪除此檔案。</block>
+  <block id="c23683543ffb04cdbb0fff7641342e20" category="paragraph">如果這些步驟不適用於您的案例，請聯絡支援部門。</block>
 </blocks>

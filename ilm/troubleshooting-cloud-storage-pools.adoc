@@ -47,11 +47,16 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 一般而StorageGRID 言、如果您正在建立新的Cloud Storage Pool、而另一個執行個體正在使用相同的Cloud Storage Pool、則只會看到此錯誤。
 
-請嘗試下列步驟來修正問題：
+請嘗試下列其中一個步驟來修正問題：
 
-* 請確認貴組織中沒有人也使用此雲端儲存資源池。
-* 刪除目標儲存區內的所有現有物件、包括檔案、 `x-ntap-sgws-cloud-pool-uuid`然後再次嘗試設定 Cloud Storage Pool 。
+* 如果您正在設定新的 Cloud Storage Pool ，而該儲存區包含 `x-ntap-sgws-cloud-pool-uuid`類似下列範例的檔案和其他物件金鑰，請建立新的儲存區，然後改用這個新的儲存區。
++
+其他物件金鑰範例： `my-bucket.3E64CF2C-B74D-4B7D-AFE7-AD28BC18B2F6.1727326606730410`
 
+* 如果 `x-ntap-sgws-cloud-pool-uuid`檔案是貯體中唯一的物件，請刪除此檔案。
+
+
+如果這些步驟不適用於您的案例，請聯絡支援部門。
 
 
 
