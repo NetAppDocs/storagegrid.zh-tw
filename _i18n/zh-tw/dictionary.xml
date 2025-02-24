@@ -22073,4 +22073,14 @@
   <block id="770fbfd4043319c0e635afbe80bceff1" category="paragraph">其他物件金鑰範例：<block ref="dabbe37950e5e86b9594e09b6c8867c0" prefix=" " category="inline-code"></block></block>
   <block id="85201768cf405bc4bf70556e00bd01a5" category="list-text">如果<block ref="c4683c317ae318192c26b4511a6e85e9" prefix=" " category="inline-code"></block>檔案是貯體中唯一的物件，請刪除此檔案。</block>
   <block id="c23683543ffb04cdbb0fff7641342e20" category="paragraph">如果這些步驟不適用於您的案例，請聯絡支援部門。</block>
+  <block id="5b1f077156283ecd3c34391250519661" category="paragraph">純中繼資料儲存節點有特定的硬體需求：</block>
+  <block id="7c298df4b7868d9ecb9abd0e0caa9633" category="list-text">使用 StorageGRID 應用裝置時，只能在具有十二個 1.9 TB 或十二個 3.8 TB 磁碟機的 SGF6112 應用裝置上設定純中繼資料節點。</block>
+  <block id="f1e93729e53bafd66dcfc333e513d3a4" category="list-text">使用軟體型節點時，純中繼資料節點資源必須符合現有的儲存節點資源。例如：</block>
+  <block id="d6130d1cbdc5548a68904de8d9a11c11" category="list-text">如果現有的 StorageGRID 站台使用 SG6000 或 SG6100 應用裝置，則僅限軟體型中繼資料節點必須符合下列最低需求：</block>
+  <block id="228d50520d6c2a627ecce76f2775d5e1" category="list-text">128 GB RAM</block>
+  <block id="ba714d418156de991481c94eca5689fb" category="list-text">8 核心 CPU</block>
+  <block id="b6ad52930949db0c7b795eb7c8e9ac6f" category="list-text">8 TB SSD 或與 Cassandra 資料庫相同的儲存設備（ rangedb/0 ）</block>
+  <block id="b869131b8d3adc70fb1aa175c961a46b" category="list-text">如果現有的 StorageGRID 站台使用具有 24 GB RAM ， 8 核心 CPU 和 3 TB 或 4TB 中繼資料儲存設備的虛擬儲存節點，則僅軟體中繼資料節點應使用類似資源（ 24 GB RAM ， 8 核心 CPU 和 4TB 中繼資料儲存設備（ rangedb/0 ）。</block>
+  <block id="5526d91c2268df033d56db9b208fdf10" category="list-text">新增 StorageGRID 站台時，新站台的中繼資料總容量至少應與現有的 StorageGRID 站台和新站台資源相符，且應與現有 StorageGRID 站台的儲存節點相符。</block>
+  <block id="b99211e689eb30a0f585e81b64ad800d" category="paragraph">軟體型中繼資料專用節點資源必須符合現有的儲存節點資源。例如：</block>
 </blocks>

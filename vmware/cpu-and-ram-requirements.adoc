@@ -24,6 +24,20 @@ summary: 安裝StorageGRID 支援功能軟體之前、請先確認並設定硬�
 
 
 
+軟體型中繼資料專用節點資源必須符合現有的儲存節點資源。例如：
+
+* 如果現有的 StorageGRID 站台使用 SG6000 或 SG6100 應用裝置，則僅限軟體型中繼資料節點必須符合下列最低需求：
++
+** 128 GB RAM
+** 8 核心 CPU
+** 8 TB SSD 或與 Cassandra 資料庫相同的儲存設備（ rangedb/0 ）
+
+
+* 如果現有的 StorageGRID 站台使用具有 24 GB RAM ， 8 核心 CPU 和 3 TB 或 4TB 中繼資料儲存設備的虛擬儲存節點，則僅軟體中繼資料節點應使用類似資源（ 24 GB RAM ， 8 核心 CPU 和 4TB 中繼資料儲存設備（ rangedb/0 ）。
+
+
+新增 StorageGRID 站台時，新站台的中繼資料總容量至少應與現有的 StorageGRID 站台和新站台資源相符，且應與現有 StorageGRID 站台的儲存節點相符。
+
 VMware 支援每部虛擬機器一個節點。確保 StorageGRID 節點不超過可用的實體 RAM 。每個虛擬機器都必須專用於執行 StorageGRID 。
 
 
