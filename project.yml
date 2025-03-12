@@ -1,6 +1,6 @@
 ---
 settings:
-  name: StorageGRID 11.9
+  name: StorageGRID
   search: storagegrid-enable,storagegrid,storagegrid-appliances
   internal:
     pdf_enabled: true
@@ -9,6 +9,17 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
     hide_language_selector: false
+  versions:
+  - version-number: '11.9'
+    url: "/storagegrid"
+  - version-number: '11.8'
+    url: "/storagegrid-118"
+  - version-number: '11.7'
+    url: "/storagegrid-117"
+  - version-number: '11.6'
+    url: "/storagegrid-116"
+  - version-number: '11.5'
+    url: "/storagegrid-115"
   langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
 sidebar:
   entries:
@@ -369,8 +380,6 @@ sidebar:
     url: "/storagegrid-enable.html"
   - title: StorageGRID 與 BlueXP
     url: "/storagegrid-bluexp.html"
-  - title: 其他版本
-    url: "/earlier-versions.html"
   - title: 法律聲明
     url: "/legal-notices.html"
 product-family:

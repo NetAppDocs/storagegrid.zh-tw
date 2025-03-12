@@ -6469,18 +6469,6 @@
   <block id="1a57484ff9a9f122a13500c288220fa9" category="paragraph">交易額的結果。結果永遠是：</block>
   <block id="5e40945c709ced297e7ef26292e16830" category="summary">當Swift用戶端發出PUT交易時、會要求建立新的物件或容器。如果交易成功、伺服器就會發出此訊息。</block>
   <block id="4f25651b47c8d7d6f7dc8e120eb476f3" category="paragraph">擷取物件的大小（以位元組為單位）。容器上的作業不包含此欄位。</block>
-  <block id="c97c39c2fb666ab046747b5eb4d80a29" category="summary">您可以在此找到 NetApp StorageGRID 軟體其他版本的文件。</block>
-  <block id="d6802b050b61628b78b01c33ead6fac3" category="doc">其他版本的 NetApp StorageGRID 文件</block>
-  <block id="9c033c2a387cf8d35a3a34cb680e78a5" category="paragraph">您可以在這裡找到其他 NetApp StorageGRID 軟體版本的文件：</block>
-  <block id="7bb5d1e21ca0bacc168d63d7155d3755" category="inline-link">StorageGRID 11.8 文件</block>
-  <block id="d9419a01ee4fdcd160bf1446e5a481f5" category="list-text"><block ref="d9419a01ee4fdcd160bf1446e5a481f5" category="inline-link-rx"></block></block>
-  <block id="444a66aeef372672e744a05782bffa7c" category="inline-link">StorageGRID 11.7 文件</block>
-  <block id="a6b4363f6225727f0507281f9ae58717" category="list-text"><block ref="a6b4363f6225727f0507281f9ae58717" category="inline-link-rx"></block></block>
-  <block id="b6a6856979f644f23831092a77a579ae" category="inline-link">StorageGRID 11.6 文件</block>
-  <block id="ebe15b7f3ab23a21b80c2db319837831" category="list-text"><block ref="ebe15b7f3ab23a21b80c2db319837831" category="inline-link-rx"></block></block>
-  <block id="6d307701f8a2621afa3c68f86b66b9f7" category="inline-link">StorageGRID 11.5 文件</block>
-  <block id="57e1c48b034af2352e5a69534ab37dd2" category="list-text"><block ref="57e1c48b034af2352e5a69534ab37dd2" category="inline-link-rx"></block></block>
-  <block id="50c142f8f9e19c4c84cb06dbc431b229" category="inline-link">VMware文件中心StorageGRID</block>
   <block id="5208ea2d7fef4547592b83bcd81c2e37" category="summary">您可以StorageGRID 新增新的網格節點至現有站台、以新增備援功能或其他功能至該系統。</block>
   <block id="6528e12a81667c9d5b35b16ec0e912e9" category="doc">新增網格節點以新增功能至系統</block>
   <block id="2bf9e1a6f3726dcb54f4b80fc1f3131b" category="paragraph">例如、您可以選擇新增要用於高可用度（ HA ）群組的閘道節點、或是在遠端站台新增管理節點、以允許使用本機節點進行監控。</block>
@@ -21722,7 +21710,6 @@
   <block id="38647a77b29bd1530254141826cd2a31" category="list-text">重新啟動 VM 以套用新密碼。</block>
   <block id="ff886cdf237f3f7f3030e719394ff044" category="list-text">設定VMware vSphere Hypervisor以自動重新啟動。</block>
   <block id="51b363c1bb2300c82ae6f4278cd08cd8" category="paragraph">您必須設定Hypervisor、以便在伺服器重新啟動時重新啟動虛擬機器。如果不自動重新啟動、虛擬機器和網格節點會在伺服器重新啟動後持續關機。如需詳細資料、請參閱VMware vSphere Hypervisor文件。</block>
-  <block id="2f0574719ffbf08aeb528b5265507fb2" category="sidebar">StorageGRID 11.9 文件</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
   <block id="640a3dfe21013fb2c8b8eb33081782c7" category="sidebar">StorageGRID 快速入門</block>
@@ -21748,7 +21735,6 @@
   <block id="8ef596bf4eb7277f78ad1d7ad4cc04de" category="sidebar">知識庫StorageGRID</block>
   <block id="c2d388654878e1108f99fdeaa465fcac" category="sidebar">NetApp部落格</block>
   <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">NetApp社群</block>
-  <block id="8ba7e9fc95ff683b40e7c59130ea44da" category="sidebar">其他版本</block>
   <block id="9ccd79e77976b22b2105fd27f98d48e7" category="sidebar">StorageGRID 11.4 文件</block>
   <block id="2d294fa8c5c1e338f276c6d73fef64bc" category="sidebar">設定及管理 StorageGRID 系統</block>
   <block id="968d1b87721e1f0d94da98833546494e" category="sidebar">管理管理群組和使用者</block>
@@ -21840,7 +21826,6 @@
   <block id="92e82fdcdded78777d379f2789e31ab8" category="sidebar">平台服務</block>
   <block id="4cc0ba636011fd91df08096a9dbb52a5" category="sidebar">儲存庫和群組存取原則</block>
   <block id="925e28e2f338c8314615c67e7ef5a642" category="sidebar">使用Swift</block>
-  <block id="27525e55f6ce407082185070b3ccbbe8" category="sidebar">StorageGRID 11.9 文件</block>
   <block id="902177bd02ae0a4f1a6bb299d07e6ff7" category="sidebar">安裝應用裝置</block>
   <block id="93001c0e0ab00af3500dd1799087e9d4" category="sidebar">套用 StorageGRID Hotfix</block>
   <block id="071f9267dd9fe157d7d4f7bceddc04cf" category="sidebar">在套用修補程式之前、請先檢查系統狀況</block>
@@ -22067,7 +22052,6 @@
   <block id="9341019b55764d5f593cd0200c56103f" category="sidebar">部署虛擬機器網格節點（VMware）</block>
   <block id="0f6d5554b15490c07bc95913e7162eb3" category="sidebar">設定網格並完成安裝（VMware）</block>
   <block id="6aa2cc2f099a383774f35aa72c7c8c6d" category="paragraph"><block ref="6aa2cc2f099a383774f35aa72c7c8c6d" category="inline-link-rx"></block></block>
-  <block id="b6db03b02a5517de79a9f3e95a62dcc5" category="list-text"><block ref="b6db03b02a5517de79a9f3e95a62dcc5" category="inline-link-rx"></block></block>
   <block id="690b67e90a9e1ba6fd7c3d1323cd44d9" category="paragraph">請嘗試下列其中一個步驟來修正問題：</block>
   <block id="c3fe71180f70e9f0b9529679b6e53e25" category="list-text">如果您正在設定新的 Cloud Storage Pool ，而該儲存區包含<block ref="c4683c317ae318192c26b4511a6e85e9" prefix=" " category="inline-code"></block>類似下列範例的檔案和其他物件金鑰，請建立新的儲存區，然後改用這個新的儲存區。</block>
   <block id="770fbfd4043319c0e635afbe80bceff1" category="paragraph">其他物件金鑰範例：<block ref="dabbe37950e5e86b9594e09b6c8867c0" prefix=" " category="inline-code"></block></block>
@@ -22083,4 +22067,7 @@
   <block id="b869131b8d3adc70fb1aa175c961a46b" category="list-text">如果現有的 StorageGRID 站台使用具有 24 GB RAM ， 8 核心 CPU 和 3 TB 或 4TB 中繼資料儲存設備的虛擬儲存節點，則僅軟體中繼資料節點應使用類似資源（ 24 GB RAM ， 8 核心 CPU 和 4TB 中繼資料儲存設備（ rangedb/0 ）。</block>
   <block id="5526d91c2268df033d56db9b208fdf10" category="list-text">新增 StorageGRID 站台時，新站台的中繼資料總容量至少應與現有的 StorageGRID 站台和新站台資源相符，且應與現有 StorageGRID 站台的儲存節點相符。</block>
   <block id="b99211e689eb30a0f585e81b64ad800d" category="paragraph">軟體型中繼資料專用節點資源必須符合現有的儲存節點資源。例如：</block>
+  <block id="a875f4e3e98d1c995967b1dfb394ca2e" category="sidebar">StorageGRID 11.9 文件</block>
+  <block id="27a5fc98d432133572f8dd4b135b3de1" category="sidebar">舊版</block>
+  <block id="f1b48448e2c7ce36850ff6ee0cf84515" category="sidebar">StorageGRID 11.9 文件</block>
 </blocks>
