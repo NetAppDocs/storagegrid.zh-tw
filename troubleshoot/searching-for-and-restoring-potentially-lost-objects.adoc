@@ -35,13 +35,43 @@ CAUTION: 如需此程序的協助、請聯絡技術支援部門。
 ... 輸入檔案中列出的密碼 `Passwords.txt`。當您以 root 登入時、提示會從變更 `$`為 `#`。
 
 
-.. 變更至稽核記錄所在的目錄： `cd /var/local/log/`
+.. [[substep - 1b]] 變更至稽核記錄所在的目錄。
 +
-[NOTE]
-====
-link:../monitor/configure-audit-messages.html#select-audit-information-destinations["瞭解稽核資訊的目的地"]。
+--
+稽核記錄目錄和適用的節點取決於您的稽核目的地設定。
 
-====
+[cols="1a,2a"]
+|===
+| 選項 | 目的地 
+
+
+ a| 
+本機節點（預設）
+ a| 
+`/var/local/log/localaudit.log`
+
+
+
+ a| 
+管理節點 / 本機節點
+ a| 
+*** 管理節點（主要和非主要）： `/var/local/audit/export/audit.log`
+*** 所有節點： `/var/local/log/localaudit.log`此模式中的檔案通常是空的或遺失的。
+
+
+
+
+ a| 
+外部syslog伺服器
+ a| 
+`/var/local/log/localaudit.log`
+
+|===
+視稽核目的地設定而定，請輸入： `cd /var/local/log`或 `/var/local/audit/export/`
+
+若要深入瞭解、請 link:../monitor/configure-audit-messages.html#select-audit-information-destinations["選取稽核資訊目的地"]參閱。
+
+--
 .. 使用 Grep 擷取link:../audit/object-ingest-transactions.html["稽核與潛在遺失物件相關的訊息"]並將其傳送至輸出檔案。輸入： `grep uuid-value audit_file_name > output_file_name`
 +
 例如：
@@ -49,7 +79,7 @@ link:../monitor/configure-audit-messages.html#select-audit-information-destinati
 +
 [listing]
 ----
-Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > messages_about_lost_object.txt
+Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > /var/local/tmp/messages_about_lost_object.txt
 ----
 .. 使用Grep擷取此輸出檔案中的「位置遺失（LLST）」稽核訊息。輸入： `grep LLST output_file_name`
 +
@@ -58,7 +88,7 @@ Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > messages_about_lo
 +
 [listing]
 ----
-Admin: # grep LLST messages_about_lost_objects.txt
+Admin: # grep LLST /var/local/tmp/messages_about_lost_objects.txt
 ----
 +
 LLST 稽核訊息看起來像這個範例訊息。
@@ -66,12 +96,11 @@ LLST 稽核訊息看起來像這個範例訊息。
 +
 [listing]
 ----
-[AUDT:\[NOID\(UI32\):12448208\][CBIL(UI64):0x38186FE53E3C49A5]
+[AUDT:[NOID(UI32):12448208][CBIL(UI64):0x38186FE53E3C49A5]
 [UUID(CSTR):"926026C4-00A4-449B-AC72-BCCA72DD1311"][LTYP(FC32):CLDI]
-[PCLD\(CSTR\):"/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%\#3tN6"\]
-[TSRC(FC32):SYST][RSLT(FC32):NONE][AVER(UI32):10][ATIM(UI64):
-1581535134379225][ATYP(FC32):LLST][ANID(UI32):12448208][AMID(FC32):CLSM]
-[ATID(UI64):7086871083190743409]]
+[PCLD(CSTR):"/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA#3tN6"]
+[TSRC(FC32):SYST][RSLT(FC32):NONE][AVER(UI32):10][ATIM(UI64):1581535134379225]
+[ATYP(FC32):LLST][ANID(UI32):12448208][AMID(FC32):CLSM][ATID(UI64):7086871083190743409]]
 ----
 .. 在LLST訊息中尋找PCLD欄位和NOID欄位。
 +
@@ -180,7 +209,7 @@ Renamed '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6' to '/var/local/range
 ... 輸入檔案中列出的密碼 `Passwords.txt`。當您以 root 登入時、提示會從變更 `$`為 `#`。
 
 
-.. 變更至稽核記錄所在的目錄： `cd /var/local/log/`
+.. 變更至稽核記錄所在的目錄。請參閱<<substep-1b,子步驟 1. B>>。
 .. 使用Grep將與物件相關的稽核訊息擷取至輸出檔案。輸入： `grep uuid-value audit_file_name > output_file_name`
 +
 例如：
@@ -188,7 +217,7 @@ Renamed '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6' to '/var/local/range
 +
 [listing]
 ----
-Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > messages_about_restored_object.txt
+Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > /var/local/tmp/messages_about_restored_object.txt
 ----
 .. 使用Grep從這個輸出檔案擷取符合物件規則（ORLM）的稽核訊息。輸入： `grep ORLM output_file_name`
 +
@@ -197,7 +226,7 @@ Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > messages_about_re
 +
 [listing]
 ----
-Admin: # grep ORLM messages_about_restored_object.txt
+Admin: # grep ORLM /var/local/tmp/messages_about_restored_object.txt
 ----
 +
 ORLM 稽核訊息看起來像這個範例訊息。

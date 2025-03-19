@@ -495,8 +495,6 @@
   <block id="4e87b50081da585d209ab8fadf6914ea" category="paragraph">用戶端必須使用所選節點介面的 IP 位址（或對應的 FQDN ）來存取此端點。</block>
   <block id="95363aa90e372ebfaf3970380516572f" category="paragraph">節點類型</block>
   <block id="2e717dc355f34f4e1237a2b572eeb55d" category="paragraph">根據您選取的節點類型、用戶端必須使用任何管理節點的 IP 位址（或對應的 FQDN ）或任何閘道節點的 IP 位址（或對應的 FQDN ）來存取此端點。</block>
-  <block id="82facf5318ecd7846d11c0090c10121f" category="inline-link-macro">瞭解稽核資訊的目的地</block>
-  <block id="dfccf768a44b72290afd11309f5c657a" category="paragraph"><block ref="fda3ebf131f02217654f50a96d88d4f9" category="inline-link-macro-rx"></block>。</block>
   <block id="0f01e7e492bbccc13b47366e5c4a93b9" category="doc">判斷目前版本支援哪些API版本</block>
   <block id="ace617870411d39968894dcf44cf39a2" category="paragraph">例如、此 Request URL 會指定 API 的版本 4 。</block>
   <block id="147c05895cd68e75ec97c5c7d34591e6" category="paragraph"><block ref="f0d2c71e9d2b696aa48b2b94db999f7e" prefix="" category="inline-code"></block></block>
@@ -20184,7 +20182,6 @@
   <block id="b249b823efa220cdc92c155f83791484" category="image-alt">節點儲存節點物件頁面遺失物件</block>
   <block id="d0c60358e5ae5e5778829519414b99ce" category="inline-link-macro">存取稽核記錄</block>
   <block id="ba95293a64f96f2cebf7d9e4076d0c67" category="list-text">從管理節點<block ref="851cdae78f4ca792157b09646614b3ca" category="inline-link-macro-rx"></block>判斷觸發 * 物件遺失 * 警示的物件唯一識別碼（ UUID ）：</block>
-  <block id="2652ea5b6eed80528235dd1a655ffc12" category="list-text">變更至稽核記錄所在的目錄。輸入：<block ref="deb122ad627cb486d581056e71282741" prefix=" " category="inline-code"></block></block>
   <block id="bed0f95aae778342ff2aff4af6b18c52" category="list-text">使用Grep擷取物件遺失（OLST）稽核訊息。輸入：<block ref="8d2ee8fb12c31c209ae2e841a6659e03" prefix=" " category="inline-code"></block></block>
   <block id="e296ae2c06db7d039be70a412b2c22a7" category="list-text">請注意訊息中包含的UUID值。</block>
   <block id="8c4d3c282730ed58400dc2b25ab80a28" category="list-text">使用 UUID 來查詢遺失物件的中繼資料：</block>
@@ -20241,7 +20238,6 @@
   <block id="4a191dbc00b73cb8174782b78bad399e" category="paragraph">您可以遵循此程序、在網格的其他位置尋找遺失物件的複寫複本。在大多數情況下、找不到遺失的物件。不過、在某些情況下、如果您採取了提示行動、可能會找到並還原遺失的複寫物件。</block>
   <block id="38b4286d66f0e8d8f18af4758b8c8c47" category="admonition">如需此程序的協助、請聯絡技術支援部門。</block>
   <block id="47ee1ebf35c423b283c4bb80f8b514e9" category="list-text">從管理節點搜尋稽核記錄、找出可能的物件位置：</block>
-  <block id="79d10507d1eb578753c760fc95e12b82" category="list-text">變更至稽核記錄所在的目錄：<block ref="deb122ad627cb486d581056e71282741" prefix=" " category="inline-code"></block></block>
   <block id="2d50451d1ed99088cac1a292a038e693" category="inline-link-macro">稽核與潛在遺失物件相關的訊息</block>
   <block id="11c7eb4a87e59c944d59681e79114e70" category="list-text">使用 Grep 擷取<block ref="22bb5241ff31e71b2705e48e57c4b0fe" category="inline-link-macro-rx"></block>並將其傳送至輸出檔案。輸入：<block ref="fed33e9253ef6ce0962fbe5a0e8253c4" prefix=" " category="inline-code"></block></block>
   <block id="8a5de422d7c0ef16acdca149cb923f24" category="list-text">使用Grep擷取此輸出檔案中的「位置遺失（LLST）」稽核訊息。輸入：<block ref="77f8923361a2e09749aba63083dc7827" prefix=" " category="inline-code"></block></block>
@@ -20330,7 +20326,6 @@
   <block id="8a763c715195c6c30b293013c82e2126" category="list-text">轉至 * 配置 * &gt; * 監控 * &gt; * 審計和系統日誌服務器 * 。</block>
   <block id="1fa458d6f22f9317d191067ad9c73bf0" category="list-text">如果用戶端寫入為正常、請存取稽核記錄：</block>
   <block id="df7e94e88d7e541515db8cc819ccf8dc" category="list-text">輸入<block ref="23e554a8303c5e2f2a814b91356f9c72" prefix=" " category="inline-code"></block></block>
-  <block id="0fd8dcbac62e03fa4b1e1fdc26c128c7" category="list-text">輸入<block ref="8128b9e658ca83ca63b6a74f47c237a2" prefix=" " category="inline-code"></block></block>
   <block id="a7d635c518fe86efe6bb9ffee7e4c791" category="list-text">識別哪些租戶使用的物件大於 5 GiB 。</block>
   <block id="336113397a545b57c8aa09ef016d802b" category="list-text">輸入<block ref="f93d31996fecfb15a2c551f7b53c8b27" prefix=" " category="inline-code"></block></block>
   <block id="303cf1c42b3a6db6db18e3cc05a8cdf7" category="list-text">針對結果中的每個稽核訊息、請查看<block ref="93177f657f533dfc6f27715fdc3ad840" prefix=" " category="inline-code"></block>欄位以判斷租戶帳戶 ID 。使用訊息中的其他欄位來判斷用戶端、貯體和物件使用的 IP 位址：</block>
@@ -22070,4 +22065,14 @@
   <block id="a875f4e3e98d1c995967b1dfb394ca2e" category="sidebar">StorageGRID 11.9 文件</block>
   <block id="27a5fc98d432133572f8dd4b135b3de1" category="sidebar">舊版</block>
   <block id="f1b48448e2c7ce36850ff6ee0cf84515" category="sidebar">StorageGRID 11.9 文件</block>
+  <block id="f46d78b08f1c5cf231ca39ca2b04235f" category="paragraph">稽核記錄目錄和適用的節點取決於您的稽核目的地設定。</block>
+  <block id="5d6fa84951bfdac1838890ed410b565c" category="paragraph">本機節點（預設）</block>
+  <block id="965b88e4fba786c4d838d8e718a8c9a1" category="paragraph"><block ref="bc9191d963b550670854df9485545416" prefix="" category="inline-code"></block></block>
+  <block id="32e69299be38c2f59cf126dd17cb8c3c" category="list-text">所有節點：<block ref="bc9191d963b550670854df9485545416" prefix=" " category="inline-code"></block>此模式中的檔案通常是空的或遺失的。</block>
+  <block id="b81e2d67c823582696bdc4eff4dece56" category="paragraph">視稽核目的地設定而定，請輸入：<block ref="8128b9e658ca83ca63b6a74f47c237a2" prefix=" " category="inline-code"></block>或<block ref="a655d8961c5b4cfeb6723fdad7f92b75" prefix=" " category="inline-code"></block></block>
+  <block id="b738d97a5b00611155b5049fa75dea6a" category="paragraph">若要深入瞭解、請 <block ref="212e000c31180041ea825ba2d7153b6f" category="inline-link-macro-rx"></block>參閱。</block>
+  <block id="16d41abb9d77f3e37b5a909333c79d85" category="list-text">變更至稽核記錄所在的目錄。</block>
+  <block id="34e0c51b0645847e93351125647002d5" category="list-text">[[substep - 1b]] 變更至稽核記錄所在的目錄。</block>
+  <block id="7c03f41530726ffda9e064ae1132bf05" category="inline-xref">子步驟 1. B</block>
+  <block id="5b528be020c7faad3f4d056a4f137da4" category="list-text">變更至稽核記錄所在的目錄。請參閱<block ref="b1b12721c28875151da1012031aa105a" category="inline-xref-macro-rx"></block>。</block>
 </blocks>

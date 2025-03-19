@@ -2,4 +2,35 @@
 :allow-uri-read: 
 
 
-link:../monitor/configure-audit-messages.html#select-audit-information-destinations["瞭解稽核資訊的目的地"]。
+稽核記錄目錄和適用的節點取決於您的稽核目的地設定。
+
+[cols="1a,2a"]
+|===
+| 選項 | 目的地 
+
+
+ a| 
+本機節點（預設）
+ a| 
+`/var/local/log/localaudit.log`
+
+
+
+ a| 
+管理節點 / 本機節點
+ a| 
+* 管理節點（主要和非主要）： `/var/local/audit/export/audit.log`
+* 所有節點： `/var/local/log/localaudit.log`此模式中的檔案通常是空的或遺失的。
+
+
+
+
+ a| 
+外部syslog伺服器
+ a| 
+`/var/local/log/localaudit.log`
+
+|===
+視稽核目的地設定而定，請輸入： `cd /var/local/log`或 `/var/local/audit/export/`
+
+若要深入瞭解、請 link:../monitor/configure-audit-messages.html#select-audit-information-destinations["選取稽核資訊目的地"]參閱。
