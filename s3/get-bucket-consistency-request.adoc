@@ -91,4 +91,4 @@ Content-Type: application/xml
 <Consistency xmlns="http://s3.storagegrid.com/doc/2015-02-01/">read-after-new-write</Consistency>
 ----
 .相關資訊
-link:consistency.html["一致性"]
+link:consistency-controls.html["一致性值"]

@@ -2,7 +2,7 @@
 permalink: audit/whea-swift-head.html 
 sidebar: sidebar 
 keywords: storagegrid, audit, message, WHEA, Swift HEAD 
-summary: 當 Swift 用戶端發出 HEAD 作業時，系統會要求檢查帳戶，容器或物件是否存在，並擷取任何相關的中繼資料。如果作業成功，伺服器就會發出此訊息。 
+summary: 當Swift用戶端發出標頭交易時、系統會要求檢查帳戶、容器或物件是否存在、並擷取任何相關的中繼資料。如果交易成功、伺服器就會發出此訊息。 
 ---
 = WHA：Swift刀頭
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 當 Swift 用戶端發出 HEAD 作業時，系統會要求檢查帳戶�
 
 
 [role="lead"]
-當 Swift 用戶端發出 HEAD 作業時，系統會要求檢查帳戶，容器或物件是否存在，並擷取任何相關的中繼資料。如果作業成功，伺服器就會發出此訊息。
+當Swift用戶端發出標頭交易時、系統會要求檢查帳戶、容器或物件是否存在、並擷取任何相關的中繼資料。如果交易成功、伺服器就會發出此訊息。
 
 [cols="1a,1a,4a"]
 |===
@@ -52,7 +52,7 @@ RSRLT
  a| 
 結果代碼
  a| 
-頭端操作的結果。結果永遠是：
+交易額的結果。結果永遠是：
 
 SUCS：成功
 

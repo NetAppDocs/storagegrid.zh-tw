@@ -15,8 +15,6 @@ summary: 平台服務包括CloudMirror複寫、事件通知及搜尋整合服務
 
 如果您為S3租戶帳戶啟用平台服務、則必須設定網格、讓租戶能夠存取使用這些服務所需的外部資源。
 
-平台服務不支援link:../tenant/manage-branch-buckets.html["分公司庫存箱"]。
-
 
 
 == CloudMirror複寫
@@ -25,16 +23,17 @@ StorageGRID CloudMirror 複寫服務用於將特定物件從 StorageGRID 儲存�
 
 例如、您可以使用CloudMirror複寫將特定的客戶記錄鏡射到Amazon S3、然後利用AWS服務對資料執行分析。
 
-CloudMirror 複寫與跨網格複寫功能有一些重要的相似之處和差異。若要深入瞭解link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["比較跨網格複寫和 CloudMirror 複寫"]、請參閱。
+
+NOTE: CloudMirror 複寫與跨網格複寫功能有一些重要的相似之處和差異。若要深入瞭解link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["比較跨網格複寫和 CloudMirror 複寫"]、請參閱。
 
 
-NOTE: 如果來源貯體已啟用 S3 物件鎖定，則不支援 CloudMirror 複寫。
+NOTE: 如果來源儲存區已啟用S3物件鎖定、則不支援CloudMirror複寫。
 
 
 
 == 通知
 
-每個貯體事件通知可用於傳送物件上執行特定動作的通知至指定的外部 Kafka 叢集， Webhook 端點或 Amazon Simple Notification Service 。
+每個貯體事件通知可用於傳送有關物件上執行之特定動作的通知至指定的外部 Kafka 叢集或 Amazon Simple Notification Service 。
 
 例如、您可以設定要傳送警示給系統管理員、以通知新增至儲存區的每個物件、其中物件代表與重大系統事件相關的記錄檔。
 

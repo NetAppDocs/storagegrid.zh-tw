@@ -37,12 +37,12 @@ summary: 在套用修補程式之前、您必須先取得所有必要資料。
  a| 
 恢復軟件包(`.zip`）文件
  a| 
-在套用 Hotfix 之前，link:downloading-recovery-package.html["下載最新的恢復套件檔案"]如果 Hotfix 期間發生任何問題。然後，在套用 Hotfix 之後，下載新的還原套件檔案複本，並將其儲存在安全的位置。更新的恢復套件檔案可讓您在發生故障時還原系統。
+在套用 Hotfix 之前，link:downloading-recovery-package.html["下載最新的恢復套件檔案"]如果 Hotfix 期間發生任何問題。然後、在套用 Hotfix 之後、下載新的恢復套件檔案複本、並將其儲存在安全的位置。更新的恢復套件檔案可讓您在發生故障時還原系統。
 
 
 
 | Passwords.txt檔案  a| 
-選用、且僅在您使用SSH用戶端手動套用修補程式時使用。 `Passwords.txt`檔案是還原套件檔案的一部分 `.zip`。
+選用、且僅在您使用SSH用戶端手動套用修補程式時使用。 `Passwords.txt`檔案是「恢復套件」檔案的一部分 `.zip`。
 
 
 

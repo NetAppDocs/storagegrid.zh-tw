@@ -38,7 +38,7 @@ summary: 完成安裝後、請執行必要的整合與組態工作。您可以�
 
 == 選用工作
 
-* link:../maintain/changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html["更新網格節點 IP 位址"]如果他們在您規劃部署後有所變更，並產生恢復套件。
+* link:../maintain/changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html["更新網格節點 IP 位址"]如果他們在您規劃部署後有所變更、並產生恢復套件。
 * link:../admin/changing-network-options-object-encryption.html["設定儲存加密"]（如果需要）。
 * link:../admin/configuring-stored-object-compression.html["設定儲存壓縮"]以減少儲存物件的大小（如有需要）。
 * link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]如有需要、可隔離及分割網路流量。

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: signing in when sso is down, single sign on failure 
 summary: 如果單一登入（SSO）系統當機、您可能無法登入Grid Manager。在此情況下、您可以暫時停用及重新啟用單一管理節點的SSO。若要停用及重新啟用SSO、您必須存取節點的命令Shell。 
 ---
-= 暫時停用並重新啟用單一管理節點的 SSO
+= 暫時停用並重新啟用單一管理節點的單一登入
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

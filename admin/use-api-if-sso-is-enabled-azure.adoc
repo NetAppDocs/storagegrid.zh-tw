@@ -11,7 +11,7 @@ summary: 如果您已設定並啟用單一登入（SSO）、且使用Azure做為
 
 
 [role="lead"]
-如果您擁有link:../admin/how-sso-works.html["已設定並啟用單一登入（SSO）"]並使用 Azure 做為 SSO 供應商、您可以使用兩個範例指令碼來取得適用於 Grid Management API 或 Tenant Management API 的驗證權杖。
+如果您擁有link:../admin/configuring-sso.html["已設定並啟用單一登入（SSO）"]並使用 Azure 做為 SSO 供應商、您可以使用兩個範例指令碼來取得適用於 Grid Management API 或 Tenant Management API 的驗證權杖。
 
 
 

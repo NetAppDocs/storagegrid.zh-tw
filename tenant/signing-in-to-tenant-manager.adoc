@@ -53,7 +53,13 @@ URL 一律包含完整網域名稱（ FQDN ）、管理節點的 IP 位址、或
 如果 StorageGRID 未使用 SSO 、則會出現下列其中一個畫面：
 
 ** Grid Manager登入頁面。選取 * 租戶登入 * 連結。
-** 租戶管理程式登入頁面。* 帳戶 * 欄位可能已完成。
++
+image::../media/tenant_login_link.png[Grid Manager 登入頁面上的租戶登入連結]
+
+** 租戶管理程式登入頁面。* 帳戶 * 欄位可能已完成、如下所示。
++
+image::../media/tenant_user_sign_in.png[租戶管理程式登入頁面]
+
 +
 ... 如果租戶的20位數帳戶ID未顯示、請選取租戶帳戶名稱（如果出現在最近帳戶清單中）、或輸入帳戶ID。
 ... 輸入您的使用者名稱和密碼。
@@ -71,11 +77,17 @@ URL 一律包含完整網域名稱（ FQDN ）、管理節點的 IP 位址、或
 --
 如果 StorageGRID 使用 SSO 、則會出現下列其中一個畫面：
 
-** 貴組織的 SSO 頁面。
+** 貴組織的 SSO 頁面。例如：
++
+image::../media/sso_organization_page.gif[SSO的組織登入頁面範例]
+
 +
 輸入您的標準 SSO 認證、然後選取 * 登入 * 。
 
 ** 租戶管理程式SSO登入頁面。
++
+image::../media/sign_in_sso.png[如果啟用SSO、請登入租戶帳戶]
+
 +
 ... 如果租戶的20位數帳戶ID未顯示、請選取租戶帳戶名稱（如果出現在最近帳戶清單中）、或輸入帳戶ID。
 ... 選擇*登入*。

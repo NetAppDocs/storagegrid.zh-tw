@@ -25,7 +25,7 @@ indexpage:
     - title: 管理群組權限
       url: "../admin/admin-group-permissions.html"
     - title: 設定單一登入
-      url: "../admin/how-sso-works.html"
+      url: "../admin/configuring-sso.html"
   - title: 使用網格同盟
     links:
     - title: 什麼是網格同盟？

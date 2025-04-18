@@ -21,7 +21,7 @@ summary: 您可以建立通知組態 XML 、並使用 Tenant Manager 將 XML 套
 
 
 .關於這項工作
-您可以將通知組態 XML 與來源貯體建立關聯、以設定事件通知。通知組態 XML 遵循 S3 慣例來設定貯體通知，目的地 Amazon SNS 主題， Kafka 主題或 Webhook 端點則指定為端點的 URN 。
+您可以將通知組態 XML 與來源貯體建立關聯、以設定事件通知。通知組態 XML 遵循 S3 慣例來設定貯體通知、目的地 Kafka 或 Amazon SNS 主題則指定為端點的 URN 。
 
 如需事件通知及如何設定的一般資訊，請參閱 https://docs.aws.amazon.com/s3/["Amazon 文件"^]。如需 StorageGRID 如何實作 S3 儲存區通知組態 API 的相關資訊link:../s3/index.html["實作S3用戶端應用程式的指示"]、請參閱。
 
@@ -29,7 +29,7 @@ summary: 您可以建立通知組態 XML 、並使用 Tenant Manager 將 XML 套
 
 * 當您建立並套用有效的通知組態 XML 時、它必須針對每個目的地使用事件通知端點的 URN 。
 * 雖然可以在啟用 S3 物件鎖定的儲存貯體上設定事件通知、但通知訊息中不會包含物件的 S3 物件鎖定中繼資料（包括保留截止日期和合法保留狀態）。
-* 設定事件通知之後，每當來源儲存區中的物件發生指定事件時，就會產生通知，並傳送至 Amazon SNS 主題， Kafka 主題或用作目的地的 Webhook 端點。
+* 設定事件通知之後、每當來源儲存區中的物件發生指定事件時、就會產生通知、並傳送至使用做為目的地端點的 Amazon SNS 或 Kafka 主題。
 * 如果您為包含物件的儲存區啟用事件通知、則通知僅會針對儲存通知組態後所執行的動作傳送。
 
 
@@ -77,7 +77,7 @@ NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Grid Manage
 +
 在範例中、每當使用前置碼建立物件時、就會傳送事件通知 `images/`。
 
-.. 確認已將通知傳送至目的地 Amazon SNS 主題， Kafka 主題或 Webhook 端點。
+.. 確認已傳送通知至目的地 Amazon SNS 或 Kafka 主題。
 +
 例如、如果您的目的地主題是在 Amazon SNS 上代管、您可以設定服務、以便在傳送通知時傳送電子郵件給您。
 
@@ -129,7 +129,8 @@ NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Grid Manage
 
 
 .相關資訊
-* link:understanding-notifications-for-buckets.html["瞭解庫存箱通知"]
-* link:../s3/index.html["使用S3 REST API"]
-* link:creating-platform-services-endpoint.html["建立平台服務端點"]
+link:understanding-notifications-for-buckets.html["瞭解庫存箱通知"]
 
+link:../s3/index.html["使用S3 REST API"]
+
+link:creating-platform-services-endpoint.html["建立平台服務端點"]

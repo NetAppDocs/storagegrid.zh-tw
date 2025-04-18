@@ -131,7 +131,7 @@ Updating grid network configuration on Name
 ----
 
 
-. 從 Grid Manager 下載新的恢復套件。
+. 從Grid Manager下載新的恢復套件。
 +
 .. 選擇* maintenance *>* System*>* Recovery套件*。
 .. 輸入資源配置通關密碼。

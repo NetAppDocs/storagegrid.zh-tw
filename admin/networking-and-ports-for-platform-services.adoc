@@ -20,10 +20,6 @@ summary: 如果您允許S3租戶使用平台服務、則必須設定網格的網
 * 本機代管的彈性搜尋叢集
 * 支援接收 Amazon Simple Notification Service 訊息的本機應用程式
 * 本地託管的 Kafka 叢集
-* 外部或本機代管的 Webhook 端點，可支援 HTTP POST 通知要求。
-+
-此端點可裝載於各種 Web 伺服器，架構或 Data Processing 工具，例如 Fluentd 。
-
 * 本地託管的S3儲存區位於StorageGRID 相同或其他的例子
 * 外部端點、例如Amazon Web Services上的端點。
 

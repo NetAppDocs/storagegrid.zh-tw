@@ -37,9 +37,9 @@ summary: 您必須先將至少一個端點設定為平台服務的目的地、�
 
 == 通知的端點
 
-StorageGRID 支援 Amazon SNS ， Kafka 和 Webhook 端點。不支援 Simple Queue Service （ SQS ）和 AWS Lambda 端點。
+StorageGRID 支援 Amazon SNS 和 Kafka 端點。不支援 Simple Queue Service （ SQS ）或 AWS Lambda 端點。
 
-對於 Kafka 端點，不支援相互 TLS 。因此、如果您 `ssl.client.auth`在 Kafka Broker 組態中設定為 `required`、可能會導致 Kafka 端點組態問題。
+對於 Kafka 端點、不支援相互 TLS 。因此、如果您 `ssl.client.auth`在 Kafka Broker 組態中設定為 `required`、可能會導致 Kafka 端點組態問題。
 
 
 

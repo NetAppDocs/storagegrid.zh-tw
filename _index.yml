@@ -1,6 +1,6 @@
 ---
 indexpage:
-  title: StorageGRID 12.0 文件
+  title: StorageGRID 11.9 文件
   summary: NetApp StorageGRID 是一套軟體定義的物件儲存套件、可在公有雲、私有雲和混合式多雲端環境中支援各種使用案例。StorageGRID
     提供 Amazon S3 API 的原生支援、並提供領先業界的創新技術、例如自動化生命週期管理、可長期以符合成本效益的方式儲存、保護、保護及保留非結構化資料。
   keywords: storagegrid documentation

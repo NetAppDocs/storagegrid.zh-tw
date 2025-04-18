@@ -19,6 +19,9 @@ summary: 直到安裝完成為止、才會StorageGRID 顯示此狀態。軟體�
 「監視器安裝」頁面會顯示安裝進度。
 
 +
+image::../media/monitor_installation_configure_storage.gif[此影像由周邊文字說明。]
+
++
 藍色狀態列會指出目前正在進行的工作。綠色狀態列表示已成功完成的工作。
 
 +
@@ -38,5 +41,8 @@ NOTE: 安裝程式可確保先前安裝中完成的工作不會重新執行。�
 
 
 . 繼續監控安裝進度、直到*安裝StorageGRID Sid*階段暫停、並在內嵌主控台顯示訊息、提示您使用Grid Manager在管理節點上核准此節點。
++
+image::../media/monitor_installation_install_sgws.gif[此影像由周邊文字說明。]
+
 . 前往 link:selecting-start-recovery-to-configure-appliance-storage-node.html["選取「Start Recovery（開始恢復）」以設定應用裝置儲存節點"]。
 

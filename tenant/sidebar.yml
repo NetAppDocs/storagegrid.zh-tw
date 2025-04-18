@@ -70,8 +70,6 @@ entries:
     url: "/tenant/creating-s3-bucket.html"
   - title: 檢視貯體詳細資料
     url: "/tenant/viewing-s3-bucket-details.html"
-  - title: 管理分行庫存箱
-    url: "/tenant/manage-branch-buckets.html"
   - title: 將 ILM 原則標籤套用至貯體
     url: "/tenant/ilm-policy-tags.html"
   - title: 管理貯體原則
@@ -86,10 +84,8 @@ entries:
     url: "/tenant/using-s3-object-lock.html"
   - title: 更新 S3 物件鎖定預設保留
     url: "/tenant/update-default-retention-settings.html"
-  - title: 為貯體和物件設定 CORS
-    url: "/tenant/configuring-cross-origin-resource-sharing-for-buckets-and-objects.html"
-  - title: 為管理介面啟用 CORS
-    url: "/tenant/enable-cross-origin-resource-sharing-for-management-interface.html"
+  - title: 設定跨來源資源共用（CORS）
+    url: "/tenant/configuring-cross-origin-resource-sharing-cors.html"
   - title: 刪除貯體中的物件
     url: "/tenant/deleting-s3-bucket-objects.html"
   - title: 刪除貯體

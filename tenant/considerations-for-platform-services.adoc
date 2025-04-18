@@ -32,7 +32,7 @@ TIP: 每個租戶帳戶必須由StorageGRID 使用Grid Manager或Grid Management
 
 == 平台服務的設定方式
 
-平台服務會與您使用或設定的外部端點通訊link:configuring-platform-services-endpoints.html["租戶管理程式"]link:understanding-tenant-management-api.html["租戶管理API"]。每個端點代表一個外部目的地，例如 StorageGRID S3 儲存區， Amazon Web Services 儲存區， Amazon SNS 主題， Webhook 端點，或本地， AWS 或其他位置託管的 ElasticSearch 叢集。
+平台服務會與您使用或設定的外部端點通訊link:configuring-platform-services-endpoints.html["租戶管理程式"]link:understanding-tenant-management-api.html["租戶管理API"]。每個端點都代表一個外部目的地、例如 StorageGRID S3 儲存區、 Amazon Web Services 儲存區、 Amazon SNS 主題、或是本地、 AWS 或其他地方託管的 ElasticSearch 叢集。
 
 建立外部端點之後、您可以將 XML 組態新增至貯體、為某個貯體啟用平台服務。XML組態可識別儲存區應執行的物件、儲存區應採取的動作、以及儲存區應用於服務的端點。
 

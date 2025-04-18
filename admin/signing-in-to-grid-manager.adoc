@@ -25,7 +25,7 @@ summary: 您可以在支援的網頁瀏覽器的位址列中輸入管理節點�
 
 === 使用 SSO
 
-登入步驟會在link:how-sso-works.html["已設定單一登入（ SSO ）"]下列情況下略有不同：
+登入步驟會在link:configuring-sso.html["已設定單一登入（ SSO ）"]下列情況下略有不同：
 
 
 
@@ -70,6 +70,9 @@ NOTE: SSO 無法在受限的 Grid Manager 連接埠上使用。您必須使用�
 --
 .. 輸入Grid Manager的使用者名稱和密碼。
 .. 選擇*登入*。
++
+image::../media/sign_in_grid_manager_no_sso.png[登入頁面]
+
 
 
 --
@@ -78,12 +81,21 @@ NOTE: SSO 無法在受限的 Grid Manager 連接埠上使用。您必須使用�
 ** 如果 StorageGRID 正在使用 SSO 、而這是您第一次在此瀏覽器上存取 URL ：
 +
 ... 選擇*登入*。您可以將 0 留在「帳戶」欄位中。
++
+image::../media/sso_sign_in_first_time.png[如果啟用SSO且沒有Cookie、請登入畫面]
+
 ... 在組織的SSO登入頁面上輸入標準SSO認證。例如：
++
+image::../media/sso_organization_page.gif[SSO的組織登入頁面範例]
+
 
 
 ** 如果 StorageGRID 使用 SSO 、且您先前已存取 Grid Manager 或租戶帳戶：
 +
 ... 輸入 * 0* （ Grid Manager 的帳戶 ID ）、或選擇 * Grid Manager* （如果它出現在最近帳戶清單中）。
++
+image::../media/sign_in_grid_manager_sso.png[如果已啟用SSO、請從最近的帳戶清單中選取Grid Manager]
+
 ... 選擇*登入*。
 ... 在組織的SSO登入頁面上、以標準SSO認證登入。
 
@@ -95,6 +107,8 @@ NOTE: SSO 無法在受限的 Grid Manager 連接埠上使用。您必須使用�
 
 
 登入後、會出現 Grid Manager 首頁、其中包含儀表板。若要瞭解所提供的資訊，請參閱link:../monitor/viewing-dashboard.html["檢視及管理儀表板"]。
+
+image::../media/grid_manager_dashboard.png[儀表板]
 
 
 

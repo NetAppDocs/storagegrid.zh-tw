@@ -47,7 +47,7 @@ NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術�
 * 對於負載平衡器上的流量分類器所封鎖的要求、可提供更好的可見度。
 
 
-若要匯出記錄檔、請參閱link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]。
+若要匯出記錄檔、請參閱link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]。
 
 
 

@@ -996,13 +996,6 @@ null
  a| 
 檢查條件金鑰是否存在於目前的要求內容中。
 
-
-
- a| 
-IfExl主義 者
- a| 
-附加至任何條件運算子（ Null 條件除外），以檢查是否缺少該條件金鑰。如果條件鍵不存在則返回 true 。
-
 |===
 
 
@@ -1089,24 +1082,6 @@ S3：listBucketVerions權限
 
 
  a| 
-S3 ：物件鎖定模式
- a| 
-S3：PuttObject
- a| 
-與 PuttObject ， CopyObject 和 CreateMultpartUpload 要求中的要求標頭展開的比較 `object-lock-mode`。
-
-
-
- a| 
-S3 ：物件鎖定模式
- a| 
-S3：PuttObjectRetention
- a| 
-比較 `object-lock-mode` PutObjectRetention 要求中從 XML 實體展開的內容。
-
-
-
- a| 
 S3：物件鎖定剩餘保留天數
  a| 
 S3：PuttObject
@@ -1150,15 +1125,6 @@ S3：PuttObjectTagging
 S3：PuttObjectVersion標記
  a| 
 當物件要求包含標記時、需要特定的標記金鑰和值。
-
-
-
- a| 
-S3:x-amz-server-Side 加密 - 客戶演算法
- a| 
-S3：PuttObject
- a| 
-與 PuttObject ， CopyObject ， CreateMultpartUpload ， UploadPart ， UploadPartCopy 和 CompleteMultpartUpload 要求中的要求標頭中的或 `copy-source-sse-customer-algorithm`展開的比較 `sse-customer-algorithm`。
 
 |===
 

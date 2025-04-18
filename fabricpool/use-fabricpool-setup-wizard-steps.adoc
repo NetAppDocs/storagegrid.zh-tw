@@ -365,7 +365,7 @@ FabricPool 用來連線至外部負載平衡器的連接埠號碼。
 .新租戶和貯體
 --
 . 若要建立新的租戶和貯體、請輸入 * 租戶名稱 * 。例如 `FabricPool tenant`：。
-. 根據您的 StorageGRID 系統是使用link:../admin/using-identity-federation.html["身分識別聯盟"]、link:../admin/how-sso-works.html["單一登入（ SSO ）"]還是兩者、定義租戶帳戶的根存取權。
+. 根據您的 StorageGRID 系統是使用link:../admin/using-identity-federation.html["身分識別聯盟"]、link:../admin/configuring-sso.html["單一登入（ SSO ）"]還是兩者、定義租戶帳戶的根存取權。
 +
 [cols="1a,3a"]
 |===

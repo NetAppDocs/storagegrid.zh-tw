@@ -1,10 +1,10 @@
 ---
-permalink: s3/consistency.html 
+permalink: s3/consistency-controls.html 
 sidebar: sidebar 
 keywords: consistency, consistency control, consistency values 
 summary: 一致性可在物件的可用度與這些物件在不同儲存節點和站台之間的一致性之間取得平衡。您可以根據應用程式的需求變更一致性。 
 ---
-= 一致性
+= 一致性值
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,15 +13,15 @@ summary: 一致性可在物件的可用度與這些物件在不同儲存節點�
 [role="lead"]
 一致性可在物件的可用度與這些物件在不同儲存節點和站台之間的一致性之間取得平衡。您可以根據應用程式的需求變更一致性。
 
-根據預設StorageGRID 、此功能可確保新建立物件的寫入後讀取一致性。任何「Get」追蹤成功完成的「PUT」、都能讀取新寫入的資料。覆寫現有物件、更新中繼資料及刪除的動作最終一致。
+根據預設StorageGRID 、此功能可確保新建立物件的寫入後讀取一致性。任何「Get」追蹤成功完成的「PUT」、都能讀取新寫入的資料。覆寫現有物件、更新中繼資料及刪除的動作最終一致。覆寫通常需要幾秒鐘或幾分鐘才能傳播、但可能需要15天的時間。
 
 如果您想要以不同的一致性執行物件作業、您可以：
 
-* 指定的一致性<<bucket-consistency,每個貯體>>。
+* 指定的一致性<<bucket-consistency-control,每個貯體>>。
 * 指定的一致性<<api-operation-consistency-control,每項 API 作業>>。
 * 執行下列其中一項工作、變更預設的全網格一致性：
 +
-** 在 Grid Manager 中，前往 * 組態 * > * 系統 * > * 儲存設定 * > * 預設儲存區一致性 * 。
+** 在 Grid Manager 中、前往 * 組態 * > * 系統 * > * 儲存設定 * > * 預設一致性 * 。
 ** 。
 +
 
@@ -79,7 +79,7 @@ NOTE: PutObject 和 GetObject 作業必須使用相同的一致性。
 
 
 
-== [[bucker-consistency ]] 指定貯體的一致性
+== [[bucker-consisticity-control]] 指定貯體的一致性
 
 若要設定貯體的一致性、您可以使用 StorageGRID link:put-bucket-consistency-request.html["實現庫位一致性"]要求。或者、您也可以link:../tenant/manage-bucket-consistency.html#change-bucket-consistency["改變貯體的一致性"]從租戶管理程式中執行。
 
@@ -92,7 +92,7 @@ NOTE: PutObject 和 GetObject 作業必須使用相同的一致性。
 
 
 
-== [[how － consistency － and － ILM － rules － consistency （如何一致性和 ILM 規則互動） ] 一致性和 ILM 規則如何互動以影響資料保護
+== [[how － consistency － controls － and － ILM － rules － arize] 一致性和 ILM 規則如何交互以影響數據保護
 
 您選擇的一致性和 ILM 規則都會影響物件的保護方式。這些設定可以互動。
 

@@ -73,7 +73,7 @@ FabricPool 租戶通常不需要使用 S3 Select 。
 .. 您也可以選擇 * 使用網格同盟連線 * 、以允許租戶使用link:../admin/grid-federation-overview.html["網格同盟連線"]進行帳戶複製和跨網格複寫。然後選取要使用的網格同盟連線。
 
 
-. 對於「定義根目錄存取」步驟、請根據您的 StorageGRID 系統使用link:../admin/using-identity-federation.html["身分識別聯盟"]、link:../admin/how-sso-works.html["單一登入（ SSO ）"]或兩者、指定哪個使用者將擁有租戶帳戶的初始根目錄存取權限。
+. 對於「定義根目錄存取」步驟、請根據您的 StorageGRID 系統使用link:../admin/using-identity-federation.html["身分識別聯盟"]、link:../admin/configuring-sso.html["單一登入（ SSO ）"]或兩者、指定哪個使用者將擁有租戶帳戶的初始根目錄存取權限。
 +
 [cols="1a,2a"]
 |===

@@ -68,7 +68,7 @@ S3物件鎖定:: 儲存區是否啟用 S3 物件鎖定。
 . 若要檢視特定貯體的詳細資料、請從表格中選取貯體名稱。
 +
 .. 檢視網頁頂端的摘要資訊、以確認貯體的詳細資料、例如區域和物件計數。
-.. 檢視容量限制使用量和物件數量限制使用量列。如果使用率為 100% 或接近 100% ，請考慮增加限制或刪除部分物件。
+.. 檢視容量限制使用率列。如果使用率為 100% 或接近 100% 、請考慮增加限制或刪除部分物件。
 .. 視需要選取 * 刪除貯體中的物件 * 和 * 刪除貯體 * 。
 +
 [CAUTION]
@@ -88,7 +88,6 @@ S3物件鎖定:: 儲存區是否啟用 S3 物件鎖定。
 **** link:manage-bucket-consistency.html["管理貯體一致性"]
 **** link:enabling-or-disabling-last-access-time-updates.html["上次存取時間更新"]
 **** link:../tenant/creating-s3-bucket.html#capacity-limit["容量限制"]
-**** link:../tenant/creating-s3-bucket.html#object-count-limit["物件數限制"]
 **** link:changing-bucket-versioning.html["物件版本管理"]
 **** link:using-s3-object-lock.html["S3物件鎖定"]
 **** link:update-default-retention-settings.html["預設貯體保留"]
@@ -98,11 +97,10 @@ S3物件鎖定:: 儲存區是否啟用 S3 物件鎖定。
 *** * 平台服務 * ：link:considerations-for-platform-services.html["管理平台服務"]（如果租戶允許）
 *** * 鏟斗存取 * ：檢視或變更選項設定。您必須擁有特定的存取權限。
 +
-**** 進行設定link:configuring-cross-origin-resource-sharing-for-buckets-and-objects.html["CORS 適用於貯體和物件"]、讓其他網域的 Web 應用程式可以存取貯體中的貯體和物件。
+**** 進行設定link:configuring-cross-origin-resource-sharing-cors.html["跨來源資源共享（CORS）"]、讓其他網域的 Web 應用程式可以存取貯體中的貯體和物件。
 **** link:../tenant/manage-bucket-policy.html["控制使用者存取"]適用於 S3 貯體和該貯體中的物件。
 
 
-*** * 分行 * ：檢視庫位的分行庫位清單。link:../tenant/manage-branch-buckets.html["建立新的分行庫位或管理分行庫位"]。
 
 
 

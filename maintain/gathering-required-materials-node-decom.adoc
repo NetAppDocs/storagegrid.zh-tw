@@ -21,14 +21,14 @@ summary: 在執行網格節點取消委任之前、您必須先取得下列資�
  a| 
 恢復套件 `.zip`檔案
  a| 
-您必須link:downloading-recovery-package.html["下載最新的恢復套件"] `.zip`歸檔(`sgws-recovery-package-_id-revision_.zip`）。如果發生故障，您可以使用恢復套件檔案來還原系統。
+您必須link:downloading-recovery-package.html["下載最新的恢復套件"] `.zip`歸檔(`sgws-recovery-package-_id-revision_.zip`）。如果發生故障、您可以使用「恢復套件」檔案來還原系統。
 
 
 
  a| 
 `Passwords.txt`檔案
  a| 
-此檔案包含存取命令列上網格節點所需的密碼，並包含在恢復套件中。
+此檔案包含存取命令列上網格節點所需的密碼、並包含在「恢復套件」中。
 
 
 

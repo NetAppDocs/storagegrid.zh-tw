@@ -17,7 +17,7 @@ summary: 如果網格節點故障、您必須盡快恢復。開始之前、您�
 CAUTION: 由多個節點共同運作的分散式系統。StorageGRID請勿使用磁碟快照來還原網格節點。請參閱每種節點類型的恢復與維護程序。
 
 
-NOTE: 如果整個StorageGRID 網站故障、請聯絡技術支援部門。技術支援部門將與您合作、開發並執行站台恢復計畫、以最大化還原的資料量、並滿足您的業務目標。請參閱 link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"]。
+NOTE: 如果整個StorageGRID 網站故障、請聯絡技術支援部門。技術支援部門將與您合作、開發並執行站台恢復計畫、以最大化還原的資料量、並滿足您的業務目標。請參閱。 link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"]
 
 儘快恢復故障網格節點的原因包括：
 
@@ -39,7 +39,7 @@ NOTE: 如果整個StorageGRID 網站故障、請聯絡技術支援部門。技�
 * 故障的實體或虛擬硬體已被更換及設定。
 * 替換應用裝置上的 StorageGRID 應用裝置安裝程式版本與 StorageGRID 系統的軟體版本相符、如所述 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/verifying-and-upgrading-storagegrid-appliance-installer-version.html["驗StorageGRID 證並升級版本的應用程式"^]。
 * 如果您要還原的網格節點不是主要管理節點、則所還原的網格節點與主要管理節點之間會有連線。
-* 如果您要還原應用裝置儲存節點，則必須在應用裝置安裝期間，指定與原始應用裝置相同的儲存類型（組合，僅中繼資料或僅限資料）。如果您指定不同的儲存類型、則還原將會失敗、並需要重新安裝指定正確儲存類型的應用裝置。
+* 如果您要還原應用裝置儲存節點、則必須在應用裝置安裝期間、指定與原始應用裝置相同的儲存類型（組合、中繼資料或純資料）。如果您指定不同的儲存類型、則還原將會失敗、並需要重新安裝指定正確儲存類型的應用裝置。
 
 
 

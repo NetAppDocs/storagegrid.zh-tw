@@ -20,7 +20,7 @@ summary: 如果您的 StorageGRID 部署包含多個站台、您可以使用複�
 
 
 
-CAUTION: 在設定 StorageGRID 部署以保護站台遺失時，您也必須考慮和link:../s3/consistency.html["一致性"]的影響link:data-protection-options-for-ingest.html["擷取選項"]。
+CAUTION: 在設定 StorageGRID 部署以保護站台遺失時，您也必須考慮和link:../s3/consistency-controls.html["一致性"]的影響link:data-protection-options-for-ingest.html["擷取選項"]。
 
 
 

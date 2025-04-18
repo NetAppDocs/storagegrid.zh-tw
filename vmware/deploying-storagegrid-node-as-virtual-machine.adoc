@@ -160,7 +160,7 @@ NOTE: 如果要恢復網格節點、則必須輸入要恢復的節點名稱。
 .. 使用 * 暫存安裝密碼 * 下拉式清單來指定暫存安裝密碼、以便在新節點加入網格之前、您可以存取 VM 主控台或 StorageGRID 安裝 API 、或使用 SSH 。
 +
 
-NOTE: 暫存安裝密碼僅在節點安裝期間使用。將節點新增至網格之後，您可以使用存取該節點link:../admin/change-node-console-password.html["節點主控台密碼"]，此功能會列在還原套件的檔案中 `Passwords.txt`。
+NOTE: 暫存安裝密碼僅在節點安裝期間使用。將節點新增至網格之後、您可以使用存取該節點link:../admin/change-node-console-password.html["節點主控台密碼"]、此功能列於「恢復套件」的檔案中 `Passwords.txt`。
 
 +
 *** * 使用節點名稱 * ：您為「 * 節點名稱 * 」欄位提供的值會用作暫時安裝密碼。

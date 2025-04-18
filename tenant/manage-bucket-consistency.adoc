@@ -76,7 +76,7 @@ NOTE: 貯體版本管理、 S3 物件鎖定和貯體加密的一致性值無法�
 下列貯體設定不使用強而一致的特性、而且變更的可用度也較高。變更這些設定可能需要一些時間才能生效。
 
 * link:considerations-for-platform-services.html["平台服務組態：通知、複寫或搜尋整合"]
-* link:configuring-cross-origin-resource-sharing-for-buckets-and-objects.html["為貯體和物件設定 StorageGRID CORS"]
+* link:configuring-cross-origin-resource-sharing-cors.html["CORS 組態"]
 * <<change-bucket-consistency,變更貯體一致性>>
 
 

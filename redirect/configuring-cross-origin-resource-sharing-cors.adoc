@@ -1,8 +1,0 @@
----
-permalink: tenant/configuring-cross-origin-resource-cors.html 
-redirect: storagegrid/tenant/configuring-cross-origin-resource-sharing-for-buckets-and-objects.html 
----
-= 
-:allow-uri-read: 
-
-

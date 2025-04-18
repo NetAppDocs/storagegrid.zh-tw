@@ -46,7 +46,7 @@ summary: 您可以執行數項工作、以協助判斷與管理節點和 Storage
 
 
 . 判斷節點的硬體是否離線。
-. 如果您的 StorageGRID 系統已啟用單一登入（ SSO ）、請參閱的步驟link:../admin/configure-sso.html["設定單一登入"]。
+. 如果您的 StorageGRID 系統已啟用單一登入（ SSO ）、請參閱的步驟link:../admin/configuring-sso.html["設定單一登入"]。
 +
 您可能需要暫時停用單一管理節點並重新啟用SSO、才能解決任何問題。
 

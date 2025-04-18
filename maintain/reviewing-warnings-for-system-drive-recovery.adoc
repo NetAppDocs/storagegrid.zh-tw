@@ -13,20 +13,23 @@ summary: 在恢復儲存節點的故障系統磁碟機之前、請先檢閱網�
 [role="lead"]
 在恢復儲存節點的故障系統磁碟機之前、請先檢閱一般link:warnings-and-considerations-for-grid-node-recovery.html["網格節點恢復的警告和注意事項"]和下列特定警告。
 
-儲存節點具有Cassandra資料庫、其中包含物件中繼資料。Cassandra 資料庫可能會在下列情況下重建：
+儲存節點具有Cassandra資料庫、其中包含物件中繼資料。Cassandra資料庫可能會在下列情況下重建：
 
-* 儲存磁碟區故障並恢復。
+* 在離線超過15天之後、儲存節點便會恢復上線。
+* 儲存磁碟區發生故障並已恢復。
 * 系統磁碟機和一或多個儲存磁碟區故障並恢復。
 
 
-重新建立Cassandra時、系統會使用其他儲存節點的資訊。如果最近重新建置Cassandra、則整個網格的Cassandra資料可能尚未一致。如果太多儲存節點離線：
-
-* 某些 Cassandra 資料可能無法使用。
-* 資料可能會遺失。
+重新建立Cassandra時、系統會使用其他儲存節點的資訊。如果有太多儲存節點離線、部分Cassandra資料可能無法使用。如果最近重新建置Cassandra、則整個網格的Cassandra資料可能尚未一致。如果Cassandra重新建置的儲存節點太多離線、或是在15天內重建兩個或多個儲存節點、就可能發生資料遺失。
 
 
+CAUTION: 如果有多個儲存節點故障（或離線）、請聯絡技術支援部門。請勿執行下列恢復程序。資料可能會遺失。
 
-CAUTION: 如果有多個儲存節點故障（或離線）、請聯絡技術支援部門。請勿執行下列恢復程序。資料可能會遺失。如需詳細資訊、請 link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"]參閱。
+
+CAUTION: 如果這是儲存節點故障或恢復後15天內的第二個儲存節點故障、請聯絡技術支援部門。在15天內重建兩個以上儲存節點上的Cassandra、可能會導致資料遺失。
+
+
+NOTE: 如果站台上的多個儲存節點發生故障、可能需要執行站台還原程序。請參閱。 link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"]
 
 
 CAUTION: 如果此儲存節點處於唯讀維護模式、以允許另一個儲存節點擷取故障儲存磁碟區的物件、請先在儲存節點上恢復故障儲存磁碟區的磁碟區、然後再恢復此故障儲存節點。請參閱的說明link:recovering-from-storage-volume-failure-where-system-drive-is-intact.html["從系統磁碟機完好無損的儲存磁碟區故障中恢復"]。

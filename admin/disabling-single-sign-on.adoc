@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: disable sso, disable single sign on 
 summary: 如果您不想再使用此功能、可以停用單一登入（SSO）。您必須先停用單一登入、才能停用身分識別聯盟。 
 ---
-= 停用 SSO
+= 停用單一登入
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

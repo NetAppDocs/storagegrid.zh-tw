@@ -72,4 +72,4 @@ Content-Type: application/xml
 儲存的每個物件版本都會影響 `ObjectCount`回應中的和 `DataBytes`值。刪除標記不會新增至 `ObjectCount`總計。
 
 .相關資訊
-link:consistency.html["一致性"]
+link:consistency-controls.html["一致性值"]

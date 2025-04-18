@@ -41,7 +41,7 @@ SSO未在使用中
  a| 
 您已登出您正在存取的所有管理節點。畫面上會顯示「這個登入頁面」StorageGRID 。*網格管理器*在「*最近的帳戶*」下拉式清單中列為預設值、*帳戶ID*欄位則顯示0。
 
-* 注意： * 如果啟用 SSO 、而且您也登入租戶管理程式、您也必須登入link:../tenant/signing-out-of-tenant-manager.html["登出租戶帳戶"] link:how-sso-works.html["登出 SSO"]。
+* 注意： * 如果啟用 SSO 、而且您也登入租戶管理程式、您也必須登入link:../tenant/signing-out-of-tenant-manager.html["登出租戶帳戶"] link:configuring-sso.html["登出 SSO"]。
 
 |===
 

@@ -21478,709 +21478,601 @@
   <block id="34e0c51b0645847e93351125647002d5" category="list-text">[[substep - 1b]] 變更至稽核記錄所在的目錄。</block>
   <block id="7c03f41530726ffda9e064ae1132bf05" category="inline-xref">子步驟 1. B</block>
   <block id="5b528be020c7faad3f4d056a4f137da4" category="list-text">變更至稽核記錄所在的目錄。請參閱<block ref="b1b12721c28875151da1012031aa105a" category="inline-xref-macro-rx"></block>。</block>
-  <block id="ebe1f90c3d7f9be023f22aa1cd0741bb" category="paragraph">此外，您也可以從 Cassandra 移除低 RAM 節點，以獲得更多中繼資料容量，進而增加每節點中繼資料容量限制。請參閱 <block ref="860bd5dd659a0a357a008ab1080052fb" category="inline-link-macro-rx"></block>。</block>
-  <block id="f52d1bde753037dda2e94ff967eefa4b" category="list-text">每個網格至少有兩個組合儲存節點或僅限資料儲存節點</block>
-  <block id="47132070540f4c01351159b74cca690d" category="list-text">每個站台至少有一個組合儲存節點或僅限資料儲存節點</block>
-  <block id="5563f1ab535373aa7bf4c5388f76d044" category="list-text">每個站台至少有三個組合儲存節點或純中繼資料儲存節點</block>
-  <block id="e5d30dcd53297cc5d0b0b312d0f4da6d" category="list-text"><block ref="ae8ae3b6f1171197c571af5af3c3cf37" category="inline-link-macro-rx"></block>如果他們在您規劃部署後有所變更，並產生恢復套件。</block>
-  <block id="e031a3b5ccbd50158d4de61246baa7b5" category="list-text">管理節點（主要和非主要）：<block ref="0477507f10899867b87b3565143dff3c" prefix=" " category="inline-code"></block></block>
-  <block id="58e099a8e3798ce371f0f2a66dd4a773" category="list-text">您具有根存取權限或其他網格組態權限。</block>
-  <block id="d2889e246327a7b0332f4edd96225dc4" category="paragraph">StorageGRID 會嘗試將 AutoSupport 套件傳送至 NetApp 支援網站 。如果嘗試成功、「*結果*」索引標籤上的*最近結果*和*上次成功時間*值將會更新。如果發生問題， * 最近的結果 * 值會更新為「失敗」，而 StorageGRID 不會再次嘗試傳送 AutoSupport 套件。</block>
-  <block id="5c8b26dbe61ec26bdaa162a71a3cd39a" category="list-text">1 分鐘後，請重新整理瀏覽器中的 AutoSupport 頁面，以存取最近的結果。</block>
-  <block id="b4b938c18dff8cc9c7d9f627ef4c8248" category="inline-link-macro">收集更廣泛的記錄檔和系統資料</block>
-  <block id="50016faddecb6504fc6be81535125ffe" category="admonition">此外，您也可以<block ref="b0e65ca62d765f93bf07d7ea58c9c4d7" category="inline-link-macro-rx"></block>將其傳送至 NetApp 支援網站。</block>
-  <block id="d23114a69ff19996da6d0f800022fed6" category="list-text">將游標放在 ILM 佇列圖形上方，即可查看 *Scan Rate （ objects/sec ） * 屬性的值，這是網格中物件的掃描速率，以及 ILM 的佇列速率。</block>
-  <block id="368894b979c44898b994ad86393d458e" category="list-text">在「 ILM 佇列」區段中，查看下列屬性：</block>
-  <block id="c029b2ab73013751392a562111280056" category="paragraph">完整掃描並不保證 ILM 已套用至所有物件。</block>
-  <block id="d78391b239d85c107938dfb789821507" category="paragraph">如果在修復之後複寫失敗、相同的物件修復可能會再次遞增。+ 當您監控儲存節點磁碟區恢復的進度時，這些屬性可能很有用。如果嘗試的維修次數已停止增加，且已完成完整掃描，則可能已完成修復。</block>
-  <block id="c9efc64620bef7d92ac5698a3e42d3f1" category="list-text">或者，提交和<block ref="72e777a1ea4e0a9a1409176241bb325b" prefix=" " category="inline-code"></block>的 Prometheus 查詢<block ref="9524051c346fa06d223852b445936f2b" prefix=" " category="inline-code"></block>。</block>
-  <block id="cb30904000a636bd033fe758eab6daf8" category="paragraph">租戶可以為同盟群組和使用者設定及管理自己的身分識別來源。如果您的 StorageGRID 系統有此選項、則此選項會停用<block ref="b8febf0f0fceebc066c68cd0a788bf44" category="inline-link-macro-rx"></block>。</block>
-  <block id="03bf16e307db297f6962ee129c9963be" category="paragraph">當用戶端應用程式閒置時，請保持 HTTP 連線開啟，以便稍後處理交易。將閒置的 HTTP 連線保持開啟最多 10 分鐘。StorageGRID 可能會自動關閉開啟且閒置超過 10 分鐘的 HTTP 連線。</block>
-  <block id="2d39bd9b96b98aae22fb871e22b614d6" category="paragraph">平衡緩慢的啟動效益和資源配置，決定保持閒置連線開啟的時間長度。</block>
-  <block id="5b5535d30f087c02a4f42777545c9683" category="paragraph">隨著時間推移、隨著負載平衡需求的變更、HTTP連線可能不再是最佳狀態。當用戶端應用程式為每個交易建立個別的 HTTP 連線時，系統會執行最佳的負載平衡，但此方法會抵消與持續連線相關的寶貴效益。</block>
-  <block id="0708b78a456f63c0284de4c1d9fcd5cd" category="paragraph">每個 StorageGRID 系統的拓撲都有不同的尖峰處理量，可同時進行交易和連線。尖峰處理量取決於運算，網路，儲存資源， WAN 連結，以及 StorageGRID 系統支援的伺服器，服務和應用程式數量。</block>
-  <block id="ffb82d46f34d87adf989e68896e48617" category="paragraph">支援多種用戶端應用程式的系統。StorageGRID當您決定最大並行連線數量時，請記住這一點。如果用戶端應用程式包含多個軟體實體，且每個實體都建立與 StorageGRID 系統的連線，則會在實體之間加入所有連線。在下列情況下、您可能必須調整並行連線的最大數量：</block>
-  <block id="7fe8b8b6c4ed4f18c7757a4fda956de8" category="summary">網格中的每個節點都有節點主控台密碼，您可以使用該密碼登入節點。根據預設，每個節點都有唯一的密碼。您可以將每個密碼變更為新的唯一密碼，也可以變更每個節點的密碼，以使用通用密碼。密碼會儲存在恢復套件中。</block>
-  <block id="40267a3085c163573d5b984e6a64b63b" category="paragraph">您可以使用節點主控台密碼，以「 admin 」身分使用 SSH 登入節點，或以 VM/ 實體主控台連線的 root 使用者身分登入。您可以使用下列其中一個選項來變更節點主控台密碼：</block>
-  <block id="8382e1476d07472a8bfad41ec917b0f0" category="list-text">自動將隨機密碼套用至每個節點</block>
-  <block id="0c04a013452de7a812c352d6dd5ed45c" category="list-text">指定一個通用密碼並套用至所有節點</block>
-  <block id="6903929fc282b70bc065fc2b75269e02" category="list-text">指定唯一密碼並套用至一或多個節點</block>
-  <block id="34468a0b84ee7761af6c5d2137969f10" category="paragraph">密碼會儲存在恢復套件的更新檔案中<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>。密碼會列在檔案的密碼欄中。</block>
-  <block id="f34fdb5f43bf6e9ac229892e3cfdc6ac" category="inline-link-macro">SSH 存取密碼</block>
-  <block id="4d348484ab4b23537f37030caa028e3e" category="admonition"><block ref="2969c8c7709d73ab450505af0e1fc0fd" category="inline-link-macro-rx"></block>用於節點之間通訊的 SSH 金鑰與節點主控台密碼是分開的。此程序不會變更 SSH 存取密碼。</block>
-  <block id="7cd8c185b4366da0b70d4838a5824009" category="paragraph">變更節點主控台密碼之前、請先下載目前的恢復套件。如果任何節點的密碼變更程序失敗、您可以使用此檔案中的密碼。</block>
-  <block id="555bfca262946f8451f033b5a3e34e55" category="list-text">將恢復軟件包文件複製<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>到兩個安全且獨立的位置。</block>
-  <block id="87d3d0b2d7c52e5acf52c8d0e0c61ad3" category="admonition">恢復套件檔案必須受到保護、因為它包含可用於從 StorageGRID 系統取得資料的加密金鑰和密碼。</block>
-  <block id="086a19b8710c3af16f3de31ed7c9da5d" category="section-title">提供新密碼</block>
-  <block id="44f65ea5b1914f04f8c7c10ced8e08f9" category="list-text">選取您要使用的密碼變更方法。</block>
-  <block id="cd396ddad75d5f48705b79ae59e62f50" category="list-text">* 自動 * ： StorageGRID 會自動將新的隨機主控台密碼指派給所有節點。</block>
-  <block id="b4477e20a4db58c2c39484d47efee065" category="list-text">* 自訂 * ：您提供主控台密碼。</block>
-  <block id="086247a9b57fde6eefee2a0c4752242d" category="open-title">自動</block>
-  <block id="04c3801f7175c39d8e9b9f48660c2a2c" category="list-text">* 通用主控台密碼 * ：將相同的主控台密碼套用至所有節點。</block>
-  <block id="1f9be163ddfb16a1685ba334ae4df168" category="list-text">* 唯一主控台密碼 * ：在一或多個節點上套用不同的密碼。</block>
-  <block id="d2607d876aee41a9abe79b74d00bf5f4" category="list-text">如果您選取 * 全域主控台密碼 * ，請輸入您要用於所有節點的密碼。</block>
-  <block id="c17a172dd26c94d9d931861e9ef87377" category="list-text">如果您選取 * 唯一主控台密碼 * ，請輸入一個或多個節點的唯一密碼。</block>
-  <block id="cd9a4dc213ffa01763a7fb79da0cd8e1" category="section-title">完成密碼變更</block>
-  <block id="881c01caf2c924608201cfd58a86ebef" category="list-text">當確認對話方塊出現時，如果您已準備好讓 StorageGRID 開始變更節點主控台密碼，請選取 * 是 * 。</block>
-  <block id="3b0a2e181f951c4112a68d7f27468633" category="paragraph">StorageGRID 會產生包含新密碼的新恢復套件。</block>
-  <block id="8a75fb614258371819db58fb82bc43ad" category="list-text">當新的恢復套件準備就緒時，請選取 * 下載新的恢復套件 * 並儲存恢復套件。</block>
-  <block id="ef824321e23429bb67a619ef4b7521c1" category="list-text">將新的恢復軟件包文件複製<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>到兩個安全且獨立的位置。</block>
-  <block id="901da05c2d261dd20f5928a4871f3afd" category="admonition">請勿覆寫舊的恢復套件。</block>
-  <block id="7eaa03ac49485b998313650d03cd7df6" category="paragraph">您必須保護還原檔案的安全，因為它包含可用於從 StorageGRID 系統取得資料的加密金鑰和密碼。</block>
-  <block id="bbc6ec73394eb669eecb9139d085ed9d" category="list-text">選取核取方塊，表示您已下載新的還原套件並驗證內容。</block>
-  <block id="be39a29a46763ebc9607f1cb77fa3c99" category="paragraph">StorageGRID 會更新每個節點的密碼。</block>
-  <block id="7cf3abfab8b4f409207c8667e6f960c9" category="paragraph">如果在更新程序期間發生錯誤，進度列會列出無法變更密碼的節點數。系統會在任何無法變更密碼的節點上、自動重試此程序。如果程序結束時、部分節點仍未變更密碼、則會出現*重試*按鈕。</block>
-  <block id="3229973ab2544a2b375749661b67cade" category="list-text">當進度列顯示沒有剩餘的更新時，請選取 * 完成 * 。</block>
-  <block id="a33eeb7009166f3634e8abf541785be9" category="inline-xref">您下載的第一個恢復套件</block>
-  <block id="3b44240abcf4926bd2b6d9d4583eab3a" category="list-text">變更所有節點的節點主控台密碼後<block ref="51b59f8aa6b6428d533b811e5a559ba0" category="inline-xref-macro-rx"></block>、請刪除。</block>
-  <block id="9e02ce05153e8bfe31720490adcbaead" category="paragraph">管理節點的新存取密碼和每個節點的新內部金鑰會儲存在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>還原套件的檔案中。金鑰會列在該檔案的密碼欄中。</block>
-  <block id="42cf270f7a2b900ae6eecdf2567e09e8" category="paragraph">變更 SSH 存取金鑰之前，請先下載目前的還原套件。如果任何節點的金鑰變更程序失敗、您可以使用此檔案中的金鑰。</block>
-  <block id="3ace5410c099421b01ffc3c8b7c9af0d" category="paragraph">當變更 SSH 存取金鑰程序開始時，會產生新的還原套件，其中包含新金鑰。然後、金鑰會在每個節點上更新。</block>
-  <block id="c71bf63aaad5b84f16cd48643123540d" category="list-text">等待產生新的恢復套件、這可能需要幾分鐘的時間。</block>
-  <block id="ce70e55ba3c73d871ceffa982717dbaa" category="list-text">啟用「下載新的恢復套件」按鈕時，請選取 * 下載新<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>的恢復套件 * 並將新的恢復套件檔案儲存到兩個安全且獨立的位置。</block>
-  <block id="5568988509d3ec2f237d08e7ee3c1cf6" category="list-text">爲所有節點更改 SSH 訪問密鑰後，刪除<block ref="51b59f8aa6b6428d533b811e5a559ba0" category="inline-xref-macro-rx"></block>。</block>
-  <block id="882c921201ba8b3228ae8d4ea2421ea0" category="list-text">您也可以選擇 * maintenance * &gt; * System* &gt; * Recovery package* 下載新恢復套件的其他複本。</block>
-  <block id="830c05a51ee9a3b1927cec7f254d51cd" category="inline-link-macro">SSO的運作方式</block>
-  <block id="f058d101af947b91ecda59a7379fd440" category="paragraph">如果啟用 SSO 且使用者的瀏覽器逾時、使用者必須重新輸入其 SSO 認證、才能再次存取 StorageGRID 。請參閱。 <block ref="8322becc56f76089f93a27187502f986" category="inline-link-macro-rx"></block></block>
-  <block id="6566767008c1f2bc2095a18fc2fb1b59" category="summary">請使用此程序來變更StorageGRID 供應密碼。恢復、擴充和維護程序需要通關密碼。下載還原套件備份時也需要使用複雜密碼，其中包括網格拓撲資訊，網格節點主控台密碼，以及 StorageGRID 系統的加密金鑰。</block>
-  <block id="c06bbe70f55aaa2b69cae536d4315a66" category="paragraph">請使用此程序來變更StorageGRID 供應密碼。恢復、擴充和維護程序需要通關密碼。下載還原套件備份時也需要使用複雜密碼，其中包括網格拓撲資訊，網格節點主控台密碼，以及 StorageGRID 系統的加密金鑰。</block>
-  <block id="a30f61e908ecc69c9d6e6e62db465790" category="inline-link-macro">下載恢復套件</block>
-  <block id="816e30ac0e0d618d6ab80368dfda24b4" category="paragraph">許多安裝和維護程序和都需要隨需提供密碼<block ref="2ac4cfccf79ccd2bbd939831a19de447" category="inline-link-macro-rx"></block>。資源配置複雜密碼未列在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>檔案中。請務必記錄資源配置通關密碼、並將密碼保存在安全的位置。</block>
-  <block id="d0d09bb6d304a68a314b753228e76054" category="admonition">將資源配置複雜密碼儲存在安全的位置。安裝，擴充及維護程序均需使用此功能。</block>
-  <block id="08c4151f92229a65863e2abb244ca666" category="list-text">請輸入新的資源配置複雜密碼來下載新的恢復套件。</block>
-  <block id="c711c6e15f0553ec72b05912e8301aa1" category="admonition">變更資源配置複雜密碼後，您必須立即下載新的還原套件。恢復套件檔案可讓您在發生故障時還原系統。</block>
-  <block id="b22311b927add1525e2279f19e72a4af" category="inline-link-macro">手動收集記錄檔和系統資料，然後傳送 AutoSupport 套件</block>
-  <block id="4ba1b147341aaf819018bb0567a0df29" category="list-text">* 日誌收集 * <block ref="858b8f9ab90c649067c45545d6eb7eca" category="inline-link-macro-rx"></block>：。</block>
-  <block id="2df10d0f1b45556613573d94ccb70071" category="summary">您可以依照「設定 SSO 」精靈的指示，進入沙箱模式來設定和測試單一登入 \(SSO) ，然後再為所有 StorageGRID 使用者啟用。啟用 SSO 之後，您可以在需要變更或重新測試組態時，返回沙箱模式。</block>
-  <block id="46228312aaeac2a3bb2b38042b077c8e" category="doc">設定SSO 功能</block>
-  <block id="7e8deb5508033dce4d76cdcb11d67bdd" category="paragraph">您可以依照「設定 SSO 」精靈的指示，進入沙箱模式來設定和測試單一登入（ SSO ），然後再為所有 StorageGRID 使用者啟用。啟用 SSO 之後，您可以在需要變更或重新測試組態時返回沙箱模式。</block>
-  <block id="e932793a8a8611b57aa327ad738b4df6" category="list-text">對於身分識別聯盟 * LDAP 服務類型 * ，您可以根據您打算使用的 SSO 身分識別提供者，選取 Active Directory 或 Entra ID 。</block>
-  <block id="0248eceb183034c82899c7bc91d5d37c" category="list-text">entra ID</block>
-  <block id="b80181d61b2afe23008898c5bb0e86a6" category="list-text">來自 Entra ID 的回應包含使用者主要名稱（ UPN ）。</block>
-  <block id="aa517d15af96fe1d76cb79b779113d7f" category="paragraph">若要讓 StorageGRID （服務供應商）和 SSO 身分識別供應商安全地就使用者驗證要求進行通訊，請完成下列工作：</block>
-  <block id="bd6e26e97dc82aa047bcb427244647c6" category="list-text">在 StorageGRID 中設定。</block>
-  <block id="a41926c0c24bf1f8ff83cb85ab379ce1" category="list-text">使用 SSO 身分識別供應商的軟體，為每個管理節點建立信賴方信任（ AD FS ），企業應用程式（ Entra ID ）或服務供應商（ PingFederate ）。</block>
-  <block id="3163c32ca0679329526f3b57543f866d" category="list-text">返回 StorageGRID 以啟用 SSO 。</block>
-  <block id="9160d35bf30f24d9390408d8e1b129b8" category="paragraph">沙箱模式可讓您在啟用SSO之前、輕鬆執行此後端和後端組態、並測試所有設定。使用沙箱模式時，使用者無法使用 SSO 登入。</block>
-  <block id="d4df3687b7b1f6be4df0608c999bcf5c" category="list-text">選擇*組態*&gt;*存取控制*&gt;*單一登入*。此時會出現單一登入頁面。</block>
-  <block id="4872e366c6065b5cc6162959729be8c9" category="admonition">如果「設定 SSO 設定」按鈕已停用，請確認您已將身分識別提供者設定為同盟身分識別來源。請參閱 <block ref="15423b684c3103b08dc754482cd0948a" category="inline-link-macro-rx"></block>。</block>
-  <block id="ba7fa7018f5e328875f22d9af2689268" category="list-text">選取 * 設定 SSO 設定 * 。隨即顯示「提供身分識別提供者詳細資料」頁面。</block>
-  <block id="7eb320eb631f7cde5384b2f21693ee0d" category="section-title">提供身分識別供應商詳細資料</block>
-  <block id="2fb7a38e4bf57d67ca7c2240264cd414" category="list-text">如果您選取 Active Directory 做為 SSO 類型，請輸入身分識別提供者的 * 同盟服務名稱 * ，其內容與 Active Directory Federation Service （ AD FS ）中的顯示內容完全相同。</block>
-  <block id="5a3739c67e2d56ce5b078be5d5001584" category="list-text">選擇*繼續*。隨即顯示「提供信賴方識別碼」頁面。</block>
-  <block id="9c812bc46a66a3f7f7a8feeadcb84fcf" category="section-title">[[enter-sandbox 模式 ]] 提供依賴方識別碼</block>
-  <block id="6c7d773a9aafb5ca24b81bb84ae849b5" category="list-text">根據您選取的 SSO 類型，填寫「提供信賴方識別碼」頁面上的欄位。</block>
-  <block id="a78e1b2eb8cf5969b41838b8e4c0bc72" category="list-text">指定 StorageGRID 的 * 依賴方識別碼 * 。此值可控制AD FS中每個依賴方信任所使用的名稱。</block>
-  <block id="ece06b31986f3ede8832313c02c4944e" category="list-text">如果您的網格包含多個管理節點、請在識別碼中包含字串<block ref="fbf88d171d764619e1c5cb74daa3dcdd" prefix=" " category="inline-code"></block>。例如<block ref="fda1a4c0189b67a8b86f2e0e344ea53c" prefix=" " category="inline-code"></block>：。包含此字串會產生表格，根據節點的主機名稱，顯示網格中每個管理節點的信賴方識別碼。</block>
-  <block id="5adf7c4cfbd7f00f525b85394c0aa4e9" category="list-text">選取 * 儲存並進入沙箱模式 * 。</block>
-  <block id="97cf5c6876ccb1b71aac0cfba1f167a3" category="list-text">在「企業應用程式」區段中、指定*企業應用程式名稱* StorageGRID 以供參考。此值控制您在「 Entra ID 」中使用的每個企業應用程式名稱。</block>
-  <block id="b073a04fc05f32a9d486a6c1c939f95b" category="list-text">如果您的網格包含多個管理節點、請在識別碼中包含字串<block ref="fbf88d171d764619e1c5cb74daa3dcdd" prefix=" " category="inline-code"></block>。例如<block ref="fda1a4c0189b67a8b86f2e0e344ea53c" prefix=" " category="inline-code"></block>：。包含此字串會產生表格，根據節點的主機名稱，顯示系統中每個管理節點的企業應用程式名稱。</block>
-  <block id="53e1f9fb31e56cfb209cba3920da59de" category="inline-link-macro">在 Entra ID 中建立企業應用程式</block>
-  <block id="32e0502222858b877555f37f8cb11333" category="list-text">請依照中的步驟<block ref="04cc94ad72557185e762b0f03c5d124a" category="inline-link-macro-rx"></block>、為表格中列出的每個管理節點建立企業應用程式。</block>
-  <block id="b917ad28a70496bb95659b5bda698fe2" category="list-text">從 Entra ID 複製每個企業應用程式的同盟中繼資料 URL 。然後、將此URL貼到StorageGRID 相關的*聯盟中繼資料URL*欄位。</block>
-  <block id="7358c309bcfcb60ebe415bac303bf006" category="list-text">複製並貼上所有管理節點的同盟中繼資料 URL 之後，請選取 * 儲存並進入沙箱模式 * 。</block>
-  <block id="15c371f1cf2a272e3c88b103e56da2e1" category="list-text">如果您的網格包含多個管理節點、請在識別碼中包含字串<block ref="fbf88d171d764619e1c5cb74daa3dcdd" prefix=" " category="inline-code"></block>。例如<block ref="fda1a4c0189b67a8b86f2e0e344ea53c" prefix=" " category="inline-code"></block>：。包含此字串會根據節點的主機名稱，在表格中顯示系統中每個管理節點的 SP 連線 ID 。</block>
-  <block id="aabeea1917c773d851992b904f04e28d" category="paragraph">儲存組態並進入沙箱模式後，您可以針對所選的 SSO 類型完成並測試組態。</block>
-  <block id="9b809614f716c6d2d93c83819bd765e8" category="paragraph">根據需要、可將其保留在沙箱模式中。StorageGRID不過，只有同盟使用者和本機使用者可以登入。</block>
-  <block id="33596e7fe4f2ad33d248164d7da08dbf" category="list-text">使用「設定 SSO 」頁面的表格中所示的每個信賴方識別碼，建立一或多個信賴方信任 StorageGRID 。</block>
-  <block id="e313b6c7076b36fcef0debf79a13130b" category="list-text">前往 Azure 入口網站。</block>
-  <block id="7844f47c2bf512aa062a99c7d5a3cd95" category="list-text">請遵循中的步驟<block ref="04cc94ad72557185e762b0f03c5d124a" category="inline-link-macro-rx"></block>，將每個管理節點的 SAML 中繼資料檔案上傳至對應的 Entra ID 企業應用程式。</block>
-  <block id="787624d36f6e196f1d4217d3c1e001ed" category="list-text"><block ref="8f13466a91a00a999902dbcdd9a378d7" category="inline-link-macro-rx"></block>。使用每個管理節點的 SP 連線 ID （如「設定 SSO 」頁面表格所示），以及您為該管理節點下載的 SAML 中繼資料。</block>
-  <block id="473a5a5e13b405cb525d74f7a5d25b05" category="section-title">[[test-SSO ]] 測試組態</block>
-  <block id="552512af45033355da3129ad7f7d4109" category="paragraph">在您強制整個 StorageGRID 系統使用單一登入之前，請確認每個管理節點都已正確設定單一登入和單一登出。</block>
-  <block id="6f72f91ad806cf4d5c7f8008dfec31a4" category="list-text">在「設定 SSO 」頁面中，找到精靈「測試」組態步驟中的連結。</block>
-  <block id="11b555c7a5f66ee29f2f5243abfee88d" category="list-text">從「設定 SSO 」頁面，選取沙箱模式訊息中的第一個連結。</block>
-  <block id="b1c117130eb05bbfe21e8e8fce4981b8" category="list-text">從設定 SSO 精靈的測試組態步驟中，選取 * 啟用 SSing* 。</block>
-  <block id="b42e62945215dd4bf6100c9cf738057a" category="list-text">檢閱警告訊息，然後選取 * 啟用 SSing* 。</block>
-  <block id="333af8cad00cb2853a14b94568d2e6df" category="paragraph">現在已啟用單一登入。此時會出現單一登入頁面，其中包含您剛設定的 SSO 詳細資料。</block>
-  <block id="9106cfb71e26f0d06bc55703499d34a4" category="list-text">若要編輯組態，請選取 * 編輯 * 。</block>
-  <block id="3877f423ff55a7558c8dee4e669ce400" category="list-text">若要停用單一登入，請選取 * 停用 SSO* 。</block>
-  <block id="d0c7e73786e5368917c3f2c8db408389" category="admonition">如果您使用 Azure 入口網站，且從用來存取「 Entra ID 」的同一部電腦存取 StorageGRID ，請確定 Azure 入口網站使用者也是授權的 StorageGRID 使用者（在嘗試登入 StorageGRID 之前，已匯入 StorageGRID 或登出 Azure 入口網站的同盟群組中的使用者）。</block>
-  <block id="8548a5269314c938d9b9787ec38ae4a0" category="paragraph">支援使用安全聲明標記語言2.0（SAML 2.0）標準的單一登入（SSO）StorageGRID 。之後<block ref="f138834e4d3ca4dba7b9743ee76f8074" category="inline-link-macro-rx"></block>、所有使用者都必須先由外部身分識別供應商驗證、才能存取 Grid Manager 、 Tenant Manager 、 Grid Management API 或 Tenant Management API 。本機使用者無法登入 StorageGRID 。</block>
-  <block id="8779e203ad4d8f9ce997d0bc574257c5" category="paragraph">許多安裝和維護程序，以及下載 StorageGRID 恢復套件時，都需要使用隨需密碼。也需要通關密碼才能下載適用於StorageGRID 整個系統的網格拓撲資訊和加密金鑰備份。您可以<block ref="41f4547eae3828e54749be1657f9b5a9" category="inline-link-macro-rx"></block>視需要進行。</block>
-  <block id="7107acd2edec21eb8897d7c10acdff43" category="paragraph">網格中的每個節點都有節點主控台密碼，您必須以「 admin 」的身分使用 SSH 登入節點，或是以 VM/ 實體主控台連線的 root 使用者登入。您可以視需要<block ref="ba47d995b54cf006a5b0db5a6d249f8e" category="inline-link-macro-rx"></block>為每個節點執行。</block>
-  <block id="30c608a278631687cb255de6359cfade" category="summary">您可以使用 Entra ID 為系統中的每個管理節點建立企業應用程式。</block>
-  <block id="49ce8e5c962d89a3a41c17a824251967" category="list-text">您已開始設定 StorageGRID 的單一登入，並選擇 * Entra ID* 作為 SSO 類型。</block>
-  <block id="815989f062d1eb381e51783f12cb3b93" category="inline-link-macro">已進入沙箱模式</block>
-  <block id="feb7c87ff1edeec7880fa4d1b9ad39a2" category="list-text">您在 Grid Manager 中擁有<block ref="4e4720e069fd7fd81384c8e5feda1cbc" category="inline-link-macro-rx"></block>。</block>
-  <block id="376577665e48f7f30edd44ce75226d2b" category="list-text">您的系統中每個管理節點都有*企業應用程式名稱*。您可以從「設定 SSO 」頁面上的「管理節點詳細資料」表格複製這些值。</block>
-  <block id="7843ffd069859391099b9077724e3699" category="list-text">您在使用 Entra ID 建立企業應用程式方面擁有豐富經驗。</block>
-  <block id="b8e120f2b419a7375298c5e253aa8be7" category="list-text">您在 Entra ID 帳戶中擁有下列其中一個角色： Global Administrator ， Cloud Application Administrator ， Application Administrator 或服務主體的擁有者。</block>
-  <block id="c6b18a8b50d60fd41cb396857ab9f478" category="section-title">存取 Entra ID</block>
-  <block id="2335a11af0c142406458388ce4e59950" category="list-text">瀏覽至<block ref="596183f02fc5dacbf18c47ef9a1195b2" category="inline-link-rx"></block>。</block>
-  <block id="849e5744abee896a74859b2999677f41" category="paragraph">若要在 StorageGRID 中儲存 Entra ID 的 SSO 組態，您必須使用 Entra ID 為每個管理節點建立企業應用程式。您將從 Entra ID 複製同盟中繼資料 URL ，並將其貼到 Configure SSO 頁面上對應的 * 同盟中繼資料 URL* 欄位中。</block>
-  <block id="ad8b5b70f4083e18be118b52e0f8a952" category="list-text">在 Entra ID Enterprise 應用程式窗格中，選取 * 新應用程式 * 。</block>
-  <block id="7ec88ad168098cac37d810918c749a6e" category="list-text">對於名稱，請在「設定 SSO 」頁面上，輸入從「管理節點」詳細資料表複製的 * 企業應用程式名稱 * 。</block>
-  <block id="f69baeede9bc45e45fd357204eb35e3b" category="list-text">移至「設定 SSO 」頁面，然後將 URL 貼到與您使用的 * 企業應用程式名稱 * 相對應的 * 聯盟中繼資料 URL* 欄位中。</block>
-  <block id="864cb089f04aa41c7b84a6cf510543b9" category="list-text">在您貼上每個管理節點的聯合中繼資料 URL ，並對 SSO 組態進行所有其他必要變更之後，請在「設定 SSO 」頁面上選取 * 儲存 * 。</block>
-  <block id="f327d09d54ace76959110e8ff3e30fb2" category="list-text">儲存您要上傳至「 Entra ID 」的檔案。</block>
-  <block id="d35c4e48b182dbc012942f4faff2c250" category="paragraph">為每個 StorageGRID 管理節點下載 SAML 中繼資料檔案後，請在 Entra ID 中執行下列步驟：</block>
-  <block id="3fd05277600625375c774602d7279aac" category="inline-link-macro">測試每個應用程式</block>
-  <block id="7427a1187e18c4e2f6a49e4466602155" category="list-text"><block ref="58835f9d14f4fb299a6d86fac21d6a4b" category="inline-link-macro-rx"></block>。</block>
-  <block id="d980033048ebfdc0cc1eb3851ff9984f" category="list-text">您在 Grid Manager 中擁有<block ref="e6eee5ead81fcea77e5c306bce58c4c7" category="inline-link-macro-rx"></block>。</block>
-  <block id="eaccbc8a24ae41e98b94a6659b9e2cf5" category="list-text">您知道系統中每個管理節點的完整網域名稱（或IP位址）和依賴方識別碼。您可以在「 StorageGRID 設定 SSO 」頁面的「管理節點詳細資料」表格中找到這些值。</block>
-  <block id="bf3101a3e2ee7c41580cd127e755f1c6" category="inline-link-macro">測試所有依賴方信任</block>
-  <block id="ec07876973166c49f2564c31a546d243" category="list-text">完成後，請返回 StorageGRID 並<block ref="4d4808b0f10659c1094fc80710e0af6c" category="inline-link-macro-rx"></block>確認已正確設定。</block>
-  <block id="f2768c2ec25a8d0e0100f23b7981b799" category="list-text">完成後，請返回 StorageGRID 並<block ref="4d4808b0f10659c1094fc80710e0af6c" category="inline-link-macro-rx"></block>確認已正確設定。</block>
-  <block id="beb5c8ef0e95fd971e0ba76d0f86d36a" category="list-text">您的系統中每個管理節點都有* SP連線ID*。您可以在「設定 SSO 」頁面的「管理節點詳細資料」表中找到這些值。</block>
-  <block id="46b4d10ac1706a1233b65421f3dd306e" category="list-text">您擁有 <block ref="891015288c56739d04f3efc48cacc719" category="inline-link-macro-rx"></block>PingFederate Server 。</block>
-  <block id="51d7c389af9f5037ab8662511db5d8af" category="list-text">選取<block ref="cb178013eee12335a73fea65441753f0" category="inline-xref-macro-rx"></block>您建立的。</block>
-  <block id="52a47afc3876b9452ed8b628b58e3b57" category="list-text">從管理節點的「設定 SSO 」頁面中，選擇您下載的 SAML 中繼資料檔案。</block>
-  <block id="044ab09e1a68468681f3379aa281a73a" category="list-text">選取<block ref="a17658abed3af7157b998f845dbcd690" category="inline-xref-macro-rx"></block>您建立或匯入的。</block>
-  <block id="1baaf5db61a64d4379c59c823cc81c16" category="paragraph">建立租戶帳戶的步驟會因是否已設定及<block ref="fcbaa170fbe756b1136a754d9525cab3" category="inline-link-macro-rx"></block>所設定、以及您用來建立租戶帳戶的 Grid Manager 帳戶是否屬於具有「根」存取權限的管理群組而異<block ref="1483d3b63fcfd50b42638ae893f21637" category="inline-link-macro-rx"></block>。</block>
-  <block id="1425d720c9f3b23b3f323f2c3d885ef7" category="doc">停用 SSO</block>
-  <block id="c0ee2b8c9dba28689edc30a9d2c5a83a" category="paragraph">對於每個網格同盟連線、 * 最後一個錯誤 * 欄會顯示租戶資料複寫到其他網格時發生的最新錯誤（如果有）。此欄只會顯示最後發生的跨網格複寫錯誤，不會顯示先前可能發生的錯誤。此欄可能會因為下列其中一個原因而發生錯誤：</block>
-  <block id="327f0c923a06c571a5ed7c0a248a4f8d" category="list-text">找不到來源物件版本。</block>
-  <block id="f612daafaa0ec25b4747667cbb4d7b38" category="list-text">找不到來源貯體。</block>
-  <block id="c0c78dc426d2d89b8f0cd2f1de1a93c8" category="list-text">來源物件具有 S3 物件鎖定設定，不符合目的地網格的租戶層級保留設定。</block>
-  <block id="92cf70942c6799f74fbe3d18d4e7fdc7" category="list-text">來源物件具有 S3 物件鎖定設定，而目的地儲存區上的 S3 物件鎖定已停用。</block>
-  <block id="af94b878f1292b6ec9100820f7ac8a0b" category="list-text">為兩個網格設定相同的 SSO 身分識別提供者（ IDP ）。請參閱。 <block ref="5b0bca7470b8bcff72e59904d1628670" category="inline-link-macro-rx"></block></block>
-  <block id="0baf2774c082f3746eb6da3a9db8d410" category="paragraph">工作流程圖摘要說明在兩個網格上的貯體之間設定跨網格複寫的步驟。</block>
-  <block id="d82bc193408d70d51ae5406dc041c6b3" category="paragraph">您可以將跨網格複寫設定為單向或雙向進行。</block>
-  <block id="e44e97386c78a771549088a53185be3f" category="paragraph">如果您只在一個網格上為某個儲存格啟用跨網格複寫、則新增至該儲存格（來源儲存格）的物件會複寫至另一個網格（目的地儲存格）上的對應儲存格。然而、新增至目的地儲存區的物件不會複寫回來源。在圖中，已啟用從網格 1 到網格 2 的跨網格複寫<block ref="60180bbbfc49f093933713b6001e86c5" prefix=" " category="inline-code"></block>，但未在其他方向啟用。</block>
-  <block id="b396cc3c196ee94bbaa4c296bd7e2886" category="paragraph">S3 用戶端可發出 GetObject 或 HeadObject 要求、以驗證物件的複寫狀態。回應包含 StorageGRID 專屬的回應標頭，其中包含<block ref="349f2558b0122acbc616838711df3954" prefix=" " category="inline-code"></block>下列其中一個值：</block>
-  <block id="1551018282c8c11d2a2c553cc68b0285" category="list-text">* 失敗 * ：任何網格連線的複寫均未擱置，至少有一個失敗且永久失敗。使用者必須解決此錯誤。</block>
-  <block id="3d1b474f1a7116b822c74df7d97071ff" category="admonition">StorageGRID 不支援<block ref="194289b4d7cada7c0bbc61aeeb07fc02" prefix=" " category="inline-code"></block>標頭。</block>
-  <block id="c7c055cda5bea2cc43867b929a4e4d9a" category="list-text">如果 S3 用戶端發出不含版本 ID 的刪除要求， StorageGRID 就不會刪除任何物件版本。而是將刪除標記新增至貯體。刪除標記會使 StorageGRID 如同物件被刪除一樣：</block>
-  <block id="b0d701221bd0db0a671fcf38a2ce848d" category="list-text">沒有版本 ID 的 GetObject 要求會失敗<block ref="5ef325469bde4e09c04d1d4242255066" prefix=" " category="inline-code"></block></block>
-  <block id="bad3c35eb8ac534b7d1ecdbe74844acf" category="list-text">具有有效版本 ID 的 GetObject 要求成功，並傳回要求的物件版本。</block>
-  <block id="dbc9c38e7f2fa2fbe503bef095dfb0bd" category="list-text">如果刪除要求包含版本 ID 、則該物件版本會從來源網格中永久移除。不過， StorageGRID 不會複寫包含版本 ID 的刪除要求，因此不會從目的地刪除相同的物件版本。</block>
-  <block id="52fde4a2ba59cd388e4e4b28cb0d79e8" category="list-text">如果刪除要求不包含版本 ID ， StorageGRID 可以根據儲存格的交叉網格複寫設定方式，選擇性地複寫刪除標記：</block>
-  <block id="7546e1a66d8270743c7da928a35d9abd" category="list-text">如果您選擇不複寫刪除標記，則會將刪除標記新增至來源貯體，但不會複寫至目的地貯體。實際上、在來源網格上刪除的物件不會在目的地網格上刪除。</block>
-  <block id="8fcc4eafd6a132958db2ffff596ab17e" category="paragraph">在圖中， * 複寫刪除標記 * 在時設定為 * 是 * <block ref="994fdfef8287e55ca0718487a24a0084" category="inline-link-macro-rx"></block>。刪除包含版本 ID 的來源貯體要求，不會刪除目的地貯體中的物件。刪除不包含版本 ID 的來源貯體要求，將會顯示為刪除目的地貯體中的物件。</block>
-  <block id="57c7d90c66d4d39e6025a8c60a40fc1e" category="admonition">跨網格複寫不支援使用 SSE-C （伺服器端加密搭配客戶提供的金鑰）。擷取作業將會失敗。</block>
-  <block id="40618b6a53136597dfbf4feb496c8b08" category="admonition">SSE 不支援 AES-128 。如果使用 *AES-128* 選項為來源網格啟用 * 儲存的物件加密 * 選項，則 AES-128 演算法的使用不會傳播到複寫的物件。相反地，複寫的物件會使用目的地的預設貯體或網格層級加密設定（如果可用）。</block>
-  <block id="ca78acf9fb45a843422b6588bd5e2e45" category="list-text">如果沒有擷取標頭，請使用儲存區預設加密設定（如果已設定）。</block>
-  <block id="5c363f52b3c6e7a0cae8d4e91d35e462" category="list-text">如果未設定貯體設定，請使用網格範圍加密設定（如果已設定）。</block>
-  <block id="b6535f13ed3e60103c613e03c5d4e2bb" category="list-text">如果沒有網格範圍的設定，請勿加密來源物件。</block>
-  <block id="db521ff53ce0e5669f1b63c7709ff2df" category="list-text">如果來源物件未加密或使用 AES-128 ，請使用目的地儲存區的預設加密設定（如果已設定）。</block>
-  <block id="494ff5a753794003f081531577dd9483" category="list-text">如果目的地貯體沒有加密設定，請使用目的地的全網格加密設定（如果已設定）。</block>
-  <block id="a7a9ef0e587fae2d1938aff77217946b" category="list-text">如果沒有網格範圍的設定，請勿加密目的地物件。</block>
-  <block id="ace4a1f6e1cc92c0331cf1443cf6a45a" category="section-title">使用 S3 物件鎖定進行跨網格複寫</block>
-  <block id="ebc09ce8506aecd73fc6bcb60c90d2ae" category="paragraph">在下列情況下，您可以在啟用 S3 物件鎖定的 StorageGRID 貯體之間設定跨網格複寫。</block>
-  <block id="361ed79c7ab26880af4fd0e9307e1c4d" category="cell">當來源貯體上的 S3 物件鎖定是 ...</block>
-  <block id="8d35480ee8c34cd6a9cbea522c5fda46" category="cell">而目的地貯體上的 S3 物件鎖定是 ...</block>
-  <block id="00d23a76e43b46dae9ec7aa9dcbebb32" category="paragraph">已啟用</block>
-  <block id="b9f5c797ebbf55adccdd8539a65a0241" category="paragraph">已停用</block>
-  <block id="e69b6f0a6c93126290b27816718fe531" category="paragraph">啟用來源貯體上的 S3 物件鎖定時：</block>
-  <block id="fcb0cde8ebe9627e78daac36645be39b" category="list-text">物件會依下列順序鎖定目的地的保留設定：</block>
-  <block id="6c80c9b1cd681c2e9f079bd4ccac735f" category="list-text">來源物件的保留標頭值：</block>
-  <block id="9fbab987e129094e0a17762f25f5132e" category="list-text">來源貯體的預設保留（如果已設定）。</block>
-  <block id="de6d4f4e5e864c42bcfedeecde78316a" category="list-text">目的地貯體的預設保留（如果已設定）。</block>
-  <block id="2f076b0474861ea6c5d09cfa405f9793" category="paragraph">目的地貯體的預設保留不會覆寫從來源物件複寫的保留設定。</block>
-  <block id="1af02e3c2669d2819e03382311da3b89" category="list-text">您可以使用上傳物件時，設定目的地物件的合法保留狀態<block ref="622f5cbb241d4c05c585afb9a8232ef0" prefix=" " category="inline-code"></block>。</block>
-  <block id="24b5e1b097b15f95683ab96261ea0b6b" category="inline-link-macro">跨網格複寫警示和錯誤。</block>
-  <block id="bb7da00044f7a5716e0547519e7aa20e" category="list-text">如果目的地租戶或貯體不支援來源物件的 S3 物件鎖定設定，就會發生錯誤。請參閱 <block ref="e0b693f66ba6edbc8536079b71326271" category="inline-link-macro-rx"></block></block>
-  <block id="384583d52f762fbab65472f067348319" category="paragraph">當來源貯體上的 S3 物件鎖定停用時：</block>
-  <block id="15b2e104a40ece60ec45b9d699a1ac76" category="list-text">您可以在目的地貯體上設定預設保留，將 S3 物件鎖定保留設定套用至目的地物件。</block>
-  <block id="8ba6094218261ad4a761760fcf23d7e4" category="list-text">目的地物件無法設定合法的保留狀態。</block>
-  <block id="6e31b236604058db2bd22fcbf304d9a5" category="paragraph">如果 S3 用戶端發出 PutObjectTaggingor DeleteObjectTagging,<block ref="7a107dca2aebde1ca5eece10104bc3d3" prefix=" " category="inline-code"></block> 則會傳回。訊息為<block ref="c2b7f8ce8ad3aa6290bf6b21739a094d" prefix=" " category="inline-code"></block>。</block>
-  <block id="77220236ee24e6861706cf5328f08e9e" category="section-title">不支援 PutObjectRetention 和 PutObjectLegalHold</block>
-  <block id="f8369f2690c1f97f8138e0fe9f9933c1" category="paragraph">已啟用跨網格複寫的貯體中的物件不完全支援 PutObjectRetention 和 PutObjectLegalHold 要求。</block>
-  <block id="27c03042c326e06aa485429c7d55e57b" category="paragraph">如果 S3 用戶端發出 PutObjectRetention 或 PutObjectLegalHold 要求，則會修改來源物件的設定，但變更不會套用至目的地。</block>
-  <block id="f733e499501b874235d0727ebf087731" category="paragraph">來源網格的最大區段大小適用於複寫到目的地網格的物件。當物件複寫到另一個網格時，來源網格的 * 最大網段大小 * 設定（ * 組態 * &gt; * 系統 * &gt; * 儲存選項 * ）會同時用於兩個網格。例如、假設來源網格的最大區段大小為 1 GB 、而目的地網格的最大區段大小則為 50 MB 。如果您在來源網格上擷取 2 GB 物件、該物件會儲存為兩個 1 GB 區段。即使網格的最大區段大小為 50 MB ，它也會以兩個 1 GB 區段的形式複寫到目的地網格。</block>
-  <block id="ad20724c53931eaf74bd78398a27ebf8" category="list-text">* 恢復套件 * ：下載恢復套件的作業。</block>
-  <block id="38b9a81da23ae82d40201a004096da7d" category="summary">啟用單一登入（ SSO ）時，使用者只有使用組織實作的 SSO 登入程序授權其認證，才能存取 Grid Manager ， Tenant Manager ， Grid Management API 或 Tenant Management API 。本機使用者無法登入StorageGRID 到無法使用的功能。</block>
-  <block id="dec65fdb720cbe62e9d394a1348a26ab" category="paragraph">啟用單一登入（ SSO ）時，使用者只有使用組織實作的 SSO 登入程序授權其認證，才能存取 Grid Manager ， Tenant Manager ， Grid Management API 或 Tenant Management API 。本機使用者無法登入 StorageGRID 。</block>
-  <block id="b0387e67e0b954972b3dc4fae69a524e" category="list-text">如果這是您第一次在此瀏覽器上存取 URL ，系統會提示您輸入帳戶 ID 。</block>
-  <block id="c170e76e712dccb83270725d1fba28eb" category="list-text">如果您先前曾存取 Grid Manager 或 Tenant Manager ，系統會提示您選擇最近的帳戶或輸入帳戶 ID 。</block>
-  <block id="04f6721ec79b3730f9b6d8e37c95de73" category="list-text">請注意 * 中繼資料保留空間 * 的值。</block>
-  <block id="41122987e3793a5438e579a4dac5d41c" category="list-text">選取 * 中繼資料保留空間 * 。</block>
-  <block id="7e23ff84a50f51d7aa07982a2a845327" category="inline-link-macro">分公司庫存箱</block>
-  <block id="632d5e5262cdf13ce398135e3aaf3d9b" category="paragraph">平台服務不支援<block ref="7e6ac537aabc214a39fcdd68e352b528" category="inline-link-macro-rx"></block>。</block>
-  <block id="1baf17b0c587c6154cef92584b6ae59b" category="admonition">如果來源貯體已啟用 S3 物件鎖定，則不支援 CloudMirror 複寫。</block>
-  <block id="8c03eec21aff3e8fc3b01d883407bc3d" category="paragraph">每個貯體事件通知可用於傳送物件上執行特定動作的通知至指定的外部 Kafka 叢集， Webhook 端點或 Amazon Simple Notification Service 。</block>
-  <block id="415bcfa159b7acd9a422f7d8d1523ebc" category="section-title">匯入同盟使用者</block>
-  <block id="63f04d538094420aebba700851578dfe" category="paragraph">您可以直接將一或多個同盟使用者匯入「使用者」頁面，最多可匯入 100 個使用者。</block>
-  <block id="1a6ac78bb45f61f168a482fc35d65cdf" category="list-text">選擇 * 組態 * &gt; * 管理員使用者 * 。</block>
-  <block id="aee2fc87e872b46181ab4718e7a4ade1" category="list-text">選取 * 匯入聯盟使用者 * 。</block>
-  <block id="cd1c2b57ad86280013651a6669cc9ed6" category="list-text">輸入一或多個同盟使用者的 UUID 或使用者名稱。</block>
-  <block id="b6ba927271ef708567b98bfd3aaef25b" category="paragraph">若為多個項目，請在新行中新增每個 UUID 或使用者名稱。</block>
-  <block id="90e7ee3502bece17e12b992edf4291c8" category="list-text">選取 * 匯入 * 。</block>
-  <block id="658bb2cec33e28e6a6be7f9d0b162580" category="paragraph">如果一個或多個使用者無法匯入至「使用者」欄位，請執行下列步驟：</block>
-  <block id="10412816d7cbb5ebe75081064a6bb6f6" category="list-text">選取 * 複製使用者 * 。</block>
-  <block id="d4fb35a8c8c24a7d7305743bdfc3a6ed" category="list-text">選取 * 上一個 * ，然後將複製的使用者貼到 * 匯入同盟使用者 * 對話方塊中，重試匯入。</block>
-  <block id="f96f5f3b77f856eb706666d6aa178f4b" category="paragraph">關閉「 * 匯入同盟使用者 * 」對話方塊後，同盟使用者資訊會顯示在「使用者」頁面上，以供成功匯入的使用者使用。</block>
-  <block id="715eec56e39450785db62e95c91072ae" category="list-text">外部或本機代管的 Webhook 端點，可支援 HTTP POST 通知要求。</block>
-  <block id="ac1d22d3ea54615a9c8c024fbf498f7c" category="paragraph">此端點可裝載於各種 Web 伺服器，架構或 Data Processing 工具，例如 Fluentd 。</block>
-  <block id="2bdcf95a11c4618d6febaf60414c52de" category="doc">SSO 的要求與考量</block>
-  <block id="bf72e0c19fe0eb481fae6e88b550f899" category="paragraph">登入步驟會在<block ref="9e43954de8ea493f7e67764d4fb14d01" category="inline-link-macro-rx"></block>下列情況下略有不同：</block>
-  <block id="bfa12967b80a0535ab125ba6610b08b9" category="paragraph">* 注意： * 如果啟用 SSO 、而且您也登入租戶管理程式、您也必須登入<block ref="0dcf4552d4083868813ed7eaca775126" category="inline-link-macro-rx"></block> <block ref="2f8bf2953c7e145f1a4c87411221580e" category="inline-link-macro-rx"></block>。</block>
-  <block id="dae81112a139112094680177aa1f626f" category="doc">暫時停用並重新啟用單一管理節點的 SSO</block>
-  <block id="e4449b74ae0a19241f4cf8e00b6aa2b9" category="paragraph">如果您已在儲存節點與平台服務端點之間設定<block ref="34d1024503cbd69f3a314ec9300534b3" category="inline-link-macro-rx"></block>，如果您的 Proxy 服務不允許來自 StorageGRID 的訊息，可能會發生錯誤。若要解決這些問題、請檢查 Proxy 伺服器的設定、確保平台服務相關訊息不會遭到封鎖。</block>
-  <block id="19db8150db7dce054bee3ff8ec598939" category="list-text">目的地貯體不存在。</block>
-  <block id="a5397041d80445061eabf74c0840a72a" category="paragraph">其他錯誤無法恢復。例如，由於下列原因，可能會發生無法恢復的錯誤：</block>
-  <block id="d1c3c9c50a084a52b15e210bf405e6a1" category="list-text">端點即會刪除。</block>
-  <block id="60814178cef6412cd5172803b83141f1" category="list-text">Webhook 端點目的地回應通知要求時<block ref="6196dba52703776af2e6593f772ed7ce" prefix=" " category="inline-code"></block>發生錯誤。</block>
-  <block id="2c8e6f1a152fb7adef69f6653da2811a" category="paragraph">如果目的地遇到問題，導致無法接收平台服務訊息，則儲存庫上的用戶端作業會成功，但不會傳送平台服務訊息。例如、如果目的地上的認證資料已更新、StorageGRID 導致無法再驗證目的地服務、就可能發生此錯誤。</block>
-  <block id="3d3ced0d44142164069c5c3c6ef72100" category="paragraph">如果您擁有 <block ref="2bdf6db661aaec2c0c4af030da81f111" category="inline-link-macro-rx"></block>Active Directory 並使用它做為 SSO 提供者、則必須發出一系列 API 要求、以取得 Grid Management API 或 Tenant Management API 有效的驗證權杖。</block>
-  <block id="350fe92cf40c59496e4195b5fc16d990" category="paragraph">如果您擁有<block ref="2bdf6db661aaec2c0c4af030da81f111" category="inline-link-macro-rx"></block>並使用 Azure 做為 SSO 供應商、您可以使用兩個範例指令碼來取得適用於 Grid Management API 或 Tenant Management API 的驗證權杖。</block>
-  <block id="ecad87cd0a7c832fbb3f432ed8d13fdb" category="paragraph">如果您擁有<block ref="2bdf6db661aaec2c0c4af030da81f111" category="inline-link-macro-rx"></block>並使用 PingFederate 做為 SSO 供應商、則必須發出一系列 API 要求、以取得 Grid Management API 或 Tenant Management API 有效的驗證權杖。</block>
-  <block id="700f7d18634a6c5943915af6dbb3988b" category="list-text">根據您的 StorageGRID 系統是使用<block ref="1483d3b63fcfd50b42638ae893f21637" category="inline-link-macro-rx"></block>、<block ref="f90efe81b396d5b2aa96c867e168245f" category="inline-link-macro-rx"></block>還是兩者、定義租戶帳戶的根存取權。</block>
-  <block id="8ea4aae470baa809ca2f8599ab57e365" category="list-text">如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道 S3 應用程式將使用哪個同盟群組的租戶帳戶擁有 root 存取權。請參閱<block ref="474b06c18e1a0b7924699065a44032e0" category="inline-link-macro-rx"></block>和<block ref="35064a252466f00c9a22f2bab280092e" category="inline-link-macro-rx"></block>。</block>
-  <block id="2552cfe5d23020d80765d8cb37f2b519" category="paragraph">當用戶端使用HTTPS連線至伺服器時、伺服器會以含有公開金鑰的伺服器憑證回應。用戶端會將伺服器簽章與憑證複本上的簽章進行比較。如果簽名相符、用戶端會使用相同的公開金鑰啟動與伺服器的工作階段。</block>
-  <block id="d586ecc67595c6d39b0c35ed33fca767" category="paragraph">StorageGRID 具有內建的憑證授權單位（ CA ），可在系統安裝期間產生內部 Grid CA 憑證。根據預設、Grid CA憑證用於保護內部StorageGRID 的不穩定流量。外部憑證授權單位（CA）可核發完全符合組織資訊安全原則的自訂憑證。</block>
-  <block id="3a8c49829dcf0ade2e3728ca0f7e93cd" category="paragraph">在非正式作業環境中使用 Grid CA 憑證。若要正式作業，請使用外部憑證授權單位所簽署的自訂憑證。不安全的連線不支援憑證，但不建議使用。</block>
-  <block id="5b0bca7470b8bcff72e59904d1628670" category="paragraph"><block ref="5b0bca7470b8bcff72e59904d1628670" category="inline-link-macro-rx"></block></block>
-  <block id="89946b10c0bc47a7e24caa12a6933023" category="list-text">用戶端會將伺服器簽章與憑證複本上的簽章進行比較。如果簽名相符、用戶端就會使用相同的公開金鑰來啟動工作階段。</block>
-  <block id="b28c52563e0297cf7926ccd28ed1f709" category="summary">管理節點上的網路管理系統（NMS）服務會將通知傳送至郵件伺服器。您可以在「介面引擎」頁面上檢視 NMS 服務的狀態及其通知佇列的大小。</block>
-  <block id="e4d2aca72f998511a925e89c936d7395" category="paragraph">系統會依觸發順序逐一傳送通知。</block>
-  <block id="88c6c6a92a409f99c9faa45aa98cacf4" category="paragraph">如果發生問題，例如網路連線錯誤，且郵件伺服器無法使用，系統會重試傳送通知 60 秒。如果在 60 秒後未傳送通知，系統會將通知從佇列中刪除，並嘗試傳送下一個通知。</block>
-  <block id="b2533d45b1f4bd6c6ee86b01673cdec6" category="paragraph">使用 AutoSupport 有助於更快解決問題。技術支援可監控系統的儲存需求，並協助判斷您是否需要新增節點或站台。AutoSupport 也可以將套件傳送至其他目的地。</block>
-  <block id="465ce1ecab0b4799d1535c7857960546" category="admonition">如果未啟用 StorageGRID AutoSupport ，則會在 Grid Manager 儀表板上顯示訊息。此訊息包含AutoSupport 指向「資訊功能」組態頁面的連結。如果您關閉訊息，即使 AutoSupport 保持停用狀態，只有在瀏覽器快取清除之後，訊息才會再次出現。</block>
-  <block id="cc5dc19e4be7ee9888851c26e326ee3c" category="admonition">您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 <block ref="9b4af5848e6f4e3be2d2bc49874f1323" category="inline-link-macro-rx"></block></block>
-  <block id="a9fc7fc574761830996c70a0178bcff8" category="paragraph">如果警示或警示持續存在並增加嚴重性、請檢視佇列大小的圖表。如果數在數小時或數天內持續增加、則稽核負載可能超過系統的稽核容量。將用戶端寫入和用戶端讀取的稽核層級變更為「錯誤」或「關閉」、以降低用戶端作業率或減少記錄的稽核訊息數。請參閱。 <block ref="9b4af5848e6f4e3be2d2bc49874f1323" category="inline-link-macro-rx"></block></block>
-  <block id="46c19d6eef89407ec8d166b7712f2faa" category="paragraph">如需設定稽核訊息層級、變更記錄目的地、以及使用外部 Syslog 伺服器來取得稽核資訊的相關資訊、請參閱<block ref="9b4af5848e6f4e3be2d2bc49874f1323" category="inline-link-macro-rx"></block></block>
-  <block id="bbbd75271fe3a6679a9f135a3e82e779" category="paragraph">如需設定稽核訊息層級和使用外部 Syslog 伺服器的相關資訊<block ref="9b4af5848e6f4e3be2d2bc49874f1323" category="inline-link-macro-rx"></block>、請參閱。</block>
-  <block id="100aec4141ff0fe78dc20cb310e004e8" category="paragraph">S3 用戶端會<block ref="51f2bac82b2970f867b85e54f3d56b7f" prefix="(" category="inline-code"></block>針對 S3 物件（ S3KY ）提出更新指定中繼資料的要求（ SUPD ）。在此範例中、要求標頭會包含在欄位中、因為它已設定為稽核傳輸協定標頭（*組態*&gt;*監控*&gt;*稽核與系統記錄伺服器*）。請參閱。 <block ref="9b4af5848e6f4e3be2d2bc49874f1323" category="inline-link-macro-rx"></block></block>
-  <block id="d763a6d1a0ef69d5ae885d4b37683120" category="summary">當 S3 用戶端發出頭部作業時，系統會要求檢查物件或儲存區是否存在，並擷取物件的中繼資料。如果作業成功，伺服器就會發出此訊息。</block>
-  <block id="f00c6a3e9b0d7ae11e09aa4db36a5944" category="summary">當 Swift 用戶端發出 HEAD 作業時，系統會要求檢查帳戶，容器或物件是否存在，並擷取任何相關的中繼資料。如果作業成功，伺服器就會發出此訊息。</block>
-  <block id="3a0ca64319b670148ff976be108c9060" category="paragraph">頭端操作的結果。結果永遠是：</block>
-  <block id="1d0e42d89bbdba7c8ccd0d9104efd80b" category="list-text">如果StorageGRID 您的系統啟用單一登入（SSO）、請為新的管理節點建立信賴關係人信任。您必須先建立信賴方信任、才能登入節點。請參閱。 <block ref="cf3c1ad645d900ea0a68bc18776f81f9" category="inline-link-macro-rx"></block></block>
-  <block id="d619a7b9e9fd1559f4d63dc271019dfa" category="paragraph">如需詳細資訊、請參閱 <block ref="9b4af5848e6f4e3be2d2bc49874f1323" category="inline-link-macro-rx"></block> 。</block>
-  <block id="0ff1cd2fa542fb9f96111de0165fd05a" category="paragraph">包含存取命令列上網格節點所需的密碼。包含在恢復套件中。</block>
-  <block id="5fb6ead7c1d36ab74c5577ecea7e1bb5" category="inline-link-macro">將 ADC 服務從同一個儲存節點移至同一個站台上的另一個儲存節點</block>
-  <block id="f9146d6690d9bb4d56697370e54bff5a" category="list-text">您可以<block ref="6e5539633f970fa6613b969cb358cbee" category="inline-link-macro-rx"></block>。</block>
-  <block id="b6b86e3813b3c286c112ae5d71a9f9a4" category="list-text">一般而言、當您為新節點選取「* ADC服務*」設定時、應選取「*自動*」。僅當新節點將取代另一個包含ADC服務的儲存節點時、才選取*是*。因為如果剩餘的 ADC 服務太少，您就無法取消委任儲存節點，因此選取 * 是 * 可確保在移除舊服務之前，有新的 ADC 服務可用。</block>
-  <block id="b4ccb6419f192c12b603454b88fd1e5f" category="list-text">選擇 * 節點 * &gt; * 儲存節點 * &gt; * 工作 * 。</block>
-  <block id="a9df0eb637290e62fc2cbce1b4049683" category="list-text">如果 * 儲存狀態 * 下拉式清單設定為唯讀或離線，請選取 * 線上 * 。</block>
-  <block id="7e89e03956044c21e2424401ea12989e" category="list-text">若要查看新的物件儲存區，請選取 * 儲存區 * 。</block>
-  <block id="ee6bd97f4a07e32c25cc430990439d07" category="list-text">查看 * Volumes （卷） * 表中的詳細信息。</block>
-  <block id="f6d2d7221a066f1e75a8c168750cd79f" category="list-text">下載新的恢復套件檔案。</block>
-  <block id="d7fa13a96899acfb149036ccabb3674e" category="paragraph">此儲存節點是否會執行管理網域控制站（ ADC ）服務。ADC服務會追蹤網格服務的位置和可用度。每個站台至少必須有三個儲存節點包含ADC服務。</block>
-  <block id="e96ed95d64326d50bb38e74beb4f98fe" category="list-text">如果您要更換的儲存節點包含 ADC 服務、請選取 * 是 * 。由於如果剩餘的 ADC 服務太少，您就無法取消委任儲存節點，因此此設定可確保在移除舊服務之前，有新的 ADC 服務可用。</block>
-  <block id="42f2a60132f715262e913ea6b77034a5" category="inline-link-macro">將 ADC 服務移至相同站台上的另一個儲存節點</block>
-  <block id="5a204c6f92e31b9c8d474e8ef4bd4432" category="list-text">您可以<block ref="91efcbf6771beb0bf6c342baccadb2af" category="inline-link-macro-rx"></block>確保符合 ADC 服務仲裁。</block>
-  <block id="1377b2efeac0d5a3cfb79fdbdc343400" category="list-text">一旦出現 * 下載恢復軟件包 * 鏈接，請立即下載恢復軟件包文件。</block>
-  <block id="905ae8c0de96ea7d3abff4c0b260d090" category="paragraph">您必須在對 StorageGRID 系統進行網格拓撲變更之後，盡快下載更新版的恢復套件檔案。恢復套件檔案可讓您在發生故障時還原系統。</block>
-  <block id="5d1695dab5e353ab7cdcb0618851b2ee" category="list-text">將下載的恢復軟件包文件複製<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>到兩個安全且獨立的位置。</block>
-  <block id="6ab4b98f53c311bacef7d0dc57176608" category="list-text">等到套用變更後再下載新的恢復套件。</block>
-  <block id="c568a3c0927aaccf02811b15209e3b60" category="admonition">恢復套件檔案必須受到保護、因為它包含可用於從 StorageGRID 系統取得資料的加密金鑰和密碼。它也用於恢復主管理節點。</block>
-  <block id="74bc494b6693fdbe86ca5384a3f354e4" category="list-text">對於「定義根目錄存取」步驟、請根據您的 StorageGRID 系統使用<block ref="5260f157ac6f425cdf76b004a4577a96" category="inline-link-macro-rx"></block>、<block ref="a10ff73860a8d597406d39201c5c59f0" category="inline-link-macro-rx"></block>或兩者、指定哪個使用者將擁有租戶帳戶的初始根目錄存取權限。</block>
-  <block id="fbe0e06417929d674e0cf720a8a4dd4b" category="paragraph">（可選）配置<block ref="5260f157ac6f425cdf76b004a4577a96" category="inline-link-macro-rx"></block>和<block ref="ae77a3600d093db8ff64fa52379642fa" category="inline-link-macro-rx"></block>。</block>
-  <block id="7415b0f96323f85e282f265cedb0cc31" category="list-text">如果您不需要 FabricPool 或任何其他 S3 應用程式的用戶端讀取作業記錄、請選擇性地前往 * 組態 * &gt; * 監控 * &gt; * 稽核與系統記錄伺服器 * 。將 * 用戶端讀取 * 設定變更為 * 錯誤 * 、以減少稽核記錄中記錄的稽核訊息數。如需詳細資訊、請參閱 <block ref="9b4af5848e6f4e3be2d2bc49874f1323" category="inline-link-macro-rx"></block> 。</block>
-  <block id="cb22028001d1f5fc3225de7c6f68a9c0" category="list-text">根據您的 StorageGRID 系統是使用<block ref="5260f157ac6f425cdf76b004a4577a96" category="inline-link-macro-rx"></block>、<block ref="a10ff73860a8d597406d39201c5c59f0" category="inline-link-macro-rx"></block>還是兩者、定義租戶帳戶的根存取權。</block>
-  <block id="7ee0e7eef8888493a8290d3323976c56" category="paragraph">如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道哪個同盟群組應該擁有 ONTAP 將使用之租戶帳戶的根存取權。請參閱<block ref="474b06c18e1a0b7924699065a44032e0" category="inline-link-macro-rx"></block>和<block ref="35064a252466f00c9a22f2bab280092e" category="inline-link-macro-rx"></block>。</block>
-  <block id="6a5e6a3494a7e4edcd46fba3346b9efd" category="paragraph">外部服務可能會有間接影響StorageGRID 到非功能性的弱點。確保 StorageGRID 所依賴的服務保持在最新狀態。這些服務包括LDAP、KMS（或KMIP伺服器）、DNS和NTP。</block>
-  <block id="89b9037fe43f47ef46517baa668eb818" category="list-text">對於包含 SED 或 FIPS NVMe SSD 的應用裝置機型、您可以使用 StorageGRID 應用裝置安裝程式和 Grid Manager 來管理<block ref="f5d5b05ab0aa65bf4c27e7ad38aae87a" category="inline-link-rx"></block>。</block>
-  <block id="4cebd018ae87faca1603a569515da902" category="inline-link">啟用及設定 StorageGRID 軟體節點加密</block>
-  <block id="1d4acaf32a96734c20acf04a3ea94548" category="list-text">對於沒有 SED ， FDE 或 FIPS 磁碟機的應用裝置，請使用金鑰管理伺服器（ KMS ）至<block ref="02d237af1d466a68b28a616e180e44bb" category="inline-link-rx"></block>。</block>
-  <block id="29be912f6934636aab6a20e28c564bcc" category="inline-link-macro">為貯體和物件設定 CORS</block>
-  <block id="cdc448f8c426b75c4fdc34a9815075ae" category="paragraph">請參閱的步驟<block ref="2901daf2afc7d974bf3be8c61de66f2f" category="inline-link-macro-rx"></block>。</block>
-  <block id="38b634dfbdf1047372fd5f164eebf3ff" category="list-text">* 可靠性 * ：測量可在不遺失資料的情況下持續發生的同時故障數。</block>
-  <block id="483b192fb14b000a0ba7c771de4b8cd2" category="list-text">複寫：多個相同的物件複本會儲存在不同的節點和站台之間。</block>
-  <block id="0e6bb61e82396d99e233d1d3cb684503" category="list-text">銷毀編碼：物件編碼為資料和同位元區塊，分散於許多節點和站台。這種分散式技術可同時提供站台和節點故障保護。</block>
-  <block id="4fd6dcbf6491316c6f1f0741cbfe3314" category="list-text">* 可用度 * ：儲存節點故障或無法存取時取得物件的能力。相較於複寫、銷毀編碼可提供更高的可用度、且儲存成本相當。</block>
-  <block id="98f73df438e7e8469e4ecc4e8d573200" category="list-text">* 儲存效率 * ：為了達到類似的可用度和可靠性，以刪除碼編碼的物件所使用的磁碟空間比複寫的物件少。例如、複寫到兩個站台的 10 MB 物件會佔用 20 MB 的磁碟空間（兩個複本）、而在三個站台上使用 6+3 銷毀編碼方案進行銷毀編碼的物件只會佔用 15 MB 的磁碟空間。</block>
-  <block id="beaa3dbe650f88716d59324041b8cfe8" category="list-text">當您跨站台使用銷毀編碼時、隨著站台之間的網路延遲增加、最大物件處理量會大幅降低。這項降低是因為 TCP 網路處理量減少，這會影響 StorageGRID 系統儲存和擷取物件片段的速度。</block>
-  <block id="40c76db675194de0a018dbeae5258de9" category="paragraph">請針對下列需求使用銷毀編碼：</block>
-  <block id="196eded07408b69cc0961f82bdd1a149" category="admonition">在選擇一致性值之前<block ref="d631677af941225480a2d26506b42254" category="inline-link-macro-rx"></block>，。變更預設值之前、您應該先瞭解其優點和限制。</block>
-  <block id="14d6824b2e14fc3110d6b3c6e24ab062" category="list-text">您必須先使用 Grid Manager 建立區域，才能在使用 Tenant Manager 或 Tenant Management API 建立貯體時，或在 S3 Put Bucket API 要求中使用 LocationConstraint 要求元素指定非預設區域。如果 Put Bucket 要求使用的區域尚未在 StorageGRID 中定義，就會發生錯誤。</block>
-  <block id="83608c61dc0db5e09a544f9f7176de5d" category="admonition">歐盟並不視為 EU-1 的別名。如果您想要使用歐盟或EU-WEST-1區域、則必須使用確切名稱。</block>
-  <block id="d976a1769bcb7ee6412568eda4328d1c" category="paragraph">如果您在 ILM 規則中將區域用作進階篩選器，但後來刪除該區域，或是使用 Grid Management API 建立規則並指定尚未定義的區域，則可能會導致無效區域。</block>
-  <block id="5c3513cb7254667a90b9b3c10d75a778" category="paragraph">此時會出現「區域」頁面。</block>
-  <block id="d025c494eed87317c43798b089174872" category="list-text">選擇 * 所有地區 * 或 * 預設地區 * 標籤。</block>
-  <block id="ecbda6f22123589eb2dcc8322562c753" category="open-title">所有區域</block>
-  <block id="61ec82ffe4ccb69807fb62064f97c0b0" category="paragraph">「 * 所有區域 * 」標籤會列出目前定義的區域，包括您無法修改或移除的定義預設區域。</block>
-  <block id="452f824e0478dcc93c9a43c10f697be2" category="list-text">若要新增區域，請選取 * 新增其他區域 * 。</block>
-  <block id="3640c6960a42bada93bd2ef020530049" category="open-title">預設區域</block>
-  <block id="535f9f3556013d4c4ee390a5b77685e5" category="paragraph">「 * 預設區域 * 」標籤會顯示目前定義的預設區域，您可以修改該區域。</block>
-  <block id="ba15dcdce9ff73d0b30aa103b68d0e97" category="list-text">若要變更預設區域，請從 * 預設區域 * 下拉式清單中的可用選項中選取區域名稱。</block>
-  <block id="6756bf440d16058be66e16aadb1b8371" category="list-text">* 驗證類型 * ：匿名存取</block>
-  <block id="efc88de6890a64bc178199d119c950cf" category="admonition">儲存節點可在安裝期間設定為包含物件資料和中繼資料（「組合式」儲存節點），僅限物件中繼資料或僅限物件資料。僅中繼資料儲存節點無法指派儲存等級。如需更多資訊、請參閱 <block ref="8e49185a846f0d976af4a2b64adfc64f" category="inline-link-macro-rx"></block>。</block>
-  <block id="a516294ca97700614be5758a46f7a122" category="inline-link-macro">分支庫位</block>
-  <block id="f8818a85d3486e7692c2096fce91f70e" category="paragraph">如果用戶端從刪除具有版本 ID <block ref="bf0133cff3494b1628c90fa43f4e781a" category="inline-link-macro-rx"></block>的物件版本， StorageGRID 會隱藏物件版本的存在，但不會在分支儲存格中建立刪除標記。如果用戶端從分支儲存區刪除沒有版本 ID 的物件， StorageGRID 會根據標準 S3 行為，在分支儲存區中建立刪除標記。</block>
-  <block id="6cee7cbd08b6ec45209b6005faf9f9fa" category="admonition">在設定 StorageGRID 部署以保護站台遺失時，您也必須考慮和<block ref="ecafc9aaadb13b35f11d7c8782b7e64f" category="inline-link-macro-rx"></block>的影響<block ref="d27049b597cbc79dbe0883e1dbce4b00" category="inline-link-macro-rx"></block>。</block>
-  <block id="805a121ef5e1e7bb9f9585d9135bbd7e" category="admonition">儲存節點可在安裝期間設定為包含物件資料和中繼資料（「組合式」儲存節點），僅限物件中繼資料或僅限物件資料。如需更多資訊、請參閱 <block ref="8e49185a846f0d976af4a2b64adfc64f" category="inline-link-macro-rx"></block>。</block>
-  <block id="a8c49e4e5b61553c4e46bf12f687cfc9" category="list-text"><block ref="a8c49e4e5b61553c4e46bf12f687cfc9" category="inline-link-macro-rx"></block></block>
-  <block id="14330e1d77056a68c44b823b88dc39ae" category="admonition">儲存節點可在安裝期間設定為包含物件資料和中繼資料（「組合式」儲存節點），僅限物件中繼資料或僅限物件資料。純中繼資料儲存節點無法用於儲存資源池。如需更多資訊、請參閱 <block ref="8e49185a846f0d976af4a2b64adfc64f" category="inline-link-macro-rx"></block>。</block>
-  <block id="0fb3b91695b156b88e7423d8e9a2d7ed" category="paragraph">* 附註 * ：此訊息僅顯示於已連接的網格節點。</block>
-  <block id="51752bf91bb321ab28701f4c4965ba46" category="paragraph">* 附註 * ：此訊息僅針對中斷連線的網格節點顯示。</block>
-  <block id="2d08a36ca7895774ee7648a4ffd887a7" category="paragraph">否， HA 群組成員： _group name_ 。在您取消委任此節點之前、必須先將其從所有HA群組中移除。</block>
-  <block id="91e3f9c2a5a6a2a0045beefdb6248ad6" category="paragraph">* 僅儲存節點 * （組合式或僅中繼資料儲存節點）。如果站台上的節點不足以支援 ADC 仲裁需求、您就無法取消委任儲存節點。不過，您可以將 ADC 服務移至另一個儲存節點。</block>
-  <block id="450e7f2eab1883e3fefbb7f0f0365e43" category="inline-link-macro">將 ADC 服務移至相同站台上的另一個儲存節點</block>
-  <block id="2cb8e5bf0bff8f1a333bb7675508b286" category="paragraph"><block ref="e388e3122d1ee8debfd4e5516d30f9a8" category="inline-link-macro-rx"></block>或是新增儲存節點至站台，並指定該節點應具有 ADC 服務，以執行擴充。請參閱 <block ref="b9359a6e46fdd7e6adbabe682c516bcb" category="inline-link-macro-rx"></block>。</block>
-  <block id="3f5c2a5b382c93866f8ca8ea7a5e224b" category="paragraph">* 僅儲存節點 * 。除非現有的銷毀編碼設定檔有足夠的節點、否則您無法取消委任儲存節點。</block>
-  <block id="40295cad2b60bc52beb5e98b7fce3268" category="list-text">從 Grid Manager 下載新的恢復套件。</block>
-  <block id="8e0a8b466920aed810e900afa669d699" category="paragraph">套用或重新設定變更後，會因網格組態變更而產生新的還原套件。</block>
-  <block id="6f8271ce15f5fa1426560749f9a0a7c3" category="admonition">如果StorageGRID 您的支援系統啟用SSO、且任何依賴方信任都是使用管理節點IP位址（而非建議的完整網域名稱）設定、請準備更新或重新設定Active Directory Federation Services（AD FS）中的這些依賴方信任。 變更IP位址後立即變更。請參閱。 <block ref="cf3c1ad645d900ea0a68bc18776f81f9" category="inline-link-macro-rx"></block></block>
-  <block id="f267e97211be24e8207e5c22ebc2111b" category="list-text">從 Grid Manager 下載新的恢復套件。</block>
-  <block id="55550ec3a4aa88acb3a3672aabe2634a" category="admonition">如果StorageGRID 您的系統啟用單一登入（SSO）、且您正在變更管理節點的IP位址、請注意、使用管理節點的IP位址（而非建議的完整網域名稱）設定的任何依賴方信任都將無效。您將無法再登入節點。變更IP位址之後、您必須立即使用新的IP位址來更新或重新設定節點在Active Directory Federation Services（AD FS）中的依賴方信任。請參閱的說明<block ref="27b5b3702d26d67e9892488d562933be" category="inline-link-macro-rx"></block>。</block>
-  <block id="492e2112f98c1c5c9ae7dd839617ba0c" category="section-title">暫時變更 LACP PDU 速率</block>
-  <block id="3ce8e95b4596d716979dc5f267fa21dc" category="paragraph">若要對裝置中安裝的網路元件執行維護作業，例如升級 NIC 韌體，您可以檢查目前的 LACP PDU 速率設定。如果需要，您也可以不持續地在快速和慢速之間切換 LACP PDU 速率。</block>
-  <block id="43035ee480a60302fbbceff0b3c1082a" category="admonition">若要永久變更 LACP PDU 速率，請參閱<block ref="1ed65ed925d0decf023f3af0bb70f722" category="inline-link-rx"></block>。</block>
-  <block id="2a3ed82fed36fb2d689a96e84f72e826" category="list-text">管理節點已安裝並正在執行。</block>
-  <block id="2300914d0d93204355bf04898d1846ed" category="list-text">若要檢查目前的 LACP PDU 速率設定，請輸入下列命令：</block>
-  <block id="9dce17eb2d1fd6531ecaf4069105c240" category="paragraph"><block ref="05a3f1fdc349632f48ec1cbdfddf1169" prefix="" category="inline-code"></block></block>
-  <block id="7482c9e20187e3624ec3af41b69a8f9e" category="list-text">若要暫時變更 LACP PDU 速率，請輸入下列命令：</block>
-  <block id="a5c13734b299f92b86161e8a43ac1147" category="paragraph"><block ref="fb66d65a219d0ac2058d54b997c5e059" prefix="" category="inline-code"></block></block>
-  <block id="a29210e232b4c244ccf10b658ceef370" category="paragraph"><block ref="31d4541b8e926a24f0c9b835b68cfdf3" prefix=" " category="inline-code"></block>位於或<block ref="4fe9dfe784a2be25dd8aec3b403c3654" prefix=" " category="inline-code"></block>的位置<block ref="5f3c47e844a57a925965d7f0f6b943eb" prefix=" " category="inline-code"></block>。</block>
-  <block id="bb93a8f509bce411c5f0f3edd30522e7" category="paragraph">LACP PDU 率將在下次設備重新開機時恢復到先前的設定。</block>
-  <block id="77d9a27e8b206f7cc5af674d22ba5c21" category="list-text">您擁有恢復軟件包文件的最新備份<block ref="0f8d75340a1cc741bfe4a0e55fd9382d" prefix="(" category="inline-code"></block>）。</block>
-  <block id="a3077e8b456258ec748b90bf820c1b3a" category="list-text">上傳最新的還原套件備份：</block>
-  <block id="22a76ec1ae500d8286ed6a918469409d" category="list-text">找到 StorageGRID 系統的最新恢復軟件包文件，然後單擊 *Open* 。</block>
-  <block id="ea989b33df6ca100aad427657bbb083c" category="admonition">若要設定信賴方信任、請參閱<block ref="cf3c1ad645d900ea0a68bc18776f81f9" category="inline-link-macro-rx"></block>。若要存取預設伺服器憑證、請登入管理節點的命令Shell。移至<block ref="46dfcb9fc6a87a48092181cf26d01b89" prefix=" " category="inline-code"></block>目錄、然後選取<block ref="ad85a49f9eda6dfb5f9078894092f6dc" prefix=" " category="inline-code"></block>檔案。</block>
-  <block id="e564b6cb782f75e5e9faf4d1fca45dee" category="summary">若要提高效能，您可以將較慢的非 ADC 儲存節點轉換為僅限資料的儲存節點。</block>
-  <block id="962d471fd17a7e7014544b0d73cc67ad" category="doc">將儲存節點轉換為純資料節點</block>
-  <block id="6bacca3dd54962e410fabab66f5a1f9a" category="inline-link-macro">已移轉 ADC 服務</block>
-  <block id="285fcc39da50d3a2a3dd3bd08182f098" category="list-text">您要轉換的儲存節點不包含 ADC 服務，或您必須轉換<block ref="bd15f35981d726d2caecad7ad206a32d" category="inline-link-macro-rx"></block>至另一個節點。</block>
-  <block id="9142157986dbadc05ad22fe07e8f03cc" category="list-text">儲存節點並非僅中繼資料節點或僅限資料節點。</block>
-  <block id="253d4a5b50e4acdfcbfdc523f5b9d523" category="list-text">站台上的其他節點上有足夠的中繼資料空間，可容納將從您要轉換的儲存節點移轉的中繼資料。</block>
-  <block id="cf59d257a783b49f810d1485e52ea505" category="paragraph">使用此程序可將不含 ADC 服務的一或多個組合或僅中繼資料儲存節點，轉換為僅限資料的節點。儲存節點必須位於同一個站台上。</block>
-  <block id="bdbf34383e8e70ebad1a21000a236eb1" category="paragraph">除了轉換儲存節點之外，此程序也會從節點取消委任 Cassandra 。所有中繼資料都會移轉至組合儲存節點或純中繼資料儲存節點。視需要移轉的中繼資料量而定，每個節點最多可能需要幾天的時間才能完成此程序。</block>
-  <block id="206754de5ce004662ec4b9dce4dc4a8a" category="admonition">一般而言，如果每個節點的中繼資料使用量低於 1 TB ，則一次最多可轉換 10 個節點。如果每個節點的中繼資料使用量超過 1 TB ，則改為每個程序最多轉換 5 個節點。</block>
-  <block id="6a098566557e617a252347877c68a1c3" category="list-text">記錄您要轉換的非 ADC 儲存節點的節點 ID 。</block>
-  <block id="678e1069939e3a23990755eeade49707" category="list-text">選取<block ref="dadc1f4b545e52cfec0ca734475b4874" prefix=" " category="inline-code"></block>作業。如需詳細資訊、請參閱 <block ref="aeb0d654e9808ba3ee7a7b36634a3169" category="inline-link-macro-rx"></block> 。</block>
-  <block id="1a1334980d13f24dc744c56bb59fb097" category="paragraph">在程序期間，每個節點都會重新開機。</block>
-  <block id="b18c5200eb66863716800509af351ddb" category="list-text">您可以使用<block ref="a21883bc5540b58b7ca3ff0e6342887d" prefix=" " category="inline-code"></block>監控程序。如果發生錯誤，請選取<block ref="5b0e8aa728ce59c4cdb9c5b6fca733c6" prefix=" " category="inline-code"></block>以重試程序。</block>
-  <block id="b9db2afdd5fc37aaccbc42d2e3e2da37" category="inline-link-macro">下載恢復套件</block>
-  <block id="c13682eb11f481a32b7c82d16d97bd0b" category="list-text"><block ref="ab5a83d36b7182c5f1660671dcd44b15" category="inline-link-macro-rx"></block>完成此程序後。</block>
-  <block id="dc7beae1ba08a3ad7bcfa38dd87ebadd" category="list-text">一旦新的恢復套件可用，請在橫幅中選取恢復套件連結，或選取 * 維護 * &gt; * 系統 * &gt; * 恢復套件 * 以存取恢復套件頁面。然後下載<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>檔案。</block>
-  <block id="ad9d0c44e23890b2b5855d2335440a4f" category="paragraph">請參閱。 <block ref="c6a0390025728c46ca4ff06d1289352c" category="inline-link-macro-rx"></block></block>
-  <block id="e4909d3ec4433efee463e7853faa1de8" category="admonition">請盡快下載恢復套件，以確保在取消委任程序期間發生錯誤時，您可以恢復網格。</block>
-  <block id="2db80ebe92c20646d01f5db3b2c30945" category="paragraph">取消委任程序隨即開始、並顯示每個節點的進度。在程序期間，會產生包含網格組態變更的新恢復套件。</block>
-  <block id="c9cde37b0f1e516d49995cafeac6dc98" category="list-text">一旦新的恢復套件可用，請按一下連結，或選取 * 維護 * &gt; * 系統 * &gt; * 恢復套件 * 以存取恢復套件頁面。然後下載<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>檔案。</block>
-  <block id="3ad0a9ffe418b0f66419edcfb258197d" category="paragraph">請參閱的說明<block ref="c6a0390025728c46ca4ff06d1289352c" category="inline-link-macro-rx"></block>。</block>
-  <block id="08cd984a4b4d30c53485fa9f0c3d74a6" category="summary">恢復套件檔案可讓您在發生故障時還原 StorageGRID 系統。</block>
-  <block id="81961724a227a0f83ebd71d7643c8497" category="doc">下載恢復套件</block>
-  <block id="f53d3cddb02893cfa10ada2a2eb95ad4" category="paragraph">在對 StorageGRID 系統進行網格拓撲變更或升級軟體之前，請先下載目前的恢復套件檔案。然後，在變更網格拓撲或升級軟體之後，下載恢復套件的新複本。</block>
-  <block id="5063d2ba5019bc3a33346ef1cd14cf16" category="paragraph">恢復套件<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>檔案</block>
-  <block id="046394405af2e663e506563c0c336797" category="paragraph">取得最新恢復套件檔案的複本<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>：<block ref="0f8d75340a1cc741bfe4a0e55fd9382d" prefix=" " category="inline-code"></block></block>
-  <block id="b2e89c6dbb318f5e919e30bd1282b933" category="paragraph">每次修改系統時、都會更新檔案內容<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>。進行此類變更後，系統會指示您將最新版本的還原套件儲存在安全的位置。使用最新的複本從網格故障中恢復。</block>
-  <block id="b0879b795333c6e4828f4e13fc262c97" category="paragraph">如果主要管理節點正常運作，您可以從 Grid Manager 下載還原套件。選擇* maintenance *&gt;* System*&gt;* Recovery套件*。</block>
-  <block id="3db006dc586f18462ee626f13916260f" category="paragraph">如果您無法存取 Grid Manager ，您可以在包含 ADC 服務的某些儲存節點上找到恢復套件的加密複本。在每個儲存節點上，檢查此位置以取得恢復套件：<block ref="1147b06552f45c390bccf7e7ab9215bd" prefix=" " category="inline-code"></block>使用具有最高修訂版編號的恢復套件。</block>
-  <block id="4d0ce459119f52ab8665d9dafb0c883f" category="inline-link-macro">下載最新的恢復套件</block>
-  <block id="6d6cce5611ed85244b5ac267691f01b7" category="paragraph">您必須<block ref="2978c7b2ca9905921fc86b97f5411eb8" category="inline-link-macro-rx"></block><block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>歸檔<block ref="0f8d75340a1cc741bfe4a0e55fd9382d" prefix="(" category="inline-code"></block>）。如果發生故障，您可以使用恢復套件檔案來還原系統。</block>
-  <block id="b64dcc3fce5c3196753a2bb6d5b469a4" category="paragraph">此檔案包含存取命令列上網格節點所需的密碼，並包含在恢復套件中。</block>
-  <block id="d4ac3b17032a668e159c3a128f9ed191" category="paragraph">您必須下載最新的恢復軟件包<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>文件<block ref="4d000ce6131e0d928a08a237295f18fb" prefix="(" category="inline-code"></block>）。如果發生故障，您可以使用恢復套件檔案來還原系統。</block>
-  <block id="b1928af2c84ea24ca486a05023fe2cee" category="inline-link-macro">下載恢復套件</block>
-  <block id="745eeabebc8e77ec2f6f9c2aaaa1d0f0" category="paragraph"><block ref="745eeabebc8e77ec2f6f9c2aaaa1d0f0" category="inline-link-macro-rx"></block></block>
-  <block id="dd230c358f4766e2a7a58958ccf79cf4" category="summary">您可以將 ADC 服務移至同一站台上的另一個儲存節點。</block>
-  <block id="ebe0435bb9019193964e455b23c8cb61" category="doc">移動 ADC 服務</block>
-  <block id="3b950310a3b42059f00fbb8d90459613" category="list-text">您有 <block ref="2e24f144980023c512659ba369541ffc" category="inline-link-macro-rx"></block>。</block>
-  <block id="67a09678cf39f6297d3673171cc1d4c6" category="list-text">來源節點包含 ADC 服務。</block>
-  <block id="0f653b955c90c6c8ffbe78326c5acfb8" category="list-text">目標節點不包含 ADC 服務。</block>
-  <block id="7f4f4b570f099b0f5ec7b70ac69d194a" category="list-text">目標節點可以是純中繼資料節點，也可以是結合的（中繼資料和物件資料）節點。</block>
-  <block id="82b051b7d3137cfb55ff07f716e42406" category="list-text">來源節點和目標節點位於同一個站台上。</block>
-  <block id="638803b5bd7756ddbd8390f3488424a5" category="paragraph">當您想要：</block>
-  <block id="744d5e8a444fd11a04cc52ea1f8572aa" category="list-text">取消委任包含 ADC 服務的儲存節點</block>
-  <block id="c9fded5094e4f1ee0edc04e35d7e5f31" category="list-text">將 ADC 節點轉換為僅限資料的節點</block>
-  <block id="7097b3963fdffec08aedf26172fe959d" category="list-text">新增節點以執行與 ADC 相關的工作</block>
-  <block id="f37ddcb02cbf637ab8ff48c131b44370" category="inline-link-macro">將儲存節點轉換為純資料節點</block>
-  <block id="ceb87801eff376af5256c836acbb50bc" category="inline-link-macro">ADC 仲裁仍保持不變</block>
-  <block id="c3c65691089131eebfafbb2ed0e40826" category="paragraph">當您想要取消委任儲存節點或<block ref="9521de9890c34375bb19c2a0ce0937c3" category="inline-link-macro-rx"></block>時，首先您可能需要使用移動 ADC 程序。您必須確保<block ref="062dcedf17fb3ceed35da2c94ed89826" category="inline-link-macro-rx"></block>。</block>
-  <block id="1fcef5aa30376dc9ecae653517798158" category="paragraph">此程序會將 ADC ， IDNT ， ACCT 和 RSM 服務從同一個儲存節點移至同一個站台上的另一個儲存節點。RSM 和 ACCT 服務需視 ADC 服務而定，因此會在 ADC 服務移動時自動移動。</block>
-  <block id="9717764b514fb8ad60b293b4fb63ab8b" category="list-text">記錄來源和目標節點的節點 ID 。</block>
-  <block id="60229cccaa77798362349fd774f03a48" category="paragraph">在 Grid Management API 中，來源節點 ID 稱為<block ref="f703dc9656a91f704acfa75ad321b2cf" prefix=" " category="inline-code"></block>。目標節點 ID 稱為<block ref="679967d3cd269c00bd3e423a68c37434" prefix=" " category="inline-code"></block>。</block>
-  <block id="4610dfe540b86694266aae90bfb9e527" category="list-text">選取<block ref="4564f9f6b178a75aa6fdc6973d7ceeb7" prefix=" " category="inline-code"></block>作業。如需詳細資訊、請參閱 <block ref="aeb0d654e9808ba3ee7a7b36634a3169" category="inline-link-macro-rx"></block> 。</block>
-  <block id="082ad102477f6815ea4a6105bbbd58c3" category="list-text">您可以使用<block ref="3eb63d694ef55e45c0e56e4ec822a18a" prefix=" " category="inline-code"></block>監控程序。如果發生錯誤，請選取<block ref="cf73851ece82cc9056624e14e9e7131f" prefix=" " category="inline-code"></block>以重試程序。</block>
-  <block id="247ffe3ac8fa24f7eac3f4d8298f2fb7" category="paragraph">恢復軟件包<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>）文件</block>
-  <block id="cf0b2eb647d5182bfd24d58b723bc693" category="inline-link-macro">下載最新的恢復套件檔案</block>
-  <block id="c32b6640edbe91d1e5ab09dab6e01726" category="paragraph">在套用 Hotfix 之前，<block ref="bc654ca0bf2ff5f7f8f409c55f6b8018" category="inline-link-macro-rx"></block>如果 Hotfix 期間發生任何問題。然後，在套用 Hotfix 之後，下載新的還原套件檔案複本，並將其儲存在安全的位置。更新的恢復套件檔案可讓您在發生故障時還原系統。</block>
-  <block id="3ead639153c177204962ad5734f5804e" category="paragraph">選用、且僅在您使用SSH用戶端手動套用修補程式時使用。<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>檔案是還原套件檔案的一部分<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>。</block>
-  <block id="a0dcedbf1db0d85c3edf8d61c6eef82f" category="list-text">如果有多個儲存節點離線。輸入：* n*</block>
-  <block id="62f029c097ab009d37082f28fc86f846" category="paragraph">恢復多個儲存節點可能會影響 Cassandra 資料庫的完整性，進而導致資料遺失。</block>
-  <block id="03408fbaa04501e66f482119f5d71946" category="admonition">如果有多個儲存節點故障（或離線）、請聯絡技術支援部門。請勿執行下列恢復程序。資料可能會遺失。如需詳細資訊、請 <block ref="ae69a49f8134b8abb47c1037e68b19d1" category="inline-link-macro-rx"></block>參閱。</block>
-  <block id="fcfa4e992ebe631a0b4fe052b760f180" category="admonition">如果有多個儲存節點離線，請聯絡技術支援部門。請勿執行<block ref="179106bdbc65b568b32bc1185be58cc2" prefix=" " category="inline-code"></block>指令碼。</block>
-  <block id="424be619ed365eaaea44c7dd88327383" category="paragraph"><block ref="28325afa13c532a62489ef0d7bee3061" prefix="" category="inline-code"></block>恢復套件中的檔案</block>
-  <block id="a02b045807e841adc05c5ee749fb95a8" category="admonition">您可以從非主要管理節點新增或更新顯示名稱，但必須登入主要管理節點才能下載還原套件。</block>
-  <block id="8be26326644557006498e023c291c8c7" category="section-title">[[download-recovery package]] 下載恢復套件</block>
-  <block id="5ad32b64257e207e13442d95a4372747" category="paragraph">完成項目重新命名後，請下載並儲存新的還原套件。您重新命名項目的新顯示名稱會包含在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>檔案中。</block>
-  <block id="9e57e612c9faf9ff864a379747203664" category="inline-xref">下載並儲存新的還原套件</block>
-  <block id="c5213c6fb71d471ad72a3522fa3e0539" category="list-text"><block ref="e09081b0bd0cb88ff26cd77c36cf692a" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e794713957c7ac214c79264a32c8ceb1" category="paragraph">在下列情況下， Cassandra 資料庫可作為 Volume 恢復程序的一部分進行重建：</block>
-  <block id="eb21bb8c8fe7e86dbd8acbadce9c7565" category="list-text">Volume 0 故障並恢復。</block>
-  <block id="1ee1b6ffbe44c395b2af631d7baf8acf" category="paragraph">重新建立Cassandra時、系統會使用其他儲存節點的資訊。如果最近重新建置Cassandra、則整個網格的Cassandra資料可能尚未一致。如果太多儲存節點離線：</block>
-  <block id="047b0aa2150569ead0c751f6849dba33" category="list-text">某些 Cassandra 資料可能無法使用。</block>
-  <block id="45174f042f5ccc0a4db81499597cd648" category="list-text">資料可能會遺失。</block>
-  <block id="459d8e59ed6e2046bf0afb1a2fa9828f" category="admonition">如果 ILM 規則設定為僅儲存一個複寫複本，且複本存在於發生故障的儲存磁碟區上，則您將無法還原物件。</block>
-  <block id="5d8d6ce1cf61fafb47c6ccbdf893c01a" category="paragraph">儲存節點具有Cassandra資料庫、其中包含物件中繼資料。Cassandra 資料庫可能會在下列情況下重建：</block>
-  <block id="6c2f594e247215b55573600222c557b1" category="list-text">儲存磁碟區故障並恢復。</block>
-  <block id="928a29a7c3a98e7361219a8a402ffef1" category="admonition">如果有多個儲存節點故障（或離線）、請聯絡技術支援部門。請勿執行下列恢復程序。資料可能會遺失。如需詳細資訊、請 <block ref="ae69a49f8134b8abb47c1037e68b19d1" category="inline-link-macro-rx"></block>參閱。</block>
-  <block id="435cadcb39036ef6fefb893c904d7cb9" category="list-text">若要安裝主要管理節點：</block>
-  <block id="0175d01e70e3366a264bb504179fad59" category="paragraph">隨即顯示上傳 StorageGRID 軟體頁面。</block>
-  <block id="0b18646ae5b8d4e0e5e3fb87fd9082fe" category="list-text">若要安裝閘道節點或非主要管理節點：</block>
-  <block id="995ee1ce1e4f2e99d7774156c2d68eb9" category="list-text">如果未顯示此 IP 位址，或您需要變更此位址，請指定位址：</block>
-  <block id="1127842e2e1c178f511e2db61e911eab" category="paragraph">如果 *Start Installation* 按鈕未啟用，您可能需要變更網路組態或連接埠設定。請參閱產品的維護指示。</block>
-  <block id="bba499a37806ba8427ed2e5b70231b04" category="admonition">恢復應用裝置儲存節點時，請使用與原始應用裝置相同的儲存類型（組合，僅中繼資料或僅限資料）重新安裝。如果您指定不同的儲存類型、則還原將會失敗、並需要重新安裝指定正確儲存類型的應用裝置。</block>
-  <block id="8fd5c6b29ad1b6ef50187d5f83a75143" category="list-text">一旦產生新的還原套件，請立即下載檔案。</block>
-  <block id="e3b00634fab6403e9be6f9844a570067" category="image-alt">站台取消委任步驟 6 恢復套件</block>
-  <block id="38c27d26692c8833125ea1662034de4d" category="list-text">在第二個取消委任程序中，您可以移除第三個儲存節點，因為現在 ADC 仲裁只需要三個 ADC 服務才能繼續使用<block ref="efbaea1a85310a12bb509786c053b705" prefix=" " category="inline-code"></block>：。</block>
-  <block id="599b2a3c3a88e0a75d16a4d6103d9301" category="inline-link-macro">將 ADC 服務移至相同站台上的另一個儲存節點</block>
-  <block id="c617906f50ec7fe116afd4392d80e137" category="paragraph">如果您需要取消委任儲存節點，您可以繼續滿足 ADC 仲裁需求，方法是<block ref="130ab17d4bfac542398a4c256b6b9b3a" category="inline-link-macro-rx"></block>在中新增儲存節點，並指定該節點<block ref="3fd5fe83fbb0f3a2268117f619f63f46" category="inline-link-macro-rx"></block>應該擁有 ADC 服務。然後，您可以取消委任現有的儲存節點，而不會影響仲裁。</block>
-  <block id="28b7a321b3123816e35c77f8cd6767eb" category="admonition">如果整個StorageGRID 網站故障、請聯絡技術支援部門。技術支援部門將與您合作、開發並執行站台恢復計畫、以最大化還原的資料量、並滿足您的業務目標。請參閱 <block ref="ae69a49f8134b8abb47c1037e68b19d1" category="inline-link-macro-rx"></block>。</block>
-  <block id="abb31c1b47e6e09e92f4fb0c38ee3e3f" category="list-text">如果您要還原應用裝置儲存節點，則必須在應用裝置安裝期間，指定與原始應用裝置相同的儲存類型（組合，僅中繼資料或僅限資料）。如果您指定不同的儲存類型、則還原將會失敗、並需要重新安裝指定正確儲存類型的應用裝置。</block>
-  <block id="82ec8923fa3abb76d221e63bda15063b" category="summary">您可以擷取 StorageGRID 記錄檔和系統資料，包括組態資料，並將其傳送給技術支援部門。</block>
-  <block id="3028d18d72903929a2afc1199a124394" category="list-text">您可以使用登入主要管理節點上的 Grid Manager <block ref="adf24c7e4de4f7fbefe34dbdfdb455df" category="inline-link-macro-rx"></block>。</block>
-  <block id="1c5800b74dae657193af578eaf3e1b5f" category="paragraph">使用 Grid Manager <block ref="ee511327b3d62aaf752db9171d53f715" category="inline-link-macro-rx"></block>，在您選取的期間內，從任何網格節點收集，系統資料和組態資料。資料會收集並歸檔在檔案中<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>，然後下載到您的本機電腦，或傳送到技術支援部門。</block>
-  <block id="a7cc05ecb56af6ca25cd7b5a743a6d84" category="list-text">選擇*支援*&gt;*工具*&gt;*記錄*。隨即顯示節點表。</block>
-  <block id="6561c5b66e62174999a5d45d936a27d7" category="paragraph">您可以依節點名稱，站台和節點類型排序。「站台」和「節點」類型欄包含篩選條件，可依個別站台和節點類型進行選取。</block>
-  <block id="7e19ecdc330505f095dba0f2ead1e2ff" category="list-text">選取要包含在記錄檔中的資料日期和時間範圍。</block>
-  <block id="abae10c1de7d9e4bcde5df0ff236fd34" category="paragraph">如果您選取一個非常長的時間段、或是從大型網格中的所有節點收集記錄、則記錄歸檔可能變得太大、無法儲存在節點上、或太大、無法收集到主要管理節點下載。如果發生這兩種情況，請以較小的資料集重新啟動記錄收集。</block>
-  <block id="7a2735bad3c16bcaf722abdabaa13d61" category="list-text">* 應用程式記錄 * ：技術支援最常用於疑難排解的應用程式專屬記錄。收集的記錄是可用應用程式記錄的子集。</block>
-  <block id="ce6fa131b67948fc814517015ad88f01" category="list-text">* 稽核記錄 * ：包含在正常系統作業期間所產生稽核訊息的記錄。</block>
-  <block id="6a57a478d2e1511db210f3ab6f010b93" category="list-text">* 網路追蹤 * ：用於網路偵錯的記錄檔。</block>
-  <block id="4dffd5936cc20de1b984d8f239c4f304" category="list-text">* Prometheus 資料庫 * ：所有節點上服務的時間系列指標。</block>
-  <block id="3d1ca2ed43d3eb6fd20c7f7f8f87bbd3" category="list-text">您也可以選擇使用 *Notes* 文字方塊來輸入您正在收集之記錄檔的備註。</block>
-  <block id="4fef6100fb18eee3a4616bee78454b8c" category="list-text">在 * 資源配置複雜密碼 * 文字方塊中，輸入 StorageGRID 系統的資源配置複雜密碼。</block>
-  <block id="0496ffb2d3cb97c4f23865d4aa930502" category="list-text">選取 * 收集記錄 * 。</block>
-  <block id="bf502dcac63c18151b184091c3271fc4" category="list-text">如果記錄收集失敗：</block>
-  <block id="37109557168a97f854226290b52d349a" category="list-text">如果出現「記錄收集失敗」訊息，您可以重試記錄收集或完成工作階段，而無需重試。</block>
-  <block id="8472003afc49fa56dd4f2d568e27619d" category="list-text">如果出現「記錄集合部分失敗」訊息，您可以重試記錄集合，完成工作階段，下載部分記錄檔，或將部分記錄檔傳送至 AutoSupport 。</block>
-  <block id="2c60397b4e06ee6b439571da529a6696" category="list-text">記錄檔收集完成時：</block>
-  <block id="be23296039b3543eafe1eaf1cb22b2e7" category="list-text">選取 * 下載 * 以下載<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>檔案。</block>
-  <block id="d756664fd5b2c942c02b60acb68ee008" category="list-text">選取 * 傳送至 AutoSupport * ，將檔案傳送至<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>技術支援。</block>
-  <block id="488b7ca309db2e81e75673ef45a41c0d" category="paragraph">此<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>檔案包含所有網格節點中的所有記錄檔，其中記錄集合成功。合併的<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>檔案包含每個網格節點的一個記錄檔歸檔。</block>
-  <block id="85176853ed640344f51bf6c0e365476c" category="paragraph">AutoSupport 套件的主旨是<block ref="42fa424dcd40c8ee745279dddb2e4fb8" prefix=" " category="inline-code"></block>。</block>
-  <block id="65166c98b7bc7ca2fbd4ba2231235afc" category="admonition"><block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>當您選取 * 完成 * 時，檔案會被刪除。請務必先下載或傳送檔案。</block>
-  <block id="ce6b74a699f7fde71e4f936d27626cdd" category="paragraph">只會記錄錯誤訊息，稽核結果代碼未「成功」（ SUCS ）的訊息。</block>
-  <block id="9b6623244c7ab8bd9eae7093b612876a" category="admonition">只有當 * 用戶端讀取 * 或 * 用戶端寫入 * 的稽核層級不是 * 關閉 * 時，才會記錄稽核通訊協定要求標頭。</block>
-  <block id="1705c3bc5b9c6d40f6f26b64b076ff41" category="admonition">如果您使用的是udp、請檢查整個記錄收集基礎架構。UDP 傳輸協定不允許像其他傳輸協定一樣嚴格的錯誤偵測。</block>
-  <block id="f6585833b2b85a85b267f1d0801e67dc" category="admonition">除非您選取包含外部 Syslog 伺服器的目的地，否則 StorageGRID 稽核資訊不會傳送至外部 Syslog 伺服器。</block>
-  <block id="9396d5844de5bc8a15a4055390b3bfc7" category="paragraph">稽核訊息，安全性事件記錄和應用程式記錄不會傳送至管理節點。而是僅儲存在產生這些節點的節點上（「本機節點」）。在每個本機節點上產生的稽核資訊都儲存在<block ref="bc9191d963b550670854df9485545416" prefix=" " category="inline-code"></block>中。</block>
-  <block id="0e7bb094fefed7bb68d1a0d372517f86" category="list-text"><block ref="0e7bb094fefed7bb68d1a0d372517f86" category="inline-link-macro-rx"></block></block>
-  <block id="92e2e4029ba05687ee05db7c71605444" category="paragraph">若要匯出記錄檔、請參閱<block ref="9b4af5848e6f4e3be2d2bc49874f1323" category="inline-link-macro-rx"></block>。</block>
-  <block id="1bdd6c9ee263dd5299a095e32e7cb506" category="paragraph">與維護所有管理節點和主控 ADC 服務的儲存節點上最新恢復套件的一致性有關。</block>
-  <block id="b6ddb78f35916c391e3e96584b3e17a6" category="paragraph">如果在修復之後複寫失敗、相同的物件修復可能會再次遞增。+ 當您監控儲存節點磁碟區恢復的進度時，這些屬性可能很有用。如果嘗試的維修次數已停止增加、且已完成完整掃描、則可能已完成維修。</block>
-  <block id="29100bea488fe32647d483b3a7359409" category="paragraph">在此範例中，一個診斷狀態為「注意」，三個診斷狀態為「正常」。</block>
-  <block id="7a88eba62d8a1512b7f61a69da69e9e5" category="list-text">* 狀態值 * ：顯示整個 StorageGRID 系統之診斷狀態和值的圖表（表格未顯示在螢幕擷取畫面中）。在此範例StorageGRID 中、會顯示目前的CPU使用率、供整個系統的每個節點使用。所有節點值均低於注意和注意臨界值、因此診斷的整體狀態為正常。</block>
-  <block id="3c0df4997a90d6f27462907367bc8f47" category="image-alt">診斷狀態值範例</block>
-  <block id="3b6e5d31f036451d74aa99107f52c7f1" category="list-text">* 選用 * ：若要查看與此診斷相關的 Grafana 圖表，請選取 * Grafana Dashboard * 。</block>
-  <block id="b12cf7f84cc95235c480f1518ddaaed0" category="paragraph">此時會出現相關的Grafana儀表板。在此範例中，「節點」儀表板會顯示此節點的 CPU 使用率，以及節點的其他 Grafana 圖表。</block>
-  <block id="68e6344691653c079e9afbce706006ec" category="admonition">如果您想要將記錄傳送至外部 Syslog 伺服器、或變更稽核資訊的目的地、例如<block ref="027a013000ae74a3c6ae81d2374960c5" prefix=" " category="inline-code"></block>和、<block ref="3d1bf47f65af8ecb08cb7d839ce75be6" prefix=" " category="inline-code"></block>請參閱<block ref="1cae3732b4b8c0410e6954d96c0f2c9a" category="inline-link-macro-rx"></block>。</block>
-  <block id="27d0c6a3abe85a671efe0130260120ea" category="summary">所有節點都會顯示「工作」標籤。您可以使用此索引標籤來重新命名或重新開機節點、或將應用裝置節點置於維護模式。對於儲存節點，您可以設定儲存狀態。</block>
-  <block id="d538582d8bad20244fc3b420c1141307" category="list-text">您可以在將直接附加或 SAN 磁碟區新增至儲存節點之後，或在還原儲存節點之後，驗證或設定儲存節點的儲存狀態。這些指示可在說明這些工作的主題中找到。</block>
-  <block id="a1932909c794f02f7c0017a83287838a" category="list-text">瞭解和等儲存設定<block ref="afb322a53c3d8387b90105ca5d89f94b" category="inline-link-macro-rx"></block><block ref="35fd7da1a2a908e31b7fb06355943fb8" category="inline-link-macro-rx"></block>。</block>
-  <block id="fe8b647f13f7d395a25ef5f8a6c15019" category="list-text"><block ref="fe8b647f13f7d395a25ef5f8a6c15019" category="inline-link-macro-rx"></block></block>
-  <block id="456c8c1fca2d45be0229dd1426d2afbe" category="inline-link-macro">恢復套件</block>
-  <block id="20025ba53e0f78c2dabe94c0821f6ed9" category="list-text">產生及下載<block ref="48d3442a70c0829d23def005bce41472" category="inline-link-macro-rx"></block></block>
-  <block id="ae6252fb4b49c88097115fc1e4fad709" category="paragraph">Apache Tomcat</block>
-  <block id="fdcedb9e7b5ce449719cfb73669a80fc" category="paragraph">適用於 Java 應用程式的 Web 伺服器。</block>
-  <block id="b307c5675bcdc8126105b746e44bae24" category="paragraph">Avahi 守護程序</block>
-  <block id="95470c116b92f51b6ed73362f04de9d5" category="paragraph">處理 mDNS ，用於在本機網路中進行名稱解析和服務探索。</block>
-  <block id="bb97d665db94f783729559206fe7754b" category="paragraph">快取服務</block>
-  <block id="2dfb862c69c999c9136a39be8e367ef2" category="paragraph">在負載平衡器（閘道）節點上執行，並管理物件內容的本機快取。</block>
-  <block id="c7a96d80c66fb1d5bba6abb0b87652b3" category="paragraph">管理物件中繼資料的分散式資料庫。</block>
-  <block id="3f7e467ee4552a5636c0f700f2010aa3" category="paragraph">儲存節點（僅限資料）</block>
-  <block id="1d2d826a32a823cd9b5e47107e32e931" category="paragraph">管理本機使用者和群組，驗證，並與 LDAP 和 Active Directory 的使用者身分建立聯盟。</block>
-  <block id="c5dbf8e13cf9f918c9076c1c8a2e90a8" category="paragraph">Nginis-GW 負載平衡器</block>
-  <block id="6ac2f0db46d604be379efa3a7dfcebc8" category="paragraph">節點匯出器（ Prometheus 資料收集）</block>
-  <block id="bb7cb74a7555cd85d143b8c849e4866d" category="paragraph">發佈系統層級的 Prometheus 時間系列度量收集統計資料。</block>
-  <block id="cf2e7920e74eade4fd7e05ae6f799da2" category="paragraph">網路時間傳輸協定（ NTP ）服務。</block>
-  <block id="8627e4dc5f78e8ab96314755b3954d0f" category="paragraph">伺服器管理員</block>
-  <block id="049408fa0777e5c3ff50263f4990f688" category="paragraph">管理 StorageGRID 服務。</block>
-  <block id="0cece63508a573f214ca17e34d33010b" category="paragraph">SNMP Agent</block>
-  <block id="43273fe1e04636ab35cca30d00ba71ea" category="paragraph">回應 SNMP 要求。</block>
-  <block id="a6c26fe16be3c91bc3c9402ddee8c45f" category="paragraph">SNMP 連接埠管理服務</block>
-  <block id="98a8fe58e3c92f7bea248e2210980f8d" category="paragraph">處理 SNMP 連接埠的動態管理。</block>
-  <block id="b660b5075583a6a142b08fbef1da7234" category="paragraph">SSH （ Secure Shell ）</block>
-  <block id="82df9dbf2532279670f70944bebf0f0e" category="paragraph">處理安全存取和遠端系統管理。</block>
-  <block id="1fd2c0fbc4e7ecf0c1e761228df653cd" category="paragraph">SSM （系統狀態監控器）</block>
-  <block id="2fdf18bfff0b453fa66b1995c7d7aeed" category="paragraph">立即</block>
-  <block id="16dcfdfafdfd0eb029338b6e2a7ff437" category="paragraph">記錄與 S3 儲存區相關的其他指標。</block>
-  <block id="a358392e08674fc8338961e4e1ca2fcb" category="paragraph">追蹤代理程式（ jaeger-agent ）</block>
-  <block id="afe58bc79a5df3bd09c5c8acf86863fb" category="paragraph">接收並處理由追蹤收集器（ jaeger-collector ）提交的追蹤資訊。</block>
-  <block id="b0601312b79f2820a206ab12f4ea2863" category="paragraph">追蹤收集器（ jaeger-collector ）</block>
-  <block id="538e058d1ebbf33b87261707c6a8e0c4" category="inline-xref">ADC 服務</block>
-  <block id="5e33f02e9ed6ae5643e86ba1e69b4497" category="paragraph">您可以將不含的儲存節點轉換<block ref="33662375631ba7b64b2d12d93df357b5" category="inline-xref-macro-rx"></block>為純資料儲存節點。請參閱 <block ref="eb62f317199c7dd14eb2ce4e7e4b29f4" category="inline-link-macro-rx"></block>。</block>
-  <block id="7c3cab99cdd71a00dd989de0991561ac" category="paragraph">[[ADA-service]] 管理網域控制器（ ADC ）</block>
-  <block id="7449247ffcf965bdf264f6020225b2a1" category="admonition">將修改後的組態檔案的密碼區段中的管理密碼和資源配置密碼，儲存在<block ref="3b39322b4d4c4cc0e164289cecbf36f4" prefix=" " category="inline-code"></block>安全的位置。這些密碼是安裝，擴充和維護程序所需的密碼。您也應該備份修改後的<block ref="3b39322b4d4c4cc0e164289cecbf36f4" prefix=" " category="inline-code"></block>組態檔，並將其儲存在安全的位置。</block>
-  <block id="c88add9af3b87d6e4dfb48872a12746f" category="paragraph">還原套件<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>檔案會在組態程序期間產生，並下載到執行安裝和組態程序的目錄。您必須備份恢復套件檔案，以便在一或多個網格節點故障時恢復 StorageGRID 系統。例如、將其複製到安全的備份網路位置、以及安全的雲端儲存位置。</block>
-  <block id="a8c1a7488495c9d053db8c95763d2c36" category="list-text">*recovery package* -- 用於下載恢復軟件包的操作。</block>
-  <block id="45572e7851c025280748e16319feba01" category="list-text">按一下 * 下載恢復套件 * 。</block>
-  <block id="6c2b75e7daa6db9879ae0e447192bf9d" category="paragraph">當安裝過程進入網格拓撲定義點時，系統會提示您下載恢復軟件包文件<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>），並確認您可以成功訪問此文件的內容。您必須下載恢復套件檔案，以便在一或多個網格節點故障時，能夠恢復 StorageGRID 系統。安裝會在背景繼續進行、但在您下載並驗證此檔案之前、您無法完成安裝並存取 StorageGRID 系統。</block>
-  <block id="1bcda95b920467fef9130dff1b4b1b2a" category="list-text">選中 * 我已成功下載並驗證恢復軟件包文件 * 複選框，然後單擊 * 下一步 * 。</block>
-  <block id="be5ff6c9f00459c29fc63ab3ec016541" category="list-text">您必須擁有配置通關密碼、才能執行安裝、擴充及維護程序、包括下載恢復套件。因此、請務必將資源配置通關密碼儲存在安全的位置。</block>
-  <block id="18d5184808172d32984383e2ec2038f3" category="list-text">隨機產生的命令列主控台和 SSH 密碼會儲存在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>還原套件的檔案中。</block>
-  <block id="bde21acd8c570567b8067576a677531d" category="admonition"><block ref="4d000ce6131e0d928a08a237295f18fb" prefix="(" category="inline-code"></block>單擊 Summary （摘要）頁面上的 *Install* （安裝）後，系統將提示您下載恢復軟件包文件。您必須<block ref="cbba1339ad066baa9337bd7deecdd702" category="inline-link-macro-rx"></block>完成安裝。存取系統所需的密碼會儲存在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>還原套件檔案中的檔案中。</block>
-  <block id="ab9b428d764d6149776037810e4d7b09" category="paragraph">IfExl主義 者</block>
-  <block id="1d4c185c51d78183100addd7dca26122" category="paragraph">附加至任何條件運算子（ Null 條件除外），以檢查是否缺少該條件金鑰。如果條件鍵不存在則返回 true 。</block>
-  <block id="8182de42f729340b07b02e1122fa7af5" category="paragraph">S3 ：物件鎖定模式</block>
-  <block id="fb956757c90014b1df456ac017469fb7" category="paragraph">與 PuttObject ， CopyObject 和 CreateMultpartUpload 要求中的要求標頭展開的比較<block ref="7db7ad68e2637773abff0d18a8b1b616" prefix=" " category="inline-code"></block>。</block>
-  <block id="fd119ac75451591f92f64aba481d4dfd" category="paragraph">比較<block ref="7db7ad68e2637773abff0d18a8b1b616" prefix=" " category="inline-code"></block> PutObjectRetention 要求中從 XML 實體展開的內容。</block>
-  <block id="ef6cbbbde7f8c627da6dec76dfa4e6c9" category="paragraph">S3:x-amz-server-Side 加密 - 客戶演算法</block>
-  <block id="9d6e88434f9cc01ebeb7ab645d8b1088" category="paragraph">與 PuttObject ， CopyObject ， CreateMultpartUpload ， UploadPart ， UploadPartCopy 和 CompleteMultpartUpload 要求中的要求標頭中的或<block ref="7a05dead4b07b2c759fe15a921979716" prefix=" " category="inline-code"></block>展開的比較<block ref="c35e4f80f7f8cc045ebef42238ca6ebc" prefix=" " category="inline-code"></block>。</block>
-  <block id="cd4218d4f2e1e386cb98b0557bf35a3d" category="paragraph">根據預設StorageGRID 、此功能可確保新建立物件的寫入後讀取一致性。任何「Get」追蹤成功完成的「PUT」、都能讀取新寫入的資料。覆寫現有物件、更新中繼資料及刪除的動作最終一致。</block>
-  <block id="f35e49a8605eb908d9094e9ffe760071" category="list-text">指定的一致性<block ref="57a18c5a274a18ba87b79c054e3e52ba" category="inline-xref-macro-rx"></block>。</block>
-  <block id="84daa0893445a4726c2559dddb6e63e0" category="list-text">在 Grid Manager 中，前往 * 組態 * &gt; * 系統 * &gt; * 儲存設定 * &gt; * 預設儲存區一致性 * 。</block>
-  <block id="429c7b76161e02adf01ee1c76fb94edc" category="section-title">[[bucker-consistency ]] 指定貯體的一致性</block>
-  <block id="cc2871430094b785b9c7d4dbf52def4d" category="section-title">[[how － consistency － and － ILM － rules － consistency （如何一致性和 ILM 規則互動） ] 一致性和 ILM 規則如何互動以影響資料保護</block>
-  <block id="d0524c9bd1349e3b6fd45b1ef7d5411d" category="paragraph"><block ref="d0524c9bd1349e3b6fd45b1ef7d5411d" category="inline-link-macro-rx"></block></block>
-  <block id="6a83e21df95c46eb24c8da6b0ead4efa" category="paragraph">新增管理介面的跨來源資源共用（ CORS ）支援，可讓其他網域使用管理 API 存取 StorageGRID 中的資料。<block ref="665a6318fcaa003b14f750a604135e0c" category="inline-link-macro-rx"></block>。</block>
-  <block id="51f84aa683c9cc450ff3beb5620459a3" category="list-text">所有多部分上傳操作均支持 StorageGRID <block ref="2fac6fab6140bb69b5d83290782a5692" category="inline-link-macro-rx"></block>。</block>
-  <block id="140514555af4a11a983941b42072728f" category="list-text">如果擷取是在基準貯體的前時間戳記之前啟動，則會在中包含多個上傳物件<block ref="bf0133cff3494b1628c90fa43f4e781a" category="inline-link-macro-rx"></block>，無論上傳何時完成。</block>
-  <block id="afd3aae038a6cc1a9aa7bab0b9add414" category="paragraph">ListObjects （ Get Bucket ）和 ListObjectVerions （ Get Bucket 物件版本）作業支援 StorageGRID <block ref="2fac6fab6140bb69b5d83290782a5692" category="inline-link-macro-rx"></block>。</block>
-  <block id="bd5db220dd3c2a5c45a1440c243cd592" category="list-text">StorageGRID 支援 Amazon Simple Notification Service （ Amazon SNS ）主題， Kafka 主題或 Webhook 端點作為目的地。不支援 Simple Queue Service （ SQS ）或 AWS Lambda 端點。</block>
-  <block id="a08aa3229f910c48960f8ea4415d3771" category="list-text">物件上的所有作業都支援 StorageGRID <block ref="2fac6fab6140bb69b5d83290782a5692" category="inline-link-macro-rx"></block>、但下列項目除外：</block>
-  <block id="7ec3a9615fdcb787115a5284d9d5dbcf" category="paragraph">如果應用程序例行檢查某個對象是否存在於您不希望該對象實際存在的路徑中，則應使用 " 可用 " <block ref="038aa67d578619b0470ac319bbcada22" category="inline-link-macro-rx"></block>。例如、如果您的應用程式在放置前先找到某個位置、則應使用「可用」一致性。</block>
-  <block id="9778bba0717bfd261e9e4fb4a94cfe3b" category="doc">為貯體和物件設定 StorageGRID CORS</block>
-  <block id="f859a10692c28b5a737e8b682e81b570" category="inline-link-macro">為管理介面啟用 StorageGRID CORS</block>
-  <block id="5cedf3e0b6c2d198224037252f4a8cc4" category="paragraph"><block ref="5cedf3e0b6c2d198224037252f4a8cc4" category="inline-link-macro-rx"></block></block>
-  <block id="f49ea42bb0d855f44cdec4147848cca8" category="paragraph">您可以將通知組態 XML 與來源貯體建立關聯、以設定事件通知。通知組態 XML 遵循 S3 慣例來設定貯體通知，目的地 Amazon SNS 主題， Kafka 主題或 Webhook 端點則指定為端點的 URN 。</block>
-  <block id="bbd0dab7358db2ac7e4a4134c9c4fd50" category="list-text">設定事件通知之後，每當來源儲存區中的物件發生指定事件時，就會產生通知，並傳送至 Amazon SNS 主題， Kafka 主題或用作目的地的 Webhook 端點。</block>
-  <block id="cb7106cb15070887f0d5dc075d50a9d2" category="list-text">確認已將通知傳送至目的地 Amazon SNS 主題， Kafka 主題或 Webhook 端點。</block>
-  <block id="a0cecb3384a9c1110ea809ccbe85be61" category="paragraph">StorageGRID 支援 Amazon SNS ， Kafka 和 Webhook 端點。不支援 Simple Queue Service （ SQS ）和 AWS Lambda 端點。</block>
-  <block id="8023085148ce4b50a822c9b71df4e528" category="paragraph">對於 Kafka 端點，不支援相互 TLS 。因此、如果您<block ref="5ec1ae5feff14cf7c2f50236b41b254e" prefix=" " category="inline-code"></block>在 Kafka Broker 組態中設定為<block ref="ac67ede5a84eb5a1add7ff4440e9a485" prefix=" " category="inline-code"></block>、可能會導致 Kafka 端點組態問題。</block>
-  <block id="161b1edb3675ee00443788a96edfcfc0" category="paragraph">平台服務會與您使用或設定的外部端點通訊<block ref="8a4265dfe3b83adb684d9f10d88cc6c8" category="inline-link-macro-rx"></block><block ref="cc81f9c7ca3cfcc9f647dba9cadc6ca0" category="inline-link-macro-rx"></block>。每個端點代表一個外部目的地，例如 StorageGRID S3 儲存區， Amazon Web Services 儲存區， Amazon SNS 主題， Webhook 端點，或本地， AWS 或其他位置託管的 ElasticSearch 叢集。</block>
-  <block id="a35ca2d883a26c1d83440dcd59d855ec" category="list-text">平台服務端點參照的資源已建立：</block>
-  <block id="2a5f06645f6730522ca5aac5902f5cfb" category="list-text">活動通知： Amazon Simple Notification Service （ Amazon SNS ）主題， Kafka 主題或 Webhook 端點</block>
-  <block id="70e4e2fbc2ead9499f9e69f1612f958b" category="list-text">搜尋通知：如果目的地叢集未設定為自動建立索引，則為彈性搜尋索引。</block>
-  <block id="d7d12c6b10a8801754ffa155307d9fd3" category="list-text">安全性憑證（如果需要憑證驗證）</block>
-  <block id="3a211cfae441c579685eec621f0aafbc" category="paragraph">端點支援的平台服務類型會顯示在端點名稱旁邊，端點名稱會列在端點頁面上，因此您不需要在名稱中包含該資訊。</block>
-  <block id="54c8107ec5763757535759e84fcccba4" category="inline-xref">步驟 9</block>
-  <block id="1503850605db314f18b40c4ef0cb4d5c" category="admonition">如果您想要驗證 Webhook 端點，請在中設定相互傳輸層安全性（ TLS ）<block ref="e8dd83deedf39c1306064f01211e9b7c" category="inline-xref-macro-rx"></block>。</block>
-  <block id="5a7e7ced921ef3c8081e435e84abf263" category="list-text">[[verify-certs] 選取「 * 驗證憑證 * 」的選項按鈕，以選擇 TLS 連線至端點的驗證方式。</block>
-  <block id="9c0707ba0843fc6ec543a62b3091e04b" category="open-title">大多數端點</block>
-  <block id="f32bc017f676b0f8709cdcd294aacd61" category="paragraph">驗證「搜尋」整合， CloudMirror 複寫， Amazon SNS 或 Kafka 端點的 TLS 連線。</block>
-  <block id="fdd421caaf7447360aa16863f0248c6b" category="paragraph">驗證伺服器憑證以進行 TLS 連線至端點資源。</block>
-  <block id="56f0a1ec22e1e5c7cdeb757dfb772de0" category="paragraph">已停用憑證驗證。此選項不安全。</block>
-  <block id="ace8a2ae9f2e438dc5f73af1a48d254c" category="paragraph">連線至端點時，使用自訂 CA 憑證來驗證伺服器的身分識別。</block>
-  <block id="d8ee6e92fe1c5ba5c9a50cf4c2b063ee" category="open-title">僅限 Webhook 端點</block>
-  <block id="3316781604b681288617703bb15a77fa" category="paragraph">驗證 Webhook 端點的 TLS 連線。</block>
-  <block id="56c0813690e61759920837ea9162b8eb" category="paragraph">MTLS</block>
-  <block id="e06daaab7f12b88665fb771675837a25" category="paragraph">驗證用戶端和伺服器憑證，以便與端點資源進行相互 TLS 連線。</block>
-  <block id="c49be126ca0ab99ca3fdbbdeca07fc03" category="paragraph">當您選取 *MTLS* 時，這些選項就會變成可用的選項。</block>
-  <block id="2687f17fe6622076559dfe8e01264bd0" category="paragraph">請勿驗證伺服器憑證</block>
-  <block id="4080bba10f2ef041eb07e87d1f12e378" category="paragraph">停用伺服器憑證驗證，這表示伺服器的身分未驗證。此選項不安全。</block>
-  <block id="8bd6d2ce48f2223aae12462964eb7b88" category="paragraph">用戶端憑證用於在連線至端點時驗證用戶端的身分識別。</block>
-  <block id="924fc1628c79139f6c89d12b9ccc8f7c" category="paragraph">用戶端私密金鑰</block>
-  <block id="bc012a60d4891880b45d375439a9079d" category="paragraph">用戶端憑證的私密金鑰。如果加密，則必須使用傳統格式的 PKCS #1 （不支援 PKCS #8 格式）。</block>
-  <block id="50acec6037ebf282f1b3174a32513d04" category="paragraph">用戶端私密金鑰複雜密碼</block>
-  <block id="eeb9ef2de62cb85192468a667820540e" category="paragraph">用於解密用戶端私密金鑰的複雜密碼。如果私密金鑰未加密，請將此留白。</block>
-  <block id="7dee05dba4078c38725e6ba048364f02" category="admonition">每個網格最多可有 100,000 個貯體<block ref="7e6ac537aabc214a39fcdd68e352b528" category="inline-link-macro-rx"></block>，包括。</block>
-  <block id="f05c06a032c68db452ada8cafa8eed4f" category="paragraph">在下列情況下，您必須啟用物件版本設定：</block>
-  <block id="87e090cb6522bc5f076b89be895f3551" category="list-text">貯體將用於跨網格複寫。</block>
-  <block id="9a940915d22bb2feb754f5acae1eec06" category="list-text">您想要從此貯體建立<block ref="bf0133cff3494b1628c90fa43f4e781a" category="inline-link-macro-rx"></block>。</block>
-  <block id="93ca42c1c4d8c6e0a5ea9819f8de3453" category="list-text">[[capity-limit ]] （選擇性）選取 * 啟用容量限制 * ，輸入值，然後選取容量單位。</block>
-  <block id="a722ab497aa5c681e16fa2f565e7194a" category="list-text">[[object-count-limit ]] （選擇性）選取 * 啟用物件數限制 * ，然後輸入一個至少 1 且不超過 1 ， 000 ， 000 ， 000 ， 000 ， 000 ， 000 ， 000 ， 000 ， 000 ， 000 ， 000 ， 000 ， 000 。</block>
-  <block id="a15ada97176ce3892d25cc31cc59cda2" category="paragraph">物件數上限是此貯體可包含的物件數上限。此值代表邏輯數量（物件數）。如果未設定限制，則物件數是無限的。</block>
-  <block id="92724eb290e01391ec064e4257e6e973" category="inline-link-macro">建立分行庫存箱</block>
-  <block id="6bb24c4b795414746b5c3d0b7886c024" category="paragraph">您也可以<block ref="46176e242f988c42deeb5f1e1868ab92" category="inline-link-macro-rx"></block>視需要進行。</block>
-  <block id="e21e79e6adfe98f06e6a600b60c0563c" category="summary">如果您想要使用管理 API 將 StorageGRID 中的資料存取至另一個網域，您可以啟用跨來源資源共用（ CORS ），以進行 StorageGRID 的管理 API 要求。</block>
-  <block id="2ff2b1c9d5bf27d0566a47745eccb347" category="paragraph">CORS 是一種安全機制，可讓一個網域中的用戶端 Web 應用程式存取不同網域中的資源。例如，假設您要在域中爲 StorageGRID 構建監控儀表板<block ref="51b1e6f58ecba72f23c5ff90f411d430" prefix=" " category="inline-code"></block>。StorageGRID 網域在 StorageGRID for 和「 Grid Manager 」中啟用 CORS ，即可<block ref="51b1e6f58ecba72f23c5ff90f411d430" prefix=" " category="inline-code"></block>回應來自的網格管理 API 要求<block ref="51b1e6f58ecba72f23c5ff90f411d430" prefix=" " category="inline-code"></block>。</block>
-  <block id="176b87e92dcf60c6c50da02b8d55f42f" category="paragraph">CORS 支援具有或<block ref="a6dc49c42ca3334e10cec6690c77ad24" prefix=" " category="inline-code"></block>要求的<block ref="dc105ac52c237f9f09c74b0767f64f74" prefix=" " category="inline-code"></block>管理 API （ mgmt-API ）要求<block ref="d1f5a9d446c6cec2cf63545e8163e585" prefix=" " category="inline-code"></block>。</block>
-  <block id="343373f6cb34ecfc662e129bb0849ff4" category="list-text">在 StorageGRID 組態頁面的 * 網路 * 下，選取 * 管理介面 CORS 設定 * 。</block>
-  <block id="6993fc32eeb49be675cfe8c229250e9f" category="list-text">選擇 * Grid Manager* ， * Tenant Manager* 或兩者選項。</block>
-  <block id="d7656162b004570f74c3457a39cebfc5" category="list-text">* Grid Manager* ：啟用 CORS 以處理跨網域 Grid Management API 要求。</block>
-  <block id="cbcd27a752d121c807c149bdf0021fac" category="list-text">* 租戶管理器 * ：啟用 CORS 以處理跨網域租戶管理 API 要求。</block>
-  <block id="c4c85c75f8434630b0c800747dd10444" category="list-text">在 * 網域 * 欄位中輸入其他網域的 URL 。</block>
-  <block id="0eb03035eb746eaa19660df68914a306" category="paragraph">如果要在 StorageGRID 中針對多個網域啟用 CORS ，請選取 * 新增其他網域 * 。</block>
-  <block id="fc7a29e341579936c8de1806fd2b8c0e" category="paragraph"><block ref="fc7a29e341579936c8de1806fd2b8c0e" category="inline-link-macro-rx"></block></block>
-  <block id="590c86e3850f7e05b9dedb83871ee022" category="paragraph">發出 HEAD 作業時，要求擷取物件的中繼資料</block>
-  <block id="b92f71d95ce7adb0e0c97fddccd92a34" category="summary">分支庫位可讓您存取貯體中的物件，只要它們仍存在於貯體中，就如同它們在特定時間存在一樣。使用 Tenant Manager 來建立和檢視分公司貯體。</block>
-  <block id="a89e7555d1ac1879b9b736caf1f60912" category="doc">管理分行庫存箱</block>
-  <block id="ed28b9d565fdebf6bee61534502734c0" category="paragraph">分支儲存區可存取受保護的資料，但無法作為備份。若要繼續保護資料，請在基礎貯體上使用下列功能：</block>
-  <block id="8a938a86eccd0a894b595bf104e4ebcf" category="list-text"><block ref="8a938a86eccd0a894b595bf104e4ebcf" category="inline-link-macro-rx"></block></block>
-  <block id="aee88f57722b8d8e7a1a00a852055eb5" category="list-text"><block ref="dca7082f1e3cfa6e7a089027bc4d5ddc" category="inline-link-macro-rx"></block>適用於基礎鏟斗</block>
-  <block id="23b9c963356d64ad5c99e461bc97054e" category="inline-link-macro">貯體原則</block>
-  <block id="2b41d82f611199a86c97da4aff17bfd8" category="list-text"><block ref="e4e69aa168f1f98e4b9fce930b08fb52" category="inline-link-macro-rx"></block>用於清理舊物件版本的版本</block>
-  <block id="36938583b2402e75807b013ac1bd502e" category="paragraph">您可以從現有的貯體建立分支貯體。建立分支貯體之後，其建立來源的原始貯體稱為基礎貯體。此外，您也可以從其他分行庫位建立分行庫位。當您在基礎貯體上執行作業時，分支貯體的結果取決於您所建立的作業和分支貯體類型。</block>
-  <block id="059dfde63c03ce7866507f8cc725f57e" category="paragraph">您可以使用分支貯體來移除毀損的物件，方法是在毀損發生前的某個時間點建立分支貯體，然後將應用程式指向分支貯體，而非指向含有毀損物件的基礎貯體。</block>
-  <block id="95540b3a0b1199f24707068b6e52d0ef" category="admonition">分支庫位並不做為備份，但可存取受保護的資料。您必須繼續使用<block ref="26bff9a9a174fff499003e566f646aed" category="inline-link-macro-rx"></block>或<block ref="0a0eb7b2ba3557a5e6d8cb456a868f8e" category="inline-link-macro-rx"></block>保護資料。</block>
-  <block id="18893b82f67f6a7fbebd0b0aeb0c8e68" category="paragraph">分支貯體不支援跨網格複寫。</block>
-  <block id="0a129652be4fa88c169408265c83c1b8" category="list-text">您已使用登入租戶管理程式<block ref="adf24c7e4de4f7fbefe34dbdfdb455df" category="inline-link-macro-rx"></block>。</block>
-  <block id="5cbde2e4aa231f8c0532798fe78d8b1f" category="inline-link-macro">已啟用版本設定</block>
-  <block id="d435fd11ad348f6f0453122a4cca6b1a" category="list-text">您想要從中建立分支的基礎貯體有<block ref="d7818b6497f19fd9eded2a39495b38a6" category="inline-link-macro-rx"></block>。</block>
-  <block id="8a7692b4d0887af960178d9f6598ddb2" category="list-text">您是基礎貯體的擁有者。</block>
-  <block id="941b7c17970d37bd50315d855dbf3f13" category="section-title">建立分公司貯體</block>
-  <block id="bb1dc3a97fdaa7ff79a338fa084aaa95" category="list-text">選取您要從中建立分支的貯體（「基礎貯體」）。</block>
-  <block id="97fabb2199b77f51cc55ca0462902509" category="list-text">在「庫位詳細資料」頁面上，選取 * 分支 * &gt; * 建立分支庫位 * 。</block>
-  <block id="8966dba4b62627044eee64df544008fe" category="paragraph">如果基礎貯體未啟用版本設定，則會停用 * 建立分支貯體 * 按鈕。</block>
-  <block id="de4cfcbe6ae25e8d50786da9ae2efab0" category="list-text">輸入分行庫位的詳細資料。</block>
-  <block id="7932dfbe3cd0f2e08939bfd23d6bd3a4" category="paragraph">分支庫位名稱</block>
-  <block id="6b43a6059f13bdced81f060dc3f14a54" category="paragraph">符合以下規則的分支庫位名稱：</block>
-  <block id="3a5a18a5eec88c1c7fc522601eee4f2c" category="paragraph">* 附註 * ：建立分行庫位後，您無法變更名稱。</block>
-  <block id="2e31c81b49b2ccad4675947e14b2a4d7" category="paragraph">區域（無法修改分行庫存箱）</block>
-  <block id="d20970f8f63beebb66d9f31990e88332" category="paragraph">分行庫位的區域。</block>
-  <block id="5e6abce481b984d89dac66c924ca87e3" category="paragraph">分支庫位的區域必須符合基礎貯體的區域，因此分支庫位的此欄位會停用。</block>
-  <block id="1c09b74d96642b2744323004d70f0b71" category="paragraph">在時間之前</block>
-  <block id="0626d449ada2c5ae42dcb95b73a7eee3" category="paragraph">從分支庫位可存取的基礎貯體中所建立物件版本的截止時間。分支庫位可讓您存取早於之前建立的物件版本。</block>
-  <block id="2281156735efd051a46dbf3f54496d67" category="paragraph">分支貯體類型</block>
-  <block id="08e2be2fc2286476f000465d1166d671" category="list-text">* 讀寫 * ：您可以在分支儲存區中新增或刪除物件或物件版本。</block>
-  <block id="e7ae9ec42b7ec308fd51e8fc185d3350" category="list-text">* 唯讀 * ：您無法修改分支儲存區中的物件。</block>
-  <block id="3fe128c5c6e5cacd8885ae47a74c38b9" category="paragraph">分支貯體的設定不會影響基礎貯體中的物件版本。</block>
-  <block id="9e9e2732358ce136cb7fdfb2101e4cae" category="list-text">如果已啟用全域 S3 物件鎖定設定，則可選擇性地為分支儲存區啟用 S3 物件鎖定。若要啟用 S3 物件鎖定，分支貯體必須是讀寫貯體。</block>
-  <block id="6d9eb9822403d44d68220585a5544306" category="paragraph">只有當您需要保留物件一段固定時間（例如，為了符合特定法規要求）時，才需啟用分支貯體的 S3 物件鎖定。S3 物件鎖定是一項永久性設定、可協助您防止物件在固定的時間內或無限期地遭到刪除或覆寫。</block>
-  <block id="f30946d906ce5504c46c1d0fd5ec7d04" category="admonition">為貯體啟用 S3 物件鎖定設定之後、就無法停用該設定。擁有正確權限的任何人都可以將物件新增至無法變更的分支庫位。您可能無法刪除這些物件或分支庫位本身。</block>
-  <block id="b28e02ea2afa882934ab0f8206c510d6" category="list-text">如果您選取 * 啟用 S3 物件鎖定 * ，則可選擇性啟用分支儲存區的 * 預設保留 * 。</block>
-  <block id="4da56e36035c78a70628e1455509af0a" category="paragraph">啟用 * 預設保留 * 時，新增至分支儲存區的新物件將會自動受到保護，不被刪除或覆寫。「 * 預設保留 * 」設定不會套用至具有其本身保留期間的物件。</block>
-  <block id="92067a72af600053abfc65e0759cb749" category="list-text">如果啟用 * 預設保留 * ，請為分支儲存區指定 * 預設保留模式 * 。</block>
-  <block id="605d96cd4d0d5b87f31298db99f79742" category="list-text">如果啟用 * 預設保留 * ，請指定分行庫位的 * 預設保留期間 * 。</block>
-  <block id="af592565a817b33743ca5eacfe964df3" category="paragraph">「 * 預設保留期間 * 」表示從擷取新物件開始，新增至分支儲存區的新物件應保留多久。指定小於或等於租用戶保留期間上限的值、如網格管理員所設定。</block>
-  <block id="b1a8be2040a1f0630f945f446dacb5d6" category="paragraph">容量上限是分支貯體的最大可用容量。此值代表邏輯數量（物件大小）、而非實體數量（磁碟大小）。</block>
-  <block id="72ee9821da031a0735d3d6bc485b221f" category="paragraph">如果未設定限制，則分支貯體的容量是無限的。如需詳細資訊、請參閱 <block ref="7c007c5c6ce791e8eee853c71b925e77" category="inline-link-macro-rx"></block> 。</block>
-  <block id="8b4a852b3933d0e7874c6220b99b3341" category="admonition">此設定僅適用於直接擷取至分支貯體的物件，而不適用於透過分支貯體從基礎貯體可見的物件。</block>
-  <block id="5e9c11b071b8822a68c3ee6a7fb6f542" category="list-text">（可選）選擇 * 啓用對象數限制 * 。</block>
-  <block id="a8cd357c4b99528e7c8d12217cdb2b1a" category="paragraph">物件數上限是指分支庫位可包含的物件數上限。此值代表邏輯數量（物件數）。如果未設定限制，則物件數是無限的。</block>
-  <block id="d96d9145840972cb30c903be431443d4" category="paragraph">分行庫位會建立並新增至「庫位」頁面上的表格。</block>
-  <block id="c22c8e99805081e03b78a1ad03686483" category="inline-link-macro">檢視分行庫位詳細資料</block>
-  <block id="086c24dbbe9783be645612c065feccf6" category="list-text">您也可以選擇 * 移至貯體詳細資料頁面 * 、以<block ref="de62db3949e512e15e879d5e0f3b5f7a" category="inline-link-macro-rx"></block>執行其他組態。</block>
-  <block id="6d5ee6df20f78806a02f5b5561bd69e6" category="paragraph">在「貯體詳細資料」頁面上，部分與修改物件相關的組態選項會停用於唯讀貯體。</block>
-  <block id="2d25de845db63e9a1f92f7152347be68" category="paragraph">您可以建立本機使用者並將其指派給本機群組、以決定這些使用者可以存取哪些功能。租戶管理程式包含一個預先定義的本機使用者，名稱為「 root 」。雖然您可以新增及移除本機使用者、但無法移除根使用者。</block>
-  <block id="642bc860e2aa1eaf9be718fbfdc85ba8" category="list-text">租戶管理程式登入頁面。* 帳戶 * 欄位可能已完成。</block>
-  <block id="1ba2d00f1998347f92795a481840a24c" category="list-text">貴組織的 SSO 頁面。</block>
-  <block id="6fc117b75eeacb0f10a2fcdb3bc6ea5b" category="paragraph"><block ref="6002c6713f40e8a35d365605542e72b0" prefix="" category="inline-code"></block>、<block ref="541661622185851c248b41bf0cea7ad0" prefix=" " category="inline-code"></block>或<block ref="2ff80e9159b517704ce43f0f74e6e247" prefix=" " category="inline-code"></block></block>
-  <block id="5173d3685a01bad035b571886cf20cd6" category="paragraph">對於大多數端點， URN 的最後一個元素會在目的地 URI 上識別特定的目標資源，例如<block ref="5eb86c1ff69173e55d6c83230709f3f5" prefix=" " category="inline-code"></block>。</block>
-  <block id="00b74a520a5e2557c25399480fee9b77" category="paragraph">對於 Webhook 端點，目標資源本身就是目的地 URI 。</block>
-  <block id="fc15d0693e3015ee8bda826b664d9a5f" category="paragraph">* 注意： * 對於 Webhook 端點，只要端點的 URN 是唯一的， URN 的最終元素就可以是任何字串。</block>
-  <block id="2d2fd346aa4768b77baf43386a6a8597" category="paragraph">指定 Webhook 端點：</block>
-  <block id="7fc36817d2e87c931ebb7524861c0ea9" category="paragraph">如果您想要 StorageGRID 將指定事件的通知傳送至目的地 Kafka 叢集， Webhook 端點或 Amazon Simple Notification Service ，您可以啟用 S3 儲存區的事件通知。</block>
-  <block id="b6f50651719c0765741d9bc9880f0dfe" category="list-text">檢視容量限制使用量和物件數量限制使用量列。如果使用率為 100% 或接近 100% ，請考慮增加限制或刪除部分物件。</block>
-  <block id="cfa3d484da4074f15fe6d395c7540d30" category="inline-link-macro">物件數限制</block>
-  <block id="a0fa3984fdc582d85c39cdf9ffb76ef7" category="list-text"><block ref="a0fa3984fdc582d85c39cdf9ffb76ef7" category="inline-link-macro-rx"></block></block>
-  <block id="31efd76d9c29c0bc15559df501f312a8" category="inline-link-macro">CORS 適用於貯體和物件</block>
-  <block id="487d5c2b66cd768ff8e3c0c0eede01d4" category="list-text">進行設定<block ref="9685087074e00d149800e8e79319a495" category="inline-link-macro-rx"></block>、讓其他網域的 Web 應用程式可以存取貯體中的貯體和物件。</block>
-  <block id="73938cc723a5aea85bd220cb6a207618" category="inline-link-macro">建立新的分行庫位或管理分行庫位</block>
-  <block id="b4f6e915d8fa8e71ea02fb1915053cdd" category="list-text">* 分行 * ：檢視庫位的分行庫位清單。<block ref="1a9dc1c0eefc68b8131338ff63d40c6e" category="inline-link-macro-rx"></block>。</block>
-  <block id="dc25fac06abeb7fe280dcdfd1ad19225" category="paragraph">如果您只收集所選節點的記錄、請務必包含至少一個具有ADC服務的儲存節點。在站台上安裝的前三個儲存節點包括 ADC 服務。</block>
-  <block id="7d35891b2ad80101871d5dd547d194e3" category="list-text">轉至 *support* &gt; *Tools* &gt; *Logs* 。收集警示中儲存節點的應用程式記錄。指定警示前後 15 分鐘。請參閱 <block ref="41258e888225b1058abb277314f87227" category="inline-link-macro-rx"></block>。</block>
-  <block id="b7bc4ea80bd108edc811170978822842" category="list-text">如果您的 StorageGRID 系統已啟用單一登入（ SSO ）、請參閱的步驟<block ref="f0e97d33ad9b62df2e993c6f81b4684e" category="inline-link-macro-rx"></block>。</block>
-  <block id="172ddd2cc57080b421c6c53284129ae7" category="paragraph">如果偵測到的遺失物件複本數大於 100 ，則儲存節點的儲存設備可能會發生問題。</block>
-  <block id="fb2876bd9eb0baf80920c854901b61cb" category="summary">StorageGRID 12.0 使用網格管理 API 的第 4 版。第 4 版取代第 3 版、但仍支援第 1 、 2 和 3 版。</block>
-  <block id="73edda274eb4f7a63f7cb7a94232759a" category="admonition">您可以繼續在 StorageGRID 12.0 中使用已過時的管理 API 版本、但在未來的 StorageGRID 版本中、將會移除對這些 API 版本的支援。升級至 StorageGRID 12.0 之後、您可以使用 API 停用過時的 API<block ref="dd804d77efefc5536d88af1c99c663e7" prefix=" " category="inline-code"></block> 。</block>
-  <block id="7d89fe6493159c41a06db095d3952fce" category="section-title">用於移動 ADC 的新私有端點</block>
-  <block id="3197780bf94fe6e2b41a72750b624053" category="inline-link-macro">移動 ADC 服務</block>
-  <block id="4ee4aad62033107cc5b0b55011daf66e" category="paragraph">已新增下列私有端點，可讓您<block ref="c3a78d9a479cfe61a6165e723148e6c3" category="inline-link-macro-rx"></block>從同一個儲存節點到同一個站台上的另一個儲存節點：</block>
-  <block id="abc484b9ebd3bc69ee57d5047cc33a36" category="paragraph"><block ref="3147733466f131dfcc1c618beed7db6c" prefix="" category="inline-code"></block></block>
-  <block id="e7d8644801e4a32c4348604077bb5811" category="paragraph"><block ref="36e6ff7d2075e5af1d774084989d9706" prefix="" category="inline-code"></block></block>
-  <block id="7aae49a2347b83db89ac0597f32a5ae9" category="paragraph"><block ref="41d6d77ed2f0cb6cebcb72afd987b025" prefix="" category="inline-code"></block></block>
-  <block id="6c270ced99284d8a4fd5d90fca0e8a37" category="summary">StorageGRID 12.0 使用租戶管理 API 的第 4 版。第 4 版取代第 3 版、但仍支援第 1 、 2 和 3 版。</block>
-  <block id="3f7ba28cde071caa24278c6850962020" category="admonition">您可以繼續在 StorageGRID 12.0 中使用已過時的租戶管理 API 版本、但在未來的 StorageGRID 版本中、將會移除對這些 API 版本的支援。升級至 StorageGRID 12.0 之後、您可以使用 API 停用過時的 API<block ref="dd804d77efefc5536d88af1c99c663e7" prefix=" " category="inline-code"></block> 。</block>
-  <block id="71fa1865107ca0f2365785a00672f3e6" category="section-title">用於物件複寫的新 API</block>
-  <block id="042fe6b4fa67bcb98ab83722bd9b7bd3" category="paragraph">您可以使用<block ref="47194847b41d500cbad96094bfb54af8" prefix=" " category="inline-code"></block> API 在新設定跨網格複寫的現有儲存區上手動複寫物件。</block>
-  <block id="40cf87da9e9a983b873d2973d26b8806" category="admonition">升級至 StorageGRID 12.0 時不需要其他連接埠。</block>
-  <block id="8596eada24ffce2766dda858553fdc94" category="paragraph">所有其他網格節點上的軟體會依照您核准節點的順序進行升級。一個管理節點或閘道節點會與一個儲存節點同時升級。</block>
-  <block id="fcb72f1b650324bb9b71cd13eb987ff1" category="paragraph">請檢閱這些主題、瞭解 StorageGRID 12.0 的新功能和增強功能、判斷是否已過時或移除任何功能、以及瞭解 StorageGRID API 的變更。</block>
-  <block id="264d9394225a70ce81d779a300ac9a5b" category="inline-link-macro">StorageGRID 12.0 的新功能</block>
-  <block id="ef1acfaaa7ab539b3c51ced9ae36ef9a" category="list-text"><block ref="ef1acfaaa7ab539b3c51ced9ae36ef9a" category="inline-link-macro-rx"></block></block>
-  <block id="8d2795ff5b0a5eefbeb03f6db0678d36" category="paragraph">您應該先下載最新的還原套件檔案複本，然後再升級主要管理節點。恢復套件檔案可讓您在發生故障時還原系統。</block>
-  <block id="9148826bf1f2c2cc347f5a748b49b74c" category="list-text">當 * 開始升級服務 * 工作完成時， * 升級其他網格節點 * 工作會啟動，並提示您下載新的恢復套件複本。</block>
-  <block id="0943189326f156b130514bb0a6fc6e7e" category="list-text">出現提示時，請輸入您的資源配置密碼，然後下載恢復套件的新複本。</block>
-  <block id="50cbf00647c512ad2f804090c8dca079" category="admonition">升級主管理節點之後，您應該下載新的還原套件檔案複本。恢復套件檔案可讓您在發生故障時還原系統。</block>
-  <block id="a47da62fdf201e1637dcfad20ebcb2f5" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>下載恢復套件</block>
-  <block id="5cc874d26d9ac69384da893a0d085518" category="paragraph">開始升級之前，請先下載目前的恢復套件。</block>
-  <block id="45231d874b2930c2e5ac6fed91d23abf" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block>下載恢復套件</block>
-  <block id="fcc9e10a97680ea811e3cb0143b5eb23" category="paragraph">主管理節點升級後，請下載新的恢復套件。</block>
-  <block id="25586409625a01293a26502081fb833c" category="doc">StorageGRID 12.0 的新功能</block>
-  <block id="88cb1082a80100f11f18c0737bb06b52" category="paragraph">您可以在啟用 S3 物件鎖定的貯體之間設定跨網格複寫。請參閱 <block ref="95f45d5822507517d0862a55c2d3a02f" category="inline-link-macro-rx"></block>。</block>
-  <block id="2150fcb59b4aea92d5840cc61ad99b6f" category="paragraph">NetApp 建議僅在 StorageGRID 12.0 來源與目的地貯體之間使用此功能。不過，停用 S3 物件鎖定的 StorageGRID 11.9 來源貯體和啟用 S3 物件鎖定的 StorageGRID 12.0 目的地貯體之間，都支援此功能。</block>
-  <block id="dfba232622f1a849e002bc8081e59832" category="section-title">磁碟上加密密碼的安全性增強功能</block>
-  <block id="1dd31f6044f4c063e8779f038f2f6e30" category="paragraph">改善密碼安全性，包括對 SHA512 密碼雜湊的大量雜湊。</block>
-  <block id="a975221c1cda27065a3aa3b316449571" category="section-title">S3 儲存區</block>
-  <block id="7bc826ed5836160ed26707d23c1ac28c" category="section-title">分公司庫存箱</block>
-  <block id="71dfb473cc97309aab3655b4bda3a1b0" category="paragraph">現在您可以<block ref="5800c3101f39f85ecc6a8f131e006f20" category="inline-link-macro-rx"></block>使用 S3 儲存區。分段庫可讓您存取 S3 貯體物件，因為它們在特定時間就存在。分支儲存區與備份不同。</block>
-  <block id="214d236fbb08786d43f7158b9d8342db" category="section-title">使用者介面</block>
-  <block id="9386ea30b182be5cf88bbbdd40f8d6cd" category="section-title">暗色主題</block>
-  <block id="52cf36446a9216e5926cd8f967f667a9" category="paragraph">您可以在 Grid Manager 和 Tenant Manager 的「使用者」功能表中使用深色主題和系統主題設定。</block>
-  <block id="c42010b854bd2d8dcb12c86d68bf7c1c" category="section-title">設定區域增強功能</block>
-  <block id="82b57bfcb238d49bc14f6cc7c0fee802" category="paragraph">Grid Manager 中的「區域」頁面現在包含 * 預設區域 * 索引標籤。您可以使用此索引標籤來變更 S3 儲存區的定義預設區域。<block ref="38640566b0f368d62100ff4ede294d18" category="inline-link-macro-rx"></block>。</block>
-  <block id="f418d9ba587f02e4d3ce875f2bfe75c4" category="paragraph">+ 注意：您也可以使用 Grid Manager 或安裝 API 來設定系統。</block>
-  <block id="3dda21dd1c63930750ca3935ce668d25" category="admonition">暫存安裝密碼僅在節點安裝期間使用。將節點新增至網格之後，您可以使用存取該節點<block ref="2ec3f906b92d969fc17249306583d340" category="inline-link-macro-rx"></block>，此功能會列在還原套件的檔案中<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>。</block>
-  <block id="b7daca44acbdce2ad9adb9ec5b318f4b" category="sidebar">StorageGRID 12.0 文件</block>
-  <block id="3cee0fd8a99bd0a16e60af528030369b" category="sidebar">StorageGRID 12.0 文件</block>
-  <block id="1c39dad0f0eaa99c6ea596e4f32d7d67" category="sidebar">移動 ADC 服務</block>
-  <block id="8b787eaa73106e46d80ce27d43de00e8" category="sidebar">轉換為純資料節點</block>
-  <block id="4435a10e5a2b4277576c7d6a348037d8" category="sidebar">SSO 需求</block>
-  <block id="1440bca3ed9acdf17ac97bfb4678bffb" category="sidebar">為貯體和物件設定 CORS</block>
-  <block id="62ed4b0a61f62c977216fc9d416892da" category="sidebar">為管理介面啟用 CORS</block>
+  <block id="da849db1f9e906f33cbae468d624bd6c" category="list-text"><block ref="ae8ae3b6f1171197c571af5af3c3cf37" category="inline-link-macro-rx"></block>如果他們在您規劃部署後有所變更、並產生恢復套件。</block>
+  <block id="28a5123644d0679ae4e5fe468e64fa34" category="list-text">管理節點（主要和非主要）：<block ref="0477507f10899867b87b3565143dff3c" prefix=" " category="inline-code"></block></block>
+  <block id="3bcfac2c3b777bb60ef1a6e2fc8759be" category="list-text">您必須具有「根目錄」存取權或其他網格組態權限。</block>
+  <block id="f6abd35884dfbaef6490ecf3d76a64ad" category="paragraph">StorageGRID 會嘗試將 AutoSupport 套件傳送至 NetApp 支援網站 。如果嘗試成功、「*結果*」索引標籤上的*最近結果*和*上次成功時間*值將會更新。如果發生問題、 * 最近的結果 * 值會更新為「失敗」、而 StorageGRID 不會再次嘗試傳送 AutoSupport 套件。</block>
+  <block id="2f45a7fd06069833a4b59e13d5ceb924" category="admonition">傳送使用者觸發的 AutoSupport 套件後、請在 1 分鐘後重新整理瀏覽器中的 AutoSupport 頁面、以存取最近的結果。</block>
+  <block id="03c43d4328e4aa0ec4405698b6ea24b9" category="list-text">選擇*網格_*&gt;*要修復的儲存節點_*&gt;* LdR*&gt;*資料儲存*。</block>
+  <block id="ef34e18e5922b5234733e1b09451f742" category="list-text">請使用下列屬性組合來判斷複寫的修復是否完成、以及可能的情況。</block>
+  <block id="426fb3f84e09b4d47d571fdd087dca51" category="admonition">Cassandra 可能存在不一致之處、無法追蹤失敗的維修。</block>
+  <block id="536b3c6d463a3f7895540768f9cee21a" category="list-text">*嘗試的維修（XRPA）*：使用此屬性來追蹤複寫的維修進度。每次儲存節點嘗試修復高風險物件時、此屬性都會增加。如果此屬性的增加時間不超過目前掃描期間（由*掃描期間-預估*屬性提供）、表示ILM掃描未發現任何需要在任何節點上修復的高風險物件。</block>
+  <block id="c57e96a6dbeb5cfe7f6ca0445b2c9f01" category="admonition">高風險物件是可能完全遺失的物件。這不包括不符合其 ILM 組態的物件。</block>
+  <block id="2610ad7bab0f3be06c31d4f3015549a5" category="list-text">*掃描期間-預估（XSCM）*：使用此屬性來預估原則變更何時會套用至先前擷取的物件。如果*已嘗試的維修*屬性在一段時間內沒有增加、則可能是因為複寫的維修已經完成。請注意、掃描期間可能會變更。「*掃描期間-預估（XSCM）*」屬性適用於整個網格、是所有節點掃描期間的上限。您可以查詢網格的*掃描期間-預估*屬性歷程記錄、以判斷適當的時間範圍。</block>
+  <block id="6f68d67790e9674b542513ee0943ca76" category="paragraph">租戶可以為同盟群組和使用者設定及管理自己的身分識別來源。如果您的 StorageGRID 系統有此選項、則此選項會停用<block ref="245dffd620eb328c44f4fb56880edf42" category="inline-link-macro-rx"></block>。</block>
+  <block id="803f6f49b7d257b9d1586ea8a1b7cd3b" category="paragraph">即使用戶端應用程式閒置、您仍應保持HTTP連線開啟、以允許用戶端應用程式透過開放式連線執行後續交易。根據系統測量與整合體驗、您應將閒置的HTTP連線保持開啟狀態最長10分鐘。可能會自動關閉持續開啟和閒置超過10分鐘的HTTP連線。StorageGRID</block>
+  <block id="6bcde641ad7d1807ebbf1057bc5fc0f6" category="paragraph">判斷閒置連線開啟的時間長度、是在與現有連線相關的慢速啟動優點與內部系統資源連線的理想分配之間取得平衡。</block>
+  <block id="a587e8b0274251f25078187432975453" category="paragraph">隨著時間推移、隨著負載平衡需求的變更、HTTP連線可能不再是最佳狀態。當用戶端應用程式為每筆交易建立獨立的HTTP連線時、系統會執行最佳負載平衡、但這會使持續連線所帶來的更多寶貴成果喪失價值。</block>
+  <block id="7f1bb231bbb5935a588277d40d00ceea" category="paragraph">在StorageGRID 效能開始降級之前、每個支援系統的拓撲在並行交易和連線方面都有不同的尖峰處理量。尖峰處理量取決於運算資源、網路資源、儲存資源和WAN連結等因素。此外、伺服器和服務的數量、StorageGRID 以及支援哪些應用程式、也是因素。</block>
+  <block id="eab8e5092a8b93adfba02eeebb5ae1f7" category="paragraph">支援多種用戶端應用程式的系統。StorageGRID當您決定用戶端應用程式所使用的並行連線數目上限時、請謹記這一點。如果用戶端應用程式包含多個軟體實體、每個實體都會建立StorageGRID 與該系統的連線、您應該新增整個實體之間的所有連線。在下列情況下、您可能必須調整並行連線的最大數量：</block>
+  <block id="53ce4f650769c88e7687ca65672b9443" category="summary">網格中的每個節點都有唯一的節點主控台密碼、您必須登入節點。請使用下列步驟變更網格中每個節點的節點主控台密碼。密碼儲存在恢復套件中。</block>
+  <block id="537823d7ad338a90fa12db48f71989ad" category="paragraph">網格中的每個節點都有唯一的節點主控台密碼、您必須登入節點。請使用這些步驟來變更網格中每個節點的每個唯一節點主控台密碼。</block>
+  <block id="c3e5a14b4e144bfde3e318018452a44e" category="paragraph">使用節點主控台密碼、以「 admin 」身分使用 SSH 登入節點、或以 VM/ 實體主控台連線的 root 使用者身分登入。變更節點主控台密碼程序會為網格中的每個節點建立新密碼、並將密碼儲存在恢復套件的更新<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>檔案中。密碼會列在Passwords.txt檔案的「Password（密碼）」欄中。</block>
+  <block id="44cf015f8fbb922a2b76cb726b62dec2" category="admonition">SSH金鑰有個別的SSH存取密碼、用於節點之間的通訊。此程序不會變更 SSH 存取密碼。</block>
+  <block id="2f763db727cb41e2687f7946a0eb3b42" category="section-title">輸入資源配置通關密碼</block>
+  <block id="76792bc23ba516e364924090666bef9e" category="paragraph">變更節點主控台密碼之前、請先下載目前的恢復套件。如果任何節點的密碼變更程序失敗、您可以使用此檔案中的密碼。</block>
+  <block id="ccef9dde3045d5bd257c8648a8afc117" category="list-text">將恢復軟件包文件複製<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>到兩個安全且獨立的位置。</block>
+  <block id="f4d8ae80d397e410789e20f2792f3323" category="admonition">必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。</block>
+  <block id="15131099a6ca45392aa680b1d6d69c94" category="list-text">當確認對話方塊出現時、如果您已準備好開始變更節點主控台密碼、請選取 * 是 * 。</block>
+  <block id="67e794638991186f2ffedc200b312093" category="paragraph">當節點主控台密碼程序啟動時、會產生包含新密碼的新恢復套件。然後、每個節點上的密碼都會更新。</block>
+  <block id="18cb7832866bcc0668ff06d969f05c5f" category="list-text">等待產生新的恢復套件、可能需要幾分鐘的時間。</block>
+  <block id="4d6d71422f919494b0feee8e8a06c40c" category="list-text">選擇*下載新的恢復套件*。</block>
+  <block id="e5d4705d33b21a6b8fd2602b0cc390af" category="list-text">將新的恢復軟件包文件複製<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>到兩個安全且獨立的位置。</block>
+  <block id="61d748e121e66852052cb8f5a965a4ac" category="admonition">請勿覆寫舊的恢復套件。</block>
+  <block id="cfbcc5dea9d27bd514be6a3e98b7c976" category="list-text">選取核取方塊、表示您已下載新的恢復套件並驗證內容。</block>
+  <block id="a690a44b962abeb7993408dc0fb90c25" category="list-text">選取 * 變更節點主控台密碼 * 、並等待所有節點以新密碼更新。這可能需要幾分鐘的時間。</block>
+  <block id="a77cfb3ca589a8af2500b77ee633a8fb" category="paragraph">如果變更所有節點的密碼、會出現綠色的成功橫幅。前往下一步。</block>
+  <block id="44dce563712ee76f772ef65734ebc991" category="paragraph">如果在更新程序期間發生錯誤、則會出現橫幅訊息、列出無法變更密碼的節點數量。系統會在任何無法變更密碼的節點上、自動重試此程序。如果程序結束時、部分節點仍未變更密碼、則會出現*重試*按鈕。</block>
+  <block id="b6e7bd13a6b0a189a2de7a6cd73b588a" category="inline-xref">您下載的第一個恢復套件</block>
+  <block id="afc654b2324e126e3b57957ebe192c46" category="list-text">變更所有節點的節點主控台密碼後<block ref="3f558497038a8c06a1385997f452c2ad" category="inline-xref-macro-rx"></block>、請刪除。</block>
+  <block id="a68ab2d1eee623f87ef7a6f372d29733" category="list-text">您也可以使用*恢復套件*連結下載新的恢復套件的其他複本。</block>
+  <block id="98c99fd0d7d21764e2cf6e23f0b0a1da" category="paragraph">管理節點的新存取密碼和每個節點的新內部金鑰都會儲存在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>恢復套件的檔案中。金鑰會列在該檔案的密碼欄中。</block>
+  <block id="b812cb4448a3ff9e24f489b5e99e0221" category="paragraph">變更 SSH 存取金鑰之前、請先下載目前的恢復套件。如果任何節點的金鑰變更程序失敗、您可以使用此檔案中的金鑰。</block>
+  <block id="78ff724a2baa7ceefda31653cc84b968" category="paragraph">當變更 SSH 存取金鑰程序開始時、系統會產生新的恢復套件、其中包含新的金鑰。然後、金鑰會在每個節點上更新。</block>
+  <block id="4ddb1e75e9b6d03b2c147eaf7c888a55" category="list-text">啟用「下載新的恢復套件」按鈕時、請選取 * 下載新<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>的恢復套件 * 並將新的恢復套件檔案儲存到兩個安全且獨立的位置。</block>
+  <block id="940cd91a503e80c4484deb2367644166" category="list-text">爲所有節點更改 SSH 訪問密鑰後，刪除<block ref="3f558497038a8c06a1385997f452c2ad" category="inline-xref-macro-rx"></block>。</block>
+  <block id="27fffe443b711c727741e0559dc14039" category="list-text">您也可以選擇 * 維護 * &gt; * 系統 * &gt; * 恢復套件 * 、下載新恢復套件的其他複本。</block>
+  <block id="8f522b3eb27126183acd1302a9f83cca" category="paragraph">如果啟用 SSO 且使用者的瀏覽器逾時、使用者必須重新輸入其 SSO 認證、才能再次存取 StorageGRID 。請參閱。 <block ref="da09383bc2ba172bb702c8a153ead503" category="inline-link-macro-rx"></block></block>
+  <block id="d2b8dee229206f3e9b40b90729b8644a" category="summary">請使用此程序來變更StorageGRID 供應密碼。恢復、擴充和維護程序需要通關密碼。下載「恢復套件」備份時、也需要密碼、其中包括網格拓撲資訊、網格節點主控台密碼、StorageGRID 以及適用於該系統的加密金鑰。</block>
+  <block id="4aa75b1a4ce22178d19c28d14cbf2503" category="paragraph">請使用此程序來變更StorageGRID 供應密碼。恢復、擴充和維護程序需要通關密碼。下載「恢復套件」備份時、也需要密碼、其中包括網格拓撲資訊、網格節點主控台密碼、StorageGRID 以及適用於該系統的加密金鑰。</block>
+  <block id="9354d1e4e48e58cb3907e1779c948a7a" category="inline-link-macro">正在下載恢復套件</block>
+  <block id="d43de97d3f687ac2487e2186114b7667" category="paragraph">許多安裝和維護程序和都需要隨需提供密碼<block ref="d33fc1e08ba8cc29edf206a7c52cf9f2" category="inline-link-macro-rx"></block>。資源配置複雜密碼未列在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>檔案中。請務必記錄資源配置通關密碼、並將密碼保存在安全的位置。</block>
+  <block id="0b0b87f974999fac0db03c9f2795b5a9" category="list-text">將新的資源配置通關密碼儲存在安全的位置。安裝、擴充和維護程序都必須如此。</block>
+  <block id="b7827ee049d86ace646973a790d83016" category="list-text">輸入新的資源配置密碼以下載新的恢復套件。</block>
+  <block id="25160e50cc851973c0c97bc12ab49bad" category="admonition">變更資源配置通關密碼之後、您必須立即下載新的恢復套件。恢復套件檔案可讓您在發生故障時還原系統。</block>
+  <block id="bc422c4695a96065ed42ccd5b36faca5" category="summary">啟用單一登入（SSO）時、如果使用者的認證是使用組織實作的SSO登入程序來授權、則只能存取Grid Manager、租戶管理程式、Grid Management API或租戶管理API。本機使用者無法登入StorageGRID 到無法使用的功能。</block>
+  <block id="27c16c055210506ce570aa1962ff3b4b" category="paragraph">啟用單一登入（SSO）時、如果使用者的認證是使用組織實作的SSO登入程序來授權、則只能存取Grid Manager、租戶管理程式、Grid Management API或租戶管理API。本機使用者無法登入 StorageGRID 。</block>
+  <block id="e280967bfb2aaa1dffdf83e675859a72" category="section-title">單一登入的運作方式</block>
+  <block id="73f21e527df2f17f1b76eb3d06973d70" category="list-text">如果這是您第一次存取此瀏覽器上的URL、系統會提示您輸入帳戶ID：</block>
+  <block id="19616ac3d5b06663619a84c04f444b11" category="image-alt">使用啟用SSO的第一次存取權限登入</block>
+  <block id="4e982bbf1b4892d23257ed7ff8c3a66b" category="list-text">如果您先前曾存取Grid Manager或Tenant Manager、系統會提示您選擇最近的帳戶或輸入帳戶ID：</block>
+  <block id="8bfaeb927696d45fd5645c0f2729dd17" category="image-alt">啟用SSO時顯示「登入」頁面StorageGRID</block>
+  <block id="51a348a68be7b566d005ae6c0c6990f3" category="image-alt">SSO的組織登入頁面範例</block>
+  <block id="098a6f02823ef076cb1b2a1249f49002" category="image-alt">編輯浮動授權帳戶 &gt; 使用自己的身分識別來源核取方塊未選取</block>
+  <block id="4a693d3606c7b9c122b3d04f36d03ccf" category="paragraph">支援使用安全聲明標記語言2.0（SAML 2.0）標準的單一登入（SSO）StorageGRID 。之後<block ref="4bec58be367182a844dd2648faff8d42" category="inline-link-macro-rx"></block>、所有使用者都必須先由外部身分識別供應商驗證、才能存取 Grid Manager 、 Tenant Manager 、 Grid Management API 或 Tenant Management API 。本機使用者無法登入 StorageGRID 。</block>
+  <block id="00e7715178f26bf731f5bc649b290318" category="paragraph">許多安裝與維護程序、以及下載StorageGRID 「還原套件」時、都需要使用資源配置密碼。也需要通關密碼才能下載適用於StorageGRID 整個系統的網格拓撲資訊和加密金鑰備份。您可以<block ref="41f4547eae3828e54749be1657f9b5a9" category="inline-link-macro-rx"></block>視需要進行。</block>
+  <block id="acecfa531dec4c682975c9ce7a611325" category="paragraph">網格中的每個節點都有唯一的節點主控台密碼、您必須以「 admin 」的身分使用 SSH 登入節點、或是以 VM/ 實體主控台連線的根使用者登入。您可以視需要<block ref="ba47d995b54cf006a5b0db5a6d249f8e" category="inline-link-macro-rx"></block>為每個節點執行。</block>
+  <block id="337a048bd8553f18dd2c17d0b52b468a" category="summary">您可以使用Azure AD為系統中的每個管理節點建立企業應用程式。</block>
+  <block id="7c2f0332f9429524ecec45ecb5a7808e" category="doc">在Azure AD中建立企業應用程式</block>
+  <block id="e75e8a60f9c21bea27aa59a5126e1228" category="list-text">您已開始設定StorageGRID 單一登入功能以供使用、並選擇* Azure *作為SSO類型。</block>
+  <block id="64580c787e3904b811e6dd91d2f3857b" category="inline-link-macro">使用沙箱模式</block>
+  <block id="2195d0857cf5bac5a86d61963112116f" category="list-text">*在Grid Manager的「單一登入」頁面上選取「沙箱模式*」。請參閱。 <block ref="4539ca96b3e34e55cee5c672da43266c" category="inline-link-macro-rx"></block></block>
+  <block id="c9a7ee7f67e6b5dc8293cef40eade7a8" category="list-text">您的系統中每個管理節點都有*企業應用程式名稱*。您可以從StorageGRID 「管理員節點」詳細資料表中複製這些值、該表位於「報價單一登入」頁面。</block>
+  <block id="d4514c3270d2fb9a0ece1c690bd466d4" category="list-text">您有在Azure Active Directory中建立企業應用程式的經驗。</block>
+  <block id="038dc840fb87c581805b2e2d2164f16f" category="list-text">您在Azure帳戶中有下列任一角色：Global Administrator、Cloud Application Administrator、Application Administrator或服務主體的擁有者。</block>
+  <block id="2cb0ab131a8aa3e5ad46ad3f15c55e46" category="section-title">存取Azure AD</block>
+  <block id="507f139de1fb5d97a392b81ad588154c" category="inline-link">Azure Active Directory</block>
+  <block id="cedcbd764e6e3c1e62aea79f0104bcfb" category="list-text">瀏覽至<block ref="36b6e78ae4d02017616fd0093f38bc42" category="inline-link-rx"></block>。</block>
+  <block id="59fd08e4aa914b947e93c84fac3f3409" category="paragraph">若要在 StorageGRID 中儲存 Azure 的 SSO 組態、您必須使用 Azure 為每個管理節點建立企業應用程式。您將從Azure複製聯盟中繼資料URL、然後貼到StorageGRID 「支援單一登入」頁面上對應的*聯盟中繼資料URL*欄位。</block>
+  <block id="347aba8d649c1395e2444873f5d61051" category="list-text">在Azure Enterprise應用程式窗格中、選取*新增應用程式*。</block>
+  <block id="d0d6e0a0b0043fa467a0b40e43145fa2" category="list-text">如需名稱、請在StorageGRID 「Data Name（管理員節點）」詳細資料表中輸入您複製的*企業應用程式名稱*（英文）、位於「Data Flash（英文）」頁面上。</block>
+  <block id="3dd34fd034df0985dc8c826d9ebce614" category="list-text">前往StorageGRID 「僅供參考的單一登入」頁面、然後將URL貼到*聯盟中繼資料URL*欄位、此欄位對應您使用的*企業應用程式名稱*。</block>
+  <block id="31b6519e4c15b39776dcea3f3bf815e4" category="list-text">在貼上每個管理節點的聯盟中繼資料URL、並對SSO組態進行所有其他必要變更之後、請在StorageGRID 「支援單一登入」頁面上選取「*儲存*」。</block>
+  <block id="e26db0d7a2928aba64b937d860e41b1e" category="list-text">儲存您要上傳至Azure AD的檔案。</block>
+  <block id="0760ed3ad5e8c00a0434bf7a6632bfaf" category="paragraph">下載每StorageGRID 個「支援對象管理節點」的SAML中繼資料檔案之後、請在Azure AD中執行下列步驟：</block>
+  <block id="d596a1bad7b0948a7985bf7153e05581" category="list-text">請依照中的步驟<block ref="4539ca96b3e34e55cee5c672da43266c" category="inline-link-macro-rx"></block>測試每個應用程式。</block>
+  <block id="588a2abd8a0d8800b56cbc3e2f026610" category="list-text">您知道系統中每個管理節點的完整網域名稱（或IP位址）和依賴方識別碼。您可以在StorageGRID 「管理員節點詳細資料」表的「單個登入」頁面上找到這些值。</block>
+  <block id="d43a46f98b3eee11b6e86c29dff22330" category="inline-link-macro">使用沙箱模式</block>
+  <block id="7677f0c435ed0f293daee686378138b1" category="list-text">完成後、請返回StorageGRID 「還原」並測試所有信賴關係人的信任、以確認其設定正確。如需相關指示、請參閱 <block ref="b2890d24e4f6ee26e710a384a8d1bd0d" category="inline-link-macro-rx"></block> 。</block>
+  <block id="cc97530ef441439d1bc3f06e326a0f10" category="list-text">完成後、請返回StorageGRID 「還原」並測試所有信賴關係人的信任、以確認其設定正確。如需相關指示、請參閱 <block ref="d6fda272196a3fca47910634b6e13cc5" category="inline-link-macro-rx"></block> 。</block>
+  <block id="487298652c8f57680f650e2addd55e43" category="list-text">您的系統中每個管理節點都有* SP連線ID*。您可以在StorageGRID 「管理員節點詳細資料」表的「單個登入」頁面上找到這些值。</block>
+  <block id="c435b3856ddcc41bf8d67358945bd9c1" category="list-text">您擁有 <block ref="efca11762b9145ce0214ca48d414de91" category="inline-link-macro-rx"></block>PingFederate Server 。</block>
+  <block id="0d8f108be3da002afa26d0816fcfe059" category="list-text">選取<block ref="5136fd5e4afe6225cfe4ac43fd65cc22" category="inline-xref-macro-rx"></block>您建立的。</block>
+  <block id="118e1a29e14539f47e39fa9704f53c4e" category="list-text">從StorageGRID 「管理節點的「支援單一登入」頁面下載的SAML中繼資料檔案。</block>
+  <block id="d74a923cc0f35d10c4cbceac6064b937" category="list-text">選取<block ref="ad2879636c29bc1dabd74b1a8a184083" category="inline-xref-macro-rx"></block>您建立或匯入的。</block>
+  <block id="f5fdb994f2846916e1798ea65ff44238" category="paragraph">建立租戶帳戶的步驟會因是否已設定及<block ref="87c1964ffda072a4b3d7c6aa422e48b4" category="inline-link-macro-rx"></block>所設定、以及您用來建立租戶帳戶的 Grid Manager 帳戶是否屬於具有「根」存取權限的管理群組而異<block ref="1483d3b63fcfd50b42638ae893f21637" category="inline-link-macro-rx"></block>。</block>
+  <block id="17e4a51ad00f19e412bf24f3151fe41d" category="paragraph">對於每個網格同盟連線、 * 最後一個錯誤 * 欄會顯示租戶資料複寫到其他網格時發生的最新錯誤（如果有）。此欄只會顯示最後發生的跨網格複寫錯誤、不會顯示先前可能發生的錯誤。此欄可能會因為下列其中一個原因而發生錯誤：</block>
+  <block id="c9b13e79c5662acee55ce1a8afee8dc2" category="list-text">兩個貯體都停用 S3 物件鎖定。</block>
+  <block id="1d502a8fdb199880c3a95e73eadd9798" category="list-text">為兩個網格設定相同的 SSO 身分識別提供者（ IDP ）。請參閱。 <block ref="da09383bc2ba172bb702c8a153ead503" category="inline-link-macro-rx"></block></block>
+  <block id="c8c76b80886b0bf570e6ff88b3da084b" category="paragraph">工作流程圖摘要說明在兩個網格上的儲存格之間設定跨網格複寫的步驟。</block>
+  <block id="32f2e3214b4147f7ab970b159077a65a" category="list-text">必須停用 S3 物件鎖定</block>
+  <block id="e935ac97f9ddd128a8c0bef6183436fb" category="paragraph">跨網格複寫可設定為單向或雙向進行。</block>
+  <block id="47cc18e34178ba968d23fca4d9f43b4a" category="paragraph">如果您只在一個網格上為某個儲存格啟用跨網格複寫、則新增至該儲存格（來源儲存格）的物件會複寫至另一個網格（目的地儲存格）上的對應儲存格。然而、新增至目的地儲存區的物件不會複寫回來源。在圖中、已啟用從網格 1 到網格 2 的跨網格複寫<block ref="60180bbbfc49f093933713b6001e86c5" prefix=" " category="inline-code"></block>、但未在其他方向啟用。</block>
+  <block id="3ebd7182226855217d7ed84ccee2e28a" category="paragraph">S3 用戶端可發出 GetObject 或 HeadObject 要求、以驗證物件的複寫狀態。回應包含 StorageGRID 專屬的<block ref="349f2558b0122acbc616838711df3954" prefix=" " category="inline-code"></block>回應標頭、其值如下： S3 用戶端可藉由發出 GetObject 或 HeadObject 要求來驗證物件的複寫狀態。回應包含 StorageGRID 專屬的<block ref="349f2558b0122acbc616838711df3954" prefix=" " category="inline-code"></block>回應標頭、其中包含下列其中一個值：</block>
+  <block id="a70540a16082ce9765ade78e43f080c5" category="list-text">* 失敗 * ：複寫並未擱置任何網格連線、至少有一個失敗且永久失敗。使用者必須解決此錯誤。</block>
+  <block id="0e975db33c40eb6875111298a5470653" category="list-text">如果 S3 用戶端發出不含版本 ID 的刪除要求、 StorageGRID 不會刪除任何物件版本。而是將刪除標記新增至貯體。刪除標記會使 StorageGRID 如同物件被刪除一樣：</block>
+  <block id="8a7ef984d8ee94ac1f1572b98b89880d" category="list-text">沒有版本 ID 的 GetObject 要求將會失敗<block ref="5ef325469bde4e09c04d1d4242255066" prefix=" " category="inline-code"></block></block>
+  <block id="979c7aed68bdbb4723576b9949775977" category="list-text">具有有效版本 ID 的 GetObject 要求將會成功、並傳回要求的物件版本。</block>
+  <block id="74515f21059d678f5b4a4041f1fa0ea4" category="list-text">如果刪除要求包含版本 ID 、則該物件版本會從來源網格中永久移除。不過、 StorageGRID 不會複寫包含版本 ID 的刪除要求、因此不會從目的地刪除相同的物件版本。</block>
+  <block id="ceec25df4b3eaa13da095f2fd7363a5e" category="list-text">如果刪除要求不包含版本 ID 、則 StorageGRID 可根據為貯體設定跨網格複寫的方式、選擇性地複寫刪除標記：</block>
+  <block id="05ceff91404f1cc430f07270ca4a1b0c" category="list-text">如果您選擇不複寫刪除標記、則會將刪除標記新增至來源貯體、但不會複寫至目的地貯體。實際上、在來源網格上刪除的物件不會在目的地網格上刪除。</block>
+  <block id="e433a5be356cb5048723798676082450" category="paragraph">在圖中， * 複寫刪除標記 * 在時設定為 * 是 * <block ref="994fdfef8287e55ca0718487a24a0084" category="inline-link-macro-rx"></block>。刪除包含版本 ID 之來源貯體的要求、將不會刪除目的地貯體中的物件。刪除不包含版本 ID 的來源貯體要求、將會顯示為刪除目的地貯體中的物件。</block>
+  <block id="882c9f72c97b49d8f49ae9ba18b1c9a3" category="admonition">跨網格複寫不支援使用 SSE-C （伺服器端加密搭配客戶提供的金鑰）。擷取作業將會失敗。</block>
+  <block id="2273ccf018e15aa1b26ff6954a00322c" category="admonition">SSE 不支援 AES-128 。如果使用 *AES-128* 選項為來源網格啟用 * 儲存的物件加密 * 選項、則 AES-128 演算法的使用將不會傳播到複寫的物件。相反地、複寫的物件會使用目的地的預設儲存格或網格層級加密設定（如果有）。</block>
+  <block id="3d31e16989b5f5e9e723c86d19e5fb37" category="list-text">如果沒有擷取標頭、請使用儲存區預設加密設定（如果已設定）。</block>
+  <block id="78fe0d9ba290fc52d82f3ab7842536ff" category="list-text">如果未設定貯體設定、請使用網格範圍加密設定（如果已設定）。</block>
+  <block id="3a8489acb05716ecc5a331b440b67b32" category="list-text">如果沒有網格範圍的設定、請勿加密來源物件。</block>
+  <block id="d54d460f57e1b3cf9b5d585267231838" category="list-text">如果來源物件未加密或使用 AES-128 、請使用目的地儲存區的預設加密設定（如果已設定）。</block>
+  <block id="6ea4b2dd2eb2892077a41111a22ce0c3" category="list-text">如果目的地貯體沒有加密設定、請使用目的地的全網格加密設定（如果已設定）。</block>
+  <block id="7771f27ba0732a5ca2982189bd79ed02" category="list-text">如果沒有網格範圍的設定、請勿加密目的地物件。</block>
+  <block id="f746b5871d8cfe82a573559638383c2f" category="paragraph">如果 S3 用戶端發出 PutObjectTaggingor DeleteObjectTagging,<block ref="7a107dca2aebde1ca5eece10104bc3d3" prefix=" " category="inline-code"></block> 則會傳回。訊息為<block ref="86948b38b0d0093fb4347eda296b2e05" prefix=" " category="inline-code"></block>。</block>
+  <block id="d7b99461295847ce6ce008fbea43bd26" category="paragraph">來源網格的最大區段大小適用於複寫到目的地網格的物件。將物件複寫到其他網格時、來源網格的 * 最大區段大小 * 設定（ * 組態 * &gt; * 系統 * &gt; * 儲存選項 * ）將會同時用於兩個網格。例如、假設來源網格的最大區段大小為 1 GB 、而目的地網格的最大區段大小則為 50 MB 。如果您在來源網格上擷取 2 GB 物件、該物件會儲存為兩個 1 GB 區段。即使網格的最大區段大小為 50 MB 、也會將其複寫到目的地網格、做為兩個 1 GB 區段。</block>
+  <block id="e4ca4f729f7f391822b5f40727741e77" category="list-text">* 恢復套件 * ：下載恢復套件的作業。</block>
+  <block id="c47493d4a649fd985e0792524f88e579" category="list-text">選擇*組態*&gt;*系統*&gt;*儲存選項*。</block>
+  <block id="9ddc24b15aa2f3e21527cb0127a41dcf" category="list-text">在「儲存浮水印」區段中、請注意 * 中繼資料保留空間 * 的值。</block>
+  <block id="51099784a8f06fc3babf8cc40ce79e8b" category="list-text">選取「組態」索引標籤。</block>
+  <block id="2d37f43ec93def1e7b3c190d8290490c" category="list-text">在儲存浮水印區段中、選取 * 中繼資料保留空間 * 。</block>
+  <block id="1607e5feec9d493f9b5e8ad538e91bbb" category="image-alt">中繼資料保留空間</block>
+  <block id="92f27b893c6c2143e5a77a1ce71d6e94" category="paragraph">每個貯體事件通知可用於傳送有關物件上執行之特定動作的通知至指定的外部 Kafka 叢集或 Amazon Simple Notification Service 。</block>
+  <block id="2d0a0c7d70dfc9d01b48e616bab3c4dd" category="list-text">Azure Active Directory（Azure AD）</block>
+  <block id="27e3a381930d10b6f5269b09714dde23" category="paragraph">登入步驟會在<block ref="97e1c7c0d6a86dbcf71be0ffef4d2c27" category="inline-link-macro-rx"></block>下列情況下略有不同：</block>
+  <block id="6eb059c8b21902bffb552e54990e1962" category="image-alt">登入頁面</block>
+  <block id="71be69c120cdc3828d6e594f25f4e098" category="image-alt">如果啟用SSO且沒有Cookie、請登入畫面</block>
+  <block id="f29af64adf6cbda598f0c965103c96f5" category="image-alt">如果已啟用SSO、請從最近的帳戶清單中選取Grid Manager</block>
+  <block id="dc7161be3dbf2250c8954e560cc35060" category="image-alt">儀表板</block>
+  <block id="c06c81a5b85c37a9b5550ff0e6a5fd80" category="paragraph">* 注意： * 如果啟用 SSO 、而且您也登入租戶管理程式、您也必須登入<block ref="0dcf4552d4083868813ed7eaca775126" category="inline-link-macro-rx"></block> <block ref="2626cddcfc7e934bcfecd210c969446a" category="inline-link-macro-rx"></block>。</block>
+  <block id="0374edd4949dab78f59c58f0f4943195" category="doc">暫時停用並重新啟用單一管理節點的單一登入</block>
+  <block id="32e3a740b13ba31d36ecad478a2231ad" category="paragraph">如果您已在儲存節點與平台服務端點之間設定<block ref="34d1024503cbd69f3a314ec9300534b3" category="inline-link-macro-rx"></block>、如果您的 Proxy 服務不允許來自 StorageGRID 的訊息、可能會發生錯誤。若要解決這些問題、請檢查 Proxy 伺服器的設定、確保平台服務相關訊息不會遭到封鎖。</block>
+  <block id="29cedd0048495b135e4b6f0be85a91f6" category="list-text">目的地庫位不存在。</block>
+  <block id="aada9201d429088ad7b54a1b735929d9" category="paragraph">其他錯誤無法恢復。例如、如果刪除端點、就會發生無法恢復的錯誤。</block>
+  <block id="0fad25137f7d4e265ccca837d7ade597" category="paragraph">如果目的地遇到問題、導致無法接受平台服務訊息、用戶端在儲存庫上的操作就會成功、但平台服務訊息卻無法傳送。例如、如果目的地上的認證資料已更新、StorageGRID 導致無法再驗證目的地服務、就可能發生此錯誤。</block>
+  <block id="d52a4d72321c90558ac198f73df35ae9" category="paragraph">如果您擁有 <block ref="494698a6b12f6287c2327644f72ee0e0" category="inline-link-macro-rx"></block>Active Directory 並使用它做為 SSO 提供者、則必須發出一系列 API 要求、以取得 Grid Management API 或 Tenant Management API 有效的驗證權杖。</block>
+  <block id="bce27f4892da153b3166ed9cffe7ba20" category="paragraph">如果您擁有<block ref="494698a6b12f6287c2327644f72ee0e0" category="inline-link-macro-rx"></block>並使用 Azure 做為 SSO 供應商、您可以使用兩個範例指令碼來取得適用於 Grid Management API 或 Tenant Management API 的驗證權杖。</block>
+  <block id="d5691146bf5e1d43398604adcc7b44cb" category="paragraph">如果您擁有<block ref="494698a6b12f6287c2327644f72ee0e0" category="inline-link-macro-rx"></block>並使用 PingFederate 做為 SSO 供應商、則必須發出一系列 API 要求、以取得 Grid Management API 或 Tenant Management API 有效的驗證權杖。</block>
+  <block id="949dccd502ee9e39f7ab7416d0d1e8fe" category="list-text">根據您的 StorageGRID 系統是使用<block ref="1483d3b63fcfd50b42638ae893f21637" category="inline-link-macro-rx"></block>、<block ref="e2617f98de535ea9cf41d824ec9c627e" category="inline-link-macro-rx"></block>還是兩者、定義租戶帳戶的根存取權。</block>
+  <block id="c16a2579d088e756d13f61602c48680f" category="list-text">如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道 S3 應用程式將使用哪個同盟群組的租戶帳戶擁有 root 存取權。請參閱<block ref="474b06c18e1a0b7924699065a44032e0" category="inline-link-macro-rx"></block>和<block ref="aa3c73cfd30620abff51e4b5dc121607" category="inline-link-macro-rx"></block>。</block>
+  <block id="d98700f3718b34a4cca2d837f13d5e87" category="summary">您可以使用沙箱模式來設定及測試單一登入（SSO）、然後再為StorageGRID 所有的使用者啟用。啟用SSO之後、您可以在需要變更或重新測試組態時、隨時返回沙箱模式。</block>
+  <block id="050fa9f3282393d681332a62f3491cd3" category="list-text">若為身分識別聯盟* LDAP服務類型*、您會根據您打算使用的SSO身分識別供應商、選擇Active Directory或Azure。</block>
+  <block id="1de9e3f88f8c7e03ac70c785e1c820fc" category="list-text">Azure的回應包括使用者主要名稱（UPN）。</block>
+  <block id="9b0af8c0cd97298ffd3542d393ee8ff9" category="paragraph">若要讓StorageGRID 服務供應商（服務供應商）和SSO身分識別供應商能夠安全地溝通使用者驗證要求、您必須在StorageGRID 支援中心中設定某些設定。接下來、您必須使用SSO身分識別供應商的軟體、為每個管理節點建立信賴方信任（AD FS）、企業應用程式（Azure）或服務供應商（PingFedate）。最後、您必須返回StorageGRID 到支援SSO的功能。</block>
+  <block id="5c2f09b3b24965aa8f4ede9952424844" category="paragraph">沙箱模式可讓您在啟用SSO之前、輕鬆執行此後端和後端組態、並測試所有設定。使用沙箱模式時、使用者無法使用 SSO 登入。</block>
+  <block id="c4b678394f02a35559ef7f65322d0527" category="section-title">存取沙箱模式</block>
+  <block id="8bb91545f17649924eb187fb4702e167" category="paragraph">此時將顯示「單一登入」頁面、並選取「*停用*」選項。</block>
+  <block id="b09b64d514f512789859e3d67b582b73" category="image-alt">停用SSO狀態的單一登入頁面</block>
+  <block id="2852ccd5cce9716c9293b6417691f13e" category="admonition">如果 SSO 狀態選項未出現、請確認您已將身分識別提供者設定為同盟身分識別來源。請參閱。 <block ref="15423b684c3103b08dc754482cd0948a" category="inline-link-macro-rx"></block></block>
+  <block id="a87d6466fc809a61e2ad8f7cf3436f90" category="list-text">選擇* Sandbox Mode*。</block>
+  <block id="aa57e7ab4d30ea0c078945894f9486fe" category="paragraph">此時會出現「身分識別提供者」區段。</block>
+  <block id="022eeded39d0ebaf1e89861c4c146079" category="section-title">輸入身分識別供應商詳細資料</block>
+  <block id="2d8c22bbd657cd95d091f39b2ae27533" category="list-text">根據您選取的SSO類型、填寫「身分識別提供者」區段中的欄位。</block>
+  <block id="a385ac7ecb29a094a6dbea9b40aa1797" category="list-text">輸入身分識別提供者的*聯盟服務名稱*、完全如同Active Directory Federation Service（AD FS）中所示。</block>
+  <block id="4939d2c81c655fe1bb3cca832941f7ba" category="list-text">在「依賴方」區段中、指定* StorageGRID 依賴方識別符號*以供參考。此值可控制AD FS中每個依賴方信任所使用的名稱。</block>
+  <block id="691e083c5942871d66a12ad6876a646d" category="list-text">如果您的網格包含多個管理節點、請在識別碼中包含字串<block ref="fbf88d171d764619e1c5cb74daa3dcdd" prefix=" " category="inline-code"></block>。例如<block ref="fda1a4c0189b67a8b86f2e0e344ea53c" prefix=" " category="inline-code"></block>：。這會產生一個表格、根據節點的主機名稱、顯示系統中每個管理節點的依賴方識別碼。</block>
+  <block id="44c25ab7454dd996818118bafb9e4c23" category="image-alt">單一登入</block>
+  <block id="d21097fbb13236c7c816d1c8f1276a38" category="paragraph">「*儲存*」按鈕上會出現綠色勾號幾秒鐘。</block>
+  <block id="e37738c6d3b2f44e5ce519065fee395f" category="image-alt">綠色核取記號的儲存按鈕</block>
+  <block id="940405f3bb61d77622c465ce3765a0ae" category="list-text">在「企業應用程式」區段中、指定*企業應用程式名稱* StorageGRID 以供參考。此值可控制Azure AD中每個企業應用程式所使用的名稱。</block>
+  <block id="f0416c748001104a884292ba7615ca2a" category="list-text">如果您的網格包含多個管理節點、請在識別碼中包含字串<block ref="fbf88d171d764619e1c5cb74daa3dcdd" prefix=" " category="inline-code"></block>。例如<block ref="fda1a4c0189b67a8b86f2e0e344ea53c" prefix=" " category="inline-code"></block>：。這會產生一個表格、根據節點的主機名稱、顯示系統中每個管理節點的企業應用程式名稱。</block>
+  <block id="224047fb352b2115fe78627eaf0532fc" category="list-text">請依照中的步驟<block ref="1172348276973c16463566be6320ae44" category="inline-link-macro-rx"></block>、為表格中列出的每個管理節點建立企業應用程式。</block>
+  <block id="9d02e758d45d2bdbd0fde131a50d8176" category="list-text">從Azure AD複製每個企業應用程式的聯盟中繼資料URL。然後、將此URL貼到StorageGRID 相關的*聯盟中繼資料URL*欄位。</block>
+  <block id="34fa88a359a8938782b5c73cd399064a" category="list-text">複製並貼上所有管理節點的聯盟中繼資料URL之後、請選取*儲存*。</block>
+  <block id="be18abbbc462a7d3ca01bc101763f934" category="list-text">如果您的網格包含多個管理節點、請在識別碼中包含字串<block ref="fbf88d171d764619e1c5cb74daa3dcdd" prefix=" " category="inline-code"></block>。例如<block ref="fda1a4c0189b67a8b86f2e0e344ea53c" prefix=" " category="inline-code"></block>：。這會根據節點的主機名稱、產生一個表格、顯示系統中每個管理節點的SP連線ID。</block>
+  <block id="a48a87deee4964b3b4418748723cd446" category="paragraph">儲存組態時、會出現沙箱模式確認通知。本通知確認沙箱模式已啟用、並提供概觀指示。</block>
+  <block id="c2cc951b8d6b515721ae009088e56fee" category="paragraph">根據需要、可將其保留在沙箱模式中。StorageGRID不過、在「單一登入」頁面上選取*沙箱模式*時、所有StorageGRID 的支援項目都會停用SSO功能。只有本機使用者才能登入。</block>
+  <block id="b88b96dc0da61560c54ef963aadd8923" category="paragraph">請依照下列步驟設定信賴方信任（Active Directory）、完整企業應用程式（Azure）或設定SP連線（PingFedate）。</block>
+  <block id="83a80f739a1f5bca84e04bb6a41a26a4" category="list-text">使用StorageGRID 「僅供單一登入」頁面上表所示的每個信賴方識別碼、建立一或多個可靠方的可靠信任。StorageGRID</block>
+  <block id="55b19be672acb5a49709b0351e45cbc1" category="list-text">前往Azure Portal。</block>
+  <block id="9e8424ffa024516af77d3446d7e3b55b" category="list-text">請依照中的步驟<block ref="1172348276973c16463566be6320ae44" category="inline-link-macro-rx"></block>、將每個管理節點的 SAML 中繼資料檔案上傳至對應的 Azure 企業應用程式。</block>
+  <block id="6bcd70277587fb5dc072218e30a7f59e" category="list-text"><block ref="8f13466a91a00a999902dbcdd9a378d7" category="inline-link-macro-rx"></block>。使用每個管理節點的SP連線ID（如StorageGRID 「支援單一登入」頁面表格所示）、以及您為該管理節點下載的SAML中繼資料。</block>
+  <block id="a1ce3870c5226b2b94a937dfb0e220d4" category="section-title">測試SSO連線</block>
+  <block id="d045169775d1a2cf50047b5098329893" category="paragraph">在您為整個StorageGRID 作業系統強制使用單一登入之前、您應確認已為每個管理節點正確設定單一登入和單一登出。</block>
+  <block id="9477740c3f1adbf98dcff533650195ec" category="list-text">從「功能表單一登入」頁面、找到沙箱模式訊息中的連結。StorageGRID</block>
+  <block id="299345c957977d9c86e071471846d0da" category="image-alt">身分識別供應商登入頁面的URL</block>
+  <block id="93c19016ebd14e49b98382acd696c2f5" category="image-alt">在SSO沙箱模式中測試依賴方信任</block>
+  <block id="e75a4f0ef4d6c457d13b5ee357642416" category="image-alt">SSO驗證和登出測試成功訊息</block>
+  <block id="813c77607f4921434a174bfe19367499" category="list-text">從「功能表單一登入」頁面、選取沙箱模式訊息中的第一個連結。StorageGRID</block>
+  <block id="d20c850085e42e51d24b7c5d1fe65184" category="list-text">將SSO狀態變更為*已啟用*。</block>
+  <block id="20a4005f9de85313661ff3cecfa99d40" category="list-text">檢閱警告訊息、然後選取*確定*。</block>
+  <block id="5298a057b963a7714257280ac5e2bd08" category="paragraph">現在已啟用單一登入。</block>
+  <block id="f8defc53537ba3c73c1b210cc315a5b9" category="admonition">如果您使用Azure Portal、並StorageGRID 從用來存取Azure的同一部電腦存取驗證、請確定Azure Portal使用者也是授權StorageGRID 的使用者（已匯入StorageGRID 到「驗證」的聯盟群組中的使用者）。 或登出Azure Portal後再嘗試登入StorageGRID 。</block>
+  <block id="298a39f6a080e205675c5fa833acae12" category="paragraph">當用戶端使用HTTPS連線至伺服器時、伺服器會以含有公開金鑰的伺服器憑證回應。用戶端會將伺服器簽章與憑證複本上的簽章進行比較、藉此驗證此憑證。如果簽名相符、用戶端會使用相同的公開金鑰啟動與伺服器的工作階段。</block>
+  <block id="516b8e07c6efb3aaf319179fa0ba7f96" category="paragraph">包含內建的憑證授權單位（CA）、可在系統安裝期間產生內部Grid CA憑證。StorageGRID根據預設、Grid CA憑證用於保護內部StorageGRID 的不穩定流量。外部憑證授權單位（CA）可核發完全符合組織資訊安全原則的自訂憑證。雖然您可以將Grid CA憑證用於非正式作業環境、但正式作業環境的最佳做法是使用外部憑證授權單位所簽署的自訂憑證。也支援不含憑證的不安全連線、但不建議這麼做。</block>
+  <block id="da09383bc2ba172bb702c8a153ead503" category="paragraph"><block ref="da09383bc2ba172bb702c8a153ead503" category="inline-link-macro-rx"></block></block>
+  <block id="cac30f2829e1f278ff0dc32b33888f99" category="list-text">用戶端會將伺服器簽章與憑證複本上的簽章進行比較、藉此驗證此憑證。如果簽名相符、用戶端就會使用相同的公開金鑰來啟動工作階段。</block>
+  <block id="7a94650e77c7efcd85928ced41247a73" category="summary">管理節點上的網路管理系統（NMS）服務會將通知傳送至郵件伺服器。您可以在「介面引擎」頁面上檢視NMS服務的目前狀態及其通知佇列的大小。</block>
+  <block id="9dcf3e5f3a4e7f1fb7031a918a2e362d" category="paragraph">通知會透過電子郵件通知佇列處理、並依觸發順序逐一傳送至郵件伺服器。如果發生問題（例如、網路連線錯誤）、且郵件伺服器在嘗試傳送通知時無法使用、則會繼續嘗試將通知重新傳送至郵件伺服器60秒。如果通知在60秒後未傳送至郵件伺服器、則通知會從通知佇列中捨棄、並嘗試傳送佇列中的下一個通知。</block>
+  <block id="771e883819e64ca82fc9439ed679afdc" category="paragraph">使用 AutoSupport 可以大幅加速問題的判斷與解決。技術支援也能監控系統的儲存需求、協助您判斷是否需要新增節點或站台。您也可以設定 AutoSupport 套件、將其傳送至其他目的地。</block>
+  <block id="521c908ab9e027ffad6a259d056093a5" category="admonition">如果未啟用 StorageGRID AutoSupport 、則會在 Grid Manager 儀表板上顯示訊息。此訊息包含AutoSupport 指向「資訊功能」組態頁面的連結。如果您關閉訊息、它將不會再次出現、直到您的瀏覽器快取被清除為止、即使AutoSupport 停用的是停用的。</block>
+  <block id="5d5c961e24f46504b2aae1647ddd7ec9" category="inline-link-macro">設定稽核訊息和記錄目的地</block>
+  <block id="b0119805a6f327da99eb2101c54a374f" category="admonition">您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 <block ref="cb006780fdb2612069e3da2f3777bdbf" category="inline-link-macro-rx"></block></block>
+  <block id="45c81884e3b7bf0043264842051ef4b7" category="paragraph">如果警示或警示持續存在並增加嚴重性、請檢視佇列大小的圖表。如果數在數小時或數天內持續增加、則稽核負載可能超過系統的稽核容量。將用戶端寫入和用戶端讀取的稽核層級變更為「錯誤」或「關閉」、以降低用戶端作業率或減少記錄的稽核訊息數。請參閱。 <block ref="cb006780fdb2612069e3da2f3777bdbf" category="inline-link-macro-rx"></block></block>
+  <block id="5262c65c53aa0e072792929398db551e" category="paragraph">如需設定稽核訊息層級、變更記錄目的地、以及使用外部 Syslog 伺服器來取得稽核資訊的相關資訊、請參閱<block ref="cb006780fdb2612069e3da2f3777bdbf" category="inline-link-macro-rx"></block></block>
+  <block id="d01c4e3cbfa5a10e431d8c7de0ddc06e" category="paragraph">如需設定稽核訊息層級和使用外部 Syslog 伺服器的相關資訊<block ref="cb006780fdb2612069e3da2f3777bdbf" category="inline-link-macro-rx"></block>、請參閱。</block>
+  <block id="003f1830b02ea69a9ca936901cfbac0e" category="paragraph">S3 用戶端會<block ref="51f2bac82b2970f867b85e54f3d56b7f" prefix="(" category="inline-code"></block>針對 S3 物件（ S3KY ）提出更新指定中繼資料的要求（ SUPD ）。在此範例中、要求標頭會包含在欄位中、因為它已設定為稽核傳輸協定標頭（*組態*&gt;*監控*&gt;*稽核與系統記錄伺服器*）。請參閱。 <block ref="cb006780fdb2612069e3da2f3777bdbf" category="inline-link-macro-rx"></block></block>
+  <block id="eaa2651ffbdc03935dbcb760b8db2b6b" category="summary">當S3用戶端發出標頭交易時、系統會要求檢查物件或儲存區是否存在、並擷取物件的中繼資料。如果交易成功、伺服器就會發出此訊息。</block>
+  <block id="6f8f538ae4fad721bde80a78975347fd" category="summary">當Swift用戶端發出標頭交易時、系統會要求檢查帳戶、容器或物件是否存在、並擷取任何相關的中繼資料。如果交易成功、伺服器就會發出此訊息。</block>
+  <block id="1a57484ff9a9f122a13500c288220fa9" category="paragraph">交易額的結果。結果永遠是：</block>
+  <block id="d49b1df9ba7da17058bed72a9f958fec" category="list-text">如果StorageGRID 您的系統啟用單一登入（SSO）、請為新的管理節點建立信賴關係人信任。您必須先建立信賴方信任、才能登入節點。請參閱。 <block ref="aa3c73cfd30620abff51e4b5dc121607" category="inline-link-macro-rx"></block></block>
+  <block id="c55db125c4c5e6bdfa7f96fbb083196f" category="paragraph">如需詳細資訊、請參閱 <block ref="cb006780fdb2612069e3da2f3777bdbf" category="inline-link-macro-rx"></block> 。</block>
+  <block id="c73887bc90d59bab58af124b63d2505e" category="image-alt">此映像是由周遭文字所描述。</block>
+  <block id="f48b1a8a52dece2bc52a2c1bd2731067" category="paragraph">包含存取命令列上網格節點所需的密碼。包含在恢復套件中。</block>
+  <block id="807a60214d3a7c304c850af4e7f2d232" category="list-text">一般而言、當您為新節點選取「* ADC服務*」設定時、應選取「*自動*」。僅當新節點將取代另一個包含ADC服務的儲存節點時、才選取*是*。由於如果仍有太少的 ADC 服務、您就無法取消委任儲存節點、因此這可確保在移除舊服務之前、有新的 ADC 服務可用。</block>
+  <block id="27e3a367baa8a9e4fbdc2191d2ee710e" category="list-text">您無法在部署 ADC 服務之後、將其新增至節點。</block>
+  <block id="8319e20d3f5b34fca26f3c0d0dd4a3e3" category="list-text">選擇「*站台_*&gt;*儲存節點_*&gt;* LdR*&gt;*儲存設備*」。</block>
+  <block id="64d2dc1c882fd50076a05b980aa6e611" category="list-text">選取*組態*索引標籤、然後選取*主要*索引標籤。</block>
+  <block id="9b718ac65bd7f6402b0f800a479ab3b0" category="list-text">如果*儲存狀態-所需*下拉式清單設定為唯讀或離線、請選取*線上*。</block>
+  <block id="550479b67ca3f37c8d90ca9afce5d8bb" category="list-text">若要查看新的物件存放區：</block>
+  <block id="9a8870407b13fde2a1ba1eb5aa5fddc1" category="list-text">在*物件存放區*表格中檢視詳細資料。</block>
+  <block id="a9f8cde90811896b2da3f745f0e61617" category="list-text">下載新的恢復套件檔案。</block>
+  <block id="a8db86242e1340ebc82d384148f83fce" category="paragraph">此儲存節點是否會執行管理網域控制站（ ADC ）服務。ADC服務會追蹤網格服務的位置和可用度。每個站台至少必須有三個儲存節點包含ADC服務。您無法在部署 ADC 服務之後、將其新增至節點。</block>
+  <block id="df60629e8fd4d4227735b819a4e42822" category="list-text">如果您要更換的儲存節點包含 ADC 服務、請選取 * 是 * 。由於如果仍有太少的 ADC 服務、您就無法取消委任儲存節點、因此這可確保在移除舊服務之前、有新的 ADC 服務可用。</block>
+  <block id="27ee58a4bf7666e97c85d89f453b8631" category="list-text">一旦出現*下載恢復套件*連結、請立即下載恢復套件檔案。</block>
+  <block id="ccf94613df5779c66b7312e25cc40cb9" category="paragraph">您必須在StorageGRID 變更整個系統的網格拓撲之後、盡快下載更新的恢復套件檔案複本。恢復套件檔案可讓您在發生故障時還原系統。</block>
+  <block id="0a8e0e1984f17a44a1b71665989c6247" category="list-text">將下載的恢復軟件包文件複製<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>到兩個安全且獨立的位置。</block>
+  <block id="abc44d274dfc42330edf886142febff6" category="image-alt">Grid Expansion &gt;正在啟動Cassandra和串流資料</block>
+  <block id="92a41b8a71f6ff745c916963948d85fb" category="list-text">等到套用變更後、再下載新的恢復套件。</block>
+  <block id="fc8fc1fabf7f27bbc70905807bd3928e" category="admonition">必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。它也用於恢復主管理節點。</block>
+  <block id="36d2ea945ce88fcfc5f7fafff9810ad8" category="list-text">對於「定義根目錄存取」步驟、請根據您的 StorageGRID 系統使用<block ref="5260f157ac6f425cdf76b004a4577a96" category="inline-link-macro-rx"></block>、<block ref="30c0459c98afd3924e20cdf15ec3a75f" category="inline-link-macro-rx"></block>或兩者、指定哪個使用者將擁有租戶帳戶的初始根目錄存取權限。</block>
+  <block id="b919b765f6359d8dde2751363db0a559" category="paragraph">（可選）配置<block ref="5260f157ac6f425cdf76b004a4577a96" category="inline-link-macro-rx"></block>和<block ref="f3b56fbe37cf475d8b4d96ccf00ea204" category="inline-link-macro-rx"></block>。</block>
+  <block id="9fa19ae99798da6bc52ef98f717cf761" category="list-text">如果您不需要 FabricPool 或任何其他 S3 應用程式的用戶端讀取作業記錄、請選擇性地前往 * 組態 * &gt; * 監控 * &gt; * 稽核與系統記錄伺服器 * 。將 * 用戶端讀取 * 設定變更為 * 錯誤 * 、以減少稽核記錄中記錄的稽核訊息數。如需詳細資訊、請參閱 <block ref="cb006780fdb2612069e3da2f3777bdbf" category="inline-link-macro-rx"></block> 。</block>
+  <block id="8f7d820b556d1303670c2512347ba9cd" category="list-text">根據您的 StorageGRID 系統是使用<block ref="5260f157ac6f425cdf76b004a4577a96" category="inline-link-macro-rx"></block>、<block ref="30c0459c98afd3924e20cdf15ec3a75f" category="inline-link-macro-rx"></block>還是兩者、定義租戶帳戶的根存取權。</block>
+  <block id="c8a781c0735f908533b367bde0ce3406" category="paragraph">如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道哪個同盟群組應該擁有 ONTAP 將使用之租戶帳戶的根存取權。請參閱<block ref="474b06c18e1a0b7924699065a44032e0" category="inline-link-macro-rx"></block>和<block ref="aa3c73cfd30620abff51e4b5dc121607" category="inline-link-macro-rx"></block>。</block>
+  <block id="11f93461f0e12aaa3ec85994a305bad7" category="paragraph">外部服務可能會有間接影響StorageGRID 到非功能性的弱點。您應確保StorageGRID 仰賴的服務保持最新狀態。這些服務包括LDAP、KMS（或KMIP伺服器）、DNS和NTP。</block>
+  <block id="f57443702486c3a829ebeaf407bc73df" category="list-text">對於包含 SED 或 FIPS NVMe SSD 的應用裝置機型、您可以使用 StorageGRID 應用裝置安裝程式和 Grid Manager 來管理<block ref="6c3b24c883781706ba8c0985f35f381b" category="inline-link-rx"></block>。</block>
+  <block id="cff9311695f9a67a62822290e8cb6547" category="inline-link">使用金鑰管理伺服器（ KMS ）</block>
+  <block id="9d21affa93c117ca1883f33dc68e78d5" category="list-text">對於沒有 SED 、 FDE 或 FIPS 磁碟機的應用裝置、請啟用並設定 StorageGRID 軟體節點加密<block ref="8d51f9b74e06add4e05d68beb9b6347f" category="inline-link-rx"></block>。</block>
+  <block id="2b5efb0dbb7b9b4452f1309d4672a8df" category="inline-link-macro">設定跨來源資源共享（ CORS ）</block>
+  <block id="6784e37625c6d08b648c8e43b21ede7a" category="paragraph">請參閱的步驟<block ref="60547990a98238b2da25d5b0fe1124bb" category="inline-link-macro-rx"></block>。</block>
+  <block id="7dea7a16e475df7fa0d74163e6f86dfd" category="list-text">*可靠性*：可靠性是以容錯能力來衡量、也就是可以在不遺失資料的情況下持續發生的同時故障數。透過複寫、多個相同的複本會儲存在不同的節點和站台上。利用銷毀編碼、物件會編碼成資料和同位元檢查片段、並分散在許多節點和站台上。這種分散式技術可同時提供站台和節點故障保護。相較於複寫、銷毀編碼可以同等的儲存成本提供更高的可靠性。</block>
+  <block id="2e9065dfca54ecd3f43b9cee0498b60d" category="list-text">*可用度*：如果儲存節點故障或無法存取、可用度可定義為擷取物件的能力。相較於複寫、銷毀編碼可提供更高的可用度、且儲存成本相當。</block>
+  <block id="08e817c7e8cccc81d9c023e3f241d733" category="list-text">*儲存效率*：對於類似的可用度與可靠性層級、透過銷毀編碼保護的物件所耗用的磁碟空間比透過複寫保護的相同物件少。例如、複寫到兩個站台的 10 MB 物件會佔用 20 MB 的磁碟空間（兩個複本）、而在三個站台上使用 6+3 銷毀編碼方案進行銷毀編碼的物件只會佔用 15 MB 的磁碟空間。</block>
+  <block id="1304d9096266b27a12a02ead3fbf9e65" category="list-text">當您跨站台使用銷毀編碼時、隨著站台之間的網路延遲增加、最大物件處理量會大幅降低。這是因為TCP網路處理量相對減少、這會影響StorageGRID 到該系統儲存及擷取物件片段的速度。</block>
+  <block id="bbbe3c1fb9a064262f15a3e678c467b1" category="paragraph">銷毀編碼最適合下列需求：</block>
+  <block id="e10bf6b31ecb9e296a482a1d4470f7f3" category="admonition">在選擇一致性值之前<block ref="8279f78be37a1a544c3d87c8277bad70" category="inline-link-macro-rx"></block>，。變更預設值之前、您應該先瞭解其優點和限制。</block>
+  <block id="feafe48dae39d03cb3af55d22feedf04" category="list-text">您必須先使用Grid Manager建立區域、才能在使用租戶管理程式或租戶管理API建立貯體時、或在S3放置貯體API要求的位置限制要求元素中指定非預設區域。如果某個放置庫位要求使用StorageGRID 的區域未在該區域中定義、就會發生錯誤。</block>
+  <block id="0310e10111ae73900c09d8df75ffbe6c" category="admonition">歐盟不被視為EU-WEST-1的別名。如果您想要使用歐盟或EU-WEST-1區域、則必須使用確切名稱。</block>
+  <block id="e90201148f32c784061cb72193534fab" category="paragraph">如果您在 ILM 規則中將區域用作進階篩選器、但後來刪除該區域、或是使用 Grid Management API 建立規則並指定尚未定義的區域、則可能會導致無效區域。</block>
+  <block id="93048b94414d818afd738c70473e0371" category="paragraph">「區域」頁面隨即出現、並列出目前定義的區域。* 區域 1* 顯示無法修改或移除的預設區域<block ref="c800b6d9163b0db7d28f86c1470a9542" prefix=" " category="inline-code"></block>。</block>
+  <block id="2b85565512a165adc262a22d437fdb7d" category="list-text">若要新增區域：</block>
+  <block id="7491c627e08842d3a5bb14c5fdef4107" category="list-text">選取 * 新增其他地區 * 。</block>
+  <block id="4b2cc686a0d9adf36d372daff1011946" category="list-text">* 驗證類型 * ： IAM 角色隨處可及匿名存取</block>
+  <block id="cb8a51ac29d37492c3365f82b29edc94" category="admonition">安裝期間可將儲存節點設定為僅包含物件中繼資料、而不包含物件資料。僅中繼資料儲存節點無法指派儲存等級。如需更多資訊、請參閱 <block ref="8e49185a846f0d976af4a2b64adfc64f" category="inline-link-macro-rx"></block>。</block>
+  <block id="fe5c217b4592e5286aa5034a4d2e9ea3" category="admonition">在設定 StorageGRID 部署以保護站台遺失時，您也必須考慮和<block ref="0a743539295d0120df6bed0bd2939d17" category="inline-link-macro-rx"></block>的影響<block ref="d27049b597cbc79dbe0883e1dbce4b00" category="inline-link-macro-rx"></block>。</block>
+  <block id="45f9fca6d237fd4c5bcde93e77117fb0" category="admonition">安裝期間可將儲存節點設定為僅包含物件中繼資料、而不包含物件資料。如需更多資訊、請參閱 <block ref="8e49185a846f0d976af4a2b64adfc64f" category="inline-link-macro-rx"></block>。</block>
+  <block id="09ea94e4776c421201c4f3bf4c00ad6a" category="list-text"><block ref="09ea94e4776c421201c4f3bf4c00ad6a" category="inline-link-macro-rx"></block></block>
+  <block id="d2c6de86af074a97ad7c693de1038aac" category="admonition">儲存節點可在安裝期間設定為包含物件資料和物件中繼資料、或僅包含物件中繼資料。純中繼資料儲存節點無法用於儲存資源池。如需更多資訊、請參閱 <block ref="8e49185a846f0d976af4a2b64adfc64f" category="inline-link-macro-rx"></block>。</block>
+  <block id="fb8355a67a41cd2df2ff84eccb0133f0" category="paragraph">*附註：*此訊息僅顯示於已連線的網格節點。</block>
+  <block id="a79cd66a359b3f7a4df1ef8da8790a12" category="paragraph">*附註：*此訊息僅針對中斷連線的網格節點顯示。</block>
+  <block id="d4cfc4b9551c8d90d994bd24651b31ae" category="paragraph">否、 HA 群組成員： _group name_ 。在您取消委任此節點之前、必須先將其從所有HA群組中移除。</block>
+  <block id="20b39c16e77f4f0ccb50cd77b39110f6" category="paragraph">* 僅限儲存節點。 *如果站台上的節點不足以支援 ADC 仲裁需求、您就無法取消委任儲存節點。</block>
+  <block id="99f8a7d271da3f4f000e1b519b4a56c0" category="paragraph">執行擴充。將新的儲存節點新增至站台、並指定該站台應有一個ADC服務。請參閱的相關資訊<block ref="b9359a6e46fdd7e6adbabe682c516bcb" category="inline-link-macro-rx"></block>。</block>
+  <block id="3ab6dea825f5f3bd78af8e75afdd1689" category="paragraph">* 僅限儲存節點。 *除非現有的銷毀編碼設定檔有足夠的節點、否則您無法取消委任儲存節點。</block>
+  <block id="c18d8967b4bab33e7eab9e097b324656" category="list-text">從Grid Manager下載新的恢復套件。</block>
+  <block id="ee047a5aa3f0c47f0fb564019a6b7bb4" category="paragraph">套用或重新設定變更後、會因網格組態變更而產生新的恢復套件。</block>
+  <block id="29bf8bf0e74298d7054a7ceb3b736369" category="admonition">如果StorageGRID 您的支援系統啟用SSO、且任何依賴方信任都是使用管理節點IP位址（而非建議的完整網域名稱）設定、請準備更新或重新設定Active Directory Federation Services（AD FS）中的這些依賴方信任。 變更IP位址後立即變更。請參閱。 <block ref="aa3c73cfd30620abff51e4b5dc121607" category="inline-link-macro-rx"></block></block>
+  <block id="b7b7b49f83112f0f89d1803c1214744a" category="list-text">從Grid Manager下載新的恢復套件。</block>
+  <block id="3b33a76ddc0e4f223da9b0b0baf273c5" category="admonition">如果StorageGRID 您的系統啟用單一登入（SSO）、且您正在變更管理節點的IP位址、請注意、使用管理節點的IP位址（而非建議的完整網域名稱）設定的任何依賴方信任都將無效。您將無法再登入節點。變更IP位址之後、您必須立即使用新的IP位址來更新或重新設定節點在Active Directory Federation Services（AD FS）中的依賴方信任。請參閱的說明<block ref="47c9fc6ab91eadaf54de0c0ff0e2fd5f" category="inline-link-macro-rx"></block>。</block>
+  <block id="b5f989e4867df8af9571bb097d8a7ad0" category="list-text">檢查*恢復的儲存節點*&gt;*儲存設備*&gt;*儲存設備狀態-所需*和*儲存設備狀態-目前*的值。</block>
+  <block id="a0b35f365c825190e1f85c35b8261537" category="paragraph">這兩個屬性的值都應該是「線上」。</block>
+  <block id="5003774bc0c2007c7b96dc8aedce3863" category="list-text">如果「Storage State」（儲存狀態）-「期望」設定為唯讀、請完成下列步驟：</block>
+  <block id="1b9d50008b814b28943e9c08023b17ba" category="list-text">單擊 * Configuration （配置） * 選項卡。</block>
+  <block id="65b84854b488d42188fb5e9b8ab19107" category="list-text">從*儲存狀態-所需*下拉式清單中、選取*線上*。</block>
+  <block id="469ceaedcbd67ef5ffc6fb371031689c" category="list-text">按一下「*總覽*」索引標籤、確認「*儲存狀態-所需*」和「*儲存狀態-目前*」的值已更新為「線上」。</block>
+  <block id="514184ce10b6ed09c9264688103693ba" category="list-text">您擁有恢復軟件包文件的最新備份<block ref="0f8d75340a1cc741bfe4a0e55fd9382d" prefix="(" category="inline-code"></block>）。</block>
+  <block id="e75fe30754d47e98e8fcafed2cd3f466" category="list-text">上傳最新的恢復套件備份：</block>
+  <block id="0d141c9eda808fd1a898bd79ad4e8cdc" category="list-text">找到StorageGRID 適用於您的還原系統的最新還原套件檔案、然後按一下*「Open*（開啟*）」。</block>
+  <block id="53726359aff7172a80c9f75aeddf28f4" category="admonition">若要設定信賴方信任、請參閱<block ref="aa3c73cfd30620abff51e4b5dc121607" category="inline-link-macro-rx"></block>。若要存取預設伺服器憑證、請登入管理節點的命令Shell。移至<block ref="46dfcb9fc6a87a48092181cf26d01b89" prefix=" " category="inline-code"></block>目錄、然後選取<block ref="ad85a49f9eda6dfb5f9078894092f6dc" prefix=" " category="inline-code"></block>檔案。</block>
+  <block id="62f4f9af9c67fef66aff633420fa7dfd" category="list-text">一旦新的恢復軟件包可用，請在標題欄中選擇恢復軟件包鏈接，或選擇 *maintenance * &gt; *System* &gt; *Recovery package* 以訪問恢復軟件包頁面。然後下載<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>檔案。</block>
+  <block id="9bca7781b8e1b9133cdb5c2835e6dd55" category="paragraph">請參閱。 <block ref="a26e98143d4296eb7d78a7236bc490d0" category="inline-link-macro-rx"></block></block>
+  <block id="e5276dfc1f0b5a7ec75939d7a04a3c43" category="admonition">請盡快下載恢復套件、以確保在取消委任程序期間發生問題時、您可以恢復網格。</block>
+  <block id="5f69d2f169c92946785352d8246e3fde" category="paragraph">取消委任程序隨即開始、並顯示每個節點的進度。在程序期間、系統會產生新的恢復套件、其中包含網格組態變更。</block>
+  <block id="dfb48a687735c149b3a24b061d2c7e8b" category="list-text">只要新的恢復套件可用、請按一下連結或選擇* maintenance *&gt;* System*&gt;* Recovery套件*、即可存取「恢復套件」頁面。然後下載<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>檔案。</block>
+  <block id="980c6e7ca37a730f29108f8c49c615b8" category="paragraph">請參閱的說明<block ref="a26e98143d4296eb7d78a7236bc490d0" category="inline-link-macro-rx"></block>。</block>
+  <block id="5c6de4bd648c41ca67b38b81da275504" category="summary">恢復套件檔案可讓您在StorageGRID 發生故障時還原整個系統。</block>
+  <block id="a95b03a6ec830ef6fea1e9bc1627c4cc" category="doc">下載恢復套件</block>
+  <block id="b834c0020f1ee6fdaa9f72f5d7fdb01f" category="paragraph">在變更StorageGRID 網格拓撲以變更作業系統或升級軟體之前、請先下載目前的「恢復套件」檔案。然後、在變更網格拓撲或升級軟體之後、下載新的恢復套件複本。</block>
+  <block id="1d5121bdd34d178aa980cdfc7dc610fb" category="paragraph">恢復套件<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>檔案</block>
+  <block id="1546f2bdea604e630cddb120bc008aad" category="paragraph">取得最新恢復套件檔案的複本<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>：<block ref="0f8d75340a1cc741bfe4a0e55fd9382d" prefix=" " category="inline-code"></block></block>
+  <block id="e212f53f8a06bb914d304dba6d7a625f" category="paragraph">每次修改系統時、都會更新檔案內容<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>。進行此類變更後、系統會將最新版的恢復套件儲存在安全的位置。使用最新的複本從網格故障中恢復。</block>
+  <block id="600fb6ad4ec4e7fa6ca8bca9ead53888" category="paragraph">如果主要管理節點正常運作、您可以從Grid Manager下載恢復套件。選擇* maintenance *&gt;* System*&gt;* Recovery套件*。</block>
+  <block id="621b6255d335e6ec73664b17b6d1ce55" category="paragraph">如果您無法存取 Grid Manager 、您可以在包含 ADC 服務的某些儲存節點上找到恢復套件的加密複本。在每個儲存節點上、檢查此位置的「恢復套件：<block ref="1147b06552f45c390bccf7e7ab9215bd" prefix=" " category="inline-code"></block>使用修訂版編號最高的恢復套件」。</block>
+  <block id="980c1ef59eab4ed823a34cf742f148f3" category="inline-link-macro">下載最新的恢復套件</block>
+  <block id="5a5266c5e6942b92a4bfd3270d387c4c" category="paragraph">您必須<block ref="3019948ea57aa3411a16a650d7147088" category="inline-link-macro-rx"></block><block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>歸檔<block ref="0f8d75340a1cc741bfe4a0e55fd9382d" prefix="(" category="inline-code"></block>）。如果發生故障、您可以使用「恢復套件」檔案來還原系統。</block>
+  <block id="b0735a6150614adcfccca440b218482b" category="paragraph">此檔案包含存取命令列上網格節點所需的密碼、並包含在「恢復套件」中。</block>
+  <block id="01b2f82a7cea4630307ff15f20f2dfa2" category="paragraph">您必須下載最新的恢復軟件包<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>文件<block ref="4d000ce6131e0d928a08a237295f18fb" prefix="(" category="inline-code"></block>）。如果發生故障、您可以使用「恢復套件」檔案來還原系統。</block>
+  <block id="7b7206a182aeff48efcc75a2be53c4dc" category="inline-link-macro">下載恢復套件</block>
+  <block id="1bf1980a4c7748453e77bba8cd4b8010" category="paragraph"><block ref="1bf1980a4c7748453e77bba8cd4b8010" category="inline-link-macro-rx"></block></block>
+  <block id="064408320caa8d239f07d5926a25b069" category="image-alt">監控安裝-服務應用</block>
+  <block id="d7be1e72437295ba0ce9eb313d7e31c0" category="image-alt">影像會以周遭文字說明</block>
+  <block id="e6c7542fed649b6af287dde7c80417ac" category="image-alt">主要管理節點重新安裝的第五階段快照</block>
+  <block id="83f1a469d3223f1c02df1a62c3282169" category="paragraph">恢復軟件包<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>）文件</block>
+  <block id="b369d8dd1ea2717e49f16082101e5529" category="inline-link-macro">下載最新的恢復套件檔案</block>
+  <block id="5e08ab05efb51aa49c0c6f3adf5f53e6" category="paragraph">在套用 Hotfix 之前，<block ref="d2063c2ed8c3883cb5b4bec0dc42b81d" category="inline-link-macro-rx"></block>如果 Hotfix 期間發生任何問題。然後、在套用 Hotfix 之後、下載新的恢復套件檔案複本、並將其儲存在安全的位置。更新的恢復套件檔案可讓您在發生故障時還原系統。</block>
+  <block id="531bbe69e440cd177ae4c63ebb4190ac" category="paragraph">選用、且僅在您使用SSH用戶端手動套用修補程式時使用。<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>檔案是「恢復套件」檔案的一部分<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>。</block>
+  <block id="3b2695afaa135436cd424228cef5f1e3" category="list-text">如果有多個儲存節點離線、或是在過去15天內重建了另一個儲存節點。輸入：* n*</block>
+  <block id="8be7bb96b5dc516b91d7861435fa5bb2" category="list-text">第二個儲存節點在儲存節點故障或恢復後不到15天就發生故障。</block>
+  <block id="72b102348c026d94be936489a6499b45" category="paragraph">這包括儲存節點在恢復另一個儲存節點時故障的情況。</block>
+  <block id="3344c8f093dd738dab98ae06e2b88ca9" category="paragraph">恢復多個儲存節點（或在15天內恢復多個儲存節點）可能會影響Cassandra資料庫的完整性、進而導致資料遺失。</block>
+  <block id="927f705ee987762e6de79898489a159a" category="admonition">如果有多個儲存節點故障（或離線）、請聯絡技術支援部門。請勿執行下列恢復程序。資料可能會遺失。</block>
+  <block id="fefe3fe8f164e49077934da769144c40" category="admonition">如果這是儲存節點故障或恢復後15天內的第二個儲存節點故障、請聯絡技術支援部門。在15天內重建兩個以上儲存節點上的Cassandra、可能會導致資料遺失。</block>
+  <block id="c4760ba4fc70b6a0f670999689436d0c" category="admonition">如果站台上的多個儲存節點發生故障、可能需要執行站台還原程序。請參閱。 <block ref="ae69a49f8134b8abb47c1037e68b19d1" category="inline-link-macro-rx"></block></block>
+  <block id="aa84163b5d31228b2a22c18487657f24" category="admonition">如果有多個儲存節點離線、或是此網格中的儲存節點在過去15天內已重建、請聯絡技術支援部門。請勿執行<block ref="179106bdbc65b568b32bc1185be58cc2" prefix=" " category="inline-code"></block>指令碼。在兩個或多個儲存節點上重建Cassandra、彼此之間的時間不超過15天、可能會導致資料遺失。</block>
+  <block id="2b5abd6afc9c1ba9e0a7e0c95c4be238" category="paragraph"><block ref="28325afa13c532a62489ef0d7bee3061" prefix="" category="inline-code"></block>恢復套件中的檔案</block>
+  <block id="7954b591dcea3286d31bc2162af5ed44" category="admonition">您可以從非主要管理節點新增或更新顯示名稱、但必須登入主要管理節點才能下載恢復套件。</block>
+  <block id="085348456139bb17cf1244fff8ad908f" category="section-title">[[download-recovery-package]] 下載恢復套件</block>
+  <block id="aba734156a297955bbe9e9195e816f1b" category="paragraph">完成項目重新命名後、請下載並儲存新的恢復套件。您重新命名項目的新顯示名稱會包含在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>檔案中。</block>
+  <block id="ea6b1bffa93377e0d53fc5cc64b0e14b" category="list-text">選取 * 下載恢復套件 * 。</block>
+  <block id="0270347992371d40c6e05fab08ce0f74" category="inline-xref">下載並儲存新的恢復套件</block>
+  <block id="6341ea28a77f6ad099ed5c6a2600a49b" category="list-text"><block ref="fba33d144c4ff48e0a8f0274a6f4eaa8" category="inline-xref-macro-rx"></block>。</block>
+  <block id="782eb77dd684e42841905d24b265568f" category="paragraph">如果Volume 0故障且需要恢復、則Cassandra資料庫可能會在磁碟區恢復程序中重新建立。Cassandra也可能在下列情況下重建：</block>
+  <block id="850ebc79da2e533a99e4793fbf7b9017" category="list-text">在離線超過15天之後、儲存節點便會恢復上線。</block>
+  <block id="3ffeea0985462ed9125f23a36cc0f704" category="paragraph">重新建立Cassandra時、系統會使用其他儲存節點的資訊。如果有太多儲存節點離線、部分Cassandra資料可能無法使用。如果最近重新建置Cassandra、則整個網格的Cassandra資料可能尚未一致。如果Cassandra重新建置的儲存節點太多離線、或是在15天內重建兩個或多個儲存節點、就可能發生資料遺失。</block>
+  <block id="39988b3f11738a2ad7ddf19f45600d5a" category="paragraph">儲存節點具有Cassandra資料庫、其中包含物件中繼資料。Cassandra資料庫可能會在下列情況下重建：</block>
+  <block id="4d6f25529d5eb28808522430dec2a58e" category="list-text">儲存磁碟區發生故障並已恢復。</block>
+  <block id="a4d3962399c0b9ef7f1355098d809e8a" category="list-text">您已驗證過去 15 天內尚未重建儲存節點。</block>
+  <block id="44c17cd641ef4b5aa3161ba53ecfea70" category="image-alt">應用裝置安裝程式首頁</block>
+  <block id="4f8cdd0ecf8ab778eb9cd2ef9ba22bba" category="list-text">若要安裝主要管理節點：</block>
+  <block id="e407f2d0a8dbc452cbee0de8a975f682" category="paragraph">出現「上傳StorageGRID 更新軟體」頁面。</block>
+  <block id="934c46262a59afcb532217a9fea35b93" category="image-alt">周邊文字所述的螢幕擷取畫面</block>
+  <block id="f271890ee5de3c47ea02d82a15c7a350" category="list-text">若要安裝閘道節點或非主要管理節點：</block>
+  <block id="6fcccca1a882572312bc09f89b9b6020" category="admonition">恢復應用裝置儲存節點時、請使用與原始應用裝置相同的儲存類型（組合、中繼資料專用或僅資料）重新安裝。如果您指定不同的儲存類型、則還原將會失敗、並需要重新安裝指定正確儲存類型的應用裝置。</block>
+  <block id="1d81691b1a15dcb1aa2b9803155dc311" category="image-alt">此圖以其周邊文字說明。</block>
+  <block id="56245e0485163255e037c0af48b1701c" category="list-text">一旦產生新的恢復套件、請立即下載檔案。</block>
+  <block id="af06f6480272b3e998b08b070e6fc422" category="image-alt">站台取消委任步驟6恢復套件</block>
+  <block id="70ebca160045f1e1d0a4f0ad1694f58d" category="list-text">在第二個取消委任程序中、您可以移除第三個儲存節點、因為現在 ADC 仲裁只需要三個 ADC 服務才能繼續使用：<block ref="efbaea1a85310a12bb509786c053b705" prefix=" " category="inline-code"></block>。</block>
+  <block id="7bef824d3881219f2ac7098557af68aa" category="paragraph">如果您需要取消委任儲存節點、但因為 ADC 仲裁需求而無法取消委任、請在中新增一個儲存節點<block ref="3fd5fe83fbb0f3a2268117f619f63f46" category="inline-link-macro-rx"></block>、並指定它應該擁有 ADC 服務。然後、取消委任現有的儲存節點。</block>
+  <block id="b119b083ccfd6fdc80a3b085ee7e1a59" category="admonition">如果整個StorageGRID 網站故障、請聯絡技術支援部門。技術支援部門將與您合作、開發並執行站台恢復計畫、以最大化還原的資料量、並滿足您的業務目標。請參閱。 <block ref="ae69a49f8134b8abb47c1037e68b19d1" category="inline-link-macro-rx"></block></block>
+  <block id="aa115b1d52c0ddb62f625429f278f63f" category="list-text">如果您要還原應用裝置儲存節點、則必須在應用裝置安裝期間、指定與原始應用裝置相同的儲存類型（組合、中繼資料或純資料）。如果您指定不同的儲存類型、則還原將會失敗、並需要重新安裝指定正確儲存類型的應用裝置。</block>
+  <block id="67bd40595c765bd2b23eaa1f0c20064b" category="summary">您可以使用Grid Manager擷取記錄檔和系統資料（包括組態資料）、以供StorageGRID 您的整個系統使用。</block>
+  <block id="1b9ee84c76fac54985249f8b92f222af" category="paragraph">您可以使用Grid Manager擷取您StorageGRID 的作業系統的記錄檔和系統資料（包括組態資料）。</block>
+  <block id="40b95920f919ed2a5b780a6e466c891a" category="list-text">您必須使用登入主要管理節點上的 Grid Manager <block ref="adf24c7e4de4f7fbefe34dbdfdb455df" category="inline-link-macro-rx"></block>。</block>
+  <block id="5ede9a3a171e80d1090869e8c69981b3" category="list-text">您必須擁有資源配置通關密碼。</block>
+  <block id="cc73f152f22951ac4330db56bfae0eef" category="paragraph">您可以使用 Grid Manager <block ref="ee511327b3d62aaf752db9171d53f715" category="inline-link-macro-rx"></block>、在您選取的期間內、從任何網格節點收集、系統資料和組態資料。資料會收集並歸檔在.tar.gz檔案中、然後下載到本機電腦。</block>
+  <block id="d7378d8924b79a4e3e5da136c3b061c6" category="list-text">選擇*支援*&gt;*工具*&gt;*記錄*。</block>
+  <block id="d596312ef1446ec7a5dd8648e3e8d7d2" category="image-alt">記錄集合UI的快照</block>
+  <block id="4b814a57e1cd2642dc7680a9afb25a45" category="paragraph">您可以視需要收集整個網格或整個資料中心站台的記錄檔。</block>
+  <block id="df8ab4dc9053d132163ecf4acf80f68f" category="list-text">選取*開始時間*和*結束時間*、以設定要包含在記錄檔中的資料時間範圍。</block>
+  <block id="bfa1d23ec581ae9dfd680b9fb3474c73" category="paragraph">如果您選取一個非常長的時間段、或是從大型網格中的所有節點收集記錄、則記錄歸檔可能變得太大、無法儲存在節點上、或太大、無法收集到主要管理節點下載。如果發生這種情況、您必須以較小的資料集重新啟動記錄收集。</block>
+  <block id="c70fef46bfdc0a77715e7fc84202a36e" category="list-text">*應用程式記錄*：技術支援最常用於疑難排解的應用程式專屬記錄。收集的記錄是可用應用程式記錄的子集。</block>
+  <block id="b3a842ad106e1c84e5381d661341ed4f" category="list-text">*稽核日誌*：包含正常系統作業期間所產生之稽核訊息的記錄。</block>
+  <block id="8fa7fcff3c485768497d672cd0090d61" category="list-text">*網路追蹤*：用於網路偵錯的記錄。</block>
+  <block id="54b4a901478bf01b2662c3a6cafd858b" category="list-text">* Prometheus Database*：所有節點上服務的時間序列指標。</block>
+  <block id="fc062599b79aae7d7ce168f57d4a43d0" category="list-text">您也可以在「* Notes*」文字方塊中輸入有關您正在收集的記錄檔的附註。</block>
+  <block id="59070da198976d41dc706dfa7372194e" category="list-text">在StorageGRID * Provisioning Passphrase *（*配置密碼）文字方塊中、輸入您的供應系統的密碼。</block>
+  <block id="e06ac0adef7c01a35f79bc08edb11555" category="list-text">選取*收集記錄*。</block>
+  <block id="8f453b1099c3046366fd74fe9992b7f1" category="paragraph">當您提交新的要求時、會刪除先前的記錄檔集合。</block>
+  <block id="0c0310c5f03d679f08bf80e0ca62799c" category="list-text">記錄檔收集完成時、請選取*下載*。</block>
+  <block id="6b5f55c3b0c8a412357a84c97f6ee508" category="paragraph">_.tar.gz_檔案包含所有網格節點的所有記錄檔、其中記錄收集成功。在組合的_.tar.gz_檔案中、每個網格節點都有一個記錄檔歸檔。</block>
+  <block id="47525656019b2d93270aa8d62f62c7de" category="paragraph">如果需要、您可以稍後重新下載記錄檔歸檔套件。</block>
+  <block id="dc4f4d79fa312040186751cfcaf7b00e" category="paragraph">您也可以選擇*刪除*來移除記錄檔歸檔套件、並釋放磁碟空間。下次收集記錄檔時、會自動移除目前的記錄檔歸檔套件。</block>
+  <block id="017cbf278ea0235fcc74ad85a524bc57" category="paragraph">僅記錄錯誤訊息、稽核結果代碼「不成功」（SUCS）的訊息。</block>
+  <block id="ed364346251373c3d9814822f46be568" category="admonition">僅當*用戶端讀取*或*用戶端寫入*的稽核層級不是*關閉*時、才會記錄稽核傳輸協定要求標頭。</block>
+  <block id="c94e5a6c1fe2711157f9dbf92c16cc69" category="admonition">如果您使用的是udp、請檢查整個記錄收集基礎架構。此udp傳輸協定不允許像其他傳輸協定一樣嚴格的錯誤偵測。</block>
+  <block id="b3ebc08545d522d257f962592c0c4ff7" category="admonition">除非您選取包含外部 Syslog 伺服器的目的地、否則 StorageGRID 稽核資訊不會傳送至外部 Syslog 伺服器。</block>
+  <block id="46e49782eee1e579b810d1c52f5f95ad" category="paragraph">稽核訊息、安全性事件記錄和應用程式記錄不會傳送至管理節點。而是僅儲存在產生這些節點的節點上（「本機節點」）。在每個本機節點上產生的稽核資訊都儲存在<block ref="bc9191d963b550670854df9485545416" prefix=" " category="inline-code"></block>中。</block>
+  <block id="bdaae6bd66daa375f819ca86fa0cf8ce" category="list-text"><block ref="bdaae6bd66daa375f819ca86fa0cf8ce" category="inline-link-macro-rx"></block></block>
+  <block id="dad74df617e4f20736fa1f095278d6b4" category="paragraph">若要匯出記錄檔、請參閱<block ref="cb006780fdb2612069e3da2f3777bdbf" category="inline-link-macro-rx"></block>。</block>
+  <block id="d4cb77c1e892573a0cfa557e8dad0a9f" category="paragraph">與維護所有管理節點和主控 ADC 服務的儲存節點上最新恢復套件的一致性有關。</block>
+  <block id="d25ee1b3635b660762cd7f351bd47f9f" category="admonition">如果在修復之後複寫失敗、相同的物件修復可能會再次遞增。</block>
+  <block id="69bf19c7d3ef7a75f3e9ebb85fd8137e" category="paragraph">當您正在監控儲存節點磁碟區恢復的進度時、這些屬性會很有用。如果嘗試的維修次數已停止增加、且已完成完整掃描、則可能已完成維修。</block>
+  <block id="6e097b14ce6a2811fe8dcf76f1987f72" category="paragraph">在此範例中、所有診斷都會顯示「正常」狀態。</block>
+  <block id="e17c1dbae9a9d549e5fae9c0d9946771" category="list-text">*狀態值*：顯示整個StorageGRID 診斷系統狀態和診斷值的表格。在此範例StorageGRID 中、會顯示目前的CPU使用率、供整個系統的每個節點使用。所有節點值均低於注意和注意臨界值、因此診斷的整體狀態為正常。</block>
+  <block id="9d4a528442d933c4d9ef2c6d2adf1852" category="image-alt">支援診斷CPU使用率</block>
+  <block id="a705ed270c26f44b3962e469d9203e7b" category="list-text">*選用*：若要查看與此診斷相關的Grafana圖表、請按一下* Grafana儀表板*連結。</block>
+  <block id="f72d5d611ce7e54e88c525aa1e55a119" category="paragraph">此時會出現相關的Grafana儀表板。在此範例中、節點儀表板會顯示此節點的CPU使用率、以及節點的其他Grafana圖表。</block>
+  <block id="6132ab0a90d78b2de9438c67b18cfb10" category="admonition">如果您想要將記錄傳送至外部 Syslog 伺服器、或變更稽核資訊的目的地、例如<block ref="027a013000ae74a3c6ae81d2374960c5" prefix=" " category="inline-code"></block>和、<block ref="3d1bf47f65af8ecb08cb7d839ce75be6" prefix=" " category="inline-code"></block>請參閱<block ref="be3dbd9047f53856a501487e5818830e" category="inline-link-macro-rx"></block>。</block>
+  <block id="001e7a3fed386485b5882375aeb9f346" category="summary">所有節點都會顯示「工作」標籤。您可以使用此索引標籤來重新命名或重新開機節點、或將應用裝置節點置於維護模式。</block>
+  <block id="012798b02e5438f983b12fe9926644eb" category="paragraph">所有節點都會顯示「工作」標籤。您可以使用此索引標籤來重新命名或重新開機節點、或將應用裝置節點置於維護模式。</block>
+  <block id="1c13afa7ed1a3a598355773a00c75a87" category="paragraph">rpcbind</block>
+  <block id="63818dd3aa8d82141f8d8abcce7a5435" category="paragraph">NFS 用戶端</block>
+  <block id="4735e50b859e2e4e43154950f94d787a" category="paragraph">用於NFS型稽核匯出（portmap）。</block>
+  <block id="76867a68f7af1e901f293e2d1d5463f4" category="paragraph">*附註：*此連接埠僅在啟用NFS型稽核匯出時才需要。</block>
+  <block id="196df1bec7e6017b4545c5a177d32c35" category="paragraph">* 注意： * NFS 支援已過時、將於未來版本中移除。</block>
+  <block id="aa169b49b583a2b5af89203c2b78c67c" category="paragraph">903</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="paragraph">NFS</block>
+  <block id="5376e012db49e7f176bc15d483008355" category="paragraph">由 NFS 型稽核匯出使用<block ref="446924740bdcc60da8879386f501c18a" prefix="(" category="inline-code"></block>）。</block>
+  <block id="06b1338ba02add2b5d2da67663b19ebe" category="paragraph">2049</block>
+  <block id="6977a85ea238c09708743013d3e3ed13" category="paragraph">用於NFS型稽核匯出（NFS）。</block>
+  <block id="c6d5323108d899f1e3161e2cf9f884f5" category="image-alt">節點頁面主頁</block>
+  <block id="8d586500772ae08bce66197eaa7d164a" category="image-alt">租戶功能表和頁面</block>
+  <block id="f431f9f108988edff991ed014ed1cfed" category="list-text">瞭解和等儲存選項<block ref="afb322a53c3d8387b90105ca5d89f94b" category="inline-link-macro-rx"></block><block ref="35fd7da1a2a908e31b7fb06355943fb8" category="inline-link-macro-rx"></block>。</block>
+  <block id="98b29ed960c4d9c9e7b6a372316d3389" category="inline-link-macro">設定 SSO</block>
+  <block id="238fb389089458de843c49e679c7f5f7" category="list-text"><block ref="238fb389089458de843c49e679c7f5f7" category="inline-link-macro-rx"></block></block>
+  <block id="1c099fee7c6387b021909926b4fbcf98" category="inline-link-macro">恢復套件</block>
+  <block id="f7627a896f71ac272eaa6ae1a3d111d5" category="list-text">產生及下載<block ref="a10a4873bb7070f66843c38149bf8694" category="inline-link-macro-rx"></block></block>
+  <block id="292ca8cacf510c058ea55a3396219363" category="paragraph">為負載平衡器服務提供電源。</block>
+  <block id="1e143bcef3792b64ce70012fbf295135" category="paragraph">追蹤收集器</block>
+  <block id="5c6402552babeee753cd720a56835d59" category="admonition">儲存節點安裝完成後、您無法變更類型。</block>
+  <block id="2e13772d2bb03fd6970ac89e127855fb" category="list-text">每個網格至少兩個組合或僅限資料的儲存節點</block>
+  <block id="faabefbcca97a7a6e227044d97a65f35" category="list-text">每個站台至少有一個組合儲存節點或僅限資料儲存節點 _</block>
+  <block id="d466d0464442d8ee16a0f82c44d9d9d9" category="list-text">每個站台至少有三個組合儲存節點或純中繼資料儲存節點</block>
+  <block id="a160bced420a4c163f79c39e3151d62b" category="paragraph">管理網域控制器（ADC）</block>
+  <block id="fea71569a16745f17b4b85f98336aa4b" category="paragraph">恢復套件<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>檔案會在組態程序期間產生、並下載到執行安裝和組態程序的目錄。您必須備份「恢復套件」檔案、以便StorageGRID 在一個或多個網格節點故障時、恢復該系統。例如、將其複製到安全的備份網路位置、以及安全的雲端儲存位置。</block>
+  <block id="fe46b152908185b8d222caaaf167a8d8" category="list-text">*恢復套件*-下載恢復套件的作業。</block>
+  <block id="64a7b90f4ea448f2f06dffb1a24f9913" category="list-text">按一下*下載恢復套件*。</block>
+  <block id="e064245d869b0345b092125bf7556d91" category="paragraph">當安裝過程進入網格拓撲定義點時，系統會提示您下載恢復軟件包文件<block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>），並確認您可以成功訪問此文件的內容。您必須下載「恢復套件」檔案、以便StorageGRID 在一個或多個網格節點發生故障時、恢復該系統。安裝會在背景繼續進行、但在您下載並驗證此檔案之前、您無法完成安裝並存取 StorageGRID 系統。</block>
+  <block id="2836dde54db7b0d23488be28c23e149a" category="list-text">選中 * 我已成功下載並驗證恢復軟件包文件 * 複選框，然後單擊 * 下一步 * 。</block>
+  <block id="d557edb9878420a33930b440f7e232c6" category="list-text">您必須擁有配置通關密碼、才能執行安裝、擴充及維護程序、包括下載恢復套件。因此、請務必將資源配置通關密碼儲存在安全的位置。</block>
+  <block id="88a1c9b4df74442873806438570ffba3" category="list-text">隨機產生的命令列主控台和 SSH 密碼會儲存在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> Recovery Package 的檔案中。</block>
+  <block id="555d698387826678ea9bf22f7b655e2b" category="paragraph">將資源配置通關密碼儲存在安全的地方。</block>
+  <block id="0562c24f81573c0adcaeb048beee1ac4" category="admonition"><block ref="4d000ce6131e0d928a08a237295f18fb" prefix="(" category="inline-code"></block>單擊 Summary （摘要）頁面上的 *Install* （ * 安裝 * ）後，系統將提示您下載恢復軟件包文件。您必須<block ref="cbba1339ad066baa9337bd7deecdd702" category="inline-link-macro-rx"></block>完成安裝。存取系統所需的密碼會儲存在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>包含在恢復套件檔案中的檔案中。</block>
+  <block id="b27a2e7bc43648227e11d73360d2a4a3" category="paragraph">根據預設StorageGRID 、此功能可確保新建立物件的寫入後讀取一致性。任何「Get」追蹤成功完成的「PUT」、都能讀取新寫入的資料。覆寫現有物件、更新中繼資料及刪除的動作最終一致。覆寫通常需要幾秒鐘或幾分鐘才能傳播、但可能需要15天的時間。</block>
+  <block id="a083a39584aea17eb184f4bed80d3f2b" category="list-text">指定的一致性<block ref="1efa356a578820d4bd767af3097219fb" category="inline-xref-macro-rx"></block>。</block>
+  <block id="8d21fa31bdf535d3ba4faedafc3dc3b9" category="list-text">在 Grid Manager 中、前往 * 組態 * &gt; * 系統 * &gt; * 儲存設定 * &gt; * 預設一致性 * 。</block>
+  <block id="acc97daa1f00e96c0b5d67a2dbfafddf" category="section-title">[[bucker-consisticity-control]] 指定貯體的一致性</block>
+  <block id="9cbbcc92c276511d320f56f6d3afb4d4" category="section-title">[[how － consistency － controls － and － ILM － rules － arize] 一致性和 ILM 規則如何交互以影響數據保護</block>
+  <block id="4c4e90992462f9abf5728c28dcaf9ea8" category="paragraph"><block ref="4c4e90992462f9abf5728c28dcaf9ea8" category="inline-link-macro-rx"></block></block>
+  <block id="cd4977020ebe05a1c5393650b33beda0" category="list-text">所有多部分上傳操作均支持 StorageGRID <block ref="dd6aa6ad3f40642d026c9d910e2a6213" category="inline-link-macro-rx"></block>。</block>
+  <block id="fd519c4d03f493ec5604d15d62b7d12f" category="paragraph">ListObjects （ Get Bucket ）和 ListObjectVerions （ Get Bucket 物件版本）作業支援 StorageGRID <block ref="dd6aa6ad3f40642d026c9d910e2a6213" category="inline-link-macro-rx"></block>。</block>
+  <block id="52c68b232d7ea99b209122ad7094f192" category="list-text">StorageGRID 支援 Amazon Simple Notification Service （ Amazon SNS ）或 Kafka 主題做為目的地。不支援 Simple Queue Service （ SQS ）或 Amazon Lambda 端點。</block>
+  <block id="f8846b4410000653c144a4889220bab8" category="list-text">物件上的所有作業都支援 StorageGRID <block ref="dd6aa6ad3f40642d026c9d910e2a6213" category="inline-link-macro-rx"></block>、但下列項目除外：</block>
+  <block id="0f8bc05b987b871323050c8225f2c3c2" category="paragraph">如果應用程序例行檢查某個對象是否存在於您不希望該對象實際存在的路徑中，則應使用 " 可用 " <block ref="3fc26e0565d3315bda1ff3e9fe19071e" category="inline-link-macro-rx"></block>。例如、如果您的應用程式在放置前先找到某個位置、則應使用「可用」一致性。</block>
+  <block id="880f2673f33a706a0487d229c82ae88b" category="paragraph">您可以將通知組態 XML 與來源貯體建立關聯、以設定事件通知。通知組態 XML 遵循 S3 慣例來設定貯體通知、目的地 Kafka 或 Amazon SNS 主題則指定為端點的 URN 。</block>
+  <block id="644a91e89feeb0e719c9c3336339a7ff" category="list-text">設定事件通知之後、每當來源儲存區中的物件發生指定事件時、就會產生通知、並傳送至使用做為目的地端點的 Amazon SNS 或 Kafka 主題。</block>
+  <block id="fbcef3182bf0b2f41a9a67a43128e4ab" category="list-text">確認已傳送通知至目的地 Amazon SNS 或 Kafka 主題。</block>
+  <block id="37cfdf52f6913aace508718b8dbe3369" category="paragraph">StorageGRID 支援 Amazon SNS 和 Kafka 端點。不支援 Simple Queue Service （ SQS ）或 AWS Lambda 端點。</block>
+  <block id="077569a974d5c7b18df49342c61610ed" category="paragraph">平台服務會與您使用或設定的外部端點通訊<block ref="8a4265dfe3b83adb684d9f10d88cc6c8" category="inline-link-macro-rx"></block><block ref="cc81f9c7ca3cfcc9f647dba9cadc6ca0" category="inline-link-macro-rx"></block>。每個端點都代表一個外部目的地、例如 StorageGRID S3 儲存區、 Amazon Web Services 儲存區、 Amazon SNS 主題、或是本地、 AWS 或其他地方託管的 ElasticSearch 叢集。</block>
+  <block id="30677e1484b63af3879113593847af8f" category="list-text">已建立平台服務端點所參照的資源：</block>
+  <block id="d4e05fda5c4d3fab7d08d2b5a86205c4" category="list-text">活動通知： Amazon Simple Notification Service （ Amazon SNS ）或 Kafka 主題</block>
+  <block id="b274580877f7bc851e630324cb1aaaaf" category="list-text">搜尋通知：彈性搜尋索引、如果目的地叢集未設定為自動建立索引。</block>
+  <block id="94d4add201372812478e2e6e7d15d5a3" category="list-text">安全性憑證（如果使用自訂CA憑證）</block>
+  <block id="ff0f7e83db7c74ea3d749961bd85b429" category="paragraph">端點支援的平台服務類型會顯示在端點名稱旁邊、端點名稱會列在端點頁面上、因此您不需要在名稱中包含該資訊。</block>
+  <block id="8307c61960500858912e103d12edf585" category="list-text">選取*驗證伺服器*的選項按鈕、以選擇驗證TLS與端點的連線方式。</block>
+  <block id="744a9b25a42116fd209e212a5a431799" category="paragraph">使用自訂安全性憑證。如果您選取此設定、請複製並貼上「* CA認證*」文字方塊中的自訂安全性認證。</block>
+  <block id="8073630b67eac5d1e0035a1f1481febf" category="paragraph">用於TLS連線的憑證尚未驗證。此選項不安全。</block>
+  <block id="85e070b28ed7a4c4d38c9ad296e57893" category="paragraph">如果您要儲存此儲存區中每個物件的每個版本、請啟用物件版本管理。然後您可以視需要擷取物件的舊版。如果儲存區將用於跨網格複寫、則必須啟用物件版本管理。</block>
+  <block id="8f983c1ae4535a1fa0af5daba067ac06" category="inline-link-macro">CORS 組態</block>
+  <block id="ca565be3b7ce83877a0bef9212addeed" category="list-text"><block ref="ca565be3b7ce83877a0bef9212addeed" category="inline-link-macro-rx"></block></block>
+  <block id="8e6e12c7559055c15d145ed2bb53d764" category="paragraph">您可以建立本機使用者並將其指派給本機群組、以決定這些使用者可以存取哪些功能。租戶管理程式包含一個預先定義的本機使用者、名稱為「 root 」。雖然您可以新增及移除本機使用者、但無法移除根使用者。</block>
+  <block id="78277f5858911c6433442113714fd9da" category="image-alt">Grid Manager 登入頁面上的租戶登入連結</block>
+  <block id="03b38791fdecfd4995d13eb4ab4f9996" category="list-text">租戶管理程式登入頁面。* 帳戶 * 欄位可能已完成、如下所示。</block>
+  <block id="1ba1a0dff0e9616f9620ae88d4cc2f9c" category="image-alt">租戶管理程式登入頁面</block>
+  <block id="a9bbec8b94c0db5bc894b4d4847b26e2" category="list-text">貴組織的 SSO 頁面。例如：</block>
+  <block id="ee2d277f6e1bdb4625b8c6b2ec8e74fa" category="image-alt">SSO的組織登入頁面範例</block>
+  <block id="2220d4e68cbbe0286e91be2705e6a9de" category="image-alt">如果啟用SSO、請登入租戶帳戶</block>
+  <block id="b30243a9dba67add28afc1e5f1d5695e" category="paragraph"><block ref="6002c6713f40e8a35d365605542e72b0" prefix="" category="inline-code"></block>或<block ref="541661622185851c248b41bf0cea7ad0" prefix=" " category="inline-code"></block></block>
+  <block id="8245d210d4e30e1a922c5df4955cd736" category="paragraph">URN的最後一個元素會在目的地URI上識別特定的目標資源。</block>
+  <block id="3ca8ad4833071e5f6c3b7380f3559d7c" category="list-text">檢視容量限制使用率列。如果使用率為 100% 或接近 100% 、請考慮增加限制或刪除部分物件。</block>
+  <block id="6cc93ddda84b745b2f31b34b49f122f3" category="inline-link-macro">跨來源資源共享（CORS）</block>
+  <block id="7c77eb127c17881dc18e53d169ae1257" category="list-text">進行設定<block ref="212ff004a494be659f20a58c0193cf16" category="inline-link-macro-rx"></block>、讓其他網域的 Web 應用程式可以存取貯體中的貯體和物件。</block>
+  <block id="f8fd7ba4381511a93635d7aa9ca0e86b" category="paragraph">如果您只收集所選節點的記錄、請務必包含至少一個具有ADC服務的儲存節點。（站台的前三個儲存節點包括了「ADC」服務。）</block>
+  <block id="dc60023330d8e8fd943ed36ff7bcb69b" category="list-text">轉至 *support* &gt; *Tools* &gt; *Logs* 。收集警示中儲存節點的應用程式記錄。指定警示前後 15 分鐘。</block>
+  <block id="2102ea5c64f62fe7fac67653088ab88d" category="list-text">如果您的 StorageGRID 系統已啟用單一登入（ SSO ）、請參閱的步驟<block ref="cf914d0cbcbb56ac6967da6ae1cb1ef3" category="inline-link-macro-rx"></block>。</block>
+  <block id="c9fe67e5c57b2a95f78d04da4be03a7b" category="section-title">變更背景驗證率</block>
+  <block id="ba41a01acef05c2a0a11ce5dfbb2ffc1" category="paragraph">如果您擔心資料完整性、可以變更背景驗證檢查儲存節點上複寫物件資料的速度。</block>
+  <block id="edc7b8df97e5ad5eb9cc4e641f6424ff" category="paragraph">您可以變更儲存節點上背景驗證的驗證率：</block>
+  <block id="33b988608bf82cdfcef21beec5ea2f68" category="list-text">Adaptive：預設設定。此工作的設計可驗證最多4 MB/s或10個物件（以先超過者為準）。</block>
+  <block id="80f3e96eb715793bae5ee56058623e4d" category="list-text">高：儲存驗證會快速進行、速度可能會減慢一般系統活動的速度。</block>
+  <block id="e1e2140d7d3d6e58a6ec25583cb51c95" category="paragraph">僅當您懷疑硬體或軟體故障可能有毀損的物件資料時、才可使用「高驗證率」。高優先順序背景驗證完成後、驗證率會自動重設為調適性。</block>
+  <block id="ca330cc10861e88e1f82be0824f1c1ef" category="list-text">選擇「*儲存節點_*」&gt;「* LdR*」&gt;「*驗證*」。</block>
+  <block id="3431e32e7f0971ed5af0acf7edc4c6a8" category="list-text">選擇*組態*&gt;*主要*。</block>
+  <block id="5e928af3bedfc854e95e3876ae73e6ce" category="list-text">轉至* LdR*&gt;* Verification*&gt;* Configuration *&gt;* Main*。</block>
+  <block id="732744364df87c11fe08e790c615ed2d" category="list-text">在背景驗證下、選取*驗證率*&gt;*高*或*驗證率*&gt;*調適性*。</block>
+  <block id="72a6f4033fcbf57e4218964c9ecd056d" category="image-alt">設定驗證率</block>
+  <block id="bd111574c03fae2a7ae28cfc97cf7a6f" category="list-text">監控複寫物件的背景驗證結果。</block>
+  <block id="76a6e64837e400e6e8b9166fbd7a66d6" category="list-text">轉至*節點*&gt;*儲存節點*&gt;*物件*。</block>
+  <block id="4968e9b7bbc297665e240bd1b84fe644" category="list-text">在「驗證」區段中、監控*毀損物件*和*毀損物件未識別*的值。</block>
+  <block id="7d3b84430f0868e6d80ad83dca7bf385" category="paragraph">如果背景驗證發現毀損的複寫物件資料、*毀損的Objects*度量會遞增、StorageGRID 而Sing會嘗試從資料中擷取物件識別碼、如下所示：</block>
+  <block id="465e76d424280481a72ac66192ef6743" category="list-text">如果可以擷取物件識別碼、StorageGRID 則會自動建立物件資料的新複本。新的複本可以在 StorageGRID 系統中的任何位置製作、以滿足使用中的 ILM 原則。</block>
+  <block id="bb40b07b2314d924bd146606072e1be5" category="list-text">如果無法擷取物件識別碼（因為其已毀損）、則會遞增 * 「 Unidentified* 毀損物件」度量、並觸發 * 「 Unidentified Corrupt object Detected* 」（偵測到 * 未識別的毀損物件）警示。</block>
+  <block id="bb6db5c8f125a16da1ba5801543cbfe1" category="list-text">如果發現毀損的複寫物件資料、請聯絡技術支援部門、以判斷毀損的根本原因。</block>
+  <block id="b60a940577ab37aee45e210b8d1334ad" category="list-text">監控銷毀編碼物件的背景驗證結果。</block>
+  <block id="ae8bb7ed1319badfb710ec0e86f3a6e0" category="paragraph">如果背景驗證發現銷毀編碼物件資料的毀損片段、則偵測到毀損的片段屬性會遞增。在同一個儲存節點上重新建置毀損的片段以恢復。StorageGRID</block>
+  <block id="46ea1ed04b63b6f03a101e446c84e2f0" category="list-text">選擇「*儲存節點_*&gt;* LdR*&gt;*刪除編碼*」。</block>
+  <block id="43c93d0406eb05f226d11491b3c08a79" category="list-text">在「驗證結果」表中、監控「偵測到毀損的片段（ECCD）」屬性。</block>
+  <block id="cb9be932c092413dedb2f4ca5fc554c1" category="list-text">當作業系統自動還原毀損的物件StorageGRID 之後、請重設毀損的物件數。</block>
+  <block id="6e662401f2b1fac75dd0e1a780765ba2" category="list-text">選擇「*儲存節點_*」&gt;「* LdR *」&gt;「*驗證*」&gt;「*組態*」。</block>
+  <block id="64f63bef782f673881ce6db4f39f9c2b" category="list-text">選取*重設毀損的物件計數*。</block>
+  <block id="61ce4fbfe5a6de6a6b3a5beaef9f3a18" category="list-text">如果您確信不需要隔離的物件、可以將其刪除。</block>
+  <block id="467532b3bce428b62ce04444cce3ec3b" category="admonition">如果觸發了 * 物件遺失 * 警示、技術支援人員可能會想要存取隔離的物件、以協助偵錯基礎問題或嘗試資料恢復。</block>
+  <block id="5354e233131d832685306d6180ec8be0" category="list-text">選取*刪除隔離的物件*。</block>
+  <block id="8fe5decc410212f516a0c0408c0a1e3a" category="paragraph">如果偵測到的遺失物件複本數量大於100、則儲存節點的儲存設備可能會發生問題。</block>
+  <block id="948760d2e778adb224c5b8f8c1e806d1" category="image-alt">OEC作用中工作</block>
+  <block id="ff51a1026afc044e206bac30dd5ced5c" category="image-alt">OEC重新執行</block>
+  <block id="0c99ba0d885131b67b74ec449c153bb3" category="paragraph">如果您仍對資料完整性有任何疑慮、請前往*支援*&gt;*工具*&gt;*網格拓撲*&gt;*站台*&gt;*儲存節點*&gt;* LdR*&gt;*驗證*&gt;*組態*&gt;*主要*、並提高背景驗證率。背景驗證會檢查所有儲存的物件資料是否正確、並修復發現的任何問題。盡快找出並修復潛在問題、可降低資料遺失的風險。</block>
+  <block id="b00a8f1f5c0f37aeb45c4d54befcd882" category="summary">StorageGRID 11.9 使用網格管理 API 的第 4 版。第 4 版取代第 3 版、但仍支援第 1 、 2 和 3 版。</block>
+  <block id="b5eb2360a10e930816258db72c257d4b" category="admonition">您可以繼續在 StorageGRID 11.9 中使用已過時的管理 API 版本、但在未來的 StorageGRID 版本中、將會移除對這些 API 版本的支援。升級至 StorageGRID 11.9 之後、您可以使用 API 停用過時的 API<block ref="dd804d77efefc5536d88af1c99c663e7" prefix=" " category="inline-code"></block> 。</block>
+  <block id="79c59c46adfd066d1c475397efee64d1" category="section-title">啟用全域 S3 物件鎖定後、請檢閱法規遵循設定</block>
+  <block id="d604ead6cb3e772c3df265526fec2920" category="section-title">移除舊版 mgmt-API 要求</block>
+  <block id="f2b6db1bd3bbc46458f14b8e5747c264" category="paragraph">這些舊版要求已移除：</block>
+  <block id="1d46183c2dfc45a4ac2991610442c3ca" category="paragraph"><block ref="952eddf9d070636390f31e05a32ff79e" prefix="" category="inline-code"></block></block>
+  <block id="27f53aba35e1427af32bd12a2dc824ce" category="paragraph"><block ref="eaa00dc8dbf2b01a066afb0e9294442c" prefix="" category="inline-code"></block></block>
+  <block id="74b90ce911b4576e970a6666f14099b8" category="section-title">API 變更<block ref="f575bc48d74d1754083a7e507b57a459" prefix=" " category="inline-code"></block></block>
+  <block id="14fd451ec96337d40adb204243459e34" category="list-text">已將新的屬性新<block ref="e3fb6a16170ecfa30f1feb52f1caa458" prefix=" " category="inline-code"></block>增至回應本文。此內容指定使用狀況查閱快取保持有效的持續時間（以秒為單位）。此值適用於對照租戶儲存配額和貯體容量限制檢查使用量時。</block>
+  <block id="9a6ac5826e3f403a9844bb53add9aa30" category="list-text">已修正此<block ref="68c6bfbbbb14521c54c7c618f4baa6dd" prefix=" " category="inline-code"></block>行為、以符合架構中的巢狀結構。</block>
+  <block id="cbf33d2a360e2417992516b627a8396a" category="list-text">這些變更僅適用於私有 API 。</block>
+  <block id="2148ab1266ed18971567297ff41af735" category="section-title">API 變更<block ref="dd3086de1f1b48ff497eb494ab03485e" prefix=" " category="inline-code"></block></block>
+  <block id="49dc3ba84006b4e56f7175229577870b" category="paragraph">//org/container/:name/Cross-gre-replentation* Get API 不再需要 root 存取<block ref="ae4b2bea42d1ae39f6aed27438edc4f4" prefix="(" category="inline-code"></block>權限；不過、您必須屬於具有 Manage All Pakes <block ref="ad40d897e43db7ed0ae033bcebf49488" prefix="(" category="inline-code"></block>（管理所有貯體）或 View all Pakes （檢視所有貯體）<block ref="5b5156e03c1b4f097b22a8aa5071c648" prefix="(" category="inline-code"></block>權限的使用者群組。</block>
+  <block id="b99bb60f95838f6c44de962b3f759417" category="paragraph">/org/container/:name/Cross-grese-replentation* Put API 未變更、仍需要 root 存取<block ref="ae4b2bea42d1ae39f6aed27438edc4f4" prefix="(" category="inline-code"></block>權限。</block>
+  <block id="b0b45b3364ed7d216a0cc7015577f2d9" category="summary">StorageGRID 11.9 使用租戶管理 API 的第 4 版。第 4 版取代第 3 版、但仍支援第 1 、 2 和 3 版。</block>
+  <block id="bc97de1e3a5c5e944668f7b17491f8d2" category="admonition">您可以繼續在 StorageGRID 11.9 中使用已過時的租戶管理 API 版本、但在未來的 StorageGRID 版本中、將會移除對這些 API 版本的支援。升級至 StorageGRID 11.9 之後、您可以使用 API 停用過時的 API<block ref="dd804d77efefc5536d88af1c99c663e7" prefix=" " category="inline-code"></block> 。</block>
+  <block id="2df5281c64a3c50b23dc391e87e52e68" category="section-title">適用於貯體容量限制的新 API</block>
+  <block id="7ffda4999356d2a513d431e3de869a15" category="paragraph">您可以將 API 搭配 Get/Put 作業使用<block ref="ffeb4d01ba4b7509fca6a665e9033d4d" prefix=" " category="inline-code"></block>、以取得和設定貯體的儲存容量限制。</block>
+  <block id="fb726a91d52d3f7be029378bc17c98d8" category="admonition">升級至 StorageGRID 11.9 時不需要其他連接埠。</block>
+  <block id="d83893c7f0076150b507ac9b5ecaed58" category="paragraph">StorageGRID 11.7 中新增了下列必要連接埠。升級至 StorageGRID 11.9 之前、請先確定有此功能可供使用。</block>
+  <block id="3603b2a8214b724b614bdcf38ab4c6af" category="paragraph">用於從 StorageGRID 負載平衡器到 LDR 和新的 LDR 服務的 S3 要求的 TCP 連接埠。</block>
+  <block id="8602f0bf9e414f98bb5cd7d513732469" category="paragraph">升級之前、請確認此連接埠已從所有網格節點開啟至所有儲存節點。</block>
+  <block id="bf4f0efcf3bca6ecd030da26e1a926af" category="paragraph">封鎖此連接埠將導致 S3 服務在升級至 StorageGRID 11.9 後中斷。</block>
+  <block id="a013a54e6d251129563225fc0fc0d015" category="admonition">如果您已開啟任何自訂的防火牆連接埠、系統會在升級前檢查期間通知您。您必須先聯絡技術支援部門、才能繼續升級。</block>
+  <block id="7d8a6af53ca8659b22bd67d35216e2b9" category="paragraph">所有其他網格節點上的軟體都會依照您核准節點的順序進行升級。系統中的每個節點都會一次關閉一個。</block>
+  <block id="d676e0189be59e8e626d11bbcc010f07" category="section-title">會產生許多SNMP通知</block>
+  <block id="e99213d9b8b6521342932beff5a6c922" category="paragraph">請注意、當網格節點在升級期間停止並重新啟動時、可能會產生大量的SNMP通知。若要避免過多通知、請清除 * 啟用 SNMP 代理程式通知 * 核取方塊（ * 組態 * &gt; * 監控 * &gt; * SNMP 代理程式 * ）、以在開始升級之前停用 SNMP 通知。然後在升級完成後重新啟用通知。</block>
+  <block id="762640a83ef922cfd11fbdc93225d869" category="section-title">您無法從租戶管理程式檢視貯體詳細資料或管理貯體</block>
+  <block id="1eadf4b48294fd4bc4e620d67862412d" category="paragraph">在升級至 StorageGRID 11.9 期間（也就是說、當系統以混合版本環境運作時）、您無法使用租戶管理程式來檢視貯體詳細資料或管理貯體。下列其中一個錯誤會出現在Tenant Manager的「桶」頁面上：</block>
+  <block id="ec0d89b9162d3bce54ef58097c549183" category="list-text">升級至 11.9 時無法使用此 API 。</block>
+  <block id="a1ff9d7d719ac1d405ec745115cf2829" category="list-text">當您升級至 11.9 時、無法在租戶管理程式中檢視貯體版本設定詳細資料。</block>
+  <block id="4f8bead48d3c9a78b4ca0fcf9bf63cc2" category="paragraph">此錯誤將在升級至 11.9 後解決。</block>
+  <block id="7aebfa1e2291377e040de92d7f7f335f" category="paragraph-title">因應措施</block>
+  <block id="17bfc6e8811a1c2d6e3beed1813afe25" category="paragraph">11.9 升級進行中時、請使用下列工具來檢視貯體詳細資料或管理貯體、而非使用租戶管理程式：</block>
+  <block id="496ae27a8b88cf559180e1f684b660b2" category="list-text">若要在貯體上執行標準 S3 作業、請使用<block ref="7b5cdd5b4a33085f5768623ef5889bae" category="inline-link-macro-rx"></block>或<block ref="5d9c5049653f46946d72d7ded2e0e95f" category="inline-link-macro-rx"></block>。</block>
+  <block id="953479b1c892e5562bd9c91b0da3d400" category="list-text">若要在貯體上執行 StorageGRID 自訂作業（例如檢視及修改貯體一致性、啟用或停用上次存取時間更新、或設定搜尋整合）、請使用租戶管理 API 。</block>
+  <block id="1defa91dd847e2cc5067591773835061" category="paragraph">請檢閱這些主題、瞭解 StorageGRID 11.9 的新功能和增強功能、判斷是否已過時或移除任何功能、以及瞭解 StorageGRID API 的變更。</block>
+  <block id="f0ab6fbe38a3943afcc16903e12a59ed" category="inline-link-macro">StorageGRID 11.9 的新功能</block>
+  <block id="64eb1c8f61101cabe54f34785737cf16" category="list-text"><block ref="64eb1c8f61101cabe54f34785737cf16" category="inline-link-macro-rx"></block></block>
+  <block id="2135516712990de91e72749cc7c1f1a3" category="paragraph">您應該先下載目前的恢復套件檔案複本、然後再升級主要管理節點。恢復套件檔案可讓您在發生故障時還原系統。</block>
+  <block id="a14b1d982a9b7719783cac7e6062336c" category="list-text">當 * 開始升級服務 * 工作完成時、 * 升級其他網格節點 * 工作會開始、並提示您下載新的恢復套件複本。</block>
+  <block id="96c8831e3ffd76664a8f11e40143d70b" category="list-text">出現提示時、請輸入您的資源配置密碼、然後下載新的恢復套件複本。</block>
+  <block id="5a6ca9aee46b5d33f686b973e0014485" category="admonition">升級主管理節點之後、您應該下載新的恢復套件檔案複本。恢復套件檔案可讓您在發生故障時還原系統。</block>
+  <block id="6b02f5e7071128df0c8fbc954751d5a7" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>下載恢復套件</block>
+  <block id="75abc94826660a352c4a1d33a5a6fa65" category="paragraph">開始升級之前、請先下載目前的恢復套件。</block>
+  <block id="eb05ab998b8fd28f161b59c5a02299e6" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block>下載恢復套件</block>
+  <block id="5d8d7b69061b98df7b752475a6492b49" category="paragraph">主管理節點升級後、請下載新的恢復套件。</block>
+  <block id="641ebea3e7ce4c804807afab605f43f1" category="summary">本版StorageGRID 的《產品介紹》介紹下列功能。</block>
+  <block id="cd08999a3d5ec8a486f3b7740067da6b" category="doc">StorageGRID 11.9 的新功能</block>
+  <block id="2d215ebfc0280f8163d071454ec7ce01" category="section-title">擴充性</block>
+  <block id="ceb1971bd1d32cc05849a8e0e1098c10" category="section-title">純資料儲存節點</block>
+  <block id="f64049e8ad38a63bb88cd9bd072c049c" category="inline-link-macro">純資料儲存節點</block>
+  <block id="abad29e8901123cd00558a6fa295cb24" category="paragraph">爲了實現更精細的擴展，您現在可以安裝<block ref="aa40d159182f5898624f8037c1c4028b" category="inline-link-macro-rx"></block>。在中繼資料處理不重要的情況下、您可以以符合成本效益的方式最佳化基礎架構。這種靈活度有助於因應不同的工作負載和成長模式。</block>
+  <block id="3afce804db21afc2790443d56abf8bc3" category="section-title">雲端儲存池增強功能</block>
+  <block id="5c873f7f1d175e3d3aec605b6ed71328" category="inline-link-macro">Amazon S3 for Cloud Storage Pool 中的 IAM 角色</block>
+  <block id="4fafbafd988913062468bd1756f53555" category="paragraph">StorageGRID 現在使用支援短期認證<block ref="20d50f0f396df054cba709d90e58da0f" category="inline-link-macro-rx"></block>。</block>
+  <block id="de1c7324658df1b92d35cf2e96a16c18" category="paragraph">如果這些認證遭到入侵、使用長期認證來存取 S3 儲存區會帶來安全風險。短期認證具有有限的生命週期、可降低未經授權存取的風險。</block>
+  <block id="8bd5bc68614cbfeefc61cd59fe22dac5" category="section-title">S3 物件鎖定貯體</block>
+  <block id="fcf53bf1f5a0fc52576d8c623a2e8902" category="inline-link-macro">使用 Amazon S3 端點設定雲端儲存池</block>
+  <block id="a0ab1156284d69ad6754b22c7c74725b" category="paragraph">您現在可以了<block ref="06549c852da57bb7f8fea4ef1043294f" category="inline-link-macro-rx"></block>。S3 物件鎖定有助於防止意外或惡意刪除物件。如果您將 StorageGRID 的資料分層到 Amazon S3 、則在兩個系統上啟用物件鎖定功能、可在資料生命週期中強化資料保護。</block>
+  <block id="08061c765228f998eb55b78218211344" category="section-title">多租戶</block>
+  <block id="c83ff69cf608a6d53f57b72adf476ffb" category="section-title">貯體限制</block>
+  <block id="731e0a8fba160f6045e2f8a390349698" category="inline-link-macro">設定 S3 貯體的限制</block>
+  <block id="58d0c2634b4afe301f2e6954c8890d25" category="paragraph">透過<block ref="5d1299145bc7def91ae1176d62661087" category="inline-link-macro-rx"></block>、您可以防止租戶壟斷容量。此外、不受控制的成長也可能導致非預期的成本。藉由定義限制、您可以更有效地估計租戶儲存費用。</block>
+  <block id="d89cb92a8bc63cdf0983576dc0e1da80" category="section-title">每位租戶有 5 、 000 個貯體</block>
+  <block id="df5a07e6e773ef5c0654f95f4a942cfc" category="inline-link-macro">每位租戶有 5 、 000 個 S3 貯體</block>
+  <block id="45461b0ce78c1bbb0bd3f5ff4ab49140" category="paragraph">為了提升擴充性、 StorageGRID 現在支援高達<block ref="89824448e8eb7836749535ce85e752af" category="inline-link-macro-rx"></block>。每個網格最多可有 100,000 個貯體。</block>
+  <block id="0378491a2427eecc63aab0738cbe3e32" category="section-title">S3 物件鎖定改善功能</block>
+  <block id="f1048350671b921898242c3270ebad70" category="paragraph">個別租戶組態功能可在靈活度與資料安全性之間取得適當平衡。您現在可以設定個別租戶保留設定、以便：</block>
+  <block id="70d57b2397678c89057e7c58644310ab" category="list-text">允許或不允許規範模式</block>
+  <block id="45cdf816140a729bfe7e4e04f8015bff" category="list-text">設定最長保留期間</block>
+  <block id="6563093287f74a616e9d7ac49b4d6a44" category="paragraph">請參閱：</block>
+  <block id="4bd11bfed0d4a145e685d3150e8b3481" category="list-text"><block ref="4bd11bfed0d4a145e685d3150e8b3481" category="inline-link-macro-rx"></block></block>
+  <block id="52d95651b78385cc269e45dea0f079ed" category="list-text"><block ref="52d95651b78385cc269e45dea0f079ed" category="inline-link-macro-rx"></block></block>
+  <block id="a319345ac29c2f5e4df80f8e94735640" category="section-title">S3 相容性</block>
+  <block id="256744ca5aeb0492e46ebd548af0da2c" category="section-title">x-amz-checksum － sha256 checksum</block>
+  <block id="5baa4a3414b174edf074a7acf1f60898" category="list-text">S3 REST API 現在支援連結： ../s3/operations-on-objects.html<block ref="382e215f74e1290a48a06522b1e3e404" prefix="[" category="inline-code"></block> checksum 。 ]</block>
+  <block id="caffb94bc021a47b4ae4c24243f4c03f" category="list-text">StorageGRID 現在提供 SHA-256 Checksum 支援、可執行 PUT 、 GET 和 HEAD 作業。這些校驗和可增強資料完整性。</block>
+  <block id="f0b80084f2cfeff38ed480ad3d0d7a28" category="section-title">S3 傳輸協定支援的變更</block>
+  <block id="640d6346b4294ee9d61d1f36d1e755c2" category="list-text">新增 Amazon S3 的掛載點支援、可讓應用程式直接連線到 S3 儲存區、就像是本機檔案系統一樣。現在您可以將 StorageGRID 用於更多應用程式和更多使用案例。</block>
+  <block id="245e91dba45f8b2c94f59bf8c9e62816" category="inline-link-macro">S3 傳輸協定支援的其他變更</block>
+  <block id="f34fe93df204511b385d6a8997f3bd68" category="list-text">作爲增加對 mountpoint 的支持的一部分， StorageGRID 11.9 包含<block ref="3be34fd1c526ebb4bc26b4f1ff1e8850" category="inline-link-macro-rx"></block>。</block>
+  <block id="48601fa9b5db7e2a1d508212e97da32c" category="section-title">維護與支援</block>
+  <block id="6645e0ebb53d4b6e68be7936af3a8039" category="section-title">AutoSupport</block>
+  <block id="9f83e2b99a51ba497562220ee3081b62" category="paragraph"><block ref="240c2c64e901dc7e380c864719f36914" category="inline-link-macro-rx"></block>現在自動為舊版應用裝置建立硬體故障案例。</block>
+  <block id="10773371f4f80e90c1b12d9c4cf1161e" category="section-title">擴充節點複製作業</block>
+  <block id="58b780470c25149f91390bebbced2ce6" category="paragraph">節點複製可用度已擴充、可支援更大的儲存節點。</block>
+  <block id="9ddeea367446c8f2cf31bf2ad108e99c" category="section-title">改進了對過期刪除標記的 ILM 處理</block>
+  <block id="3c7b3561d923687c77d0ff532880a15d" category="paragraph">ILM 擷取時間規則加上一段時間、現在也會移除過期的物件刪除標記。刪除標記只有在經過一段時間的天數、且目前的刪除製作者已過期（沒有非目前版本）時才會移除。</block>
+  <block id="6af12dc5b4d71be261a5fa035b55561d" category="paragraph">請參閱<block ref="0bb8ea1a8156bedc4b798ecfe3a8cd21" category="inline-link-macro-rx"></block>和<block ref="238fecd52d73b86217e1093f719287fc" category="inline-link-macro-rx"></block>。</block>
+  <block id="6bba2c80b77e9fa4159c3810b5a23683" category="section-title">改善節點汰換</block>
+  <block id="4ec00a7d8e4a3314b5ccb941f40d20c4" category="inline-link-macro">節點汰換</block>
+  <block id="0a72ee208ecff81b0acdf733984f1c77" category="paragraph">為了順利且有效率地移轉至 StorageGRID 新一代硬體<block ref="68c6de5bb2406e2fd0e327a0f0173a80" category="inline-link-macro-rx"></block>、我們已經改善。</block>
+  <block id="2d8b190f42000787d8468f2661b8fcb0" category="section-title">負載平衡器端點的 Syslog</block>
+  <block id="27242ec017eddc097d9d26793e2bcf9e" category="inline-link-macro">將這些記錄匯出至外部 Syslog 伺服器</block>
+  <block id="8fca0ab82038fdccb1af383e774f6d6f" category="paragraph">負載平衡器端點存取記錄包含疑難排解資訊、例如 HTTP 狀態代碼。StorageGRID 現在支援<block ref="a18827a56604e05510d0cbde3f261177" category="inline-link-macro-rx"></block>。這項增強功能可讓記錄管理更有效率、並與現有的監控和警示系統整合。</block>
+  <block id="b204a1e7e63cb316fe34e51e1d05727a" category="section-title">維護與支援的其他增強功能</block>
+  <block id="3bc1c1fccb8bc64e93251db7aafaaacb" category="list-text">計量 UI 更新</block>
+  <block id="d0bde6c20abc094945afc876c325290c" category="list-text">新的作業系統資格</block>
+  <block id="cdc0404f0719803f62be7d2620fb08d7" category="list-text">支援新的協力廠商元件</block>
+  <block id="4697b3db5568eb39283c52567c9754be" category="section-title">SSH 存取金鑰旋轉</block>
+  <block id="d055690d6ccff476a679c242798ffb24" category="inline-link-macro">更新及旋轉 SSH 金鑰</block>
+  <block id="2951b8c76f19e82ffbb93277b8b5fab7" category="paragraph">網格管理員現在可以<block ref="2bf1b3eb7a2d3d360c49891e5d749fcf" category="inline-link-macro-rx"></block>。旋轉 SSH 金鑰的能力是最佳的安全性做法、也是主動式防禦機制。</block>
+  <block id="c55c666586adecd609cb363c752e60f6" category="section-title">根登入警示</block>
+  <block id="d7a1f1c33c7b04d25fe13507ed9fe242" category="inline-link-macro">觸發警示</block>
+  <block id="ccb250ffef60ae11784a8e7da2f407a0" category="paragraph">當未知實體以 root 身分登入 Grid Manager 時<block ref="10c76afd0de93daec8afa688aeed03ca" category="inline-link-macro-rx"></block>、。監控根 SSH 登入是保護基礎架構的前瞻性步驟。</block>
+  <block id="633967b341e25fd861fdd23fdc0c4f2e" category="section-title">抹除編碼設定檔頁面已移動</block>
+  <block id="68b0fffcb1655af4aa9023fcb334b56d" category="paragraph">「刪除編碼設定檔」頁面現在位於 * 組態 * &gt; * 系統 * &gt; * 刪除編碼 * 。它曾經出現在 ILM 功能表中。</block>
+  <block id="c75dd2c408187226ebb227d3a4aa82e5" category="section-title">搜尋增強功能</block>
+  <block id="36a08fa9b5e161b430bb21e90b8ddc73" category="inline-link-macro">Grid Manager 中的搜尋欄位</block>
+  <block id="6a64e9fc562766a7f6b1689dd486f4a7" category="paragraph"><block ref="27706d6f60316253cf081a1ba27f02f2" category="inline-link-macro-rx"></block>現在包含更好的比對邏輯、可讓您搜尋常用縮寫和頁面中特定設定的名稱來尋找頁面。您也可以搜尋更多類型的項目、例如節點、使用者和租戶帳戶。</block>
+  <block id="ac9e1e2bf1a207a1d05e2ed264526547" category="admonition">暫存安裝密碼僅在節點安裝期間使用。將節點新增至網格之後、您可以使用存取該節點<block ref="2ec3f906b92d969fc17249306583d340" category="inline-link-macro-rx"></block>、此功能列於「恢復套件」的檔案中<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>。</block>
+  <block id="a875f4e3e98d1c995967b1dfb394ca2e" category="sidebar">StorageGRID 11.9 文件</block>
+  <block id="f1b48448e2c7ce36850ff6ee0cf84515" category="sidebar">StorageGRID 11.9 文件</block>
+  <block id="347afcb3de2c9c49a08bf435cf79f443" category="sidebar">單一登入的需求</block>
+  <block id="10c56c2b95c28fe773fe6d60b1a0b05a" category="sidebar">在Azure中建立企業應用程式</block>
 </blocks>

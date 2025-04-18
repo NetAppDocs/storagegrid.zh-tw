@@ -14,7 +14,7 @@ summary: 稽核記錄檔會儲存至管理節點的 /var/local/log 目錄。作�
 稽核記錄檔會儲存至管理節點的 `/var/local/log`目錄。作用中的稽核記錄檔稱為 `audit.log`。
 
 
-NOTE: 您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]
+NOTE: 您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
 
 一天一次、作用中檔案就 `audit.log`會儲存、並啟動新 `audit.log`檔案。保存的文件的名稱以格式表示保存的時間 `_yyyy-mm-dd.txt_`。如果在一天內創建多個審計日誌，則文件名將使用保存文件的日期（以數字附加），格式爲 `_yyyy-mm-dd.txt.n_`。例如 `2018-04-15.txt`、和 `2018-04-15.txt.1`是在 2018 年 4 月 15 日建立及儲存的第一和第二個記錄檔。
 

@@ -2,7 +2,7 @@
 permalink: admin/changing-provisioning-passphrase.html 
 sidebar: sidebar 
 keywords: provisioning passphrase, change passphrase 
-summary: 請使用此程序來變更StorageGRID 供應密碼。恢復、擴充和維護程序需要通關密碼。下載還原套件備份時也需要使用複雜密碼，其中包括網格拓撲資訊，網格節點主控台密碼，以及 StorageGRID 系統的加密金鑰。 
+summary: 請使用此程序來變更StorageGRID 供應密碼。恢復、擴充和維護程序需要通關密碼。下載「恢復套件」備份時、也需要密碼、其中包括網格拓撲資訊、網格節點主控台密碼、StorageGRID 以及適用於該系統的加密金鑰。 
 ---
 = 變更資源配置通關密碼
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 請使用此程序來變更StorageGRID 供應密碼。恢復、擴充�
 
 
 [role="lead"]
-請使用此程序來變更StorageGRID 供應密碼。恢復、擴充和維護程序需要通關密碼。下載還原套件備份時也需要使用複雜密碼，其中包括網格拓撲資訊，網格節點主控台密碼，以及 StorageGRID 系統的加密金鑰。
+請使用此程序來變更StorageGRID 供應密碼。恢復、擴充和維護程序需要通關密碼。下載「恢復套件」備份時、也需要密碼、其中包括網格拓撲資訊、網格節點主控台密碼、StorageGRID 以及適用於該系統的加密金鑰。
 
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
@@ -20,17 +20,14 @@ summary: 請使用此程序來變更StorageGRID 供應密碼。恢復、擴充�
 
 
 .關於這項工作
-許多安裝和維護程序和都需要隨需提供密碼link:../maintain/downloading-recovery-package.html["下載恢復套件"]。資源配置複雜密碼未列在 `Passwords.txt`檔案中。請務必記錄資源配置通關密碼、並將密碼保存在安全的位置。
+許多安裝和維護程序和都需要隨需提供密碼link:../maintain/downloading-recovery-package.html["正在下載恢復套件"]。資源配置複雜密碼未列在 `Passwords.txt`檔案中。請務必記錄資源配置通關密碼、並將密碼保存在安全的位置。
 
 .步驟
 . 選擇*組態*>*存取控制**網格密碼*。
 . 在 * 變更資源配置密碼 * 下、選取 * 進行變更 *
 . 輸入您目前的資源配置通關密碼。
 . 輸入新的通關密碼。通關密碼必須包含至少8個字元、且不得超過32個字元。密碼區分大小寫。
-+
-
-CAUTION: 將資源配置複雜密碼儲存在安全的位置。安裝，擴充及維護程序均需使用此功能。
-
+. 將新的資源配置通關密碼儲存在安全的位置。安裝、擴充和維護程序都必須如此。
 . 重新輸入新的通關密碼、然後選取*「Save*（儲存*）」。
 +
 資源配置通關密碼變更完成時、系統會顯示綠色的成功標語。
@@ -39,9 +36,9 @@ CAUTION: 將資源配置複雜密碼儲存在安全的位置。安裝，擴充�
 image::../media/change_provisioning_passphrase_success.png[資源配置複雜密碼的成功訊息已變更]
 
 . 選擇*恢復套件*。
-. 請輸入新的資源配置複雜密碼來下載新的恢復套件。
+. 輸入新的資源配置密碼以下載新的恢復套件。
 +
 
-CAUTION: 變更資源配置複雜密碼後，您必須立即下載新的還原套件。恢復套件檔案可讓您在發生故障時還原系統。
+CAUTION: 變更資源配置通關密碼之後、您必須立即下載新的恢復套件。恢復套件檔案可讓您在發生故障時還原系統。
 
 

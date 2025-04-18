@@ -36,7 +36,7 @@ NOTE: 如果新IP位址上的網格無法存取現有的DNS伺服器、請在執
 
 +
 
-NOTE: 如果StorageGRID 您的支援系統啟用SSO、且任何依賴方信任都是使用管理節點IP位址（而非建議的完整網域名稱）設定、請準備更新或重新設定Active Directory Federation Services（AD FS）中的這些依賴方信任。 變更IP位址後立即變更。請參閱。 link:../admin/configure-sso.html["設定單一登入"]
+NOTE: 如果StorageGRID 您的支援系統啟用SSO、且任何依賴方信任都是使用管理節點IP位址（而非建議的完整網域名稱）設定、請準備更新或重新設定Active Directory Federation Services（AD FS）中的這些依賴方信任。 變更IP位址後立即變更。請參閱。 link:../admin/configuring-sso.html["設定單一登入"]
 
 +
 
@@ -130,7 +130,7 @@ NOTE: 必須關閉整個網格、以便同時關閉所有節點。
 .. 如果您新增了DNS伺服器、請刪除舊的DNS伺服器值。
 
 
-. 從 Grid Manager 下載新的恢復套件。
+. 從Grid Manager下載新的恢復套件。
 +
 .. 選擇* maintenance *>* System*>* Recovery套件*。
 .. 輸入資源配置通關密碼。

@@ -23,7 +23,7 @@ summary: 開始升級之前、請先檢閱一般工作流程。「升級版」�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]下載恢復套件
 [role="quick-margin-para"]
-開始升級之前，請先下載目前的恢復套件。
+開始升級之前、請先下載目前的恢復套件。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]執行升級預先檢查
 [role="quick-margin-para"]
@@ -35,7 +35,7 @@ summary: 開始升級之前、請先檢閱一般工作流程。「升級版」�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]下載恢復套件
 [role="quick-margin-para"]
-主管理節點升級後，請下載新的恢復套件。
+主管理節點升級後、請下載新的恢復套件。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]核准節點
 [role="quick-margin-para"]

@@ -42,7 +42,7 @@ summary: 您可以使用變更IP工具來變更一或多個節點的網路組態
 NOTE: 不允許 IP 位址交換。如果您必須在網格節點之間交換IP位址、則必須使用暫用的中繼IP位址。
 
 
-NOTE: 如果StorageGRID 您的系統啟用單一登入（SSO）、且您正在變更管理節點的IP位址、請注意、使用管理節點的IP位址（而非建議的完整網域名稱）設定的任何依賴方信任都將無效。您將無法再登入節點。變更IP位址之後、您必須立即使用新的IP位址來更新或重新設定節點在Active Directory Federation Services（AD FS）中的依賴方信任。請參閱的說明link:../admin/configure-sso.html["設定 SSO"]。
+NOTE: 如果StorageGRID 您的系統啟用單一登入（SSO）、且您正在變更管理節點的IP位址、請注意、使用管理節點的IP位址（而非建議的完整網域名稱）設定的任何依賴方信任都將無效。您將無法再登入節點。變更IP位址之後、您必須立即使用新的IP位址來更新或重新設定節點在Active Directory Federation Services（AD FS）中的依賴方信任。請參閱的說明link:../admin/configuring-sso.html["設定 SSO"]。
 
 
 NOTE: 您使用變更IP工具對網路所做的任何變更、都會傳播至StorageGRID 安裝程式韌體、以供使用各種版本的應用裝置使用。如此一StorageGRID 來、如果在應用裝置上重新安裝了支援功能的軟體、或是將應用裝置置於維護模式、網路組態就會正確。
@@ -186,7 +186,7 @@ Updating grid network configuration on Name
 
 
 +
-套用或重新設定變更後，會因網格組態變更而產生新的還原套件。
+套用或重新設定變更後、會因網格組態變更而產生新的恢復套件。
 
 . 如果您選擇*階段*、請在資源配置完成後遵循下列步驟：
 +
@@ -201,51 +201,10 @@ Updating grid network configuration on Name
 
 
 . 選取「* 0*」以在變更完成後結束「變更IP」工具。
-. 從 Grid Manager 下載新的恢復套件。
+. 從Grid Manager下載新的恢復套件。
 +
 .. 選擇* maintenance *>* System*>* Recovery套件*。
 .. 輸入資源配置通關密碼。
 
 
 
-
-
-
-== 暫時變更 LACP PDU 速率
-
-若要對裝置中安裝的網路元件執行維護作業，例如升級 NIC 韌體，您可以檢查目前的 LACP PDU 速率設定。如果需要，您也可以不持續地在快速和慢速之間切換 LACP PDU 速率。
-
-
-NOTE: 若要永久變更 LACP PDU 速率，請參閱 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-network-links.html["設定網路連結"^]。
-
-.開始之前
-* 管理節點已安裝並正在執行。
-* 您有 `Passwords.txt`檔案。
-
-
-.步驟
-. 登入主要管理節點：
-+
-.. 輸入下列命令： `ssh admin@primary_Admin_Node_IP`
-.. 輸入檔案中列出的密碼 `Passwords.txt`。
-.. 輸入以下命令切換到 root ： `su -`
-.. 輸入檔案中列出的密碼 `Passwords.txt`。
-+
-當您以 root 登入時、提示會從變更 `$`為 `#`。
-
-
-
-. 若要檢查目前的 LACP PDU 速率設定，請輸入下列命令：
-+
-`run-each-node --parallel --port 8022 '/usr/sbin/set-lacp-rate.sh --lacprate'`
-
-. 若要暫時變更 LACP PDU 速率，請輸入下列命令：
-+
-`run-each-node --parallel --port 8022 '/usr/sbin/set-lacp-rate.sh --lacprate _<speed>_'`
-
-+
- `fast`位於或 `slow`的位置 `_<version-number>_`。
-
-
-
-LACP PDU 率將在下次設備重新開機時恢復到先前的設定。
