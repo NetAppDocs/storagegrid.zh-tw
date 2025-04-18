@@ -33,7 +33,7 @@ summary: 如果您能夠從故障的非主要管理節點保留稽核記錄、�
 * 您明確指定稽核訊息只能儲存在產生這些訊息的本機節點上。
 
 
-如需詳細資訊、請參閱 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"] 。
+如需詳細資訊、請參閱 link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"] 。
 
 ====
 .步驟

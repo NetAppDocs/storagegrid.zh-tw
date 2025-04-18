@@ -30,6 +30,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 * * 事件觸發 * ：每小時或發生重大系統事件時自動傳送 AutoSupport 套件。預設設定：已啟用。
 * * 隨選 * ：允許技術支援人員要求您的 StorageGRID 系統自動傳送 AutoSupport 套件、這在他們主動處理問題時很有用（需要 HTTPS AutoSupport 傳輸協定）。預設設定：停用。
 * * 使用者觸發 * ：隨時手動傳送 AutoSupport 套件。
+* * 日誌收集 * link:../monitor/collecting-log-files-and-system-data.html["手動收集記錄檔和系統資料，然後傳送 AutoSupport 套件"]：。
 
 
 

@@ -32,16 +32,16 @@ NOTE: 如果您想要使用另一項LDAP v3服務、請聯絡技術支援部門�
 
 == 啟用單一登入
 
-支援使用安全聲明標記語言2.0（SAML 2.0）標準的單一登入（SSO）StorageGRID 。之後link:configuring-sso.html["設定並啟用 SSO"]、所有使用者都必須先由外部身分識別供應商驗證、才能存取 Grid Manager 、 Tenant Manager 、 Grid Management API 或 Tenant Management API 。本機使用者無法登入 StorageGRID 。
+支援使用安全聲明標記語言2.0（SAML 2.0）標準的單一登入（SSO）StorageGRID 。之後link:how-sso-works.html["設定並啟用 SSO"]、所有使用者都必須先由外部身分識別供應商驗證、才能存取 Grid Manager 、 Tenant Manager 、 Grid Management API 或 Tenant Management API 。本機使用者無法登入 StorageGRID 。
 
 
 
 == 變更資源配置複雜密碼
 
-許多安裝與維護程序、以及下載StorageGRID 「還原套件」時、都需要使用資源配置密碼。也需要通關密碼才能下載適用於StorageGRID 整個系統的網格拓撲資訊和加密金鑰備份。您可以link:changing-provisioning-passphrase.html["變更複雜密碼"]視需要進行。
+許多安裝和維護程序，以及下載 StorageGRID 恢復套件時，都需要使用隨需密碼。也需要通關密碼才能下載適用於StorageGRID 整個系統的網格拓撲資訊和加密金鑰備份。您可以link:changing-provisioning-passphrase.html["變更複雜密碼"]視需要進行。
 
 
 
 == 變更節點主控台密碼
 
-網格中的每個節點都有唯一的節點主控台密碼、您必須以「 admin 」的身分使用 SSH 登入節點、或是以 VM/ 實體主控台連線的根使用者登入。您可以視需要link:change-node-console-password.html["變更節點主控台密碼"]為每個節點執行。
+網格中的每個節點都有節點主控台密碼，您必須以「 admin 」的身分使用 SSH 登入節點，或是以 VM/ 實體主控台連線的 root 使用者登入。您可以視需要link:change-node-console-password.html["變更節點主控台密碼"]為每個節點執行。

@@ -23,7 +23,7 @@ settings:
   langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
 sidebar:
   entries:
-  - title: StorageGRID 11.9 文件
+  - title: StorageGRID 12.0 文件
     url: "/index.html"
   - title: StorageGRID 應用裝置
     url: "/storagegrid-hardware.html"
@@ -102,6 +102,10 @@ sidebar:
             url: "/maintain/considerations-for-decommissioning-storage-nodes.html"
           - title: ADC 仲裁
             url: "/maintain/understanding-adc-service-quorum.html"
+          - title: 移動 ADC 服務
+            url: "/maintain/move-adc-service.html"
+          - title: 轉換為純資料節點
+            url: "/maintain/convert-to-data-only-node.html"
           - title: 檢閱ILM原則和儲存組態
             url: "/maintain/reviewing-ilm-policy-and-storage-configuration.html"
           - title: 整合儲存節點

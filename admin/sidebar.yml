@@ -61,23 +61,23 @@ entries:
     url: "/admin/managing-users.html"
   - title: 使用單一登入（SSO）
     entries:
-    - title: 設定單一登入
-      url: "/admin/configuring-sso.html"
-    - title: 單一登入的需求
+    - title: SSO的運作方式
+      url: "/admin/how-sso-works.html"
+    - title: SSO 需求
       url: "/admin/requirements-for-sso.html"
     - title: 確認同盟使用者可以登入
       url: "/admin/confirming-federated-users-can-sign-in.html"
-    - title: 使用沙箱模式
-      url: "/admin/using-sandbox-mode.html"
+    - title: 設定SSO 功能
+      url: "/admin/configure-sso.html"
     - title: 在AD FS中建立依賴方信任
       url: "/admin/creating-relying-party-trusts-in-ad-fs.html"
-    - title: 在Azure中建立企業應用程式
-      url: "/admin/creating-enterprise-application-azure.html"
+    - title: 在 Entra ID 中建立企業應用程式
+      url: "/admin/creating-enterprise-application-entra-id.html"
     - title: 在PingFedate建立SP連線
       url: "/admin/creating-sp-connection-ping.html"
-    - title: 停用單一登入
+    - title: 停用 SSO
       url: "/admin/disabling-single-sign-on.html"
-    - title: 暫時停用並重新啟用單一管理節點的單一登入
+    - title: 暫時停用並重新啟用單一管理節點的 SSO
       url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
 - title: 使用網格同盟
   entries:

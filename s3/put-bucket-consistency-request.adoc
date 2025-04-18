@@ -77,4 +77,4 @@ Authorization: _authorization string_
 Host: _host_
 ----
 .相關資訊
-link:consistency-controls.html["一致性值"]
+link:consistency.html["一致性"]

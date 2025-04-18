@@ -44,7 +44,7 @@ link:supd-s3-metadata-updated.html["SUBPD：S3中繼資料已更新"]
 
 === SUBPD：S3中繼資料更新
 
-S3 用戶端會(`x-amz-meta-\*`針對 S3 物件（ S3KY ）提出更新指定中繼資料的要求（ SUPD ）。在此範例中、要求標頭會包含在欄位中、因為它已設定為稽核傳輸協定標頭（*組態*>*監控*>*稽核與系統記錄伺服器*）。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+S3 用戶端會(`x-amz-meta-\*`針對 S3 物件（ S3KY ）提出更新指定中繼資料的要求（ SUPD ）。在此範例中、要求標頭會包含在欄位中、因為它已設定為稽核傳輸協定標頭（*組態*>*監控*>*稽核與系統記錄伺服器*）。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]
 
 [listing]
 ----

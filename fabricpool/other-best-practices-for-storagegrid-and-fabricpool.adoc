@@ -19,7 +19,7 @@ summary: 設定 StorageGRID 系統搭配 FabricPool 使用時、您可能需要�
 
 FabricPool 工作負載的讀取作業率通常很高、可能會產生大量的稽核訊息。
 
-* 如果您不需要 FabricPool 或任何其他 S3 應用程式的用戶端讀取作業記錄、請選擇性地前往 * 組態 * > * 監控 * > * 稽核與系統記錄伺服器 * 。將 * 用戶端讀取 * 設定變更為 * 錯誤 * 、以減少稽核記錄中記錄的稽核訊息數。如需詳細資訊、請參閱 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"] 。
+* 如果您不需要 FabricPool 或任何其他 S3 應用程式的用戶端讀取作業記錄、請選擇性地前往 * 組態 * > * 監控 * > * 稽核與系統記錄伺服器 * 。將 * 用戶端讀取 * 設定變更為 * 錯誤 * 、以減少稽核記錄中記錄的稽核訊息數。如需詳細資訊、請參閱 link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"] 。
 * 如果您有大型網格、請使用多種類型的 S3 應用程式、或是想要保留所有稽核資料、請設定外部 Syslog 伺服器、並遠端儲存稽核資訊。使用外部伺服器可將稽核訊息記錄的效能影響降至最低、而不會降低稽核資料的完整性。如需詳細資訊、請參閱 link:../monitor/considerations-for-external-syslog-server.html["外部syslog伺服器的考量"] 。
 
 

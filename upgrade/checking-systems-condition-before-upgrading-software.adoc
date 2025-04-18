@@ -33,28 +33,6 @@ NOTE: 如果工作尚未完成或解除鎖定、請聯絡技術支援。
 . 請參閱link:../network/internal-grid-node-communications.html["內部網格節點通訊"]和link:../network/external-communications.html["外部通訊"]、以確保 StorageGRID 11.9 的所有必要連接埠都已在升級之前開啟。
 +
 
-NOTE: 升級至 StorageGRID 11.9 時不需要其他連接埠。
-
-+
-StorageGRID 11.7 中新增了下列必要連接埠。升級至 StorageGRID 11.9 之前、請先確定有此功能可供使用。
-
-+
-[cols="1a,2a"]
-|===
-| 連接埠 | 說明 
+NOTE: 升級至 StorageGRID 12.0 時不需要其他連接埠。
 
 
- a| 
-18086
- a| 
-用於從 StorageGRID 負載平衡器到 LDR 和新的 LDR 服務的 S3 要求的 TCP 連接埠。
-
-升級之前、請確認此連接埠已從所有網格節點開啟至所有儲存節點。
-
-封鎖此連接埠將導致 S3 服務在升級至 StorageGRID 11.9 後中斷。
-
-|===
-
-
-
-CAUTION: 如果您已開啟任何自訂的防火牆連接埠、系統會在升級前檢查期間通知您。您必須先聯絡技術支援部門、才能繼續升級。

@@ -1,0 +1,53 @@
+---
+permalink: maintain/convert-to-data-only-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, stop services, power down host, power off host 
+summary: 若要提高效能，您可以將較慢的非 ADC 儲存節點轉換為僅限資料的儲存節點。 
+---
+= 將儲存節點轉換為純資料節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要提高效能，您可以將較慢的非 ADC 儲存節點轉換為僅限資料的儲存節點。
+
+如果您的儲存節點具有不同的效能特性、則只使用儲存節點來處理資料可能是有意義的。例如、若要提高效能、您可以使用僅限資料的大容量旋轉磁碟儲存節點、以及僅限中繼資料的高效能儲存節點。
+
+此外，您也可以從 Cassandra 移除低 RAM 節點，以獲得更多中繼資料容量，進而增加每節點中繼資料容量限制。請參閱 link:../admin/managing-object-metadata-storage.html["管理物件中繼資料儲存"]。
+
+安裝純資料節點時、網格必須包含下列項目：
+
+* 每個網格至少有兩個組合儲存節點或僅限資料儲存節點
+* 每個站台至少有一個組合儲存節點或僅限資料儲存節點
+* 每個站台至少有三個組合儲存節點或純中繼資料儲存節點
+
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:admin-group-permissions.html["維護或根存取權限"]。
+* 您要轉換的儲存節點不包含 ADC 服務，或您必須轉換link:../maintain/move-adc-service.html["已移轉 ADC 服務"]至另一個節點。
+* 儲存節點並非僅中繼資料節點或僅限資料節點。
+* 站台上的其他節點上有足夠的中繼資料空間，可容納將從您要轉換的儲存節點移轉的中繼資料。
+
+
+.關於這項工作
+使用此程序可將不含 ADC 服務的一或多個組合或僅中繼資料儲存節點，轉換為僅限資料的節點。儲存節點必須位於同一個站台上。
+
+除了轉換儲存節點之外，此程序也會從節點取消委任 Cassandra 。所有中繼資料都會移轉至組合儲存節點或純中繼資料儲存節點。視需要移轉的中繼資料量而定，每個節點最多可能需要幾天的時間才能完成此程序。
+
+
+TIP: 一般而言，如果每個節點的中繼資料使用量低於 1 TB ，則一次最多可轉換 10 個節點。如果每個節點的中繼資料使用量超過 1 TB ，則改為每個程序最多轉換 5 個節點。
+
+.步驟
+. 記錄您要轉換的非 ADC 儲存節點的節點 ID 。
+. 從 Grid Manager 頂端選取說明圖示、然後選取 * API 文件 * 。
+. 選取 * 前往私有 API 文件 * 。
+. 選取 `POST /private/convert-to-data-only-node/start`作業。如需詳細資訊、請參閱 link:../admin/using-grid-management-api.html#issue-api-requests["發出API要求"] 。
++
+在程序期間，每個節點都會重新開機。
+
+. 您可以使用 `GET /private/convert-to-data-only-node`監控程序。如果發生錯誤，請選取 `POST /private/convert-to-data-only-node/retry`以重試程序。
+. link:../maintain/downloading-recovery-package.html["下載恢復套件"]完成此程序後。
+

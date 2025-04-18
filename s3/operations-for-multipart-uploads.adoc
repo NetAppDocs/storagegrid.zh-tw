@@ -30,9 +30,10 @@ summary: 本節說明StorageGRID 此功能如何支援多部份上傳作業。
 ** 評估零件的ILM時StorageGRID 、會根據零件大小而非物件大小來篩選。這表示物件的部分可以儲存在不符合整體物件 ILM 需求的位置。例如、如果規則指定所有 10 GB 或更大的物件都儲存在 DC1 、而所有較小的物件都儲存在 DC2 、則 10 部分多部分上傳的每 1 GB 部分都會儲存在 DC2 的擷取位置。不過、評估整體物件的 ILM 時、物件的所有部分都會移至 DC1 。
 
 
-* 所有多部分上傳操作均支持 StorageGRID link:consistency-controls.html["一致性值"]。
+* 所有多部分上傳操作均支持 StorageGRID link:consistency.html["一致性值"]。
 * 當使用多部分上傳擷取物件時、link:../admin/what-object-segmentation-is.html["物件分割臨界值（ 1 GiB ）"]不會套用。
 * 視需要、您可以使用link:using-server-side-encryption.html["伺服器端加密"]多部分上傳。若要使用 SSE （伺服器端加密搭配 StorageGRID 託管金鑰）、請僅在 CreateMultpartUpload 要求中加入 `x-amz-server-side-encryption`要求標頭。若要使用 SSE-C （伺服器端加密搭配客戶提供的金鑰）、您可以在 CreateMultpartUpload 要求和每個後續的 UploPart 要求中指定相同的三個加密金鑰要求標頭。
+* 如果擷取是在基準貯體的前時間戳記之前啟動，則會在中包含多個上傳物件link:../tenant/manage-branch-buckets.html["分支庫位"]，無論上傳何時完成。
 
 
 [cols="2a,3a"]

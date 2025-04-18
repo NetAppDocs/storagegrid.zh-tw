@@ -45,7 +45,7 @@ CloudMirror複寫
  a| 
 通知
  a| 
-`sns`或 `kafka`
+`sns`、 `kafka`或 `webhook`
 
 
 
@@ -57,7 +57,9 @@ CloudMirror複寫
 |===
 例如、若要繼續指定 StorageGRID 上所託管之 CloudMirror 端點的 URN 、您可以新增 `s3`至 GET `urn:sgws:s3`。
 
-URN的最後一個元素會在目的地URI上識別特定的目標資源。
+對於大多數端點， URN 的最後一個元素會在目的地 URI 上識別特定的目標資源，例如 `sns-topic-name`。
+
+對於 Webhook 端點，目標資源本身就是目的地 URI 。
 
 [cols="1a,2a"]
 |===
@@ -75,6 +77,8 @@ CloudMirror複寫
 通知
  a| 
 `sns-topic-name`或 `kafka-topic-name`
+
+* 注意： * 對於 Webhook 端點，只要端點的 URN 是唯一的， URN 的最終元素就可以是任何字串。
 
 
 
@@ -152,6 +156,14 @@ urn:mysite:sns:optional:optional:sns-topic-name
 [listing]
 ----
 urn:mysite:kafka:optional:optional:kafka-topic-name
+----
++
+指定 Webhook 端點：
+
++
+[listing]
+----
+urn:mysite:webhook:optional:optional:webhook-name
 ----
 * 搜尋整合：
 +

@@ -25,7 +25,7 @@ StorageGRID 系統最多可為每個 S3 租戶帳戶支援 5 、 000 個貯體�
 * link:../admin/configuring-s3-api-endpoint-domain-names.html["設定 S3 端點網域名稱"]
 
 
-ListObjects （ Get Bucket ）和 ListObjectVerions （ Get Bucket 物件版本）作業支援 StorageGRID link:consistency-controls.html["一致性值"]。
+ListObjects （ Get Bucket ）和 ListObjectVerions （ Get Bucket 物件版本）作業支援 StorageGRID link:consistency.html["一致性值"]。
 
 您可以檢查是否為個別的儲存區啟用或停用上次存取時間的更新。請參閱。 link:get-bucket-last-access-time-request.html["取得時段上次存取時間"]
 
@@ -290,7 +290,7 @@ PutBucketNotificationConfiguration
  a| 
 使用要求主體中的通知組態 XML 來設定貯體通知。您應該瞭解下列實作詳細資料：
 
-* StorageGRID 支援 Amazon Simple Notification Service （ Amazon SNS ）或 Kafka 主題做為目的地。不支援 Simple Queue Service （ SQS ）或 Amazon Lambda 端點。
+* StorageGRID 支援 Amazon Simple Notification Service （ Amazon SNS ）主題， Kafka 主題或 Webhook 端點作為目的地。不支援 Simple Queue Service （ SQS ）或 AWS Lambda 端點。
 * 通知的目的地必須指定為StorageGRID 一個端點的URN。端點可以使用租戶管理程式或租戶管理API來建立。
 +
 端點必須存在、通知組態才能成功。如果端點不存在， `400 Bad Request`則會傳回錯誤代碼 `InvalidArgument`。

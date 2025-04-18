@@ -22,4 +22,4 @@ summary: 以下各節將詳細說明系統傳回的稽核訊息。每個稽核�
 2014-07-17T03:50:47.484627
 \[AUDT:[RSLT(FC32):VRGN][AVER(UI32):10][ATIM(UI64):1405569047484627][*ATYP\(FC32\):SYSU*][ANID(UI32):11627225][AMID(FC32):ARNI][ATID(UI64):9445736326500603516]]
 ----
-如需設定稽核訊息層級、變更記錄目的地、以及使用外部 Syslog 伺服器來取得稽核資訊的相關資訊、請參閱link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+如需設定稽核訊息層級、變更記錄目的地、以及使用外部 Syslog 伺服器來取得稽核資訊的相關資訊、請參閱link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]

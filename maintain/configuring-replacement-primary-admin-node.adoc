@@ -38,10 +38,10 @@ summary: 更換節點必須設定為StorageGRID 適用於您的整套系統的�
 +
 image::../media/install_or_recover_primary_admin_node.png[安裝或恢復主管理節點]
 
-. 上傳最新的恢復套件備份：
+. 上傳最新的還原套件備份：
 +
 .. 按一下*瀏覽*。
-.. 找到StorageGRID 適用於您的還原系統的最新還原套件檔案、然後按一下*「Open*（開啟*）」。
+.. 找到 StorageGRID 系統的最新恢復軟件包文件，然後單擊 *Open* 。
 
 
 . 輸入資源配置通關密碼。
@@ -52,7 +52,7 @@ image::../media/install_or_recover_primary_admin_node.png[安裝或恢復主管�
 . 如果StorageGRID 您的支援系統啟用單一登入（SSO）、且您所恢復之管理節點的依賴方信任已設定為使用預設管理介面憑證、請更新（或刪除及重新建立）節點在Active Directory Federation Services（AD FS）中的依賴方信任。使用在管理節點還原程序期間所產生的新預設伺服器憑證。
 +
 
-NOTE: 若要設定信賴方信任、請參閱link:../admin/configuring-sso.html["設定單一登入"]。若要存取預設伺服器憑證、請登入管理節點的命令Shell。移至 `/var/local/mgmt-api`目錄、然後選取 `server.crt`檔案。
+NOTE: 若要設定信賴方信任、請參閱link:../admin/configure-sso.html["設定單一登入"]。若要存取預設伺服器憑證、請登入管理節點的命令Shell。移至 `/var/local/mgmt-api`目錄、然後選取 `server.crt`檔案。
 
 
 

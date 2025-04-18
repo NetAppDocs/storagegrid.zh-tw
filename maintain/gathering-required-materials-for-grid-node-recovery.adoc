@@ -45,11 +45,11 @@ summary: 在執行維護程序之前、您必須確保擁有必要的資料來�
 取得最新恢復套件檔案的複本 `.zip`：
 `sgws-recovery-package-_id-revision_.zip`
 
-每次修改系統時、都會更新檔案內容 `.zip`。進行此類變更後、系統會將最新版的恢復套件儲存在安全的位置。使用最新的複本從網格故障中恢復。
+每次修改系統時、都會更新檔案內容 `.zip`。進行此類變更後，系統會指示您將最新版本的還原套件儲存在安全的位置。使用最新的複本從網格故障中恢復。
 
-如果主要管理節點正常運作、您可以從Grid Manager下載恢復套件。選擇* maintenance *>* System*>* Recovery套件*。
+如果主要管理節點正常運作，您可以從 Grid Manager 下載還原套件。選擇* maintenance *>* System*>* Recovery套件*。
 
-如果您無法存取 Grid Manager 、您可以在包含 ADC 服務的某些儲存節點上找到恢復套件的加密複本。在每個儲存節點上、檢查此位置的「恢復套件： `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg`使用修訂版編號最高的恢復套件」。
+如果您無法存取 Grid Manager ，您可以在包含 ADC 服務的某些儲存節點上找到恢復套件的加密複本。在每個儲存節點上，檢查此位置以取得恢復套件： `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg`使用具有最高修訂版編號的恢復套件。
 
 
 

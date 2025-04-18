@@ -38,7 +38,7 @@ summary: 疑難排解問題時、您可以與技術支援部門合作、在Stora
 「診斷」頁面隨即出現、並列出每項診斷檢查的結果。結果依嚴重性排序（注意、注意、然後正常）。在每個嚴重性範圍內、結果會依字母順序排序。
 
 +
-在此範例中、所有診斷都會顯示「正常」狀態。
+在此範例中，一個診斷狀態為「注意」，三個診斷狀態為「正常」。
 
 +
 image::../media/support_diagnostics_page.png[支援診斷頁面]
@@ -55,18 +55,18 @@ image::../media/support_diagnostics_page.png[支援診斷頁面]
 
 NOTE: 您無法變更這些臨界值。
 
-** *狀態值*：顯示整個StorageGRID 診斷系統狀態和診斷值的表格。在此範例StorageGRID 中、會顯示目前的CPU使用率、供整個系統的每個節點使用。所有節點值均低於注意和注意臨界值、因此診斷的整體狀態為正常。
-
-
+** * 狀態值 * ：顯示整個 StorageGRID 系統之診斷狀態和值的圖表（表格未顯示在螢幕擷取畫面中）。在此範例StorageGRID 中、會顯示目前的CPU使用率、供整個系統的每個節點使用。所有節點值均低於注意和注意臨界值、因此診斷的整體狀態為正常。
 +
-image::../media/support_diagnostics_cpu_utilization.png[支援診斷CPU使用率]
+image::../media/support_diagnostics_cpu_utilization.png[診斷狀態值範例]
 
-. *選用*：若要查看與此診斷相關的Grafana圖表、請按一下* Grafana儀表板*連結。
+
+
+. * 選用 * ：若要查看與此診斷相關的 Grafana 圖表，請選取 * Grafana Dashboard * 。
 +
 並非所有診斷都會顯示此連結。
 
 +
-此時會出現相關的Grafana儀表板。在此範例中、節點儀表板會顯示此節點的CPU使用率、以及節點的其他Grafana圖表。
+此時會出現相關的Grafana儀表板。在此範例中，「節點」儀表板會顯示此節點的 CPU 使用率，以及節點的其他 Grafana 圖表。
 
 +
 

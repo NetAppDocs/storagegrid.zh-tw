@@ -31,25 +31,25 @@ summary: 從取消配置網站頁面精靈的步驟6（監控取消配置）、�
 每個閘道節點或管理節點可能只需要幾分鐘或一小時即可移除、不過儲存節點可能需要數天或數週的時間。
 
 .步驟
-. 一旦產生新的恢復套件、請立即下載檔案。
+. 一旦產生新的還原套件，請立即下載檔案。
 +
-image::../media/decommission_site_step_6_recovery_package.png[站台取消委任步驟6恢復套件]
+image::../media/decommission_site_step_6_recovery_package.png[站台取消委任步驟 6 恢復套件]
 
 +
 
-NOTE: 請盡快下載恢復套件、以確保在取消委任程序期間發生問題時、您可以恢復網格。
+NOTE: 請盡快下載恢復套件，以確保在取消委任程序期間發生錯誤時，您可以恢復網格。
 
 +
 .. 選取訊息中的連結、或選取* maintenance *>* System*>* Recovery套件*。
 .. 下載 `.zip`檔案。
 +
-請參閱的說明link:downloading-recovery-package.html["正在下載恢復套件"]。
+請參閱的說明link:downloading-recovery-package.html["下載恢復套件"]。
 
 
 
 +
 
-NOTE: 必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。
+NOTE: 恢復套件檔案必須受到保護、因為它包含可用於從 StorageGRID 系統取得資料的加密金鑰和密碼。
 
 . 使用「資料移動」圖表、監控物件資料從此站台移至其他站台的移動。
 +

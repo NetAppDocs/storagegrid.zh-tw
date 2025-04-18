@@ -11,7 +11,7 @@ summary: 如果您已設定並啟用單一登入（SSO）、且使用Active Dire
 
 
 [role="lead"]
-如果您擁有 link:../admin/configuring-sso.html["已設定並啟用單一登入（SSO）"]Active Directory 並使用它做為 SSO 提供者、則必須發出一系列 API 要求、以取得 Grid Management API 或 Tenant Management API 有效的驗證權杖。
+如果您擁有 link:../admin/how-sso-works.html["已設定並啟用單一登入（SSO）"]Active Directory 並使用它做為 SSO 提供者、則必須發出一系列 API 要求、以取得 Grid Management API 或 Tenant Management API 有效的驗證權杖。
 
 
 

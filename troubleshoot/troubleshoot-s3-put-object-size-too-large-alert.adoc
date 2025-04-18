@@ -116,7 +116,7 @@ audit.log:2023-01-05T18:47:05.525999 [AUDT:[RSLT(FC32):SUCS][CNID(UI64):16729436
 
 . 如果用戶端寫入不正常、請使用警示中的租戶 ID 來識別租戶：
 +
-.. 轉至 *support* > *Tools* > *Logs* 。收集警示中儲存節點的應用程式記錄。指定警示前後 15 分鐘。
+.. 轉至 *support* > *Tools* > *Logs* 。收集警示中儲存節點的應用程式記錄。指定警示前後 15 分鐘。請參閱 link:../monitor/collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]。
 .. 解壓縮檔案並移至 `bycast.log`：
 +
 `/GID<grid_id>_<time_stamp>/<site_node>/<time_stamp>/grid/bycast.log`

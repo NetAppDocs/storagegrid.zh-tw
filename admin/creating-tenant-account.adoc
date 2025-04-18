@@ -13,7 +13,7 @@ summary: 您必須建立至少一個租戶帳戶、以控制StorageGRID 對您�
 [role="lead"]
 您必須建立至少一個租戶帳戶、以控制StorageGRID 對您的作業系統儲存設備的存取。
 
-建立租戶帳戶的步驟會因是否已設定及link:configuring-sso.html["單一登入"]所設定、以及您用來建立租戶帳戶的 Grid Manager 帳戶是否屬於具有「根」存取權限的管理群組而異link:using-identity-federation.html["身分識別聯盟"]。
+建立租戶帳戶的步驟會因是否已設定及link:how-sso-works.html["單一登入"]所設定、以及您用來建立租戶帳戶的 Grid Manager 帳戶是否屬於具有「根」存取權限的管理群組而異link:using-identity-federation.html["身分識別聯盟"]。
 
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
@@ -118,7 +118,7 @@ NOTE: 其中有些權限有額外的需求。如需詳細資料、請選取每�
  a| 
 使用自己的身分識別來源
  a| 
-租戶可以為同盟群組和使用者設定及管理自己的身分識別來源。如果您的 StorageGRID 系統有此選項、則此選項會停用link:../admin/configuring-sso.html["已設定 SSO"]。
+租戶可以為同盟群組和使用者設定及管理自己的身分識別來源。如果您的 StorageGRID 系統有此選項、則此選項會停用link:../admin/how-sso-works.html["已設定 SSO"]。
 
 
 

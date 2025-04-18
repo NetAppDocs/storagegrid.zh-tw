@@ -24,7 +24,7 @@ summary: 如果您打算使用雲端儲存資源池將物件移出StorageGRID �
 * Cloud Storage Pool 不支援以下平台、驗證及具有 S3 物件鎖定的傳輸協定組合：
 +
 ** * 平台 * ： Google Cloud Platform 與 Azure
-** * 驗證類型 * ： IAM 角色隨處可及匿名存取
+** * 驗證類型 * ：匿名存取
 ** * 傳輸協定 * ： HTTP
 
 

@@ -15,7 +15,7 @@ summary: '檔案/var/local/log/bycast.log是StorageGRID 適用於整個解決程
 
 檔案 `/var/local/log/bycast-err.log`是的子集 `bycast.log`。其中包含嚴重性錯誤和嚴重的訊息。
 
-您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]
 
 
 
@@ -32,7 +32,7 @@ summary: '檔案/var/local/log/bycast.log是StorageGRID 適用於整個解決程
 
 NOTE: 如果記錄檔已壓縮、則不得將其解壓縮至寫入的相同位置。將檔案解壓縮到相同位置可能會干擾記錄檔的旋轉指令碼。
 
-您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]
 
 .相關資訊
 link:collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]

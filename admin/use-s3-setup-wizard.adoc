@@ -33,7 +33,7 @@ S3 安裝精靈會引導您完成每個步驟、設定 StorageGRID 以搭配 S3 
 如果您打算使用虛擬 LAN 來分隔 S3 應用程式的流量、則表示您已經設定了 VLAN 介面。請參閱。 link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]
 
 --
-設定身分識別聯盟和 SSO:: 如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道 S3 應用程式將使用哪個同盟群組的租戶帳戶擁有 root 存取權。請參閱link:../admin/using-identity-federation.html["使用身分識別聯盟"]和link:../admin/configuring-sso.html["設定單一登入"]。
+設定身分識別聯盟和 SSO:: 如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道 S3 應用程式將使用哪個同盟群組的租戶帳戶擁有 root 存取權。請參閱link:../admin/using-identity-federation.html["使用身分識別聯盟"]和link:../admin/how-sso-works.html["設定單一登入"]。
 取得及設定網域名稱:: 您知道 StorageGRID 要使用哪個完整網域名稱（ FQDN ）。網域名稱伺服器（ DNS ）項目會將此 FQDN 對應到您使用精靈建立的 HA 群組的虛擬 IP （ VIP ）位址。
 +
 --

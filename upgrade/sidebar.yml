@@ -5,7 +5,7 @@ entries:
 - title: 開始之前
   pdf-filename: 升級StorageGRID 版軟體
   url: "/upgrade/index.html"
-- title: StorageGRID 11.9 的新功能
+- title: StorageGRID 12.0 的新功能
   url: "/upgrade/whats-new.html"
 - title: 已移除或已過時的功能
   url: "/upgrade/removed-or-deprecated-features.html"

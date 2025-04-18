@@ -19,9 +19,9 @@ summary: 請依照下列指示將StorageGRID 更新版的更新版更新至更�
 
 == 開始之前
 
-請檢閱這些主題、瞭解 StorageGRID 11.9 的新功能和增強功能、判斷是否已過時或移除任何功能、以及瞭解 StorageGRID API 的變更。
+請檢閱這些主題、瞭解 StorageGRID 12.0 的新功能和增強功能、判斷是否已過時或移除任何功能、以及瞭解 StorageGRID API 的變更。
 
-* link:whats-new.html["StorageGRID 11.9 的新功能"]
+* link:whats-new.html["StorageGRID 12.0 的新功能"]
 * link:removed-or-deprecated-features.html["已移除或已過時的功能"]
 * link:changes-to-grid-management-api.html["網格管理API的變更"]
 * link:changes-to-tenant-management-api.html["租戶管理API變更"]

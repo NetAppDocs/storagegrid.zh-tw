@@ -17,7 +17,7 @@ summary: 您可以使用此程序來新增或更新用於網格、站台和節�
 * 從 * 主要管理節點 * 、您可以使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 +
 
-NOTE: 您可以從非主要管理節點新增或更新顯示名稱、但必須登入主要管理節點才能下載恢復套件。
+NOTE: 您可以從非主要管理節點新增或更新顯示名稱，但必須登入主要管理節點才能下載還原套件。
 
 * 您有link:../admin/admin-group-permissions.html["維護或根存取權限"]。
 * 您有資源配置通關密碼。
@@ -165,13 +165,13 @@ image::../media/rename-bulk-rename-tool-after.png[之後大量重新命名工具
 ====
 
 
-=== [[download-recovery-package]] 下載恢復套件
+=== [[download-recovery package]] 下載恢復套件
 
-完成項目重新命名後、請下載並儲存新的恢復套件。您重新命名項目的新顯示名稱會包含在 `Passwords.txt`檔案中。
+完成項目重新命名後，請下載並儲存新的還原套件。您重新命名項目的新顯示名稱會包含在 `Passwords.txt`檔案中。
 
 .步驟
 . 輸入資源配置通關密碼。
-. 選取 * 下載恢復套件 * 。
+. 選擇*下載恢復套件*。
 +
 下載隨即開始。
 
@@ -179,7 +179,7 @@ image::../media/rename-bulk-rename-tool-after.png[之後大量重新命名工具
 . 將檔案複製 `sgws-recovery-package-_id-revision_.zip`到兩個安全且獨立的位置。
 +
 
-CAUTION: 必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。
+CAUTION: 恢復套件檔案必須受到保護、因為它包含可用於從 StorageGRID 系統取得資料的加密金鑰和密碼。
 
 . 選擇 * 完成 * 返回第一步。
 
@@ -229,7 +229,7 @@ CAUTION: 必須保護恢復套件檔案、因為其中包含可用於從StorageG
 
 --
 ====
-. <<download-recovery-package,下載並儲存新的恢復套件>>。
+. <<download-recovery-package,下載並儲存新的還原套件>>。
 +
 您還原項目的顯示名稱不再包含在檔案中 `Passwords.txt`。
 

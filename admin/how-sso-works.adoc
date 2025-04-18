@@ -1,21 +1,17 @@
 ---
-permalink: admin/configuring-sso.html 
+permalink: admin/how-sso-works.html 
 sidebar: sidebar 
-keywords: configure single sign on, sso, SAML 
-summary: 啟用單一登入（SSO）時、如果使用者的認證是使用組織實作的SSO登入程序來授權、則只能存取Grid Manager、租戶管理程式、Grid Management API或租戶管理API。本機使用者無法登入StorageGRID 到無法使用的功能。 
+keywords: single sign on, sso, SAML 
+summary: 啟用單一登入（ SSO ）時，使用者只有使用組織實作的 SSO 登入程序授權其認證，才能存取 Grid Manager ， Tenant Manager ， Grid Management API 或 Tenant Management API 。本機使用者無法登入StorageGRID 到無法使用的功能。 
 ---
-= 設定單一登入
+= SSO的運作方式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-啟用單一登入（SSO）時、如果使用者的認證是使用組織實作的SSO登入程序來授權、則只能存取Grid Manager、租戶管理程式、Grid Management API或租戶管理API。本機使用者無法登入 StorageGRID 。
-
-
-
-== 單一登入的運作方式
+啟用單一登入（ SSO ）時，使用者只有使用組織實作的 SSO 登入程序授權其認證，才能存取 Grid Manager ， Tenant Manager ， Grid Management API 或 Tenant Management API 。本機使用者無法登入 StorageGRID 。
 
 支援使用安全聲明標記語言2.0（SAML 2.0）標準的單一登入（SSO）StorageGRID 。
 
@@ -23,7 +19,7 @@ summary: 啟用單一登入（SSO）時、如果使用者的認證是使用組�
 
 
 
-=== 啟用SSO時登入
+== 啟用SSO時登入
 
 啟用SSO並登入StorageGRID 支援功能時、系統會將您重新導向至組織的SSO頁面、以驗證您的認證資料。
 
@@ -33,19 +29,13 @@ summary: 啟用單一登入（SSO）時、如果使用者的認證是使用組�
 畫面上會出現「簽署」頁面。StorageGRID
 
 +
-** 如果這是您第一次存取此瀏覽器上的URL、系統會提示您輸入帳戶ID：
-+
-image::../media/sso_sign_in_first_time.png[使用啟用SSO的第一次存取權限登入]
-
-** 如果您先前曾存取Grid Manager或Tenant Manager、系統會提示您選擇最近的帳戶或輸入帳戶ID：
-+
-image::../media/sign_in_sso.png[啟用SSO時顯示「登入」頁面StorageGRID]
-
-
-
+** 如果這是您第一次在此瀏覽器上存取 URL ，系統會提示您輸入帳戶 ID 。
+** 如果您先前曾存取 Grid Manager 或 Tenant Manager ，系統會提示您選擇最近的帳戶或輸入帳戶 ID 。
 +
 
 NOTE: 當您輸入租戶帳戶的完整 URL （即完整網域名稱或 IP 位址後面的）時、不會顯示「 StorageGRID 登入」頁面 `/?accountId=_20-digit-account-id_`。而是會立即將您重新導向至組織的 SSO 登入頁面<<signin_sso,使用SSO認證登入>>、您可以在其中進行。
+
+
 
 . 指出您要存取Grid Manager或租戶管理程式：
 +
@@ -56,9 +46,6 @@ NOTE: 當您輸入租戶帳戶的完整 URL （即完整網域名稱或 IP 位�
 . 選擇*登入*
 +
 可將您重新導向至組織的SSO登入頁面。StorageGRID例如：
-
-+
-image::../media/sso_organization_page.gif[SSO的組織登入頁面範例]
 
 . [[signin_SSO ]使用您的SSO認證登入。
 +
@@ -82,7 +69,7 @@ NOTE: 如果無法存取服務帳戶、您仍可登入、只要您是擁有Stora
 
 
 
-=== 啟用SSO時登出
+== 啟用SSO時登出
 
 啟用SSO以StorageGRID 利執行功能時、登出時會發生什麼事取決於您登入的項目、以及登出的位置。
 
@@ -91,6 +78,10 @@ NOTE: 如果無法存取服務帳戶、您仍可登入、只要您是擁有Stora
 . 選取 * 登出 * 。
 +
 畫面上會出現「簽署」頁面。StorageGRID「*最近的帳戶*」下拉式清單會更新為包含* Grid Manager*或租戶名稱、以便日後更快存取這些使用者介面。
+
++
+
+TIP: 下表摘要說明當您使用單一瀏覽器工作階段登出時會發生的情況。如果您在StorageGRID 多個瀏覽器工作階段之間登入到Sof、則必須分別登出所有瀏覽器工作階段。
 
 +
 [cols="1a,1a,1a"]
@@ -134,6 +125,3 @@ Grid Manager與租戶管理程式
 
 |===
 
-
-
-NOTE: 下表摘要說明當您使用單一瀏覽器工作階段登出時會發生的情況。如果您在StorageGRID 多個瀏覽器工作階段之間登入到Sof、則必須分別登出所有瀏覽器工作階段。

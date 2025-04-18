@@ -15,7 +15,7 @@ summary: 本節說明StorageGRID 此「物件」的「物件」功能如何執�
 
 下列條件適用於所有物件作業：
 
-* 物件上的所有作業都支援 StorageGRID link:consistency-controls.html["一致性值"]、但下列項目除外：
+* 物件上的所有作業都支援 StorageGRID link:consistency.html["一致性值"]、但下列項目除外：
 +
 ** GetObjectAcl
 ** `OPTIONS /`

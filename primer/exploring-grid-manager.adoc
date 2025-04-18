@@ -75,8 +75,6 @@ image::../media/grid_manager_dashboard_and_menu.png[Grid Manager中的儀表板]
 
 節點首頁會顯示整個網格的合併度量。若要檢視特定站台或節點的資訊、請選取站台或節點。
 
-image::../media/nodes_page.png[節點頁面主頁]
-
 
 
 == 租戶頁面
@@ -84,8 +82,6 @@ image::../media/nodes_page.png[節點頁面主頁]
 link:../admin/managing-tenants.html["租戶頁面"]可讓您使用 link:../tenant/index.html["建立及監控儲存租戶帳戶"]StorageGRID 系統。您必須建立至少一個租戶帳戶、以指定誰可以儲存及擷取物件、以及哪些功能可供他們使用。
 
 「租戶」頁面也會提供每個租戶的使用詳細資料、包括使用的儲存容量和物件數目。如果您在建立租戶時設定配額、就可以查看該配額的使用量。
-
-image::../media/tenants_page.png[租戶功能表和頁面]
 
 
 
@@ -145,7 +141,7 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 * 用於link:../admin/grid-federation-overview.html["網格同盟"]複製租戶帳戶資訊、並在兩個 StorageGRID 系統之間複寫物件資料。
 * 或者、啟用link:../admin/configuring-stored-object-compression.html["壓縮儲存的物件"]選項。
 * link:../ilm/managing-objects-with-s3-object-lock.html["管理 S3 物件鎖定"]
-* 瞭解和等儲存選項link:../admin/what-object-segmentation-is.html["物件分割"]link:../admin/what-storage-volume-watermarks-are.html["儲存Volume浮點"]。
+* 瞭解和等儲存設定link:../admin/what-object-segmentation-is.html["物件分割"]link:../admin/what-storage-volume-watermarks-are.html["儲存Volume浮點"]。
 * link:../ilm/manage-erasure-coding-profiles.html["管理銷毀編碼設定檔"]。
 
 
@@ -169,7 +165,7 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 * link:../admin/managing-users.html["管理管理員使用者"]
 * 變更link:../admin/changing-provisioning-passphrase.html["資源配置複雜密碼"]或link:../admin/change-node-console-password.html["節點主控台密碼"]
 * link:../admin/using-identity-federation.html["使用身分識別聯盟"]
-* link:../admin/configuring-sso.html["設定 SSO"]
+* link:../admin/how-sso-works.html["設定SSO 功能"]
 
 
 

@@ -15,8 +15,8 @@ summary: 您必須使用Active Directory Federation Services（AD FS）為系統
 
 .開始之前
 * 您已設定StorageGRID 單一登入以供使用、並選擇* AD FS*作為SSO類型。
-* *在Grid Manager的「單一登入」頁面上選取「沙箱模式*」。請參閱。 link:../admin/using-sandbox-mode.html["使用沙箱模式"]
-* 您知道系統中每個管理節點的完整網域名稱（或IP位址）和依賴方識別碼。您可以在StorageGRID 「管理員節點詳細資料」表的「單個登入」頁面上找到這些值。
+* 您在 Grid Manager 中擁有link:../admin/configure-sso.html#enter-sandbox-mode-adfs["已進入沙箱模式"]。
+* 您知道系統中每個管理節點的完整網域名稱（或IP位址）和依賴方識別碼。您可以在「 StorageGRID 設定 SSO 」頁面的「管理節點詳細資料」表格中找到這些值。
 +
 
 NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立信賴關係人信任關係。信任每個管理節點的依賴方、可確保使用者能夠安全地登入及登出任何管理節點。
@@ -88,7 +88,7 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立信賴�
 
 
 . 重複這些步驟、為StorageGRID 您的整套系統中的所有管理節點設定依賴方信任。
-. 完成後、請返回StorageGRID 「還原」並測試所有信賴關係人的信任、以確認其設定正確。如需相關指示、請參閱 link:using-sandbox-mode.html["使用沙箱模式"] 。
+. 完成後，請返回 StorageGRID 並link:../admin/configure-sso.html#test-sso["測試所有依賴方信任"]確認已正確設定。
 
 
 
@@ -139,7 +139,7 @@ NOTE: 輸入顯示名稱時、請使用管理節點的信賴方識別碼、如�
 
 
 . 重複這些步驟、為StorageGRID 您的整套系統中的所有管理節點設定依賴方信任。
-. 完成後、請返回StorageGRID 「還原」並測試所有信賴關係人的信任、以確認其設定正確。如需相關指示、請參閱 link:using-sandbox-mode.html["使用沙箱模式"] 。
+. 完成後，請返回 StorageGRID 並link:../admin/configure-sso.html#test-sso["測試所有依賴方信任"]確認已正確設定。
 
 
 
@@ -233,5 +233,5 @@ NOTE: (`server.crt`不建議使用管理節點的預設憑證）。如果管理�
 
 
 . 重複這些步驟、為StorageGRID 您的整套系統中的所有管理節點設定依賴方信任。
-. 完成後、請返回StorageGRID 「還原」並測試所有信賴關係人的信任、以確認其設定正確。如需相關指示、請參閱 link:using-sandbox-mode.html["使用沙箱模式"] 。
+. 完成後，請返回 StorageGRID 並link:../admin/configure-sso.html#test-sso["測試所有依賴方信任"]確認已正確設定。
 

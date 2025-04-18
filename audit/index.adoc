@@ -17,4 +17,4 @@ summary: 這些指示包含StorageGRID 有關不稽核訊息和稽核記錄的�
 
 若要使用文字記錄檔、您必須擁有管理節點上已設定之稽核共用的存取權。
 
-如需設定稽核訊息層級和使用外部 Syslog 伺服器的相關資訊link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]、請參閱。
+如需設定稽核訊息層級和使用外部 Syslog 伺服器的相關資訊link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]、請參閱。

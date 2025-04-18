@@ -145,9 +145,6 @@ NOTE: 如果您需要一次部署多個應用裝置節點、可以使用 Applian
 
 . 從「the Some Appliance Installer」首頁選取「*開始安裝*」StorageGRID 。
 +
-image::../media/appliance_installer_home_start_installation_enabled.gif[此映像是由周遭文字所描述。]
-
-+
 目前狀態會變更為「安裝進行中」、並顯示「監控安裝」頁面。
 
 . 如果您的擴充包含多個應用裝置節點、請針對每個應用裝置重複上述步驟。
@@ -158,9 +155,6 @@ NOTE: 如果您需要一次部署多個應用裝置儲存節點、可以使用co
 . 如果您需要手動存取「監視器安裝」頁面、請從功能表列中選取*監視器安裝*。
 +
 「監視器安裝」頁面會顯示安裝進度。
-
-+
-image::../media/monitor_installation_configure_storage.gif[此影像由周邊文字說明。]
 
 +
 藍色狀態列會指出目前正在進行的工作。綠色狀態列表示已成功完成的工作。
@@ -191,8 +185,5 @@ NOTE: 安裝程式可確保先前安裝中完成的工作不會重新執行。�
 +
 
 NOTE: 請等到您在此擴充中新增的所有節點都已準備好核准、再前往Grid Manager核准節點。
-
-+
-image::../media/monitor_installation_install_sgws.gif[此影像由周邊文字說明。]
 
 

@@ -11,7 +11,7 @@ summary: 如果您想要 StorageGRID 將指定事件的通知傳送至目的地 
 
 
 [role="lead"]
-如果您想要 StorageGRID 將指定事件的通知傳送至目的地 Kafka 叢集或 Amazon Simple Notification Service 、您可以啟用 S3 儲存區的事件通知。
+如果您想要 StorageGRID 將指定事件的通知傳送至目的地 Kafka 叢集， Webhook 端點或 Amazon Simple Notification Service ，您可以啟用 S3 儲存區的事件通知。
 
 例如、您可以設定要傳送警示給系統管理員、以通知新增至儲存區的每個物件、其中物件代表與重大系統事件相關的記錄檔。
 

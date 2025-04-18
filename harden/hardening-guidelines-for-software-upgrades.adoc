@@ -30,7 +30,7 @@ summary: 您必須保持StorageGRID 更新的不中斷系統和相關服務、�
 
 == 升級至外部服務
 
-外部服務可能會有間接影響StorageGRID 到非功能性的弱點。您應確保StorageGRID 仰賴的服務保持最新狀態。這些服務包括LDAP、KMS（或KMIP伺服器）、DNS和NTP。
+外部服務可能會有間接影響StorageGRID 到非功能性的弱點。確保 StorageGRID 所依賴的服務保持在最新狀態。這些服務包括LDAP、KMS（或KMIP伺服器）、DNS和NTP。
 
 如需支援版本的清單，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]。
 

@@ -1,10 +1,10 @@
 ---
-permalink: tenant/configuring-cross-origin-resource-sharing-cors.html 
+permalink: tenant/configuring-cross-origin-resource-sharing-for-buckets-and-objects.html 
 sidebar: sidebar 
 keywords: how to configure cross-origin resource sharing, cors 
 summary: 如果您想讓其他網域中的 Web 應用程式能夠存取 S3 儲存區中的儲存區和物件、您可以為 S3 儲存區設定跨來源資源共用（ CORS ）。 
 ---
-= 設定跨來源資源共用（CORS）
+= 為貯體和物件設定 StorageGRID CORS
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -85,3 +85,6 @@ summary: 如果您想讓其他網域中的 Web 應用程式能夠存取 S3 儲�
 . 清除 *Enable CORS* （啓用 CORS* ）複選框。
 . 選取*儲存變更*。
 
+
+.相關資訊
+link:enable-cross-origin-resource-sharing-for-management-interface.html["為管理介面啟用 StorageGRID CORS"]
