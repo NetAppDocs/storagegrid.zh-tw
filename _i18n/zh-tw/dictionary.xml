@@ -22072,7 +22072,7 @@
   <block id="6a64e9fc562766a7f6b1689dd486f4a7" category="paragraph"><block ref="27706d6f60316253cf081a1ba27f02f2" category="inline-link-macro-rx"></block>現在包含更好的比對邏輯、可讓您搜尋常用縮寫和頁面中特定設定的名稱來尋找頁面。您也可以搜尋更多類型的項目、例如節點、使用者和租戶帳戶。</block>
   <block id="ac9e1e2bf1a207a1d05e2ed264526547" category="admonition">暫存安裝密碼僅在節點安裝期間使用。將節點新增至網格之後、您可以使用存取該節點<block ref="2ec3f906b92d969fc17249306583d340" category="inline-link-macro-rx"></block>、此功能列於「恢復套件」的檔案中<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>。</block>
   <block id="a875f4e3e98d1c995967b1dfb394ca2e" category="sidebar">StorageGRID 11.9 文件</block>
-  <block id="f1b48448e2c7ce36850ff6ee0cf84515" category="sidebar">StorageGRID 11.9 文件</block>
   <block id="347afcb3de2c9c49a08bf435cf79f443" category="sidebar">單一登入的需求</block>
   <block id="10c56c2b95c28fe773fe6d60b1a0b05a" category="sidebar">在Azure中建立企業應用程式</block>
+  <block id="62ac0c5174767d68b645672d105a4ec3" category="sidebar">StorageGRID 11.9 軟體文件</block>
 </blocks>
