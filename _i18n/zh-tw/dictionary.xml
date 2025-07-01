@@ -6352,14 +6352,12 @@
   <block id="c479bf6d01ccf731d2aa34984b90aef7" category="inline-link-macro">監控及記錄儲存容量</block>
   <block id="174e58d1780c09732ea24ad166e3fb09" category="paragraph">記錄整體儲存容量的使用速度、有助於瞭解擴充所需的儲存容量、以及何時需要額外的儲存空間。您可以使用 Grid Manager 來<block ref="ee4dd4f47c7f00295e821e32d0c67648" category="inline-link-macro-rx"></block>。</block>
   <block id="9e5ee88c5422cac1e5bba5993123e4bd" category="paragraph">規劃擴充的時間時、請記得考量購買和安裝額外儲存設備可能需要多長時間。</block>
-  <block id="e13c477a6cd13b89c334ef81d8f9f798" category="summary">您可以新增額外的儲存磁碟區、以擴充儲存磁碟區容量（儲存磁碟區數量少於16個）的儲存節點。您可能需要將儲存磁碟區新增至多個儲存節點、以滿足複寫或銷毀編碼複本的ILM需求。</block>
   <block id="846344959768642083beeda8a60a8279" category="doc">將儲存磁碟區新增至儲存節點</block>
   <block id="09e91e9533de61221745c8e99edc073c" category="inline-link-macro">新增物件容量的準則</block>
   <block id="9802525c216e9a62d1507f773c521ffa" category="paragraph">在新增儲存磁碟區之前、請先檢閱<block ref="cc67dbb4e97043c00aebb97ddc580449" category="inline-link-macro-rx"></block>、以確保您知道在何處新增磁碟區、以符合 ILM 原則的要求。</block>
   <block id="80c41098192177786ef3a9e33a7ee233" category="inline-link">將擴充機櫃新增至部署的 SG6060</block>
   <block id="002c5b52cccb8df3acc3fed409d4cf3f" category="inline-link">將擴充機櫃新增至部署的 SG6160</block>
   <block id="2be6ad5e2e5b8183e8ce21da7c80bb45" category="admonition">這些說明僅適用於軟體型儲存節點。請參閱<block ref="80939074506991608b6e5cc84f728c9b" category="inline-link-rx"></block>或<block ref="ef34b01068ea7c3e677ab9e27b749868" category="inline-link-rx"></block>、瞭解如何安裝擴充機櫃、將儲存磁碟區新增至 SG6060 或 SG6160 。其他應用裝置儲存節點無法擴充。</block>
-  <block id="23abdd34ef84f4aef0cd76a623df7bb3" category="paragraph">儲存節點的基礎儲存空間分為儲存磁碟區。儲存磁碟區是以區塊為基礎的儲存裝置、由StorageGRID 作業系統格式化並掛載以儲存物件。每個儲存節點最多可支援16個儲存磁碟區、在Grid Manager中稱為「物件存放區」。</block>
   <block id="bd236d9d3bcb1d3c04b6cc8eb036653a" category="admonition">物件中繼資料一律儲存在物件存放區0中。</block>
   <block id="a5f6c2ca086c7266530d1fa443b47f9f" category="paragraph">每個物件存放區都會掛載到與其ID相對應的磁碟區上。例如、 ID 為 0000 的物件存放區對應於<block ref="fb8e0763a6ea6baa7d3ce4773c2ef12d" prefix=" " category="inline-code"></block>裝載點。</block>
   <block id="631a2b7b5594b31ac84ca1924efe03d5" category="paragraph">在新增儲存磁碟區之前、請使用Grid Manager來檢視每個儲存節點的目前物件存放區、以及對應的掛載點。您可以在新增儲存磁碟區時使用此資訊。</block>
@@ -6707,7 +6705,6 @@
   <block id="7584324fbb5b4f308291afe39ae1fa57" category="inline-link-macro">銷毀編碼物件</block>
   <block id="1c4dad7c1e632f228233c95b3af8fdf4" category="list-text">您必須檢查目前的 ILM 規則、以決定在何處及何時<block ref="2e1803269a2fa2f25aefd111db6c60a8" category="inline-link-macro-rx"></block>增加或<block ref="52a6bc3f78038d090b01507e9786a12f" category="inline-link-macro-rx"></block>的可用儲存空間<block ref="7d3caadb2757c5cf8926cac1c3a3be75" category="inline-link-macro-rx"></block>。</block>
   <block id="37bdecae27704c73159076aa2b720da2" category="list-text">您無法透過新增儲存磁碟區來增加系統的中繼資料容量、因為物件中繼資料只會儲存在磁碟區 0 上。</block>
-  <block id="2c6290648dce2c705d937655137229d6" category="list-text">每個軟體型儲存節點最多可支援16個儲存磁碟區。如果您需要新增容量、則必須新增儲存節點。</block>
   <block id="2f06840ff142d0bafc26d86604af5659" category="list-text">您可以在每個 SG6060 應用裝置上新增一或兩個擴充架。每個擴充機櫃都會新增 16 個儲存磁碟區。安裝兩個擴充機櫃後、 SG6060 可支援總共 48 個儲存磁碟區。</block>
   <block id="e4c94823822eb560adf47c0c8c4401e4" category="list-text">您可以在每個 SG6160 應用裝置上新增一或兩個擴充架。每個擴充機櫃都會新增 60 個儲存磁碟區。安裝兩個擴充機櫃後、 SG6160 可支援總共 180 個儲存磁碟區。</block>
   <block id="b0142299ae4aa7466f64b9bfa95eaf6a" category="list-text">您無法將儲存磁碟區新增至任何其他儲存設備。</block>
@@ -6761,7 +6758,6 @@
   <block id="78c96aa64afd88831f01462151a9f424" category="open-title">新增網站</block>
   <block id="8444fc9328e42b467d09b960901aff3f" category="inline-link-macro">新增站台</block>
   <block id="2986969b5148d66e805f3a37ca40a73e" category="list-text">請依照的步驟<block ref="39ac7e48aa71b338aa6610e68c70fd2a" category="inline-link-macro-rx"></block>進行。</block>
-  <block id="dd2a065fb261e525830f85844976e790" category="summary">如果儲存節點包含少於16個儲存磁碟區、您可以新增區塊儲存設備、讓Linux主機看到這些儲存設備、並將新的區塊裝置對應新增至StorageGRID 用於儲存節點的更新組態檔、藉此增加容量。</block>
   <block id="1f607e36bfae0ed8067e84e06ffaf6bc" category="list-text">您可以取得安裝StorageGRID 適用於Linux平台的功能介紹。</block>
   <block id="b0880c1b676e67050270238d3222c66f" category="admonition">當軟體升級、還原程序或其他擴充程序處於作用中狀態時、請勿嘗試將儲存磁碟區新增至儲存節點。</block>
   <block id="85fc2381be7174b5fcf6a658841aad37" category="paragraph">當您新增儲存磁碟區時、儲存節點會暫時無法使用。您應一次在一個儲存節點上執行此程序、以避免影響面向用戶端的網格服務。</block>
@@ -6960,7 +6956,6 @@
   <block id="6239bec365055baf85b0e5fcfed82750" category="list-text">選擇*節點*&gt;*擴充儲存節點*&gt;*儲存設備*。</block>
   <block id="b372d526b93e8b57f9c7f19633288356" category="list-text">將游標放在 * 「已使用的儲存空間 - 物件資料 * 」圖形上方、即可檢視 * 已使用 * 的值、這是已用於物件資料的總可用空間量。</block>
   <block id="11aed68e02a00262e86b22e6fe8e59ab" category="list-text">將游標移到圖表右側時、請確認*已使用*的值正在增加。</block>
-  <block id="e92c5373eb703a3ef302c2133943f358" category="summary">如果儲存節點包含少於16個儲存磁碟區、您可以使用VMware vSphere來新增磁碟區、藉此增加其容量。</block>
   <block id="3897360f54ba898d463f8ce18c60b35d" category="list-text">您可以取得安裝StorageGRID VMware部署用的VMware解決方案的說明。</block>
   <block id="e6050c9475e86115a8d66d604cc71dce" category="list-text">如有必要、請安裝新的儲存硬體並建立新的VMware資料存放區。</block>
   <block id="6bb1adcd234c86fe49b5934d4025481d" category="list-text">將一或多個硬碟新增至虛擬機器、以做為儲存設備（物件存放區）。</block>
@@ -16399,7 +16394,6 @@
   <block id="eb3db80ec2336fd5596023f87be5485d" category="paragraph">90GB</block>
   <block id="0df51dc869c05895b3417062b8239a22" category="paragraph">物件資料</block>
   <block id="7d3a49cf894d799795ce950c6315ec33" category="paragraph">3：針對此主機上的每個儲存節點</block>
-  <block id="5fbe1be68e07b3a60e4d84e1fa23507c" category="paragraph">*附註：*軟體型儲存節點可擁有1至16個儲存磁碟區、建議使用至少3個儲存磁碟區。</block>
   <block id="09a7b6154058cee76fceb704a851fdf8" category="inline-xref">儲存節點的儲存需求</block>
   <block id="64b17463568d05370bbd62fe9964694b" category="paragraph">12 TB （ 4 TB/LUN ）如需詳細資訊、請參閱<block ref="afc45619ce9e6bcbd3743fbd6af36714" category="inline-xref-macro-rx"></block>。</block>
   <block id="cf17d726d00fffcd024da613027d3c4f" category="paragraph">儲存節點（僅中繼資料）</block>
@@ -16428,8 +16422,6 @@
   <block id="1f11313abbd1ddd6eac432557b57842d" category="paragraph">* Container Pool：* 300 GB</block>
   <block id="18ca1cd6f10f9d1afbea672bf64ff5ba" category="paragraph">*系統資料：* 670 GB</block>
   <block id="4f936569b0076d3dee0f2ee943177d4c" category="paragraph">*物件資料：* 12、000 GB</block>
-  <block id="21fd745fc8c85861b4954f9b73b0cadd" category="paragraph">軟體型儲存節點可以有1到16個儲存磁碟區、建議使用3個以上的儲存磁碟區。每個儲存Volume應大於或等於4 TB。</block>
-  <block id="b23308487ff68b966a0faaa2d491972b" category="admonition">應用裝置儲存節點最多可有48個儲存磁碟區。</block>
   <block id="68dcfdb403fe85daa76650a6b31b08bf" category="paragraph">如圖所示StorageGRID 、在每個儲存節點的儲存磁碟區0上、利用此功能保留空間來儲存物件中繼資料。儲存Volume 0和儲存節點中任何其他儲存磁碟區上的任何剩餘空間、均專供物件資料使用。</block>
   <block id="412facad8cbb1cfae91f321a836cefa4" category="paragraph">為了提供備援並保護物件中繼資料免於遺失、StorageGRID 我們在每個站台儲存系統中所有物件的三份中繼資料複本。物件中繼資料的三個複本會平均分散於每個站台的所有儲存節點。</block>
   <block id="dda39577d588a2228ae04a1a5837c660" category="paragraph">安裝具有純中繼資料儲存節點的網格時、網格也必須包含物件儲存的最小節點數。如需僅中繼資料儲存節點的詳細資訊、請參閱<block ref="8e49185a846f0d976af4a2b64adfc64f" category="inline-link-macro-rx"></block>。</block>
@@ -21076,7 +21068,6 @@
   <block id="4a2ae3ed1fe842f4ec4578150c1ed669" category="paragraph">200 GB LUN用於管理節點表格</block>
   <block id="a702e2880b2ff959d45f40003d1769c3" category="paragraph">管理節點稽核記錄的200 GB LUN</block>
   <block id="f9fe44cce94cbc903afd79e26e2a9fff" category="paragraph">3個LUN用於此主機上的每個儲存節點</block>
-  <block id="6a8412966fa8b8dc8c8a3c6b8d4482e3" category="paragraph">*附註*：儲存節點可擁有1至16個儲存LUN；建議使用至少3個儲存LUN。</block>
   <block id="4178b8f061d209db837e9a0d0f49f3b8" category="paragraph">每個LUN的最小大小：4 TB</block>
   <block id="23db49193604131ae89ef0d00fde3211" category="paragraph">測試的LUN大小上限：39 TB。</block>
   <block id="389fd1e4330521add4f39f8416246691" category="paragraph">1 個 LUN</block>
@@ -22075,4 +22066,13 @@
   <block id="347afcb3de2c9c49a08bf435cf79f443" category="sidebar">單一登入的需求</block>
   <block id="10c56c2b95c28fe773fe6d60b1a0b05a" category="sidebar">在Azure中建立企業應用程式</block>
   <block id="62ac0c5174767d68b645672d105a4ec3" category="sidebar">StorageGRID 11.9 軟體文件</block>
+  <block id="904e1054af13ad291a33f039db48d8ca" category="summary">您可以新增額外的儲存磁碟區、以擴充儲存磁碟區容量（儲存磁碟區數量少於48個）的儲存節點。您可能需要將儲存磁碟區新增至多個儲存節點、以滿足複寫或銷毀編碼複本的ILM需求。</block>
+  <block id="0c9004ee19e04ed92f3531cd179d7377" category="paragraph">儲存節點的基礎儲存空間分為儲存磁碟區。儲存磁碟區是以區塊為基礎的儲存裝置、由StorageGRID 作業系統格式化並掛載以儲存物件。每個儲存節點最多可支援48個儲存磁碟區、在Grid Manager中稱為「物件存放區」。</block>
+  <block id="0ffa4284271560fc408b40f2deb860ad" category="list-text">每個軟體型儲存節點最多可支援48個儲存磁碟區。如果您需要新增容量、則必須新增儲存節點。</block>
+  <block id="9e598ab3d52b41fc3850c87c46b25170" category="summary">如果儲存節點包含少於48個儲存磁碟區、您可以新增區塊儲存設備、讓Linux主機看到這些儲存設備、並將新的區塊裝置對應新增至StorageGRID 用於儲存節點的更新組態檔、藉此增加容量。</block>
+  <block id="9a095d6bfb2a2e358857f45f6d5e9c1c" category="summary">如果儲存節點包含少於48個儲存磁碟區、您可以使用VMware vSphere來新增磁碟區、藉此增加其容量。</block>
+  <block id="694eae39e46e7948c79ff767c6f7a7f9" category="paragraph">*附註：*軟體型儲存節點可擁有1至48個儲存磁碟區、建議使用至少3個儲存磁碟區。</block>
+  <block id="33bdc9df10550b8b609ca4a2e41d11f2" category="paragraph">基於軟體的儲存節點可以有 1 到 48 個儲存磁碟區；建議使用 3 個或更多儲存磁碟區。每個儲存Volume應大於或等於4 TB。</block>
+  <block id="c4fa5f0f5e66f145d0a0e8bbfe05601f" category="admonition">設備儲存節點還可以擁有最多 48 個儲存磁碟區。</block>
+  <block id="2722dd00588cd9ed5f9edf892f03cf99" category="paragraph">*附註*：儲存節點可擁有1至48個儲存LUN；建議使用至少3個儲存LUN。</block>
 </blocks>

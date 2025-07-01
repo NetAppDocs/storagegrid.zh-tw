@@ -2,7 +2,7 @@
 permalink: expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html 
 sidebar: sidebar 
 keywords: expansion, Linux, add storage volumes 
-summary: 如果儲存節點包含少於16個儲存磁碟區、您可以新增區塊儲存設備、讓Linux主機看到這些儲存設備、並將新的區塊裝置對應新增至StorageGRID 用於儲存節點的更新組態檔、藉此增加容量。 
+summary: 如果儲存節點包含少於48個儲存磁碟區、您可以新增區塊儲存設備、讓Linux主機看到這些儲存設備、並將新的區塊裝置對應新增至StorageGRID 用於儲存節點的更新組態檔、藉此增加容量。 
 ---
 = Linux：將直接附加或SAN磁碟區新增至儲存節點
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 如果儲存節點包含少於16個儲存磁碟區、您可以新增區
 
 
 [role="lead"]
-如果儲存節點包含少於16個儲存磁碟區、您可以新增區塊儲存設備、讓Linux主機看到這些儲存設備、並將新的區塊裝置對應新增至StorageGRID 用於儲存節點的更新組態檔、藉此增加容量。
+如果儲存節點包含少於48個儲存磁碟區、您可以新增區塊儲存設備、讓Linux主機看到這些儲存設備、並將新的區塊裝置對應新增至StorageGRID 用於儲存節點的更新組態檔、藉此增加容量。
 
 .開始之前
 * 您可以取得安裝StorageGRID 適用於Linux平台的功能介紹。
