@@ -21071,7 +21071,6 @@
   <block id="4178b8f061d209db837e9a0d0f49f3b8" category="paragraph">每個LUN的最小大小：4 TB</block>
   <block id="23db49193604131ae89ef0d00fde3211" category="paragraph">測試的LUN大小上限：39 TB。</block>
   <block id="389fd1e4330521add4f39f8416246691" category="paragraph">1 個 LUN</block>
-  <block id="3e3460cbb2cc525ce97b603c5435bde5" category="paragraph">* 注意 * ：單一 LUN 沒有最大大小。剩餘容量會儲存以供未來使用。</block>
   <block id="6c22722c6e1ffc1bd0e873d14d746f9d" category="summary">如果在安裝StorageGRID 您的作業系統時發生任何問題、您可以存取安裝記錄檔。</block>
   <block id="197243930904366a9ecb906f2145e115" category="paragraph">以下是主要的安裝記錄檔、可能需要技術支援才能解決問題。</block>
   <block id="bbbf7541c445728dcc900b66be750c7f" category="paragraph">若要瞭解如何存取記錄檔，請參閱<block ref="783cfd8c9b3ab7c9075fdb196ea6942d" category="inline-link-macro-rx"></block>。</block>
@@ -22066,15 +22065,12 @@
   <block id="347afcb3de2c9c49a08bf435cf79f443" category="sidebar">單一登入的需求</block>
   <block id="10c56c2b95c28fe773fe6d60b1a0b05a" category="sidebar">在Azure中建立企業應用程式</block>
   <block id="62ac0c5174767d68b645672d105a4ec3" category="sidebar">StorageGRID 11.9 軟體文件</block>
-  <block id="904e1054af13ad291a33f039db48d8ca" category="summary">您可以新增額外的儲存磁碟區、以擴充儲存磁碟區容量（儲存磁碟區數量少於48個）的儲存節點。您可能需要將儲存磁碟區新增至多個儲存節點、以滿足複寫或銷毀編碼複本的ILM需求。</block>
   <block id="0c9004ee19e04ed92f3531cd179d7377" category="paragraph">儲存節點的基礎儲存空間分為儲存磁碟區。儲存磁碟區是以區塊為基礎的儲存裝置、由StorageGRID 作業系統格式化並掛載以儲存物件。每個儲存節點最多可支援48個儲存磁碟區、在Grid Manager中稱為「物件存放區」。</block>
   <block id="0ffa4284271560fc408b40f2deb860ad" category="list-text">每個軟體型儲存節點最多可支援48個儲存磁碟區。如果您需要新增容量、則必須新增儲存節點。</block>
   <block id="9e598ab3d52b41fc3850c87c46b25170" category="summary">如果儲存節點包含少於48個儲存磁碟區、您可以新增區塊儲存設備、讓Linux主機看到這些儲存設備、並將新的區塊裝置對應新增至StorageGRID 用於儲存節點的更新組態檔、藉此增加容量。</block>
-  <block id="9a095d6bfb2a2e358857f45f6d5e9c1c" category="summary">如果儲存節點包含少於48個儲存磁碟區、您可以使用VMware vSphere來新增磁碟區、藉此增加其容量。</block>
   <block id="694eae39e46e7948c79ff767c6f7a7f9" category="paragraph">*附註：*軟體型儲存節點可擁有1至48個儲存磁碟區、建議使用至少3個儲存磁碟區。</block>
   <block id="33bdc9df10550b8b609ca4a2e41d11f2" category="paragraph">基於軟體的儲存節點可以有 1 到 48 個儲存磁碟區；建議使用 3 個或更多儲存磁碟區。每個儲存Volume應大於或等於4 TB。</block>
   <block id="c4fa5f0f5e66f145d0a0e8bbfe05601f" category="admonition">設備儲存節點還可以擁有最多 48 個儲存磁碟區。</block>
-  <block id="2722dd00588cd9ed5f9edf892f03cf99" category="paragraph">*附註*：儲存節點可擁有1至48個儲存LUN；建議使用至少3個儲存LUN。</block>
   <block id="4ce226a87bcf5c8b5206d3dcf26776e4" category="paragraph">請勿對任何節點的網格網路、管理網路或用戶端網路使用包含下列 IPv4 位址的子網路：</block>
   <block id="7fe4e99a363b04311cab23831409078b" category="list-text">192,168,130,101</block>
   <block id="dd367c3bd8159d08cd43b50fd79ba62f" category="list-text">192,168,131,101</block>
@@ -22086,4 +22082,8 @@
   <block id="7dc5983e9de89ec2bcacf21aec6d8399" category="list-text">192.168.130.0/24，因為此子網路範圍包含 IP 位址 192.168.130.101 和 192.168.130.102</block>
   <block id="f3289a31e39c1161c9f3351ba19a4562" category="list-text">192.168.131.0/24，因為此子網路範圍包含 IP 位址 192.168.131.101 和 192.168.131.102</block>
   <block id="1deaf9237f4171a62975b6710d5432b8" category="list-text">198.51.100.0/24，因為此子網路範圍包含 IP 位址 198.51.100.2 和 198.51.100.4</block>
+  <block id="51a5b13deab291e702e909a07ef6d9d5" category="summary">您可以擴充低於最大支援磁碟區數的儲存節點的儲存容量。您可能需要將儲存磁碟區新增至多個儲存節點以滿足複製或擦除編碼副本的 ILM 要求。</block>
+  <block id="e92c5373eb703a3ef302c2133943f358" category="summary">如果儲存節點包含的儲存磁碟區少於 16 個，則可以使用 VMware vSphere 新增磁碟區來增加其容量。</block>
+  <block id="6a8412966fa8b8dc8c8a3c6b8d4482e3" category="paragraph">*注意*：一個儲存節點可以有 1 到 16 個儲存 LUN；建議至少有 3 個儲存 LUN。</block>
+  <block id="220bf696cbc435ea638fcb190f285ee4" category="paragraph">基於軟體的儲存節點可以有 1 到 16 個儲存磁碟區；建議使用 3 個或更多儲存磁碟區。每個儲存磁碟區應為 4 TB 或更大。</block>
 </blocks>

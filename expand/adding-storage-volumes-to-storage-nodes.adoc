@@ -2,7 +2,7 @@
 permalink: expand/adding-storage-volumes-to-storage-nodes.html 
 sidebar: sidebar 
 keywords: storage volumes, expand, expansion, add, storage nodes, adding storage capacity 
-summary: 您可以新增額外的儲存磁碟區、以擴充儲存磁碟區容量（儲存磁碟區數量少於48個）的儲存節點。您可能需要將儲存磁碟區新增至多個儲存節點、以滿足複寫或銷毀編碼複本的ILM需求。 
+summary: 您可以擴充低於最大支援磁碟區數的儲存節點的儲存容量。您可能需要將儲存磁碟區新增至多個儲存節點以滿足複製或擦除編碼副本的 ILM 要求。 
 ---
 = 將儲存磁碟區新增至儲存節點
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可以新增額外的儲存磁碟區、以擴充儲存磁碟區容�
 
 
 [role="lead"]
-您可以新增額外的儲存磁碟區、以擴充儲存磁碟區容量（儲存磁碟區數量少於48個）的儲存節點。您可能需要將儲存磁碟區新增至多個儲存節點、以滿足複寫或銷毀編碼複本的ILM需求。
+您可以擴充低於最大支援磁碟區數的儲存節點的儲存容量。您可能需要將儲存磁碟區新增至多個儲存節點以滿足複製或擦除編碼副本的 ILM 要求。
 
 .開始之前
 在新增儲存磁碟區之前、請先檢閱link:guidelines-for-adding-object-capacity.html["新增物件容量的準則"]、以確保您知道在何處新增磁碟區、以符合 ILM 原則的要求。
