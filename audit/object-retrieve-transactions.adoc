@@ -13,7 +13,7 @@ summary: 您可以找出 S3 API 專屬稽核訊息、以識別稽核記錄中的
 [role="lead"]
 您可以找出 S3 API 專屬稽核訊息、以識別稽核記錄中的物件擷取交易。
 
-下列表格並未列出擷取交易期間產生的所有稽核訊息。僅包含追蹤擷取交易所需的訊息。
+下表並未列出檢索事務期間產生的所有稽核訊息。僅包含追蹤檢索交易所需的訊息。
 
 
 
@@ -34,27 +34,6 @@ S3取得
 CBID、S3BK、S3KY
  a| 
 link:sget-s3-get.html["SGET：S3取得"]
-
-|===
-
-
-== 快速擷取稽核訊息
-
-[cols="1a,1a,2a,1a,1a"]
-|===
-| 程式碼 | 名稱 | 說明 | 追蹤 | 請參閱 
-
-
- a| 
-WGet
- a| 
-Swift Get
- a| 
-要求從容器擷取物件。
- a| 
-CBID、WCON、WOBJ
- a| 
-link:wget-swift-get.html["WGet：Swift Get"]
 
 |===
 

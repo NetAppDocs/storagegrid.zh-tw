@@ -2,7 +2,7 @@
 permalink: audit/audit-log-file-rotation.html 
 sidebar: sidebar 
 keywords: storagegrid, audit, log file, audit.log, audit.log file, rotation, save, autosave, auto save, auto-save 
-summary: 稽核記錄檔會儲存至管理節點的 /var/local/log 目錄。作用中的稽核記錄檔名為稽核記錄檔。 
+summary: 稽核日誌檔案儲存到管理節點的 /var/local/audit/export/ 目錄。活動審計日誌檔名為 audit.log。 
 ---
 = 稽核記錄檔輪替
 :allow-uri-read: 
@@ -11,14 +11,14 @@ summary: 稽核記錄檔會儲存至管理節點的 /var/local/log 目錄。作�
 
 
 [role="lead"]
-稽核記錄檔會儲存至管理節點的 `/var/local/log`目錄。作用中的稽核記錄檔稱為 `audit.log`。
+如果StorageGRID配置為 *管理節點/本機節點* 或 *管理節點和外部系統日誌伺服器*，則稽核日誌檔案將會儲存到管理節點的 `/var/local/audit/export/`目錄。活動審計日誌檔案被命名為 `audit.log`。
 
 
-NOTE: 您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。請參閱。 link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+NOTE: 或者，您可以變更稽核日誌的目標並將稽核資訊傳送至外部系統日誌伺服器。當設定外部系統日誌伺服器時，將繼續產生和儲存稽核記錄的本機日誌。請參閱link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"] 。
 
 一天一次、作用中檔案就 `audit.log`會儲存、並啟動新 `audit.log`檔案。保存的文件的名稱以格式表示保存的時間 `_yyyy-mm-dd.txt_`。如果在一天內創建多個審計日誌，則文件名將使用保存文件的日期（以數字附加），格式爲 `_yyyy-mm-dd.txt.n_`。例如 `2018-04-15.txt`、和 `2018-04-15.txt.1`是在 2018 年 4 月 15 日建立及儲存的第一和第二個記錄檔。
 
-一天之後，會以格式壓縮及重新命名儲存的檔案，以 `_yyyy-mm-dd.txt.gz_`保留原始日期。隨著時間推移、這會導致分配給管理節點上稽核記錄的儲存空間使用量。指令碼會監控稽核記錄空間使用量、並視需要刪除記錄檔、以釋放目錄中的空間 `/var/local/log`。稽核日誌會根據建立日期刪除、而最舊的則會先刪除。您可以在下列檔案中監控指令碼的動作 `/var/local/log/manage-audit.log`：。
+一天后，已儲存的檔案被壓縮並重新命名，格式為 `_yyyy-mm-dd.txt.gz_`，保留原始日期。隨著時間的推移，分配給審計日誌的管理節點儲存空間將被消耗。腳本監控稽核日誌空間消耗，並根據需要刪除日誌檔案以釋放空間 `/var/local/audit/export/`目錄。審計日誌將根據其建立日期刪除。最舊的日誌將首先被刪除。您可以在以下文件中監視腳本的操作： `/var/local/log/manage-audit.log` 。
 
 此示例顯示了活動 `audit.log`文件、前一天的文件(`2018-04-14.txt.gz`）(`2018-04-15.txt`和前一天的壓縮文件）。
 

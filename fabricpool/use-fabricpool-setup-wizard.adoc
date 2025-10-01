@@ -56,7 +56,7 @@ TIP: 除非您知道自己有特殊需求、否則請使用 FabricPool 安裝精
 
 === 設定身分識別聯盟和 SSO
 
-如果您計畫在 StorageGRID 系統上使用身分識別聯盟或單一登入（ SSO ）、則表示您已啟用這些功能。您也知道哪個同盟群組應該擁有 ONTAP 將使用之租戶帳戶的根存取權。請參閱link:../admin/using-identity-federation.html["使用身分識別聯盟"]和link:../admin/configuring-sso.html["設定單一登入"]。
+如果您打算對StorageGRID系統使用身分聯合或單一登入 (SSO)，則您已啟用這些功能。您也知道哪個聯合群組應該對ONTAP將使用的租用戶帳戶具有 root 存取權。看link:../admin/using-identity-federation.html["使用身分識別聯盟"]和link:../admin/how-sso-works.html["設定單一登入"]。
 
 
 

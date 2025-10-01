@@ -33,4 +33,4 @@
 |===
 視稽核目的地設定而定，請輸入： `cd /var/local/log`或 `/var/local/audit/export/`
 
-若要深入瞭解、請 link:../monitor/configure-audit-messages.html#select-audit-information-destinations["選取稽核資訊目的地"]參閱。
+要了解更多信息，請參閱link:../monitor/configure-log-management.html#select-log-location["選擇日誌位置"]。

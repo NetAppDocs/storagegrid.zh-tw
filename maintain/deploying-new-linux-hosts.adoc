@@ -13,11 +13,10 @@ summary: 除了一些例外、您可以像在初始安裝程序中一樣、準�
 [role="lead"]
 除了一些例外、您可以像在初始安裝程序中一樣、準備新的主機。
 
-若要部署新的或重新安裝的實體或虛擬 Linux 主機、請依照適用於 Linux 作業系統的 StorageGRID 安裝指示中的主機準備程序進行：
+若要部署新的或重新安裝的實體或虛擬 Linux 主機，請依照適用於您的 Linux 作業系統的StorageGRID安裝說明中準備主機的步驟進行操作。看link:../swnodes/installing-linux.html["安裝Linux"] 。
 
-* link:../rhel/installing-linux.html["安裝 Linux （ Red Hat Enterprise Linux ）"]
-* link:../ubuntu/installing-linux.html["安裝 Linux （ Ubuntu 或 Debian ）"]
 
+NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 此程序包括完成下列工作的步驟：
 

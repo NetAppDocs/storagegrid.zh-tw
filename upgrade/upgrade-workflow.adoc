@@ -21,9 +21,9 @@ summary: 開始升級之前、請先檢閱一般工作流程。「升級版」�
 [role="quick-margin-para"]
 如果需要、請從主要管理節點存取 StorageGRID 升級頁面、並上傳升級檔案和 Hotfix 檔案。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]下載恢復套件
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]下載恢復包
 [role="quick-margin-para"]
-開始升級之前、請先下載目前的恢復套件。
+在開始升級之前下載目前的復原包。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]執行升級預先檢查
 [role="quick-margin-para"]
@@ -33,9 +33,9 @@ summary: 開始升級之前、請先檢閱一般工作流程。「升級版」�
 [role="quick-margin-para"]
 當您開始升級時、會再次執行預先檢查、並自動升級主要管理節點。當主要管理節點正在升級時、您無法存取 Grid Manager 。稽核記錄也無法使用。此升級可能需要30分鐘。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]下載恢復套件
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]下載恢復包
 [role="quick-margin-para"]
-主管理節點升級後、請下載新的恢復套件。
+主管理節點升級後，下載新的復原包。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]核准節點
 [role="quick-margin-para"]

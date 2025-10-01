@@ -1,0 +1,8 @@
+---
+permalink: admin/configuring-sso.html 
+redirect: admin/how-sso-works.html 
+---
+= 
+:allow-uri-read: 
+
+

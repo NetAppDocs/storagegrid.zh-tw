@@ -15,7 +15,7 @@ summary: 本節說明StorageGRID 此「物件」的「物件」功能如何執�
 
 下列條件適用於所有物件作業：
 
-* 物件上的所有作業都支援 StorageGRID link:consistency-controls.html["一致性值"]、但下列項目除外：
+* StorageGRIDlink:consistency.html["一致性值"]所有物件操作均支持，但以下操作除外：
 +
 ** GetObjectAcl
 ** `OPTIONS /`
@@ -26,7 +26,6 @@ summary: 本節說明StorageGRID 此「物件」的「物件」功能如何執�
 
 * 衝突的用戶端要求（例如兩個寫入同一個金鑰的用戶端）會以「最新致勝」的方式解決。「最新致勝」評估的時間取決於StorageGRID 何時由VMware系統完成指定的要求、而非S3用戶端開始作業的時間。
 * 所有物件均由庫位擁有者擁有、包括匿名使用者或其他帳戶所建立的物件。StorageGRID
-* 透過 Swift 擷取至 StorageGRID 系統的資料物件無法透過 S3 存取。
 
 
 下表說明StorageGRID 了Ss哪些 物件是由S3 REST API物件執行。

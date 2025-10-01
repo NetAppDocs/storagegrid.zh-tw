@@ -53,13 +53,11 @@ NOTE: 如果link:enabling-s3-object-lock-globally.html["全域 S3 物件鎖定�
 
 --
 ====
-* 您也可以觀看影片： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e768d4da-da88-413c-bbaa-b1ff00874d10["影片： ILM 原則總覽"^]
-+
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e768d4da-da88-413c-bbaa-b1ff00874d10]
-image::../media/video-screenshot-ilm-policies-118.png[影片： ILM 原則總覽]
+* 或者，您已經觀看了影片：
 
 
-
+.ILM 策略概述
+video::e768d4da-da88-413c-bbaa-b1ff00874d10[panopto]
 另請參閱link:ilm-policy-overview.html["使用 ILM 原則"]。
 
 .步驟
@@ -255,10 +253,10 @@ CAUTION: ILM原則中的錯誤可能導致無法恢復的資料遺失。
 --
 .啟動多個原則
 --
-若要啟動多個原則、您必須建立標記、並將原則指派給每個標記。
+要啟動多個策略，您必須建立策略標籤並為每個標籤指派一個策略。您最多可以為網格建立 10 個策略標籤。
 
 
-TIP: 使用多個標記時、如果租戶經常將原則標記重新指派給貯體、則網格效能可能會受到影響。如果您有不受信任的租戶、請考慮僅使用預設標籤。
+TIP: 當使用多個策略標籤時，如果租戶經常將策略標籤重新指派給儲存桶，則網格效能可能會受到影響。如果您有不受信任的租戶，請考慮僅使用預設策略標籤。
 
 . 選取 * ILM * > * 原則標記 * 。
 . 選擇* Create *（建立*）。

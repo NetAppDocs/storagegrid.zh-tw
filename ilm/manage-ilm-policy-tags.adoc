@@ -63,3 +63,6 @@ NOTE: 租戶可以看到標籤名稱和說明。選擇可協助租戶在選擇�
 
 . 選取 * 是 * 以刪除標記。
 
+
+.相關資訊
+link:creating-ilm-policy.html#activate-ilm-policy["了解如何建立 ILM 策略標籤"]

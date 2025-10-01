@@ -18,12 +18,12 @@ summary: 您必須手動執行兩個指令碼、以重新掛載保留的儲存�
 +
 執行 `sn-remount-volumes`指令碼可能有助於識別其他故障的儲存磁碟區。
 
-* 您已檢查儲存節點汰換是否在進行中、或您已暫停節點取消委任程序。（在Grid Manager中、選取* maintenance *>* Tasks *>* Decompress*。）
-* 您已檢查擴充是否在進行中。（在Grid Manager中、選取* maintenance *>* Tasks *>* Expansion *。）
+* 您已檢查儲存節點退役未正在進行，或您已暫停節點退役程序。  （在網格管理員中，選擇*維護* > *任務* > *退役*。）
+* 您已檢查擴充功能是否尚未進行。  （在網格管理員中，選擇*維護* > *任務* > *擴充*。）
 * 您有 link:reviewing-warnings-for-system-drive-recovery.html["已查看Storage Node系統磁碟機恢復的警告"]。
 +
 
-CAUTION: 如果有多個儲存節點離線、或是此網格中的儲存節點在過去15天內已重建、請聯絡技術支援部門。請勿執行 `sn-recovery-postinstall.sh`指令碼。在兩個或多個儲存節點上重建Cassandra、彼此之間的時間不超過15天、可能會導致資料遺失。
+CAUTION: 如果多個儲存節點離線，請聯絡技術支援。不要運行 `sn-recovery-postinstall.sh`腳本。
 
 
 

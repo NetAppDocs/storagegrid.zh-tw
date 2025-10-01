@@ -27,8 +27,9 @@ NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術�
 
 == 存取記錄
 
-若要存取記錄檔、您可以從一個或多個節點、將記錄link:collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]檔歸檔為單一記錄檔。或者、如果主要管理節點無法使用或無法連線至特定節點、您可以依下列方式存取每個網格節點的個別記錄檔：
+要存取日誌，您可以link:collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]來自一個或多個節點作為單一日誌檔案存檔。或者，您可以如下存取每個網格節點的單獨日誌檔案：
 
+.步驟
 . 輸入下列命令： `ssh admin@grid_node_IP`
 . 輸入檔案中列出的密碼 `Passwords.txt`。
 . 輸入以下命令切換到 root ： `su -`
@@ -41,13 +42,13 @@ NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術�
 
 將記錄匯出至 Syslog 伺服器可提供下列功能：
 
-* 除了 S3 和 Swift 要求之外、還能收到所有 Grid Manager 和 Tenant Manager 要求的清單。
+* 除了 S3 請求之外，還接收所有網格管理器和租用戶管理器請求的清單。
 * 更清楚地瞭解傳回錯誤的 S3 要求、而不會受到稽核記錄方法所造成的效能影響。
 * 存取容易剖析的 HTTP 層要求和錯誤代碼。
 * 對於負載平衡器上的流量分類器所封鎖的要求、可提供更好的可見度。
 
 
-若要匯出記錄檔、請參閱link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]。
+若要匯出日誌，請參閱link:../monitor/configure-log-management.html["設定日誌管理和外部系統日誌伺服器"]。
 
 
 
@@ -72,6 +73,11 @@ NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術�
 
 | 套裝組合  a| 
 全域組態資訊（套裝組合）。
+
+
+
+| 快取服務  a| 
+快取服務日誌（僅在網關節點上）。
 
 
 
@@ -107,6 +113,11 @@ VCSs 有關目前節點和 EC 群組資訊的資訊（依設定檔 ID ）。
 
 | Lambda-仲裁 人  a| 
 與S3 Select Proxy要求相關的記錄。
+
+
+
+| 洩漏  a| 
+來自 leakd 服務的日誌。
 
 
 
@@ -153,7 +164,7 @@ MariaDB資料庫組態及相關記錄。
 ** 這些記錄訊息的格式為 `[$time_iso8601] $remote_addr $status $bytes_sent $request_length $request_time "$endpointId" "$upstream_addr" "$request" "$http_host"`
 
 
-* `endpoint-access.log.gz`： S3 和 Swift 要求負載平衡器端點。
+* `endpoint-access.log.gz`：S3 請求負載平衡器端點。
 +
 ** 使用 Syslog 匯出時、這些訊息會以前置 `endpoint:`方式顯示。
 ** 這些記錄訊息的格式為 `[$time_iso8601] $remote_addr $status $bytes_sent $request_length $request_time "$endpointId" "$upstream_addr" "$request" "$http_host"`
@@ -227,6 +238,6 @@ CPU、網路和磁碟I/O的效能資訊
 
 
 | Synchrone-recovery 套件  a| 
-與維護所有管理節點和主控 ADC 服務的儲存節點上最新恢復套件的一致性有關。
+與維護託管 ADC 服務的所有管理節點和儲存節點上最新恢復包的一致性有關。
 
 |===

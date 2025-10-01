@@ -29,7 +29,7 @@ summary: 如果S3租戶帳戶在儲存物件資料時需要遵守法規要求、
 NOTE: 全域規範設定已過時。如果您使用舊版 StorageGRID 啟用此設定、 S3 物件鎖定設定會自動啟用。您可以繼續使用 StorageGRID 來管理現有相容貯體的設定、但您無法建立新的相容貯體。如需詳細資訊、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp知識庫：如何管理StorageGRID 支援老舊的知識庫、請參閱《知識庫文章"^]。
 
 .步驟
-. 選擇*組態*>*系統*>* S3物件鎖定*。
+. 選擇*配置* > *系統* > *S3 物件鎖定*。
 +
 「S3物件鎖定設定」頁面隨即出現。
 

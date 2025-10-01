@@ -24,8 +24,8 @@ indexpage:
       url: "../tenant/creating-groups-for-s3-tenant.html"
     - title: 租戶管理權限
       url: "../tenant/tenant-management-permissions.html"
-    - title: 管理本機使用者
-      url: "../tenant/managing-local-users.html"
+    - title: 管理使用者
+      url: "../tenant/manage-users.html"
   - title: 管理 S3 存取金鑰和儲存區
     links:
     - title: 管理S3存取金鑰
@@ -55,7 +55,7 @@ indexpage:
     - title: 物件上的作業
       url: "../s3/operations-on-objects.html"
     - title: 儲存庫和群組存取原則
-      url: "../s3/bucket-and-group-access-policies.html"
+      url: "../s3/use-access-policies.html"
   - title: 使用 Swift REST API （生命週期結束）
     links:
     - title: 使用Swift

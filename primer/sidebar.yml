@@ -20,8 +20,6 @@ entries:
     url: "/primer/what-storage-node-is.html"
   - title: 什麼是閘道節點
     url: "/primer/what-gateway-node-is.html"
-  - title: 什麼是歸檔節點
-    url: "/primer/what-archive-node-is.html"
 - title: 如何管理資料StorageGRID
   entries:
   - title: 什麼是物件

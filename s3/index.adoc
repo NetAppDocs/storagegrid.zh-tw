@@ -19,7 +19,7 @@ S3 REST API 的支援可讓您將專為 S3 Web 服務開發的服務導向應用
 
 == 支援的版本
 
-支援下列S3和HTTP的特定版本。StorageGRID
+StorageGRID支援以下特定版本的 STS、S3 和 HTTP：
 
 [cols="1a,1a"]
 |===
@@ -27,9 +27,18 @@ S3 REST API 的支援可讓您將專為 S3 Web 服務開發的服務導向應用
 
 
  a| 
+STS AssumeRole API 規範
+ a| 
+https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html["Amazon Web Services (AWS) 文件：Amazon Assumerole API 參考"^]
+
+有關 AssumeRole 的更多信息，請參閱link:../tenant/manage-groups.html#set-up-assumerole["設定 AssumeRole"]。
+
+
+
+ a| 
 S3 API 規格
  a| 
-http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html["Amazon Web Services（AWS）文件：Amazon Simple Storage Service API Reference"^]
+http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html["AWS 文件：Amazon Simple Storage Service API 參考"^]
 
 
 
@@ -52,6 +61,15 @@ https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616：超文字傳輸�
 [cols="1a,4a"]
 |===
 | 版本 | 註解 
+
+
+ a| 
+12.0
+ a| 
+* 增加了對管理介面的跨域資源共用 (CORS) 支持，允許另一個網域使用管理 API 存取StorageGRID中的資料。link:../admin/enable-cross-origin-resource-sharing-for-management-interface.html["深入瞭解"] 。
+* 增加了對 STS AssumeRole 和會話策略的支援。看link:example-session-policies.html["會話策略範例"] 。您可以在租用戶群組下設定AssumeRole。
+
+
 
 
  a| 
@@ -201,6 +219,6 @@ https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616：超文字傳輸�
  a| 
 10.0
  a| 
-由整個系統初始支援S3 REST API StorageGRID 。目前支援的_Simple Storage Service API Reference版本為2009-03-01。
+StorageGRID系統初步支援 S3 REST API。  _簡單儲存服務 API 參考_目前支援的版本是 2006-03-01。
 
 |===

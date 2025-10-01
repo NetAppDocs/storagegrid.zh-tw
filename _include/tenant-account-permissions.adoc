@@ -17,7 +17,7 @@
  a| 
 使用自己的身分識別來源
  a| 
-租戶可以為同盟群組和使用者設定及管理自己的身分識別來源。如果您的 StorageGRID 系統有此選項、則此選項會停用link:../admin/configuring-sso.html["已設定 SSO"]。
+租用戶可以為聯合群組和使用者配置和管理自己的身分來源。如果您有以下情況，則此選項被停用link:../admin/how-sso-works.html["已設定 SSO"]適用於您的StorageGRID系統。
 
 
 

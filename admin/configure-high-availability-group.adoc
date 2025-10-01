@@ -13,19 +13,24 @@ summary: 您可以設定高可用度（HA）群組、以提供對管理節點或
 [role="lead"]
 您可以設定高可用度（HA）群組、以提供對管理節點或閘道節點上服務的高可用度存取。
 
+
+NOTE: StorageGRID系統最多可以有 255 個 HA 組。
+
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 * 您有link:admin-group-permissions.html["root 存取權限"]。
 * 如果您打算在HA群組中使用VLAN介面、則表示您已建立VLAN介面。請參閱。 link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]
 * 如果您打算針對HA群組中的節點使用存取介面、則已建立介面：
 +
-** * Red Hat Enterprise Linux （安裝節點之前） * ：link:../rhel/creating-node-configuration-files.html["建立節點組態檔"]
-** * Ubuntu 或 Debian （安裝節點之前） * ：link:../ubuntu/creating-node-configuration-files.html["建立節點組態檔"]
-** * Linux （安裝節點之後） * ：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux：新增主幹或存取介面至節點"]
-** * VMware （安裝節點之後） * ：link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["VMware：新增主幹或存取介面至節點"]
+** *Linux（安裝節點之前）*：link:../swnodes/creating-node-configuration-files.html["建立節點組態檔"]
+** *Linux（安裝節點後）*：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["向節點新增中繼或存取介面"]
+** *VMware（安裝節點後）*：link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["向節點新增中繼或存取介面"]
 
 
 
+
+
+NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 
 
@@ -40,7 +45,7 @@ summary: 您可以設定高可用度（HA）群組、以提供對管理節點或
 === 存取精靈
 
 .步驟
-. 選擇*組態*>*網路*>*高可用度群組*。
+. 選擇*設定* > *網路* > *高可用性群組*。
 . 選擇* Create *（建立*）。
 
 
@@ -154,7 +159,7 @@ HA群組隨即建立、您現在可以使用已設定的虛擬IP位址。
 例如、如果您想要在站台或節點取消委任程序中移除與所選介面相關聯的節點、則可能需要編輯HA群組。
 
 .步驟
-. 選擇*組態*>*網路*>*高可用度群組*。
+. 選擇*設定* > *網路* > *高可用性群組*。
 +
 「高可用度群組」頁面會顯示所有現有的HA群組。
 
@@ -199,10 +204,10 @@ TIP: 如果 HA 群組繫結至負載平衡器端點、則無法移除該群組�
 若要防止用戶端中斷、請在移除 HA 群組之前、更新任何受影響的 S3 用戶端應用程式。更新每個用戶端以使用其他IP位址進行連線、例如、不同HA群組的虛擬IP位址、或是安裝期間為介面設定的IP位址。
 
 .步驟
-. 選擇*組態*>*網路*>*高可用度群組*。
+. 選擇*設定* > *網路* > *高可用性群組*。
 . 檢閱您要移除之每個 HA 群組的 * 負載平衡器端點 * 欄。如果列出任何負載平衡器端點：
 +
-.. 移至 * 組態 * > * 網路 * > * 負載平衡器端點 * 。
+.. 前往*配置* > *網路* > *負載平衡器端點*。
 .. 選取端點的核取方塊。
 .. 選取*「動作*」>*「編輯端點繫結模式*」。
 .. 更新繫結模式以移除 HA 群組。

@@ -54,7 +54,7 @@ image::../media/nodes_page_network_communication.png[節點頁面網路通訊]
 
 . 使用與流量分類原則相關的度量來監控網路流量。
 +
-.. 選擇*組態*>*網路*>*流量分類*。
+.. 選擇*配置* > *網路* > *流量分類*。
 +
 「流量分類原則」頁面隨即出現、表中會列出現有的原則。
 
@@ -82,7 +82,7 @@ image::../media/traffic_classification_policies_main_screen_w_examples.png[圖�
 監控個別網格節點、以檢查其資源使用量。如果節點持續過載、則可能需要更多節點才能有效運作。
 
 .步驟
-. 從「*節點*」頁面選取節點。
+. 從*節點*頁面中選擇節點。
 . 選取「*硬體*」索引標籤以顯示CPU使用率和記憶體使用率的圖表。
 +
 image::../media/nodes_page_hardware_tab_graphs.png[節點頁面硬體索引標籤]

@@ -1,6 +1,6 @@
 ---
 permalink: swift/monitoring-and-auditing-operations.html 
-redirect: storagegrid/swift/swift-operations-tracked-in-audit-logs.html 
+redirect: storagegrid/swift/index.html 
 ---
 = 
 :allow-uri-read: 

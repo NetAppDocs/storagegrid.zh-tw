@@ -59,6 +59,8 @@ NOTE:  `ETag`傳回的值不是資料的 MD5 總和、而是依照 Amazon S3 API
 
 不支援下列要求標頭：
 
+* `If-Match`
+* `If-None-Match`
 * `x-amz-sdk-checksum-algorithm`
 * `x-amz-trailer`
 

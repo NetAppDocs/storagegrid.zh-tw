@@ -18,15 +18,14 @@ summary: 警示規則定義觸發特定警示的條件。包含一組預設警�
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 * 您有link:../admin/admin-group-permissions.html["管理警示或根目錄存取權限"]。
-* 您也可以觀看影片： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2eea81c5-8323-417f-b0a0-b1ff008506c1["影片：警示總覽"^]
+* 或者，您已經觀看了影片：
 +
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2eea81c5-8323-417f-b0a0-b1ff008506c1]
-image::../media/video-screenshot-alert-overview-118.png[影片：警示總覽]
-
+.警報概述
+video::2eea81c5-8323-417f-b0a0-b1ff008506c1[panopto]
 
 
 .步驟
-. 選取*警示*>*規則*。
+. 選擇*警報* > *規則*。
 +
 此時會出現警示規則頁面。
 

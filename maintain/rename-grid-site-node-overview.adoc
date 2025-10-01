@@ -29,7 +29,7 @@ summary: 您可以視需要變更整個 Grid Manager 、每個站台及每個節
 
 下表摘要說明系統名稱和顯示名稱在 StorageGRID 使用者介面和 StorageGRID 檔案中的顯示位置。
 
-[cols="2a,2a,3a"]
+[cols="1a,1a,3a"]
 |===
 | 位置 | 系統名稱 | 顯示名稱 
 
@@ -55,20 +55,11 @@ Grid Manager 頁面
 
 
  a| 
-* 節點 * > * 節點的 Overview （總覽） * 索引標籤
+*節點* > 節點的 *概覽* 選項卡
  a| 
 永遠顯示
  a| 
 只有在項目重新命名時才會顯示
-
-
-
- a| 
-Grid Manager 中的舊版頁面（例如 * 支援 * > * Grid Topology* ）
- a| 
-顯示
- a| 
-未顯示
 
 
 
@@ -99,7 +90,7 @@ Grid Manager 中的舊版頁面（例如 * 支援 * > * Grid Topology* ）
 
 
  a| 
-`Passwords.txt`恢復套件中的檔案
+`Passwords.txt`復原包中的文件
  a| 
 顯示為 `Server Name`
  a| 

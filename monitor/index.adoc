@@ -39,8 +39,8 @@ NOTE: 若要變更 Grid Manager 中顯示的儲存值單位、請選取 Grid Man
 
 * link:managing-alerts.html["管理警示"]
 * link:logs-files-reference.html["檢視記錄檔"]
-* link:configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+* link:configure-log-management.html["設定日誌管理和外部系統日誌伺服器"]
 * link:considerations-for-external-syslog-server.html["使用外部syslog伺服器"]以收集稽核資訊
 * link:using-snmp-monitoring.html["使用 SNMP 進行監控"]
-* link:using-charts-and-reports.html["取得其他 StorageGRID 資料"]，包括指標和診斷
+* link:manage-io-prioritization.html["更改 I/O 優先權"]改變 I/O 操作的相對優先權
 

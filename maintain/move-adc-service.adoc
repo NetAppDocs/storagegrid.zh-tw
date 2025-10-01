@@ -1,0 +1,49 @@
+---
+permalink: maintain/move-adc-service.html 
+sidebar: sidebar 
+keywords: storagegrid, move adc, adc quorum 
+summary: 您可以將 ADC 服務移至同一網站上的另一個儲存節點。 
+---
+= 行動 ADC 服務
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將 ADC 服務移至同一網站上的另一個儲存節點。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 你有link:../admin/admin-group-permissions.html["維護或根存取權限"]。
+* 源節點包含 ADC 服務。
+* 目標節點不包含 ADC 服務。
+* 目標節點是僅元資料節點或組合（元資料和物件資料）節點。
+* 來源節點和目標節點位於同一站點。
+
+
+.關於這項工作
+當您想要執行以下操作時，請使用行動 ADC 流程：
+
+* 停用託管 ADC 服務的儲存節點
+* 將承載 ADC 服務的儲存節點轉換為僅資料的儲存節點
+
+
+當您想要停用儲存節點或link:../maintain/convert-to-data-only-node.html["將儲存節點轉換為僅資料節點"]，首先您可能需要使用行動 ADC 程式。您需要確保link:../maintain/understanding-adc-service-quorum.html["ADC 仲裁得以維持"]。
+
+此程序將 ADC、IDNT、ACCT 和 RSM 服務從一個儲存節點移至同一站點上的另一個儲存節點。  RSM、IDNT 和 ACCT 服務依賴 ADC 服務，因此當 ADC 服務移動時，它們也會自動移動。
+
+.步驟
+. 記錄源節點和目標節點的節點ID。
++
+在網格管理 API 中，來源節點 ID 被稱為 `sourceNodeId`。目標節點 ID 稱為 `targetNodeId`。
+
+. 從 Grid Manager 頂端選取說明圖示、然後選取 * API 文件 * 。
+. 選取 * 前往私有 API 文件 * 。
+. 選擇 `POST /private/move-adc/start`手術。請參閱link:../admin/using-grid-management-api.html#issue-api-requests["發出API要求"]了解更多。
++
+在此過程中，兩個節點將依序重新啟動。來源節點首先重新啟動，然後是目標節點。
+
+. 您可以使用 `GET /private/move-adc`監控該過程。如果出現錯誤，請選擇 `POST /private/move-adc/retry`重試該過程。
+. link:../maintain/downloading-recovery-package.html["下載恢復包"]完成此過程後。
+

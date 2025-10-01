@@ -144,3 +144,6 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html["
 
 
 如果只有一小部分物件需要加密、請考慮改為在儲存區或個別物件層級控制加密。啟用多層加密會增加效能成本。
+
+.相關資訊
+link:manage-tls-ssh-policy.html#select-a-security-policy["了解 FIPS 認證的加密選項"]

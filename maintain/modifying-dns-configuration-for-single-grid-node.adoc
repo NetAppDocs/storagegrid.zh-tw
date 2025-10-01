@@ -13,9 +13,10 @@ summary: 您可以執行指令碼、以不同方式為每個網格節點設定 D
 [role="lead"]
 您可以執行指令碼、以不同方式為每個網格節點設定 DNS 、而不是針對整個部署進行全域 DNS 設定。
 
-一般而言、您應該使用Grid Manager上的* maintenance *>* Network *>* DNS servers *（*維護*>*網路*>* DNS伺服器*）選項來設定DNS伺服器。只有當您需要針對不同的網格節點使用不同的DNS伺服器時、才可使用下列指令碼。
+一般來說，您應該使用網格管理員上的 *維護* > *網路* > *DNS 伺服器* 選項來設定 DNS 伺服器。僅當您需要為不同的網格節點使用不同的 DNS 伺服器時才使用下列腳本。
 
 .步驟
+. 預設情況下，外部 SSH 存取是被阻止的。如果需要，link:../admin/manage-external-ssh-access.html["暫時允許訪問"] 。
 . 登入主要管理節點：
 +
 .. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
@@ -77,4 +78,5 @@ Enter command [`add search <domain>|remove search <domain>|add nameserver <ip>`]
 . [[close （關閉） cmd ： shell ） ] 關閉伺服器上的命令 Shell ： `exit`
 . 對於每個網格節點，重複從到<<close_cmd_shell,關閉命令Shell>>的步驟<<log_in_to_node,登入節點>>。
 . 當您不再需要無密碼存取其他伺服器時、請從SSH代理程式移除私密金鑰。輸入： `ssh-add -D`
+. 如果您允許外部 SSH 訪問，link:../admin/manage-external-ssh-access.html["阻止訪問"]當您完成修改 DNS 配置後。
 

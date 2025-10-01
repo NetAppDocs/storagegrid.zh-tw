@@ -44,7 +44,7 @@ summary: 在執行擴充作業之前、請先收集相關資料、然後安裝�
  a| 
 `Passwords.txt`檔案
  a| 
-包含存取命令列上網格節點所需的密碼。包含在恢復套件中。
+包含在命令列上存取網格節點所需的密碼。包含在恢復包中。
 
 
 
@@ -60,13 +60,7 @@ summary: 在執行擴充作業之前、請先收集相關資料、然後安裝�
  a| 
 * link:../admin/index.html["管理StorageGRID"]
 * link:../release-notes/index.html["版本資訊"]
-* 適用於您平台的安裝說明
-+
-** link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-** link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-** link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
-
-
+* link:../swnodes/index.html["適用於您平台的安裝說明"]
 
 
 
@@ -106,7 +100,7 @@ summary: 在執行擴充作業之前、請先收集相關資料、然後安裝�
 
 
  a| 
-Red Hat Enterprise Linux
+紅帽企業版
 | `StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` 
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz` 
 
@@ -134,7 +128,7 @@ OpenStack /其他Hypervisor
 +
 每個平台步驟中所列的路徑、都是相對於歸檔檔案所安裝的頂層目錄。
 
-. 如果您要擴充 Red Hat Enterprise Linux 系統、請選取適當的檔案。
+. 如果您正在擴展 RHEL 系統，請選擇適當的檔案。
 
 
 [cols="1a,1a"]
@@ -393,6 +387,9 @@ API架構StorageGRID 。
 . 如果您要擴充StorageGRID 以應用程式為基礎的系統、請選取適當的檔案。
 
 
+
+NOTE: 對於設備安裝，僅當您需要避免網路流量時才需要這些檔案。設備可以從您執行復原過程的管理節點下載所需的檔案。
+
 [cols="1a,1a"]
 |===
 | 路徑和檔案名稱 | 說明 
@@ -408,9 +405,6 @@ DEB套件可在StorageGRID 您的應用裝置上安裝不含節點的影像。
 images-version-SHA.deb` 。
 
 |===
-
-NOTE: 在設備安裝方面、只有在您需要避免網路流量時才需要這些檔案。應用裝置可從主要管理節點下載所需的檔案。
-
 
 
 == 驗證硬體與網路

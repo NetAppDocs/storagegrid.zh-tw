@@ -91,13 +91,7 @@ eth1
 eth2
 
 |===
-如需將虛擬或實體連接埠對應至節點網路介面的詳細資訊、請參閱安裝說明：
-
-.軟體型節點
-* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-* link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
-
+有關將虛擬或實體連接埠對應到節點網路介面的詳細信息，請參閱link:../swnodes/index.html["在基於軟體的節點上安裝StorageGRID"]。
 
 .應用裝置節點
 * https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/hardware-description-sg6100.html["SG6160 儲存設備"^]

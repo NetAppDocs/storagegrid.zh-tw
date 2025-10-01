@@ -73,7 +73,7 @@ entries:
     url: "/ilm/troubleshooting-cloud-storage-pools.html"
 - title: 管理銷毀編碼設定檔
   url: "/ilm/manage-erasure-coding-profiles.html"
-- title: 設定地區（選用和僅S3）
+- title: 配置 S3 區域
   url: "/ilm/configuring-regions-optional-and-s3-only.html"
 - title: 建立ILM規則
   entries:

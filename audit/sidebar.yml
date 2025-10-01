@@ -146,11 +146,3 @@ entries:
       url: "/audit/syst-node-stopping.html"
     - title: SYSU：節點啟動
       url: "/audit/sysu-node-start.html"
-    - title: WDEL：Swift刪除
-      url: "/audit/wdel-swift-delete.html"
-    - title: WGet：Swift Get
-      url: "/audit/wget-swift-get.html"
-    - title: WHA：Swift刀頭
-      url: "/audit/whea-swift-head.html"
-    - title: WUTT：Swift Put
-      url: "/audit/wput-swift-put.html"

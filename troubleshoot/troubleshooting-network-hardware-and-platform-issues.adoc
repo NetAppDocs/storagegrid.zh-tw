@@ -85,6 +85,7 @@ TLS handshake failed
 MTU設定的差異可能代表部分（但並非全部）eth0網路已設定為使用巨型框架。MTU大小不相符的值大於1000、可能會導致網路效能問題。
 
 .步驟
+. 預設情況下，外部 SSH 存取是被阻止的。如果需要，link:../admin/manage-external-ssh-access.html["暫時允許訪問"] 。
 . 列出所有節點上eth0的MTU設定。
 +
 ** 使用Grid Manager中提供的查詢。
@@ -148,6 +149,7 @@ MTU設定的差異可能代表部分（但並非全部）eth0網路已設定為�
 |===
 
 
+. 如果您允許外部 SSH 訪問，link:../admin/manage-external-ssh-access.html["阻止訪問"]當你完成任務時。
 
 
 
@@ -257,12 +259,12 @@ NOTE: 若link:../maintain/configuring-ntp-servers.html["指定外部 NTP 來源"
 
 === MAC位址複製
 
-在某些情況下、可使用MAC位址複製來解決網路問題。如果您使用的是虛擬主機、請在節點組態檔中將每個網路的MAC位址複製金鑰值設為「true」。此設定會使StorageGRID 不支援的容器的MAC位址使用主機的MAC位址。若要建立節點組態檔案、請參閱或link:../ubuntu/creating-node-configuration-files.html["Ubuntu或DEBIAN"]的指示link:../rhel/creating-node-configuration-files.html["Red Hat Enterprise Linux"]。
+在某些情況下，可以透過使用 MAC 位址克隆來解決網路問題。如果您使用虛擬主機，請在節點設定檔中將每個網路的 MAC 位址複製鍵的值設為「true」。此設定會導致StorageGRID容器的 MAC 位址使用主機的 MAC 位址。請參閱說明link:../swnodes/creating-node-configuration-files.html["建立節點設定檔"]。
 
 
 NOTE: 建立獨立的虛擬網路介面、供Linux主機作業系統使用。如果StorageGRID Hypervisor上未啟用混雜模式、則在Linux主機作業系統和支援此功能的Container上使用相同的網路介面、可能會導致主機作業系統無法連線。
 
-如需啟用 MAC 複製的詳細資訊、請參閱或link:../ubuntu/configuring-host-network.html["Ubuntu或DEBIAN"]的說明link:../rhel/configuring-host-network.html["Red Hat Enterprise Linux"]。
+欲了解更多信息，請參閱link:../swnodes/configuring-host-network.html["啟用 MAC 克隆"]。
 
 
 
@@ -270,7 +272,7 @@ NOTE: 建立獨立的虛擬網路介面、供Linux主機作業系統使用。如
 
 如果您不想使用 MAC 位址複製、而是希望允許所有介面接收和傳輸 MAC 位址的資料、而非 Hypervisor 指定的位址、 請確定虛擬交換器和連接埠群組層級的安全性內容在「雜亂模式」、「 MAC 位址變更」和「僞造傳輸」中設為 * 接受 * 。虛擬交換器上設定的值可由連接埠群組層級的值覆寫、因此請確保兩個位置的設定都相同。
 
-有關使用混雜模式的詳細信息，請參閱或link:../ubuntu/configuring-host-network.html["Ubuntu或DEBIAN"]的說明link:../rhel/configuring-host-network.html["Red Hat Enterprise Linux"]。
+有關使用混雜模式的更多信息，請參閱link:../swnodes/configuring-host-network.html["如何配置主機網路"]。
 
 
 
@@ -327,7 +329,7 @@ storagegrid node start DC1-S1-172-16-1-172
 .關於這項工作
 若要查看已指派給網格節點的 IPv6 位址：
 
-. 選取 * 節點 * 、然後選取節點。
+. 選擇*節點*並選擇節點。
 . 在「概述」標籤的 * IP 位址 * 旁、選取 * 顯示其他 IP 位址 * 。
 
 

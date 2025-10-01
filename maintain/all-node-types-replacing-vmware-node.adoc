@@ -33,7 +33,7 @@ summary: 當您恢復託管在 VMware 上的故障 StorageGRID 節點時、請�
 . 如果故障的網格節點是儲存節點、請判斷用於資料儲存的任何虛擬硬碟是否未受損、並保留這些磁碟以重新附加至恢復的網格節點。
 . 關閉虛擬機器。
 . 選取*「動作*」>*「所有vCenter動作*」>*「從磁碟刪除*」以刪除虛擬機器。
-. 部署新的虛擬機器做為替換節點、並將其連線至一StorageGRID 或多個物件網路。有關說明，請參閱link:../vmware/deploying-storagegrid-node-as-virtual-machine.html["將StorageGRID 節點部署為虛擬機器"]。
+. 部署一個新的虛擬機器作為取代節點，並將其連接到一個或多個StorageGRID網路。有關說明，請參閱link:../swnodes/deploying-storagegrid-node-as-virtual-machine.html["將StorageGRID 節點部署為虛擬機器"]。
 +
 部署節點時、您可以選擇重新對應節點連接埠、或增加CPU或記憶體設定。
 

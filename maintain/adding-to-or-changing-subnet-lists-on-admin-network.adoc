@@ -40,6 +40,7 @@ summary: 您可以在一或多個節點的管理網路子網路清單中新增�
 
 ====
 .步驟
+. 預設情況下，外部 SSH 存取是被阻止的。如果需要，link:../admin/manage-external-ssh-access.html["暫時允許訪問"] 。
 . 登入主要管理節點：
 +
 .. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
@@ -102,7 +103,7 @@ image::../media/change_ip_tool_aesl_sample_input.gif[變更IP工具範例]
 . 準備好後、輸入* q*返回主功能表畫面。您的變更會保留到清除或套用為止。
 +
 
-NOTE: 如果您在步驟 2 中選取任何「全部」節點選擇模式、請按 * Enter* （不含 * q* ）以移至清單中的下一個節點。
+NOTE: 如果您在步驟 3 中選擇了任何「全部」節點選擇模式，請按下 *Enter*（不含 *q*）以前往清單中的下一個節點。
 
 . 請選擇下列其中一項：
 +
@@ -151,10 +152,11 @@ Updating grid network configuration on Name
 ----
 
 
-. 從Grid Manager下載新的恢復套件。
+. 從網格管理器下載新的復原套件。
 +
-.. 選擇* maintenance *>* System*>* Recovery套件*。
+.. 選擇*維護* > *系統* > *恢復包*。
 .. 輸入資源配置通關密碼。
 
 
+. 如果您允許外部 SSH 訪問，link:../admin/manage-external-ssh-access.html["阻止訪問"]當您完成新增或變更子網路清單後。
 

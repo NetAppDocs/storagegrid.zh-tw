@@ -13,7 +13,7 @@ summary: 如果故障需要您部署一或多個新的實體或虛擬主機、�
 [role="lead"]
 如果故障需要您部署一或多個新的實體或虛擬主機、或在現有主機上重新安裝 Linux 、請先部署並設定替換主機、然後才能恢復網格節點。此程序是所有類型網格節點的網格節點還原程序之一。
 
-「 Linux 」是指 Red Hat ® Enterprise Linux ® 、 Ubuntu ® 或 Debian ® 部署。如需支援版本的清單，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
+「Linux」指的是 Red Hat® Enterprise Linux® (RHEL)、Ubuntu® 或 Debian® 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 此程序只會在還原軟體型儲存節點、主要或非主要管理節點或閘道節點的程序中執行一步驟。無論您要恢復的網格節點類型為何、這些步驟都是相同的。
 

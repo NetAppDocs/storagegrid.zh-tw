@@ -14,7 +14,7 @@ summary: 安裝VM節點之後、您可以將額外的主幹或存取介面新增
 您可以在安裝節點之後、將主幹或存取介面新增至VM節點。您新增的介面會顯示在「VLAN介面」頁面和「HA群組」頁面上。
 
 .開始之前
-* 您可以存取的指示link:../vmware/index.html["在 VMware 平台上安裝 StorageGRID"]。
+* 您可以造訪以下說明link:../swnodes/index.html["在 VMware 平台上安裝 StorageGRID"]。
 * 您擁有管理節點和閘道節點VMware虛擬機器。
 * 您的網路子網路未被用作 Grid 、 Admin 或 Client Network 。
 * 您有 `Passwords.txt`檔案。

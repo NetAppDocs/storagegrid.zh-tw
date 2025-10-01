@@ -37,7 +37,7 @@ image::../media/grid-federation-account-clone-workflow.png[帳戶複製工作流
 
 .步驟
 . 為兩個網格設定相同的身分識別來源。請參閱。 link:using-identity-federation.html["使用身分識別聯盟"]
-. 為兩個網格設定相同的 SSO 身分識別提供者（ IDP ）。請參閱。 link:configuring-sso.html["設定單一登入"]
+. 為兩個網格配置相同的 SSO 身分提供者 (IdP)。看link:how-sso-works.html["設定單一登入"] 。
 . link:managing-admin-groups.html["建立相同的管理群組"]在兩個網格上匯入相同的同盟群組。
 +
 當您建立租戶時、您將會選取此群組、以取得來源和目的地租戶帳戶的初始根存取權限。

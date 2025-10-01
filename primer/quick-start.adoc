@@ -45,14 +45,12 @@ StorageGRID 系統由個別的硬體型和軟體型節點所組成。您必須�
 
 [role="quick-margin-list"]
 * https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["安裝應用裝置硬體"^]
-* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-* link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
+* link:../swnodes/index.html["在基於軟體的節點上安裝StorageGRID"]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]登入並檢查系統健全狀況
 [role="quick-margin-para"]
-一旦安裝主要管理節點、您就可以登入 Grid Manager 。從這裡、您可以檢閱新系統的一般健全狀況、啟用 AutoSupport 和警示電子郵件、以及設定 S3 端點網域名稱。
+網格安裝完成後，您可以登入網格管理器。從那裡，您可以查看新系統的整體健康狀況，啟用AutoSupport和警報電子郵件，並設定 S3 端點網域。
 
 [role="quick-margin-para"]
 瞭解如何：

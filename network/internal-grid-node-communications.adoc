@@ -22,11 +22,10 @@ NOTE: NetApp建議您在網格節點之間啟用網際網路控制訊息傳輸�
 
 == Linux型節點準則
 
-如果企業網路原則限制存取任何這些連接埠、您可以使用部署組態參數、在部署時重新對應連接埠。如需連接埠重新對應和部署組態參數的詳細資訊、請參閱：
+如果企業網路策略限制對任何這些連接埠的訪問，您可以在部署時使用部署設定參數重新對應連接埠。有關連接埠重新映射和部署配置參數的更多信息，請參閱link:../swnodes/index.html["在基於軟體的節點上安裝StorageGRID"]。
 
-* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
 
+NOTE: 對連接埠重新映射的支援已棄用，並將在未來的版本中刪除。若要刪除重新映射的端口，請參閱link:../maintain/removing-port-remaps-on-bare-metal-hosts.html["移除裸機主機上的連接埠重新對應"]。
 
 
 
@@ -34,13 +33,19 @@ NOTE: NetApp建議您在網格節點之間啟用網際網路控制訊息傳輸�
 
 只有在需要定義VMware網路外部的防火牆限制時、才需設定下列連接埠。
 
-如果企業網路原則限制存取任何這些連接埠、則您可以在使用VMware vSphere Web Client部署節點時重新對應連接埠、或在自動化網格節點部署時使用組態檔設定來重新對應連接埠。如需連接埠重新對應和部署組態參數的詳細資訊，請參閱link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]。
+如果企業網路策略限制對任何這些連接埠的訪問，您可以在使用 VMware vSphere Web Client 部署節點時重新對應端口，或在自動化網格節點部署時使用設定檔設定重新對應連接埠。有關連接埠重新映射和部署配置參數的更多信息，請參閱link:../swnodes/index.html["在 VMware 上安裝StorageGRID"]。
+
+
+NOTE: 對連接埠重新映射的支援已棄用，並將在未來的版本中刪除。若要刪除重新映射的端口，請參閱link:../maintain/removing-port-remaps-on-bare-metal-hosts.html["移除裸機主機上的連接埠重新對應"]。
 
 
 
 == 應用裝置節點準則
 
 如果企業網路原則限制存取任何這些連接埠、您可以使用StorageGRID 《不可靠設備安裝程式》重新對應連接埠。請參閱。 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-remapping-network-ports-for-appliance.html["選用：重新對應應用裝置的網路連接埠"^]
+
+
+NOTE: 對連接埠重新映射的支援已棄用，並將在未來的版本中刪除。若要刪除重新映射的端口，請參閱link:../maintain/removing-port-remaps.html["刪除StorageGRID設備上的連接埠重新映射"]。
 
 
 
@@ -151,7 +156,7 @@ TCP
  a| 
 儲存節點
  a| 
-S3和Swift相關的內部流量。
+S3相關的內部流量。
 
 
 
@@ -425,19 +430,6 @@ TCP
 儲存節點
  a| 
 S3相關的內部流量。
-
-
-
- a| 
-18083
- a| 
-TCP
- a| 
-所有節點
- a| 
-儲存節點
- a| 
-與Swift相關的內部流量。
 
 
 

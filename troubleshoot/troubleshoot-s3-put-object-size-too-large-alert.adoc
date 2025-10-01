@@ -21,7 +21,7 @@ summary: 如果租戶嘗試執行超過 S3 大小上限 5 GiB 的非多部分 Pu
 判斷哪些租戶使用大於 5 GiB 的物件、以便通知他們。
 
 .步驟
-. 轉至 * 配置 * > * 監控 * > * 審計和系統日誌服務器 * 。
+. 前往*設定*>*監控*>*稽核和系統日誌伺服器*。
 . 如果用戶端寫入為正常、請存取稽核記錄：
 +
 .. 輸入 `ssh admin@_primary_Admin_Node_IP_`
@@ -65,7 +65,7 @@ summary: 如果租戶嘗試執行超過 S3 大小上限 5 GiB 的非多部分 Pu
 |===
 視稽核目的地設定而定，請輸入： `cd /var/local/log`或 `/var/local/audit/export/`
 
-若要深入瞭解、請 link:../monitor/configure-audit-messages.html#select-audit-information-destinations["選取稽核資訊目的地"]參閱。
+要了解更多信息，請參閱link:../monitor/configure-log-management.html#select-log-location["選擇日誌位置"]。
 
 --
 .. 識別哪些租戶使用的物件大於 5 GiB 。
@@ -116,7 +116,7 @@ audit.log:2023-01-05T18:47:05.525999 [AUDT:[RSLT(FC32):SUCS][CNID(UI64):16729436
 
 . 如果用戶端寫入不正常、請使用警示中的租戶 ID 來識別租戶：
 +
-.. 轉至 *support* > *Tools* > *Logs* 。收集警示中儲存節點的應用程式記錄。指定警示前後 15 分鐘。
+.. 前往*支援* > *工具* > *日誌收集*。收集警報中儲存節點的應用程式日誌。指定警報前後 15 分鐘。請參閱link:../monitor/collecting-log-files-and-system-data.html["收集記錄檔和系統資料"] 。
 .. 解壓縮檔案並移至 `bycast.log`：
 +
 `/GID<grid_id>_<time_stamp>/<site_node>/<time_stamp>/grid/bycast.log`

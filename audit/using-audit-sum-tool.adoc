@@ -15,8 +15,8 @@ summary: 您可以使用稽核加總工具來計算寫入、讀取、顯示及�
 
 .開始之前
 * 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
-* 您必須擁有 `Passwords.txt`檔案。
-* 您必須知道主管理節點的IP位址。
+* 您有 `Passwords.txt`檔案。
+* 您知道主要管理節點的 IP 位址。
 
 
 .關於這項工作
@@ -37,10 +37,10 @@ NOTE: 此 `audit-sum`工具主要供技術支援人員在疑難排解作業期�
   SHEA                    22716        0.005           2.349           0.272
   SPUT                  1771398        0.011        1770.563           0.487
 ----
-此 `audit-sum`工具可在稽核記錄中提供下列 S3 、 Swift 和 ILM 稽核訊息的計數和時間。
+這 `audit-sum`此工具為稽核日誌中的以下 S3 和 ILM 稽核訊息提供計數和時間。
 
 
-NOTE: 稽核代碼會從產品和文件中移除、因為功能已過時。如果您遇到本文未列出的稽核程式碼、請查看本主題的舊版以瞭解較舊的 SG 版本。例如 https://docs.netapp.com/us-en/storagegrid-118/audit/using-audit-sum-tool.html["StorageGRID 11.8 使用稽核摘要工具文件"^]：。
+NOTE: 由於功能已被棄用，因此審計代碼已從產品和文件中刪除。如果您遇到此處未列出的稽核程式碼，請檢查此主題的先前版本以了解較舊的StorageGRID版本。例如，  https://docs.netapp.com/us-en/storagegrid-118/audit/using-audit-sum-tool.html["StorageGRID 11.8 使用稽核總和工具"^] 。
 
 [cols="14,43,43"]
 |===
@@ -60,18 +60,6 @@ NOTE: 稽核代碼會從產品和文件中移除、因為功能已過時。如�
 
 
 | SPUT | S3 PUT：記錄成功的交易、以建立新的物件或儲存區。 | link:sput-s3-put.html["SPUT：S3"] 
-
-
-| WDEL | Swift刪除：記錄成功的交易以刪除物件或容器。 | link:wdel-swift-delete.html["WDEL：Swift刪除"] 
-
-
-| WGet | Swift Get：記錄成功的交易、以擷取物件或列出容器中的物件。 | link:wget-swift-get.html["WGet：Swift Get"] 
-
-
-| WHA | Swift標頭：記錄成功的交易、以檢查物件或容器是否存在。 | link:whea-swift-head.html["WHA：Swift刀頭"] 
-
-
-| WUT | Swift PUT：記錄成功的交易、以建立新的物件或容器。 | link:wput-swift-put.html["WUTT：Swift Put"] 
 |===
 此 `audit-sum`工具可執行下列動作：
 
@@ -87,7 +75,7 @@ NOTE: 稽核代碼會從產品和文件中移除、因為功能已過時。如�
 `audit-sum audit.log 2019-08-12.txt.gz 2019-08-13.txt.gz`
 
 +
-`audit-sum /var/local/log/*`
+`audit-sum /var/local/audit/export/*`
 
 * 接受來自管道的輸入、可讓您使用命令或其他方法來篩選及預先處理輸入 `grep`。例如：
 +
@@ -103,7 +91,7 @@ NOTE: 稽核代碼會從產品和文件中移除、因為功能已過時。如�
 
 [NOTE]
 ====
-此工具不接受壓縮檔案做為管道輸入。若要處理壓縮檔案、請提供檔案名稱做為命令列引數、或使用工具先解壓縮 `zcat`檔案。例如：
+此工具不接受壓縮檔案作為管道輸入。若要處理壓縮文件，請將其檔案名稱作為命令列參數提供，或使用 `zcat`工具先解壓縮檔案。例如：
 
 `audit-sum audit.log.gz`
 
@@ -130,9 +118,9 @@ NOTE: 稽核代碼會從產品和文件中移除、因為功能已過時。如�
 
 . 如果您要分析與寫入、讀取、標頭及刪除作業相關的所有訊息、請依照下列步驟操作：
 +
-.. 輸入下列命令、其中 `/var/local/log/audit.log`代表您要分析的檔案名稱和位置：
+.. 輸入以下命令，其中 `/var/local/audit/export/audit.log`代表您要分析的檔案的名稱和位置：
 +
-`$ audit-sum /var/local/log/audit.log`
+`$ audit-sum /var/local/audit/export/audit.log`
 
 +
 此範例顯示工具的一般輸出 `audit-sum`。此範例顯示傳輸協定作業所需的時間。
@@ -225,7 +213,7 @@ Total:          201906 operations
   2019-09-05T09           27591        0.010        1481.867           1.354
 ----
 +
-這些結果顯示S3在06:00到07:00之間尖峰流量。在這些時間、最大和平均時間都會大幅增加、而且不會隨著計數增加而逐漸增加。這表示容量已超過某個位置、可能是網路或網格處理要求的能力。
+這些結果表明，S3 GET 流量在 06:00 至 07:00 之間出現峰值。在此時間跨度內，最大時間和平均時間都相當高，而且它們並沒有隨著計數的增加而逐漸增加。這些指標顯示容量可能超出了範圍，可能是網路或電網處理請求的能力超出了範圍。
 
 .. 要確定昨天每小時檢索的對象大小，請將 Size 選項(`-s`（大小選項）添加到命令中：
 +

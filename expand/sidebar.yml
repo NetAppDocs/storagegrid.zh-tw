@@ -26,14 +26,6 @@ entries:
     url: "/expand/adding-new-site.html"
 - title: 收集所需資料
   url: "/expand/gather-required-materials.html"
-- title: 新增儲存磁碟區
-  entries:
-  - title: 將儲存磁碟區新增至儲存節點
-    url: "/expand/adding-storage-volumes-to-storage-nodes.html"
-  - title: VMware：將儲存磁碟區新增至儲存節點
-    url: "/expand/vmware-adding-storage-volumes-to-storage-node.html"
-  - title: Linux：將直接附加或SAN磁碟區新增至儲存節點
-    url: "/expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html"
 - title: 新增網格節點或站台
   entries:
   - title: 新增網格節點至現有站台或新增站台
@@ -44,6 +36,14 @@ entries:
     url: "/expand/deploying-new-grid-nodes.html"
   - title: 執行擴充
     url: "/expand/performing-expansion.html"
+- title: 新增儲存磁碟區
+  entries:
+  - title: 將儲存磁碟區新增至儲存節點
+    url: "/expand/adding-storage-volumes-to-storage-nodes.html"
+  - title: VMware：將儲存磁碟區新增至儲存節點
+    url: "/expand/vmware-adding-storage-volumes-to-storage-node.html"
+  - title: Linux：將直接附加或SAN磁碟區新增至儲存節點
+    url: "/expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html"
 - title: 設定擴充系統
   entries:
   - title: 組態步驟

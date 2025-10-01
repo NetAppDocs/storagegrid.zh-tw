@@ -67,7 +67,7 @@
 
 
  a| 
-此節點所屬網格之主要管理節點的網格網路IPv6位址。使用您為GRID_NETWORD_IP所指定的相同值、表示網格節點的node_type = VM_admin_Node和admin_role = Primary。如果省略此參數、節點會嘗試使用mDNS探索主要管理節點。
+您要用於安裝基於 Linux 的節點的管理節點的網格網路 IPv4 位址。對於恢復，如果可用，請使用主管理節點的 IP；否則，使用非主管理節點的 IP。如果省略此參數，節點將嘗試使用 mDNS 發現主管理節點。
 
 link:how-grid-nodes-discover-primary-admin-node.html["網格節點如何探索主要管理節點"]
 
@@ -277,11 +277,7 @@ DHCP、靜態或停用
 
 *最佳實務做法：*在需要混雜模式的網路中、請改用admin_network_target類型_interface_clone _MAC金鑰。
 
-如需更多有關MAC複製的詳細資訊：
-
-* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC 位址複製的考量與建議（ Red Hat Enterprise Linux ）"]
-* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製（Ubuntu或DEBIANE）的考量與建議"]
-
+有關 Linux 的 MAC 克隆的更多詳細信息，請參閱link:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製的考量與建議"]
  a| 
 最佳實務做法
 
@@ -639,11 +635,7 @@ client_network_config = 靜態時需要
 
 *最佳實務做法：*在需要混雜模式的網路中、請改用用戶端網路連線目標類型介面介面複製_MAC金鑰。
 
-如需更多有關MAC複製的詳細資訊：
-
-* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC 位址複製的考量與建議（ Red Hat Enterprise Linux ）"]
-* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製（Ubuntu或DEBIANE）的考量與建議"]
-
+有關 Linux 的 MAC 克隆的更多詳細信息，請參閱link:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製的考量與建議"]
  a| 
 最佳實務做法
 
@@ -834,11 +826,7 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 
 *最佳實務做法：*在需要混雜模式的網路中、請改用GRID_NETNETWORD_TAR_AT_type_interface_clone _MAC金鑰。
 
-如需更多有關MAC複製的詳細資訊：
-
-* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC 位址複製的考量與建議（ Red Hat Enterprise Linux ）"]
-* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製（Ubuntu或DEBIANE）的考量與建議"]
-
+有關 Linux 的 MAC 克隆的更多詳細信息，請參閱link:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製的考量與建議"]
  a| 
 最佳實務做法
 
@@ -980,6 +968,9 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 
 
 === 連接埠重新對應鍵
+
+
+NOTE: 對連接埠重新映射的支援已棄用，並將在未來的版本中刪除。若要刪除重新映射的端口，請參閱link:../maintain/removing-port-remaps-on-bare-metal-hosts.html["移除裸機主機上的連接埠重新對應"]。
 
 
 

@@ -1,0 +1,22 @@
+---
+permalink: monitor/using-task-tab.html 
+sidebar: sidebar 
+keywords: Tasks tab, rename node, reboot node, storage state, maintenance mode 
+summary: 所有節點均顯示「任務」標籤。您可以使用此標籤重新命名或重新啟動節點，或將設備節點置於維護模式。對於儲存節點，您可以設定儲存狀態。 
+---
+= 使用工作索引標籤
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+所有節點均顯示「任務」標籤。您可以使用此標籤重新命名或重新啟動節點，或將設備節點置於維護模式。對於儲存節點，您可以設定儲存狀態。
+
+如需此索引標籤上每個選項的完整需求和指示、請參閱下列內容：
+
+* link:../maintain/rename-grid-site-node-overview.html["重新命名網格、站台和節點"]
+* link:../maintain/rebooting-grid-node-from-grid-manager.html["重新開機網格節點"]
+* https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["將應用裝置置於維護模式"^]
+* 在將直接連接或 SAN 磁碟區新增至儲存節點後，或在復原儲存節點後，您可以驗證或設定儲存節點的儲存狀態。這些說明可以在描述這些任務的主題中找到。
+

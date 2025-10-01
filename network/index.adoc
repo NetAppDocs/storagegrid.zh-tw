@@ -51,9 +51,7 @@ summary: 請使用這些準則來瞭StorageGRID 解有關架構和網路拓撲�
 
 
 .安裝軟體型節點
-* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-* link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
+* link:../swnodes/index.html["在基於軟體的節點上安裝StorageGRID"]
 
 
 .設定及管理StorageGRID 功能

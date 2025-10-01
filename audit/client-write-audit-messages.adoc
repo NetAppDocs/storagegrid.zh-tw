@@ -23,7 +23,7 @@ VW寫入
  a| 
 物件覆寫：記錄交易、以其他物件覆寫一個物件。
  a| 
-S3 和 Swift 用戶端
+S3用戶端
  a| 
 link:ovwr-object-overwrite.html["OW寫入：物件覆寫"]
 
@@ -74,27 +74,5 @@ S3中繼資料已更新：記錄成功的交易、以更新現有物件或儲存
 S3用戶端
  a| 
 link:supd-s3-metadata-updated.html["SUBPD：S3中繼資料已更新"]
-
-
-
- a| 
-WDEL
- a| 
-Swift刪除：記錄成功的交易以刪除物件或容器。
- a| 
-Swift用戶端
- a| 
-link:wdel-swift-delete.html["WDEL：Swift刪除"]
-
-
-
- a| 
-WUT
- a| 
-Swift PUT：記錄成功的交易、以建立新的物件或容器。
- a| 
-Swift用戶端
- a| 
-link:wput-swift-put.html["WUTT：Swift Put"]
 
 |===

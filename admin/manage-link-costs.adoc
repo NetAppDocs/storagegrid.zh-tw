@@ -68,11 +68,11 @@ image::../media/link_costs.gif[資料中心之間連結成本的概念性圖表]
 
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
-* 您有link:admin-group-permissions.html["Grid 拓撲頁面組態權限"]。
+* 你有link:admin-group-permissions.html["其他網格配置權限"]。
 
 
 .步驟
-. 選擇 * 支援 * > * 其他 * > * 連結成本 * 。
+. 選擇*支援* > *其他* > *連結成本*。
 +
 image::../media/configuring_link_costs.png[連結成本]
 

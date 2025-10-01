@@ -1,0 +1,33 @@
+---
+permalink: monitor/manage-io-prioritization.html 
+sidebar: sidebar 
+keywords: ec repair priority, ec purge priority 
+summary: '輸入/輸出 (I/O) 優先權可讓您變更網格上 I/O 操作的相對優先權。' 
+---
+= 更改 I/O 優先權
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+輸入/輸出 (I/O) 優先權可讓您變更網格上 I/O 操作的相對優先權。
+
+預設情況下，客戶端 PUT 和 GET I/O 流量比清除擦除編碼 (EC) 資料和 EC 修復等後台活動具有最高優先權。透過提高清除擦除編碼 (EC) 資料和 EC 修復活動的優先級，這些任務可能會更快完成。  I/O 優先權變​​更的有效性受到客戶端請求率、網路流量波動和其他正在進行的網路任務的影響。
+
+.開始之前
+* 查看 I/O 優先頁面，確定哪些選項可能會影響您的網格。
+* 評估正在進行的客戶端流量是否可以安全地處理更長的等待時間或客戶端逾時。
+* 準備好監控優先順序變化的影響並根據需要進行調整。這些變化實施得很快，但其效果可能需要幾個小時才能顯現。
+
+
+.步驟
+. 選擇*支援* > *I/O 優先權*。
+. （可選）將清除 EC 資料的後台操作的 EC 清除和修復優先順序從其預設值變更。
++
+
+NOTE: 對於具有基於 RAID 的節點的網格，使用預設的低 EC 清除和修復優先權。
+
+. 選擇*保存*。
+. 監控link:../monitor/commonly-used-prometheus-metrics.html#where-are-prometheus-metrics-used["指標"]評估優先順序變化的影響。
+

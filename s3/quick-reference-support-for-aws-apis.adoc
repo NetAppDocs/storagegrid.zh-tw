@@ -784,7 +784,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功能。
 
 .申請本文
-如需有關支援的 JSON 本文欄位的詳細資訊、請參閱link:bucket-and-group-access-policies.html["使用貯體和群組存取原則"]。
+有關支援的 JSON 主體欄位的詳細信息，請參閱link:use-access-policies.html["使用貯體和群組存取原則"]。
 
 
 

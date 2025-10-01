@@ -1,0 +1,162 @@
+---
+permalink: swnodes/installing-linux.html 
+sidebar: sidebar 
+keywords: how to install Linux 
+summary: 您必須在所有 Linux 網格主機上安裝StorageGRID 。若要取得受支援版本的列表，請使用NetApp互通性表工具。 
+---
+= 安裝Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在所有 Linux 網格主機上安裝StorageGRID 。若要取得受支援版本的列表，請使用NetApp互通性表工具。
+
+.開始之前
+確保您的作業系統符合 StorageGRID 的最低核心版本需求、如下所列。使用命令 `uname -r`取得作業系統的核心版本、或洽詢作業系統廠商。
+
+
+NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
+
+[role="tabbed-block"]
+====
+.紅帽企業版
+--
+[cols="1a,2a,2a"]
+|===
+| RHEL 版本 | 最低核心版本 | 核心套件名稱 
+
+
+ a| 
+8.8 （已過時）
+ a| 
+4.18.0-477.10.1.el8_8.x86_64
+ a| 
+核心 -4.18.0-477.10.1.el8_8.x86_64
+
+
+
+ a| 
+8.10
+ a| 
+4.18.0-553.el8_10.x86_64
+ a| 
+kernel-4.18.0-553.el8_10.x86_64
+
+
+
+ a| 
+9.0 （已過時）
+ a| 
+5.14.0-70.22.1.el9_0.x86_64
+ a| 
+kernel-5.14.0-70.22.1.el9_0.x86_64
+
+
+
+ a| 
+9.2 （已過時）
+ a| 
+5.14.0-284.11.1.el9_2.x86_64
+ a| 
+kernel-5.14.0-284.11.1.el9_2.x86_64
+
+
+
+ a| 
+9.4
+ a| 
+5.14.0-427.18.1.el9_4.x86_64
+ a| 
+kernel-5.14.0-427.18.1.el9_4.x86_64
+
+
+
+ a| 
+9.6
+ a| 
+5.14.0-570.18.1.el9_6.x86_64
+ a| 
+內核-5.14.0-570.18.1.el9_6.x86_64
+
+|===
+--
+.Ubuntu
+--
+* 注意： * Ubuntu 版本 18.04 和 20.04 的支援已過時、將於未來版本中移除。
+
+[cols="1a,2a,3a"]
+|===
+| Ubuntu 版本 | 最低核心版本 | 核心套件名稱 
+
+
+ a| 
+22.04.1.
+ a| 
+5.15.0-47- 一般
+ a| 
+Linux-image-5.15.0-47-generic/jammy-updates,jammy-security,now 5.15.0-47.51
+
+
+
+ a| 
+24.04
+ a| 
+6.8.0-31-generic
+ a| 
+Linux-image-6.8.0-31-generic/grine, 現在 6.8.0-31.31
+
+|===
+--
+.Debian
+--
+* 備註： * 支援 Debian 版本 11 已被淘汰、將於未來版本中移除。
+
+[cols="1a,2a,2a"]
+|===
+| Debian 版本 | 最低核心版本 | 核心套件名稱 
+
+
+ a| 
+11 （已過時）
+ a| 
+5.10.0-18-amd64
+ a| 
+Linux-image-5.10.0-18-amd64/Stable 、現為 5.10.150-1
+
+
+
+ a| 
+12
+ a| 
+6.1.0-9-amd64
+ a| 
+Linux-image-6.1.0-9-amd64/Stable 、現為 6.1.27-1
+
+|===
+--
+====
+.步驟
+. 根據代理商的指示或您的標準程序、在所有實體或虛擬網格主機上安裝Linux。
++
+
+NOTE: 不要安裝任何圖形桌面環境。
+
++
+** 如果在安裝 RHEL 時使用標準 Linux 安裝程序，請選擇「計算節點」軟體配置（如果可用）或「最小安裝」基礎環境。
+** 安裝 Ubuntu 時，您必須選擇*標準系統實用程式*。建議選擇 *OpenSSH 伺服器* 以啟用對 Ubuntu 主機的 ssh 存取。所有其他選項可以保持清除狀態。
+
+
+. 確保所有主機都可以存取軟體包儲存庫，包括 RHEL 的 Extras 頻道。
+. 如果已啟用交換：
++
+.. 執行下列命令： `$ sudo swapoff --all`
+.. 移除中的所有交換項目 `/etc/fstab`、以保留設定。
++
+
+NOTE: 如果無法完全停用交換、可能會嚴重降低效能。
+
+
+
+

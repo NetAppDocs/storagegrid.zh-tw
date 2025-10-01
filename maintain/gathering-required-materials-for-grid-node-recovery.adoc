@@ -40,23 +40,23 @@ summary: 在執行維護程序之前、您必須確保擁有必要的資料來�
 
 
  a| 
-恢復套件 `.zip`檔案
+恢復包 `.zip`文件
  a| 
-取得最新恢復套件檔案的複本 `.zip`：
+取得最新恢復包的副本 `.zip`文件：
 `sgws-recovery-package-_id-revision_.zip`
 
-每次修改系統時、都會更新檔案內容 `.zip`。進行此類變更後、系統會將最新版的恢復套件儲存在安全的位置。使用最新的複本從網格故障中恢復。
+的內容 `.zip`每次修改系統時都會更新檔案。進行此類變更後，您需要將最新版本的復原包儲存在安全的位置。使用最新的副本來恢復電網故障。
 
-如果主要管理節點正常運作、您可以從Grid Manager下載恢復套件。選擇* maintenance *>* System*>* Recovery套件*。
+登入任何管理節點時，使用網格管理器下載復原包。選擇*維護* > *系統* > *恢復包*。
 
-如果您無法存取 Grid Manager 、您可以在包含 ADC 服務的某些儲存節點上找到恢復套件的加密複本。在每個儲存節點上、檢查此位置的「恢復套件： `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg`使用修訂版編號最高的恢復套件」。
+如果您無法存取網格管理器，您可以在包含 ADC 服務的某些儲存節點上找到復原包的加密副本。在每個儲存節點上，檢查復原包的此位置： `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg`使用修訂號最高的恢復包。
 
 
 
  a| 
 `Passwords.txt`檔案
  a| 
-包含存取命令列上網格節點所需的密碼。包含在恢復套件中。
+包含在命令列上存取網格節點所需的密碼。包含在恢復包中。
 
 
 
@@ -107,7 +107,7 @@ StorageGRID 軟體版本的格式如下： `11.x.y`。
 
 
  a| 
-Red Hat Enterprise Linux
+紅帽企業版
 | `StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` 
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz` 
 
@@ -124,13 +124,16 @@ VMware
 `StorageGRID-Webscale-_version_-VMware-_uniqueID_.tgz` 
 |===
 . 下載並解壓縮歸檔檔案。
-. 根據您的平台和需要恢復的網格節點、依照您平台的適當步驟來選擇所需的檔案。
+. 根據您的平台和需要還原的網格節點，跳至適合您平台的部分來選擇您需要的檔案。
 +
 每個平台步驟中所列的路徑、都是相對於歸檔檔案所安裝的頂層目錄。
 
-. 如果要恢復link:../rhel/index.html["Red Hat Enterprise Linux 系統"]，請選擇相應的文件。
-
-
+. 如果你正在恢復link:../swnodes/index.html["基於軟體的節點"]，選擇相應的文件：
++
+[role="tabbed-block"]
+====
+.紅帽企業版
+--
 [cols="1a,1a"]
 |===
 | 路徑和檔案名稱 | 說明 
@@ -205,9 +208,9 @@ API架構StorageGRID 。
 * 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
 
 |===
-. 如果要恢復link:../ubuntu/index.html["Ubuntu或Debian系統"]，請選擇相應的文件。
-
-
+--
+.Ubuntu或DEBIAN
+--
 [cols="1a,1a"]
 |===
 | 路徑和檔案名稱 | 說明 
@@ -287,9 +290,9 @@ API架構StorageGRID 。
 * 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
 
 |===
-. 如果要恢復link:../vmware/index.html["VMware系統"]，請選擇相應的文件。
-
-
+--
+.VMware
+--
 [cols="1a,1a"]
 |===
 | 路徑和檔案名稱 | 說明 
@@ -384,8 +387,15 @@ API架構StorageGRID 。
 * 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
 
 |===
+--
+====
+
+
 . 如果您要還原StorageGRID 以應用程式為基礎的系統、請選取適當的檔案。
 
+
+
+NOTE: 對於設備安裝，僅當您需要避免網路流量時才需要這些檔案。設備可以從您執行復原過程的管理節點下載所需的檔案。
 
 [cols="1a,1a"]
 |===
@@ -402,5 +412,3 @@ DEB套件可在StorageGRID 您的應用裝置上安裝不含節點的影像。
 images-version-SHA.deb` 。
 
 |===
-
-NOTE: 在設備安裝方面、只有在您需要避免網路流量時才需要這些檔案。應用裝置可從主要管理節點下載所需的檔案。

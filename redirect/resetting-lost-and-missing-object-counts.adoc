@@ -1,0 +1,8 @@
+---
+permalink: troubleshoot/resetting-lost-and-missing-object-counts.html 
+redirect: storagegrid/troubleshoot/investigating-potentially-lost-objects.html 
+---
+= 
+:allow-uri-read: 
+
+

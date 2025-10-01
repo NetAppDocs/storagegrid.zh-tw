@@ -91,9 +91,11 @@ eth2
 
 * * VMware （安裝節點之後） * ：link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["VMware：新增主幹或存取介面至節點"]
 +
-** * Red Hat Enterprise Linux （安裝節點之前） * ：link:../rhel/creating-node-configuration-files.html["建立節點組態檔"]
-** * Ubuntu 或 Debian （安裝節點之前） * ：link:../ubuntu/creating-node-configuration-files.html["建立節點組態檔"]
-** * RHEL 、 Ubuntu 或 Debian （安裝節點之後） * ：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux：新增主幹或存取介面至節點"]
+** *Linux（安裝節點之前）*：link:../swnodes/creating-node-configuration-files.html["建立節點組態檔"]
+** *Linux（安裝節點後）*：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["向節點新增中繼或存取介面"]
 
 
 
+
+
+NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。

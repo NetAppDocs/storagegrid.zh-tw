@@ -19,18 +19,18 @@ summary: 在取消委任站台之前、您必須先取得下列資料。
 
 
  a| 
-恢復套件 `.zip`檔案
+恢復包 `.zip`文件
  a| 
-您必須下載最新的恢復軟件包 `.zip`文件(`sgws-recovery-package-id-revision.zip`）。如果發生故障、您可以使用「恢復套件」檔案來還原系統。
+您必須下載最新的恢復包 `.zip`文件(`sgws-recovery-package-id-revision.zip`）。如果發生故障，您可以使用復原包檔案來復原系統。
 
-link:downloading-recovery-package.html["下載恢復套件"]
+link:downloading-recovery-package.html["下載恢復包"]
 
 
 
  a| 
 `Passwords.txt`檔案
  a| 
-此檔案包含存取命令列上網格節點所需的密碼、並包含在「恢復套件」中。
+該檔案包含在命令列上存取網格節點所需的密碼，並包含在復原套件中。
 
 
 

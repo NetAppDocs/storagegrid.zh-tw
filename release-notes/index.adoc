@@ -13,4 +13,4 @@ summary: 取得有關已修正問題和已知問題的特定版本資訊。
 [role="lead"]
 取得有關已修正問題和已知問題的特定版本資訊。
 
-登入包含 StorageGRID 11.9 版本資訊的 NetApp 支援網站 https://library.netapp.com/ecm/ecm_download_file/ECMLP3330064["檢視或下載PDF檔案"^]。
+登入NetApp支援站點 https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["檢視或下載PDF檔案"^]包含StorageGRID 12.0 發行說明。

@@ -44,13 +44,6 @@ StorageGRID 系統支援由定義的一般要求標頭 https://docs.aws.amazon.c
 * 當您在中提供實際有效負載 Checksum 值時 `x-amz-content-sha256`、該值會在未驗證的情況下被接受、就好像已為標頭提供該值一樣 `UNSIGNED-PAYLOAD`。當您提供 `x-amz-content-sha256`表示串流的標頭值 `aws-chunked`（例如串流 -AWS4-HMAC-SHA256 有效負載）時、不會根據區塊資料驗證區塊簽章。
 
 
-
-
- a| 
-X-amz-security-token
- a| 
-未實作。退貨 `XNotImplemented`。
-
 |===
 
 

@@ -21,24 +21,24 @@ summary: 您必須使用支援的網頁瀏覽器。
  a| 
 Google Chrome
  a| 
-119
+138
 
 
 
  a| 
 Microsoft Edge
  a| 
-119
+138
 
 
 
  a| 
 Mozilla Firefox
  a| 
-119
+140
 
 |===
-您應該將瀏覽器視窗設定為建議的寬度。
+將瀏覽器視窗設定為建議的寬度。
 
 [cols="3a,1a"]
 |===

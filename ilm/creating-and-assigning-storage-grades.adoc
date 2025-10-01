@@ -24,7 +24,7 @@ summary: 儲存等級可識別儲存節點所使用的儲存類型。如果您�
 使用自訂儲存等級可讓您建立僅包含特定類型儲存節點的 ILM 儲存資源池。例如、您可能想要將某些物件儲存在最快的儲存節點上、例如StorageGRID ：整合式All Flash儲存設備。
 
 
-NOTE: 安裝期間可將儲存節點設定為僅包含物件中繼資料、而不包含物件資料。僅中繼資料儲存節點無法指派儲存等級。如需更多資訊、請參閱 link:../primer/what-storage-node-is.html#types-of-storage-nodes["儲存節點類型"]。
+NOTE: 僅元資料儲存節點不能分配儲存等級。有關詳細信息，請參閱link:../primer/what-storage-node-is.html#types-of-storage-nodes["儲存節點類型"] 。
 
 如果儲存等級不是問題（例如、所有儲存節點都相同）、您可以略過此程序、並在您選擇儲存等級時、使用 * 包括所有儲存等級 * 選項link:creating-storage-pool.html["建立儲存資源池"]。使用此選項可確保儲存池將包含站台上的每個儲存節點、無論其儲存等級為何。
 

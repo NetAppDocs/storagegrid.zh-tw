@@ -21,9 +21,7 @@ summary: 除了遵循StorageGRID 有關「不二網」和「節點」的強化�
 
 如需詳細資訊、請參閱：
 
-* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-* link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
+* link:../swnodes/index.html["在基於軟體的節點上安裝StorageGRID"]
 * https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["安裝 StorageGRID 應用裝置"^]
 
 
@@ -53,7 +51,7 @@ StorageGRID 的 AutoSupport 功能可讓您主動監控系統健全狀況、並�
 
 如果您想讓其他網域中的 Web 應用程式能夠存取 S3 貯體中的貯體和物件、則可以為 S3 貯體設定跨來源資源共享（ CORS ）。一般而言、除非需要、否則請勿啟用 CORS 。如果需要CORS、請將其限制在信任的來源。
 
-請參閱的步驟link:../tenant/configuring-cross-origin-resource-sharing-cors.html["設定跨來源資源共享（ CORS ）"]。
+請參閱link:../tenant/configuring-cross-origin-resource-sharing-for-buckets-and-objects.html["為儲存桶和物件配置 CORS"]。
 
 
 

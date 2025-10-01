@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: expand, expansion, storage node, add storage volumes, VMware 
 summary: 如果儲存節點包含的儲存磁碟區少於 16 個，則可以使用 VMware vSphere 新增磁碟區來增加其容量。 
 ---
-= VMware：將儲存磁碟區新增至儲存節點
+= 將儲存磁碟區新增至 VMware 儲存節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,11 +14,7 @@ summary: 如果儲存節點包含的儲存磁碟區少於 16 個，則可以使�
 如果儲存節點包含的儲存磁碟區少於 16 個，則可以使用 VMware vSphere 新增磁碟區來增加其容量。
 
 .開始之前
-* 您可以取得安裝StorageGRID VMware部署用的VMware解決方案的說明。
-+
-** link:../vmware/index.html["在 VMware 上安裝 StorageGRID"]
-
-
+* 您可以訪問link:../swnodes/index.html["為 VMware 部署安裝StorageGRID的說明"]。
 * 您有 `Passwords.txt`檔案。
 * 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
 
@@ -93,19 +89,13 @@ NOTE: 請勿使用 * 關機 * 或 * 重設 * 來重新啟動虛擬機器。
 . 確認儲存節點已上線：
 +
 .. 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
-.. 選取*支援*>*工具*>*網格拓撲*。
-.. 選擇「*站台_*>*儲存節點_*>* LdR*>*儲存設備*」。
-.. 選取*組態*索引標籤、然後選取*主要*索引標籤。
-.. 如果*儲存狀態-所需*下拉式清單設定為唯讀或離線、請選取*線上*。
-.. 選取*套用變更*。
+.. 選擇“*節點*”>“*儲存節點*”>“*任務*”。
+.. 如果“*儲存狀態*”下拉清單設定為“唯讀”或“離線”，請選擇“*線上*”。
+.. 選擇*保存*。
 
 
-. 若要查看新的物件存放區：
-+
-.. 選擇*節點*>*站台*>*儲存節點*>*儲存設備*。
-.. 在*物件存放區*表格中檢視詳細資料。
-
-
+. 若要查看新的物件存儲，請選擇*存儲*。
+. 查看*Volumes*表中的詳細資訊。
 
 
 .結果

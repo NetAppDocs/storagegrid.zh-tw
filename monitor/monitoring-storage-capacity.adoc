@@ -82,7 +82,7 @@ NOTE: 如果您的ILM原則使用銷毀編碼、當現有的儲存節點已滿�
 image::../media/calculating_watermarks.gif[總可用空間的概念性繪圖]
 
 .步驟
-. 選擇*節點*>*儲存節點*>*儲存設備*。
+. 選擇*節點* > *儲存節點* > *儲存*。
 +
 此時會顯示節點的圖形和表格。
 
@@ -140,7 +140,7 @@ link:../troubleshoot/troubleshooting-low-object-data-storage-alert.html["低物�
 可增加中繼資料使用量的部分因素包括使用者中繼資料和標記的大小和數量、多重內容上傳的零件總數、以及ILM儲存位置變更的頻率。
 
 .步驟
-. 選擇*節點*>*儲存節點*>*儲存設備*。
+. 選擇*節點* > *儲存節點* > *儲存*。
 . 將游標放在「已使用的儲存空間 - 物件中繼資料」圖表上、即可查看特定時間的值。
 +
 image::../media/storage_used_object_metadata.png[使用的儲存設備-物件中繼資料]

@@ -1,43 +1,8 @@
 ---
 permalink: rhel/installing-storagegrid-webscale-host-service.html 
-sidebar: sidebar 
-keywords: how to install host services 
-summary: 您可以使用StorageGRID 支援支援的RPM套件來安裝StorageGRID 支援的主機服務。 
+redirect: storagegrid/swnodes/installing-storagegrid-webscale-host-services.html 
 ---
-= 安裝StorageGRID 支援主機服務
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
-
-
-[role="lead"]
-您可以使用StorageGRID 支援支援的RPM套件來安裝StorageGRID 支援的主機服務。
-
-.關於這項工作
-這些指示說明如何從RPM套件安裝主機服務。此外、您也可以使用安裝歸檔中所包含的 DNF 儲存庫中繼資料、遠端安裝 RPM 套件。請參閱適用於您Linux作業系統的DNF儲存庫說明。
-
-.步驟
-. 將StorageGRID 此功能複製到您的每個主機、或是將其複製到共享儲存設備上。
-+
-例如、將它們放在目錄中 `/tmp`、以便在下一步中使用範例命令。
-
-. 以root身分或使用具有Sudo權限的帳戶登入每個主機、然後依照指定順序執行下列命令：
-+
-[listing]
-----
-sudo dnf --nogpgcheck localinstall /tmp/StorageGRID-Webscale-Images-version-SHA.rpm
-----
-+
-[listing]
-----
-sudo dnf --nogpgcheck localinstall /tmp/StorageGRID-Webscale-Service-version-SHA.rpm
-----
-+
-
-CAUTION: 您必須先安裝映像套件、然後再安裝服務套件。
-
-+
-
-NOTE: 如果將軟件包放在其他目錄 `/tmp`中，請修改命令以反映所用的路徑。
 
 

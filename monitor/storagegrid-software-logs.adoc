@@ -14,7 +14,7 @@ summary: 您可以使用StorageGRID 資訊檔來疑難排解問題。
 您可以使用StorageGRID 資訊檔來疑難排解問題。
 
 
-NOTE: 如果您想要將記錄傳送至外部 Syslog 伺服器、或變更稽核資訊的目的地、例如 `bycast.log`和、 `nms.log`請參閱link:../monitor/configure-audit-messages.html#["設定稽核訊息和記錄目的地"]。
+NOTE: 如果您想要將日誌傳送到外部系統日誌伺服器或變更稽核資訊的目的地，例如 `bycast.log`和 `nms.log`， 看link:../monitor/configure-log-management.html["設定日誌管理"]。
 
 
 
@@ -26,14 +26,14 @@ NOTE: 如果您想要將記錄傳送至外部 Syslog 伺服器、或變更稽核
 
 
 | /var/local/log/bycast.log  a| 
-主要StorageGRID 的故障排除檔案。選取*支援*>*工具*>*網格拓撲*。然後選擇「*站台_*>*節點_*>* SUS*>*事件*」。
+主要的StorageGRID故障排除檔。
  a| 
 所有節點
 
 
 
 | /var/local/log/bycast-err.log  a| 
-包含的子集 `bycast.log`（嚴重性錯誤和嚴重的訊息）。重要訊息也會顯示在系統中。選取*支援*>*工具*>*網格拓撲*。然後選擇「*站台_*>*節點_*>* SUS*>*事件*」。
+包含一個子集 `bycast.log`（嚴重性為 ERROR 和 CRITICAL 的訊息）。系統中也會顯示嚴重訊息。
  a| 
 所有節點
 
@@ -188,6 +188,13 @@ NOTE: 如果您想要將記錄傳送至外部 Syslog 伺服器、或變更稽核
 | /var/local/log/AMS  a| 
  a| 
 管理節點
+
+
+
+| /var/local/log/cache-svc.log + /var/local/log/cache-svc.errlog  a| 
+快取服務日誌。
+ a| 
+閘道節點
 
 
 

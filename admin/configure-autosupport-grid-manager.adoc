@@ -30,6 +30,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 * * 事件觸發 * ：每小時或發生重大系統事件時自動傳送 AutoSupport 套件。預設設定：已啟用。
 * * 隨選 * ：允許技術支援人員要求您的 StorageGRID 系統自動傳送 AutoSupport 套件、這在他們主動處理問題時很有用（需要 HTTPS AutoSupport 傳輸協定）。預設設定：停用。
 * * 使用者觸發 * ：隨時手動傳送 AutoSupport 套件。
+* *日誌收集*：link:../monitor/collecting-log-files-and-system-data.html["手動收集日誌檔案和系統資料並發送AutoSupport套件"] 。
 
 
 
@@ -46,7 +47,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 您設定的傳輸協定用於傳送所有類型的 AutoSupport 封裝。
 
 .步驟
-. 選擇 * 支援 * > * 工具 * > * AutoSupport * > * 設定 * 。
+. 選擇 *支援* > *工具* > *AutoSupport* > *設定*。
 . 選取您要用來傳送 AutoSupport 套件的傳輸協定。
 . 如果您選取 *HTTPS* 、請選取是否要使用 NetApp 支援憑證（ TLS 憑證）來保護連線至技術支援伺服器的安全。
 +
@@ -68,7 +69,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 您可以隨時停用每週 AutoSupport 套件的自動傳送功能。
 
 .步驟
-. 選擇 * 支援 * > * 工具 * > * AutoSupport * > * 設定 * 。
+. 選擇 *支援* > *工具* > *AutoSupport* > *設定*。
 . 清除 * 啟用每週 AutoSupport * 核取方塊。
 . 選擇*保存*。
 
@@ -82,7 +83,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 您可以隨時停用事件觸發的 AutoSupport 。
 
 .步驟
-. 選擇 * 支援 * > * 工具 * > * AutoSupport * > * 設定 * 。
+. 選擇 *支援* > *工具* > *AutoSupport* > *設定*。
 . 清除 * 啟用事件觸發的 AutoSupport * 核取方塊。
 . 選擇*保存*。
 
@@ -98,7 +99,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 技術支援無法啟用或停用 AutoSupport on Demand 。
 
 .步驟
-. 選擇 * 支援 * > * 工具 * > * AutoSupport * > * 設定 * 。
+. 選擇 *支援* > *工具* > *AutoSupport* > *設定*。
 . 選取* HTTPS *作為傳輸協定。
 . 選中 *Enable Weekly AutoSupport （每週啓用） * 複選框。
 . 選中 *Enable AutoSupport on Demand* 複選框。
@@ -117,7 +118,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 視需要、您可以選擇停用軟體更新檢查。例如、如果您的系統沒有WAN存取、您應該停用檢查、以避免下載錯誤。
 
 .步驟
-. 選擇 * 支援 * > * 工具 * > * AutoSupport * > * 設定 * 。
+. 選擇 *支援* > *工具* > *AutoSupport* > *設定*。
 . 清除 * 檢查軟體更新 * 核取方塊。
 . 選擇*保存*。
 
@@ -134,7 +135,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 NOTE: 您無法使用 SMTP 傳輸協定將 AutoSupport 套件傳送至其他目的地。
 
 .步驟
-. 選擇 * 支援 * > * 工具 * > * AutoSupport * > * 設定 * 。
+. 選擇 *支援* > *工具* > *AutoSupport* > *設定*。
 . 選取 * 啟用其他 AutoSupport 目的地 * 。
 . 指定下列項目：
 +

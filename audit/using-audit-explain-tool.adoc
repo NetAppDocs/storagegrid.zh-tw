@@ -48,7 +48,7 @@ SPUT S3 PUT object bucket1/part3.txt tenant:92484777680322627870  cbid:5373D7383
 `audit-explain audit.log 2019-08-12.txt.gz 2019-08-13.txt.gz`
 
 +
-`audit-explain /var/local/log/*`
+`audit-explain /var/local/audit/export/*`
 
 * 接受來自管道的輸入、可讓您使用命令或其他方法來篩選及預先處理輸入 `grep`。例如：
 +
@@ -84,9 +84,9 @@ SPUT S3 PUT object bucket1/part3.txt tenant:92484777680322627870  cbid:5373D7383
 
 
 
-. 輸入下列命令、其中 `/var/local/log/audit.log`代表您要分析的檔案名稱和位置：
+. 輸入以下命令，其中 `/var/local/audit/export/audit.log`代表您要分析的檔案的名稱和位置：
 +
-`$ audit-explain /var/local/log/audit.log`
+`$ audit-explain /var/local/audit/export/audit.log`
 
 +
 此 `audit-explain`工具會列印指定檔案中所有訊息的人類可讀判讀。

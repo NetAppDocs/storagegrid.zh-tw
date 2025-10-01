@@ -38,27 +38,6 @@ link:sdel-s3-delete.html["SDEL：S3刪除"]
 |===
 
 
-== Swift刪除稽核訊息
-
-[cols="1a,1a,2a,1a,2a"]
-|===
-| 程式碼 | 名稱 | 說明 | 追蹤 | 請參閱 
-
-
- a| 
-WDEL
- a| 
-Swift刪除
- a| 
-要求從容器或容器中刪除物件。
- a| 
-CBID、WOBJ
- a| 
-link:wdel-swift-delete.html["WDEL：Swift刪除"]
-
-|===
-
-
 == 範例：S3物件刪除
 
 當S3用戶端從儲存節點（LMR服務）刪除物件時、會產生稽核訊息並儲存至稽核記錄。

@@ -10,8 +10,10 @@ settings:
     harmony_enabled: false
     hide_language_selector: false
   versions:
-  - version-number: '11.9'
+  - version-number: '12.0'
     url: "/storagegrid"
+  - version-number: '11.9'
+    url: "/storagegrid-119"
   - version-number: '11.8'
     url: "/storagegrid-118"
   - version-number: '11.7'
@@ -23,7 +25,7 @@ settings:
   langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
 sidebar:
   entries:
-  - title: StorageGRID 11.9 文件
+  - title: StorageGRID 12.0 軟體
     url: "/index.html"
   - title: StorageGRID 應用裝置
     url: "/storagegrid-hardware.html"
@@ -39,11 +41,9 @@ sidebar:
   - title: 安裝、升級及 Hotfix
     url: "/landing-install-upgrade/index.html"
     entries:
-    - title: 安裝應用裝置
+    - title: 安裝基於設備的節點
       url: "/storagegrid-hardware.html"
-    - section: rhel
-    - section: ubuntu
-    - section: vmware
+    - section: swnodes
     - section: upgrade
     - title: 套用 StorageGRID Hotfix
       entries:
@@ -84,7 +84,7 @@ sidebar:
     entries:
     - title: 網格維護
       url: "/maintain/index.html"
-    - title: 下載恢復套件
+    - title: 下載恢復包
       url: "/maintain/downloading-recovery-package.html"
     - title: 取消委任節點或站台
       entries:
@@ -149,6 +149,30 @@ sidebar:
       - title: 節點維護程序
         pdf-filename: 節點程序
         url: "/maintain/grid-node-procedures.html"
+      - title: 行動 ADC 服務
+        url: "/maintain/move-adc-service.html"
+      - title: 轉換為僅資料節點
+        url: "/maintain/convert-to-data-only-node.html"
+      - title: 重新開機、關機和電源程序
+        entries:
+        - title: 執行循環重新開機
+          url: "/maintain/rolling-reboot-procedure.html"
+        - title: 從「工作」標籤重新啟動節點
+          url: "/maintain/rebooting-grid-node-from-grid-manager.html"
+        - title: 從命令 Shell 重新啟動節點
+          url: "/maintain/rebooting-grid-node-from-command-shell.html"
+        - title: 關閉節點
+          url: "/maintain/shutting-down-grid-node.html"
+        - title: 關閉主機電源
+          url: "/maintain/powering-down-host.html"
+        - title: 關閉所有節點並開啟電源
+          url: "/maintain/powering-off-and-on-all-nodes-in-grid.html"
+      - title: 連接埠重新對應程序
+        entries:
+        - title: 刪除StorageGRID設備上的連接埠重新映射
+          url: "/maintain/removing-port-remaps.html"
+        - title: 移除裸機主機上的連接埠重新對應
+          url: "/maintain/removing-port-remaps-on-bare-metal-hosts.html"
       - title: Server Manager 程序
         entries:
         - title: 檢視伺服器管理員狀態和版本
@@ -173,26 +197,6 @@ sidebar:
           url: "/maintain/using-donotstart-file.html"
         - title: 伺服器管理員疑難排解
           url: "/maintain/accessing-server-manager-log-file.html"
-      - title: 重新開機、關機和電源程序
-        entries:
-        - title: 執行循環重新開機
-          url: "/maintain/rolling-reboot-procedure.html"
-        - title: 從「工作」標籤重新啟動節點
-          url: "/maintain/rebooting-grid-node-from-grid-manager.html"
-        - title: 從命令 Shell 重新啟動節點
-          url: "/maintain/rebooting-grid-node-from-command-shell.html"
-        - title: 關閉節點
-          url: "/maintain/shutting-down-grid-node.html"
-        - title: 關閉主機電源
-          url: "/maintain/powering-down-host.html"
-        - title: 關閉所有節點並開啟電源
-          url: "/maintain/powering-off-and-on-all-nodes-in-grid.html"
-      - title: 連接埠重新對應程序
-        entries:
-        - title: 移除連接埠重新對應
-          url: "/maintain/removing-port-remaps.html"
-        - title: 移除裸機主機上的連接埠重新對應
-          url: "/maintain/removing-port-remaps-on-bare-metal-hosts.html"
     - title: 網路程序
       entries:
       - title: 更新Grid Network的子網路
@@ -376,7 +380,7 @@ sidebar:
         url: "/maintain/monitoring-services-appliance-installation.html"
     - title: 技術支援如何恢復網站
       url: "/maintain/how-site-recovery-is-performed-by-technical-support.html"
-  - title: 啟用StorageGRID 功能
+  - title: StorageGRID解決方案和資源
     url: "/storagegrid-enable.html"
   - title: StorageGRID 與 BlueXP
     url: "/storagegrid-bluexp.html"

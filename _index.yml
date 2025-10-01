@@ -1,6 +1,6 @@
 ---
 indexpage:
-  title: StorageGRID 11.9 軟體文件
+  title: StorageGRID 12.0 軟體文檔
   summary: NetApp StorageGRID 是一套軟體定義的物件儲存套件、可在公有雲、私有雲和混合式多雲端環境中支援各種使用案例。StorageGRID
     提供 Amazon S3 API 的原生支援、並提供領先業界的創新技術、例如自動化生命週期管理、可長期以符合成本效益的方式儲存、保護、保護及保留非結構化資料。
   keywords: storagegrid documentation
@@ -23,12 +23,8 @@ indexpage:
     links:
     - title: 安裝 StorageGRID 應用裝置
       url: https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html
-    - title: 在 Red Hat Enterprise Linux 上安裝 StorageGRID
-      url: "/rhel/index.html"
-    - title: 在 Ubuntu 或 Debian 上安裝 StorageGRID
-      url: "/ubuntu/index.html"
-    - title: 在 VMware 上安裝 StorageGRID
-      url: "/vmware/index.html"
+    - title: 在基於軟體的節點上安裝StorageGRID
+      url: "/swnodes/index.html"
     - title: 升級至新的 StorageGRID 版本
       url: "/upgrade/index.html"
     - title: 套用修補程式
@@ -71,7 +67,7 @@ indexpage:
       url: https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/index.html
   - title: 其他指示
     links:
-    - title: 啟用StorageGRID 功能
+    - title: StorageGRID解決方案和資源
       url: https://docs.netapp.com/us-en/storagegrid-enable/index.html
     - title: 視頻庫StorageGRID
       url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
@@ -91,7 +87,3 @@ indexpage:
       url: https://netapp.com/blog/
     - title: NetApp社群
       url: https://community.netapp.com/
-  - title: 舊版
-    links:
-    - title: StorageGRID 11.4 文件
-      url: https://mysupport.netapp.com/documentation/docweb/index.html?productID=63374

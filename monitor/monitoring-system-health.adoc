@@ -117,11 +117,10 @@ image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]
 
 * 已解決的警示 * ：您可以搜尋並檢視已解決的警示記錄。
 
-您也可以觀看影片： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2eea81c5-8323-417f-b0a0-b1ff008506c1["影片：警示總覽"^]
+或者，您已經觀看了影片：
 
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2eea81c5-8323-417f-b0a0-b1ff008506c1]
-image::../media/video-screenshot-alert-overview-118.png[影片：警示總覽]
-
+.警報概述
+video::2eea81c5-8323-417f-b0a0-b1ff008506c1[panopto]
 下表說明 Grid Manager 中顯示的目前和已解決警示資訊。
 
 [cols="1a,3a"]

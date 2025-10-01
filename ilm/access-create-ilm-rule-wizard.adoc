@@ -24,11 +24,10 @@ NOTE: 如果您要建立原則的預設 ILM 規則、請link:creating-default-il
 * 您已設定要使用的任何雲端儲存池。請參閱。 link:creating-cloud-storage-pool.html["建立雲端儲存資源池"]
 * 您熟悉link:data-protection-options-for-ingest.html["擷取選項"]。
 * 如果您需要建立與 S3 物件鎖定搭配使用的相容規則，您就熟悉了link:requirements-for-s3-object-lock.html["S3物件鎖定需求"]。
-* 您也可以觀看影片： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9872d38f-80b3-4ad4-9f79-b1ff008760c7["影片： ILM 規則概觀"^]。
+* 或者，您已經觀看了影片：
 +
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9872d38f-80b3-4ad4-9f79-b1ff008760c7]
-image::../media/video-screenshot-ilm-rules-118.png[影片： ILM 規則概觀]
-
+.ILM 規則概述
+video::9872d38f-80b3-4ad4-9f79-b1ff008760c7[panopto]
 
 
 .關於這項工作

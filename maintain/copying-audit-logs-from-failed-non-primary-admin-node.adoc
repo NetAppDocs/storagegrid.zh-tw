@@ -34,7 +34,7 @@ NOTE: 如果現在無法在故障的管理節點上存取稽核記錄、您可�
 . 停止 AMS 服務以防止其建立新的記錄檔：``service ams stop``
 . 瀏覽至稽核匯出目錄：
 +
-`cd /var/local/log`
+`cd /var/local/audit/export/`
 
 . 將來源 audit.log 檔案重新命名為唯一編號的檔案名稱。例如，將 audit.log 檔案重新命名為 `2023-10-25.txt.1`。
 +

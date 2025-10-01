@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: disable sso, disable single sign on 
 summary: 如果您不想再使用此功能、可以停用單一登入（SSO）。您必須先停用單一登入、才能停用身分識別聯盟。 
 ---
-= 停用單一登入
+= 禁用 SSO
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -19,17 +19,15 @@ summary: 如果您不想再使用此功能、可以停用單一登入（SSO）�
 
 
 .步驟
-. 選擇*組態*>*存取控制*>*單一登入*。
+. 選擇*設定* > *存取控制* > *單一登入*。
 +
 此時會出現「單一登入」頁面。
 
-. 選取*停用*選項。
-. 選擇*保存*。
+. 選擇*停用 SSO*。
+. 選擇*是*。
 +
 此時會出現一則警告訊息、指出本機使用者現在可以登入。
 
-. 選擇*確定*。
-+
+
+
 下次登入StorageGRID 時StorageGRID 、會出現「畫面上顯示「資訊區登入」頁面、您必須輸入本機StorageGRID 或聯盟使用者的使用者名稱和密碼。
-
-

@@ -107,7 +107,7 @@ image::../media/ilm_rule_multiple_placements_in_single_time_period.png[Grid Mana
 .相關資訊
 * link:data-protection-options-for-ingest.html["擷取選項"]
 * link:advantages-disadvantages-of-ingest-options.html["擷取選項的優點、缺點和限制"]
-* link:../s3/consistency-controls.html#how-consistency-controls-and-ILM-rules-interact["一致性與 ILM 規則如何互動、以影響資料保護"]
+* link:../s3/consistency.html#how-consistency-and-ILM-rules-interact["一致性與 ILM 規則如何互動、以影響資料保護"]
 
 
 

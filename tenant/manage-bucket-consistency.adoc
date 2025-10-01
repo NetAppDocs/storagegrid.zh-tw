@@ -63,7 +63,7 @@ NOTE: 當您變更貯體的一致性時、只有在變更後擷取的物件才�
 * link:deleting-s3-bucket-objects.html["背景空白貯體刪除"]
 * link:enabling-or-disabling-last-access-time-updates.html["上次存取時間"]
 * link:../s3/create-s3-lifecycle-configuration.html["生命週期"]
-* link:../s3/bucket-and-group-access-policies.html["貯體原則"]
+* link:../s3/use-access-policies.html["貯體原則"]
 * link:../s3/operations-on-buckets.html["貯體標記"]
 * link:changing-bucket-versioning.html["貯體版本管理"]
 * link:using-s3-object-lock.html["S3物件鎖定"]
@@ -76,7 +76,7 @@ NOTE: 貯體版本管理、 S3 物件鎖定和貯體加密的一致性值無法�
 下列貯體設定不使用強而一致的特性、而且變更的可用度也較高。變更這些設定可能需要一些時間才能生效。
 
 * link:considerations-for-platform-services.html["平台服務組態：通知、複寫或搜尋整合"]
-* link:configuring-cross-origin-resource-sharing-cors.html["CORS 組態"]
+* link:configuring-cross-origin-resource-sharing-for-buckets-and-objects.html["為儲存桶和物件配置StorageGRID CORS"]
 * <<change-bucket-consistency,變更貯體一致性>>
 
 

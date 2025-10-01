@@ -1,10 +1,10 @@
 ---
 permalink: admin/requirements-for-sso.html 
 sidebar: sidebar 
-keywords: sso requirements, single sign on requirements, identity federation requirements for sso, pingfederate, azure ad, ad fs 
+keywords: sso requirements, single sign on requirements, identity federation requirements for sso, pingfederate, entra id, ad fs 
 summary: 在啟用 StorageGRID 系統的單一登入之前、請先檢閱需求和考量事項。 
 ---
-= 單一登入的要求與考量
+= SSO 的要求和注意事項
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -20,7 +20,7 @@ summary: 在啟用 StorageGRID 系統的單一登入之前、請先檢閱需求�
 支援下列SSO身分識別供應商（IDP）StorageGRID ：
 
 * Active Directory Federation Service（AD FS）
-* Azure Active Directory（Azure AD）
+* 微軟Entra ID
 * PingFedate
 
 
@@ -35,16 +35,16 @@ summary: 在啟用 StorageGRID 系統的單一登入之前、請先檢閱需求�
 Active Directory
  a| 
 * Active Directory
-* Azure
+* 進入 ID
 * PingFedate
 
 
 
 
  a| 
-Azure
+進入 ID
  a| 
-Azure
+進入 ID
 
 |===
 
@@ -71,15 +71,15 @@ NOTE: Windows Server 2016 應使用 https://support.microsoft.com/en-us/help/320
 
 
 
-=== Azure 的考量
+=== Entra ID 的注意事項
 
-如果您使用 Azure 做為 SSO 類型、且使用者的使用者主體名稱不使用 sAMAccountName 做為首碼、則當 StorageGRID 失去與 LDAP 伺服器的連線時、可能會發生登入問題。若要允許使用者登入、您必須還原與 LDAP 伺服器的連線。
+如果您使用 Entra ID 作為 SSO 類型，且使用者的使用者主體名稱不使用 sAMAccountName 作為前綴，則當StorageGRID與 LDAP 伺服器失去連線時，可能會發生登入問題。若要允許使用者登入，您必須恢復與 LDAP 伺服器的連線。
 
 
 
 == 伺服器憑證需求
 
-根據預設、StorageGRID 在每個管理節點上使用管理介面憑證、以安全存取Grid Manager、租戶管理程式、Grid Management API及租戶管理API。當您設定依賴方信任（AD FS）、企業應用程式（Azure）或服務供應商連線（PingFedate）以供StorageGRID 進行時、您可以使用伺服器憑證做為StorageGRID 簽署憑證來執行Sfor Suse要求。
+預設情況下， StorageGRID在每個管理節點上使用管理介面憑證來保護對網格管理器、租用戶管理員、網格管理 API 和租用戶管理 API 的存取。為StorageGRID設定信賴方信任 (AD FS)、企業應用程式 (Entra ID) 或服務供應商連線 (PingFederate) 時，您可以使用伺服器憑證作為StorageGRID要求的簽章憑證。
 
 如果您還沒有link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["已為管理介面設定自訂憑證"]、現在就應該這麼做。當您安裝自訂伺服器憑證時、它會用於所有管理節點、您可以在StorageGRID 所有依賴方信任、企業應用程式或SP連線中使用。
 

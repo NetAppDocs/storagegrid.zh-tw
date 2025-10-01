@@ -13,7 +13,7 @@ summary: 您可以找出 S3 API 特定稽核訊息、以識別稽核記錄中的
 [role="lead"]
 您可以找出 S3 API 特定稽核訊息、以識別稽核記錄中的用戶端擷取交易。
 
-下表並未列出擷取交易期間產生的所有稽核訊息。僅包含追蹤擷取交易所需的訊息。
+下表並未列出攝取事務期間產生的所有稽核訊息。僅包含追蹤攝取事務所需的訊息。
 
 
 
@@ -34,40 +34,6 @@ S3「投入」交易已成功完成。
 CBID、S3BK、S3KY
  a| 
 link:sput-s3-put.html["SPUT：S3"]
-
-
-
- a| 
-ORLM
- a| 
-符合物件規則
- a| 
-此物件的ILM原則已獲滿足。
- a| 
-CBID
- a| 
-link:orlm-object-rules-met.html["ORLM：符合物件規則"]
-
-|===
-
-
-== 快速擷取稽核訊息
-
-[cols="1a,1a,2a,1a,2a"]
-|===
-| 程式碼 | 名稱 | 說明 | 追蹤 | 請參閱 
-
-
- a| 
-WUT
- a| 
-Swift PUT交易
- a| 
-Swift投入的交易已成功完成。
- a| 
-CBID、WCON、WOBJ
- a| 
-link:wput-swift-put.html["WUTT：Swift Put"]
 
 
 
@@ -124,7 +90,7 @@ ORLM訊息表示此物件已符合ILM原則。訊息包括物件的CBID和套用
 ----
 2019-02-23T01:52:54.647537 [AUDT:[CBID(UI64):0xFA8ABE5B5001F7E2][RULE(CSTR):"EC_2_plus_1"][STAT(FC32):DONE][CSIZ(UI64):10000][UUID(CSTR):"E291E456-D11A-4701-8F51-D2F7CC9AFECA"][LOCS(CSTR):"CLEC 1 A471E45D-A400-47C7-86AC-12E77F229831"][RSLT(FC32):SUCS][AVER(UI32):10][ATIM(UI64):1550929974537]\[ATYP\(FC32\):ORLM\][ANID(UI32):12355278][AMID(FC32):ILMX][ATID(UI64):4168559046473725560]]
 ----
-路徑欄位包含S3儲存區和主要資訊、或Swift容器和物件資訊、視使用的API而定。
+PATH 欄位包含 S3 儲存桶和金鑰資訊。
 
 [listing]
 ----

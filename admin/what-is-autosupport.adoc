@@ -13,14 +13,14 @@ summary: AutoSupport 功能可讓 StorageGRID 將健全狀況和狀態套件傳�
 [role="lead"]
 AutoSupport 功能可讓 StorageGRID 將健全狀況和狀態套件傳送至 NetApp 技術支援。
 
-使用 AutoSupport 可以大幅加速問題的判斷與解決。技術支援也能監控系統的儲存需求、協助您判斷是否需要新增節點或站台。您也可以設定 AutoSupport 套件、將其傳送至其他目的地。
+使用AutoSupport有助於更快地解決問題。技術支援可以監控您系統的儲存需求並協助確定是否需要新增節點或網站。或者， AutoSupport可以將軟體包傳送到另一個目的地。
 
 StorageGRID 有兩種類型的 AutoSupport ：
 
 * * StorageGRID AutoSupport * 回報 StorageGRID 軟體問題。在您第一次安裝 StorageGRID 時、預設為啟用。如有需要、您可以link:configure-autosupport-grid-manager.html["變更預設的 AutoSupport 組態"]。
 +
 
-NOTE: 如果未啟用 StorageGRID AutoSupport 、則會在 Grid Manager 儀表板上顯示訊息。此訊息包含AutoSupport 指向「資訊功能」組態頁面的連結。如果您關閉訊息、它將不會再次出現、直到您的瀏覽器快取被清除為止、即使AutoSupport 停用的是停用的。
+NOTE: 如果未啟用StorageGRID AutoSupport ，則網格管理器儀表板上會出現一則訊息。該訊息包含指向AutoSupport設定頁面的連結。如果您關閉該訊息，即使AutoSupport保持停用狀態，它也不會再次出現，直到您的瀏覽器快取已清除。
 
 * * 設備硬體 AutoSupport * 回報 StorageGRID 應用裝置問題。您必須link:configure-autosupport-grid-manager.html#autosupport-for-appliances["在每個應用裝置上設定硬體 AutoSupport"]。
 

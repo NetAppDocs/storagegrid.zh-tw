@@ -52,7 +52,7 @@ summary: 為了確保物件中繼資料有足夠的可用空間、您可能需�
 *** 8 TB SSD 或與 Cassandra 資料庫相同的儲存設備（ rangedb/0 ）
 
 
-** 如果現有的 StorageGRID 站台使用具有 24 GB RAM ， 8 核心 CPU 和 3 TB 或 4TB 中繼資料儲存設備的虛擬儲存節點，則僅軟體中繼資料節點應使用類似資源（ 24 GB RAM ， 8 核心 CPU 和 4TB 中繼資料儲存設備（ rangedb/0 ）。
+** 如果現有的StorageGRID站點使用具有 24 GB RAM、8 核心 CPU 和 3 TB 或 4TB 元資料儲存的虛擬儲存節點，則基於軟體的僅元資料節點應使用類似的資源（24 GB RAM、8 核心 CPU 和 4TB 元資料儲存（rangedb/0））。
 
 
 * 新增 StorageGRID 站台時，新站台的中繼資料總容量至少應與現有的 StorageGRID 站台和新站台資源相符，且應與現有 StorageGRID 站台的儲存節點相符。

@@ -33,11 +33,7 @@ summary: 若要將故障的網格節點還原至新的 Linux 主機、請執行�
 
 然後您必須驗證網格組態檔案、並解決任何可能發生的網路或儲存問題、才能繼續重新啟動StorageGRID 更新。當您重新建立節點的組態檔時、您必須使用與您要還原之節點相同的替換節點名稱。
 
-如需有關節點磁碟區位置的詳細資訊、請參閱安裝指示 `/var/local`。
-
-* link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-* link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-
+查看link:../swnodes/index.html["Linux 安裝說明"]欲了解關於 `/var/local`節點的捲。
 
 .步驟
 . 在復原主機的命令列中、列出所有目前設定的 StorageGRID 節點：``sudo storagegrid node list``
@@ -76,10 +72,7 @@ NOTE: 任何以旗標匯入的節點都 `--force`需要額外的恢復步驟、�
 
 
 
-. 對於沒有磁碟區的網格節點 `/var/local`、請重新建立節點的組態檔案、將其還原至主機。如需相關指示、請參閱：
-+
-** link:../rhel/creating-node-configuration-files.html["為 Red Hat Enterprise Linux 建立節點組態檔案"]
-** link:../ubuntu/creating-node-configuration-files.html["為 Ubuntu 或 Debian 建立節點組態檔案"]
+. 對於沒有 `/var/local`卷，重新建立節點的設定檔以將其恢復到主機。有關說明，請參閱link:../swnodes/creating-node-configuration-files.html["建立節點組態檔"]。
 +
 
 NOTE: 當您重新建立節點的組態檔時、您必須使用與您要還原之節點相同的替換節點名稱。對於Linux部署、請確定組態檔名稱包含節點名稱。您應該盡可能使用相同的網路介面、區塊裝置對應和IP位址。這種做法可將恢復期間需要複製到節點的資料量降至最低、這可能會使恢復速度大幅加快（在某些情況下、是幾分鐘而非數週）。
@@ -87,8 +80,6 @@ NOTE: 當您重新建立節點的組態檔時、您必須使用與您要還原�
 +
 
 NOTE: 如果您使用任何新的區塊裝置（ StorageGRID 節點先前未使用的裝置）做為任何組態變數的值、而這些設定變數是在重新建立節點的組態檔案時開始的 `BLOCK_DEVICE_`、請遵循中的準則<<fix-block-errors,修正遺失的區塊裝置錯誤>>。
-
-
 
 . 在恢復的主機上執行下列命令、列出所有StorageGRID 的支援節點。
 +
@@ -145,17 +136,9 @@ ERROR: <node-name>: BLOCK_DEVICE_PURPOSE = <path-name>
 
 如果您無法還原或重新建立遺失的區塊裝置特殊檔案、您可以分配適當大小和儲存類別的新區塊裝置、並編輯節點組態檔案、將值變更 `BLOCK_DEVICE_PURPOSE`為指向新區塊裝置特殊檔案。
 
-使用適用於 Linux 作業系統的表格、判斷適當的大小和儲存類別：
+使用 Linux 作業系統的表格確定適當的大小和儲存類別。看link:../swnodes/storage-and-performance-requirements.html["儲存與效能需求"] 。
 
-* link:../rhel/storage-and-performance-requirements.html["Red Hat Enterprise Linux 的儲存與效能需求"]
-* link:../ubuntu/storage-and-performance-requirements.html["Ubuntu 或 Debian 的儲存與效能需求"]
-
-
-在繼續更換區塊裝置之前、請先檢閱設定主機儲存設備的建議：
-
-* link:../rhel/configuring-host-storage.html["設定 Red Hat Enterprise Linux 的主機儲存設備"]
-* link:../ubuntu/configuring-host-storage.html["設定 Ubuntu 或 Debian 的主機儲存設備"]
-
+查看以下建議link:../swnodes/configuring-host-storage.html["配置主機儲存"]在繼續進行區塊設備替換之前。
 
 
 NOTE: 如果您必須為任何組態檔案變數提供新的區塊儲存裝置、從開始、因為原始區塊裝置在發生故障的主機上遺失、請確保新的區 `BLOCK_DEVICE_`塊裝置未格式化、然後再嘗試進一步的恢復程序。如果您使用共享儲存設備並已建立新的Volume、則新的區塊裝置將不會格式化。如果您不確定、請針對任何新的區塊儲存設備特殊檔案執行下列命令。

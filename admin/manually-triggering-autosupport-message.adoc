@@ -14,18 +14,18 @@ summary: 為了協助技術支援人員疑難排解 StorageGRID 系統的問題�
 為了協助技術支援人員疑難排解 StorageGRID 系統的問題、您可以手動觸發要傳送的 AutoSupport 套件。
 
 .開始之前
-* 您必須使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
-* 您必須具有「根目錄」存取權或其他網格組態權限。
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您具有 Root 存取權限或其他網格配置權限。
 
 
 .步驟
-. 選取*支援*>*工具*>* AutoSupport 參考*。
+. 選擇 *支援* > *工具* > *AutoSupport*。
 . 在 * 動作 * 索引標籤上、選取 * 傳送使用者觸發的 AutoSupport * 。
 +
-StorageGRID 會嘗試將 AutoSupport 套件傳送至 NetApp 支援網站 。如果嘗試成功、「*結果*」索引標籤上的*最近結果*和*上次成功時間*值將會更新。如果發生問題、 * 最近的結果 * 值會更新為「失敗」、而 StorageGRID 不會再次嘗試傳送 AutoSupport 套件。
+StorageGRID嘗試將AutoSupport套件傳送到NetApp支援站點。如果嘗試成功，則*結果*標籤上的*最近結果*和*上次成功時間*值將會更新。如果出現問題，*最新結果*值將更新為“失敗”，且StorageGRID不會再次嘗試傳送AutoSupport套件。
 
-+
-
-TIP: 傳送使用者觸發的 AutoSupport 套件後、請在 1 分鐘後重新整理瀏覽器中的 AutoSupport 頁面、以存取最近的結果。
+. 1 分鐘後，刷新瀏覽器中的AutoSupport頁面以存取最新結果。
 
 
+
+TIP: 此外，您還可以link:../monitor/collecting-log-files-and-system-data.html["收集更廣泛的日誌檔案和系統數據"]並將它們發送至NetApp支援站點。

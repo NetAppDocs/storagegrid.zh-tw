@@ -25,7 +25,7 @@ CAUTION: 為了避免資料遺失、請勿使用會過期或刪除 FabricPool �
 * 您已檢閱link:best-practices-ilm.html["搭配 FabricPool 資料使用 ILM 的最佳實務做法"]。
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 * 您有link:../admin/admin-group-permissions.html["ILM 或 Root 存取權限"]。
-* 如果您從舊版 StorageGRID 升級至 StorageGRID 11.9 、表示您已設定要使用的儲存池。一般而言、您應該為將用於儲存資料的每個 StorageGRID 站台建立儲存池。
+* 如果您從 11.7 之前的StorageGRID版本升級到StorageGRID 12.0，則您已設定將使用的儲存池。一般來說，您應該為用於儲存資料的每個StorageGRID網站建立一個儲存池。  （從 11.7 版開始，每個網站都會自動建立儲存池。）
 +
 
 NOTE: 如果您最初安裝的是 StorageGRID 11.7 或 11.8 、則不適用此先決條件。當您最初安裝其中任一版本時、系統會自動為每個站台建立儲存資源池。

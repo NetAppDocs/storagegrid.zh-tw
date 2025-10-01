@@ -17,23 +17,23 @@ summary: 使用身分識別聯盟可更快設定群組和使用者、並讓使�
 
 == 設定Grid Manager的身分識別聯盟
 
-如果您想要在其他系統（例如Active Directory、Azure Active Directory（Azure AD）、OpenLDAP或Oracle Directory Server）中管理系統管理群組和使用者、可以在Grid Manager中設定身分識別聯盟。
+如果您希望在另一個系統（例如 Active Directory、Microsoft Entra ID、OpenLDAP 或 Oracle Directory Server）中管理管理群組和用戶，則可以在網格管理器中設定身份聯合。
 
 .開始之前
-* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
-* 您有 link:admin-group-permissions.html["特定存取權限"]。
-* 您使用Active Directory、Azure AD、OpenLDAP或Oracle Directory Server做為身分識別供應商。
+* 您已使用link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 你已經link:admin-group-permissions.html["特定存取權限"]。
+* 您正在使用 Active Directory、Microsoft Entra ID、OpenLDAP 或 Oracle Directory Server 作為身分識別提供者。
 +
 
-NOTE: 如果您想使用未列出的LDAP v3服務、請聯絡技術支援部門。
+NOTE: 如果您想使用未列出的 LDAP v3 服務，請聯絡技術支援。
 
 * 如果您打算使用OpenLDAP、則必須設定OpenLDAP伺服器。請參閱。 <<設定OpenLDAP伺服器的準則>>
-* 如果您計畫啟用單一登入（ SSO ）、您已檢閱link:requirements-for-sso.html["單一登入的要求與考量"]。
+* 如果您打算啟用單一登入 (SSO)，您已查看link:requirements-for-sso.html["單一登入的要求與考量"]。
 * 如果您打算使用傳輸層安全性（TLS）與LDAP伺服器進行通訊、則身分識別供應商使用的是TLS 1.2或1.3。請參閱。 link:supported-ciphers-for-outgoing-tls-connections.html["用於傳出TLS連線的支援密碼"]
 
 
 .關於這項工作
-如果您想從其他系統（例如Active Directory、Azure AD、OpenLDAP或Oracle Directory Server）匯入群組、可以設定Grid Manager的身分識別來源。您可以匯入下列群組類型：
+如果您想要從其他系統（例如 Active Directory、Microsoft Entra ID、OpenLDAP 或 Oracle Directory Server）匯入群組，則可以為網格管理員設定身分識別來源。您可以匯入以下類型的群組：
 
 * 管理群組：管理群組中的使用者可以登入Grid Manager、並根據指派給群組的管理權限來執行工作。
 * 不使用其本身身分識別來源的租戶使用者群組。租戶群組中的使用者可以登入租戶管理程式、並根據在租戶管理程式中指派給群組的權限來執行工作。如需詳細資訊、請參閱link:creating-tenant-account.html["建立租戶帳戶"]和link:../tenant/index.html["使用租戶帳戶"]。
@@ -44,7 +44,7 @@ NOTE: 如果您想使用未列出的LDAP v3服務、請聯絡技術支援部門�
 === 輸入組態
 
 .步驟
-. 選擇*組態*>*存取控制*>*身分識別聯盟*。
+. 選擇*配置* > *存取控制* > *身份聯合*。
 . 選取*啟用身分識別聯盟*。
 . 在LDAP服務類型區段中、選取您要設定的LDAP服務類型。
 +
@@ -55,10 +55,10 @@ image::../media/ldap_service_type.png[顯示LDAP服務類型選項的「身分�
 
 . 如果選擇*其他*、請填寫「LDAP屬性」區段中的欄位。否則、請前往下一步。
 +
-** *使用者唯一名稱*：含有LDAP使用者唯一識別碼的屬性名稱。此屬性相當於 `sAMAccountName` Active Directory 和 `uid` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `uid`。
-** *使用者UUID *：含有LDAP使用者永久唯一識別碼的屬性名稱。此屬性相當於 `objectGUID` Active Directory 和 `entryUUID` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `nsuniqueid`。指定屬性的每個使用者值必須是16位元組或字串格式的32位數十六進位數字、連字號會被忽略。
-** *群組唯一名稱*：包含LDAP群組唯一識別碼的屬性名稱。此屬性相當於 `sAMAccountName` Active Directory 和 `cn` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `cn`。
-** *群組UUID *：包含LDAP群組永久唯一識別碼的屬性名稱。此屬性相當於 `objectGUID` Active Directory 和 `entryUUID` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `nsuniqueid`。指定屬性的每個群組值必須是16位元組或字串格式的32位數十六進位數字、連字號會被忽略。
+** *使用者唯一名稱*：包含 LDAP 使用者唯一識別碼的屬性名稱。此屬性相當於 `sAMAccountName`對於 Active Directory 和 `uid`對於 OpenLDAP。如果您正在設定 Oracle Directory Server，請輸入 `uid`。
+** *使用者 UUID*：包含 LDAP 使用者的永久唯一識別碼的屬性名稱。此屬性相當於 `objectGUID`對於 Active Directory 和 `entryUUID`對於 OpenLDAP。如果您正在設定 Oracle Directory Server，請輸入 `nsuniqueid`。每個使用者的指定屬性值必須是 16 位元組或字串格式的 32 位元十六進位數，其中連字元將被忽略。
+** *群組唯一名稱*：包含 LDAP 群組唯一識別碼的屬性的名稱。此屬性相當於 `sAMAccountName`對於 Active Directory 和 `cn`對於 OpenLDAP。如果您正在設定 Oracle Directory Server，請輸入 `cn`。
+** *群組 UUID*：包含 LDAP 群組的永久唯一識別碼的屬性的名稱。此屬性相當於 `objectGUID`對於 Active Directory 和 `entryUUID`對於 OpenLDAP。如果您正在設定 Oracle Directory Server，請輸入 `nsuniqueid`。每個群組的指定屬性的值必須是 16 位元組或字串格式的 32 位元十六進位數，其中連字元將被忽略。
 
 
 . 對於所有LDAP服務類型、請在「設定LDAP伺服器」區段中輸入所需的LDAP伺服器和網路連線資訊。
@@ -82,7 +82,7 @@ NOTE: STARTTLS的預設連接埠為389、LDAPS的預設連接埠為636。不過�
 *** `cn`
 *** `memberOf`或 `isMemberOf`
 *** * Active Directory* ： `objectSid`、 `primaryGroupID`、 `userAccountControl`和 `userPrincipalName`
-*** * Azure * ： `accountEnabled`及 `userPrincipalName`
+*** *入口 ID*: `accountEnabled`和 `userPrincipalName`
 
 
 ** *密碼*：與使用者名稱相關的密碼。
@@ -108,8 +108,8 @@ NOTE: *使用者唯一名稱*值必須在其所屬的*使用者基礎DN*內是�
 輸入下列其中一種模式：
 
 +
-*** * UserPrincipalName 模式（ Active Directory 和 Azure ） * ： `[USERNAME]@_example_.com`
-*** * 低階登入名稱模式（ Active Directory 和 Azure ） * ： `_example_\[USERNAME]`
+*** *UserPrincipalName 模式（AD 和 Entra ID）*： `[USERNAME]@_example_.com`
+*** *下級登入名稱模式（AD 和 Entra ID）*： `_example_\[USERNAME]`
 *** * 辨別名稱模式 * ： `CN=[USERNAME],CN=Users,DC=_example_,DC=com`
 +
 請準確附上所寫的*（使用者名稱）*。
@@ -120,12 +120,12 @@ NOTE: *使用者唯一名稱*值必須在其所屬的*使用者基礎DN*內是�
 
 . 在傳輸層安全性（TLS）區段中、選取安全性設定。
 +
-** *使用ARTTLS*：使用ARTTLS來保護與LDAP伺服器的通訊安全。這是Active Directory、OpenLDAP或其他的建議選項、但Azure不支援此選項。
-** *使用LDAPS*：LDAPS（LDAP over SSL）選項使用TLS建立與LDAP伺服器的連線。您必須為Azure選取此選項。
-** *請勿使用TLS*：StorageGRID 不保護介於整個系統與LDAP伺服器之間的網路流量。Azure不支援此選項。
+** *使用 STARTTLS*：使用 STARTTLS 確保與 LDAP 伺服器的通訊安全。這是 Active Directory、OpenLDAP 或其他的建議選項，但 Microsoft Entra ID 不支援此選項。
+** *使用 LDAPS*：LDAPS（透過 SSL 的 LDAP）選項使用 TLS 建立與 LDAP 伺服器的連線。您必須為 Microsoft Entra ID 選擇此選項。
+** *請勿使用 TLS*： StorageGRID系統和 LDAP 伺服器之間的網路流量將不安全。  Microsoft Entra ID 不支援此選項。
 +
 
-NOTE: 如果Active Directory伺服器強制執行LDAP簽署、則不支援使用*「不使用TLS*」選項。您必須使用ARTTLS或LDAPS。
+NOTE: 如果您的 Active Directory 伺服器強制執行 LDAP 簽名，則不支援使用 *不使用 TLS* 選項。您必須使用 STARTTLS 或 LDAPS。
 
 
 
@@ -148,7 +148,7 @@ NOTE: 如果Active Directory伺服器強制執行LDAP簽署、則不支援使用
 
 .步驟
 . 選擇*測試連線*。
-. 如果您未提供連結使用者名稱格式：
+. 如果您沒有提供綁定使用者名稱格式：
 +
 ** 如果連線設定有效、就會出現「測試連線成功」訊息。選取*「Save（儲存）」*以儲存組態。
 ** 如果連線設定無效、就會出現「無法建立測試連線」訊息。選擇*關閉*。然後、解決所有問題、並再次測試連線。
@@ -190,15 +190,15 @@ NOTE: 如果同步處理來自身分識別來源的聯盟群組和使用者時�
 
 == 停用身分識別聯盟
 
-您可以暫時或永久停用群組和使用者的身分識別聯盟。停用身分識別聯盟時StorageGRID 、不會在驗證和身分識別來源之間進行通訊。不過、您已設定的任何設定都會保留下來、讓您日後可以輕鬆重新啟用身分識別聯盟。
+您可以暫時或永久停用群組和使用者的身份聯合。當身分聯合被停用時， StorageGRID和身分來源之間就沒有通訊。但是，您配置的任何設定都會保留，以便您將來可以輕鬆地重新啟用身份聯合。
 
 .關於這項工作
 在停用身分識別聯盟之前、您應注意下列事項：
 
 * 聯盟使用者將無法登入。
 * 目前已登入的聯盟使用者將在StorageGRID 其工作階段過期之前保留對此系統的存取權、但在工作階段過期後仍無法登入。
-* StorageGRID 系統與身分識別來源之間不會同步、也不會針對尚未同步的帳戶發出警示。
-* 如果將單點登錄 (SSO) 設置爲 *Enabled* 或 *Sandbox Mode* ，則禁用 *Enable identity Federation （啓用身份聯合） * 複選框。「單一登入」頁面的SSO狀態必須為*停用*、才能停用身分識別聯盟。請參閱。 link:../admin/disabling-single-sign-on.html["停用單一登入"]
+* StorageGRID系統和身分來源之間不會發生同步，並且不會對尚未同步的帳戶發出警報。
+* 如果單一登入 (SSO) 狀態為 *已啟用* 或 *沙盒模式*，則 *啟用身分聯合* 核取方塊將會停用。在停用身分聯合之前，單一登入頁面上的 SSO 狀態必須為 *已停用*。看link:../admin/disabling-single-sign-on.html["停用單一登入"] 。
 
 
 .步驟
@@ -213,7 +213,7 @@ NOTE: 如果同步處理來自身分識別來源的聯盟群組和使用者時�
 如果您要使用OpenLDAP伺服器進行身分識別聯盟、則必須在OpenLDAP伺服器上設定特定設定。
 
 
-CAUTION: 對於非 ActiveDirectory 或 Azure 的身分識別來源、 StorageGRID 不會自動封鎖 S3 對外部停用使用者的存取。若要封鎖 S3 存取、請刪除使用者的任何 S3 金鑰、或將使用者從所有群組中移除。
+CAUTION: 對於非 Active Directory 或 Microsoft Entra ID 的識別來源， StorageGRID不會自動阻止外部停用的使用者存取 S3。若要封鎖 S3 訪問，請刪除使用者的所有 S3 金鑰或從所有群組中刪除該使用者。
 
 
 

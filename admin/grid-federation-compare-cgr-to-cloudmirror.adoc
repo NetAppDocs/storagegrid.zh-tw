@@ -13,6 +13,9 @@ summary: 開始使用網格同盟時、請檢閱跨網格複寫與 StorageGRID C
 [role="lead"]
 開始使用網格同盟時，請檢閱與之間的相似點和差異link:grid-federation-what-is-cross-grid-replication.html["跨網格複寫"]link:../tenant/understanding-cloudmirror-replication-service.html["CloudMirror複寫服務StorageGRID"]。
 
+
+NOTE: 您不能在透過跨網格複製複製的儲存桶上使用 CloudMirror，反之亦然。
+
 [cols="1a,3a,3a"]
 |===
 |  | 跨網格複寫 | CloudMirror複寫服務 
@@ -25,7 +28,7 @@ summary: 開始使用網格同盟時、請檢閱跨網格複寫與 StorageGRID C
  a| 
 可讓租戶自動將物件從 StorageGRID （來源）的貯體複寫到外部 S3 貯體（目的地）。
 
-CloudMirror複寫可在獨立的S3基礎架構中建立物件的獨立複本。這份不受影響的複本並未作為備份、但通常會在雲端中進一步處理。
+CloudMirror 複製在獨立的 S3 基礎架構中建立物件的獨立副本。此獨立副本不用作備份，但通常在雲端中進一步處理。
 
 
 

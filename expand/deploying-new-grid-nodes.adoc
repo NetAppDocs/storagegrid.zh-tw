@@ -22,7 +22,7 @@ summary: 在擴充中部署新網格節點的步驟、與第一次安裝網格�
 您必須在VMware vSphere中為要新增至擴充的每個VMware節點部署虛擬機器。
 
 .步驟
-. link:../vmware/deploying-storagegrid-node-as-virtual-machine.html["將新節點部署為虛擬機器"]並將其連線至一或多個 StorageGRID 網路。
+. link:../swnodes/deploying-storagegrid-node-as-virtual-machine.html["將新節點部署為虛擬機器"]並將其連接到一個或多個StorageGRID網路。
 +
 部署節點時、您可以選擇重新對應節點連接埠、或增加CPU或記憶體設定。
 
@@ -36,12 +36,7 @@ summary: 在擴充中部署新網格節點的步驟、與第一次安裝網格�
 您可以在新的Linux主機或現有的Linux主機上部署網格節點。如果您需要額外的Linux主機來支援StorageGRID 您要新增至網格之支撐節點的CPU、RAM和儲存需求、請依照您第一次安裝主機時的準備方式來準備這些主機。然後、您可以依照安裝期間部署網格節點的相同方式來部署擴充節點。
 
 .開始之前
-* 您有安裝StorageGRID 適用於您的Linux版本的指令、也已檢閱硬體與儲存需求。
-+
-** link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-** link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-
-
+* 您已獲得針對您的 Linux 版本安裝StorageGRID 的說明，並且您已查看link:../swnodes/index.html["硬體和儲存需求"]。
 * 如果您打算在現有主機上部署新的網格節點、則表示您已確認現有主機具有足夠的CPU、RAM和儲存容量、可用於其他節點。
 * 您有計畫將故障網域降至最低。例如、您不應該在單一實體主機上部署所有閘道節點。
 +
@@ -145,9 +140,6 @@ NOTE: 如果您需要一次部署多個應用裝置節點、可以使用 Applian
 
 . 從「the Some Appliance Installer」首頁選取「*開始安裝*」StorageGRID 。
 +
-image::../media/appliance_installer_home_start_installation_enabled.gif[此映像是由周遭文字所描述。]
-
-+
 目前狀態會變更為「安裝進行中」、並顯示「監控安裝」頁面。
 
 . 如果您的擴充包含多個應用裝置節點、請針對每個應用裝置重複上述步驟。
@@ -158,9 +150,6 @@ NOTE: 如果您需要一次部署多個應用裝置儲存節點、可以使用co
 . 如果您需要手動存取「監視器安裝」頁面、請從功能表列中選取*監視器安裝*。
 +
 「監視器安裝」頁面會顯示安裝進度。
-
-+
-image::../media/monitor_installation_configure_storage.gif[此影像由周邊文字說明。]
 
 +
 藍色狀態列會指出目前正在進行的工作。綠色狀態列表示已成功完成的工作。
@@ -191,8 +180,5 @@ NOTE: 安裝程式可確保先前安裝中完成的工作不會重新執行。�
 +
 
 NOTE: 請等到您在此擴充中新增的所有節點都已準備好核准、再前往Grid Manager核准節點。
-
-+
-image::../media/monitor_installation_install_sgws.gif[此影像由周邊文字說明。]
 
 

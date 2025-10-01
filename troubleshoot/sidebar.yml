@@ -20,12 +20,8 @@ entries:
     - title: 擷取物件的方法
       pdf-filename: 疑難排解遺失和遺失的物件資料
       url: "/troubleshoot/troubleshooting-lost-and-missing-object-data.html"
-    - title: 調查遺失的物件
-      url: "/troubleshoot/investigating-lost-objects.html"
-    - title: 搜尋並還原可能遺失的物件
-      url: "/troubleshoot/searching-for-and-restoring-potentially-lost-objects.html"
-    - title: 重設遺失和遺失的物件數
-      url: "/troubleshoot/resetting-lost-and-missing-object-counts.html"
+    - title: 調查可能遺失的物品
+      url: "/troubleshoot/investigating-potentially-lost-objects.html"
   - title: 疑難排解低物件資料儲存警示
     url: "/troubleshoot/troubleshooting-low-object-data-storage-alert.html"
   - title: 疑難排解低唯讀浮水印會覆寫警示
@@ -40,3 +36,5 @@ entries:
   url: "/troubleshoot/troubleshooting-network-hardware-and-platform-issues.html"
 - title: 疑難排解外部syslog伺服器
   url: "/troubleshoot/troubleshooting-syslog-server.html"
+- title: 排查負載平衡器快取問題
+  url: "/troubleshoot/troubleshooting-load-balancer-caching.html"

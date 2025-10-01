@@ -41,7 +41,7 @@ https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab
 
 
  a| 
-Red Hat Enterprise Linux
+紅帽企業版
 | `StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` 
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz` 
 
@@ -62,9 +62,12 @@ VMware
 +
 每個平台步驟中所列的路徑、都是相對於歸檔檔案所安裝的頂層目錄。
 
-. 如果要恢復link:../rhel/index.html["Red Hat Enterprise Linux 系統"]，請選擇相應的文件。
-
-
+. 如果你正在恢復link:../swnodes/index.html["基於軟體的節點"]，選擇相應的文件：
++
+[role="tabbed-block"]
+====
+.紅帽企業版
+--
 [cols="1a,1a"]
 |===
 | 路徑和檔案名稱 | 說明 
@@ -139,9 +142,9 @@ API架構StorageGRID 。
 * 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
 
 |===
-. 如果要恢復link:../ubuntu/index.html["Ubuntu或Debian系統"]，請選擇相應的文件。
-
-
+--
+.Ubuntu或DEBIAN
+--
 [cols="1a,1a"]
 |===
 | 路徑和檔案名稱 | 說明 
@@ -221,9 +224,9 @@ API架構StorageGRID 。
 * 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
 
 |===
-. 如果要恢復link:../vmware/index.html["VMware系統"]，請選擇相應的文件。
-
-
+--
+.VMware
+--
 [cols="1a,1a"]
 |===
 | 路徑和檔案名稱 | 說明 
@@ -318,8 +321,15 @@ API架構StorageGRID 。
 * 注意 * ：在執行升級之前、如果您沒有非正式作業的 StorageGRID 環境來進行升級相容性測試、您可以使用這些架構來確認您為使用 StorageGRID 管理 API 所撰寫的任何程式碼、都與新的 StorageGRID 版本相容。
 
 |===
+--
+====
+
+
 . 如果您要還原StorageGRID 以應用程式為基礎的系統、請選取適當的檔案。
 
+
+
+NOTE: 對於設備安裝，僅當您需要避免網路流量時才需要這些檔案。設備可以從您執行復原過程的管理節點下載所需的檔案。
 
 [cols="1a,1a"]
 |===
@@ -336,5 +346,3 @@ DEB套件可在StorageGRID 您的應用裝置上安裝不含節點的影像。
 images-version-SHA.deb` 。
 
 |===
-
-NOTE: 在設備安裝方面、只有在您需要避免網路流量時才需要這些檔案。應用裝置可從主要管理節點下載所需的檔案。

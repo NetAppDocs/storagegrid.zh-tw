@@ -11,7 +11,7 @@ summary: 如果嘗試傳送 AutoSupport 套件失敗、 StorageGRID 系統會根
 
 
 [role="lead"]
-如果嘗試傳送 AutoSupport 套件失敗、 StorageGRID 系統會根據 AutoSupport 套件類型採取不同的動作。您可以選擇 * 支援 * > * 工具 * > * AutoSupport * > * 結果 * 來檢查 AutoSupport 套件的狀態。
+如果嘗試傳送AutoSupport套件失敗， StorageGRID系統將根據AutoSupport套件的類型採取不同的操作。您可以選擇 *支援* > *工具* > * AutoSupport * > *結果* 來檢查AutoSupport套件的狀態。
 
 當 AutoSupport 套件無法傳送時、「失敗」會出現在 * AutoSupport * 頁面的 * 結果 * 索引標籤上。
 
@@ -43,7 +43,7 @@ NOTE: 如果您將代理伺服器設定為將 AutoSupport 套件轉送至 NetApp
 . 將錯誤記錄在中 `nms.log`。
 
 
-如果發生故障且選擇了 SMTP 傳輸協定、請確認 StorageGRID 系統的電子郵件伺服器已正確設定、且您的電子郵件伺服器正在執行（ * 支援 * > * 警示（舊版） * > * 舊版電子郵件設定 * ）。AutoSupport 頁面上可能會出現下列錯誤訊息： `AutoSupport packages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
+如果發生故障且 SMTP 是選定的協議，請驗證StorageGRID系統的電子郵件伺服器是否正確配置以及您的電子郵件伺服器是否正在執行（*支援* > *警報（舊版）* > *舊版電子郵件設定*）。  AutoSupport頁面上可能會出現以下錯誤訊息： `AutoSupport packages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
 
 瞭解如何link:../monitor/email-alert-notifications.html["設定電子郵件伺服器設定"]。
 

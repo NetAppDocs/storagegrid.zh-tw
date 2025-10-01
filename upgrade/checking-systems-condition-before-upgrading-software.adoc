@@ -16,45 +16,9 @@ summary: 在升級 StorageGRID 系統之前、請確認系統已準備好容納�
 .步驟
 . 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 . 檢查並解決任何作用中警示。
-. 確認沒有發生衝突的網格工作處於作用中或擱置中狀態。
-+
-.. 選取*支援*>*工具*>*網格拓撲*。
-.. 選擇*站台_*>*主管理節點_*>* CMN*>*網格工作*>*組態*。
-+
-資訊生命週期管理評估（ILME）工作是唯一能與軟體升級同時執行的網格工作。
-
-.. 如果有任何其他網格工作處於作用中或擱置中狀態、請等待它們完成或解除鎖定。
+. 參考link:../network/internal-grid-node-communications.html["內部網格節點通訊"]和link:../network/external-communications.html["外部通訊"]確保在升級之前開啟StorageGRID 12.0 所需的所有連接埠。
 +
 
-NOTE: 如果工作尚未完成或解除鎖定、請聯絡技術支援。
+NOTE: 升級到StorageGRID 12.0 時不需要額外的連接埠。
 
 
-
-. 請參閱link:../network/internal-grid-node-communications.html["內部網格節點通訊"]和link:../network/external-communications.html["外部通訊"]、以確保 StorageGRID 11.9 的所有必要連接埠都已在升級之前開啟。
-+
-
-NOTE: 升級至 StorageGRID 11.9 時不需要其他連接埠。
-
-+
-StorageGRID 11.7 中新增了下列必要連接埠。升級至 StorageGRID 11.9 之前、請先確定有此功能可供使用。
-
-+
-[cols="1a,2a"]
-|===
-| 連接埠 | 說明 
-
-
- a| 
-18086
- a| 
-用於從 StorageGRID 負載平衡器到 LDR 和新的 LDR 服務的 S3 要求的 TCP 連接埠。
-
-升級之前、請確認此連接埠已從所有網格節點開啟至所有儲存節點。
-
-封鎖此連接埠將導致 S3 服務在升級至 StorageGRID 11.9 後中斷。
-
-|===
-
-
-
-CAUTION: 如果您已開啟任何自訂的防火牆連接埠、系統會在升級前檢查期間通知您。您必須先聯絡技術支援部門、才能繼續升級。

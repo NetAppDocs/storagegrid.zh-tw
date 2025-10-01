@@ -1,0 +1,8 @@
+---
+permalink: tenant/managing-local-users.html 
+redirect: storagegrid/tenant/manage-users.html 
+---
+= 
+:allow-uri-read: 
+
+

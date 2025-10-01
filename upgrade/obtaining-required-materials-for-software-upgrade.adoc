@@ -48,19 +48,15 @@ Linux RPM 或 Deb 歸檔
  a| 
 如果在 Linux 主機上部署了任何節點、則必須link:linux-installing-rpm-or-deb-package-on-all-hosts.html["在所有主機上下載並安裝 RPM 或 Deb 套件"]在開始升級之前進行。
 
-確保您的作業系統符合 StorageGRID 的最低核心版本需求：
-
-* link:../rhel/installing-linux.html["在 Red Hat Enterprise Linux 主機上安裝 StorageGRID"]
-* link:../ubuntu/installing-linux.html["在 Ubuntu 或 Debian 主機上安裝 StorageGRID"]
-
+確保您的 Linux 作業系統符合 StorageGRID 的最低核心版本要求。看link:../swnodes/installing-linux.html["在 Linux 主機上安裝StorageGRID"] 。
 
 
 
  a| 
 本文檔StorageGRID
  a| 
-* link:../release-notes/index.html["版本資訊"]適用於 StorageGRID 11.9 （需要登入）。開始升級之前、請務必仔細閱讀這些資訊。
-* https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["StorageGRID 軟體升級解決方案指南"^]對於您要升級的主要版本（需要登入）
+* link:../release-notes/index.html["版本資訊"]適用於StorageGRID 12.0（需登入）。在開始升級之前，請務必仔細閱讀這些內容。
+* https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_12.0_software_upgrade_resolution_guide["StorageGRID 軟體升級解決方案指南"^]針對您要升級到的主要版本（需要登入）
 * 其他 https://docs.netapp.com/us-en/storagegrid-family/index.html["本文檔StorageGRID"^]、視需要。
 
 

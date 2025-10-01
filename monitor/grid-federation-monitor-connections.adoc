@@ -25,7 +25,7 @@ summary: 您可以監控所有網格同盟連線的基本資訊、特定連線�
 「 Grid Federation 」頁面會顯示所有網格同盟連線的基本資訊、以及所有允許使用網格同盟連線的租戶帳戶。
 
 .步驟
-. 選擇 * 組態 * > * 系統 * > * 網格聯盟 * 。
+. 選擇*配置* > *系統* > *網格聯合*。
 +
 「 Grid Federation 」頁面隨即出現。
 
@@ -107,7 +107,7 @@ image::../media/grid-federation-certificates-tab.png[GRID 同盟憑證索引標�
 您可以使用 Grafana 中的跨網格複寫儀表板來檢視 Prometheus 在您網格上跨網格複寫作業的計量。
 
 .步驟
-. 從 Grid Manager 中、選取 * 支援 * > * 工具 * > * 指標 * 。
+. 從網格管理器中，選擇*支援* > *工具* > *指標*。
 +
 
 NOTE: 「指標」頁面上提供的工具僅供技術支援使用。這些工具中的某些功能和功能表項目會刻意無法運作、而且可能會有所變更。請參閱清單link:../monitor/commonly-used-prometheus-metrics.html["常用的Prometheus指標"]。

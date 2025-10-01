@@ -1,0 +1,8 @@
+---
+permalink: admin/use-api-if-sso-is-enabled-azure.html 
+redirect: storagegrid/admin/use-api-if-sso-is-enabled-entra-id.html 
+---
+= 
+:allow-uri-read: 
+
+

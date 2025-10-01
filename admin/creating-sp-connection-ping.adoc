@@ -15,12 +15,12 @@ summary: 您可以使用PingFedate為系統中的每個管理節點建立服務�
 
 .開始之前
 * 您已設定StorageGRID 單一登入以供使用、並選擇* Ping federate*作為SSO類型。
-* *在Grid Manager的「單一登入」頁面上選取「沙箱模式*」。請參閱。 link:../admin/using-sandbox-mode.html["使用沙箱模式"]
-* 您的系統中每個管理節點都有* SP連線ID*。您可以在StorageGRID 「管理員節點詳細資料」表的「單個登入」頁面上找到這些值。
+* 你有link:../admin/configure-sso.html#enter-sandbox-mode["進入沙盒模式"]在網格管理器中。
+* 您系統中每個管理節點都有* SP連線 ID *。您可以在「設定 SSO」頁面上的管理節點詳細資料表中找到這些值。
 * 您已下載系統中每個管理節點的* SAML中繼資料*。
 * 您在PingFedate伺服器上建立SP連線的經驗豐富。
 * 您擁有 https://docs.pingidentity.com/pingfederate/latest/administrators_reference_guide/pf_administrators_reference_guide.html["系統管理員參考指南"^]PingFederate Server 。PingFedate文件提供詳細的逐步指示和說明。
-* 您擁有 link:admin-group-permissions.html["管理員權限"]PingFederate Server 。
+* 你有link:../admin/admin-group-permissions.html["管理員權限"]用於 PingFederate 伺服器。
 
 
 .關於這項工作
@@ -67,7 +67,7 @@ summary: 您可以使用PingFedate為系統中的每個管理節點建立服務�
 . 選擇* Create New Instance*（創建新實例*）。
 . 在類型索引標籤上、選取* HTML表單IDP介面卡*。
 . 在IDP介面卡索引標籤上、選取*新增一列至「認證驗證程式」*。
-. 選取<<password-validator,密碼認證驗證工具>>您建立的。
+. 選擇<<password-validator,密碼認證驗證工具>>你創造的。
 . 在Adapter Attributes*（適配器屬性）選項卡上，選擇* pseudonyation*的* username*屬性。
 . 選擇*保存*。
 
@@ -109,7 +109,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 
 .步驟
 . 在匯入中繼資料索引標籤上、選取*檔案*。
-. 從StorageGRID 「管理節點的「支援單一登入」頁面下載的SAML中繼資料檔案。
+. 選擇從管理節點的設定 SSO 頁面下載的 SAML 元資料檔。
 . 檢閱中繼資料摘要和一般資訊索引標籤上提供的資訊。
 +
 合作夥伴的實體ID和連線名稱均設定StorageGRID 為整套SP連線ID。（例如10.96105.200-DC1-ADM1-105-200）。基礎URL是StorageGRID 指「物件管理節點」的IP。
@@ -183,7 +183,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 .步驟
 . 從SP連線索引標籤、選取*認證*。
 . 從「認證」標籤中、選取*「設定認證」*。
-. 選取<<signing-certificate,簽署憑證>>您建立或匯入的。
+. 選擇<<signing-certificate,簽署憑證>>您建立或匯入的。
 . 選擇*下一步*以前往*管理簽名驗證設定*。
 +
 .. 在信任模式索引標籤上、選取*未鎖定*。

@@ -30,7 +30,7 @@ summary: 您可以建立管理群組、以管理一或多個管理使用者的�
 === 存取精靈
 
 .步驟
-. 選擇*組態*>*存取控制*>*管理群組*。
+. 選擇*設定* > *存取控制* > *管理群組*。
 . 選取*建立群組*。
 
 
@@ -62,7 +62,7 @@ summary: 您可以建立管理群組、以管理一或多個管理使用者的�
 . 選取*聯盟群組*。
 . 輸入您要匯入的群組名稱、完全如同在設定的身分識別來源中所顯示的名稱。
 +
-** 對於Active Directory和Azure、請使用sAMAccountName。
+** 對於 Active Directory 和 Microsoft Entra ID，使用 sAMAccountName。
 ** 若為OpenLDAP、請使用「CN"（通用名稱）」。
 ** 對於另一個LDAP、請為LDAP伺服器使用適當的唯一名稱。
 

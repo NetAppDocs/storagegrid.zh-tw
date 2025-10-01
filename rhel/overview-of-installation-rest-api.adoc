@@ -1,41 +1,8 @@
 ---
 permalink: rhel/overview-of-installation-rest-api.html 
-sidebar: sidebar 
-keywords: installation overview red hat linux 
-summary: 提供執行安裝工作所需的安裝API。StorageGRID StorageGRID 
+redirect: storagegrid/swnodes/overview-of-installation-rest-api.html 
 ---
-= 安裝 REST API
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-提供執行安裝工作所需的安裝API。StorageGRID StorageGRID
-
-API使用Swagger開放原始碼API平台來提供API文件。Swagger可讓開發人員和非開發人員在使用者介面中與API互動、說明API如何回應參數和選項。本文件假設您熟悉標準網路技術和 JSON 資料格式。
-
-
-CAUTION: 您使用 API 文件網頁執行的任何 API 作業都是即時作業。請小心不要錯誤地建立、更新或刪除組態資料或其他資料。
-
-每個REST API命令都包含API的URL、HTTP動作、任何必要或選用的URL參數、以及預期的API回應。
-
-
-
-== 安裝API StorageGRID
-
-StorageGRID 安裝 API 僅在您初次設定 StorageGRID 系統、以及需要執行主要管理節點還原時可用。安裝API可透過HTTPS從Grid Manager存取。
-
-若要存取 API 文件、請前往主要管理節點上的安裝網頁、然後從功能表列選取 * 說明 * > * API 文件 * 。
-
-《程式集安裝API》包含下列各節：StorageGRID
-
-* *組態*：與產品版本及API相關的作業。您可以列出該版本所支援的產品版本和主要API版本。
-* * GRID *-網格層級組態作業。您可以取得並更新網格設定、包括網格詳細資料、網格網路子網路、網格密碼、以及NTP和DNS伺服器IP位址。
-* *節點*：節點層級的組態作業。您可以擷取網格節點清單、刪除網格節點、設定網格節點、檢視網格節點、以及重設網格節點的組態。
-* *資源配置*-資源配置作業。您可以啟動資源配置作業、並檢視資源配置作業的狀態。
-* *恢復*-主管理節點恢復操作。您可以重設資訊、上傳恢復套件、開始恢復、以及檢視恢復作業的狀態。
-* *恢復套件*-下載恢復套件的作業。
-* *站台*-站台層級的組態作業。您可以建立、檢視、刪除及修改網站。
-* *Temporary password* -- 在安裝期間使用臨時密碼保護 mgmt-API 的操作。
 

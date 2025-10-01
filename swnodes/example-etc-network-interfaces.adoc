@@ -1,0 +1,82 @@
+---
+permalink: swnodes/example-etc-network-interfaces.html 
+sidebar: sidebar 
+keywords: example etc network interfaces 
+summary: /etc/network/interfaces檔案包含三個區段、分別定義實體介面、連結介面和VLAN介面。您可以將這三個範例區段合併成單一檔案、將四個Linux實體介面集合成單一LACP連結、然後建立三個VLAN介面將連結子化、作為StorageGRID 「電網」、「管理」和「用戶端網路」介面使用。 
+---
+= 範例 /etc/network/interfaces（Ubuntu 和 Debian）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ `/etc/network/interfaces`檔案包含三個區段、分別定義實體介面、連結介面和 VLAN 介面。您可以將這三個範例區段合併成單一檔案、將四個Linux實體介面集合成單一LACP連結、然後建立三個VLAN介面將連結子化、作為StorageGRID 「電網」、「管理」和「用戶端網路」介面使用。
+
+
+
+== 實體介面
+
+請注意、位於連結另一端的交換器也必須將四個連接埠視為單一LACP主幹或連接埠通道、而且必須至少通過三個帶有標籤的參考VLAN。
+
+[listing]
+----
+# loopback interface
+auto lo
+iface lo inet loopback
+
+# ens160 interface
+auto ens160
+iface ens160 inet manual
+    bond-master bond0
+    bond-primary en160
+
+# ens192 interface
+auto ens192
+iface ens192 inet manual
+    bond-master bond0
+
+# ens224 interface
+auto ens224
+iface ens224 inet manual
+    bond-master bond0
+
+# ens256 interface
+auto ens256
+iface ens256 inet manual
+    bond-master bond0
+----
+
+
+== Bond介面
+
+[listing]
+----
+# bond0 interface
+auto bond0
+iface bond0 inet manual
+    bond-mode 4
+    bond-miimon 100
+    bond-slaves ens160 ens192 end224 ens256
+----
+
+
+== VLAN 介面
+
+[listing]
+----
+# 1001 vlan
+auto bond0.1001
+iface bond0.1001 inet manual
+vlan-raw-device bond0
+
+# 1002 vlan
+auto bond0.1002
+iface bond0.1002 inet manual
+vlan-raw-device bond0
+
+# 1003 vlan
+auto bond0.1003
+iface bond0.1003 inet manual
+vlan-raw-device bond0
+----

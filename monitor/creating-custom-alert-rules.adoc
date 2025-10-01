@@ -18,11 +18,10 @@ summary: 您可以建立自訂警示規則、以定義自己觸發警示的條�
 * 您有link:../admin/admin-group-permissions.html["管理警示或根目錄存取權限"]。
 * 您熟悉link:commonly-used-prometheus-metrics.html["常用的Prometheus指標"]。
 * 您瞭解 https://prometheus.io/docs/prometheus/latest/querying/basics/["Prometheus查詢的語法"^]。
-* 您也可以觀看影片： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=54af90c4-9a38-4136-9621-b1ff008604a3["影片：自訂警示"^]。
+* 或者，您已經觀看了影片：
 +
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=54af90c4-9a38-4136-9621-b1ff008604a3]
-image::../media/video-screenshot-alert-create-custom-118.png[影片：自訂警示]
-
+.自訂警報
+video::54af90c4-9a38-4136-9621-b1ff008604a3[panopto]
 
 
 .關於這項工作
@@ -40,7 +39,7 @@ image::../media/video-screenshot-alert-create-custom-118.png[影片：自訂警�
 
 
 .步驟
-. 選取*警示*>*規則*。
+. 選擇*警報* > *規則*。
 +
 此時會出現警示規則頁面。
 

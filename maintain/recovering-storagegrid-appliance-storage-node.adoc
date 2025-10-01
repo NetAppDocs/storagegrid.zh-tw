@@ -14,13 +14,7 @@ summary: 無論StorageGRID 是從系統磁碟機遺失或僅從儲存磁碟區�
 無論StorageGRID 是從系統磁碟機遺失或僅從儲存磁碟區遺失中恢復、恢復故障的故障的功能相同。
 
 
-CAUTION: 如果有多個儲存節點故障（或離線）、請聯絡技術支援部門。請勿執行下列恢復程序。資料可能會遺失。
-
-
-CAUTION: 如果這是儲存節點故障或恢復後15天內的第二個儲存節點故障、請聯絡技術支援部門。在15天內重建兩個以上儲存節點上的Cassandra、可能會導致資料遺失。
-
-
-NOTE: 如果站台上的多個儲存節點發生故障、可能需要執行站台還原程序。請參閱。 link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"]
+CAUTION: 如果多個儲存節點發生故障（或離線），請聯絡技術支援。請勿執行以下恢復程序。可能會發生資料遺失。有關詳細信息，請參閱link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"] 。
 
 
 CAUTION: 如果ILM規則設定為僅儲存一個複寫複本、且複本存在於故障的儲存磁碟區、您將無法恢復物件。

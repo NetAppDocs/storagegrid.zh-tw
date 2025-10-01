@@ -16,12 +16,12 @@ summary: 如果您在網格擴充程序期間遇到無法解決的錯誤、或�
 聯絡技術支援人員之前、請先收集必要的記錄檔、以協助進行疑難排解。
 
 .步驟
+. 預設情況下，外部 SSH 存取是被阻止的。如果需要，link:../admin/manage-external-ssh-access.html["暫時允許訪問"] 。
 . 連線至發生故障的擴充節點：
 +
 .. 輸入下列命令：``ssh -p 8022 admin@_grid_node_IP_``
 +
-
-NOTE: 連接埠8022是基礎作業系統的SSH連接埠、而連接埠22則是執行StorageGRID 支援的Container引擎SSH連接埠。
+連接埠8022是基礎作業系統的SSH連接埠、而連接埠22則是執行StorageGRID 支援的Container引擎SSH連接埠。
 
 .. 輸入檔案中列出的密碼 `Passwords.txt`。
 .. 輸入以下命令切換到 root ： `su -`
@@ -57,4 +57,5 @@ Linux
 
 
 |===
+. 如果您允許外部 SSH 訪問，link:../admin/manage-external-ssh-access.html["阻止訪問"]當你完成任務時。
 

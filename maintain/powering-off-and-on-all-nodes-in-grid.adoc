@@ -33,6 +33,7 @@ NOTE: 如果單一主機包含多個網格節點、請在停止該主機上的�
 NOTE: 如果需要、您可以link:linux-migrating-grid-node-to-new-host.html["將節點從一個Linux主機移轉至另一個主機"]執行主機維護、而不會影響網格的功能或可用度。
 
 .步驟
+. 預設情況下，外部 SSH 存取是被阻止的。如果需要，link:../admin/manage-external-ssh-access.html["暫時允許訪問"] 。
 . 停止所有用戶端應用程式存取網格。
 . [[log_in_to _GN]登入每個閘道節點：
 +
@@ -141,6 +142,7 @@ NOTE: 如果您發出 `service servermanager stop`命令來停止應用裝置儲
 +
 此功能現已關閉。StorageGRID
 
+. 如果您允許外部 SSH 訪問，link:../admin/manage-external-ssh-access.html["阻止訪問"]當您關閉完節點後。
 
 
 
@@ -171,7 +173,7 @@ NOTE: 在重新啟動儲存節點之前、您將無法登入管理節點。
 
 . 開啟所有閘道節點的主機電源。
 . 登入Grid Manager。
-. 選取*節點*並監控網格節點的狀態。確認節點名稱旁沒有警示圖示。
+. 選擇*節點*並監控網格節點的狀態。驗證節點名稱旁邊沒有警報圖示。
 
 
 .相關資訊

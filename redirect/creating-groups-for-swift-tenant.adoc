@@ -1,0 +1,8 @@
+---
+permalink: tenant/creating-groups-for-swift-tenant.html 
+redirect: storagegrid/swift/index.html 
+---
+= 
+:allow-uri-read: 
+
+

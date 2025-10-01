@@ -105,7 +105,7 @@ image::../media/nodes_page_object_data_used_with_alert.png[節點頁面、顯示
 StorageGRID 使用兩個 Prometheus 指標來顯示其針對儲存 Volume 軟唯讀浮水印所計算的最佳化值。您可以檢視網格中每個儲存節點的最小和最大最佳化值。
 
 .步驟
-. 選取*支援*>*工具*>*指標*。
+. 選擇*支援* > *工具* > *指標*。
 . 在Prometheus區段中、選取連結以存取Prometheus使用者介面。
 . 若要查看建議的最小軟式唯讀浮水印、請輸入下列Prometheus指標、然後選取*執行*：
 +
@@ -153,7 +153,7 @@ NOTE: 每個儲存節點上的每個儲存磁碟區都會套用相同的自訂�
 === [[use-最佳 化浮水印 ]] 使用最佳化的浮水印
 
 .步驟
-. 轉至 *support* > * other * > * Storage Waterters* 。
+. 前往*支援* > *其他* > *儲存浮水印*。
 . 選中 * 使用優化值 * 複選框。
 . 選擇*保存*。
 

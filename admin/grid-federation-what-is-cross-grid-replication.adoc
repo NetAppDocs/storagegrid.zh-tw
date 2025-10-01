@@ -17,7 +17,7 @@ summary: 跨網格複寫是在網格同盟連線中連接的兩個 StorageGRID �
 
 == 跨網格複寫的工作流程
 
-工作流程圖摘要說明在兩個網格上的儲存格之間設定跨網格複寫的步驟。
+工作流程圖總結了在兩個網格上的儲存桶之間配置跨網格複製的步驟。
 
 image::../media/grid-federation-cgr-workflow.png[跨網格複寫工作流程]
 
@@ -25,11 +25,11 @@ image::../media/grid-federation-cgr-workflow.png[跨網格複寫工作流程]
 
 == 跨網格複寫的需求
 
-如果租戶帳戶具有 * 使用網格同盟連線 * 權限link:grid-federation-overview.html["網格同盟連線"]、可以在每個網格上的對應租戶帳戶中、建立具有「根」存取權限的租戶使用者相同的區段。這些貯體：
+如果租用戶帳戶具有使用網格聯合連線權限，則可以使用一個或多個link:grid-federation-overview.html["網格同盟連線"]，具有Root存取權限的租用戶用戶可以在每個網格上對應的租用戶帳戶中建立bucket。這些存儲桶：
 
-* 必須具有相同的名稱、但可以有不同的區域
+* 可以有不同的名稱
+* 可以有不同的區域
 * 必須啟用版本設定
-* 必須停用 S3 物件鎖定
 * 必須為空白
 
 
@@ -42,13 +42,13 @@ link:../tenant/grid-federation-manage-cross-grid-replication.html["管理跨網�
 
 == 跨網格複寫的運作方式
 
-跨網格複寫可設定為單向或雙向進行。
+您可以將跨網格複製配置為單向或雙向進行。
 
 
 
 === 單向複寫
 
-如果您只在一個網格上為某個儲存格啟用跨網格複寫、則新增至該儲存格（來源儲存格）的物件會複寫至另一個網格（目的地儲存格）上的對應儲存格。然而、新增至目的地儲存區的物件不會複寫回來源。在圖中、已啟用從網格 1 到網格 2 的跨網格複寫 `my-bucket`、但未在其他方向啟用。
+如果僅為一個網格上的儲存桶啟用跨網格複製，則新增至該儲存桶（來源儲存桶）的物件將複製到另一個網格上的對應儲存桶（目標儲存桶）。但是，新增到目標儲存桶的物件不會被複製回來源。圖中，啟用了跨網格複製 `my-bucket`從網格 1 到網格 2，但在另一個方向則無法啟用。
 
 image::../media/grid-federation-cross-grid-replication-one-direction.png[顯示單向網格同盟連線的影像]
 
@@ -68,7 +68,7 @@ image::../media/grid-federation-cross-grid-replication.png[影像顯示複寫的
 
 . StorageGRID 會自動將物件從來源貯體複製到目的地貯體。執行此背景複寫作業的時間取決於多項因素、包括擱置中的其他複寫作業數。
 +
-S3 用戶端可發出 GetObject 或 HeadObject 要求、以驗證物件的複寫狀態。回應包含 StorageGRID 專屬的 `x-ntap-sg-cgr-replication-status`回應標頭、其值如下： S3 用戶端可藉由發出 GetObject 或 HeadObject 要求來驗證物件的複寫狀態。回應包含 StorageGRID 專屬的 `x-ntap-sg-cgr-replication-status`回應標頭、其中包含下列其中一個值：
+S3 用戶端可以透過發出 GetObject 或 HeadObject 請求來驗證物件的複製狀態。響應包括StorageGRID特定的 `x-ntap-sg-cgr-replication-status`響應頭，其值為以下之一：
 
 +
 [cols="1a,2a"]
@@ -81,7 +81,7 @@ S3 用戶端可發出 GetObject 或 HeadObject 要求、以驗證物件的複寫
  a| 
 ** * 已完成 * ：所有網格連線的複寫都成功。
 ** * 擱置 * ：物件尚未複寫至至少一個網格連線。
-** * 失敗 * ：複寫並未擱置任何網格連線、至少有一個失敗且永久失敗。使用者必須解決此錯誤。
+** *失敗*：複製未等待任何電網連接，且至少有一個電網連接發生永久性故障。使用者必須解決該錯誤。
 
 
 
@@ -94,7 +94,7 @@ S3 用戶端可發出 GetObject 或 HeadObject 要求、以驗證物件的複寫
 |===
 +
 
-NOTE: StorageGRID 不支援 `x-amz-replication-status`標頭。
+NOTE: StorageGRID不支援 `x-amz-replication-status`標頭。
 
 . StorageGRID 使用每個網格的主動式 ILM 原則來管理物件、就像管理任何其他物件一樣。例如、 Grid 1 上的 Object A 可能會儲存為兩個複寫複本、並永久保留、而複寫至 Grid 2 的 Object A 則可能會使用 2+1 銷毀編碼來儲存、並在三年後刪除。
 
@@ -116,26 +116,26 @@ NOTE: StorageGRID 不支援 `x-amz-replication-status`標頭。
 若要瞭解 S3 用戶端從已啟用跨網格複寫的儲存區刪除物件時會發生什麼情況、請檢閱 S3 用戶端如何從已啟用版本設定的儲存區刪除物件、如下所示：
 
 * 如果 S3 用戶端發出包含版本 ID 的刪除要求、該版本的物件將會永久移除。貯體中不會新增刪除標記。
-* 如果 S3 用戶端發出不含版本 ID 的刪除要求、 StorageGRID 不會刪除任何物件版本。而是將刪除標記新增至貯體。刪除標記會使 StorageGRID 如同物件被刪除一樣：
+* 如果 S3 用戶端發出不包含版本 ID 的刪除請求， StorageGRID不會刪除任何物件版本。相反，它會向儲存桶添加一個刪除標記。刪除標記使StorageGRID表現得好像物件已被刪除：
 +
-** 沒有版本 ID 的 GetObject 要求將會失敗 `404 No Object Found`
-** 具有有效版本 ID 的 GetObject 要求將會成功、並傳回要求的物件版本。
+** 沒有版本 ID 的 GetObject 請求失敗，並顯示 `404 No Object Found`
+** 具有有效版本 ID 的 GetObject 請求成功並傳回請求的物件版本。
 
 
 
 
 當 S3 用戶端從已啟用跨網格複寫的貯體中刪除物件時、 StorageGRID 會決定是否將刪除要求複寫到目的地、如下所示：
 
-* 如果刪除要求包含版本 ID 、則該物件版本會從來源網格中永久移除。不過、 StorageGRID 不會複寫包含版本 ID 的刪除要求、因此不會從目的地刪除相同的物件版本。
-* 如果刪除要求不包含版本 ID 、則 StorageGRID 可根據為貯體設定跨網格複寫的方式、選擇性地複寫刪除標記：
+* 如果刪除請求包含版本 ID，則該物件版本將從來源網格中永久刪除。但是， StorageGRID不會複製包含版本 ID 的刪除請求，因此相同的物件版本不會從目標中刪除。
+* 如果刪除請求不包含版本 ID， StorageGRID可以根據儲存桶的跨網格複製配置方式選擇性地複製刪除標記：
 +
 ** 如果您選擇複寫刪除標記（預設）、則會將刪除標記新增至來源貯體、並複寫至目的地貯體。實際上、這兩個網格上的物件似乎都會被刪除。
-** 如果您選擇不複寫刪除標記、則會將刪除標記新增至來源貯體、但不會複寫至目的地貯體。實際上、在來源網格上刪除的物件不會在目的地網格上刪除。
+** 如果您選擇不複製刪除標記，則刪除標記將新增至來源儲存桶，但不會複製到目標儲存桶。實際上，在來源網格上刪除的物件不會在目標網格上刪除。
 
 
 
 
-在圖中， * 複寫刪除標記 * 在時設定為 * 是 * link:../tenant/grid-federation-manage-cross-grid-replication.html["已啟用跨網格複寫"]。刪除包含版本 ID 之來源貯體的要求、將不會刪除目的地貯體中的物件。刪除不包含版本 ID 的來源貯體要求、將會顯示為刪除目的地貯體中的物件。
+在圖中，當link:../tenant/grid-federation-manage-cross-grid-replication.html["已啟用跨網格複寫"]。包含版本 ID 的來源儲存桶的刪除請求不會從目標儲存桶中刪除物件。不包含版本 ID 的來源儲存桶的刪除請求似乎會刪除目標儲存桶中的物件。
 
 image::../media/grid-federation-cross-grid-replication-delete.png[顯示在兩個網格上複寫用戶端刪除的影像]
 
@@ -151,29 +151,81 @@ NOTE: 如果您想要在網格之間保持物件刪除同步、請為兩個網�
 若要加密個別物件、您可以在將物件新增至來源貯體時、使用 SSE （伺服器端加密搭配 StorageGRID 託管金鑰）。使用 `x-amz-server-side-encryption`請求標頭並指定 `AES256`。請參閱。 link:../s3/using-server-side-encryption.html["使用伺服器端加密"]
 
 
-NOTE: 跨網格複寫不支援使用 SSE-C （伺服器端加密搭配客戶提供的金鑰）。擷取作業將會失敗。
+NOTE: 跨網格複製不支援使用 SSE-C（使用客戶提供的金鑰的伺服器端加密）。攝取操作將會失敗。
 
 若要使用儲存庫的預設加密、請使用 PuttBucketEncryption 要求、並將參數設定 `SSEAlgorithm`為 `AES256`。貯體層級加密適用於不含要求標頭的任何擷取物件 `x-amz-server-side-encryption`。請參閱。 link:../s3/operations-on-buckets.html["在貯體上作業"]
 
 若要使用網格層級加密、請將 * 儲存的物件加密 * 選項設定為 * AES-256* 。網格層級加密適用於任何未在儲存區層級加密、或是在沒有要求標頭的情況下擷取的物件 `x-amz-server-side-encryption`。請參閱。 link:../admin/changing-network-options-object-encryption.html["設定網路和物件選項"]
 
 
-NOTE: SSE 不支援 AES-128 。如果使用 *AES-128* 選項為來源網格啟用 * 儲存的物件加密 * 選項、則 AES-128 演算法的使用將不會傳播到複寫的物件。相反地、複寫的物件會使用目的地的預設儲存格或網格層級加密設定（如果有）。
+NOTE: SSE 不支援 AES-128。如果使用 *AES-128* 選項為來源網格啟用了 *儲存物件加密* 選項，則 AES-128 演算法的使用不會傳播到複製的物件。相反，複製的物件使用目標的預設儲存桶或網格級加密設定（如果可用）。
 
 在決定如何加密來源物件時、 StorageGRID 會套用下列規則：
 
 . 使用 `x-amz-server-side-encryption`擷取標頭（如果有）。
-. 如果沒有擷取標頭、請使用儲存區預設加密設定（如果已設定）。
-. 如果未設定貯體設定、請使用網格範圍加密設定（如果已設定）。
-. 如果沒有網格範圍的設定、請勿加密來源物件。
+. 如果不存在攝取標頭，則使用儲存桶預設加密設定（如果已配置）。
+. 如果未配置儲存桶設置，則使用網格範圍的加密設定（如果已配置）。
+. 如果不存在網格範圍的設置，則不要加密來源物件。
 
 
 在決定如何加密複寫物件時、 StorageGRID 會依下列順序套用這些規則：
 
 . 除非來源物件使用 AES-128 加密、否則請使用與來源物件相同的加密。
-. 如果來源物件未加密或使用 AES-128 、請使用目的地儲存區的預設加密設定（如果已設定）。
-. 如果目的地貯體沒有加密設定、請使用目的地的全網格加密設定（如果已設定）。
-. 如果沒有網格範圍的設定、請勿加密目的地物件。
+. 如果來源物件未加密或使用 AES-128，則使用目標儲存桶的預設加密設定（如果已配置）。
+. 如果目標儲存桶沒有加密設置，則使用目標的網格範圍加密設定（如果已配置）。
+. 如果不存在網格範圍的設置，則不要加密目標物件。
+
+
+
+
+=== 使用 S3 物件鎖定進行跨網格複製
+
+您可以在下列情況下配置啟用了 S3 物件鎖定的StorageGRID桶之間的跨網格複製。
+
+[cols="1a,1a"]
+|===
+| 當來源儲存桶上的 S3 物件鎖定是... | 目標儲存桶上的 S3 物件鎖是... 
+
+
+ a| 
+已啟用
+ a| 
+已啟用
+
+
+
+ a| 
+已停用
+ a| 
+已啟用
+
+|===
+當來源儲存桶上的 S3 物件鎖定啟用時：
+
+* 物件按照以下順序在目標處使用保留設定進行鎖定：
++
+.. 來源物件的保留標頭值為：
++
+`x-amz-object-lock-mode`
+
++
+`x-amz-object-lock-retain-until-date`
+
+.. 來源儲存桶的預設保留（如果設定）。
+.. 目標儲存桶的預設保留（如果設定）。
+
+
++
+目標儲存桶的預設保留不會覆蓋從來源物件複製的保留設定。
+
+* 您可以使用以下方式設定目標物件的合法保留狀態 `x-amz-object-lock-legal-hold`上傳對象時。
+* 如果目標租用戶或儲存桶不支援來源物件的 S3 物件鎖定設置，則會發生錯誤。請參閱link:../admin/grid-federation-troubleshoot.html#cross-grid-replication-alerts-and-errors["跨網格複製警報和錯誤。"]
+
+
+當來源儲存桶上的 S3 物件鎖定已停用時：
+
+* 您可以設定目標儲存桶上的預設保留，以將 S3 物件鎖定保留設定套用至目標物件。
+* 目標物件無法設定合法保留狀態。
 
 
 
@@ -182,10 +234,18 @@ NOTE: SSE 不支援 AES-128 。如果使用 *AES-128* 選項為來源網格啟�
 
 已啟用跨網格複寫的貯體中的物件不支援 PutObjectTagged 和 DeleteObjectTagged 要求。
 
-如果 S3 用戶端發出 PutObjectTaggingor DeleteObjectTagging, `501 Not Implemented` 則會傳回。訊息為 `Put(Delete) ObjectTagging is not available for buckets that have cross-grid replication configured`。
+如果 S3 用戶端發出 PutObjectTagging 或 DeleteObjectTagging 請求， `501 Not Implemented`被退回。訊息是 `Put(Delete) ObjectTagging isn't available for buckets that have cross-grid replication configured`。
+
+
+
+=== 不支援 PutObjectRetention 和 PutObjectLegalHold
+
+對於啟用了跨網格複製的儲存桶中的對象，PutObjectRetention 和 PutObjectLegalHold 請求不完全支援。
+
+如果 S3 用戶端發出 PutObjectRetention 或 PutObjectLegalHold 請求，則會修改來源物件的設置，但變更不會套用到目標。
 
 
 
 === 分割物件的複寫方式
 
-來源網格的最大區段大小適用於複寫到目的地網格的物件。將物件複寫到其他網格時、來源網格的 * 最大區段大小 * 設定（ * 組態 * > * 系統 * > * 儲存選項 * ）將會同時用於兩個網格。例如、假設來源網格的最大區段大小為 1 GB 、而目的地網格的最大區段大小則為 50 MB 。如果您在來源網格上擷取 2 GB 物件、該物件會儲存為兩個 1 GB 區段。即使網格的最大區段大小為 50 MB 、也會將其複寫到目的地網格、做為兩個 1 GB 區段。
+來源網格的最大段大小適用於複製到目標網格的物件。當物件被複製到另一個網格時，兩個網格都會使用來源網格的*最大段大小*設定（*配置* > *系統* > *儲存選項*）。例如，假設來源網格的最大段大小為 1 GB，而目標網格的最大段大小為 50 MB。如果您在來源網格上提取一個 2 GB 的對象，則該對象將保存為兩個 1 GB 的段。它也會作為兩個 1 GB 的段複製到目標網格，儘管該網格的最大段大小為 50 MB。

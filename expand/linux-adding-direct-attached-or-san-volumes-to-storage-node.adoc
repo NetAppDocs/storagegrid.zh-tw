@@ -14,12 +14,7 @@ summary: 如果儲存節點包含少於48個儲存磁碟區、您可以新增區
 如果儲存節點包含少於48個儲存磁碟區、您可以新增區塊儲存設備、讓Linux主機看到這些儲存設備、並將新的區塊裝置對應新增至StorageGRID 用於儲存節點的更新組態檔、藉此增加容量。
 
 .開始之前
-* 您可以取得安裝StorageGRID 適用於Linux平台的功能介紹。
-+
-** link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-** link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-
-
+* 您可以訪問link:../swnodes/index.html["StorageGRID安裝說明"]適用於您的 Linux 平台。
 * 您有 `Passwords.txt`檔案。
 * 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
 
@@ -167,19 +162,13 @@ ERROR: BLOCK_DEVICE_<PURPOSE> = <path-name>
 . 確認儲存節點的儲存狀態為線上：
 +
 .. 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
-.. 選取*支援*>*工具*>*網格拓撲*。
-.. 選擇「*站台_*>*儲存節點_*>* LdR*>*儲存設備*」。
-.. 選取*組態*索引標籤、然後選取*主要*索引標籤。
-.. 如果*儲存狀態-所需*下拉式清單設定為唯讀或離線、請選取*線上*。
-.. 按一下*套用變更*。
+.. 選擇“*節點*”>“*儲存節點*”>“*任務*”。
+.. 如果“*儲存狀態*”下拉清單設定為“唯讀”或“離線”，請選擇“*線上*”。
+.. 選擇*保存*。
 
 
-. 若要查看新的物件存放區：
-+
-.. 選擇*節點*>*站台*>*儲存節點*>*儲存設備*。
-.. 在*物件存放區*表格中檢視詳細資料。
-
-
+. 若要查看新的物件存儲，請選擇*存儲*。
+. 查看*Volumes*表中的詳細資訊。
 
 
 .結果

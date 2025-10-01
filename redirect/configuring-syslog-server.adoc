@@ -1,6 +1,6 @@
 ---
 permalink: monitor/configuring-syslog-server.html 
-redirect: storagegrid/monitor/configure-audit-messages.html 
+redirect: storagegrid/monitor/configure-log-management.html 
 ---
 = 
 :allow-uri-read: 

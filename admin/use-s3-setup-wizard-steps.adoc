@@ -170,7 +170,7 @@ StorageGRID 使用負載平衡器從用戶端應用程式管理工作負載。�
  a| 
 您要用於負載平衡的選用功能。StorageGRID此欄位預設為您建立的第一個端點為 10433 、但您可以輸入任何未使用的外部連接埠。如果您輸入 80 或 443 、則端點只能在 Gateway 節點上設定、因為這些連接埠是保留在管理節點上。
 
-* 注意： * 不允許其他網格服務使用的連接埠。請參閱link:../network/network-port-reference.html["網路連接埠參考"]。
+*注意：*不允許使用其他網格服務使用的連接埠。看link:../network/internal-grid-node-communications.html#storagegrid-internal-ports["內部連接埠StorageGRID"] 。
 
 
 
@@ -347,7 +347,7 @@ S3 應用程式用來連線到外部負載平衡器的連接埠編號。
 +
 租戶名稱不一定是唯一的。建立租戶帳戶時、會收到唯一的數字帳戶ID。
 
-. 根據您的 StorageGRID 系統是使用link:using-identity-federation.html["身分識別聯盟"]、link:configuring-sso.html["單一登入（ SSO ）"]還是兩者、定義租戶帳戶的根存取權。
+. 根據您的StorageGRID系統是否使用，定義租用​​戶帳戶的根存取權限link:using-identity-federation.html["身分識別聯盟"]，link:how-sso-works.html["單一登入（ SSO ）"] ，或兩者兼而有之。
 +
 [cols="1a,2a"]
 |===

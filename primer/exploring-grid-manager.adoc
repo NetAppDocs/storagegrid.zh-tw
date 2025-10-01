@@ -46,8 +46,8 @@ image::../media/grid_manager_dashboard_and_menu.png[Grid Manager中的儀表板]
 
 說明功能表image:../media/icon-help-menu-bar.png["功能表列上的說明圖示"]可讓您存取：
 
-* link:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool"]和link:../admin/use-s3-setup-wizard.html["S3 設定"]精靈
-* 目前版本的 StorageGRID 文件中心
+* 這link:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool"]和link:../admin/use-s3-setup-wizard.html["S3 設定"]巫師
+* 目前版本的StorageGRID文件站點
 * link:../admin/using-grid-management-api.html["API 文件"]
 * 關於目前安裝的 StorageGRID 版本的資訊
 
@@ -71,11 +71,7 @@ image::../media/grid_manager_dashboard_and_menu.png[Grid Manager中的儀表板]
 
 == 節點頁面
 
-會link:../monitor/viewing-nodes-page.html["節點頁面"]顯示關於整個網格、網格中的每個站台、以及站台上的每個節點的資訊。
-
-節點首頁會顯示整個網格的合併度量。若要檢視特定站台或節點的資訊、請選取站台或節點。
-
-image::../media/nodes_page.png[節點頁面主頁]
+這link:../monitor/viewing-nodes-page.html["節點頁面"]顯示有​​關整個網格、網格中每個站點以及站點上每個節點的資訊。若要查看特定站點或節點的信息，請選擇該站點或節點。
 
 
 
@@ -84,8 +80,6 @@ image::../media/nodes_page.png[節點頁面主頁]
 link:../admin/managing-tenants.html["租戶頁面"]可讓您使用 link:../tenant/index.html["建立及監控儲存租戶帳戶"]StorageGRID 系統。您必須建立至少一個租戶帳戶、以指定誰可以儲存及擷取物件、以及哪些功能可供他們使用。
 
 「租戶」頁面也會提供每個租戶的使用詳細資料、包括使用的儲存容量和物件數目。如果您在建立租戶時設定配額、就可以查看該配額的使用量。
-
-image::../media/tenants_page.png[租戶功能表和頁面]
 
 
 
@@ -120,7 +114,8 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 * link:../admin/managing-load-balancing.html["管理負載平衡器端點"]
 * link:../admin/configuring-s3-api-endpoint-domain-names.html["設定 S3 端點網域名稱"]
 * link:../admin/managing-traffic-classification-policies.html["管理流量分類原則"]
-* link:../admin/configure-vlan-interfaces.html["設定 VLAN 介面"]
+* link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]
+* link:../admin/enable-cross-origin-resource-sharing-for-management-interface.html["為管理介面啟用StorageGRID CORS"]
 
 
 
@@ -132,8 +127,8 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 * link:../admin/using-storagegrid-security-certificates.html["管理安全性憑證"]
 * link:../admin/manage-firewall-controls.html["管理內部防火牆控制"]
 * link:../admin/kms-configuring.html["設定金鑰管理伺服器"]
-* 設定安全性設定，包括link:../admin/manage-tls-ssh-policy.html["TLS 和 SSH 原則"]、link:../admin/changing-network-options-object-encryption.html["網路和物件安全選項"]和link:../admin/changing-browser-session-timeout-interface.html["介面安全性設定"]。
-* 設定或的設定link:../admin/configuring-storage-proxy-settings.html["儲存代理伺服器"]link:../admin/configuring-admin-proxy-settings.html["管理 Proxy"]
+* 配置安全設置，包括link:../admin/manage-tls-ssh-policy.html["TLS 和 SSH 原則"]，link:../admin/changing-network-options-object-encryption.html["網路和物件安全選項"] ，link:../admin/changing-browser-session-timeout-interface.html["介面安全性設定"] ， 和link:../admin/manage-external-ssh-access.html["SSH 存取選項"]
+* 配置設定link:../admin/configuring-storage-proxy-settings.html["儲存代理伺服器"]或link:../admin/configuring-admin-proxy-settings.html["管理 Proxy"]
 
 
 
@@ -142,11 +137,12 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 
 系統工作包括：
 
-* 用於link:../admin/grid-federation-overview.html["網格同盟"]複製租戶帳戶資訊、並在兩個 StorageGRID 系統之間複寫物件資料。
-* 或者、啟用link:../admin/configuring-stored-object-compression.html["壓縮儲存的物件"]選項。
-* link:../ilm/managing-objects-with-s3-object-lock.html["管理 S3 物件鎖定"]
-* 瞭解和等儲存選項link:../admin/what-object-segmentation-is.html["物件分割"]link:../admin/what-storage-volume-watermarks-are.html["儲存Volume浮點"]。
-* link:../ilm/manage-erasure-coding-profiles.html["管理銷毀編碼設定檔"]。
+* 使用link:../admin/grid-federation-overview.html["網格同盟"]複製租用戶帳戶資訊並在兩個StorageGRID系統之間複製物件數據
+* （可選）啟用link:../admin/configuring-stored-object-compression.html["壓縮儲存的物件"]選項
+* 或者，配置link:../s3/consistency.html["預設桶一致性設定"]
+* link:../ilm/managing-objects-with-s3-object-lock.html["管理 S3 對象鎖"]
+* 了解儲存設置，例如link:../admin/what-storage-volume-watermarks-are.html["儲存Volume浮點"]
+* link:../ilm/manage-erasure-coding-profiles.html["管理銷毀編碼設定檔"]
 
 
 
@@ -155,7 +151,7 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 
 監控工作包括：
 
-* link:../monitor/configure-audit-messages.html["設定稽核訊息和記錄目的地"]
+* link:../monitor/configure-log-management.html["設定日誌管理"]
 * link:../monitor/using-snmp-monitoring.html["使用SNMP監控"]
 
 
@@ -166,10 +162,10 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 存取控制工作包括：
 
 * link:../admin/managing-admin-groups.html["管理管理群組"]
-* link:../admin/managing-users.html["管理管理員使用者"]
-* 變更link:../admin/changing-provisioning-passphrase.html["資源配置複雜密碼"]或link:../admin/change-node-console-password.html["節點主控台密碼"]
+* link:../admin/managing-users.html["管理管理員用戶"]
+* 變更link:../admin/changing-provisioning-passphrase.html["資源配置複雜密碼"]或者link:../admin/change-node-console-password.html["節點主控台密碼"]
 * link:../admin/using-identity-federation.html["使用身分識別聯盟"]
-* link:../admin/configuring-sso.html["設定 SSO"]
+* link:../admin/how-sso-works.html["配置 SSO"]
 
 
 
@@ -189,7 +185,7 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 * link:../maintain/warnings-and-considerations-for-grid-node-recovery.html["網格節點還原程序"]更換故障節點並還原資料
 * link:../maintain/rename-grid-site-node-overview.html["重新命名程序"]可更改網格、站點和節點的顯示名稱
 * link:../troubleshoot/verifying-object-integrity.html["物件存在檢查作業"]驗證物件資料是否存在（雖然不是正確的）
-* 執行link:../maintain/rolling-reboot-procedure.html["循環重新開機"]以重新啟動多個網格節點
+* 執行link:../maintain/rolling-reboot-procedure.html["循環重新開機"]重新啟動多個網格節點
 * link:../maintain/restoring-volume.html["Volume 還原作業"]
 
 
@@ -199,8 +195,8 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 
 您可以執行的系統維護工作包括：
 
-* link:../admin/viewing-storagegrid-license-information.html["檢視StorageGRID 功能介紹資訊"]或link:../admin/updating-storagegrid-license-information.html["更新授權資訊"]
-* 產生及下載link:../maintain/downloading-recovery-package.html["恢復套件"]
+* link:../admin/viewing-storagegrid-license-information.html["檢視StorageGRID 本授權資訊"]或者link:../admin/updating-storagegrid-license-information.html["更新許可證信息"]
+* 產生並下載link:../maintain/downloading-recovery-package.html["恢復包"]
 * 在選定設備上執行 StorageGRID 軟體更新、包括軟體升級、 Hotfix 及 SANtricity OS 軟體更新
 +
 ** link:../upgrade/index.html["升級程序"]
@@ -217,9 +213,9 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 
 您可以執行的網路維護工作包括：
 
-* link:../maintain/configuring-dns-servers.html["設定DNS伺服器"]
-* link:../maintain/updating-subnets-for-grid-network.html["正在更新 Grid Network 子網路"]
-* link:../maintain/configuring-ntp-servers.html["管理 NTP 伺服器"]
+* link:../maintain/configuring-dns-servers.html["設定 DNS 伺服器"]
+* link:../maintain/updating-subnets-for-grid-network.html["更新網格網路子網"]
+* link:../maintain/configuring-ntp-servers.html["管理NTP伺服器"]
 
 
 
@@ -236,7 +232,6 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 
 * link:../admin/configure-autosupport-grid-manager.html["設定AutoSupport 功能"]
 * link:../monitor/running-diagnostics.html["執行診斷"] 位於網格的目前狀態
-* link:../monitor/viewing-grid-topology-tree.html["存取 Grid 拓撲樹狀結構"]可查看網格節點、服務和屬性的詳細信息
 * link:../monitor/collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]
 * link:../monitor/reviewing-support-metrics.html["檢視支援指標"]
 +
@@ -247,17 +242,13 @@ NOTE: * Metrics *選項提供的工具、是專供技術支援使用。這些工
 
 
 
-=== 警示（舊版）
-
-舊版警示的相關資訊已從此文件版本中移除。請參閱 https://docs.netapp.com/us-en/storagegrid-118/monitor/managing-alerts-and-alarms.html["管理警示和警示（ StorageGRID 11.8 文件）"^]。
-
-
-
 === 其他
 
 從「支援」功能表的其他區段、您可以：
 
+* 配置link:../monitor/manage-io-prioritization.html["I/O 優先權"]
+* 配置link:../admin/configure-autosupport-grid-manager.html["AutoSupport電子郵件設定（舊版）"]
 * 管理link:../admin/manage-link-costs.html["連結成本"]
-* 檢視link:../admin/viewing-notification-status-and-queues.html["網路管理系統（NMS）"]項目
+* 查看節點服務ID
 * 管理link:../admin/what-storage-volume-watermarks-are.html["儲存浮水印"]
 

@@ -27,8 +27,8 @@ indexpage:
       url: "../monitor/using-snmp-monitoring.html"
   - title: 使用稽核訊息和其他記錄
     links:
-    - title: 設定稽核訊息
-      url: "../monitor/configure-audit-messages.html"
+    - title: 設定日誌管理
+      url: "../monitor/configure-log-management.html"
     - title: 使用外部 Syslog 伺服器
       url: "../monitor/considerations-for-external-syslog-server.html"
     - title: 檢閱稽核記錄
@@ -39,6 +39,8 @@ indexpage:
     links:
     - title: 檢視支援指標
       url: "../monitor/reviewing-support-metrics.html"
+    - title: 更改 I/O 優先權
+      url: "../monitor/manage-io-prioritization.html"
     - title: 執行診斷
       url: "../monitor/running-diagnostics.html"
     - title: 疑難排解常見問題

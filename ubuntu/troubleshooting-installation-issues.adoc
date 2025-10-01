@@ -1,31 +1,8 @@
 ---
 permalink: ubuntu/troubleshooting-installation-issues.html 
-sidebar: sidebar 
-keywords: how to troubleshoot ubuntu or debian installation 
-summary: 如果在安裝StorageGRID 您的作業系統時發生任何問題、您可以存取安裝記錄檔。技術支援人員也可能需要使用安裝記錄檔來解決問題。 
+redirect: storagegrid/swnodes/troubleshooting-installation-issues.html 
 ---
-= 疑難排解安裝問題
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
-[role="lead"]
-如果在安裝StorageGRID 您的作業系統時發生任何問題、您可以存取安裝記錄檔。技術支援人員也可能需要使用安裝記錄檔來解決問題。
-
-下列安裝記錄檔可從執行每個節點的容器取得：
-
-* `/var/local/log/install.log`（可在所有網格節點上找到）
-* `/var/local/log/gdu-server.log`（可在主要管理節點上找到）
-
-
-下列安裝記錄檔可從主機取得：
-
-* `/var/log/storagegrid/daemon.log`
-* `/var/log/storagegrid/nodes/<node-name>.log`
-
-
-若要瞭解如何存取記錄檔，請參閱link:../monitor/collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]。
-
-.相關資訊
-link:../troubleshoot/index.html["疑難排解StorageGRID 作業系統"]

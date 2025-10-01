@@ -13,7 +13,7 @@ summary: 如果您想StorageGRID 要在警示發生時傳送SNMP通知、您必�
 [role="lead"]
 如果您想StorageGRID 要在警示發生時傳送SNMP通知、您必須啟用StorageGRID 此功能、並設定一個或多個設陷目的地。
 
-您可以使用Grid Manager中的*組態*>*監控*>* SNMP代理程式*選項、或是Grid Management API的SNMP端點、來啟用及設定StorageGRID SURE SNMP代理程式。SNMP代理程式支援所有三種版本的SNMP傳輸協定。
+您可以使用網格管理器中的 *配置* > *監控* > *SNMP 代理* 選項或網格管理 API 的 SNMP 端點來啟用和設定StorageGRID SNMP 代理程式。  SNMP 代理程式支援 SNMP 協定的所有三個版本。
 
 若要瞭解如何設定 SNMP 代理程式，請參閱link:using-snmp-monitoring.html["使用SNMP監控"]。
 

@@ -91,12 +91,12 @@ entries:
     url: "/monitor/deployment-and-maintenance-logs.html"
   - title: 關於bycast.log
     url: "/monitor/about-bycast-log.html"
-- title: 設定稽核訊息和記錄目的地
+- title: 設定日誌管理和外部系統日誌伺服器
   entries:
   - title: 外部syslog伺服器的考量
     url: "/monitor/considerations-for-external-syslog-server.html"
-  - title: 設定稽核訊息和外部 Syslog 伺服器
-    url: "/monitor/configure-audit-messages.html"
+  - title: 設定日誌管理
+    url: "/monitor/configure-log-management.html"
 - title: 使用SNMP監控
   entries:
   - title: SNMP監控
@@ -110,26 +110,20 @@ entries:
     url: "/monitor/access-snmp-mib.html"
 - title: 收集其他StorageGRID 的資料
   entries:
-  - title: 使用圖表
-    url: "/monitor/using-charts-and-reports.html"
-  - title: 使用文字報告
-    url: "/monitor/types-of-text-reports.html"
   - title: 監控成效、獲得效能
     url: "/monitor/monitoring-put-and-get-performance.html"
   - title: 監控物件驗證作業
     url: "/monitor/monitoring-object-verification-operations.html"
-  - title: 監控事件
-    url: "/monitor/monitoring-events.html"
   - title: 檢閱稽核訊息
     url: "/monitor/reviewing-audit-messages.html"
   - title: 收集記錄檔和系統資料
     url: "/monitor/collecting-log-files-and-system-data.html"
   - title: 手動觸發 AutoSupport 套件
     url: "/monitor/manually-triggering-autosupport-message.html"
-  - title: 檢視Grid拓撲樹狀結構
-    url: "/monitor/viewing-grid-topology-tree.html"
   - title: 檢視支援指標
     url: "/monitor/reviewing-support-metrics.html"
+  - title: 更改 I/O 優先權
+    url: "/monitor/manage-io-prioritization.html"
   - title: 執行診斷
     url: "/monitor/running-diagnostics.html"
   - title: 建立自訂監控應用程式

@@ -73,4 +73,4 @@ CAUTION: SelectObjectContent要求可降低所有S3用戶端和所有租戶的�
 
 請參閱link:../s3/use-s3-select.html["使用S3 Select的說明"]。
 
-若要檢視 link:../monitor/reviewing-support-metrics.html["Grafana圖表"]S3 Select 作業一段時間、請在 Grid Manager 中選取 * 支援 * > * 工具 * > * 指標 * 。
+查看link:../monitor/reviewing-support-metrics.html["Grafana圖表"]對於 S3 選擇隨時間推移的操作，在網格管理員中選擇 *支援* > *工具* > *指標*。

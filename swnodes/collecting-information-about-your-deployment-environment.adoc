@@ -1,0 +1,106 @@
+---
+permalink: swnodes/collecting-information-about-your-deployment-environment.html 
+sidebar: sidebar 
+keywords: how to collect information about your vmware deployment environment 
+summary: 在部署網格節點之前、您必須先收集網路組態和VMware環境的相關資訊。 
+---
+= 收集有關部署環境的資訊（VMware）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在部署網格節點之前、您必須先收集網路組態和VMware環境的相關資訊。
+
+
+NOTE: 更有效率的做法是對所有節點執行單一安裝、而非現在安裝部分節點、稍後再安裝部分節點。
+
+
+
+== VMware資訊
+
+您必須存取部署環境、並收集有關VMware環境、為Grid、Admin和Client Networks建立的網路、以及您計畫用於儲存節點的儲存Volume類型的資訊。
+
+您必須收集有關VMware環境的資訊、包括：
+
+* 具有完成部署之適當權限的VMware vSphere帳戶使用者名稱和密碼。
+* 每個 StorageGRID 節點虛擬機器的主機、資料存放區和網路組態資訊。
+
+
+
+NOTE: VMware Live VMotion會使虛擬機器時鐘時間跳過、而且不支援任何類型的網格節點。雖然不多見、但時鐘時間不正確可能導致資料遺失或組態更新。
+
+
+
+== 網格網路資訊
+
+您必須收集StorageGRID 有關為「VMware Grid Network」（必填）所建立之VMware網路的資訊、包括：
+
+* 網路名稱。
+* 用於指派IP位址的方法、靜態或DHCP。
++
+** 如果您使用靜態IP位址、則每個網格節點（IP位址、閘道、網路遮罩）的必要網路詳細資料。
+** 如果您使用的是 DHCP 、則是 Grid Network 上主要管理節點的 IP 位址。如需詳細資訊、請參閱 link:how-grid-nodes-discover-primary-admin-node.html["網格節點如何探索主要管理節點"] 。
+
+
+
+
+
+
+== 管理網路資訊
+
+若節點將連線至選用StorageGRID 的「VMware管理網路」、您必須收集有關為此網路所建立的VMware網路的資訊、包括：
+
+* 網路名稱。
+* 用於指派IP位址的方法、靜態或DHCP。
++
+** 如果您使用靜態IP位址、則每個網格節點（IP位址、閘道、網路遮罩）的必要網路詳細資料。
+** 如果您使用的是 DHCP 、則是 Grid Network 上主要管理節點的 IP 位址。如需詳細資訊、請參閱 link:how-grid-nodes-discover-primary-admin-node.html["網格節點如何探索主要管理節點"] 。
+
+
+* 管理網路的外部子網路清單（英文）。
+
+
+
+
+== 用戶端網路資訊
+
+對於要連線至選用StorageGRID 的「VMware用戶端網路」的節點、您必須收集有關為此網路建立的VMware網路的資訊、包括：
+
+* 網路名稱。
+* 用於指派IP位址的方法、靜態或DHCP。
+* 如果您使用靜態IP位址、則每個網格節點（IP位址、閘道、網路遮罩）的必要網路詳細資料。
+
+
+
+
+== 其他介面的相關資訊
+
+安裝節點之後、您可以選擇性地在vCenter中新增主幹或存取介面至VM。例如、您可能想要將主幹介面新增至管理或閘道節點、以便使用VLAN介面來分隔屬於不同應用程式或租戶的流量。或者、您可能想要新增存取介面、以便在高可用度（HA）群組中使用。
+
+您新增的介面會顯示在「VLAN介面」頁面和「Grid Manager」的「HA群組」頁面上。
+
+* 如果您新增主幹介面、請為每個新的父介面設定一或多個VLAN介面。請參閱。 link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]
+* 如果您新增存取介面、則必須將其直接新增至HA群組。請參閱。 link:../admin/configure-high-availability-group.html["設定高可用度群組"]
+
+
+
+
+== 虛擬儲存節點的儲存磁碟區
+
+您必須針對虛擬機器型儲存節點收集下列資訊：
+
+* 您計劃新增的儲存磁碟區（儲存 LUN ）數量和大小。請參閱link:storage-and-performance-requirements.html["儲存與效能需求"]。
+
+
+
+
+== 網格組態資訊
+
+您必須收集資訊才能設定網格：
+
+* Grid授權
+* 網路時間傳輸協定（NTP）伺服器IP位址
+* DNS 伺服器 IP 位址
+

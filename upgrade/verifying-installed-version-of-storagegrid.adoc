@@ -14,44 +14,37 @@ summary: 在開始升級之前、請確認先前版本的 StorageGRID 目前已�
 在開始升級之前、請確認先前版本的 StorageGRID 目前已安裝、並套用最新的可用 Hotfix 。
 
 .關於這項工作
-升級至 StorageGRID 11.9 之前、您的網格必須安裝 StorageGRID 11.8 。如果您目前使用的是舊版 StorageGRID 、則必須安裝所有先前的升級檔案及其最新的 Hotfix （強烈建議）、直到您的 GRID 目前版本為 StorageGRID 11.8._x.y_ 。
+在升級到StorageGRID 12.0 之前，您的網格必須安裝StorageGRID 11.9.0.8 或更高版本。如果您目前正在使用先前版本的StorageGRID，則必須安裝所有先前的升級檔案及其最新的修補程式（強烈建議），直到網格的目前版本至少為StorageGRID 11.9.0.8。
 
 中顯示了一個可能的升級途徑<<example-upgrade-path,範例>>。
 
 
-CAUTION: NetApp強烈建議您在StorageGRID 升級至下一個版本之前、先為每個版本套用最新的修補程式、並針對您安裝的每個新版本套用最新的修補程式。在某些情況下、您必須套用修補程式、以避免資料遺失的風險。如需詳細資訊、請參閱 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]及每個 Hotfix 的版本資訊。
+CAUTION: NetApp強烈建議您在升級到下一個版本之前為每個StorageGRID版本應用最新的修補程序，並且還為您安裝的每個新版本應用最新的修補程序。在某些情況下，您必須套用修補程式以避免資料遺失的風險。參考 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]以及每個修補程式的發行說明以了解更多資訊。
+
+
+
+== 驗證已安裝的版本
 
 .步驟
 . 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 . 從網格管理器的頂端、選取*說明*>*關於*。
-. 驗證 * 版本 * 是否為 11.8._x.y_ 。
-+
-在 StorageGRID 11.8._x.y_ 版本編號中：
-
-+
-** * 主要版本 * 的 _x_ 值為 0 （ 11.8.0 ）。
-** * HotFix* （如果已套用）的值為 _y_ （例如 11.8.0.1 ）。
+. 驗證*版本*是否為 11.9.0.8 或更高版本。
+. 如果*版本*不是 11.9.0.8 或更高版本，請前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]下載您需要的升級和修補程式檔案。
+. link:../upgrade/index.html["請按照升級說明進行操作"]對於您下載的每個版本。link:../maintain/storagegrid-hotfix-procedure.html["應用最新的修補程序"]對於每個版本（強烈建議）。
 
 
-. 如果 * 版本 * 不是 11.8.._x.y_ 、請前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]下載每個先前版本的檔案、包括每個版本的最新 Hotfix 。
-. 取得您下載之每個版本的升級指示。接著、執行該版本的軟體升級程序、並套用該版本的最新修補程式（強烈建議）。
-+
-請參閱link:../maintain/storagegrid-hotfix-procedure.html["修復程序StorageGRID"]。
+參考以下升級範例。
 
 
 
+== [[example-upgrade-path]]範例：從版本 11.8 升級到StorageGRID 12.0
 
-
-== [[example-upgrade -path]] 範例：從 11.6 版升級至 StorageGRID 11.9
-
-以下範例顯示準備 StorageGRID 11.9 升級時、從 StorageGRID 11.6 版升級至 11.8 版的步驟。
+以下範例顯示了從StorageGRID版本 11.8 升級到版本 11.9 以準備升級到StorageGRID 12.0 的步驟。
 
 請依下列順序下載並安裝軟體、以準備系統進行升級：
 
-. 升級至 StorageGRID 11.6.0 主要版本。
-. 套用最新的 StorageGRID 11.6.0._y_ Hotfix 。
-. 升級至 StorageGRID 11.7.0 主要版本。
-. 套用最新的 StorageGRID 11.7.0._y_ Hotfix 。
 . 升級至 StorageGRID 11.8.0 主要版本。
 . 套用最新的 StorageGRID 11.8.0._y_ Hotfix 。
+. 升級到StorageGRID 11.9.0 主要版本。
+. 應用StorageGRID 11.9.0.8 或更高版本的修補程式。
 

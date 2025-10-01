@@ -103,7 +103,7 @@ Docker Container Engine
  a| 
 待定
  a| 
-將 Docker 作為僅限軟體部署的容器引擎的支援已過時。Docker 將在未來版本中以另一個 Container 引擎取代。請參閱link:../ubuntu/software-requirements.html#docker-versions-tested["目前支援的 Docker 版本清單"]。
+不再支援將 Docker 作為純軟體部署的容器引擎。 Docker 將在未來的版本中被另一個容器引擎取代。請參閱link:../swnodes/software-requirements.html["基於軟體的節點的軟體要求"]了解目前支援的 Docker 版本清單。
 
 
 
@@ -117,6 +117,18 @@ NFS 稽核匯出
 12.0
  a| 
 https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-audit-client-access.html["設定 NFS 的稽核用戶端存取（ StorageGRID 11.8 ）"^]
+
+
+
+ a| 
+連接埠重映射
+ a| 
+12.0
+ a| 
+12.1
+ a| 
+12.2
+ a| 
 
 
 

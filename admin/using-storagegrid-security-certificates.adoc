@@ -19,13 +19,15 @@ summary: 安全證書是小型資料檔案、用於在StorageGRID 各個元件�
 * *用戶端憑證*驗證伺服器的用戶端或使用者身分、提供比僅密碼更安全的驗證。用戶端憑證不會加密資料。
 
 
-當用戶端使用HTTPS連線至伺服器時、伺服器會以含有公開金鑰的伺服器憑證回應。用戶端會將伺服器簽章與憑證複本上的簽章進行比較、藉此驗證此憑證。如果簽名相符、用戶端會使用相同的公開金鑰啟動與伺服器的工作階段。
+當客戶端使用 HTTPS 連接到伺服器時，伺服器會使用包含公鑰的伺服器憑證進行回應。用戶端將伺服器簽章與其憑證副本上的簽章進行比較。如果簽章匹配，客戶端將使用相同的公鑰與伺服器開始會話。
 
 充當某些連線（例如負載平衡器端點）的伺服器、或作為其他連線（例如CloudMirror複寫服務）的用戶端。StorageGRID
 
 *預設Grid CA憑證*
 
-包含內建的憑證授權單位（CA）、可在系統安裝期間產生內部Grid CA憑證。StorageGRID根據預設、Grid CA憑證用於保護內部StorageGRID 的不穩定流量。外部憑證授權單位（CA）可核發完全符合組織資訊安全原則的自訂憑證。雖然您可以將Grid CA憑證用於非正式作業環境、但正式作業環境的最佳做法是使用外部憑證授權單位所簽署的自訂憑證。也支援不含憑證的不安全連線、但不建議這麼做。
+StorageGRID具有內建憑證授權單位 (CA)，可在系統安裝期間產生內部 Grid CA 憑證。預設情況下，使用 Grid CA 憑證來保護內部StorageGRID流量。外部憑證授權單位 (CA) 可以頒發完全符合您組織的資訊安全策略的自訂憑證。
+
+在非生產環境中使用 Grid CA 憑證。對於生產，請使用由外部憑證授權單位簽署的自訂憑證。支援但沒有證書的不安全連接，但不建議。
 
 * 自訂 CA 憑證不會移除內部憑證；不過，自訂憑證應該是指定用於驗證伺服器連線的憑證。
 * 所有自訂憑證都必須符合link:../harden/hardening-guideline-for-server-certificates.html["伺服器憑證的系統強化準則"]。
@@ -44,7 +46,7 @@ NOTE: 此外、還包括所有網格上相同的作業系統CA憑證。StorageGR
 您可以在StorageGRID 單一位置存取所有的資訊、以及每個憑證的組態工作流程連結。
 
 .步驟
-. 從 Grid Manager 中、選取 * 組態 * > * 安全性 * > * 憑證 * 。
+. 從網格管理員中，選擇*配置* > *安全性* > *證書*。
 +
 image::security_certificates.png[「憑證」頁面]
 
@@ -178,7 +180,7 @@ NOTE: 如果您有link:admin-group-permissions.html["適當的權限"]，則只�
 
 *** link:../ilm/creating-cloud-storage-pool.html["指定S3、C2S S3或Azure的雲端儲存池憑證"]
 *** link:../monitor/email-alert-notifications.html["指定警示電子郵件通知的憑證"]
-*** link:../monitor/configure-audit-messages.html#use-external-syslog-server["使用外部 Syslog 伺服器的憑證"]
+*** link:../monitor/configure-log-management.html#use-external-syslog-server["使用外部 Syslog 伺服器的憑證"]
 *** link:grid-federation-manage-connection.html#rotate-connection-certificates["旋轉網格同盟連線憑證"]
 *** link:using-identity-federation.html["檢視及編輯身分識別聯盟憑證"]
 *** link:kms-adding.html["上傳金鑰管理伺服器（KMS）伺服器和用戶端憑證"]
@@ -215,7 +217,7 @@ NOTE: 如果您有link:admin-group-permissions.html["適當的權限"]，則只�
 
 您可以使用安裝期間建立的預設憑證、或是上傳自訂憑證。
  a| 
-*組態*>*安全性*>*憑證*、選取*全域*索引標籤、然後選取*管理介面憑證*
+*設定* > *安全* > *憑證*，選擇 *全域* 選項卡，然後選擇 *管理介面憑證*
  a| 
 link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["設定管理介面憑證"]
 
@@ -234,7 +236,7 @@ link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[
  a| 
 驗證安全的 S3 用戶端連線至儲存節點和負載平衡器端點（選用）。
  a| 
-* 組態 * > * 安全性 * > * 憑證 * 、選取 * 全域 * 索引標籤、然後選取 * S3 API 憑證 *
+*設定* > *安全* > *憑證*，選擇 *全域* 選項卡，然後選擇 *S3 API 憑證*
  a| 
 link:configuring-custom-server-certificate-for-storage-node.html["設定 S3 API 憑證"]
 
@@ -263,7 +265,7 @@ link:configuring-custom-server-certificate-for-storage-node.html["設定 S3 API 
 * 允許StorageGRID 使用外部工具安全監控功能。
 
  a| 
-*組態*>*安全性*>*憑證*、然後選取*用戶端*索引標籤
+*配置* > *安全性* > *憑證*，然後選擇 *用戶端* 選項卡
  a| 
 link:configuring-administrator-client-certificates.html["設定用戶端憑證"]
 
@@ -286,7 +288,7 @@ link:configuring-administrator-client-certificates.html["設定用戶端憑證"]
 
 *附註：*用於負載平衡器驗證的憑證、是正常StorageGRID 執行過程中最常使用的憑證。
  a| 
-*組態*>*網路*>*負載平衡器端點*
+*配置* > *網路* > *負載平衡器端點*
  a| 
 * link:configuring-load-balancer-endpoints.html["設定負載平衡器端點"]
 * link:../fabricpool/creating-load-balancer-endpoint-for-fabricpool.html["建立FabricPool 負載平衡器端點以供使用"]
@@ -330,7 +332,7 @@ link:../ilm/creating-cloud-storage-pool.html["建立雲端儲存資源池"]
 * 只有在SMTP電子郵件伺服器需要用戶端憑證進行驗證時、才指定用戶端憑證。
 
  a| 
-*警示*>*電子郵件設定*
+*警報* > *電子郵件設定*
  a| 
 link:../monitor/email-alert-notifications.html["設定警示的電子郵件通知"]
 
@@ -351,9 +353,9 @@ link:../monitor/email-alert-notifications.html["設定警示的電子郵件通�
 
 *附註：*不需要外部系統記錄伺服器憑證、就能連接到外部系統記錄伺服器的TCP、RELP/TCP及udp連線。
  a| 
-* 組態 * > * 監控 * > * 稽核與系統記錄伺服器 *
+*配置* > *監控* > *審計和系統日誌伺服器*
  a| 
-link:../monitor/configure-audit-messages.html#use-external-syslog-server["使用外部syslog伺服器"]
+link:../monitor/configure-log-management.html#use-external-syslog-server["使用外部syslog伺服器"]
 
 |===
 
@@ -370,7 +372,7 @@ link:../monitor/configure-audit-messages.html#use-external-syslog-server["使用
  a| 
 驗證並加密目前 StorageGRID 系統與網格同盟連線中其他網格之間傳送的資訊。
  a| 
-* 組態 * > * 系統 * > * 網格聯盟 *
+*配置* > *系統* > *電網聯合*
  a| 
 * link:grid-federation-create-connection.html["建立網格同盟連線"]
 * link:grid-federation-manage-connection.html#rotate_grid_fed_certificates["旋轉連線憑證"]
@@ -391,7 +393,7 @@ link:../monitor/configure-audit-messages.html#use-external-syslog-server["使用
  a| 
 驗證StorageGRID Reality與外部身分識別供應商（例如Active Directory、OpenLDAP或Oracle Directory Server）之間的連線。用於身分識別聯盟、可讓管理員群組和使用者由外部系統管理。
  a| 
-*組態*>*存取控制*>*身分識別聯盟*
+*配置* > *存取控制* > *身份聯合*
  a| 
 link:using-identity-federation.html["使用身分識別聯盟"]
 
@@ -410,7 +412,7 @@ link:using-identity-federation.html["使用身分識別聯盟"]
  a| 
 驗證StorageGRID 支援功能與外部金鑰管理伺服器（KMS）之間的連線、此伺服器可為StorageGRID 應用裝置節點提供加密金鑰。
  a| 
-*組態*>*安全性*>*金鑰管理伺服器*
+*配置* > *安全* > *金鑰管理伺服器*
  a| 
 link:kms-adding.html["新增金鑰管理伺服器（KMS）"]
 
@@ -450,9 +452,9 @@ link:../tenant/editing-platform-services-endpoint.html["編輯平台服務端點
  a| 
 驗證身分識別聯盟服務（例如Active Directory Federation Services（AD FS））和StorageGRID 用來處理單一登入（SSO）要求的支援服務之間的連線。
  a| 
-*組態*>*存取控制*>*單一登入*
+*配置* > *存取控制* > *單一登入*
  a| 
-link:configuring-sso.html["設定單一登入"]
+link:how-sso-works.html["設定單一登入"]
 
 |===
 
@@ -469,7 +471,7 @@ link:configuring-sso.html["設定單一登入"]
 . 您可以設定 S3 用戶端連線至負載平衡器端點、並將相同的憑證上傳至用戶端。
 . 當用戶端想要儲存或擷取資料時、會使用HTTPS連線至負載平衡器端點。
 . 以伺服器憑證做出回應、其中包含公開金鑰、並以私密金鑰為基礎提供簽名。StorageGRID
-. 用戶端會將伺服器簽章與憑證複本上的簽章進行比較、藉此驗證此憑證。如果簽名相符、用戶端就會使用相同的公開金鑰來啟動工作階段。
+. 用戶端將伺服器簽章與其憑證副本上的簽章進行比較。如果簽章匹配，客戶端將使用相同的公鑰開始會話。
 . 用戶端會將物件資料傳送StorageGRID 至物件資料。
 
 

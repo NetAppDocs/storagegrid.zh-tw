@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, remove port remap, removing port remap, port remap 
 summary: 如果您想要設定負載平衡器服務的端點、而且想要使用已設定為連接埠重新對應對應對應對應對應對應對應對應對應對應的連接埠、則必須先移除現有的連接埠重新對應、否則端點將無法生效。您必須在每個具有衝突的重新對應連接埠的管理節點和閘道節點上執行指令碼、才能移除節點的所有連接埠重新對應。 
 ---
-= 移除連接埠重新對應
+= 刪除StorageGRID設備上的連接埠重新映射
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -25,6 +25,7 @@ NOTE: 如果連接埠重新對應提供用戶端存取、請將用戶端重新�
 NOTE: 此程序不適用於StorageGRID 以容器形式部署在裸機主機上的作業系統。請參閱的說明link:removing-port-remaps-on-bare-metal-hosts.html["移除裸機主機上的連接埠重新對應"]。
 
 .步驟
+. 預設情況下，外部 SSH 存取是被阻止的。如果需要，link:../admin/manage-external-ssh-access.html["暫時允許訪問"] 。
 . 登入節點。
 +
 .. 輸入下列命令： `ssh -p 8022 admin@node_IP`
@@ -43,4 +44,5 @@ NOTE: 此程序不適用於StorageGRID 以容器形式部署在裸機主機上�
 . 重新啟動節點： `reboot`
 . 登出命令 Shell ： `exit`
 . 在每個重新對應連接埠發生衝突的管理節點和閘道節點上重複這些步驟。
+. 如果您允許外部 SSH 訪問，link:../admin/manage-external-ssh-access.html["阻止訪問"]當您完成刪除連接埠重新映射後。
 

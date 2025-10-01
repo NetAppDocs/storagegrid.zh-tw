@@ -36,12 +36,13 @@ NOTE: 如果新IP位址上的網格無法存取現有的DNS伺服器、請在執
 
 +
 
-NOTE: 如果StorageGRID 您的支援系統啟用SSO、且任何依賴方信任都是使用管理節點IP位址（而非建議的完整網域名稱）設定、請準備更新或重新設定Active Directory Federation Services（AD FS）中的這些依賴方信任。 變更IP位址後立即變更。請參閱。 link:../admin/configuring-sso.html["設定單一登入"]
+NOTE: 如果您的StorageGRID系統啟用了 SSO，並且使用管理節點 IP 位址（而不是建議的完全限定網域名稱）設定了任何依賴方信任，請準備在變更 IP 位址後立即在 Active Directory 聯合驗證服務 (AD FS) 中更新或重新設定這些依賴方信任。看link:../admin/configure-sso.html["設定單一登入"] 。
 
 +
 
 NOTE: 如有必要、請新增新IP位址的子網路。
 
+. 預設情況下，外部 SSH 存取是被阻止的。如果需要，link:../admin/manage-external-ssh-access.html["暫時允許訪問"] 。
 . 登入主要管理節點：
 +
 .. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
@@ -130,12 +131,13 @@ NOTE: 必須關閉整個網格、以便同時關閉所有節點。
 .. 如果您新增了DNS伺服器、請刪除舊的DNS伺服器值。
 
 
-. 從Grid Manager下載新的恢復套件。
+. 從網格管理器下載新的復原套件。
 +
-.. 選擇* maintenance *>* System*>* Recovery套件*。
+.. 選擇*維護* > *系統* > *恢復包*。
 .. 輸入資源配置通關密碼。
 
 
+. 如果您允許外部 SSH 訪問，link:../admin/manage-external-ssh-access.html["阻止訪問"]當您完成更改 IP 位址後。
 
 
 .相關資訊

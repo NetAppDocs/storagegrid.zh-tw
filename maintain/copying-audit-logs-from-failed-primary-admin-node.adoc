@@ -22,7 +22,7 @@ summary: 如果能夠從故障的主管理節點複製稽核記錄、您應該�
 NOTE: 如果現在無法在故障的管理節點上存取稽核記錄、您可能可以稍後存取這些記錄、例如在主機恢復之後。
 
 .步驟
-. 如有可能、請登入故障的管理節點。否則、請登入主要管理節點或其他管理節點（若有）。
+. 如果可能，請登入發生故障的主管理節點。否則，請登入任何可用的管理節點。
 +
 .. 輸入下列命令： `ssh admin@_grid_node_IP_`
 .. 輸入檔案中列出的密碼 `Passwords.txt`。
@@ -36,14 +36,28 @@ NOTE: 如果現在無法在故障的管理節點上存取稽核記錄、您可�
 . 停止 AMS 服務以防止其建立新的記錄檔：``service ams stop``
 . 瀏覽至稽核匯出目錄：
 +
-`cd /var/local/log`
+`cd /var/local/audit/export`
 
-. 將來源檔案重新命名 `audit.log`為唯一編號的檔案名稱。例如，將 audit.log 檔案重新命名為 `2023-10-25.txt.1`。
++
+（或者 `cd /var/local/log`在早期系統上）
+
+. 將來源日誌檔案重新命名為唯一編號的檔案名稱。
++
+[NOTE]
+====
+** 如果日誌檔案位於 `/var/local/audit/export`目錄，其名稱是 `audit.log`。
+** 如果日誌檔案位於 `/var/local/log`目錄，其名稱是 `localaudit.log`。
+
+
+====
++
+例如，重新命名 `localaudit.log`文件到 `2025-10-22.txt.1`。
+
 +
 [listing]
 ----
 ls -l
-mv audit.log 2023-10-25.txt.1
+mv localaudit.log 2025-10-22.txt.1
 ----
 . 重新啟動 AMS 服務： `service ams start`
 . 建立目錄、將所有稽核記錄檔複製到個別網格節點上的暫存位置： `ssh admin@_grid_node_IP_ mkdir -p /var/local/tmp/saved-audit-logs`

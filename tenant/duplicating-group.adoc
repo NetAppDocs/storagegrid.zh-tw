@@ -19,9 +19,9 @@ summary: 您可以複製現有群組、以更快建立新群組。
 
 
 .步驟
-. 選擇*存取管理*>*群組*。
+. 選擇“存取管理”>“群組”。
 . 選取您要複製之群組的核取方塊。
-. 選擇*複製群組*。如需建立群組的其他詳細資訊，請參閱或的建立群組指示link:creating-groups-for-s3-tenant.html["S3租戶"]link:creating-groups-for-swift-tenant.html["Swift租戶"]。
+. 選擇*重複群組*。有關建立群組的更多詳細信息，請參閱建立群組的說明link:creating-groups-for-s3-tenant.html["S3租戶"]。
 . 選取*本機群組*索引標籤以建立本機群組、或選取*聯盟群組*索引標籤、從先前設定的身分識別來源匯入群組。
 +
 如果您的 StorageGRID 系統已啟用單一登入（ SSO ）、屬於本機群組的使用者將無法登入租戶管理員、不過他們可以根據使用用戶端應用程式來管理租戶的資源link:tenant-management-permissions.html["群組權限"]。

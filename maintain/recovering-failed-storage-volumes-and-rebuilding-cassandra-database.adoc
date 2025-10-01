@@ -18,8 +18,8 @@ summary: 您必須執行指令碼、重新格式化及重新掛載故障儲存�
 * 伺服器上的系統磁碟機完好無損。
 * 故障原因已確定、必要時已取得更換儲存硬體。
 * 更換儲存設備的總大小與原始儲存設備相同。
-* 您已檢查儲存節點汰換是否在進行中、或您已暫停節點取消委任程序。（在Grid Manager中、選取* maintenance *>* Tasks *>* Decompress*。）
-* 您已檢查擴充是否在進行中。（在Grid Manager中、選取* maintenance *>* Tasks *>* Expansion *。）
+* 您已檢查儲存節點退役未正在進行，或您已暫停節點退役程序。  （在網格管理員中，選擇*維護* > *任務* > *退役*。）
+* 您已檢查擴充功能是否尚未進行。  （在網格管理員中，選擇*維護* > *任務* > *擴充*。）
 * 您有 link:reviewing-warnings-about-storage-volume-recovery.html["已查看有關儲存磁碟區恢復的警告"]。
 
 
@@ -28,7 +28,7 @@ summary: 您必須執行指令碼、重新格式化及重新掛載故障儲存�
 +
 請勿在此步驟中重新掛載磁碟區。儲存設備會在稍後的步驟中重新掛載並新增至 `/etc/fstab`。
 
-. 在 Grid Manager 中、前往 * 節點 * > `*appliance Storage Node*` > * 硬體 * 。在頁面的 StorageGRID 應用裝置區段中、確認儲存 RAID 模式正常。
+. 在網格管理器中，前往 *節點* > `*appliance Storage Node*` > *硬體*。在頁面的StorageGRID Appliance 部分中，驗證儲存 RAID 模式是否正常。
 . 登入故障儲存節點：
 +
 .. 輸入下列命令： `ssh admin@_grid_node_IP_`
@@ -51,7 +51,7 @@ NOTE: 在檔案中註解失敗的磁碟區 `/etc/fstab`不足。必須從刪除�
 ** 如有必要、系統會提示您重新建置Cassandra資料庫。
 +
 *** 檢閱警告。如果沒有任何應用程式、請重新建置Cassandra資料庫。輸入：* y*
-*** 如果有多個儲存節點離線、或是在過去15天內重建了另一個儲存節點。輸入：* n*
+*** 如果多個儲存節點處於離線狀態。輸入：*n*
 +
 指令碼將會結束而不重建Cassandra。聯絡技術支援。
 

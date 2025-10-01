@@ -34,8 +34,8 @@ entries:
       entries:
       - title: Active Directory
         url: "/admin/use-api-if-sso-is-enabled-adfs.html"
-      - title: Azure
-        url: "/admin/use-api-if-sso-is-enabled-azure.html"
+      - title: 進入 ID
+        url: "/admin/use-api-if-sso-is-enabled-entra-id.html"
       - title: PingFedate
         url: "/admin/use-api-if-sso-is-enabled-ping.html"
     - title: 使用API停用功能
@@ -61,23 +61,23 @@ entries:
     url: "/admin/managing-users.html"
   - title: 使用單一登入（SSO）
     entries:
-    - title: 設定單一登入
-      url: "/admin/configuring-sso.html"
-    - title: 單一登入的需求
+    - title: SSO 的工作原理
+      url: "/admin/how-sso-works.html"
+    - title: SSO 的要求
       url: "/admin/requirements-for-sso.html"
     - title: 確認同盟使用者可以登入
       url: "/admin/confirming-federated-users-can-sign-in.html"
-    - title: 使用沙箱模式
-      url: "/admin/using-sandbox-mode.html"
+    - title: 配置 SSO
+      url: "/admin/configure-sso.html"
     - title: 在AD FS中建立依賴方信任
       url: "/admin/creating-relying-party-trusts-in-ad-fs.html"
-    - title: 在Azure中建立企業應用程式
-      url: "/admin/creating-enterprise-application-azure.html"
+    - title: 在 Entra ID 中建立企業應用程式
+      url: "/admin/creating-enterprise-application-entra-id.html"
     - title: 在PingFedate建立SP連線
       url: "/admin/creating-sp-connection-ping.html"
-    - title: 停用單一登入
+    - title: 禁用 SSO
       url: "/admin/disabling-single-sign-on.html"
-    - title: 暫時停用並重新啟用單一管理節點的單一登入
+    - title: 暫時停用並重新啟用一個管理節點的 SSO
       url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
 - title: 使用網格同盟
   entries:
@@ -132,6 +132,8 @@ entries:
       url: "/admin/changing-network-options-object-encryption.html"
     - title: 變更介面安全性設定
       url: "/admin/changing-browser-session-timeout-interface.html"
+    - title: 管理外部 SSH 訪問
+      url: "/admin/manage-external-ssh-access.html"
   - title: 設定金鑰管理伺服器
     entries:
     - title: 什麼是金鑰管理伺服器
@@ -226,14 +228,16 @@ entries:
 - title: 管理網路和連線
   entries:
   - title: 設定網路設定
-    url: "/admin/configuring-network-settings.html"
     pdf-filename: 管理網路和連線
+    url: "/admin/configuring-network-settings.html"
   - title: 關於鏈路的準則StorageGRID
     url: "/admin/guidelines-for-storagegrid-networks.html"
   - title: 檢視IP位址
     url: "/admin/viewing-ip-addresses.html"
   - title: 設定VLAN介面
     url: "/admin/configure-vlan-interfaces.html"
+  - title: 為管理介面啟用 CORS
+    url: "/admin/enable-cross-origin-resource-sharing-for-management-interface.html"
   - title: 管理流量分類原則
     entries:
     - title: 什麼是流量分類原則
@@ -268,10 +272,8 @@ entries:
     url: "/admin/sending-eseries-autosupport-messages-through-storagegrid.html"
 - title: 管理儲存節點
   entries:
-  - title: 儲存節點管理
-    pdf-filename: 管理儲存節點
-    url: "/admin/managing-storage-nodes.html"
   - title: 使用儲存選項
+    pdf-filename: 管理儲存節點
     entries:
     - title: 什麼是物件區隔
       url: "/admin/what-object-segmentation-is.html"
@@ -291,5 +293,3 @@ entries:
     url: "/admin/using-multiple-admin-nodes.html"
   - title: 識別主要管理節點
     url: "/admin/identifying-primary-admin-node.html"
-  - title: 檢視通知狀態和佇列
-    url: "/admin/viewing-notification-status-and-queues.html"

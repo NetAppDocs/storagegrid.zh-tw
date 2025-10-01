@@ -1,0 +1,53 @@
+---
+permalink: swnodes/where-to-go-next.html 
+sidebar: sidebar 
+keywords: after installation 
+summary: 完成安裝後、請執行必要的整合與組態工作。您可以視需要執行選用工作。 
+---
+= 下一步
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+完成安裝後、請執行必要的整合與組態工作。您可以視需要執行選用工作。
+
+
+
+== 必要的工作
+
+* （僅限 VMware）配置 VMware vSphere Hypervisor 以實現自動重新啟動。
++
+您必須設定Hypervisor、以便在伺服器重新啟動時重新啟動虛擬機器。如果不自動重新啟動、虛擬機器和網格節點會在伺服器重新啟動後持續關機。如需詳細資料、請參閱VMware vSphere Hypervisor文件。
+
+
+
+* link:../admin/managing-tenants.html["建立租戶帳戶"]適用於將用於儲存 StorageGRID 系統物件的 S3 用戶端傳輸協定。
+* link:../admin/controlling-storagegrid-access.html["控制系統存取"]設定群組和使用者帳戶。您也可以link:../admin/using-identity-federation.html["設定同盟身分識別來源"]（例如 Active Directory 或 OpenLDAP ）匯入管理群組和使用者。或者，您可以link:../admin/managing-users.html#create-a-local-user["建立本機群組和使用者"]。
+* 整合並測試link:../s3/configuring-tenant-accounts-and-connections.html["S3 API"]您將用來將物件上傳至 StorageGRID 系統的用戶端應用程式。
+* link:../ilm/index.html["設定資訊生命週期管理（ ILM ）規則和 ILM 原則"]您想要用來保護物件資料。
+* 如果您的安裝包含應用裝置儲存節點、請使用 SANtricity OS 來完成下列工作：
++
+** 連接每StorageGRID 個產品。
+** 驗證AutoSupport 是否收到不實資料。
++
+請參閱。 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-hardware.html["設定硬體"^]
+
+
+
+* 檢閱並遵循link:../harden/index.html["StorageGRID 系統強化準則"]以消除安全風險。
+* link:../monitor/email-alert-notifications.html["設定系統警示的電子郵件通知"]。
+
+
+
+
+== 選用工作
+
+* link:../maintain/changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html["更新網格節點 IP 位址"]如果自您計劃部署並產生復原套件以來它們已經發生了變化。
+* link:../admin/changing-network-options-object-encryption.html["設定儲存加密"]（如果需要）。
+* link:../admin/configuring-stored-object-compression.html["設定儲存壓縮"]以減少儲存物件的大小（如有需要）。
+* link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]如有需要、可隔離及分割網路流量。
+* link:../admin/configure-high-availability-group.html["設定高可用度群組"]如有需要、可改善 Grid Manager 、 Tenant Manager 和 S3 用戶端的連線可用度。
+* link:../admin/configuring-load-balancer-endpoints.html["設定負載平衡器端點"]如有需要、適用於 S3 用戶端連線。
+

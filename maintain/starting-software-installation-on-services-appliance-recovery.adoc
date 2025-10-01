@@ -48,10 +48,7 @@ NOTE: 製造過程中、服務應用裝置會預先載入最新版本StorageGRID
 +
 畫面會出現「the不再安裝StorageGRID 程式」首頁。
 
-+
-image::../media/services_appliance_installer_gateway_node.png[應用裝置安裝程式首頁]
-
-. 若要安裝主要管理節點：
+. 若要安裝主管理節點：
 +
 .. 在「此節點」區段的「*節點類型*」中、選取「*主要管理員*」。
 .. 在「*節點名稱*」欄位中、輸入您要還原之節點所使用的相同名稱、然後按一下「*儲存*」。
@@ -61,10 +58,7 @@ image::../media/services_appliance_installer_gateway_node.png[應用裝置安裝
 
 .. 如果您需要上傳不同版本的軟體、請在*進階*功能表下、選取*上傳StorageGRID 更新軟體*。
 +
-出現「上傳StorageGRID 更新軟體」頁面。
-
-+
-image::../media/upload_sw_for_pa_on_sga1000.png[周邊文字所述的螢幕擷取畫面]
+出現「上傳StorageGRID軟體」頁面。
 
 .. 按一下「*瀏覽*」上傳*軟體套件*和*《Checksum File" for StorageGRID the Sof the》軟體。
 +
@@ -73,7 +67,7 @@ image::../media/upload_sw_for_pa_on_sga1000.png[周邊文字所述的螢幕擷�
 .. 按一下*主頁*以返回StorageGRID 「介紹應用程式安裝程式」首頁。
 
 
-. 若要安裝閘道節點或非主要管理節點：
+. 若要安裝網關節點或非主管理節點：
 +
 .. 在「此節點」區段的「*節點類型*」中、根據您要還原的節點類型、選取「*閘道*」或「*非主要管理員*」。
 .. 在「*節點名稱*」欄位中、輸入您要還原之節點所使用的相同名稱、然後按一下「*儲存*」。
@@ -81,7 +75,7 @@ image::../media/upload_sw_for_pa_on_sga1000.png[周邊文字所述的螢幕擷�
 +
 如果主管理節點或至少有一個已設定ADD_IP的其他網格節點存在於同一個子網路中、則可使用此解決方案安裝程式自動探索此IP位址。StorageGRID
 
-.. 如果未顯示此IP位址、或您需要變更它、請指定位址：
+.. 如果未顯示此 IP 位址或您需要變更它，請指定位址：
 
 
 +
@@ -113,7 +107,7 @@ image::../media/upload_sw_for_pa_on_sga1000.png[周邊文字所述的螢幕擷�
 |===
 . [[installation_section_dete]]在「安裝」區段中、確認目前狀態為「準備好開始安裝節點名稱」、且已啟用「*開始安裝*」按鈕。
 +
-如果*開始安裝*按鈕未啟用、您可能需要變更網路組態或連接埠設定。如需相關指示、請參閱產品的維護指示。
+如果未啟用「*開始安裝*」按鈕，您可能需要變更網路設定或連接埠設定。請參閱您設備的維護說明。
 
 . 從「the Some Appliance Installer」首頁、按一下StorageGRID 「*開始安裝*」。
 +

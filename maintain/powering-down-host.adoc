@@ -117,10 +117,10 @@ NOTE: 在應用裝置節點上發出命令後 `shutdown -h now`、您必須關�
 
 
 .相關資訊
-* link:https://docs.netapp.com/us-en/storagegrid-appliances/sg6100/index.html["SGF6112 和 SG6160 儲存設備"^]
-* link:https://docs.netapp.com/us-en/storagegrid-appliances/sg6000/index.html["SG6000 儲存設備"^]
-* link:https://docs.netapp.com/us-en/storagegrid-appliances/sg5700/index.html["SG5700 儲存設備"^]
-* link:https://docs.netapp.com/us-en/storagegrid-appliances/sg5800/index.html["SG5800 儲存設備"^]
-* link:https://docs.netapp.com/us-en/storagegrid-appliances/sg110-1100/index.html["SG110 和 SG1100 服務應用裝置"^]
-* link:https://docs.netapp.com/us-en/storagegrid-appliances/sg100-1000/index.html["SG100 和 SG1000 服務應用裝置"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg6100/index.html["SGF6112 和 SG6160 儲存設備"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg6000/index.html["SG6000 儲存設備"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg5700/index.html["SG5700 儲存設備"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg5800/index.html["SG5800 儲存設備"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg110-1100/index.html["SG110 和 SG1100 服務應用裝置"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/sg100-1000/index.html["SG100 和 SG1000 服務應用裝置"^]
 

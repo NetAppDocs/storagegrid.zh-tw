@@ -36,8 +36,8 @@ summary: 如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開
 ** 最新版本的升級歸檔文件（這是標有 * VMware 、 SG1000 或 SG100 主要管理節點 * 的部分中的檔案）。雖然在您執行升級之前不需要此檔案、但現在下載將可節省時間。
 ** RPM 或 Deb 歸檔 `.tgz` `.zip`格式。如果您在服務筆記型電腦上執行 Windows 、請選取 `.zip`檔案。
 +
-*** Red Hat Enterprise Linux + +
-`StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip`
+*** RHEL +
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` +
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz`
 *** Ubuntu 或 Debian
 `StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip` +
@@ -57,6 +57,12 @@ summary: 如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開
 
 
 
+. 程式碼簽章驗證在 Linux 節點上是手動的。或者，驗證安裝檔案：
++
+.. 下載 StorageGRID 程式碼簽章驗證套件。此套件的檔案名稱使用格式 `StorageGRID_<version-number>_Code_Signature_Verification_Package.tar.gz`、其中 `<version-number>`是 StorageGRID 軟體版本。
+.. 依照步驟link:../swnodes/download-files-verify.html["手動驗證安裝檔案"]。
+
+
 
 
 
@@ -69,12 +75,7 @@ summary: 如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開
 . 從安裝檔案擷取RPM或Dub套件。
 . 在所有Linux主機上安裝RPM或Deb套件。
 +
-請參閱安裝說明中的 StorageGRID 主機服務安裝步驟：
-
-+
-** link:../rhel/installing-storagegrid-webscale-host-service.html["Red Hat Enterprise Linux ：安裝 StorageGRID 主機服務"]
-** link:../ubuntu/installing-storagegrid-webscale-host-services.html["Ubuntu 或 Debian ：安裝 StorageGRID 主機服務"]
-
+請參閱安裝 Linux StorageGRID主機服務的步驟link:../swnodes/installing-storagegrid-webscale-host-services.html["安裝StorageGRID 支援主機服務"]。
 
 +
 新的套件會以其他套件的形式安裝。
@@ -93,7 +94,7 @@ summary: 如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開
 
 [role="tabbed-block"]
 ====
-.Red Hat
+.紅帽企業版
 --
 . 擷取安裝的 StorageGRID 套件清單 `dnf list | grep -i storagegrid`：。
 +

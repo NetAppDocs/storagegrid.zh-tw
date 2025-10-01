@@ -44,7 +44,7 @@ image::../media/grid-federation-account-clone-workflow-tm.png[帳戶複製的租
 
 
 [role="quick-margin-list"]
-* 如果您不使用身分識別聯盟、link:creating-groups-for-s3-tenant.html["建立新的本機群組"]則link:managing-local-users.html["建立本機使用者"]。
+* 如果您不使用身份聯合，link:creating-groups-for-s3-tenant.html["建立新的本機群組"]進而link:manage-users.html["建立本機使用者"]。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]建立 S3 存取金鑰
@@ -78,9 +78,9 @@ NOTE: 當您在來源網格上建立本機群組時所選取的任何使用者�
 
 === 複製在來源網格上建立的本機使用者
 
-當您在來源網格上建立新的本機使用者時、 StorageGRID 會自動將該使用者複製到目的地網格。原始使用者及其複本具有相同的全名、使用者名稱及 * 拒絕存取 * 設定。兩個使用者也屬於同一個群組。有關說明，請參閱link:managing-local-users.html["管理本機使用者"]。
+當您在來源網格上建立新的本機使用者時， StorageGRID會自動將該使用者複製到目標網格。原始使用者及其複製使用者俱有相同的全名、使用者名稱和*拒絕存取*設定。兩個用戶也屬於同一組。有關說明，請參閱link:manage-users.html["管理使用者"]。
 
-基於安全考量、本機使用者密碼不會複製到目的地網格。如果本機使用者需要存取目的地網格上的 Tenant Manager 、則租戶帳戶的根使用者必須在目的地網格上新增該使用者的密碼。有關說明，請參閱link:managing-local-users.html["管理本機使用者"]。
+出於安全原因，本機使用者密碼不會被複製到目標網格。如果本機使用者需要存取目標網格上的租用戶管理器，則租用戶帳戶的根用戶必須在目標網格上為該用戶新增密碼。有關說明，請參閱link:manage-users.html["管理使用者"]。
 
 image::../media/grid-federation-local-user-clone.png[顯示本機使用者已從來源網格複製到目的地網格的影像]
 

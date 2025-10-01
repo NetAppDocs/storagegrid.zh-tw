@@ -1,0 +1,8 @@
+---
+permalink: admin/manage-ssh-access.html 
+redirect: storagegrid/admin/manage-external-ssh-access.html 
+---
+= 
+:allow-uri-read: 
+
+

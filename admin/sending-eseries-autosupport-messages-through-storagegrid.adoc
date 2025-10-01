@@ -37,7 +37,7 @@ E 系列 AutoSupport 套件包含儲存硬體的詳細資料、比 StorageGRID �
 NOTE: 此程序僅適用於設定 E 系列 AutoSupport 套件的 StorageGRID Proxy 伺服器。如需 E 系列 AutoSupport 組態的詳細資訊，請參閱 https://docs.netapp.com/us-en/e-series-family/index.html["NetApp E系列與SANtricity VMware文檔"^]。
 
 .步驟
-. 在Grid Manager中、選取* nodes *。
+. 在網格管理器中，選擇*節點*。
 . 從左側節點清單中、選取您要設定的儲存應用裝置節點。
 . 選擇* SANtricity 《系統管理程式》*。
 +
@@ -46,7 +46,7 @@ NOTE: 此程序僅適用於設定 E 系列 AutoSupport 套件的 StorageGRID Pro
 +
 image::../media/autosupport_santricity_home_page.png[首頁AutoSupport SANtricity]
 
-. 選擇*支援*>*支援中心*>* AutoSupport 支援*。
+. 選擇*支援* > *支援中心* > *AutoSupport*。
 +
 畫面上會出現「介紹操作」頁面。AutoSupport
 

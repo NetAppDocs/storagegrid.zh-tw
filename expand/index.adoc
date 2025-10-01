@@ -13,6 +13,8 @@ summary: 您可以擴充 StorageGRID 系統的容量或功能、而不會中斷�
 [role="lead"]
 您可以擴充 StorageGRID 系統的容量或功能、而不會中斷系統作業。
 
+在擴展網格節點之前，您必須確認沒有處於活動狀態的資料修復作業。如果任何修復失敗，則必須重新啟動它們並讓它們完成，然後再執行退役或擴充功能。請參閱link:../maintain/checking-data-repair-jobs.html["檢查資料修復工作"] 。
+
 StorageGRID 擴充功能可讓您新增：
 
 * 儲存磁碟區至儲存節點
@@ -26,11 +28,6 @@ StorageGRID 擴充功能可讓您新增：
 
 [role="tabbed-block"]
 ====
-.新增儲存磁碟區
---
-請依照的步驟link:adding-storage-volumes-to-storage-nodes.html["將儲存磁碟區新增至儲存節點"]進行。
-
---
 .新增網格節點
 --
 . 請依照的步驟link:adding-grid-nodes-to-existing-site-or-adding-new-site.html["將網格節點新增至現有站台"]進行。
@@ -40,15 +37,21 @@ StorageGRID 擴充功能可讓您新增：
 ** link:deploying-new-grid-nodes.html#appliances-deploying-storage-gateway-or-non-primary-admin-nodes["應用裝置"]
 ** link:deploying-new-grid-nodes.html#vmware-deploy-grid-nodes["VMware"]
 ** link:deploying-new-grid-nodes.html#linux-deploy-grid-nodes["Linux"]
-+
-
-NOTE: 「 Linux 」是指 Red Hat Enterprise Linux 、 Ubuntu 或 Debian 部署。如需支援版本的清單，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 
+
+
+
+NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 . link:performing-expansion.html["執行擴充"]。
 . link:configuring-expanded-storagegrid-system.html["設定擴充系統"]。
 
+
+--
+.新增儲存磁碟區
+--
+請依照的步驟link:adding-storage-volumes-to-storage-nodes.html["將儲存磁碟區新增至儲存節點"]進行。
 
 --
 .新增網站
@@ -60,11 +63,12 @@ NOTE: 「 Linux 」是指 Red Hat Enterprise Linux 、 Ubuntu 或 Debian 部署�
 ** link:deploying-new-grid-nodes.html#appliances-deploying-storage-gateway-or-non-primary-admin-nodes["應用裝置"]
 ** link:deploying-new-grid-nodes.html#vmware-deploy-grid-nodes["VMware"]
 ** link:deploying-new-grid-nodes.html#linux-deploy-grid-nodes["Linux"]
-+
-
-NOTE: 「 Linux 」是指 Red Hat Enterprise Linux 、 Ubuntu 或 Debian 部署。如需支援版本的清單，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 
+
+
+
+NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 . link:performing-expansion.html["執行擴充"]。
 . link:configuring-expanded-storagegrid-system.html["設定擴充系統"]。

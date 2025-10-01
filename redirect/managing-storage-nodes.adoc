@@ -1,0 +1,8 @@
+---
+permalink: admin/managing-storage-nodes.html 
+redirect: storagegrid/admin/what-object-segmentation-is.html 
+---
+= 
+:allow-uri-read: 
+
+

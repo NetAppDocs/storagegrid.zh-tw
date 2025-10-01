@@ -30,7 +30,7 @@ StorageGRID 預設可以傳送稽核資訊、也可以變更目的地：
 * StorageGRID 預設為本機節點稽核目的地。
 * Grid Manager 和 Tenant Manager 稽核記錄項目可能會傳送至儲存節點。
 * 您也可以變更稽核記錄的目的地、並將稽核資訊傳送至外部syslog伺服器。設定外部syslog伺服器時、仍會繼續產生及儲存稽核記錄的本機記錄。
-* link:../monitor/configure-audit-messages.html["瞭解如何設定稽核訊息和記錄目的地"]。
+* link:../monitor/configure-log-management.html["了解有關配置日誌管理的信息"] 。
 
 
 如需稽核記錄檔、稽核訊息格式、稽核訊息類型及分析稽核訊息可用工具的詳細資訊，請參閱link:../audit/index.html["檢閱稽核記錄"]。

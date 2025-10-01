@@ -141,6 +141,8 @@ NOTE: ILM 規則不能同時使用 * 使用者定義的建立時間 * 作為參�
 
 不支援下列要求標頭：
 
+* `If-Match`
+* `If-None-Match`
 * `x-amz-acl`
 * `x-amz-sdk-checksum-algorithm`
 * `x-amz-trailer`

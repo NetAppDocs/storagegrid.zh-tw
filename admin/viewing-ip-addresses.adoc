@@ -20,7 +20,7 @@ summary: 您可以檢視StorageGRID 您的系統的各個網格節點的IP位址
 如需變更 IP 位址的相關資訊，請參閱link:../maintain/configuring-ip-addresses.html["設定IP位址"]。
 
 .步驟
-. 選擇*節點*>*網格節點*>*總覽*。
+. 選擇*節點* > *_grid node_* > *概覽*。
 . 選取IP位址標題右側的*顯示更多*。
 +
 該網格節點的IP位址會列在表格中。

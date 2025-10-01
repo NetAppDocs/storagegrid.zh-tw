@@ -6,7 +6,7 @@
 
 == 尋找儲存節點的主機名稱
 
-. 登入主要管理節點：
+. 登入任意管理節點：
 +
 .. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
 .. 輸入檔案中列出的密碼 `Passwords.txt`。
@@ -42,7 +42,7 @@ NOTE: 您無法同時執行 `repair-data`多個節點的作業。若要恢復多
 `repair-data start-replicated-node-repair --nodes SG-DC-SN3`
 
 
-NOTE: 物件資料還原時、如果 StorageGRID 系統找不到複寫的物件資料、就會觸發 * 物件遺失 * 警示。警示可能會在整個系統的儲存節點上觸發。您應該判斷遺失原因、以及是否有可能恢復。請參閱。 link:../troubleshoot/investigating-lost-objects.html["調查遺失的物件"]
+NOTE: 當物件資料恢復時，如果StorageGRID系統無法找到複製的物件數據，則會觸發「*物件遺失*」警報。整個系統的儲存節點可能會觸發警報。您應該確定損失的原因以及是否可以恢復。看link:../troubleshoot/investigating-potentially-lost-objects.html["調查可能遺失的物品"] 。
 
 --
 .銷毀編碼（ EC ）資料

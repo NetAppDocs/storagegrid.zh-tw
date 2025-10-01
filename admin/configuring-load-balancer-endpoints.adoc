@@ -13,9 +13,6 @@ summary: 負載平衡器端點決定連接到閘道和管理節點上的 Storage
 [role="lead"]
 負載平衡器端點決定連接到閘道和管理節點上的 StorageGRID 負載平衡器時、 S3 用戶端可以使用的連接埠和網路傳輸協定。您也可以使用端點來存取 Grid Manager 、 Tenant Manager 或兩者。
 
-
-TIP: Swift 詳細資料已從此文件網站版本中移除。請參閱。 https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-client-connections.html["設定S3和Swift用戶端連線"^]
-
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 * 您有link:admin-group-permissions.html["root 存取權限"]。
@@ -41,15 +38,15 @@ NOTE: 對端點憑證所做的變更、可能需要15分鐘才能套用至所有
 
 == 建立負載平衡器端點
 
-每個 S3 用戶端負載平衡器端點都會指定連接埠、用戶端類型（ S3 ）和網路傳輸協定（ HTTP 或 HTTPS ）。管理介面負載平衡器端點會指定連接埠、介面類型和不受信任的用戶端網路。
+每個 S3 用戶端負載平衡器端點指定一個連接埠、一個客戶端類型（S3）和一個網路協定（HTTP 或 HTTPS）。管理介面負載平衡器端點指定連接埠、介面類型和不受信任的客戶端網路。
 
 
 
 === 存取精靈
 
 .步驟
-. 選擇*組態*>*網路*>*負載平衡器端點*。
-. 若要為 S3 或 Swift 用戶端建立端點、請選取 *S3 或 Swift 用戶端 * 標籤。
+. 選擇*設定* > *網路* > *負載平衡器端點*。
+. 若要為 S3 用戶端建立端點，請選擇 *S3 用戶端* 標籤。
 . 若要建立端點以存取 Grid Manager 、 Tenant Manager 或兩者、請選取 * 管理介面 * 索引標籤。
 . 選擇* Create *（建立*）。
 
@@ -64,7 +61,7 @@ NOTE: 對端點憑證所做的變更、可能需要15分鐘才能套用至所有
 
 [role="tabbed-block"]
 ====
-.S3 或 Swift 用戶端
+.S3用戶端
 --
 [cols="1a,3a"]
 |===
@@ -90,7 +87,7 @@ NOTE: 對端點憑證所做的變更、可能需要15分鐘才能套用至所有
  a| 
 用戶端類型
  a| 
-將使用此端點的用戶端應用程式類型：* S3 *或* Swift *。
+必須是 *S3 * 。
 
 
 
@@ -102,6 +99,15 @@ NOTE: 對端點憑證所做的變更、可能需要15分鐘才能套用至所有
 * 選擇* HTTPS *進行安全的TLS加密通訊（建議）。您必須先附加安全性憑證、才能儲存端點。
 * 選擇「* HTTP *」以獲得較不安全且未加密的通訊。僅將HTTP用於非正式作業網格。
 
+
+
+
+ a| 
+啟用快取
+ a| 
+啟用或停用link:../admin/managing-load-balancing.html#considerations-for-load-balancer-caching["網關節點上的緩存"]用於此負載平衡器端點。
+
+如果出現快取問題，請參閱link:../troubleshoot/troubleshooting-load-balancer-caching.html["排查負載平衡器快取問題"]。
 
 |===
 --

@@ -12,10 +12,10 @@ image::../media/ldap_service_type.png[顯示LDAP服務類型選項的「身分�
 
 . 如果選擇*其他*、請填寫「LDAP屬性」區段中的欄位。否則、請前往下一步。
 +
-** *使用者唯一名稱*：含有LDAP使用者唯一識別碼的屬性名稱。此屬性相當於 `sAMAccountName` Active Directory 和 `uid` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `uid`。
-** *使用者UUID *：含有LDAP使用者永久唯一識別碼的屬性名稱。此屬性相當於 `objectGUID` Active Directory 和 `entryUUID` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `nsuniqueid`。指定屬性的每個使用者值必須是16位元組或字串格式的32位數十六進位數字、連字號會被忽略。
-** *群組唯一名稱*：包含LDAP群組唯一識別碼的屬性名稱。此屬性相當於 `sAMAccountName` Active Directory 和 `cn` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `cn`。
-** *群組UUID *：包含LDAP群組永久唯一識別碼的屬性名稱。此屬性相當於 `objectGUID` Active Directory 和 `entryUUID` OpenLDAP 。如果要配置 Oracle Directory Server ，請輸入 `nsuniqueid`。指定屬性的每個群組值必須是16位元組或字串格式的32位數十六進位數字、連字號會被忽略。
+** *使用者唯一名稱*：包含 LDAP 使用者唯一識別碼的屬性名稱。此屬性相當於 `sAMAccountName`對於 Active Directory 和 `uid`對於 OpenLDAP。如果您正在設定 Oracle Directory Server，請輸入 `uid`。
+** *使用者 UUID*：包含 LDAP 使用者的永久唯一識別碼的屬性名稱。此屬性相當於 `objectGUID`對於 Active Directory 和 `entryUUID`對於 OpenLDAP。如果您正在設定 Oracle Directory Server，請輸入 `nsuniqueid`。每個使用者的指定屬性值必須是 16 位元組或字串格式的 32 位元十六進位數，其中連字元將被忽略。
+** *群組唯一名稱*：包含 LDAP 群組唯一識別碼的屬性的名稱。此屬性相當於 `sAMAccountName`對於 Active Directory 和 `cn`對於 OpenLDAP。如果您正在設定 Oracle Directory Server，請輸入 `cn`。
+** *群組 UUID*：包含 LDAP 群組的永久唯一識別碼的屬性的名稱。此屬性相當於 `objectGUID`對於 Active Directory 和 `entryUUID`對於 OpenLDAP。如果您正在設定 Oracle Directory Server，請輸入 `nsuniqueid`。每個群組的指定屬性的值必須是 16 位元組或字串格式的 32 位元十六進位數，其中連字元將被忽略。
 
 
 . 對於所有LDAP服務類型、請在「設定LDAP伺服器」區段中輸入所需的LDAP伺服器和網路連線資訊。
@@ -39,7 +39,7 @@ NOTE: STARTTLS的預設連接埠為389、LDAPS的預設連接埠為636。不過�
 *** `cn`
 *** `memberOf`或 `isMemberOf`
 *** * Active Directory* ： `objectSid`、 `primaryGroupID`、 `userAccountControl`和 `userPrincipalName`
-*** * Azure * ： `accountEnabled`及 `userPrincipalName`
+*** *入口 ID*: `accountEnabled`和 `userPrincipalName`
 
 
 ** *密碼*：與使用者名稱相關的密碼。
@@ -65,8 +65,8 @@ NOTE: *使用者唯一名稱*值必須在其所屬的*使用者基礎DN*內是�
 輸入下列其中一種模式：
 
 +
-*** * UserPrincipalName 模式（ Active Directory 和 Azure ） * ： `[USERNAME]@_example_.com`
-*** * 低階登入名稱模式（ Active Directory 和 Azure ） * ： `_example_\[USERNAME]`
+*** *UserPrincipalName 模式（AD 和 Entra ID）*： `[USERNAME]@_example_.com`
+*** *下級登入名稱模式（AD 和 Entra ID）*： `_example_\[USERNAME]`
 *** * 辨別名稱模式 * ： `CN=[USERNAME],CN=Users,DC=_example_,DC=com`
 +
 請準確附上所寫的*（使用者名稱）*。
@@ -77,12 +77,12 @@ NOTE: *使用者唯一名稱*值必須在其所屬的*使用者基礎DN*內是�
 
 . 在傳輸層安全性（TLS）區段中、選取安全性設定。
 +
-** *使用ARTTLS*：使用ARTTLS來保護與LDAP伺服器的通訊安全。這是Active Directory、OpenLDAP或其他的建議選項、但Azure不支援此選項。
-** *使用LDAPS*：LDAPS（LDAP over SSL）選項使用TLS建立與LDAP伺服器的連線。您必須為Azure選取此選項。
-** *請勿使用TLS*：StorageGRID 不保護介於整個系統與LDAP伺服器之間的網路流量。Azure不支援此選項。
+** *使用 STARTTLS*：使用 STARTTLS 確保與 LDAP 伺服器的通訊安全。這是 Active Directory、OpenLDAP 或其他的建議選項，但 Microsoft Entra ID 不支援此選項。
+** *使用 LDAPS*：LDAPS（透過 SSL 的 LDAP）選項使用 TLS 建立與 LDAP 伺服器的連線。您必須為 Microsoft Entra ID 選擇此選項。
+** *請勿使用 TLS*： StorageGRID系統和 LDAP 伺服器之間的網路流量將不安全。  Microsoft Entra ID 不支援此選項。
 +
 
-NOTE: 如果Active Directory伺服器強制執行LDAP簽署、則不支援使用*「不使用TLS*」選項。您必須使用ARTTLS或LDAPS。
+NOTE: 如果您的 Active Directory 伺服器強制執行 LDAP 簽名，則不支援使用 *不使用 TLS* 選項。您必須使用 STARTTLS 或 LDAPS。
 
 
 
@@ -105,7 +105,7 @@ NOTE: 如果Active Directory伺服器強制執行LDAP簽署、則不支援使用
 
 .步驟
 . 選擇*測試連線*。
-. 如果您未提供連結使用者名稱格式：
+. 如果您沒有提供綁定使用者名稱格式：
 +
 ** 如果連線設定有效、就會出現「測試連線成功」訊息。選取*「Save（儲存）」*以儲存組態。
 ** 如果連線設定無效、就會出現「無法建立測試連線」訊息。選擇*關閉*。然後、解決所有問題、並再次測試連線。

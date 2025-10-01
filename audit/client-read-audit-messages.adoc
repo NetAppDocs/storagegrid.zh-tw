@@ -1,7 +1,7 @@
 ---
 permalink: audit/client-read-audit-messages.html 
 sidebar: sidebar 
-keywords: storagegrid, audit, message, messages, client read, S3SL, SGET, SHEA, WGET, WHEA, S3, swift 
+keywords: storagegrid, audit, message, messages, client read, S3SL, SGET, SHEA, WGET, WHEA, S3 
 summary: S3 用戶端應用程式要求擷取物件時、會記錄用戶端讀取稽核訊息。 
 ---
 = 用戶端讀取稽核訊息
@@ -50,27 +50,5 @@ S3標頭：記錄成功的交易、以檢查物件或儲存區是否存在。
 S3用戶端
  a| 
 link:shea-s3-head.html["Shea：S3負責人"]
-
-
-
- a| 
-WGet
- a| 
-Swift Get：記錄成功的交易、以擷取物件或列出容器中的物件。
- a| 
-Swift用戶端
- a| 
-link:wget-swift-get.html["WGet：Swift Get"]
-
-
-
- a| 
-WHA
- a| 
-Swift標頭：記錄成功的交易、以檢查物件或容器是否存在。
- a| 
-Swift用戶端
- a| 
-link:whea-swift-head.html["WHA：Swift刀頭"]
 
 |===

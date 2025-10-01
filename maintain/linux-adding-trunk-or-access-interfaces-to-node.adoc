@@ -14,12 +14,7 @@ summary: 您可以在安裝Linux節點之後、將額外的主幹或存取介面
 您可以在安裝Linux節點之後、將額外的主幹或存取介面新增至該節點。您新增的介面會顯示在「VLAN介面」頁面和「HA群組」頁面上。
 
 .開始之前
-* 您可以取得在StorageGRID Linux平台上安裝的指令。
-+
-** link:../rhel/index.html["在 Red Hat Enterprise Linux 上安裝 StorageGRID"]
-** link:../ubuntu/index.html["在 Ubuntu 或 Debian 上安裝 StorageGRID"]
-
-
+* 您可以訪問link:../swnodes/index.html["StorageGRID安裝說明"]在您的 Linux 平台上。
 * 您有 `Passwords.txt`檔案。
 * 您有 link:../admin/admin-group-permissions.html["特定存取權限"]。
 

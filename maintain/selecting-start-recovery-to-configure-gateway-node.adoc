@@ -21,7 +21,7 @@ summary: 更換閘道節點之後、您必須在Grid Manager中選取「Start Re
 
 
 .步驟
-. 從Grid Manager中選擇* maintenance *>* Tasks *>* Recovery*。
+. 從網格管理員中，選擇*維護* > *任務* > *恢復*。
 . 在「Pending Node」（擱置節點）清單中選取您要恢復的網格節點。
 +
 節點在故障後會出現在清單中、但您無法選取節點、直到節點重新安裝並準備好恢復為止。

@@ -26,7 +26,7 @@ CAUTION: 如果ILM原則設定不正確、可能導致無法恢復的資料遺�
 * 如果您的網格包含多個站台、預設規則會在每個站台上複寫每個物件的一個複本。
 
 
-如果預設原則不符合您的儲存需求、您可以建立自己的規則和原則。請參閱link:what-ilm-rule-is.html["建立 ILM 規則"]和link:creating-ilm-policy.html["建立ILM原則"]。
+如果預設策略無法滿足您的儲存需求，您可以建立自己的規則和策略。看link:what-ilm-rule-is.html["建立 ILM 規則"]和link:creating-ilm-policy.html["建立ILM原則"]。
 
 
 
@@ -56,6 +56,11 @@ ILM 原則標籤:: 如果您想要讓租戶輕鬆地在每個貯體的多個資�
 例如、您可能會有三個標記、分別命名為「金」、「銀」和「銅」。您可以根據原則儲存物件的時間和位置、將 ILM 原則指派給每個標記。租戶可以透過標記其貯體來選擇要使用的原則。標記為 Gold 的貯體是由 Gold 原則管理、並獲得 Gold 等級的資料保護與效能。
 
 --
+
+
+
+NOTE: 你可以link:../ilm/creating-ilm-policy.html#activate-ilm-policy["最多可建立 10 個策略標籤"]為您的網格。
+
 預設 ILM 原則標籤:: 安裝 StorageGRID 時會自動建立預設的 ILM 原則標籤。每個網格都必須有一個作用中原則指派給預設標籤。預設原則適用於任何未標配的 S3 儲存區。
 
 

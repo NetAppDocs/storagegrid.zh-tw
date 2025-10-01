@@ -21,7 +21,7 @@ summary: 更換非主要管理節點之後、您必須在Grid Manager中選取�
 
 
 .步驟
-. 從Grid Manager中選擇* maintenance *>* Tasks *>* Recovery*。
+. 從網格管理員中，選擇*維護* > *任務* > *恢復*。
 . 在「Pending Node」（擱置節點）清單中選取您要恢復的網格節點。
 +
 節點在故障後會出現在清單中、但您無法選取節點、直到節點重新安裝並準備好恢復為止。
@@ -51,6 +51,6 @@ image::../media/recovery_reset_warning.gif[顯示重設恢復警告對話方塊�
 . 如果StorageGRID 您的支援系統啟用單一登入（SSO）、且您所恢復之管理節點的依賴方信任已設定為使用預設管理介面憑證、請更新（或刪除及重新建立）節點在Active Directory Federation Services（AD FS）中的依賴方信任。使用在管理節點還原程序期間所產生的新預設伺服器憑證。
 +
 
-NOTE: 若要設定信賴方信任、請參閱link:../admin/configuring-sso.html["設定單一登入"]。若要存取預設伺服器憑證、請登入管理節點的命令Shell。移至 `/var/local/mgmt-api`目錄、然後選取 `server.crt`檔案。
+NOTE: 若要配置信賴方信任，請參閱link:../admin/configure-sso.html["設定單一登入"]。若要存取預設伺服器證書，請登入管理節點的命令 shell。前往 `/var/local/mgmt-api`目錄，然後選擇 `server.crt`文件。
 
 

@@ -42,7 +42,7 @@ NOTE: 為了在外部 Syslog 伺服器發生故障時最大化完整資料恢復
 
 == 如何設定外部 Syslog 伺服器
 
-若要瞭解如何設定外部 Syslog 伺服器、請參閱link:../monitor/configure-audit-messages.html["設定稽核訊息和外部 Syslog 伺服器"]。
+若要了解如何設定外部 syslog 伺服器，請參閱link:../monitor/configure-log-management.html["設定日誌管理和外部系統日誌伺服器"]。
 
 如果您打算設定使用 TLS 或 RELP/TLS 通訊協定、則必須擁有下列憑證：
 

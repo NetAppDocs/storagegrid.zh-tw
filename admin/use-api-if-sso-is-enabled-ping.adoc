@@ -11,7 +11,7 @@ summary: 如果您已設定並啟用單一登入（SSO）、而且使用PingFeda
 
 
 [role="lead"]
-如果您擁有link:../admin/configuring-sso.html["已設定並啟用單一登入（SSO）"]並使用 PingFederate 做為 SSO 供應商、則必須發出一系列 API 要求、以取得 Grid Management API 或 Tenant Management API 有效的驗證權杖。
+如果你有link:../admin/how-sso-works.html["已設定並啟用單一登入（SSO）"]並且您使用 PingFederate 作為 SSO 提供程序，則必須發出一系列 API 請求以取得對網格管理 API 或租用戶管理 API 有效的身份驗證令牌。
 
 
 
@@ -27,7 +27,7 @@ summary: 如果您已設定並啟用單一登入（SSO）、而且使用PingFeda
 .關於這項工作
 若要取得驗證權杖、您可以使用下列其中一個範例：
 
-*  `storagegrid-ssoauth.py`Python 指令碼位於 Red Hat Enterprise Linux 、 Ubuntu 或 Debian 及 `./vsphere` VMware 的 `./debs` StorageGRID 安裝檔案目錄中(`./rpms`。
+* 這 `storagegrid-ssoauth.py`Python 腳本，位於StorageGRID安裝檔目錄中(`./rpms`對於 RHEL， `./debs`適用於 Ubuntu 或 Debian，以及 `./vsphere`對於 VMware)。
 * Curl要求的工作流程範例。
 +
 如果執行速度太慢、捲曲工作流程可能會逾時。您可能會看到以下錯誤： `A valid SubjectConfirmation was not found on this Response`。

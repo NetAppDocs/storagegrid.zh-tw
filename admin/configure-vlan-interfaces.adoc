@@ -26,12 +26,14 @@ summary: 您可以在管理節點和閘道節點上建立虛擬LAN（VLAN）介�
 * 如果您需要新增主幹介面、請參閱下列詳細資料：
 +
 ** * VMware （安裝節點之後） * ：link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["VMware：新增主幹或存取介面至節點"]
-** * RHEL （安裝節點之前） * ：link:../rhel/creating-node-configuration-files.html["建立節點組態檔"]
-** * Ubuntu 或 Debian （安裝節點之前） * ：link:../ubuntu/creating-node-configuration-files.html["建立節點組態檔"]
-** * RHEL 、 Ubuntu 或 Debian （安裝節點之後） * ：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux：新增主幹或存取介面至節點"]
+** *Linux（安裝節點之前）*：link:../swnodes/creating-node-configuration-files.html["建立節點組態檔"]
+** *Linux（安裝節點後）*：link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["向節點新增中繼或存取介面"]
 
 
 
+
+
+NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 
 
@@ -54,7 +56,7 @@ summary: 您可以在管理節點和閘道節點上建立虛擬LAN（VLAN）介�
 === 存取精靈
 
 .步驟
-. 選擇*組態*>*網路*>* VLAN介面*。
+. 選擇*設定* > *網路* > *VLAN 介面*。
 . 選擇* Create *（建立*）。
 
 
@@ -101,7 +103,7 @@ image::../media/vlan-create-parent-interfaces.png[VLAN建立精靈父介面]
 
 
 . 選擇*保存*。
-. 等待5分鐘、讓新介面在「高可用度群組」頁面上顯示為選項、並在節點的*網路介面*表格中列出（*節點*>*父介面節點_*>*網路*）。
+. 等待最多 5 分鐘，新的介面才會作為選擇出現在「高可用性群組」頁面上，並列在節點的 *網路介面* 表中（*節點* > *_父介面節點_* > *網路*）。
 
 
 
@@ -126,7 +128,7 @@ image::../media/vlan-create-parent-interfaces.png[VLAN建立精靈父介面]
 
 
 .步驟
-. 選擇*組態*>*網路*>* VLAN介面*。
+. 選擇*設定* > *網路* > *VLAN 介面*。
 . 選取您要編輯的 VLAN 介面核取方塊。然後選取*「動作*」>*「編輯*」。
 . 或者、請更新VLAN ID或說明。然後選擇*繼續*。
 +
@@ -153,7 +155,7 @@ image::../media/vlan-create-parent-interfaces.png[VLAN建立精靈父介面]
 
 
 .步驟
-. 選擇*組態*>*網路*>* VLAN介面*。
+. 選擇*設定* > *網路* > *VLAN 介面*。
 . 選取您要移除之每個 VLAN 介面的核取方塊。然後選取*「動作*」>*「刪除*」。
 . 選擇*是*以確認您的選擇。
 +
