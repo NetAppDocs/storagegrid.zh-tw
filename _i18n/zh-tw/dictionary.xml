@@ -14125,20 +14125,16 @@
   <block id="95f6df568e18de42b0f0ca3ecef26398" category="paragraph">Active Directory / LDAP</block>
   <block id="b14ae13aff870b44f247f85fbb36072b" category="paragraph">用於連線至Active Directory或LDAP伺服器以進行身分識別聯盟。</block>
   <block id="0e8433f9a404f1f3ba601c14b026d321" category="paragraph">HTTPS</block>
-  <block id="b50a9d29fec392329ac0ae4cb0110503" category="paragraph">由網頁瀏覽器和管理API用戶端使用、用於存取Grid Manager和租戶管理程式。</block>
-  <block id="a9bb22a4c26c5b03750cc1b430fd4f2a" category="paragraph">* 附註 * ：如果您關閉 Grid Manager 連接埠 443 或 8443 、除非已將其 IP 位址新增至「貴賓」位址清單、否則目前連線至封鎖連接埠的任何使用者（包括您）將無法存取 Grid Manager 。請參閱<block ref="c0029b37ee8e2f7f29845f5ff3b725da" category="inline-link-macro-rx"></block>以設定特權 IP 位址。</block>
   <block id="5a5371ddb36ba9e3443150cc1f0e644c" category="paragraph">如果啟用單一登入（SSO）、則管理節點會使用此選項來連線至Active Directory。</block>
   <block id="0064bf2a1c1e8cfbe1976bf6a6fc3f4d" category="paragraph">用於傳送至 AWS 或其他使用 HTTPS 的外部服務的平台服務訊息。建立端點時、租戶可以覆寫預設的 HTTP 連接埠設定 443 。</block>
   <block id="25a1f82c0c27af93304e2afb69b6b393" category="paragraph">雲端儲存池會將要求傳送至使用 HTTPS 的 AWS 目標。網格管理員在設定雲端儲存池時、可以覆寫預設的 HTTPS 連接埠設定 443 。</block>
   <block id="aa0d2a804a3510442f2fd40f2100b054" category="paragraph">5353</block>
   <block id="16df77dc0953079d97a7dafadb149f70" category="paragraph">mDNS</block>
-  <block id="b36c6f6008dbbafda5ded575a61f4bf0" category="paragraph">提供多點傳送 DNS （ mDNS ）服務、用於在安裝、擴充和恢復期間進行全網格 IP 變更和主要管理節點探索。</block>
   <block id="b8cfbf77a3d250a4523ba67a65a7d031" category="paragraph">5696</block>
   <block id="5a2c55bb167f4f0fcfe52384fe7a4f0b" category="paragraph">KMIP</block>
   <block id="e1ccceb981912f891d16090816e66855" category="paragraph">應用裝置</block>
   <block id="4a4df63c87b4f42081b846d9b9189984" category="paragraph">公里</block>
   <block id="195e8230b873d675a1b57413d9251c7d" category="paragraph">金鑰管理互通性傳輸協定（KMIP）、從設定為節點加密的應用裝置、到金鑰管理伺服器（KMS）的外部流量、除非StorageGRID 在《與眾不同的應用程式安裝程式》的KMS組態頁面上指定不同的連接埠。</block>
-  <block id="94d87e4f3c9ed5ffe553da8dafa1009d" category="paragraph">選用。供網頁瀏覽器和管理API用戶端用來存取Grid Manager。可用於分隔Grid Manager與Tenant Manager通訊。</block>
   <block id="e6ff107459d435e38b54ad4c06202c33" category="paragraph">9022</block>
   <block id="6739e5a65b4fd9164fd9c2c0f1491a36" category="paragraph">允許以StorageGRID 預先組態模式存取不支援和疑難排解功能。在網格節點之間或正常作業期間、不需要存取此連接埠。</block>
   <block id="0a7d7a81e8e3a20e4c34748e98ef45f6" category="paragraph">9091</block>
@@ -14149,7 +14145,6 @@
   <block id="51be25b0145a0beca811de24a62b5cb4" category="paragraph">卡夫卡</block>
   <block id="0c39be51b14798b64fb5bbcbb1b7a710" category="paragraph">Kafka 叢集</block>
   <block id="8f00f2220d56f902b956882222c22566" category="paragraph">用於傳送至 Kafka 叢集的平台服務訊息。建立端點時、租戶可以覆寫預設的 Kafka 連接埠設定 9092 。</block>
-  <block id="15b57c7f75b03ed333937acd0e4d1f3a" category="paragraph">選用。由網頁瀏覽器和管理API用戶端用於存取租戶管理程式。可用於分隔Grid Manager與Tenant Manager通訊。</block>
   <block id="ad5db5924e3e97ed8a387a499efa9fa0" category="paragraph">18082</block>
   <block id="03b9eaf2e04587c1e364872ef61ddbb9" category="paragraph">S3用戶端</block>
   <block id="11f3cbd93b8d2b94defeeb997681e1bb" category="paragraph">S3 用戶端流量直接傳輸至儲存節點（ HTTPS ）。</block>
@@ -14269,11 +14264,8 @@
   <block id="a561e7ebcac8441387d4fe143fdef87f" category="paragraph">18017</block>
   <block id="d6e1524c4c10e483d44f0a06f4108de2" category="paragraph">Cloud Storage Pool的Data Mover服務內部流量。</block>
   <block id="2be1f64cae97e3767efd3c0bef7b0779" category="paragraph">18019</block>
-  <block id="82500251962f79307270a5dd450d8b52" category="paragraph">用於銷毀編碼的區塊服務內部流量。</block>
   <block id="e4f94bcb81892395a5a06c9cb8f820e4" category="paragraph">S3相關的內部流量。</block>
   <block id="4d8d751988a68fec6e98d0a65284f530" category="paragraph">18086</block>
-  <block id="af32210d68f61fcd4a5e6fa042e16e15" category="paragraph">所有網格節點</block>
-  <block id="c65ef3e3b2ae9b258850acf6622e9d69" category="paragraph">所有儲存節點</block>
   <block id="c85ac1163071cfa93c7c99b899c15eb2" category="paragraph">與 LDR 服務相關的內部流量。</block>
   <block id="33ec1f50197cc4f74b3e8dc359ec3280" category="paragraph">18200</block>
   <block id="b46a066bb412c1f6ec91676ef56e766b" category="paragraph">有關用戶端要求的其他統計資料。</block>
@@ -22030,4 +22022,13 @@
   <block id="96319e218839c92a054664a65b395706" category="sidebar">範例 /etc/network/interfaces（Ubuntu 或 Debian）</block>
   <block id="7ca805bce30f2a13d6bcd7ece0b40a90" category="sidebar">什麼是分支桶</block>
   <block id="1440bca3ed9acdf17ac97bfb4678bffb" category="sidebar">為儲存桶和物件配置 CORS</block>
+  <block id="e06c7d4966617ff8b915f5a326f7b29e" category="paragraph">由 Web 瀏覽器和管理 API 用戶端用來存取網格管理員和租用戶管理員。</block>
+  <block id="7726f6ec30e13fbba0a7138261ac661b" category="paragraph">*注意*：如果您關閉網格管理器連接埠 443 或 8443，則目前連接到被封鎖連接埠的任何使用者（包括您）都將失去對網格管理員的存取權限，除非他們的 IP 位址已新增至特權位址清單中。參考<block ref="c0029b37ee8e2f7f29845f5ff3b725da" category="inline-link-macro-rx"></block>配置特權IP位址。</block>
+  <block id="331bfda1737c41b85f4f85967a23b2a1" category="paragraph">提供用於全網格 IP 變更以及安裝、擴充和復原期間的主要管理節點發現的多重播送 DNS (mDNS) 服務。</block>
+  <block id="89902d28d094c37e31e03d7c3b157735" category="paragraph">選修的。由 Web 瀏覽器和管理 API 用戶端用來存取網格管理員。可用於分離網格管理器和租戶管理器通訊。</block>
+  <block id="9243f8506f9d223a5487cef45bbde2b6" category="paragraph">*注意*：如果您關閉網格管理器連接埠 443 或 8443，則目前連接到被封鎖連接埠的任何使用者（包括您）都將失去對網格管理員的存取權限，除非他們的 IP 位址已新增至特權位址清單中。參考<block ref="c0029b37ee8e2f7f29845f5ff3b725da" category="inline-link-macro-rx"></block>配置特權IP位址。</block>
+  <block id="831940f57a19370001b598a225d4b622" category="paragraph">由 Web 瀏覽器和管理 API 用戶端用於存取StorageGRID Appliance Installer。</block>
+  <block id="ec726f78a0cebb7cd36287e985d1c513" category="paragraph">*注意*：連接埠 443 重定向到StorageGRID設備安裝程式的連接埠 8443。</block>
+  <block id="58222e55d661c08e5d39e0e9bb5fa081" category="paragraph">選修的。由 Web 瀏覽器和管理 API 用戶端用來存取租用戶管理員。可用於分離網格管理器和租戶管理器通訊。</block>
+  <block id="f0d737da786ad628dee18668fc3fb5c2" category="paragraph">用於擦除編碼和複製的區塊服務內部流量</block>
 </blocks>

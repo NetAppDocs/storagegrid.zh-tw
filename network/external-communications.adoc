@@ -244,9 +244,9 @@ HTTPS
  a| 
 管理節點
  a| 
-由網頁瀏覽器和管理API用戶端使用、用於存取Grid Manager和租戶管理程式。
+由 Web 瀏覽器和管理 API 用戶端用來存取網格管理員和租用戶管理員。
 
-* 附註 * ：如果您關閉 Grid Manager 連接埠 443 或 8443 、除非已將其 IP 位址新增至「貴賓」位址清單、否則目前連線至封鎖連接埠的任何使用者（包括您）將無法存取 Grid Manager 。請參閱link:../admin/configure-firewall-controls.html["設定防火牆控制項"]以設定特權 IP 位址。
+*注意*：如果您關閉網格管理器連接埠 443 或 8443，則目前連接到被封鎖連接埠的任何使用者（包括您）都將失去對網格管理員的存取權限，除非他們的 IP 位址已新增至特權位址清單中。參考link:../admin/configure-firewall-controls.html["設定防火牆控制項"]配置特權IP位址。
 
 
 
@@ -306,7 +306,7 @@ mDNS
  a| 
 所有節點
  a| 
-提供多點傳送 DNS （ mDNS ）服務、用於在安裝、擴充和恢復期間進行全網格 IP 變更和主要管理節點探索。
+提供用於全網格 IP 變更以及安裝、擴充和復原期間的主要管理節點發現的多重播送 DNS (mDNS) 服務。
 
 
 
@@ -336,9 +336,26 @@ HTTPS
  a| 
 管理節點
  a| 
-選用。供網頁瀏覽器和管理API用戶端用來存取Grid Manager。可用於分隔Grid Manager與Tenant Manager通訊。
+選修的。由 Web 瀏覽器和管理 API 用戶端用來存取網格管理員。可用於分離網格管理器和租戶管理器通訊。
 
-* 附註 * ：如果您關閉 Grid Manager 連接埠 443 或 8443 、除非已將其 IP 位址新增至「貴賓」位址清單、否則目前連線至封鎖連接埠的任何使用者（包括您）將無法存取 Grid Manager 。請參閱link:../admin/configure-firewall-controls.html["設定防火牆控制項"]以設定特權 IP 位址。
+*注意*：如果您關閉網格管理器連接埠 443 或 8443，則目前連接到被封鎖連接埠的任何使用者（包括您）都將失去對網格管理員的存取權限，除非他們的 IP 位址已新增至特權位址清單中。參考link:../admin/configure-firewall-controls.html["設定防火牆控制項"]配置特權IP位址。
+
+
+
+ a| 
+8443
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+瀏覽器
+ a| 
+應用裝置
+ a| 
+由 Web 瀏覽器和管理 API 用戶端用於存取StorageGRID Appliance Installer。
+
+*注意*：連接埠 443 重定向到StorageGRID設備安裝程式的連接埠 8443。
 
 
 
@@ -400,7 +417,7 @@ HTTPS
  a| 
 管理節點
  a| 
-選用。由網頁瀏覽器和管理API用戶端用於存取租戶管理程式。可用於分隔Grid Manager與Tenant Manager通訊。
+選修的。由 Web 瀏覽器和管理 API 用戶端用來存取租用戶管理員。可用於分離網格管理器和租戶管理器通訊。
 
 
 
