@@ -22029,7 +22029,6 @@
   <block id="68dce4b2994b1d7fafe72155134e7425" category="summary">了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGRID系統，以及如何使用NetApp Console 的資料服務進行備份、資料分層等。</block>
   <block id="fc4df0fb45c3464916668c4f4d5047cd" category="doc">如何使用NetApp控制台管理StorageGRID</block>
   <block id="833d7a06da5bfcaa98ebc4b04bcbe43e" category="inline-link">使用NetApp控制台進行StorageGRID管理</block>
-  <block id="08a86c122a16574c68ee2add17edebf3" category="paragraph">前往<block ref="02da84de3e0587664de030a7d130d7eb" category="inline-link-rx"></block>了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGRID系統，以及如何使用NetApp Console 的資料服務進行備份、資料分層等。</block>
   <block id="d75e5c078ed9088e9acd95eaa7e2bce0" category="paragraph">* BlueXP現在是NetApp控制台*</block>
   <block id="995c8f79a8e07fbd8d519e45d03d6004" category="paragraph">NetApp控制台建立在增強和重組的BlueXP基礎之上，可在企業級內部和雲端環境中集中管理NetApp儲存和NetApp資料服務，提供即時洞察、更快的工作流程和簡化的管理，並且高度安全且合規。</block>
   <block id="2ef9d641d45afe99b74ad6f9a9f797ad" category="inline-link-macro">NetApp控制台發行說明</block>
@@ -22038,4 +22037,5 @@
   <block id="c27fd735b4380af7ab57542ae39e16aa" category="paragraph">運行時問題可能會由<block ref="29c74c3b7244d6099f188726dde18748" category="inline-link-macro-rx"></block>警報。如果您收到此警報，請按照警報中的指示重新發送測試訊息，以便您可以獲得詳細的錯誤訊息。</block>
   <block id="7b63e3ab012c50052cf80c91528ad009" category="sidebar">使用NetApp Console 進行StorageGRID管理</block>
   <block id="2532828f944a69834b500cafd1abc57b" category="sidebar">StorageGRID和NetApp控制台</block>
+  <block id="84356a318e373152abb8356cb6571110" category="paragraph">前往<block ref="7a14d844a19b1e8c58704b344e72aa26" category="inline-link-rx"></block>了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGRID系統，以及如何使用NetApp Console 的資料服務進行備份、資料分層等。</block>
 </blocks>

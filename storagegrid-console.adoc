@@ -14,7 +14,7 @@ summary: 了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGR
 
 
 [role="lead"]
-前往 https://docs.netapp.com/us-en/console-storagegrid/index.html["使用NetApp控制台進行StorageGRID管理"^]了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGRID系統，以及如何使用NetApp Console 的資料服務進行備份、資料分層等。
+前往 https://docs.netapp.com/us-en/storage-management-storagegrid/index.html["使用NetApp控制台進行StorageGRID管理"^]了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGRID系統，以及如何使用NetApp Console 的資料服務進行備份、資料分層等。
 
 * BlueXP現在是NetApp控制台*
 
