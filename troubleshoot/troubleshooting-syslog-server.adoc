@@ -13,6 +13,10 @@ summary: 下表說明可能與外部 Syslog 伺服器相關的錯誤訊息、並
 [role="lead"]
 下表說明可能與外部 Syslog 伺服器相關的錯誤訊息、並列出修正行動。
 
+如果您在傳送測試訊息以驗證外部系統日誌伺服器是否正確設定時遇到問題，則設定外部系統日誌伺服器精靈會顯示這些錯誤。
+
+運行時問題可能會由link:../monitor/alerts-reference.html#audit-and-syslog-alerts["外部syslog伺服器轉送錯誤"]警報。如果您收到此警報，請按照警報中的指示重新發送測試訊息，以便您可以獲得詳細的錯誤訊息。
+
 如需將稽核資訊傳送至外部 Syslog 伺服器的詳細資訊、請參閱：
 
 * link:../monitor/considerations-for-external-syslog-server.html["使用外部 Syslog 伺服器的考量事項"]

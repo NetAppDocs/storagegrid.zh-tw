@@ -12510,7 +12510,6 @@
   <block id="dab3ba0e522124ad8e9204bf6cc154fe" category="paragraph">綠色橫幅表示已儲存組態。</block>
   <block id="14403baa10acafb6e62d469ec84440c5" category="list-text">否則、請選取 * 傳送測試訊息 * （建議）。</block>
   <block id="e07ce98c3766168a9fd3eeb752877a2b" category="paragraph">測試結果會持續顯示在頁面上、直到您停止測試為止。測試進行中時、您的稽核訊息會繼續傳送至先前設定的目的地。</block>
-  <block id="e01fdde207f00711eebaba75b922ec92" category="list-text">如果您收到任何錯誤、請更正錯誤、然後再次選取*傳送測試訊息*。</block>
   <block id="c38e5c9b85a303d81893dd02e1ae8b9d" category="inline-link-macro">排除外部syslog伺服器的故障</block>
   <block id="f8c958f79fe4b5ec31ff8cffef1f49cb" category="paragraph">請參閱<block ref="48812e49f2d5fbd4d691436466a81515" category="inline-link-macro-rx"></block>以協助您解決任何錯誤。</block>
   <block id="b008046231acad7871c3399e71761ec3" category="list-text">請等到看到綠色橫幅、表示所有節點都已通過測試。</block>
@@ -17255,10 +17254,6 @@
   <block id="d01254224955d7f5bf50bb78afd842d5" category="list-text">如果為貯體設定了跨網格複寫或 CloudMirror 複寫、您就無法擷取 SSE-C 物件。擷取作業將會失敗。</block>
   <block id="267198e05a3288c7f8b10dd21cdb8cda" category="inline-link">Amazon S3 使用者指南：使用伺服器端加密搭配客戶提供的金鑰（ SSE-C ）</block>
   <block id="26299bcc10c06f991c30767336b6ba21" category="paragraph"><block ref="26299bcc10c06f991c30767336b6ba21" category="inline-link-rx"></block></block>
-  <block id="4ececd4faa0ee1692a44e0e76c58a432" category="summary">瞭解如何使用 Grid Manager 從 BlueXP  管理您的 StorageGRID 系統、並使用 BlueXP 的資料服務來進行備份、資料分層等。</block>
-  <block id="f0a859d6d1882a29d9e151a82ea1bdce" category="doc">如何使用 BlueXP  管理 StorageGRID</block>
-  <block id="e49fe84ab9de0d0293be60cd1cd89c71" category="inline-link">使用 BlueXP 進行 StorageGRID 管理</block>
-  <block id="68fca0b5ebd1ba543c02e3996102d3a7" category="paragraph">請移至<block ref="153e89292eececc83574f107181d8262" category="inline-link-rx"></block> 以瞭解如何使用 Grid Manager 從 BlueXP  管理您的 StorageGRID 系統、並使用 BlueXP 的資料服務來進行備份、資料分層等。</block>
   <block id="4f358682bbd405c1f8afe04ebda90829" category="summary">瞭解如何在StorageGRID 您的不實環境中測試及啟用應用程式。</block>
   <block id="7fab435ddee33f90ad5e190ad86b8843" category="summary">瞭解如何安裝、設定及使用 StorageGRID 應用裝置硬體。</block>
   <block id="9283e244bcd98f1bdd350c1b4f2da148" category="doc">StorageGRID 應用裝置</block>
@@ -19966,7 +19961,6 @@
   <block id="d06102b5baf6a9f6d98d3dbc21722d81" category="sidebar">取代 Linux 節點（所有網格節點類型）</block>
   <block id="aa5539028c9b3d011d3d7e8668161465" category="sidebar">接下來：視需要執行其他恢復步驟</block>
   <block id="d3eafc8e324ffcc28713f09ecdbe0f64" category="sidebar">更換準則</block>
-  <block id="0bbd35506c5fd92ca668359a77366235" category="sidebar">StorageGRID 與 BlueXP</block>
   <block id="9780e942ffb588567846071cf966b181" category="sidebar">系統管理工作</block>
   <block id="0e64c6d47e1e64f85c3218fa142c4e7d" category="sidebar">開始使用 Grid Manager</block>
   <block id="15d50a7a5cf4c032d2ff3358f8c40506" category="sidebar">使用API</block>
@@ -22031,4 +22025,17 @@
   <block id="ec726f78a0cebb7cd36287e985d1c513" category="paragraph">*注意*：連接埠 443 重定向到StorageGRID設備安裝程式的連接埠 8443。</block>
   <block id="58222e55d661c08e5d39e0e9bb5fa081" category="paragraph">選修的。由 Web 瀏覽器和管理 API 用戶端用來存取租用戶管理員。可用於分離網格管理器和租戶管理器通訊。</block>
   <block id="f0d737da786ad628dee18668fc3fb5c2" category="paragraph">用於擦除編碼和複製的區塊服務內部流量</block>
+  <block id="512f343d76e2b4d6698626bbe3bdc364" category="list-text">如果您在 syslog 伺服器設定期間或執行時收到任何錯誤，請修正它們並再次選擇*傳送測試訊息*。</block>
+  <block id="68dce4b2994b1d7fafe72155134e7425" category="summary">了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGRID系統，以及如何使用NetApp Console 的資料服務進行備份、資料分層等。</block>
+  <block id="fc4df0fb45c3464916668c4f4d5047cd" category="doc">如何使用NetApp控制台管理StorageGRID</block>
+  <block id="833d7a06da5bfcaa98ebc4b04bcbe43e" category="inline-link">使用NetApp控制台進行StorageGRID管理</block>
+  <block id="08a86c122a16574c68ee2add17edebf3" category="paragraph">前往<block ref="02da84de3e0587664de030a7d130d7eb" category="inline-link-rx"></block>了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGRID系統，以及如何使用NetApp Console 的資料服務進行備份、資料分層等。</block>
+  <block id="d75e5c078ed9088e9acd95eaa7e2bce0" category="paragraph">* BlueXP現在是NetApp控制台*</block>
+  <block id="995c8f79a8e07fbd8d519e45d03d6004" category="paragraph">NetApp控制台建立在增強和重組的BlueXP基礎之上，可在企業級內部和雲端環境中集中管理NetApp儲存和NetApp資料服務，提供即時洞察、更快的工作流程和簡化的管理，並且高度安全且合規。</block>
+  <block id="2ef9d641d45afe99b74ad6f9a9f797ad" category="inline-link-macro">NetApp控制台發行說明</block>
+  <block id="9fad6bb6d30ac060d7377371e39b12c0" category="paragraph">有關更改的詳細信息，請參閱<block ref="a3987562479f1a66db4eec298b79e00c" category="inline-link-macro-rx"></block>。</block>
+  <block id="8bfc79faef42bd05515078d27fadc14a" category="paragraph">如果您在傳送測試訊息以驗證外部系統日誌伺服器是否正確設定時遇到問題，則設定外部系統日誌伺服器精靈會顯示這些錯誤。</block>
+  <block id="c27fd735b4380af7ab57542ae39e16aa" category="paragraph">運行時問題可能會由<block ref="29c74c3b7244d6099f188726dde18748" category="inline-link-macro-rx"></block>警報。如果您收到此警報，請按照警報中的指示重新發送測試訊息，以便您可以獲得詳細的錯誤訊息。</block>
+  <block id="7b63e3ab012c50052cf80c91528ad009" category="sidebar">使用NetApp Console 進行StorageGRID管理</block>
+  <block id="2532828f944a69834b500cafd1abc57b" category="sidebar">StorageGRID和NetApp控制台</block>
 </blocks>
