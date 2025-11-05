@@ -18805,7 +18805,6 @@
   <block id="b69eda2fcff7293ac1c5f11f1a8cd8c6" category="list-text">按一下*測試連線*以驗證LDAP伺服器的連線設定。</block>
   <block id="0cb9d6ca3bfff0e7e03b90b5280d47e9" category="list-text">如果測試失敗、請解決任何組態錯誤。</block>
   <block id="05e2567166bd5cc6aca593ef2c9de628" category="list-text">如果本機使用者無法登入、而且您確信認證正確無誤、請前往下一步。</block>
-  <block id="77bad9cdb9bfb1cc58f0258a2c516e98" category="list-text">使用Secure Shell（ssh）登入管理節點：</block>
   <block id="ccce8bc7f46482abe54ef6ce00c322bb" category="paragraph">請確定NMS、MI、Ngin像 及管理API服務都在執行中。</block>
   <block id="4d7e059ccba58661a8af7a9e930b671e" category="paragraph">如果服務狀態變更、則會立即更新輸出。</block>
   <block id="e8b921058559f8a475f0a4b60a1c9894" category="list-text">確認 Nginx) 服務正在執行中<block ref="3ace85d29fe91162efdcc2ba17cd5e51" prefix=" " category="inline-code"></block></block>
@@ -22038,4 +22037,10 @@
   <block id="2532828f944a69834b500cafd1abc57b" category="sidebar">StorageGRID和NetApp控制台</block>
   <block id="84356a318e373152abb8356cb6571110" category="paragraph">前往<block ref="7a14d844a19b1e8c58704b344e72aa26" category="inline-link-rx"></block>了解如何使用 Grid Manager 從NetApp Console 管理您的StorageGRID系統，以及如何使用NetApp Console 的資料服務進行備份、資料分層等。</block>
   <block id="81ce9dc59c1c54b68aa70011e5f00f58" category="paragraph">在管理節點和網關節點上建立虛擬 LAN (VLAN) 接口，並在 HA 群組和負載平衡器端點中使用它們來隔離和分區流量，從而實現安全性、靈活性和效能。HA 群組中選定的節點可以使用 VLAN 介面共用最多 10 個虛擬 IP 位址，這樣，如果一個節點發生故障，另一個節點將接管往返虛擬 IP 位址的流量。</block>
+  <block id="b34b2cff5af9d8303d19a2220862eb94" category="admonition">需要透過服務筆記型電腦和所有其他網格節點之間的連接埠 22 進行存取。維護任務完成後，移除對連接埠 22 的存取權限。</block>
+  <block id="35c2f64fea5237283fe618b046bf96e6" category="paragraph">包含控制台步驟的過程需要 SSH 或控制台存取。或者，您可以使用連接埠 2022 而不是 22。</block>
+  <block id="f94d8c4b11e4cbaf40f9b08dbbf9e582" category="paragraph">*注意*：僅當需要啟用 SSH 存取以進行某些維護操作時才需要此連接埠。</block>
+  <block id="98e1d466d5f37e58e2ae4e3c58299a51" category="paragraph">*注意*：配置此連接埠是可選的。</block>
+  <block id="87f9cb28642b4d1ffb366ab3e3b6b59e" category="summary">當觸發「物品可能遺失」警報時，必須立即展開調查。收集受影響對象的資訊並聯絡技術支援。</block>
+  <block id="7371844c6eff096f18ebef4032592b0b" category="list-text">使用安全外殼協定 (SSH) 登入管理節點：</block>
 </blocks>
