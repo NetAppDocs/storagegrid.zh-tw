@@ -10260,7 +10260,6 @@
   <block id="9739ca1b43dc3eb1bf403302d16e652a" category="summary">您必須完成一組特定的工作、才能從主要管理節點故障中恢復。主管理節點裝載網格的組態管理節點（CMN\）服務。</block>
   <block id="dbf9e9e8d97f01254fe445247d4ba1f2" category="paragraph">您必須完成一組特定的工作、才能從主要管理節點故障中恢復。主管理節點裝載網格的組態管理節點（CMN）服務。</block>
   <block id="1285318d9f6efe981fca22e001181767" category="admonition">您必須立即修復或更換故障的主要管理節點、否則網格可能會喪失擷取新物件的能力。確切的時間週期取決於您的物件擷取速度：如果您需要更準確地評估網格的時間範圍、請聯絡技術支援部門。</block>
-  <block id="a1caef46d9af82694990b9141842d9f0" category="paragraph">主管理節點上的組態管理節點（CMN）服務負責為網格發出物件識別碼區塊。這些識別碼會在擷取時指派給物件。除非有可用的識別碼、否則無法擷取新物件。當CMN無法使用時、物件擷取功能仍可繼續進行、因為網格中快取了約一個月的識別碼。不過、快取識別碼用盡之後、就無法新增任何物件。</block>
   <block id="004d2ede21cf7c5c3cfdb8f72deb09b5" category="paragraph">請遵循下列高階步驟來恢復主要管理節點：</block>
   <block id="57ef3f7cd9adc0466dee9577a57ea964" category="list-text"><block ref="57ef3f7cd9adc0466dee9577a57ea964" category="inline-link-macro-rx"></block></block>
   <block id="96ca4685ac3f991c63ae23e1205f8866" category="inline-link-macro">更換主管理節點</block>
@@ -10944,7 +10943,6 @@
   <block id="75256dc2217cea6e96c618fa5dbad995" category="paragraph"><block ref="75256dc2217cea6e96c618fa5dbad995" category="inline-link-macro-rx"></block></block>
   <block id="506af64ddefe0be5343e12c4743e0c53" category="paragraph">歸檔節點</block>
   <block id="a4efcf63c48ad26b79e1f7e1c086faca" category="paragraph"><block ref="a4efcf63c48ad26b79e1f7e1c086faca" category="inline-link-rx"></block></block>
-  <block id="00c1cd70f7f84686fd28aee03e858b11" category="admonition">如果裝載多個網格節點的伺服器故障、您可以依任何順序還原節點。但是、如果故障伺服器裝載主要管理節點、您必須先還原該節點。首先恢復主管理節點可防止其他節點還原在等待聯絡主管理節點時停止。</block>
   <block id="088c7ab0395a10f8b47dcd428498cf38" category="summary">您必須在Grid Manager中選取「Start Recovery」（開始還原）、才能將應用裝置儲存節點設定為故障節點的替換節點。</block>
   <block id="7f62478a62e82f6c912d5702a58f0879" category="list-text">您已部署恢復設備儲存節點。</block>
   <block id="ca207ce1f030464ac7da0fb2e2f01286" category="list-text">您擁有任何修復工作的開始日期、可用於銷毀編碼資料。</block>
@@ -21089,7 +21087,6 @@
   <block id="28b7a321b3123816e35c77f8cd6767eb" category="admonition">如果整個StorageGRID站點發生故障，請聯絡技術支援。技術支援將與您合作制定並執行網站復原計劃，以最大限度地恢復資料量並滿足您的業務目標。請參閱<block ref="ae69a49f8134b8abb47c1037e68b19d1" category="inline-link-macro-rx"></block> 。</block>
   <block id="c392940ddd7d3b2cceb3c4b778cb907f" category="list-text">如果您正在還原主管理節點以外的網格節點，則正在復原的網格節點與管理復原程序的管理節點之間存在連線。</block>
   <block id="abb31c1b47e6e09e92f4fb0c38ee3e3f" category="list-text">如果要恢復設備儲存節點，則必須在設備安裝期間指定與原始設備相同的儲存類型（組合、僅元資料或僅資料）。如果指定不同的儲存類型，復原將失敗，並且需要使用指定的正確儲存類型重新安裝裝置。</block>
-  <block id="356036533106792d2e06062ab4964ce5" category="paragraph">如果託管多個網格節點的伺服器發生故障，您可以按任意順序還原節點。但是，如果發生故障的伺服器託管主管理節點，則必須先還原該節點。</block>
   <block id="0d35505d87270c122aca2396ad135dc0" category="paragraph">或者，您可以變更稽核日誌的目標並將稽核資訊傳送至外部系統日誌伺服器。當設定外部系統日誌伺服器時，將繼續產生和儲存稽核記錄的本機日誌。看<block ref="379ad7a89261e8c0c76745417c403d10" category="inline-link-macro-rx"></block> 。</block>
   <block id="90a01585af8b586fb3a0e8fde1979fd0" category="list-text">選擇*設定* &gt; *監控* &gt; *SNMP 代理程式*。</block>
   <block id="bf733d8a933c1601697f364223fc7ecb" category="cell">使用權</block>
@@ -22043,4 +22040,6 @@
   <block id="98e1d466d5f37e58e2ae4e3c58299a51" category="paragraph">*注意*：配置此連接埠是可選的。</block>
   <block id="87f9cb28642b4d1ffb366ab3e3b6b59e" category="summary">當觸發「物品可能遺失」警報時，必須立即展開調查。收集受影響對象的資訊並聯絡技術支援。</block>
   <block id="7371844c6eff096f18ebef4032592b0b" category="list-text">使用安全外殼協定 (SSH) 登入管理節點：</block>
+  <block id="ee2282790885ca79658ddbbe8d57d525" category="admonition">如果託管多個網格節點的伺服器發生故障，您可以按任意順序還原節點。但是，如果發生故障的伺服器託管著主管理節點，且不存在非主管理節點，則必須先還原主管理節點。首先恢復主管理節點可防止其他節點復原因等待聯繫主管理節點而停止。</block>
+  <block id="78475d2794bf2b401e61b8c0ae9a9951" category="paragraph">如果託管多個網格節點的伺服器發生故障，您可以按任意順序還原節點。但是，如果發生故障的伺服器託管著主管理節點，且不存在非主管理節點，則必須先還原主管理節點。</block>
 </blocks>
