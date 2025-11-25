@@ -43,6 +43,12 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 
 
+== API許可證
+
+本文檔不授予對StorageGRID S3 REST API 的任何授權或其他權利。使用或存取StorageGRID S3 REST API 需要與NetApp簽訂單獨的授權協議，並且受該協議約束。
+
+
+
 == 開放原始碼
 
 通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。
