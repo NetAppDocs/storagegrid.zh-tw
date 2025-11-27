@@ -3590,8 +3590,6 @@
   <block id="1bff5c12d45a6dd72df942176f86772d" category="paragraph">當用戶端應用程式從 StorageGRID 系統儲存或擷取資料時、 StorageGRID 會使用負載平衡器來管理擷取和擷取工作負載。負載平衡可在多個儲存節點之間分配工作負載、以最大化速度和連線容量。</block>
   <block id="944b71402cd24845ff39c563c96ca044" category="paragraph">此功能可在所有管理節點和所有閘道節點上安裝支援程式、並提供第7層負載平衡功能。StorageGRID它會對用戶端要求執行傳輸層安全性（TLS）終止、檢查要求、並建立新的安全連線至儲存節點。</block>
   <block id="8d2a3eedf773a72befa932aed8d7f9ac" category="paragraph">將用戶端流量轉送至儲存節點時、每個節點上的負載平衡器服務都會獨立運作。透過加權程序、負載平衡器服務會將更多要求路由傳送至CPU可用度較高的儲存節點。</block>
-  <block id="8093bef8d3bd5322de90d79561037395" category="inline-link">TR-4626：StorageGRID 不包括第三方和全域負載平衡器</block>
-  <block id="ce1bca08301bc9a1693bdf37b84bdb10" category="admonition">雖然推薦使用「VMware負載平衡器」服務、但StorageGRID 您可能想要改為整合協力廠商負載平衡器。如需詳細資訊、請聯絡您的 NetApp 客戶代表或參閱<block ref="30142e53c6cba368be61e7c2871033e2" category="inline-link-rx"></block>。</block>
   <block id="75d9f84a5b1a86714b17bfa534c9d736" category="section-title">我需要多少個負載平衡節點？</block>
   <block id="96cf9724e85f455faaabbfe7263c2641" category="paragraph">一般最佳實務做法StorageGRID 是、您的一套系統應該在負載平衡器服務中包含兩個或多個節點。例如、站台可能包含兩個閘道節點、或同時包含一個管理節點和一個閘道節點。無論您使用的是服務應用裝置、裸機節點或虛擬機器（ VM ）型節點、請確定每個負載平衡節點都有足夠的網路、硬體或虛擬化基礎架構。</block>
   <block id="6c61fe5a02a47ca95d38321841f51067" category="section-title">什麼是負載平衡器端點？</block>
@@ -22027,7 +22025,6 @@
   <block id="d75e5c078ed9088e9acd95eaa7e2bce0" category="paragraph">* BlueXP現在是NetApp控制台*</block>
   <block id="995c8f79a8e07fbd8d519e45d03d6004" category="paragraph">NetApp控制台建立在增強和重組的BlueXP基礎之上，可在企業級內部和雲端環境中集中管理NetApp儲存和NetApp資料服務，提供即時洞察、更快的工作流程和簡化的管理，並且高度安全且合規。</block>
   <block id="2ef9d641d45afe99b74ad6f9a9f797ad" category="inline-link-macro">NetApp控制台發行說明</block>
-  <block id="9fad6bb6d30ac060d7377371e39b12c0" category="paragraph">有關更改的詳細信息，請參閱<block ref="a3987562479f1a66db4eec298b79e00c" category="inline-link-macro-rx"></block>。</block>
   <block id="8bfc79faef42bd05515078d27fadc14a" category="paragraph">如果您在傳送測試訊息以驗證外部系統日誌伺服器是否正確設定時遇到問題，則設定外部系統日誌伺服器精靈會顯示這些錯誤。</block>
   <block id="c27fd735b4380af7ab57542ae39e16aa" category="paragraph">運行時問題可能會由<block ref="29c74c3b7244d6099f188726dde18748" category="inline-link-macro-rx"></block>警報。如果您收到此警報，請按照警報中的指示重新發送測試訊息，以便您可以獲得詳細的錯誤訊息。</block>
   <block id="7b63e3ab012c50052cf80c91528ad009" category="sidebar">使用NetApp Console 進行StorageGRID管理</block>
@@ -22044,4 +22041,8 @@
   <block id="356036533106792d2e06062ab4964ce5" category="paragraph">如果託管多個網格節點的伺服器發生故障，您可以按任意順序還原節點。但是，如果發生故障的伺服器託管主管理節點，則必須先還原該節點。</block>
   <block id="d3ec926d6ad808f78c39c93cef09a0c1" category="section-title">API許可證</block>
   <block id="5d2b6671a58557cf8f6428546905646e" category="paragraph">本文檔不授予對StorageGRID S3 REST API 的任何授權或其他權利。使用或存取StorageGRID S3 REST API 需要與NetApp簽訂單獨的授權協議，並且受該協議約束。</block>
+  <block id="7c37f16e9cbf7999830f6d447e5139cc" category="inline-link">將第三方負載平衡器與StorageGRID結合使用</block>
+  <block id="115da73ba09231ed44a359e7dc28a03b" category="admonition">儘管StorageGRID負載平衡器服務是建議的負載平衡機制，但您可能希望整合第三方負載平衡器。如需了解更多信息，請聯繫您的NetApp客戶代表或參考以下內容：<block ref="07dd3eb8db144aafaae9ca336914c57b" category="inline-link-rx"></block>。</block>
+  <block id="800c173937521899b70a4ab5d735d3d7" category="paragraph">有關具體變更內容，請參閱… <block ref="b78e17cf58c4e309929c8d6a69594c7d" category="inline-link-macro-rx"></block>。</block>
+  <block id="f2c4673c5ae939756c3d43f049c774fc" category="summary">低物件資料儲存警報監控每個儲存節點上可用於儲存物件資料的空間大小。</block>
 </blocks>

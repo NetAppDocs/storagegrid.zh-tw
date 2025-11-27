@@ -24,7 +24,7 @@ summary: 您可以使用負載平衡來處理來自 S3 用戶端的擷取和擷�
 將用戶端流量轉送至儲存節點時、每個節點上的負載平衡器服務都會獨立運作。透過加權程序、負載平衡器服務會將更多要求路由傳送至CPU可用度較高的儲存節點。
 
 
-NOTE: 雖然推薦使用「VMware負載平衡器」服務、但StorageGRID 您可能想要改為整合協力廠商負載平衡器。如需詳細資訊、請聯絡您的 NetApp 客戶代表或參閱 https://fieldportal.netapp.com/content/2666394["TR-4626：StorageGRID 不包括第三方和全域負載平衡器"^]。
+NOTE: 儘管StorageGRID負載平衡器服務是建議的負載平衡機制，但您可能希望整合第三方負載平衡器。如需了解更多信息，請聯繫您的NetApp客戶代表或參考以下內容： https://docs.netapp.com/us-en/storagegrid-enable/technical-reports/load-balancer-index.html["將第三方負載平衡器與StorageGRID結合使用"^]。
 
 
 
