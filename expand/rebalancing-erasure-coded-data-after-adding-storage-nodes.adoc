@@ -1,10 +1,10 @@
 ---
 permalink: expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html 
 sidebar: sidebar 
-keywords: erasure coding, EC, rebalancing, site rebalance procedure 
+keywords: erasure coding, EC, rebalancing, site rebalance procedure, StorageGRID 
 summary: 新增儲存節點之後、您可以使用抹除編碼重新平衡程序、在現有和新的儲存節點之間重新分配銷毀編碼片段。 
 ---
-= 新增儲存節點後、重新平衡以銷毀編碼的資料
+= 在StorageGRID系統新增節點後，重新平衡糾刪碼資料。
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

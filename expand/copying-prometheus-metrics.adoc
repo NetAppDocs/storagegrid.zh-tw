@@ -1,10 +1,10 @@
 ---
 permalink: expand/copying-prometheus-metrics.html 
 sidebar: sidebar 
-keywords: prometheus, copy metrics, Admin Node expansion 
+keywords: prometheus, copy metrics, Admin Node expansion, StorageGRID 
 summary: 新增管理節點之後、您可以選擇性地將Prometheus維護的歷史指標、從主要管理節點複製到新的管理節點。複製度量可確保管理節點之間的歷史度量一致。 
 ---
-= 複製Prometheus指標
+= 將 Prometheus 指標複製到StorageGRID中的新管理節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

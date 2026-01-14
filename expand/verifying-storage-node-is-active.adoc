@@ -1,10 +1,10 @@
 ---
 permalink: expand/verifying-storage-node-is-active.html 
 sidebar: sidebar 
-keywords: expand, expansion, add storage nodes, verify node is active 
+keywords: expand, expansion, add storage nodes, verify node is active, StorageGRID 
 summary: 在新增儲存節點的擴充作業完成後、StorageGRID 該系統應自動開始使用新的儲存節點。您必須使用StorageGRID 此功能驗證新的儲存節點是否處於作用中狀態。 
 ---
-= 確認儲存節點處於作用中狀態
+= 在StorageGRID擴充後，驗證儲存節點是否處於活動狀態。
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -1,10 +1,10 @@
 ---
 permalink: expand/adding-metadata-capacity.html 
 sidebar: sidebar 
-keywords: metadata capacity, add, adding, expand, expansion, guidelines, Storage Nodes, metadata storage 
+keywords: metadata capacity, add, adding, expand, expansion, guidelines, Storage Nodes, metadata storage, StorageGRID 
 summary: 為了確保物件中繼資料有足夠的可用空間、您可能需要執行擴充程序、以便在每個站台新增儲存節點。 
 ---
-= 新增中繼資料容量
+= StorageGRID元資料容量新增指南
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

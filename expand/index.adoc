@@ -1,17 +1,17 @@
 ---
 permalink: expand/index.html 
 sidebar: sidebar 
-keywords: expand grid 
+keywords: expand grid, StorageGRID 
 summary: 您可以擴充 StorageGRID 系統的容量或功能、而不會中斷系統作業。 
 ---
-= 擴充類型
+= 了解如何擴充您的StorageGRID系統
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-您可以擴充 StorageGRID 系統的容量或功能、而不會中斷系統作業。
+了解如何擴充StorageGRID系統，以在不中斷運作的情況下增加容量或功能。您可以為現有儲存節點新增儲存卷，為現有網站新增新的網格節點，或新增網站。
 
 在擴展網格節點之前，您必須確認沒有處於活動狀態的資料修復作業。如果任何修復失敗，則必須重新啟動它們並讓它們完成，然後再執行退役或擴充功能。請參閱link:../maintain/checking-data-repair-jobs.html["檢查資料修復工作"] 。
 

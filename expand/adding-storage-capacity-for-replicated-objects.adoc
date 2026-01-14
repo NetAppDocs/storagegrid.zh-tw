@@ -1,10 +1,10 @@
 ---
 permalink: expand/adding-storage-capacity-for-replicated-objects.html 
 sidebar: sidebar 
-keywords: replication, replicated, copies, capacity, storage nodes, expand, expansion 
+keywords: replication, replicated, copies, capacity, storage nodes, expand, expansion, StorageGRID 
 summary: 如果您部署的資訊生命週期管理（ILM）原則包含建立物件複本的規則、您必須考量要新增多少儲存設備、以及新增儲存磁碟區或儲存節點的位置。 
 ---
-= 新增複寫物件的儲存容量
+= StorageGRID中複製資料的擴展規劃
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

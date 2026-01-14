@@ -1,10 +1,10 @@
 ---
 permalink: expand/guidelines-for-adding-object-capacity.html 
 sidebar: sidebar 
-keywords: adding storage capacity, guidelines, storage volumes, expansion 
+keywords: adding storage capacity, guidelines, storage volumes, expansion, StorageGRID 
 summary: 您可以StorageGRID 將儲存磁碟區新增至現有的儲存節點、或新增儲存節點至現有站台、以擴充您的物件儲存容量。您必須以符合資訊生命週期管理（ILM）原則要求的方式新增儲存容量。 
 ---
-= 新增物件容量的準則
+= StorageGRID中新增物件容量的指南
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

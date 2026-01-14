@@ -1,10 +1,10 @@
 ---
 permalink: expand/considerations-for-rebalancing-erasure-coded-data.html 
 sidebar: sidebar 
-keywords: erasure coding, rebalance, ec rebalance, site rebalance 
+keywords: erasure coding, rebalance, ec rebalance, site rebalance, StorageGRID 
 summary: 如果您正在執行擴充以新增儲存節點、並使用 ILM 規則來清除程式碼資料、則如果您無法新增足夠的儲存節點來執行刪除程式碼配置、則可能需要執行 EC 重新平衡程序。 
 ---
-= 重新平衡銷毀編碼資料的考量事項
+= 了解StorageGRID中擴充後的 EC 重新平衡
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

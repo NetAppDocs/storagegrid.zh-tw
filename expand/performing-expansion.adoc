@@ -1,10 +1,10 @@
 ---
 permalink: expand/performing-expansion.html 
 sidebar: sidebar 
-keywords: expand, expansion procedure 
+keywords: expand, expansion procedure, StorageGRID 
 summary: 當您執行擴充時、新的網格節點會新增至您現有StorageGRID 的功能介紹部署。 
 ---
-= 執行擴充
+= 執行StorageGRID擴展
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

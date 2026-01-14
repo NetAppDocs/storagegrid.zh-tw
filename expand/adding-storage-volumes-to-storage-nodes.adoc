@@ -1,10 +1,10 @@
 ---
 permalink: expand/adding-storage-volumes-to-storage-nodes.html 
 sidebar: sidebar 
-keywords: storage volumes, expand, expansion, add, storage nodes, adding storage capacity 
+keywords: storage volumes, expand, expansion, add, storage nodes, adding storage capacity, StorageGRID 
 summary: 您可以擴充低於最大支援磁碟區數的儲存節點的儲存容量。您可能需要將儲存磁碟區新增至多個儲存節點以滿足複製或擦除編碼副本的 ILM 要求。 
 ---
-= 將儲存磁碟區新增至儲存節點
+= 在StorageGRID系統新增儲存磁碟區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -1,10 +1,10 @@
 ---
 permalink: expand/contacting-technical-support.html 
 sidebar: sidebar 
-keywords: troubleshoot expansion, contact technical support 
+keywords: troubleshoot expansion, contact technical support, StorageGRID 
 summary: 如果您在網格擴充程序期間遇到無法解決的錯誤、或網格工作失敗、請收集記錄檔並聯絡技術支援部門。 
 ---
-= 疑難排解擴充問題
+= 排除StorageGRID中的擴充錯誤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

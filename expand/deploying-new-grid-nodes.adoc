@@ -1,10 +1,10 @@
 ---
 permalink: expand/deploying-new-grid-nodes.html 
 sidebar: sidebar 
-keywords: expansion, add nodes 
+keywords: expansion, add nodes, StorageGRID 
 summary: 在擴充中部署新網格節點的步驟、與第一次安裝網格時所用的步驟相同。您必須先部署所有新的網格節點、才能執行擴充。 
 ---
-= 部署新的網格節點
+= 在StorageGRID中部署新的網格節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

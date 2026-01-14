@@ -1,10 +1,10 @@
 ---
 permalink: expand/adding-storage-capacity-for-erasure-coded-objects.html 
 sidebar: sidebar 
-keywords: erasure coding, capacity, storage nodes, ec, expand, expansion 
+keywords: erasure coding, capacity, storage nodes, ec, expand, expansion, StorageGRID 
 summary: 如果您的ILM原則包含製作銷毀編碼複本的規則、您必須規劃新增儲存設備的位置、以及新增儲存設備的時間。您新增的儲存容量和新增的時間、可能會影響網格的可用儲存容量。 
 ---
-= 新增銷毀編碼物件的儲存容量
+= StorageGRID中糾刪碼（EC）資料的擴充規劃
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -3,34 +3,34 @@ section: expand
 title: 展開網格
 url: "/landing-expand/index.html"
 entries:
-- title: 擴充類型
+- title: 了解擴建事宜
   pdf-filename: 擴充您的 StorageGRID 系統
   url: "/expand/index.html"
-- title: 規劃StorageGRID 擴充功能
+- title: 擴張計劃
   entries:
-  - title: 增加儲存容量
-    entries:
-    - title: 準則：新增物件容量
-      url: "/expand/guidelines-for-adding-object-capacity.html"
-    - title: 新增複寫物件的儲存容量
-      url: "/expand/adding-storage-capacity-for-replicated-objects.html"
-    - title: 新增銷毀編碼物件的儲存容量
-      url: "/expand/adding-storage-capacity-for-erasure-coded-objects.html"
-    - title: 重新平衡銷毀編碼資料的考量事項
-      url: "/expand/considerations-for-rebalancing-erasure-coded-data.html"
-  - title: 新增中繼資料容量
+  - title: 複製資料的擴展規劃
+    url: "/expand/adding-storage-capacity-for-replicated-objects.html"
+  - title: 擦除編碼資料的擴展規劃
+    url: "/expand/adding-storage-capacity-for-erasure-coded-objects.html"
+  - title: 了解擴充後的糾刪碼重新平衡機制
+    url: "/expand/considerations-for-rebalancing-erasure-coded-data.html"
+- title: 擴充指南
+  entries:
+  - title: 新增物件容量的準則
+    url: "/expand/guidelines-for-adding-object-capacity.html"
+  - title: 新增元資料容量的指南
     url: "/expand/adding-metadata-capacity.html"
-  - title: 新增備援或新功能
+  - title: 新增網格節點的指南
     url: "/expand/adding-grid-nodes-to-add-capabilities.html"
-  - title: 新增網站
+  - title: 新增網站的指南
     url: "/expand/adding-new-site.html"
-- title: 收集所需資料
+- title: 做好擴張準備
   url: "/expand/gather-required-materials.html"
 - title: 新增網格節點或站台
   entries:
-  - title: 新增網格節點至現有站台或新增站台
+  - title: 工作流程概要
     url: "/expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html"
-  - title: 更新Grid Network的子網路
+  - title: 新增或更新網格網路或更新子網
     url: "/expand/updating-subnets-for-grid-network.html"
   - title: 部署新的網格節點
     url: "/expand/deploying-new-grid-nodes.html"
@@ -40,15 +40,15 @@ entries:
   entries:
   - title: 將儲存磁碟區新增至儲存節點
     url: "/expand/adding-storage-volumes-to-storage-nodes.html"
-  - title: VMware：將儲存磁碟區新增至儲存節點
+  - title: 為 VMware 新增儲存卷
     url: "/expand/vmware-adding-storage-volumes-to-storage-node.html"
-  - title: Linux：將直接附加或SAN磁碟區新增至儲存節點
+  - title: 為 Linux 新增直連捲或 SAN 卷
     url: "/expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html"
 - title: 設定擴充系統
   entries:
-  - title: 組態步驟
+  - title: 配置新新增的節點和站點
     url: "/expand/configuring-expanded-storagegrid-system.html"
-  - title: 確認儲存節點處於作用中狀態
+  - title: 驗證儲存節點是否處於活動狀態
     url: "/expand/verifying-storage-node-is-active.html"
   - title: 複製管理節點資料庫
     url: "/expand/copying-admin-node-database.html"
@@ -56,7 +56,7 @@ entries:
     url: "/expand/copying-prometheus-metrics.html"
   - title: 複製稽核記錄
     url: "/expand/copying-audit-logs.html"
-  - title: 新增儲存節點後、重新平衡以銷毀編碼的資料
+  - title: 重新平衡擦除編碼數據
     url: "/expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html"
-- title: 疑難排解擴充問題
+- title: 排查擴充錯誤
   url: "/expand/contacting-technical-support.html"

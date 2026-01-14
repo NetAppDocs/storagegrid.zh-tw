@@ -5979,7 +5979,6 @@
   <block id="89b51dc0d610503234c14fdfc0be323b" category="list-text">若要判斷哪些貯體具有最大的 SPUT 物件大小、請同時使用<block ref="7524fcb0d721bdda666da6924d7673e8" prefix=" " category="inline-code"></block>和<block ref="406381251d2d4637ebfac7f24cc49c6f" prefix=" " category="inline-code"></block>選項：</block>
   <block id="b9e39f67b1a7712a4a86ca9c12acee18" category="paragraph"><block ref="7a3901d9ab20d4c83c0cbd6b20be4f30" prefix="" category="inline-code"></block></block>
   <block id="5208ea2d7fef4547592b83bcd81c2e37" category="summary">您可以StorageGRID 新增新的網格節點至現有站台、以新增備援功能或其他功能至該系統。</block>
-  <block id="6528e12a81667c9d5b35b16ec0e912e9" category="doc">新增網格節點以新增功能至系統</block>
   <block id="2bf9e1a6f3726dcb54f4b80fc1f3131b" category="paragraph">例如、您可以選擇新增要用於高可用度（ HA ）群組的閘道節點、或是在遠端站台新增管理節點、以允許使用本機節點進行監控。</block>
   <block id="ad0b24a1cac115f79fa6a6f259f8e973" category="paragraph">您可以在單一擴充作業中、將下列一種或多種類型的節點新增至一或多個現有站台：</block>
   <block id="4725a4744390b735ea1bb4e3fc99b686" category="list-text">儲存節點</block>
@@ -5991,20 +5990,15 @@
   <block id="4c94a8db2c4d5bdbc6c84b8d46b9e53e" category="inline-link-macro">變更新節點的安全性設定</block>
   <block id="831fdc8afe70fe56c43e48c6ed28b690" category="inline-link-macro">設定負載平衡器端點</block>
   <block id="dc661bb28d5cb4088f7b09896d09208d" category="summary">請遵循此程序、將網格節點新增至現有站台或新增站台。一次只能執行一種擴充類型。</block>
-  <block id="7852bcc4c709f1891c1a24a5a293ea63" category="doc">新增網格節點至現有站台或新增站台</block>
   <block id="9f5c6ca03b6cb39cb095e9069ef19cad" category="inline-link-macro">root 存取權或維護權限</block>
   <block id="c85466be132b0fbee41aba6763ed2db4" category="list-text">您有<block ref="c26e67b841a05655231a7cc2c91608b0" category="inline-link-macro-rx"></block>。</block>
   <block id="343020cf54d6c5a811a7aa92964282ca" category="list-text">網格中的所有現有節點都會在所有站台上啟動並執行。</block>
   <block id="71800a65452dda3f0944473254f7c571" category="list-text">任何先前的擴充、升級、汰換或還原程序均已完成。</block>
   <block id="44a1bd322bfde5ba803010fe7ddfcf3b" category="admonition">當另一個擴充、升級、還原或作用中取消委任程序正在進行時、您將無法啟動擴充。不過、如有必要、您可以暫停取消委任程序以開始擴充。</block>
   <block id="d564e82bac1bfa514936d298219964f1" category="inline-link-macro">更新Grid Network的子網路</block>
-  <block id="61f027e29d7e8ea4620cf91a320512bf" category="list-text"><block ref="f37c57e0a4668a06e9305b573ac4833b" category="inline-link-macro-rx"></block>。</block>
   <block id="4b62501777a6a2c97d3899d7f9c38f36" category="inline-link-macro">部署新的網格節點</block>
-  <block id="b037c512cde9fb4b29997e428093451a" category="list-text"><block ref="e65ac8c7eb32160491632b34432f3e08" category="inline-link-macro-rx"></block>。</block>
   <block id="17161eae50048ebf2d4cebbb8264f0df" category="inline-link-macro">執行擴充</block>
-  <block id="b5a61584360192a4ef8677e83570a467" category="list-text"><block ref="cdd78ec19ad7198531688ed80e921d7d" category="inline-link-macro-rx"></block>。</block>
   <block id="25e9e8162917edfeb8c4df19595bc3e5" category="summary">為了確保物件中繼資料有足夠的可用空間、您可能需要執行擴充程序、以便在每個站台新增儲存節點。</block>
-  <block id="b48dd0969f81829e7a0bae827dd51ee0" category="doc">新增中繼資料容量</block>
   <block id="092c7b17a505490b79a6ff4583d6024e" category="paragraph">此功能可在每個儲存節點的Volume 0上保留物件中繼資料的空間。StorageGRID每個站台都會維護三份所有物件中繼資料複本、並平均分散到所有儲存節點。</block>
   <block id="69ecc086eb4442a00ffc8b08234b70f6" category="paragraph">您可以使用Grid Manager來監控儲存節點的中繼資料容量、並預估中繼資料容量的使用速度。此外、當使用的中繼資料空間達到特定臨界值時、會針對儲存節點觸發*低中繼資料儲存*警示。</block>
   <block id="609d3242cdffe4daba086b8a2a57d4ce" category="paragraph">請注意、網格的物件中繼資料容量可能會比物件儲存容量消耗得更快、視您使用網格的方式而定。例如、如果您通常會擷取大量的小型物件、或是將大量的使用者中繼資料或標記新增至物件、則可能需要新增儲存節點、以增加中繼資料容量、即使物件儲存容量仍足夠。</block>
@@ -6028,7 +6022,6 @@
   <block id="56dff3262bce4f6060e9fdb635a6996b" category="paragraph">右圖顯示在站台新增兩個儲存節點之後、如何重新分配現有的中繼資料。每個節點上的中繼資料量已減少、*低中繼資料儲存設備*警示不再觸發、而且中繼資料可用空間也已增加。</block>
   <block id="1c5ea2c9fd4485ca5f48b4fd7264bf50" category="image-alt">新增兩個儲存節點之後重新分配的中繼資料圖表</block>
   <block id="e3bac49a9bd5fdea64876d0df82f1f0d" category="summary">您可以新增一個網站來擴充StorageGRID 您的功能。</block>
-  <block id="d5c1c7066b600a270df7e3315c54e788" category="doc">新增網站</block>
   <block id="6f6794e09f69599d1af27df958e459fa" category="section-title">新增站台的準則</block>
   <block id="57604405d9ce8a275be30384a9daa747" category="paragraph">在新增站台之前、請先檢閱下列需求與限制：</block>
   <block id="18218b99c9be21c16cb979cf2e40a659" category="list-text">每個擴充作業只能新增一個站台。</block>
@@ -6054,7 +6047,6 @@
   <block id="81f8120b5a1cdbbad82c371e24d5f3c0" category="inline-link-macro">重新平衡銷毀編碼資料的考量事項</block>
   <block id="4ede0449ea951d01a12af7b795e92a95" category="paragraph">要更好地瞭解導致此建議的因素或爲您的站點制定更精確的計劃，請參閱<block ref="7d25f358497317f659c2db22c4c6c293" category="inline-link-macro-rx"></block>。如需針對您的情況最佳化的自訂建議、請聯絡您的 NetApp 專業服務顧問。</block>
   <block id="1866752605f992dfd684eef9e628040a" category="summary">如果您部署的資訊生命週期管理（ILM）原則包含建立物件複本的規則、您必須考量要新增多少儲存設備、以及新增儲存磁碟區或儲存節點的位置。</block>
-  <block id="e8ccf8c79e9f5487f6b2bf00aa54fd54" category="doc">新增複寫物件的儲存容量</block>
   <block id="9a474ffb92665e66f03b21fe04f8e6d3" category="paragraph">如果您部署的資訊生命週期管理（ILM）原則包含建立物件複本的規則、您必須考量要新增多少儲存設備、以及新增儲存磁碟區或儲存節點的位置。</block>
   <block id="af1fd265f139aea36f56248a2ac62442" category="inline-link-macro">新增儲存設備</block>
   <block id="fe2305d334b4447bc488c4506311b3c0" category="inline-link-macro">什麼是複寫</block>
@@ -6176,7 +6168,6 @@
   <block id="e5a8612b723c1b44ddab7c8d79f391dc" category="section-title">EC重新平衡程序如何與ILM互動</block>
   <block id="8a00f7818badcb8f795456c02c340e63" category="paragraph">當EC重新平衡程序正在執行時、請避免變更ILM、以免變更現有銷毀編碼物件的位置。例如、請勿開始使用具有不同銷毀編碼設定檔的 ILM 規則。如果您需要進行此類 ILM 變更、您應該終止 EC 重新平衡程序。</block>
   <block id="fa8a7b6f5346b8b3a6db96da822d76e4" category="summary">如果您在網格擴充程序期間遇到無法解決的錯誤、或網格工作失敗、請收集記錄檔並聯絡技術支援部門。</block>
-  <block id="8224dffadb32a60e7a9bbd796e22ca8f" category="doc">疑難排解擴充問題</block>
   <block id="3576e9157b748218966d1ca9bbe16fc9" category="paragraph">聯絡技術支援人員之前、請先收集必要的記錄檔、以協助進行疑難排解。</block>
   <block id="037734372ecabb81e574fed23c2d4989" category="list-text">連線至發生故障的擴充節點：</block>
   <block id="15dc17fbf38a4fc8a84e3efc54e86df8" category="list-text">輸入下列命令：<block ref="4aa1641988017375873399307925b55e" prefix="" category="inline-code"></block></block>
@@ -6630,7 +6621,6 @@
   <block id="0b1ca2f2b5a07a22c9a3c2970087f5d7" category="list-text">輸入*配置密碼*。</block>
   <block id="1fa9302191952afe439d2b30d4b91c23" category="paragraph">您指定的子網路會自動設定為StorageGRID 適用於您的整個系統。</block>
   <block id="3657ebc204091c64d3ff02624d49eb1d" category="summary">在新增儲存節點的擴充作業完成後、StorageGRID 該系統應自動開始使用新的儲存節點。您必須使用StorageGRID 此功能驗證新的儲存節點是否處於作用中狀態。</block>
-  <block id="aae3935209aaa82bb7e0cfb0954cdfb0" category="doc">確認儲存節點處於作用中狀態</block>
   <block id="b372d526b93e8b57f9c7f19633288356" category="list-text">將游標放在 * 「已使用的儲存空間 - 物件資料 * 」圖形上方、即可檢視 * 已使用 * 的值、這是已用於物件資料的總可用空間量。</block>
   <block id="11aed68e02a00262e86b22e6fe8e59ab" category="list-text">將游標移到圖表右側時、請確認*已使用*的值正在增加。</block>
   <block id="e6050c9475e86115a8d66d604cc71dce" category="list-text">如有必要、請安裝新的儲存硬體並建立新的VMware資料存放區。</block>
@@ -19999,9 +19989,6 @@
   <block id="6de1afa3cf1550ab26dedcd5f261ba67" category="sidebar">稽核訊息類別</block>
   <block id="afc29737a400dada15106eef4528477c" category="sidebar">稽核訊息參考</block>
   <block id="0f3aa4e9ff7d459390158f9cedb9e457" category="sidebar">擴充您的 StorageGRID 系統</block>
-  <block id="1e457a35700bbcc73d0f435962627d65" category="sidebar">規劃StorageGRID 擴充功能</block>
-  <block id="36ba8d44f59ba6f6841e013a4c2dfcbd" category="sidebar">增加儲存容量</block>
-  <block id="42fd950f7a09417fc726b6bf75ad3aca" category="sidebar">新增備援或新功能</block>
   <block id="c7bd4660cee75e951017a29e033c9544" category="sidebar">設定擴充系統</block>
   <block id="cc56a49e35aeb7f396fbb9e0c04c4216" category="sidebar">存取並完成精靈</block>
   <block id="38d35cd42f1d10729ce8519c163363eb" category="sidebar">手動設定 StorageGRID</block>
@@ -20785,7 +20772,6 @@
   <block id="1ebe935e22e860bc5e80d666b09d4ebb" category="list-text">選擇*維護* &gt; *系統* &gt; *恢復包*。</block>
   <block id="c568a3c0927aaccf02811b15209e3b60" category="admonition">復原包檔案必須是安全的，因為它包含可用於從StorageGRID系統取得資料的加密金鑰和密碼。它也用於恢復主管理節點。</block>
   <block id="9708fdcd1e4b7e2bd1cb2a214f24dc7a" category="list-text">選擇“*節點*”&gt;“*擴充儲存節點*”&gt;“*儲存*”。</block>
-  <block id="69ac9ed73518230da9135a11a969b146" category="doc">將儲存磁碟區新增至 VMware 儲存節點</block>
   <block id="78b02d4a8da88b902c937fc9bd890210" category="inline-link-macro">為 VMware 部署安裝StorageGRID的說明</block>
   <block id="5e82b58babd05946df8a7895bed2696d" category="list-text">您可以訪問<block ref="b2e1324cb31f62f32d385cd5bbc13ad0" category="inline-link-macro-rx"></block>。</block>
   <block id="f2ac7d76cc8e5340b9a3f767e975f7ef" category="paragraph">預設情況下，所有儲存桶均在<block ref="c800b6d9163b0db7d28f86c1470a9542" prefix=" " category="inline-code"></block>地區。如果預設區域配置為<block ref="c800b6d9163b0db7d28f86c1470a9542" prefix=" " category="inline-code"></block>，該其他區域最初是在下拉式選單中選擇的。</block>
@@ -22045,4 +22031,52 @@
   <block id="115da73ba09231ed44a359e7dc28a03b" category="admonition">儘管StorageGRID負載平衡器服務是建議的負載平衡機制，但您可能希望整合第三方負載平衡器。如需了解更多信息，請聯繫您的NetApp客戶代表或參考以下內容：<block ref="07dd3eb8db144aafaae9ca336914c57b" category="inline-link-rx"></block>。</block>
   <block id="800c173937521899b70a4ab5d735d3d7" category="paragraph">有關具體變更內容，請參閱… <block ref="b78e17cf58c4e309929c8d6a69594c7d" category="inline-link-macro-rx"></block>。</block>
   <block id="f2c4673c5ae939756c3d43f049c774fc" category="summary">低物件資料儲存警報監控每個儲存節點上可用於儲存物件資料的空間大小。</block>
+  <block id="6ab42ada4329eadfc2772d9809b0b425" category="doc">StorageGRID中新增網格節點的指南</block>
+  <block id="4aa734d9f778871efa0e9454b2df1549" category="doc">在StorageGRID中新增網格節點或新站點的工作流程概述</block>
+  <block id="52a9c6a4ff63ce699776bcb2c04824a5" category="inline-link-macro">更新網格網路的子網</block>
+  <block id="acc2f4b89ad9d6e2f56120d5900e81a3" category="list-text"><block ref="814f224bd9033b78570b41ffddccbae5" category="inline-link-macro-rx"></block>。</block>
+  <block id="ad9b8ef810c62b5581c7cbf4f37f70dd" category="inline-link-macro">部署新的網格節點</block>
+  <block id="0e5d3f34fc9491956f160b3fd5c46e02" category="list-text"><block ref="1c86124a85ce63916457893ae360583c" category="inline-link-macro-rx"></block>。</block>
+  <block id="ebb7096432347f548732ae03e81e9321" category="doc">StorageGRID元資料容量新增指南</block>
+  <block id="1452c54ebe0a6670f32f620d235b0d66" category="doc">StorageGRID新增網站的指南</block>
+  <block id="a92eb4063886fa5b0336638fd97b48a7" category="doc">StorageGRID中糾刪碼（EC）資料的擴充規劃</block>
+  <block id="376a349ac020131c458e70b9eb49d70c" category="doc">StorageGRID中複製資料的擴展規劃</block>
+  <block id="a9427208270c2b873e792bed949c40c0" category="doc">在StorageGRID系統新增儲存磁碟區</block>
+  <block id="99c3684d73f3b331c7f8abaad7cdb502" category="doc">在StorageGRID中配置新新增的節點和站點</block>
+  <block id="ed7cae6690c0c4858440134289804708" category="doc">了解StorageGRID中擴充後的 EC 重新平衡</block>
+  <block id="791ff8473704f0651e1632e7b65e739f" category="doc">排除StorageGRID中的擴充錯誤</block>
+  <block id="b6eeb3cce2a267d43988d2bf62d721f6" category="doc">將管理節點資料庫複製到StorageGRID中的新管理節點</block>
+  <block id="8ab7d09b063c33dde91041b71a224070" category="doc">將稽核日誌複製到StorageGRID中的新管理節點</block>
+  <block id="6d53b27891a16e40a98b898324278880" category="doc">將 Prometheus 指標複製到StorageGRID中的新管理節點</block>
+  <block id="0d4846b98d54c8f2d72164d7f2c990c6" category="doc">在StorageGRID中部署新的網格節點</block>
+  <block id="97cd904b981df2ee5bb49526ca4a553b" category="doc">準備擴展您的StorageGRID系統</block>
+  <block id="aca238deb1a68ba7d0777f5b3a9e9bca" category="doc">StorageGRID中新增物件容量的指南</block>
+  <block id="1da01eccb1d8e4aa22d1418a03b0f73f" category="doc">了解如何擴充您的StorageGRID系統</block>
+  <block id="31885bbe92ca3fae0d7571503dc583ff" category="paragraph">了解如何擴充StorageGRID系統，以在不中斷運作的情況下增加容量或功能。您可以為現有儲存節點新增儲存卷，為現有網站新增新的網格節點，或新增網站。</block>
+  <block id="7ce2db6675df4418720a3fa1039e5dc7" category="doc">在StorageGRID中為 Linux 儲存節點新增直連磁碟區或 SAN 卷</block>
+  <block id="a460411bfa128d773502789441299d2c" category="doc">執行StorageGRID擴展</block>
+  <block id="15ce1a9812d0e58f502faa70f1e34317" category="doc">在StorageGRID系統新增節點後，重新平衡糾刪碼資料。</block>
+  <block id="5e67742be133db8cda9d29e559ded5d0" category="doc">在StorageGRID中新增或更新網格網路子網路以進行擴展</block>
+  <block id="4542875aec1e1e6a7e6410d2b9c1572f" category="doc">在StorageGRID擴充後，驗證儲存節點是否處於活動狀態。</block>
+  <block id="d7b9587472ee4560e06c93c6fd9a2196" category="doc">在StorageGRID中為 VMware 儲存節點新增儲存磁碟區</block>
+  <block id="800c405298b37fda216884bd4debe0e2" category="sidebar">擴充StorageGRID系統的容量或功能</block>
+  <block id="857181ae00dedddaee408195c79ebfcc" category="sidebar">展開網格</block>
+  <block id="3b457f25d61c3797b404a7ae6ad6077a" category="sidebar">了解擴建事宜</block>
+  <block id="8cfa3ba172fe9cccceb586ab3a874258" category="sidebar">擴張計劃</block>
+  <block id="54a21b9b68e61d77c932e0139bee64d8" category="sidebar">複製資料的擴展規劃</block>
+  <block id="cc26fd735cff28b2db143c44c02317fd" category="sidebar">擦除編碼資料的擴展規劃</block>
+  <block id="b47335e014fe17e88176b2e5e9883d81" category="sidebar">了解擴充後的糾刪碼重新平衡機制</block>
+  <block id="a7c9aef1599a04523bfabc2889bc3ea4" category="sidebar">擴充指南</block>
+  <block id="2ca63b531490bf0330fef37473e7ab22" category="sidebar">新增元資料容量的指南</block>
+  <block id="df35fd67a43cd27957268e82e44873c8" category="sidebar">新增網格節點的指南</block>
+  <block id="800d3dd5b54772588452558135a413d8" category="sidebar">新增網站的指南</block>
+  <block id="25e70f0f5be238f980e91eed124e569b" category="sidebar">做好擴張準備</block>
+  <block id="a630a4cb0c45889f878567c92eac06e1" category="sidebar">工作流程概要</block>
+  <block id="6f66e24169e1bfd909ef7017d6c9f853" category="sidebar">新增或更新網格網路或更新子網</block>
+  <block id="f9d6292eb1a54624be47aa11a66bc4c8" category="sidebar">為 VMware 新增儲存卷</block>
+  <block id="eddb8bff2e2034fe7effc402e2eac054" category="sidebar">為 Linux 新增直連捲或 SAN 卷</block>
+  <block id="0e7b171ef24f94ac1c78b6edf72ecd49" category="sidebar">配置新新增的節點和站點</block>
+  <block id="7a7a963110f9ae62cce544133ba8e7ce" category="sidebar">驗證儲存節點是否處於活動狀態</block>
+  <block id="84937182b41664790a3d510e3937a6aa" category="sidebar">重新平衡擦除編碼數據</block>
+  <block id="79b23afb97ee05790731fc38c8f128a0" category="sidebar">排查擴充錯誤</block>
 </blocks>

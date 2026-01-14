@@ -1,10 +1,10 @@
 ---
 permalink: expand/vmware-adding-storage-volumes-to-storage-node.html 
 sidebar: sidebar 
-keywords: expand, expansion, storage node, add storage volumes, VMware 
+keywords: expand, expansion, storage node, add storage volumes, VMware, StorageGRID 
 summary: 如果儲存節點包含的儲存磁碟區少於 16 個，則可以使用 VMware vSphere 新增磁碟區來增加其容量。 
 ---
-= 將儲存磁碟區新增至 VMware 儲存節點
+= 在StorageGRID中為 VMware 儲存節點新增儲存磁碟區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

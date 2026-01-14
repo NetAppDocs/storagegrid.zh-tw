@@ -1,10 +1,10 @@
 ---
 permalink: expand/copying-admin-node-database.html 
 sidebar: sidebar 
-keywords: copy Admin Node database, alert history, Admin Node expansion 
+keywords: copy Admin Node database, alert history, Admin Node expansion, StorageGRID 
 summary: 透過擴充程序新增管理節點時、您可以選擇性地將資料庫從主要管理節點複製到新的管理節點。複製資料庫可讓您保留有關屬性、警示和警示的歷史資訊。 
 ---
-= 複製管理節點資料庫
+= 將管理節點資料庫複製到StorageGRID中的新管理節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
