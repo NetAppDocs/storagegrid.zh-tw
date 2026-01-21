@@ -1,10 +1,10 @@
 ---
 permalink: primer/how-storagegrid-manages-data.html 
 sidebar: sidebar 
-keywords: how storagegrid manages data, what an object is, how object data is protected 
+keywords: StorageGRID, how storagegrid manages data, what an object is, how object data is protected 
 summary: 使用物件儲存時、儲存單元是物件、而非檔案或區塊。不同於檔案系統或區塊儲存設備的樹狀階層、物件儲存設備會以無結構化的平面配置來組織資料。 
 ---
-= 什麼是物件
+= 什麼是 StorageGRID 物件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/using-storagegrid-ilm-with-fabricpool-data.html 
 sidebar: sidebar 
-keywords: FabricPool, requirements, ILM, information lifecycle management, ILM rule, ILM rules, ILM policy, erasure coding, replication, cloud storage pool, glacier 
+keywords: FabricPool, StorageGRID, requirements, ILM, information lifecycle management, ILM rule, ILM rules, ILM policy, erasure coding, replication, cloud storage pool, glacier 
 summary: 您可以使用這個簡單的範例原則做為自己 ILM 規則和原則的起點。 
 ---
-= 設定 FabricPool 資料的 ILM
+= 配置 StorageGRID ILM 以進行 FabricPool 數據
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

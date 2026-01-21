@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network-specific requirements, network specific requirements, network requirements 
 summary: 請遵循StorageGRID 每種類型的需求。 
 ---
-= 網路特定需求
+= StorageGRID 的網路特定需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -2,8 +2,8 @@
 section: network
 title: 網路準則
 entries:
-- title: 網路連線StorageGRID
-  pdf-filename: 網路連線準則StorageGRID
+- title: 網路準則
+  pdf-filename: StorageGRID 的網路準則
   url: "/network/index.html"
 - title: 網路類型StorageGRID
   url: "/network/storagegrid-network-types.html"
@@ -27,7 +27,7 @@ entries:
     url: "/network/linux-deployments.html"
   - title: 適用於平台服務和雲端儲存資源池的網路和連接埠
     url: "/network/networking-and-ports-for-platform-services-and-cloud-storage-pools.html"
-  - title: 應用裝置節點
+  - title: 設備網路組態
     url: "/network/appliance-nodes.html"
 - title: 網路安裝與資源配置
   url: "/network/network-installation-and-provisioning.html"

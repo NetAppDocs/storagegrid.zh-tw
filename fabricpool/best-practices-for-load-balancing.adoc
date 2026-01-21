@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/best-practices-for-load-balancing.html 
 sidebar: sidebar 
-keywords: fabricPool, load balancer endpoint, load balancing, Layer 7, best practices, certificate, CA, certificate authority, tls, ssl 
+keywords: fabricPool, StorageGRID, load balancer endpoint, load balancing, Layer 7, best practices, certificate, CA, certificate authority, tls, ssl 
 summary: 在將 StorageGRID 附加為 FabricPool 雲端層之前、請先檢閱搭配 FabricPool 使用負載平衡器的最佳實務做法。 
 ---
-= FabricPool 負載平衡的最佳實務做法
+= StorageGRID 負載平衡與 FabricPool 的最佳實踐
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

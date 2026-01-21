@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network install, network provisioning 
 summary: 您必須瞭解在節點部署和網格組態期間、如何使用Grid Network以及選用的管理和用戶端網路。 
 ---
-= 網路安裝與資源配置
+= StorageGRID 的網路安裝與資源配置
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

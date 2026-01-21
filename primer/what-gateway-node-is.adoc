@@ -1,10 +1,10 @@
 ---
 permalink: primer/what-gateway-node-is.html 
 sidebar: sidebar 
-keywords: gateway nodes, api gateway 
+keywords: StorageGRID, gateway nodes, api gateway 
 summary: 閘道節點提供專用的負載平衡介面、 S3 用戶端應用程式可用來連線至 StorageGRID 。負載平衡可在多個儲存節點之間分配工作負載、以最大化速度和連線容量。閘道節點為選用項目。 
 ---
-= 什麼是閘道節點？
+= 什麼是 StorageGRID 閘道節點？
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

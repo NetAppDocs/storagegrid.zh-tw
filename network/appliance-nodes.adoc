@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: networking for appliance, port bond mode 
 summary: 您可以設定StorageGRID 使用連接埠綁定模式的網路連接埠、以符合處理量、備援和容錯移轉的需求。 
 ---
-= 應用裝置節點
+= StorageGRID 設備節點的網路配置
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

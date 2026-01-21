@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/creating-traffic-classification-policy-for-fabricpool.html 
 sidebar: sidebar 
-keywords: fabricPool, traffic classification, traffic policy, QoS, quality of service 
+keywords: fabricPool, StorageGRID, traffic classification, traffic policy, QoS, quality of service 
 summary: 您可以選擇性地設計StorageGRID 一套「動態流量分類」原則、以最佳化FabricPool 針對該工作負載的服務品質。 
 ---
-= 建立FabricPool 一套適用於此功能的流量分類原則
+= 在 StorageGRID 中為 FabricPool 建立流量分類原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

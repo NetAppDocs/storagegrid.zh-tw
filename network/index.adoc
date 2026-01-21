@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, network, networking, ethernet, subnet, routing 
 summary: 請使用這些準則來瞭StorageGRID 解有關架構和網路拓撲的資訊、並瞭解網路組態和資源配置的需求。 
 ---
-= 網路準則
+= StorageGRID 的網路準則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

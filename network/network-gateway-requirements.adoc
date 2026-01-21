@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network gateway requirements 
 summary: 請遵循下列網路閘道或路由器的需求與準則。 
 ---
-= 網路閘道需求
+= StorageGRID 的網路閘道需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

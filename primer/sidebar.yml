@@ -13,7 +13,7 @@ entries:
   entries:
   - title: 節點與服務
     url: "/primer/nodes-and-services.html"
-    pdf-filename: 節點與服務
+    pdf-filename: StorageGRID 節點與服務
   - title: 什麼是管理節點
     url: "/primer/what-admin-node-is.html"
   - title: 什麼是儲存節點
@@ -25,15 +25,15 @@ entries:
   - title: 什麼是物件
     pdf-filename: StorageGRID 如何管理資料 - 總覽
     url: "/primer/how-storagegrid-manages-data.html"
-  - title: 物件的壽命
+  - title: 物件生命週期
     url: "/primer/life-of-object.html"
-  - title: 擷取資料流
+  - title: 資料擷取
     url: "/primer/ingest-data-flow.html"
   - title: 複本管理
     url: "/primer/copy-management.html"
-  - title: 擷取資料流
+  - title: 資料擷取
     url: "/primer/retrieve-data-flow.html"
-  - title: 刪除資料流程
+  - title: 資料刪除
     url: "/primer/delete-data-flow.html"
   - title: 資訊生命週期管理
     url: "/primer/using-information-lifecycle-management.html"

@@ -1,10 +1,10 @@
 ---
 permalink: harden/hardening-guideline-for-server-certificates.html 
 sidebar: sidebar 
-keywords: Hardening guidelines, certificates 
+keywords: StorageGRID, hardening guidelines, certificates 
 summary: 您應該取代安裝期間建立的預設憑證、並為 TLS 和 SSH 連線選取適當的安全性原則。 
 ---
-= TLS 和 SSH 的強化準則
+= StorageGRID 中 TLS 和 SSH 的強化準則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

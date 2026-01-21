@@ -1,7 +1,7 @@
 ---
 permalink: harden/hardening-guidelines-for-storagegrid-networks.html 
 sidebar: sidebar 
-keywords: hardening guidelines, networks, networking, security 
+keywords: StorageGRID, hardening guidelines, networks, networking, security 
 summary: 此支援每個網格節點最多三個網路介面、可讓您針對每個個別網格節點設定網路、以符合您的安全性和存取需求。StorageGRID 
 ---
 = 強化有關資訊網路的準則StorageGRID

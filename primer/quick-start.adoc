@@ -1,7 +1,7 @@
 ---
 permalink: primer/quick-start.html 
 sidebar: sidebar 
-keywords: storagegrid quick start, tasks 
+keywords: StorageGRID, quick start, tasks 
 summary: 請依照這些高階步驟來設定及使用任何 StorageGRID 系統。 
 ---
 = StorageGRID 快速入門

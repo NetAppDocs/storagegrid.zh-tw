@@ -1,7 +1,7 @@
 ---
 permalink: harden/hardening-guidelines-for-storagegrid-nodes.html 
 sidebar: sidebar 
-keywords: hardening guidelines, nodes, security 
+keywords: StorageGRID, hardening guidelines, nodes, security 
 summary: 可在VMware虛擬機器、Linux主機上的容器引擎內或專屬硬體設備上部署支援節點。StorageGRID每種類型的平台和每種類型的節點都有自己的強化最佳實務做法。 
 ---
 = 強化有關節點的準則StorageGRID

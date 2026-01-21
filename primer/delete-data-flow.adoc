@@ -1,10 +1,10 @@
 ---
 permalink: primer/delete-data-flow.html 
 sidebar: sidebar 
-keywords: object, delete, deletion, object lock, bucket lifecycle, expiration, ilm, placement instruction 
+keywords: StorageGRID, object, delete, deletion, object lock, bucket lifecycle, expiration, ilm, placement instruction 
 summary: 當用戶端或租用戶執行刪除作業、或物件的生命週期過期、觸發自動移除時、所有物件複本都會從 StorageGRID 系統中移除。已定義刪除物件的資料流程。 
 ---
-= 刪除資料流程
+= StorageGRID 如何處理物件刪除
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

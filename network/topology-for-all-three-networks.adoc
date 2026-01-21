@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network topology for storagegrid 
 summary: 您可以將這三個網路設定為一個網路拓撲、其中包含私有網格網路、限定站台專屬的管理網路和開放式用戶端網路。使用負載平衡器端點和不受信任的用戶端網路、可視需要提供額外的安全性。 
 ---
-= 三個網路的拓撲
+= 所有三個 StorageGRID 網路的網路拓撲
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

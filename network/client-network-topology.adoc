@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: client network topology 
 summary: 擁有用戶端網路為選用功能。使用用戶端網路可將用戶端網路流量（例如 S3\ ）與網格內部流量分開、使網格網路更安全。未設定管理網路時、用戶端或網格網路均可處理管理流量。 
 ---
-= 用戶端網路拓撲
+= StorageGRID 的用戶端網路拓撲
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

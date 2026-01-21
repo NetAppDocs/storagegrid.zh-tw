@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/creating-tenant-account-for-fabricpool.html 
 sidebar: sidebar 
-keywords: fabricPool, tenant, SSO 
+keywords: fabricPool, StorageGRID, tenant, SSO 
 summary: 您必須在Grid Manager中建立租戶帳戶FabricPool 、以供使用。 
 ---
-= 建立一個客戶帳戶FabricPool 以供使用
+= 在 StorageGRID 中為 FabricPool 建立租戶帳戶
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

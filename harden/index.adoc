@@ -1,10 +1,10 @@
 ---
 permalink: harden/index.html 
 sidebar: sidebar 
-keywords: Hardening guidelines, system, security 
+keywords: StorageGRID, hardening guidelines, system, security 
 summary: 系統強化是消除StorageGRID 儘可能多的安全風險的程序、因為這個系統是由一個系統來強化的。 
 ---
-= 系統強化的一般考量
+= 了解 StorageGRID 的系統強化
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid network topology 
 summary: 最簡單的網路拓撲是透過僅設定Grid Network來建立。 
 ---
-= 網格網路拓撲
+= StorageGRID 的網格網路拓撲
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

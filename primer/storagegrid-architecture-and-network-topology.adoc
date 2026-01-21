@@ -1,7 +1,7 @@
 ---
 permalink: primer/storagegrid-architecture-and-network-topology.html 
 sidebar: sidebar 
-keywords: architecture, deployment, topology, site, node redundancy, services, nodes 
+keywords: StorageGRID, architecture, deployment, topology, site, node redundancy, services, nodes 
 summary: 這個系統包含多種類型的網格節點、位於一或多個資料中心站台。StorageGRID 
 ---
 = 架構與網路拓撲StorageGRID

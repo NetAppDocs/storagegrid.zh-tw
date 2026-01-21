@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: networking requirements, storagegrid networks 
 summary: 所有StorageGRID 的支援部署都必須能夠支援下列連線。 
 ---
-= 一般網路需求
+= StorageGRID 的一般網路需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

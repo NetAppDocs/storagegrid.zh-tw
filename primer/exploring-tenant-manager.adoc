@@ -1,10 +1,10 @@
 ---
 permalink: primer/exploring-tenant-manager.html 
 sidebar: sidebar 
-keywords: what is the tenant manager, tenant manager dashboard 
+keywords: StorageGRID, what is the tenant manager, tenant manager dashboard 
 summary: 租戶管理程式是以瀏覽器為基礎的圖形介面、租戶使用者可存取此介面來設定、管理及監控其儲存帳戶。 
 ---
-= 探索租戶管理程式
+= 探索 StorageGRID Tenant Manager
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

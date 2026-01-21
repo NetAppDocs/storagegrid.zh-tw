@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: networking after installation, dhcp networking 
 summary: 完成網格節點部署與組態之後、請遵循下列原則進行DHCP定址和網路組態變更。 
 ---
-= 安裝後準則
+= StorageGRID 的安裝後準則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

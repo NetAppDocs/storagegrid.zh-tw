@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/creating-s3-bucket-and-access-key.html 
 sidebar: sidebar 
-keywords: fabricPool, S3 bucket, bucket, access key, secret access key 
+keywords: fabricPool, StorageGRID, S3 bucket, bucket, access key, secret access key 
 summary: 在將StorageGRID 支援FabricPool 功能與功能性工作負載一起使用之前、您必須先建立S3儲存庫來儲存FabricPool 您的功能性資料。您也需要取得將用於FabricPool 執行此功能的租戶帳戶的存取金鑰和秘密存取金鑰。 
 ---
-= 建立 S3 儲存區並取得存取金鑰
+= 在 StorageGRID 中為 FabricPool 建立 S3 儲存貯體並取得存取金鑰
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

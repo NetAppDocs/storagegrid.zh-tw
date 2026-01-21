@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, network port, external communications, ports, TCP, UDP, client communications 
 summary: 用戶端需要與網格節點通訊、才能擷取和擷取內容。使用的連接埠取決於所選的物件儲存傳輸協定。用戶端需要存取這些連接埠。 
 ---
-= 外部通訊
+= StorageGRID 的外部通訊
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

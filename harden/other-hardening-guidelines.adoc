@@ -1,10 +1,10 @@
 ---
 permalink: harden/other-hardening-guidelines.html 
 sidebar: sidebar 
-keywords: Hardening guidelines, security 
+keywords: StorageGRID, hardening guidelines, security 
 summary: 除了遵循StorageGRID 有關「不二網」和「節點」的強化準則、您還應遵循StorageGRID 「不二網」系統其他區域的強化準則。 
 ---
-= 其他強化準則
+= StorageGRID 中日誌、密碼和稽核訊息的強化準則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

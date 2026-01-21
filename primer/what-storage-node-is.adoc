@@ -1,10 +1,10 @@
 ---
 permalink: primer/what-storage-node-is.html 
 sidebar: sidebar 
-keywords: what is a storage node, how many storage nodes 
+keywords: StorageGRID, what is a storage node, how many storage nodes 
 summary: 儲存節點可管理及儲存物件資料和中繼資料。儲存節點包括在磁碟上儲存、移動、驗證及擷取物件資料和中繼資料所需的服務和程序。 
 ---
-= 什麼是儲存節點？
+= 什麼是 StorageGRID 儲存節點？
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

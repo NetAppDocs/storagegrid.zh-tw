@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network subnets 
 summary: 請遵循下列網路子網路需求與準則。 
 ---
-= 子網路需求
+= StorageGRID 的子網路需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

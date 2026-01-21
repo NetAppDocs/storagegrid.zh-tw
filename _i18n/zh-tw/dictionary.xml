@@ -6638,7 +6638,6 @@
   <block id="6aa819b80bd53d0ad5bbd307ef081572" category="list-text">確認儲存節點已上線：</block>
   <block id="3a2b093f9b2712b031186c4d4ec4cd0a" category="paragraph">您可以使用儲存節點的擴充容量來儲存物件資料。</block>
   <block id="905582b67ab9a89f2fdb5509efde8880" category="summary">在將 StorageGRID 附加為 FabricPool 雲端層之前、請先瞭解 StorageGRID 高可用度（ HA ）群組、並檢閱將 HA 群組與 FabricPool 搭配使用的最佳實務做法。</block>
-  <block id="70c65412bd804405e35fe44034117059" category="doc">高可用度（HA）群組的最佳實務做法</block>
   <block id="e475624a8136a96990fc8918f81d5b70" category="section-title">什麼是HA群組？</block>
   <block id="c096ac4b6f5f1e11d2c2c5a6e236da1b" category="paragraph">高可用度（ HA ）群組是來自多個 StorageGRID 閘道節點、管理節點或兩者的介面集合。HA 群組有助於保持用戶端資料連線可用。如果 HA 群組中的作用中介面故障、備份介面可以管理工作負載、而對 FabricPool 作業的影響微乎其微。</block>
   <block id="2466bdb134b62c9bd27761445e2cfbd9" category="paragraph">每個HA群組都提供高可用度的存取權限、可存取相關節點上的共享服務。例如、僅由閘道節點或管理節點和閘道節點上的介面組成的HA群組、可提供對共享負載平衡器服務的高可用度存取。</block>
@@ -6650,7 +6649,6 @@
   <block id="7bb65b063b10815715c92309590ad0d5" category="list-text">如果您計畫使用FabricPool 僅供Snapshot使用的磁碟區分層原則或非主要的本機效能層（例如災難恢復位置或NetApp SnapMirror®目的地）、則只能設定一個節點的HA群組。</block>
   <block id="45109662d2cebe80cd9beddcf995334d" category="paragraph">這些指示說明如何設定主動備份HA的HA群組（一個節點為作用中、一個節點為備份）。不過、您可能偏好使用DNS循環配置資源或主動式HA。若要瞭解其他 HA 組態的優點、請參閱<block ref="de15b1e85ed3b5d9d833a70e4e46dc10" category="inline-link-macro-rx"></block>。</block>
   <block id="36c9b4fd68f501d60f49a55326cb4b03" category="summary">在將 StorageGRID 附加為 FabricPool 雲端層之前、請先檢閱搭配 FabricPool 使用負載平衡器的最佳實務做法。</block>
-  <block id="77b90c2d7b164d6f5c80292d4c06326a" category="doc">FabricPool 負載平衡的最佳實務做法</block>
   <block id="5221d3f729287672b150843871e784e7" category="paragraph">若要深入瞭解 StorageGRID 負載平衡器和負載平衡器憑證的一般資訊，請參閱<block ref="876df71e41e8360a3f2d8ab13e924be4" category="inline-link-macro-rx"></block>。</block>
   <block id="9791a34ca14372a88dd5f4342e8daa3c" category="section-title">租戶存取用於 FabricPool 的負載平衡器端點的最佳實務做法</block>
   <block id="c702ee480894fc70b84776a23fefae7f" category="paragraph">您可以控制哪些租戶可以使用特定負載平衡器端點來存取其貯體。您可以允許所有租戶、允許某些租戶、或封鎖某些租戶。建立 FabricPool 使用的負載平衡端點時、請選取 * 允許所有租戶 * 。ONTAP 會加密放置在 StorageGRID 儲存區中的資料、因此這種額外的安全層幾乎不會提供額外的安全性。</block>
@@ -6735,7 +6733,6 @@
   <block id="d31df0f235ff2b2f8121434981c03a1c" category="list-text">將一或多個集合體附加至雲端層。</block>
   <block id="b02f533bb85a030df04eef66040650dd" category="list-text">您也可以建立磁碟區分層原則。</block>
   <block id="e6ac89dd976f36fffee17fbe4a5d290b" category="summary">設定StorageGRID 使用FabricPool 搭配使用的功能時、您可以選擇性地建立一或多個高可用度（HA）群組。HA 群組是每個節點包含 StorageGRID 負載平衡器服務的集合。HA 群組可以包含閘道節點、管理節點或兩者。</block>
-  <block id="4aa092a0b489c63c985eeea9b40b8d8a" category="doc">建立FabricPool 一套適用於不穩定環境的高可用度（HA）群組</block>
   <block id="f5a7af4d3fad56e6c795b67f0b4f749e" category="paragraph">設定StorageGRID 使用FabricPool 搭配使用的功能時、您可以選擇性地建立一或多個高可用度（HA）群組。HA 群組是每個節點包含 StorageGRID 負載平衡器服務的集合。HA 群組可以包含閘道節點、管理節點或兩者。</block>
   <block id="a7e5f34fa970e845f942b1ebc182a103" category="paragraph">您可以使用 HA 群組來協助保持 FabricPool 資料連線可用。HA 群組使用虛擬 IP 位址（ VIP ）來提供高可用度的負載平衡器服務存取權。如果 HA 群組中的作用中介面故障、備份介面就能管理工作負載、對 FabricPool 作業的影響微乎其微。</block>
   <block id="1cf5447ba16eb2b18335de18edb657c4" category="inline-link-macro">存取並完成 FabricPool 設定精靈</block>
@@ -6762,7 +6759,6 @@
   <block id="a37d800b9a83e0ecad0191f85e931078" category="paragraph">使用此選項可產生自我簽署的憑證。如需詳細的輸入內容、請參閱<block ref="7a7ba2cabc3c2cf3b35a108ec24ae900" category="inline-link-macro-rx"></block>。</block>
   <block id="4554c6363cdf65094672eed5142c635c" category="paragraph">只有在您已上傳或產生 StorageGRID 通用憑證的自訂版本時、才能使用此選項。如需詳細資訊、請參閱 <block ref="06584939d06888e9651d10bff9850817" category="inline-link-macro-rx"></block> 。</block>
   <block id="b0805c0a29c443def5110250a38841a6" category="summary">在將StorageGRID 支援FabricPool 功能與功能性工作負載一起使用之前、您必須先建立S3儲存庫來儲存FabricPool 您的功能性資料。您也需要取得將用於FabricPool 執行此功能的租戶帳戶的存取金鑰和秘密存取金鑰。</block>
-  <block id="1e3f0e21673075f30f876d22d4cf753e" category="doc">建立 S3 儲存區並取得存取金鑰</block>
   <block id="0c3fd9144ccd300a605b9c97bf2ec25e" category="inline-link-macro">建立自己的S3存取金鑰</block>
   <block id="3d61c2eb3fbf97c2c314af5e5f2fdbec" category="paragraph">有關此任務的詳細信息，請參閱<block ref="0ef960fe98b67740cfc4cfeeaf6e5e08" category="inline-link-macro-rx"></block>和<block ref="899fc6fc929017149052b5225e378de6" category="inline-link-macro-rx"></block>。要使用 FabricPool 安裝嚮導完成此任務，請轉至<block ref="c6986fe93679fc5bdd244963d74ca0fc" category="inline-link-macro-rx"></block>。</block>
   <block id="c12db71d2be1629960b4ea455c870550" category="list-text">您已建立一個可供FabricPool 使用的租戶帳戶。</block>
@@ -6864,7 +6860,6 @@
   <block id="83b3671a2958c095ea661c4d2d3b06ca" category="paragraph">FabricPool 可以將 ONTAP 資料分層至許多物件儲存供應商、包括 StorageGRID 。公有雲可能會在庫位或容器層級設定每秒支援的輸入/輸出作業（IOPS）數量上限、但StorageGRID 不像公有雲、效能會隨系統中的節點數量而擴充。使用VMware做為VMware的雲端層、您可以將冷資料保留在私有雲端、以獲得最高效能、並完全掌控資料。StorageGRID FabricPool</block>
   <block id="e6342cecfe776a0553f1927b406098c1" category="paragraph">此外FabricPool 、當StorageGRID 您使用效益技術做為雲端層時、不需要使用不含功能的認證。</block>
   <block id="a460c150369f304640209595cd2b53e5" category="summary">您必須先在 StorageGRID 中執行組態步驟、並取得特定值、才能將 StorageGRID 附加為 FabricPool 的雲端層。</block>
-  <block id="09af0f961abb06767889216bfbd10c4b" category="doc">以StorageGRID 雲端層形式附加解決方案所需的資訊</block>
   <block id="3560277c130f263f4ab7550e4931fb3b" category="paragraph">在您將 StorageGRID 附加為 FabricPool 的雲端層之前、您必須先在 StorageGRID 中執行組態步驟、並取得特定值以用於 ONTAP 。</block>
   <block id="96f54c7830113ef44e7cf10f564280ad" category="paragraph">下表顯示您必須在 StorageGRID 中設定的值、以及 ONTAP 和 DNS 伺服器如何使用這些值。</block>
   <block id="cf51a3b63309bf6b7619a259095ecaa9" category="paragraph">ONTAP 系統管理員 &gt; 新增雲端層</block>
@@ -7034,7 +7029,6 @@
   <block id="fb721ea3d062d98fb136366a13818102" category="list-text">前往<block ref="f561f3a1df738095c0e118850519ea98" category="inline-link-macro-rx"></block>並確定 DNS 包含一筆記錄、可將 StorageGRID 伺服器名稱（完整網域名稱）與您將使用的每個 StorageGRID IP 位址建立關聯。</block>
   <block id="84e03222b7dbf6650119aa1f298dbe3b" category="list-text">請移至<block ref="ccd4fb47533f760b7678b98e6c95f93c" category="inline-link-macro-rx"></block>以瞭解 StorageGRID 稽核記錄和其他全域組態選項的最佳實務做法。</block>
   <block id="0a4551f5f2c5aa1a3ce49e16c303e693" category="summary">您可以使用 FabricPool 設定精靈、將 StorageGRID 設定為 FabricPool 雲端層的物件儲存系統。完成安裝精靈後、您可以在 ONTAP 系統管理員中輸入必要的詳細資料。</block>
-  <block id="3fe0b2951f5091bf94c6cb9655076245" category="doc">使用 FabricPool 安裝精靈：考量與需求</block>
   <block id="f28a00e16d241514f70707c2a6405d07" category="section-title">何時使用 FabricPool 設定精靈</block>
   <block id="f01119718c4a918dd1ea98905a8e8469" category="paragraph">FabricPool 安裝精靈會引導您完成設定 StorageGRID 以搭配 FabricPool 使用的每個步驟、並自動為您設定特定實體、例如 ILM 和流量分類原則。完成精靈時、您可以下載檔案、以便在 ONTAP 系統管理員中輸入值。使用精靈可更快速地設定系統、並確保您的設定符合 StorageGRID 和 FabricPool 最佳實務做法。</block>
   <block id="c63e452d4b815cef93ffbfd019eeb177" category="paragraph">假設您具有「根目錄」存取權限、則可以在開始使用 StorageGRID Grid Manager 時完成 FabricPool 安裝精靈、或是在任何時候存取並完成精靈。視您的需求而定、您也可以手動設定部分或全部必要項目、然後使用精靈將 ONTAP 所需的值組合到單一檔案中。</block>
@@ -7130,7 +7124,6 @@
   <block id="de40e04e6656ff7f207f39ce8f01e61d" category="paragraph">您可以選取安全性原則、以決定使用哪些通訊協定和加密程式來建立與用戶端應用程式的安全 TLS 連線、以及安全的 SSH 連線至內部 StorageGRID 服務。</block>
   <block id="86bef63b8e7e4f2a69884d19fdb51594" category="paragraph">如需詳細資訊和指示、請參閱<block ref="a6c689c596dfaa3cfb5094952e903ff0" category="inline-link-macro-rx"></block>。</block>
   <block id="191e14abdde1e594be4b9662d2c1d0dd" category="summary">您必須保持StorageGRID 更新的不中斷系統和相關服務、才能抵禦攻擊。</block>
-  <block id="849c75cfa24db9fc4ad13b2bfc680868" category="doc">強化軟體升級準則</block>
   <block id="5ae524cd5748c5e6105f10a1151e6957" category="section-title">升級StorageGRID 至更新版軟體</block>
   <block id="0126a28511154903068adffa031778b4" category="paragraph">只要可能、您就應該將StorageGRID 更新版的更新版更新為最新的重大版本或先前的重大版本。保持更新有助於縮短已知弱點的作用時間、並減少整體攻擊範圍。StorageGRID此外、最新版的 StorageGRID 通常包含舊版中未包含的安全性強化功能。</block>
   <block id="9ed4a475dd3705157a9fed8811f63ce2" category="inline-link">NetApp 互通性對照表工具</block>
@@ -7222,7 +7215,6 @@
   <block id="5f48a0a2f0c4d29f0de6cc71717575ea" category="list-text">對於包含 SED 、 FDE 或 FIPS NL-SAS 磁碟機的應用裝置機型、您可以使用 SANtricity System Manager 來管理<block ref="3913dfd2c369cac2776eb66720e54f70" category="inline-link-rx"></block>。</block>
   <block id="74627ba611c34df97f03a5ae0601e2fe" category="inline-link">啟用及設定 StorageGRID 磁碟機加密</block>
   <block id="7a6064d965bd7e22e6c91023cfef2482" category="summary">系統強化是消除StorageGRID 儘可能多的安全風險的程序、因為這個系統是由一個系統來強化的。</block>
-  <block id="6f2123c54a9833956db7e3ef7c00215f" category="doc">系統強化的一般考量</block>
   <block id="59c63f05a88e1832ed83b05a00b5cb3e" category="paragraph">在您安裝和設定 StorageGRID 時、請使用這些準則來協助您達成任何指定的機密性、完整性和可用度安全目標。</block>
   <block id="c06870cbbc7309c92a982570ae94346d" category="inline-link">NetApp 弱點處理原則</block>
   <block id="ea067b1a4e8ef8de6e82ea2521d48d53" category="paragraph">StorageGRID 遵循<block ref="41c6eedd1941d0e2dedb7957ad832c7d" category="inline-link-rx"></block>。報告的弱點會根據產品安全性事件回應程序進行驗證和解決。</block>
@@ -7232,7 +7224,6 @@
   <block id="284a35a12152795bd03dce666e93358c" category="list-text">* 租戶帳戶的信任程度 * 。如果您是具有不受信任租戶帳戶的服務供應商、您的安全考量會與僅使用受信任的內部租戶不同。</block>
   <block id="fce8135455419765f3f290646b95d6ca" category="list-text">* 貴組織遵循哪些安全要求和慣例 * 。您可能需要遵守特定的法規或企業要求。</block>
   <block id="fe75d232be8f895d0eaba735a64de636" category="summary">除了遵循StorageGRID 有關「不二網」和「節點」的強化準則、您還應遵循StorageGRID 「不二網」系統其他區域的強化準則。</block>
-  <block id="415365826ecc2e470c76c1f83a9c592a" category="doc">其他強化準則</block>
   <block id="0ad0019b3749d3c10a8c25295a8cc74c" category="section-title">暫時安裝密碼</block>
   <block id="108239265d22a7dada45440516b3cc02" category="paragraph">若要在安裝期間保護 StorageGRID 系統、請在 StorageGRID 安裝 UI 或安裝 API 的暫存安裝程式密碼頁面上設定密碼。設定此密碼時、會套用至所有安裝 StorageGRID 的方法、包括使用者介面、安裝 API 和<block ref="01e989045e9f58aada43d013823e4520" prefix=" " category="inline-code"></block>指令碼。</block>
   <block id="2f8299f876158db323c08455b12b585a" category="paragraph">如需詳細資訊、請參閱：</block>
@@ -7257,7 +7248,6 @@
   <block id="89020511f4cbea8ea1100a70004b645d" category="inline-link">使用 StorageGRID 進行勒索軟體防禦</block>
   <block id="d6ec8a69c45d301959a0f8590bdf1241" category="paragraph">遵循中的建議、協助保護物件資料免遭勒索軟體攻擊<block ref="45c0f7ef20285fd7beb4c854421470bd" category="inline-link-rx"></block>。</block>
   <block id="761614be45e969067354a62d6f2be2e3" category="summary">安裝和設定StorageGRID 功能時、您可以使用這些準則來協助您達成任何規定的資訊系統機密性、完整性和可用度安全目標。</block>
-  <block id="991a3e9eb0afc3f352e997b43a978b3f" category="doc">系統強化準則</block>
   <block id="a8fbb963c60f039c1802755757c90141" category="summary">您可以使用「建立ILM規則」精靈來建立ILM規則。</block>
   <block id="01c54d069c530485397213983914c0b6" category="doc">存取建立 ILM 規則精靈</block>
   <block id="a7a090e231fee44e67c1429d70dcd8a0" category="paragraph">ILM規則可讓您管理物件資料隨時間的放置。若要建立 ILM 規則、請使用建立 ILM 規則精靈。</block>
@@ -14012,7 +14002,6 @@
   <block id="c1ffcbdf69dcf67d4ff03e9aad0d6ca5" category="paragraph">對於所有節點、「Storage（儲存）」索引標籤包含節點上磁碟裝置和磁碟區的詳細資料。對於儲存節點、「物件存放區」表格提供每個儲存磁碟區的相關資訊。</block>
   <block id="70883a046e5dddcbd4fac47d1c01fca4" category="paragraph"><block ref="70883a046e5dddcbd4fac47d1c01fca4" category="inline-link-macro-rx"></block></block>
   <block id="f3eb72227efdf971169a6f83ab1501d8" category="summary">管理網路為選用網路。如果您計畫設定管理網路、請遵循下列要求與準則。</block>
-  <block id="e02f6d888bac4278d616ad9978011524" category="doc">管理網路需求</block>
   <block id="233df12ec7a041358b42383a1f96eb4f" category="paragraph">管理網路的典型用途包括管理連線、 AutoSupport 、 KMS 、以及連線至關鍵伺服器的連線、例如 NTP 、 DNS 和 LDAP 、如果這些連線不是透過網格網路或用戶端網路提供。</block>
   <block id="ae5d714811048f806b7ebbf58e575d18" category="admonition">只要能夠連線所需的網路服務和用戶端、每個節點都可以使用管理網路和Aesl。</block>
   <block id="d9a3b85f6bdf587ce3efd7741feef12d" category="admonition">您必須在管理網路上定義至少一個子網路、才能啟用來自外部子網路的傳入連線。在Aesl的每個子網路中、會自動在每個節點上產生靜態路由。</block>
@@ -14160,7 +14149,6 @@
   <block id="e0e79dd14e3a04cb380e14d22436eff3" category="section-title">使用網路位址轉譯（NAT）</block>
   <block id="2e01197e29e02091f18d3424b52f1ddd" category="paragraph">請勿在網格網路上的網格節點之間或 StorageGRID 站台之間使用網路位址轉譯（ NAT ）。當您將私有的IPv4位址用於Grid Network時、這些位址必須從每個站台的每個網格節點直接路由傳送。不過、您可以視需要在外部用戶端和網格節點之間使用NAT、例如為閘道節點提供公有IP位址。只有當您採用對網格中所有節點透明的通道應用程式時、才支援使用NAT來橋接公共網路區段、亦即網格節點不需要知道公有IP位址。</block>
   <block id="cd14c094a9ba870ac65e6b2875460f13" category="summary">請遵循下列網格網路的要求與準則。</block>
-  <block id="62966b62dbb49566c7d067902abea8aa" category="doc">網格網路需求</block>
   <block id="02f316bf2f136dc51a8cf68c1c42bdb5" category="list-text">在部署時、每個網格節點都必須附加至網格網路、而且必須能夠使用部署節點時指定的網路組態與主要管理節點通訊。</block>
   <block id="bd5917bedccac0ae34819a66d4f1bbe7" category="list-text">在正常的網格作業期間、每個網格節點都必須能夠透過網格網路與所有其他網格節點通訊。</block>
   <block id="76ff2c82c5b02141dd7bebea6022a7dd" category="admonition">Grid Network必須在每個節點之間直接路由傳送。不支援節點之間的網路位址轉譯（NAT）。</block>
@@ -14287,7 +14275,6 @@
   <block id="d531ae98f24adf27f827887c47ebfd0f" category="list-text">連接儲存節點上的網格網路（需要10 Gbps）</block>
   <block id="7f4f3b0c4fc51d01615f14d348e39947" category="paragraph">在此案例中、您應提供至少11 + 20 + 10 = 41 Gbps的網路頻寬、 可由兩個40 Gbps介面或五個10 Gbps介面滿足、這些介面可能會集合成主幹、然後由三個以上的VLAN共用、這些VLAN會將Grid、Admin和用戶端子網路裝載到包含主機的實體資料中心。</block>
   <block id="81a8741ace867f3e96788b3056697692" category="summary">請遵循下列網路閘道或路由器的需求與準則。</block>
-  <block id="0c98e088a861dc8e19a8fb602e47df4e" category="doc">網路閘道需求</block>
   <block id="4d517e0fbf0a98419b10ae637eda1646" category="list-text">如果已設定、則指定網路的閘道必須位於特定網路的子網路內。</block>
   <block id="9717fb98550800d403872501d3a1d5df" category="list-text">如果使用靜態定址設定介面、則必須指定0.00.0以外的閘道位址。</block>
   <block id="a49beef472a0c0a0bfaaae90a5d6c41b" category="list-text">如果您沒有閘道、最佳做法是將閘道位址設定為網路介面的 IP 位址。</block>
@@ -14439,7 +14426,6 @@
   <block id="430f2f21ad4133108c554f77a16c2c63" category="paragraph">請參閱<block ref="01da7ed8ad97a3e972d8ef8ebd2e0eb6" category="inline-link-macro-rx"></block>以取得指示與準則。</block>
   <block id="2454f72c492873edc7d5fbac18b36fd5" category="paragraph">VLAN介面僅用於HA群組、並在作用中節點上指派VIP位址。請參閱<block ref="1426cbe087243652f493f474111cf1b0" category="inline-link-macro-rx"></block>以取得指示與準則。</block>
   <block id="4d17a326a964d03ab1d4883e0135d977" category="summary">請遵循下列網路子網路需求與準則。</block>
-  <block id="269fb2a67b4c9e0be80da55644e52519" category="doc">子網路需求</block>
   <block id="14a1f48f65ebd26c1f5be108ace52358" category="summary">您可以將這三個網路設定為一個網路拓撲、其中包含私有網格網路、限定站台專屬的管理網路和開放式用戶端網路。使用負載平衡器端點和不受信任的用戶端網路、可視需要提供額外的安全性。</block>
   <block id="014569b722de025511dc0d586d270876" category="doc">三個網路的拓撲</block>
   <block id="b630fb71ec57f4162971442bc3dd56d8" category="list-text">Grid Network用於與內部物件管理作業相關的網路流量。</block>
@@ -14500,7 +14486,6 @@
   <block id="99ad5c5dceffa7f11a7935b39dd2c163" category="list-text">ILM引擎會通知中繼資料存放區。中繼資料儲存區會更新物件中繼資料、使物件看起來會被刪除以供用戶端要求使用。</block>
   <block id="0d935cfc7bc3bcae3a46214a2e56e21f" category="list-text">ILM引擎會移除物件的所有複本。中繼資料儲存區會更新以移除物件中繼資料。</block>
   <block id="394dabc1d6ef9f918c9ab1a439776cf9" category="summary">Grid Manager是瀏覽器型的圖形介面、可讓您設定、管理StorageGRID 及監控您的作業系統。</block>
-  <block id="2007cad868b9c74d8c278bd09cc2bf0f" category="doc">瀏覽Grid Manager</block>
   <block id="eac2300c8aa415bd3e01b5b624d6df0e" category="paragraph">當您登入Grid Manager時、即連線至管理節點。每StorageGRID 個系統包含一個主要管理節點和任意數量的非主要管理節點。您可以連線至任何管理節點、每個管理節點都會顯示StorageGRID 類似的畫面、顯示有關該系統的資訊。</block>
   <block id="49275b9ad34169352c160e6f9f813bd5" category="paragraph">您可以使用存取 Grid Manager <block ref="adf24c7e4de4f7fbefe34dbdfdb455df" category="inline-link-macro-rx"></block>。</block>
   <block id="211def0f0373d2339b9043df469dda6c" category="inline-link-macro">監控系統活動</block>
@@ -14594,7 +14579,6 @@
   <block id="23a0f08f839163f128067ecdc03fa485" category="inline-link-macro">儲存浮水印</block>
   <block id="af6b5a69b97c78e743b659d3b54d4c3d" category="list-text">管理<block ref="d808547be1049c46411cc0978699b4f0" category="inline-link-macro-rx"></block></block>
   <block id="f27e0f05b3b57795ba9276eeaa6c1b59" category="summary">租戶管理程式是以瀏覽器為基礎的圖形介面、租戶使用者可存取此介面來設定、管理及監控其儲存帳戶。</block>
-  <block id="7e041eb0a447c56d060682b024389812" category="doc">探索租戶管理程式</block>
   <block id="6434d015658c27e7a03fc5ab94210078" category="paragraph"><block ref="f1d1dabee662ce1dffb0028789595435" category="inline-link-macro-rx"></block>是以瀏覽器為基礎的圖形化介面、租戶使用者可存取此介面來設定、管理及監控其儲存帳戶。</block>
   <block id="e38a541ccf36cb44e16979a6d23d5dcf" category="admonition">租戶管理程式會隨每個版本一起更新、可能與本頁的範例螢幕擷取畫面不符。</block>
   <block id="b565147537765e639a0f316c0ef42646" category="paragraph">當租戶使用者登入租戶管理程式時、他們會連線至管理節點。</block>
@@ -14687,7 +14671,6 @@
   <block id="b084a731794587a11af81afbc77326a5" category="list-text">不中斷的升級與維護作業。在升級、擴充、取消委任及維護程序期間、維持對內容的存取。</block>
   <block id="0efa1e4882326f4a16d4e2d9f490a268" category="list-text">聯合身分識別管理：整合Active Directory、OpenLDAP或Oracle Directory Service以進行使用者驗證。支援單一登入（SSO）、使用安全聲明標記語言2.0（SAML 2.0）標準、在StorageGRID 支援的範圍是在支援的範圍內、交換驗證和授權資料。</block>
   <block id="76725c79c3c6f7f9099031af8b37b40b" category="summary">擷取或儲存作業是由用戶端與StorageGRID 該系統之間定義的資料流所組成。</block>
-  <block id="fa53d9fe07f7988083bdea8d29cbff2d" category="doc">擷取資料流</block>
   <block id="51e229527022b23ef548bfc016bfb0ac" category="section-title">資料流</block>
   <block id="36297e996b801f553fc66237a7ebe95c" category="paragraph">當用戶端將物件擷取至StorageGRID 物件系統時、儲存節點上的LMR服務會處理要求、並將中繼資料和資料儲存至磁碟。</block>
   <block id="0dda1d14e31db085857605fba2dd64d2" category="image-alt">以同步放置擷取</block>
@@ -14699,7 +14682,6 @@
   <block id="d34c2583ab0aaf637ab7930ad0856fc5" category="list-text">中繼資料儲存區會將物件中繼資料複本傳播至其他儲存節點。這些複本也會儲存至磁碟。</block>
   <block id="0dfa2ec108ad85decbcf58b5bfba9b90" category="list-text">LDR服務會傳回HTTP 200 OK回應給用戶端、以確認已擷取物件。</block>
   <block id="573fe066bb4b4292fbb1ba65ca49db5f" category="summary">物件的生命週期由不同階段組成。每個階段都代表物件所執行的作業。</block>
-  <block id="fad1da5374a87b038bad444e0e11593c" category="doc">物件的壽命</block>
   <block id="7adf93324b9ea5a6cc6185b8fcbf8b89" category="paragraph">物件的生命週期由不同階段組成。每個階段都代表物件所執行的作業。</block>
   <block id="8fc03e7ec26afd5a153d77b6a1f6dff2" category="paragraph">物件的壽命包括擷取、複本管理、擷取及刪除等作業。</block>
   <block id="9fe5927322733de15c130a2198a87514" category="list-text">* 內嵌 * ： S3 用戶端應用程式透過 HTTP 將物件儲存至 StorageGRID 系統的程序。在這個階段StorageGRID 、這個物件的物件由整個系統開始管理。</block>
@@ -14835,7 +14817,6 @@
   <block id="e3924e5b34002dfc609acfc416e07f38" category="inline-link-macro">恢復節點</block>
   <block id="acd5941ccc2dcddb69154c7605a34abc" category="list-text"><block ref="acd5941ccc2dcddb69154c7605a34abc" category="inline-link-macro-rx"></block></block>
   <block id="0a2a8a814cfb0c59699f05254b90d121" category="summary">擷取作業由定義的StorageGRID 資料流組成、可在支援系統和用戶端之間進行。系統會使用屬性來追蹤從儲存節點或雲端儲存池擷取物件的情況（如有必要）。</block>
-  <block id="8183605ea75c439970d297cc0cd81553" category="doc">擷取資料流</block>
   <block id="0861fb66a6e9b7d7c56d4de5ae85bb74" category="paragraph">Storage Node的LMR服務會查詢中繼資料存放區以找出物件資料的位置、然後從來源LMR服務擷取資料。優先的是從儲存節點擷取。如果物件在儲存節點上無法使用、則擷取要求會導向至雲端儲存池。</block>
   <block id="aa988ea660899e237a3a4c9e20868641" category="admonition">如果唯一的物件複本位於 AWS Glacier 儲存設備或 Azure 歸檔層、則用戶端應用程式必須發出 S3 RestoreObject 要求、才能將可擷取的複本還原至 Cloud Storage Pool 。</block>
   <block id="2d67a16bc732d3b6a4a245d1a866996c" category="image-alt">擷取</block>
@@ -19997,8 +19978,6 @@
   <block id="44a94f21d420046ece8c6b28350ef8c8" category="sidebar">適用於 FabricPool 的 StorageGRID 最佳實務做法</block>
   <block id="bade42d23dccad83b7ffd49f6f0a3159" category="sidebar">HA群組的最佳實務做法</block>
   <block id="dacddf74926a64e3d163b945eb6c6beb" category="sidebar">ILM 的最佳實務做法</block>
-  <block id="d850e10943aae345c4357b6f98bb3e4b" category="sidebar">其他最佳實務做法</block>
-  <block id="e8ef7c345aa3a5e06261902298b2e238" category="sidebar">系統強化StorageGRID</block>
   <block id="d1cae5d1a69150e011c6c9028b0325aa" category="sidebar">強化升級準則</block>
   <block id="5ce6776011ace7583910ddd226404a76" category="sidebar">強化網路準則</block>
   <block id="7a3a736ce516b445296040993c7cda55" category="sidebar">節點強化準則</block>
@@ -22079,4 +22058,73 @@
   <block id="7a7a963110f9ae62cce544133ba8e7ce" category="sidebar">驗證儲存節點是否處於活動狀態</block>
   <block id="84937182b41664790a3d510e3937a6aa" category="sidebar">重新平衡擦除編碼數據</block>
   <block id="79b23afb97ee05790731fc38c8f128a0" category="sidebar">排查擴充錯誤</block>
+  <block id="fcd8fdc0118e5f1623ee2bb437a554e4" category="doc">StorageGRID 高可用性（HA）群組搭配 FabricPool 的最佳實務做法</block>
+  <block id="5b1e9d5594e159b2543c383347a9aea2" category="doc">StorageGRID 負載平衡與 FabricPool 的最佳實踐</block>
+  <block id="105c4988efc9bb3791b6f32202068377" category="doc">搭配 FabricPool 資料使用 StorageGRID ILM 的最佳實務做法</block>
+  <block id="eec82f574ad8e261c51298e7db7baf8d" category="doc">使用 FabricPool 為 StorageGRID 配置 DNS 伺服器項目</block>
+  <block id="39d2acccbfe885b629558bcc20c90629" category="doc">配置 ONTAP System Manager，將 StorageGRID 新增為 FabricPool 雲端層</block>
+  <block id="04a9a62dc53009d34889277003e66d27" category="doc">在 StorageGRID 中為 FabricPool 建立高可用性（HA）群組</block>
+  <block id="0766fcbec996ab6cc116fc05eb0a6756" category="doc">在 StorageGRID 中為 FabricPool 建立負載平衡器端點</block>
+  <block id="9c668b46b8dd103e14e6ccd38f69a5d8" category="doc">在 StorageGRID 中為 FabricPool 建立 S3 儲存貯體並取得存取金鑰</block>
+  <block id="99c07afd3a1802b1d25d843af11c3c00" category="doc">在 StorageGRID 中為 FabricPool 建立租戶帳戶</block>
+  <block id="68df40f4e7c447d6dcf93fcb8889c0e1" category="doc">在 StorageGRID 中為 FabricPool 建立流量分類原則</block>
+  <block id="4d2cb9bada3944a60dadbdd3e5457c2d" category="doc">使用 StorageGRID 搭配 FabricPool 的設定工作流程</block>
+  <block id="ecec7b898017fbe91e27611550e9435c" category="doc">將 StorageGRID 附加為 FabricPool 雲端層所需的資訊</block>
+  <block id="268dedd4c4304fa1789a431dc329d1f7" category="doc">StorageGRID 全域設定搭配 FabricPool 的最佳實務做法</block>
+  <block id="115e3f5707f3fd2ff59632f0e5be3f3d" category="doc">存取並完成 StorageGRID FabricPool 設定精靈</block>
+  <block id="b77038586f3e335060a653a7f096b67b" category="doc">了解 StorageGRID FabricPool 設定精靈</block>
+  <block id="ad9e6c7f054a02e0ee44ff84a188d4d0" category="doc">配置 StorageGRID ILM 以進行 FabricPool 數據</block>
+  <block id="ed0f5a10c40872ba77dafc2836c9be4e" category="doc">StorageGRID 中 TLS 和 SSH 的強化準則</block>
+  <block id="4fa6f10c9450e7236c6f16634f20804f" category="doc">StorageGRID 軟體升級的強化準則</block>
+  <block id="1b33cc740ecd4d2a6358ac7fd24f3bc6" category="doc">了解 StorageGRID 的系統強化</block>
+  <block id="cfbe9871d4c8cc4bfaaacb0c80316f0b" category="doc">StorageGRID 中日誌、密碼和稽核訊息的強化準則</block>
+  <block id="aa03b3bdc176a34fc3537301c690c74a" category="doc">StorageGRID 的系統強化準則</block>
+  <block id="5b1981ebadc69a16928ae7fa8332dae7" category="doc">StorageGRID 的管理網路需求</block>
+  <block id="22cb667cbfdc8cbbc498752593e5b9bd" category="doc">StorageGRID 的管理網路拓撲</block>
+  <block id="d3cfe573bf7035e7f90e30e7e8848b44" category="doc">StorageGRID 設備節點的網路配置</block>
+  <block id="ec46bbb9988a440bfe584e6cfa6dcc07" category="doc">StorageGRID 的用戶端網路拓撲</block>
+  <block id="325e017affe8885c8a249b2520e78760" category="doc">StorageGRID 的外部通訊</block>
+  <block id="467c664bccbd5c8c9342fb9c66978191" category="doc">StorageGRID 的一般網路需求</block>
+  <block id="dbfbdb8c4328881fe6cf9c624952d21b" category="doc">StorageGRID 的網格網路需求</block>
+  <block id="9596edad3a9e574bd13db2f41a1a5cb8" category="doc">StorageGRID 的網格網路拓撲</block>
+  <block id="ecf8c094bebe3efcf1c5addfa9a5e0db" category="doc">StorageGRID 的網路準則</block>
+  <block id="38fb9e3251c2218fc4d78d020175f18f" category="doc">StorageGRID 的內部網格節點通訊</block>
+  <block id="80382497aa707ec06ac37a29cea3e34b" category="doc">StorageGRID Linux 部署的網路配置</block>
+  <block id="885385910853df551d50d860487c21b6" category="doc">StorageGRID 的網路閘道需求</block>
+  <block id="58af778ac7e95c702dd4828268605fef" category="doc">StorageGRID 的網路安裝與資源配置</block>
+  <block id="498dc7fea054318ae4dea1a6d32c4a42" category="doc">StorageGRID 的網路特定需求</block>
+  <block id="efea763e755724825b6a5c7008844cf6" category="doc">StorageGRID 的網路需求</block>
+  <block id="8321929926cccb2bcadea3d165257ca9" category="doc">StorageGRID 的安裝後準則</block>
+  <block id="fb8669fe543a32b1e3d08eee6d0cd164" category="doc">StorageGRID 的子網路需求</block>
+  <block id="5ab0656b0c8df6fadfbf8ecd99512803" category="doc">所有三個 StorageGRID 網路的網路拓撲</block>
+  <block id="c6dd594c2e47448f01fca7994602b170" category="doc">StorageGRID 如何管理物件副本</block>
+  <block id="c237c752b3160e292eb58d7074959625" category="doc">StorageGRID 如何處理物件刪除</block>
+  <block id="0d4ea5c6fe0fdeaccdc4c2ce3832a9c5" category="doc">探索 StorageGRID Grid Manager</block>
+  <block id="ef2395c4b922379ece2bffe015939e9f" category="doc">探索 StorageGRID Tenant Manager</block>
+  <block id="a02bad5e2ada8ba56ced608efe9a94b6" category="doc">什麼是 StorageGRID 物件</block>
+  <block id="9ac1239bd55081d8489eee66b8dfb25d" category="doc">StorageGRID 如何處理物件擷取</block>
+  <block id="f294ee088775baa4d8889326cb51671b" category="doc">StorageGRID 中的物件生命週期</block>
+  <block id="6b65f28331d084057e7909c0cc2322b4" category="doc">StorageGRID 網格節點與服務</block>
+  <block id="0aeab3f81669d4b1c2298f14c37ba96e" category="doc">StorageGRID 如何處理物件擷取</block>
+  <block id="dec33f5831d8537672f18354590ab6ee" category="doc">StorageGRID 中的資訊生命週期管理</block>
+  <block id="0d47fd8146a077ead5757e7051505aee" category="doc">什麼是 StorageGRID 管理節點？</block>
+  <block id="e7f1d19ce78b452e50b4c2db0fc974c5" category="doc">什麼是 StorageGRID 閘道節點？</block>
+  <block id="01b830d41b45747ae077a12d700b6fc3" category="doc">什麼是 StorageGRID 儲存節點？</block>
+  <block id="699445f9935032773e429163602d0956" category="sidebar">StorageGRID 搭配 FabricPool</block>
+  <block id="ee4737a99df1f82d6dbc164235a6ae68" category="sidebar">組態工作流程</block>
+  <block id="5ff075650637fe2852f24c989f1ce8aa" category="sidebar">FabricPool 雲層資訊</block>
+  <block id="b991b22614a9cc2b043d061094459745" category="sidebar">設定精靈概述</block>
+  <block id="4090cf847fbc39487edb64f200ef8346" category="sidebar">為 StorageGRID 配置 ONTAP</block>
+  <block id="80f6089b7d0b806076795ac56421e39a" category="sidebar">設定 DNS 伺服器項目</block>
+  <block id="53a6b25eab0c91ffb60f62add6c9d4bc" category="sidebar">負載平衡的最佳實務做法</block>
+  <block id="53b7c2e08fa92b2fac3bccae217803a5" category="sidebar">全域設定的最佳實務做法</block>
+  <block id="d45f828917cd465db93d39a0a2c3f359" category="sidebar">StorageGRID 的系統強化</block>
+  <block id="5bd6c2a30595fa951e99eb2d2bf24bf7" category="sidebar">瞭解系統強化</block>
+  <block id="1a46186ee260ee89159eb607de46f69d" category="sidebar">日誌和密碼的加固指南</block>
+  <block id="92103f7dddeec54ec3a12d6b309cb2ea" category="sidebar">設備網路組態</block>
+  <block id="8cdf5b28b2c467155f0c4099351646ac" category="sidebar">StorageGRID 節點與服務</block>
+  <block id="44434237006cfe916bd99f6db898d8a2" category="sidebar">物件生命週期</block>
+  <block id="ccd6ecb933f05407111b63f1b89ccc97" category="sidebar">資料擷取</block>
+  <block id="387c526b7029f84f10370b2227ca2474" category="sidebar">資料擷取</block>
+  <block id="7be94d6ea867267b0e0652c209469b72" category="sidebar">資料刪除</block>
 </blocks>

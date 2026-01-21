@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: admin network topology, using admin network 
 summary: 擁有管理網路是選擇性的。使用管理網路和網格網路的其中一種方法、就是為每個節點設定可路由的網格網路和有邊界的管理網路。 
 ---
-= 管理網路拓撲
+= StorageGRID 的管理網路拓撲
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

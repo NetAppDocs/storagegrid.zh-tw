@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: admin network requirements, guidelines for admin network, aesl 
 summary: 管理網路為選用網路。如果您計畫設定管理網路、請遵循下列要求與準則。 
 ---
-= 管理網路需求
+= StorageGRID 的管理網路需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

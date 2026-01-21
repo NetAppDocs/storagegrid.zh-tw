@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: StorageGRID, fabricPool, ONTAP System Manager, ONTAP CLI, port, FQDN, object store name 
 summary: 您必須先在 StorageGRID 中執行組態步驟、並取得特定值、才能將 StorageGRID 附加為 FabricPool 的雲端層。 
 ---
-= 以StorageGRID 雲端層形式附加解決方案所需的資訊
+= 將 StorageGRID 附加為 FabricPool 雲端層所需的資訊
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

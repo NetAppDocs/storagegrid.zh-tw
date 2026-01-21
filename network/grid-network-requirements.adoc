@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid network requirements 
 summary: 請遵循下列網格網路的要求與準則。 
 ---
-= 網格網路需求
+= StorageGRID 的網格網路需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

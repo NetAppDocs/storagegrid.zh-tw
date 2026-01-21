@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/use-fabricpool-setup-wizard-steps.html 
 sidebar: sidebar 
-keywords: fabricPool, FabricPool setup wizard, ontap system manager 
+keywords: fabricPool, StorageGRID, FabricPool setup wizard, ontap system manager 
 summary: 您可以使用 FabricPool 設定精靈、將 StorageGRID 設定為 FabricPool 雲端層的物件儲存系統。 
 ---
-= 存取並完成 FabricPool 設定精靈
+= 存取並完成 StorageGRID FabricPool 設定精靈
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

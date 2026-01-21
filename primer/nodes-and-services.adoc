@@ -1,10 +1,10 @@
 ---
 permalink: primer/nodes-and-services.html 
 sidebar: sidebar 
-keywords: services, grid nodes, primary admin, storage, gateway 
+keywords: StorageGRID, services, grid nodes, primary admin, storage, gateway 
 summary: 整個系統的基本建置區塊StorageGRID 是網格節點。節點包含服務、這些是軟體模組、可為網格節點提供一組功能。 
 ---
-= 網格節點和服務
+= StorageGRID 網格節點與服務
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

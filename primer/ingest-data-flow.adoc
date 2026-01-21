@@ -1,10 +1,10 @@
 ---
 permalink: primer/ingest-data-flow.html 
 sidebar: sidebar 
-keywords: object data, ingest 
+keywords: StorageGRID, object data, ingest 
 summary: 擷取或儲存作業是由用戶端與StorageGRID 該系統之間定義的資料流所組成。 
 ---
-= 擷取資料流
+= StorageGRID 如何處理物件擷取
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

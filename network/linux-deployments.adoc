@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: linux network, container engine, red hat enterprise linux network, rhel network, ubuntu network 
 summary: 為了提高效率、可靠性和安全性、StorageGRID 此功能可在Linux上執行、作為容器引擎的集合。在一個不需要與容器引擎相關的StorageGRID 網路組態設定的情況下、 
 ---
-= Linux部署
+= StorageGRID Linux 部署的網路配置
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
