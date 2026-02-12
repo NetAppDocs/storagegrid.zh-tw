@@ -22127,4 +22127,6 @@
   <block id="ccd6ecb933f05407111b63f1b89ccc97" category="sidebar">資料擷取</block>
   <block id="387c526b7029f84f10370b2227ca2474" category="sidebar">資料擷取</block>
   <block id="7be94d6ea867267b0e0652c209469b72" category="sidebar">資料刪除</block>
+  <block id="e339a51ec4624e5c1a04f357a0dc195f" category="sidebar">安裝 StorageGRID 節點</block>
+  <block id="09d1d82e5796d1a5aeeb2d209bf1dfdf" category="sidebar">自動化基於軟體的節點安裝</block>
 </blocks>
