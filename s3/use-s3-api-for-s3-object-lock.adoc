@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure S3 object lock, object lock, default bucket retention, governance, compliance, retain-until-date, legal hold 
 summary: 如果 StorageGRID 系統已啟用全域 S3 物件鎖定設定、您可以在啟用 S3 物件鎖定的情況下建立儲存區。您可以針對每個物件版本、指定每個儲存區或保留設定的預設保留。 
 ---
-= 使用 S3 REST API 來設定 S3 物件鎖定
+= 使用 S3 REST API 設定 StorageGRID S3 Object Lock
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

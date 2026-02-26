@@ -2,9 +2,9 @@
 permalink: s3/put-bucket-last-access-time-request.html 
 sidebar: sidebar 
 keywords: S3 REST API, S3 operations, put bucket last access time request 
-summary: 「取得時段上次存取時間」要求可讓您決定是否為個別的時區啟用或停用上次存取時間更新。 
+summary: PUT Bucket 最後存取時間請求可讓您啟用或停用個別儲存區的最後存取時間更新。 
 ---
-= 將資源桶放在最後存取時間
+= 使用 PUT Bucket last access time 請求在 StorageGRID 中啟用和停用最後存取時間更新
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aws cli, test s3 client connection 
 summary: 您可以使用 Amazon Web Services 命令列介面（ AWS CLI ）來測試與系統的連線、並驗證您是否可以讀寫物件。 
 ---
-= 測試 S3 REST API 組態
+= 測試 StorageGRID S3 REST API 組態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

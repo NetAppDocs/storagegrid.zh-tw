@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: server side encryption, encryption, operations on objects, objects 
 summary: 伺服器端加密可讓您保護閒置的物件資料。當資料寫入物件時、系統會加密資料、並在您存取物件時解密資料。StorageGRID 
 ---
-= 使用伺服器端加密
+= StorageGRID 如何使用伺服器端加密
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

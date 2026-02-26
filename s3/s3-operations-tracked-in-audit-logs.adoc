@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit log, auditing bucket and object operations, S3 audit messages 
 summary: 稽核訊息是StorageGRID 由支援服務產生、並儲存在文字記錄檔中。您可以在稽核記錄中檢閱 S3 特定的稽核訊息、以取得有關貯體和物件作業的詳細資料。 
 ---
-= 稽核記錄中追蹤的S3作業
+= StorageGRID 稽核日誌中追蹤的 S3 操作
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

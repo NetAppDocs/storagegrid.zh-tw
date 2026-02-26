@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot the external syslog server 
 summary: 下表說明可能與外部 Syslog 伺服器相關的錯誤訊息、並列出修正行動。 
 ---
-= 排除外部syslog伺服器的故障
+= 疑難排解 StorageGRID 的外部 syslog 伺服器錯誤訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

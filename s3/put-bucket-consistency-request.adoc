@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, PUT bucket consistency request 
 summary: 「放置貯體一致性」要求可讓您指定套用至在貯體上執行之作業的一致性。 
 ---
-= 實現庫位一致性
+= 使用 PUT Bucket 一致性請求在 StorageGRID 中指定一致性層級
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

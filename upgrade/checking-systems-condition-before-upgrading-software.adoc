@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade, grid tasks, firewall, ports 
 summary: 在升級 StorageGRID 系統之前、請確認系統已準備好容納升級。確保系統正常執行、且所有網格節點均可運作。 
 ---
-= 檢查系統狀況
+= 在升級之前、請檢查 StorageGRID 系統的狀況
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

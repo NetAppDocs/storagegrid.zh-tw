@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bucket access policies, group access policies, session policies 
 summary:  
 ---
-= 使用存取策略
+= StorageGRID 如何使用 AWS 原則來控制對 S3 儲存貯體和物件的存取
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

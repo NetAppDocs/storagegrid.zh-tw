@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: HeadObject 
 summary: 您可以使用 S3 HeadObject 要求、從物件擷取中繼資料、而無需傳回物件本身。 
 ---
-= 標題物件
+= 使用 S3 HeadObject 請求從 StorageGRID 中的物件擷取中繼資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

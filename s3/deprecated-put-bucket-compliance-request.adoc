@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, PUT deprecated compliance requests 
 summary: 「放入時段」法規遵循要求已過時。不過、您可以繼續使用此要求來修改現有舊版相容桶的法規遵循設定。 
 ---
-= 已過時：提出資源桶法規遵循要求
+= StorageGRID 中已棄用的 PUT Bucket 合規性要求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

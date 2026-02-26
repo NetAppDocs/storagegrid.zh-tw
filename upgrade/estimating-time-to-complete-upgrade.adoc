@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade, time estimate, duration, cassandra upgrade 
 summary: 請根據升級所需的時間考慮何時升級。請注意在升級的每個階段中、您可以執行哪些作業、哪些作業無法執行。 
 ---
-= 預估完成升級所需的時間
+= 估算完成 StorageGRID 升級所需的時間
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

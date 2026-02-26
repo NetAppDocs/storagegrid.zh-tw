@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: group policy examples 
 summary: 使用本節中的範例、為群組建置 StorageGRID 存取原則。 
 ---
-= 群組原則範例
+= StorageGRID S3 REST API 群組原則範例
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

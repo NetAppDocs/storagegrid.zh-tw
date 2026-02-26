@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to verify object integrity, object existence check, background verification 
 summary: 此系統可驗證儲存節點上物件資料的完整性、同時檢查毀損和遺失的物件。StorageGRID 
 ---
-= 驗證物件完整性
+= 驗證 StorageGRID 中物件資料的完整性
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

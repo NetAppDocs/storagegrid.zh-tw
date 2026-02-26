@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: conflicting client requests 
 summary: 衝突的用戶端要求（例如兩個寫入同一個金鑰的用戶端）會以「最新致勝」的方式解決。 
 ---
-= 衝突的用戶端要求
+= StorageGRID S3 REST API 如何解決衝突的用戶端請求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

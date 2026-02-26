@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object, add object, put, PutObject request 
 summary: 您可以使用 S3 PuttObject 要求、將物件新增至貯體。 
 ---
-= PuttObject
+= 使用 S3 PutObject 請求將物件新增至 StorageGRID 中的儲存區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

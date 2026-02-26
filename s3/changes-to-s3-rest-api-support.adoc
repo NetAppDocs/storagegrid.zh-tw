@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 rest api support changes 
 summary: 您應該注意StorageGRID 到支援S3 REST API的功能有所變更。 
 ---
-= S3 REST API支援變更
+= StorageGRID 對 S3 REST API 的支援發生了變化
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

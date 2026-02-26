@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, DELETE Bucket metadata notification configuration request 
 summary: 刪除庫位中繼資料通知組態要求可讓您刪除組態XML、以停用個別庫位的搜尋整合服務。 
 ---
-= 刪除時段中繼資料通知組態
+= 使用 StorageGRID 中的 DELETE Bucket 中繼資料通知組態要求停用搜尋整合服務
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

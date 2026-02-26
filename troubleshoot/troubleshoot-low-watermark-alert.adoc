@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: troubleshoot low soft read-only watermark override alert, optimized watermarks 
 summary: 如果您使用儲存Volume浮點的自訂值、則可能需要解決「低唯讀」浮水印覆寫警示。如果可能、您應該更新系統、以開始使用最佳化的值。 
 ---
-= 疑難排解低唯讀浮水印會覆寫警示
+= 解決 StorageGRID 中的浮水印覆寫警示
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

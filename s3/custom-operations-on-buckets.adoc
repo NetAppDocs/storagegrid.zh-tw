@@ -4,9 +4,8 @@ sidebar: sidebar
 keywords: operations, buckets, custom, storagegrid bucket operations 
 summary: StorageGRID 系統支援新增至 S3 REST API 的自訂作業。 
 ---
-= StorageGRID 自訂作業
+= StorageGRID 中支援的自訂儲存貯體作業
 :allow-uri-read: 
-:icons: font
 :imagesdir: ../media/
 
 

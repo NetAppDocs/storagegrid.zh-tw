@@ -15858,7 +15858,6 @@
   <block id="80dfbcb2352357debe8622395bfabf94" category="inline-link-macro">群組原則範例</block>
   <block id="af3e0fe6abf036d580dd5f9b2f8724de" category="list-text"><block ref="af3e0fe6abf036d580dd5f9b2f8724de" category="inline-link-macro-rx"></block></block>
   <block id="360bbb6b361c0f0725743a7f441719aa" category="summary">您應該注意StorageGRID 到支援S3 REST API的功能有所變更。</block>
-  <block id="44b88b4545071f302915f496baff4a47" category="doc">S3 REST API支援變更</block>
   <block id="258605de2cf58cf489ad0746be3be64e" category="paragraph">您應該注意StorageGRID 到支援S3 REST API的功能有所變更。</block>
   <block id="b8e7b465df7c5979dc731d06e84ce2cf" category="cell">版本</block>
   <block id="8413c683b4b27cc3f4dbd4c90329d8ba" category="cell">註解</block>
@@ -15939,7 +15938,6 @@
   <block id="b8359063324932727a397079fffd2b7c" category="paragraph">租戶可透過更新物件的中繼資料或標記來觸發失敗的複寫或通知。租戶可以重新提交現有的值、以避免進行不必要的變更。</block>
   <block id="b9c352b9b4e4b5801298ed65b98ccc80" category="paragraph">請參閱 <block ref="aa533095952b3e80bb6be3f1d1de8ef5" category="inline-link-macro-rx"></block>。</block>
   <block id="edfdd5702bf2c6c1e0bda3cf4e87d913" category="summary">您可以使用 Amazon Web Services 命令列介面（ AWS CLI ）來測試與系統的連線、並驗證您是否可以讀寫物件。</block>
-  <block id="9458e407f4d6a761a50b597d03f24856" category="doc">測試 S3 REST API 組態</block>
   <block id="ff47078779a34d10bbaf9d6a12e2bbc0" category="inline-link">aws.amazon.com/cli</block>
   <block id="de84263b3a280b23ce27c863a50a5fa5" category="list-text">您已從下載並安裝 AWS CLI<block ref="6253dd5f3eef2489e1348725763a03e6" category="inline-link-rx"></block> 。</block>
   <block id="8b4c25964632cc9f8b44b52d251c542a" category="inline-link-macro">已建立負載平衡器端點</block>
@@ -16089,7 +16087,6 @@
   <block id="21fca7ef3dc6b80d15522ddf6d111e18" category="inline-link-macro">已過時 - 符合 Put Bucket 規範</block>
   <block id="2dc5a8b9a94719246aba648e74a8acba" category="list-text"><block ref="2dc5a8b9a94719246aba648e74a8acba" category="inline-link-macro-rx"></block></block>
   <block id="ecab373850ab0dccc2857eed20f23701" category="paragraph">「放入時段」法規遵循要求已過時。不過、您可以繼續使用此要求來修改現有舊版相容桶的法規遵循設定。例如、您可以將現有的貯體置於合法持有狀態、或是延長保留期間。</block>
-  <block id="c83307a24f6bda61d96ea7b43f95d0a7" category="doc">已過時：Get Bucket Compliance要求</block>
   <block id="11c99b4c1e2c215d08f947b7ab3ccacc" category="paragraph">先前版本的不支援《支援不符合要求》功能、現已由S3物件鎖定取代。StorageGRID StorageGRID如需詳細資訊、請參閱下列內容：</block>
   <block id="9a68567a6d35abd17034ba6f1fdddb14" category="paragraph">您必須具有S3：GetBucketCompliance權限、或是帳戶root、才能完成此作業。</block>
   <block id="916b70e64314496583a7598f54d7aa35" category="paragraph">此範例要求可讓您決定名為的貯體的符合性設定<block ref="0878cd2de7445e48adffced26ddf3d14" prefix=" " category="inline-code"></block>。</block>
@@ -16106,7 +16103,6 @@
   <block id="aafc80dc5dcee264a8bf85a116b8cd23" category="section-title">錯誤回應</block>
   <block id="b39b81565ec8f838a2cb163e53d5a4a8" category="paragraph">如果建立的貯體不符合標準、則回應的 HTTP 狀態代碼為、 S3 錯誤代碼<block ref="45c86673fefba54f2062b39f20ea7afd" prefix=" " category="inline-code"></block>為<block ref="1e6cd917ed71a1241e4bedc29264bd98" prefix=" " category="inline-code"></block>。</block>
   <block id="77a6d175c06227f23c193f614f94ca72" category="summary">「放入時段」法規遵循要求已過時。不過、您可以繼續使用此要求來修改現有舊版相容桶的法規遵循設定。</block>
-  <block id="7c8fbcb9b06184f164e723e4181a63df" category="doc">已過時：提出資源桶法規遵循要求</block>
   <block id="debcc9216a0bd385e0e49c4d9a38d915" category="paragraph">您必須具有S3：PuttBucketCompliance權限、或是帳戶root、才能完成此作業。</block>
   <block id="8e39f0cd61263524318d6c7c53c567bc" category="paragraph">在發出「放入庫位」法規遵循要求時、您必須為法規遵循設定的每個欄位指定一個值。</block>
   <block id="1a0f84cd39abcf80d377c3f442e7f4eb" category="paragraph">此範例要求會修改名為的貯體的符合性設定<block ref="0878cd2de7445e48adffced26ddf3d14" prefix=" " category="inline-code"></block>。在此範例中、從物件擷取到網格開始、中的物件<block ref="0878cd2de7445e48adffced26ddf3d14" prefix=" " category="inline-code"></block>現在會保留兩年（ 1 、 051,200 分鐘）、而不是一年。此庫位沒有合法持有。每個物件將在兩年後自動刪除。</block>
@@ -16123,7 +16119,6 @@
   <block id="3ac197281a096c3a132b5f05d73e7ddc" category="inline-link-macro">已過時：將資源桶要求修改以符合法規要求</block>
   <block id="fd74de63d15bc67ac085661db46f2672" category="paragraph"><block ref="fd74de63d15bc67ac085661db46f2672" category="inline-link-macro-rx"></block></block>
   <block id="557a2d109a70b42e349aeda9abdcbd8c" category="summary">SGCompliance XML元素已過時。以前、您可以將此 StorageGRID 自訂元素納入 CreateBucket 要求的選用 XML 要求本文、以建立符合法規的儲存區。</block>
-  <block id="d26e471b2a8c3e9dc381ba381097d4d5" category="doc">已過時：為符合性而修改 CreateBucket 要求</block>
   <block id="ad28fc781943a4eb347986352ea5ef51" category="paragraph">您無法再建立啟用「法規遵循」的新庫位。如果您嘗試使用 CreateBucket 要求修改來建立新的相容貯體、則會傳回下列錯誤訊息：</block>
   <block id="b94d88b8582ac28b0540659cbce95af5" category="summary">支援所有適用的標準S3 REST API錯誤回應。StorageGRID此外、此功能還會加入數個自訂回應。StorageGRID</block>
   <block id="493a5692f68a5a5455e548e034f5edbb" category="section-title">支援的S3 API錯誤代碼</block>
@@ -16323,7 +16318,6 @@
   <block id="811445c3261beb11cd2da84d8cb6dbb6" category="section-title">GetObject 和跨網格複寫</block>
   <block id="febdff13915acb8605e87b6bf3011f51" category="paragraph">如果您正在使用<block ref="f4856baac97a972c032af70104c6961a" category="inline-link-macro-rx"></block>並<block ref="a9e7b49b207f2152f2f2cf82acfd5ae2" category="inline-link-macro-rx"></block>已啟用貯體、則 S3 用戶端可藉由發出 GetObject 要求來驗證物件的複寫狀態。回應包含 StorageGRID 專屬回應標頭、其中包含<block ref="349f2558b0122acbc616838711df3954" prefix=" " category="inline-code"></block>下列其中一個值：</block>
   <block id="4318989fd851f1e76d13ba124e06da4a" category="summary">「Get Storage使用量」要求會告訴您某個帳戶所使用的總儲存容量、以及與該帳戶相關聯的每個儲存區容量。</block>
-  <block id="146b50654d26081223ad7e6f0e604edf" category="doc">取得儲存使用量要求</block>
   <block id="5c829819d07f87810549671fa5016aad" category="paragraph">帳戶及其貯體所使用的儲存容量、可透過修改後的 Listbuckets 要求和查詢參數來取得<block ref="8beafe96995cad586e19d93a96c38a6f" prefix=" " category="inline-code"></block>。儲存區的使用量會與系統處理的PUT和DELETE要求分開追蹤。使用值可能會在處理要求時延遲、使其符合預期值、尤其是系統負載過重時。</block>
   <block id="e0e60c6d437d2231e4516f4c4297176c" category="paragraph">根據預設StorageGRID 、功能區會嘗試使用強大的全域一致性來擷取使用資訊。如果無法達成強大的全球一致性、 StorageGRID 會嘗試以強大的站台一致性來擷取使用資訊。</block>
   <block id="55715c3301d1c26108f3344dbc5a22ed" category="paragraph">您必須具有S3：listAllMyb桶 權限、或是帳戶root、才能完成此作業。</block>
@@ -16359,7 +16353,6 @@
   <block id="b7b839cd3b86c2531cdac79711eccc96" category="section-title">HeadObject 和跨網格複寫</block>
   <block id="57376e412a51caaf6b835ee6d6b11895" category="paragraph">如果您正在使用<block ref="f4856baac97a972c032af70104c6961a" category="inline-link-macro-rx"></block>並<block ref="a9e7b49b207f2152f2f2cf82acfd5ae2" category="inline-link-macro-rx"></block>已啟用貯體、則 S3 用戶端可以發出 HeadObject 要求、以驗證物件的複寫狀態。回應包含 StorageGRID 專屬回應標頭、其中包含<block ref="349f2558b0122acbc616838711df3954" prefix=" " category="inline-code"></block>下列其中一個值：</block>
   <block id="4cd5a7f174d630af20833309639f7089" category="summary">支援Simple Storage Service（S3）API、這是一組代表性狀態傳輸（REST）網路服務。StorageGRID</block>
-  <block id="c38939336a63a34c927363da59fa058b" category="doc">S3 REST API 支援的版本與更新</block>
   <block id="48f3ce98574e51e6f2fb1e0b16dc6a90" category="paragraph">支援簡單儲存服務（S3）API、此API是以代表狀態傳輸（REST）網路服務的形式實作。StorageGRID</block>
   <block id="8ecf0bb2d3ac4db3fc0a087dee7aa9a3" category="paragraph">S3 REST API 的支援可讓您將專為 S3 Web 服務開發的服務導向應用程式、與使用 StorageGRID 系統的內部部署物件儲存設備連線。用戶端應用程式目前使用 S3 REST API 呼叫的變更最少。</block>
   <block id="2e5d14f7919ff3c6138e7845aec4f915" category="section-title">支援的版本</block>
@@ -16993,7 +16986,6 @@
   <block id="d940b2b8ea33aa7647e7b1da94fe5138" category="section-title">「範圍讀取」建議</block>
   <block id="75e192bcfff68c1415f7eac0a05f4fa9" category="paragraph">如果<block ref="cbaf60e90a7882f18eb92252a496260d" category="inline-link-macro-rx"></block>啟用、 S3 用戶端應用程式應避免執行 GetObject 作業、以指定傳回位元組範圍。這些「範圍讀取」作業效率不彰、因為 StorageGRID 必須有效地解壓縮物件以存取要求的位元組。從非常大的物件要求少量位元組的 GetObject 作業尤其缺乏效率、例如從 50 GB 壓縮物件讀取 10 MB 範圍是效率不彰的。</block>
   <block id="b200ec3af8ae4d318e4356a990a778c1" category="summary">稽核訊息是StorageGRID 由支援服務產生、並儲存在文字記錄檔中。您可以在稽核記錄中檢閱 S3 特定的稽核訊息、以取得有關貯體和物件作業的詳細資料。</block>
-  <block id="4159a0f257c06228186cac4e7cc534a7" category="doc">稽核記錄中追蹤的S3作業</block>
   <block id="bc23723e07c15a9d2cdd20f4f0f66ed6" category="section-title">稽核記錄中追蹤的庫位作業</block>
   <block id="47f6808e192e7a77b354be8819f2a7c7" category="list-text">符合資源需求</block>
   <block id="d14469a2f79e307bde0a7fbb15202352" category="section-title">稽核記錄中追蹤的物件作業</block>
@@ -17225,7 +17217,6 @@
   <block id="9283e244bcd98f1bdd350c1b4f2da148" category="doc">StorageGRID 應用裝置</block>
   <block id="dde8acece265d46e5aab164c12d3a44c" category="paragraph">請移至<block ref="be9ecc58910f449a87a62c3eec4d0fe8" category="inline-link-rx"></block>以瞭解如何安裝、設定及維護 StorageGRID 儲存設備和服務應用裝置。</block>
   <block id="0c3645a1fed90087562aaf1a6873003b" category="summary">Swift API 的支援已達到使用期限、將於未來版本中移除。</block>
-  <block id="8d6f5fc51c497ff2b27ebaaf9673f61b" category="doc">使用Swift REST API</block>
   <block id="3e557d81744c54838c4cd15200888e3c" category="inline-link">StorageGRID 11.8 ：使用 Swift REST API</block>
   <block id="c1222c6fee989c92c3e088d6b55a6e1b" category="admonition">Swift 詳細資料已從此文件網站版本中移除。請參閱。<block ref="21cf5363116bf856bcf83fe29eed0239" category="inline-link-rx"></block></block>
   <block id="5cf98448435572a9c7b29a8fb42b9566" category="summary">如果您使用的是 S3 租戶、則可以變更 S3 儲存區的版本設定狀態。</block>
@@ -18675,7 +18666,6 @@
   <block id="9aed879d4da2ca21458a6cdd5241d43a" category="inline-link-macro">將物件資料還原至儲存磁碟區</block>
   <block id="9e57940ec17f62726abac8b3e3a42f40" category="paragraph">技術支援人員可能會要求您判斷是否有正在進行的儲存恢復程序。請參閱和<block ref="09453c7073b961143a435575118645d0" category="inline-link-macro-rx"></block>的相關資訊<block ref="2def4034ef752b99b9a409e8a5db3de2" category="inline-link-macro-rx"></block>。</block>
   <block id="a1aebfb79053b2efde91bb620f89e8c5" category="summary">儲存節點上的基礎儲存設備分為物件存放區。物件存放區也稱為儲存磁碟區。</block>
-  <block id="36011e439743d3d8b02caba4a58ec6e1" category="doc">物件存放區（儲存磁碟區）故障</block>
   <block id="0bb0107fd6f1324ec84ef668298f1e9f" category="image-alt">節點頁面儲存節點儲存表格</block>
   <block id="2e9b049b3f64f54a138991a61b5052fe" category="inline-link-macro">儲存磁碟區警示</block>
   <block id="ba19e4cdb99d9491c91b1f29dcebf596" category="inline-link-macro">將儲存節點置於唯讀狀態</block>
@@ -19131,7 +19121,6 @@
   <block id="9c364698a23ee04478a05c4fdc0fc16d" category="inline-link-macro">瞭解租戶管理API</block>
   <block id="2edeade38125686f7393b0adc6f84712" category="paragraph">若要深入瞭解<block ref="2f4d5094b7e77d7ee3daa00bbf9b9ddb" category="inline-link-macro-rx"></block>、請前往。</block>
   <block id="68d8d13ca0d58c45505ea6e33d3a1235" category="summary">在升級 StorageGRID 系統之前、請確認系統已準備好容納升級。確保系統正常執行、且所有網格節點均可運作。</block>
-  <block id="b2a9166e40f9149ea38594ce450ff719" category="doc">檢查系統狀況</block>
   <block id="7d348ad1144162068e5cd333f60e9ef2" category="paragraph">在升級 StorageGRID 系統之前、請確認系統已準備好接受升級。確保系統正常執行、且所有網格節點均可運作。</block>
   <block id="63ad9f1321ea72f5dc487ae12e29613d" category="list-text">檢查並解決任何作用中警示。</block>
   <block id="3e33286e9cd6b644f8984420c0f388e6" category="summary">請根據升級所需的時間考慮何時升級。請注意在升級的每個階段中、您可以執行哪些作業、哪些作業無法執行。</block>
@@ -19216,7 +19205,6 @@
   <block id="8303b7d8ffbcd5e147888e18f3cd50ac" category="list-text"><block ref="8303b7d8ffbcd5e147888e18f3cd50ac" category="inline-link-macro-rx"></block></block>
   <block id="7d3a1fab502e61b8385f2a558570d4a8" category="list-text"><block ref="7d3a1fab502e61b8385f2a558570d4a8" category="inline-link-macro-rx"></block></block>
   <block id="d045b98c58117ec473162bf90abc8357" category="summary">如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開始升級之前、先在這些主機上安裝額外的 RPM 或 Deb 套件。</block>
-  <block id="0f743ad969a937e04ae95a9b8e1880c8" category="doc">Linux ：在所有主機上下載並安裝 RPM 或 Deb 套件</block>
   <block id="0f343ecb72e8a2d7f2d20b2f593c98f1" category="paragraph">如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開始升級之前、先在這些主機上下載並安裝額外的 RPM 或 Deb 套件。</block>
   <block id="483d33463d4205c08f15da5c9de10c38" category="section-title">下載升級、 Linux 和 Hotfix 檔案</block>
   <block id="2cad500067580be2a916eea28f8c6757" category="paragraph">當您從 Grid Manager 執行 StorageGRID 升級時、系統會提示您下載升級歸檔和任何必要的 Hotfix 作為第一步。不過、如果您需要下載檔案來升級 Linux 主機、您可以事先下載所有必要的檔案、以節省時間。</block>
@@ -19259,14 +19247,12 @@
   <block id="ef75b495aa301889e35b679823360b60" category="list-text">擷取已安裝的容器映像清單：<block ref="7965f6930c3677cafcf23da1bffc0cf4" prefix=" " category="inline-code"></block></block>
   <block id="9f816726f5fd331a2f43e3015f72b427" category="list-text">移除舊版 StorageGRID 的容器映像：<block ref="4cee3518e7f82d8b10084a1a7773ebf0" prefix=" " category="inline-code"></block></block>
   <block id="4c0ba9ed2cdfd14b37858fab5d1ccfac" category="summary">開始軟體升級之前、請先取得所有必要資料。</block>
-  <block id="a7e8d4b81629dcc4383e3564022aeb1b" category="doc">取得軟體升級所需的資料</block>
   <block id="079dc8e14e2b50b7fade76346400590e" category="paragraph">瀏覽器支援通常會針對每StorageGRID 個版本進行變更。請確定您的瀏覽器與新StorageGRID 版的更新版本相容。</block>
   <block id="65af1eb7e15e21ed88ecb9bdf9335eac" category="paragraph">Linux RPM 或 Deb 歸檔</block>
   <block id="639201546a5fad56583625a7787c32c8" category="inline-link-macro">在所有主機上下載並安裝 RPM 或 Deb 套件</block>
   <block id="be8bbfe0d1191ce0dbedd8e03de3a3cf" category="paragraph">如果在 Linux 主機上部署了任何節點、則必須<block ref="d56061026b8740445f6dedc22b8534ba" category="inline-link-macro-rx"></block>在開始升級之前進行。</block>
   <block id="5b5158729376caba168e2428201d0ff1" category="inline-link">StorageGRID 軟體升級解決方案指南</block>
   <block id="942d11ed05c35af00dece080d37dcd0b" category="list-text">其他<block ref="6202e54f272ce0330cc2fe9aaabe45f9" category="inline-link-rx"></block>、視需要。</block>
-  <block id="38b3b3470d2ba6614c3d2aceefd23eb8" category="doc">執行升級</block>
   <block id="7aaba7fd734fa7bfcf919ba2bfe0f7df" category="paragraph">您已檢閱所有考量事項、並完成所有規劃與準備步驟。</block>
   <block id="3b843352f71390d10a1791d51303326e" category="section-title">存取 StorageGRID 升級頁面</block>
   <block id="2db94cdd9919044cdccf6cd1d4d77cfd" category="paragraph">第一步是在 Grid Manager 中存取 StorageGRID 升級頁面。</block>
@@ -19345,7 +19331,6 @@
   <block id="c383d7ff9edf7b8f098318653f1f0d84" category="list-text">檢查服務是否正常運作、以及是否沒有非預期的警示。</block>
   <block id="7bef7467d4cda3267312dd1d85e45f9b" category="list-text">確認用戶端連線StorageGRID 至該系統的運作正常。</block>
   <block id="2f991d50755e48aa797a84d8e8d25f07" category="summary">在此版本中、某些功能已移除或過時。請檢閱這些項目、瞭解升級前是否需要更新用戶端應用程式或修改組態。</block>
-  <block id="9e48ce3918382a0700088e38500a5865" category="doc">已移除或已過時的功能和功能</block>
   <block id="97d8f56bf41502f60ca6fdd5d5da8edc" category="section-title">定義</block>
   <block id="0ac54cb10e7494cff1949826e8e32f7b" category="list-text">已過時</block>
   <block id="22056baa938009db5e1a7f1354e45140" category="list-text">此功能 * 不應 * 用於新的正式作業環境。現有的正式作業環境可以繼續使用此功能。</block>
@@ -19459,7 +19444,6 @@
   <block id="9df748b93b814871dbf0542bce6bd9ec" category="paragraph">當所有網格節點都已升級時、系統會啟用新功能、您可以繼續作業。您必須等到背景 * 升級資料庫 * 工作和 * 最終升級步驟 * 工作完成後、才能執行取消委任或擴充程序。</block>
   <block id="ed6ce51633cb384570ee8b8a0d65524a" category="paragraph"><block ref="ed6ce51633cb384570ee8b8a0d65524a" category="inline-link-macro-rx"></block></block>
   <block id="56c9e2133f7b7f6b480bbf464e47ac31" category="summary">在開始升級之前、請確認先前版本的 StorageGRID 目前已安裝、並套用最新的可用 Hotfix 。</block>
-  <block id="c397a44a97e67e80becfb9a5cb88d7ab" category="doc">驗證安裝的StorageGRID 版本的資訊</block>
   <block id="1a79a4d60de6718e8e5b326e338ae533" category="inline-xref">範例</block>
   <block id="1152e3bc4c10eec152a9c65790489cb0" category="paragraph">中顯示了一個可能的升級途徑<block ref="9d4d3c7f90ef5a95c1513267bb38cf13" category="inline-xref-macro-rx"></block>。</block>
   <block id="044ef56e3b7a57fb644cd452bc14b841" category="list-text">從網格管理器的頂端、選取*說明*&gt;*關於*。</block>
@@ -21356,7 +21340,6 @@
   <block id="429c7b76161e02adf01ee1c76fb94edc" category="section-title">[[bucket-consistency]]指定 bucket 的一致性</block>
   <block id="cc2871430094b785b9c7d4dbf52def4d" category="section-title">一致性和 ILM 規則如何相互作用以影響資料保護</block>
   <block id="ba3fad21d7f52a443de6c373a33908e0" category="summary">使用本節中的範例來建立StorageGRID會話策略。</block>
-  <block id="8fab9db11fb8b1c9526a146646965b82" category="doc">會話策略範例</block>
   <block id="e5637736ed22b046bf6f1d029d2406c4" category="paragraph">使用以下範例建立StorageGRID會話策略。</block>
   <block id="e6d9424c66e16aa26a841e483b4a8a64" category="section-title">範例：設定允許物件檢索的會話策略</block>
   <block id="65ab8e63845a926499868ca64c76b0fd" category="paragraph">在此範例中，會話的主體只允許從 bucket1 中檢索物件。除StorageGRID特定操作（例如使用<block ref="7e7b37438f9fa0700e8f48ce0ea6a221" category="inline-link-macro-rx"></block>允許。當呼叫 AssumeRole API 時，會話策略可以作為 JSON 檔案提供。</block>
@@ -22129,4 +22112,80 @@
   <block id="7be94d6ea867267b0e0652c209469b72" category="sidebar">資料刪除</block>
   <block id="e339a51ec4624e5c1a04f357a0dc195f" category="sidebar">安裝 StorageGRID 節點</block>
   <block id="09d1d82e5796d1a5aeeb2d209bf1dfdf" category="sidebar">自動化基於軟體的節點安裝</block>
+  <block id="076d9a8fe93cc4a8761a0ad055b9fda3" category="doc">StorageGRID S3 REST API 如何驗證請求</block>
+  <block id="3d055d36d1078897a861b50452e7eae7" category="doc">StorageGRID 對 S3 REST API 的支援發生了變化</block>
+  <block id="39dd9787e7e200beb4d7f679b3caa5dd" category="doc">StorageGRID S3 REST API 如何完成多部分上傳</block>
+  <block id="41ab38ad62fe2f459f6126262a88683c" category="doc">測試 StorageGRID S3 REST API 組態</block>
+  <block id="049b9834201aa635570901791963be3a" category="doc">StorageGRID S3 REST API 如何解決衝突的用戶端請求</block>
+  <block id="765c053cbcf4a4b15bc4fed661f25f43" category="doc">StorageGRID S3 REST API 如何平衡可用性和一致性</block>
+  <block id="27309f1670388254f4678b5aafa89230" category="doc">了解 StorageGRID 的 S3 生命週期組態</block>
+  <block id="1cf80b6b2c898c2346d46976b9f1d6f0" category="doc">StorageGRID 中支援的自訂儲存貯體作業</block>
+  <block id="7e2d7cd6d4380860278638a53f923e4d" category="doc">使用 StorageGRID 中的 DELETE Bucket 中繼資料通知組態要求停用搜尋整合服務</block>
+  <block id="0fc8865cd4751eda605e057822c0906c" category="doc">已棄用的儲存區請求（針對舊版 StorageGRID 法規遵循）</block>
+  <block id="cdcf9066d2acf62c53eba269bea60529" category="doc">StorageGRID 中已棄用的 GET Bucket compliance 請求</block>
+  <block id="860b4f94c8edcbe70e248d0407cc3560" category="doc">StorageGRID 中已棄用的 PUT Bucket 合規性要求</block>
+  <block id="bc33ccac9fc4246aeb6512f23c1944fc" category="doc">StorageGRID 中已棄用的 SGCompliance 元素</block>
+  <block id="f50560adab4de4ec766c8a8ca48a86e4" category="doc">StorageGRID S3 REST API 錯誤回應</block>
+  <block id="447ef124a2ddd75cb9a117f64256fafb" category="doc">StorageGRID S3 REST API 儲存區原則範例</block>
+  <block id="399c782f5d20a9e20a60161721cac060" category="doc">StorageGRID S3 REST API 群組原則範例</block>
+  <block id="8773b1df6613baa402dda3e009ed4bc5" category="doc">StorageGRID S3 REST API 工作階段原則範例</block>
+  <block id="740e713676b6961e37516b30d5ee72af" category="doc">使用 GET Bucket consistency 請求在 StorageGRID 中檢索儲存桶一致性層級</block>
+  <block id="d0000dc4110d60cd200f3ee442c4610c" category="doc">使用 GET Bucket last access time 請求從 StorageGRID 中擷取儲存區的最後存取時間狀態</block>
+  <block id="52c4ed00efd31217b63eb5c3b98acf30" category="doc">使用 GET Bucket 元資料通知組態要求在 StorageGRID 中設定搜尋整合</block>
+  <block id="63a14363120814fe2aa2451dc726566b" category="doc">使用 GetObject 請求從 StorageGRID 中的儲存桶檢索物件</block>
+  <block id="9b923e894ec3c809aaf13f408491169a" category="doc">使用 GET Storage Usage 請求擷取 StorageGRID 中的帳戶和儲存桶儲存使用量</block>
+  <block id="1aa686b43f321cb6ec6cdb73c857879a" category="doc">使用 S3 HeadObject 請求從 StorageGRID 中的物件擷取中繼資料</block>
+  <block id="fe7c598493761dc1312d7adf900f7c75" category="doc">StorageGRID S3 REST API 支援的版本和更新</block>
+  <block id="1f38fe9d90227a2cc6f23835cc7b79cc" category="doc">StorageGRID 中的 S3 CreateMultipartUpload 請求標頭和選項</block>
+  <block id="25e623d89da67f140b43775253da993a" category="doc">S3 ListMultipartUploads 操作和 StorageGRID 中支援的參數</block>
+  <block id="ed529c976d5752dd15a1228381cffdbe" category="doc">StorageGRID 如何使用物件版本控制</block>
+  <block id="41e8d2349cd3d49d098529e57f90ac29" category="doc">StorageGRID 中支援的多部分上傳作業</block>
+  <block id="d14406c13fd2e0d80173680f92e9fc98" category="doc">StorageGRID 中的 S3 儲存貯體作業和實作詳細資料</block>
+  <block id="ca535413a4cbea90198a19d62f277514" category="doc">StorageGRID 如何實作物件的 S3 REST API 作業</block>
+  <block id="5f6cc00b53994227f96e64a74c84b98f" category="doc">StorageGRID 中支援的服務作業</block>
+  <block id="420d0357da17a67a333acf77d5041fc1" category="doc">使用 S3 RestoreObject 請求在 StorageGRID 中還原物件</block>
+  <block id="49526ff3959aa1fbb68bed5da8800cb5" category="doc">使用 PUT Bucket 一致性請求在 StorageGRID 中指定一致性層級</block>
+  <block id="0dfb989e5a5bd74e03bc2f1591acfc79" category="summary">PUT Bucket 最後存取時間請求可讓您啟用或停用個別儲存區的最後存取時間更新。</block>
+  <block id="f2486f6cd638ed4854d5942ca045c23d" category="doc">使用 PUT Bucket last access time 請求在 StorageGRID 中啟用和停用最後存取時間更新</block>
+  <block id="b509d4a77bca9a8c5147819bd3d8c5ba" category="doc">使用 PUT Bucket 元資料通知設定請求在 StorageGRID 中啟用搜尋整合服務</block>
+  <block id="25c7e37f505e6a440d74b308ff727f4e" category="doc">使用 S3 CopyObject 請求在 StorageGRID 中建立物件的副本</block>
+  <block id="68901f653cb6cae9f4681ce43c85404b" category="doc">使用 S3 PutObject 請求將物件新增至 StorageGRID 中的儲存區</block>
+  <block id="5e7f405115bb599e2a397aef1e1d6e94" category="doc">StorageGRID 中支援的 S3 API 要求</block>
+  <block id="5ea933be4110bdddf010ecdb5c57c8ba" category="doc">使用 StorageGRID 實作 S3 REST API 的建議</block>
+  <block id="d9c97c7e98226aae24e64bd06d6f3431" category="doc">StorageGRID 稽核日誌中追蹤的 S3 操作</block>
+  <block id="1c5ff0b50c8e810e481bfae5c563c35f" category="doc">StorageGRID 中支援的 S3 REST API 作業和限制</block>
+  <block id="4a438e402b39bb6521cc85d0b1d5034a" category="doc">使用 S3 SelectObjectContent 請求在 StorageGRID 中篩選物件資料</block>
+  <block id="5c97cb68be56a2e495e83ba763038b24" category="doc">使用 S3 UploadPartCopy 操作將物件的一部分上傳到 StorageGRID</block>
+  <block id="7603f2f5da7cbf62a84d0041197daa78" category="doc">StorageGRID 中 S3 UploadPart 作業支援和不支援的要求標頭</block>
+  <block id="d4bf7c65f4cd8d75937e86184179ab29" category="doc">StorageGRID 如何使用 AWS 原則來控制對 S3 儲存貯體和物件的存取</block>
+  <block id="5968f65b0ef72371e7c768396baa8ecd" category="doc">使用 S3 REST API 設定 StorageGRID S3 Object Lock</block>
+  <block id="df0bc4147f99fa0862890d534f3cfcfd" category="doc">StorageGRID 中支援的 Amazon S3 Select 作業</block>
+  <block id="a251c04a2a8b458d1d417c0ddb763e7c" category="doc">StorageGRID 如何使用伺服器端加密</block>
+  <block id="29bebc74b45c41c41cdee6a2b8610d5e" category="doc">StorageGRID 中的 Swift REST API 支援</block>
+  <block id="ee087f1616c96732f9ba3d2515d52a58" category="doc">確認 StorageGRID 中的物件資料位置</block>
+  <block id="548c1c685f43ca8c97fba9b354e1be06" category="doc">解決 StorageGRID 中可能遺失物件的警示</block>
+  <block id="1889120e6525ec26415d22ffb9aa2ccd" category="doc">了解 StorageGRID 中儲存磁碟區的物件存放區故障</block>
+  <block id="ed01bf8c430cae8803a77eb112ebf81b" category="doc">解決 StorageGRID 中的浮水印覆寫警示</block>
+  <block id="4d53454d266b1823763cadea4ddaa25a" category="doc">解決 StorageGRID 中 S3 PUT 物件大小過大的警示</block>
+  <block id="da0edcd471023b3d4313a6c173891d03" category="doc">疑難排解 StorageGRID 中的管理節點和使用者介面問題</block>
+  <block id="b3aca97dc096107982ccb2506aa33944" category="doc">疑難排解 StorageGRID 中的憑證錯誤</block>
+  <block id="12cbc14a33656dcd243b42abd460504d" category="doc">了解 StorageGRID 中的負載平衡器快取問題</block>
+  <block id="3ebdbc13d41d554ee6325a790b935131" category="doc">了解 StorageGRID 中遺失和缺少的物件資料</block>
+  <block id="93c86843df284e817d768141a9301c85" category="doc">解決 StorageGRID 中的低物件資料儲存警示</block>
+  <block id="45097c9ae3cf7fac4fe0df89712c217a" category="doc">疑難排解 StorageGRID 中的中繼資料問題</block>
+  <block id="6d10e9c009f8f8812e600a571021e1fa" category="doc">疑難排解 StorageGRID 中的網路、硬體和平台問題</block>
+  <block id="3c42a5be4760a634b5eda1c961aafbf6" category="doc">疑難排解 StorageGRID 的外部 syslog 伺服器錯誤訊息</block>
+  <block id="161605720b81ef668b937af5d90d01fd" category="doc">驗證 StorageGRID 中物件資料的完整性</block>
+  <block id="a28e12c2ce6f594a685b4163340af442" category="doc">StorageGRID 中 Grid Management API 的變更</block>
+  <block id="811da685378634b751e5ea988bc915e3" category="doc">StorageGRID 中租戶管理 API 的變更</block>
+  <block id="84011571f76bc767ea91a031c2575f09" category="doc">在升級之前、請檢查 StorageGRID 系統的狀況</block>
+  <block id="8888abe30546d2ef0f6aeeb6372c9796" category="doc">估算完成 StorageGRID 升級所需的時間</block>
+  <block id="b3c6bd4f386a2aae7e63a9c6d8a1aca5" category="doc">StorageGRID 升級如何影響您的系統</block>
+  <block id="468762157ee38b986752caa20cde4f6e" category="doc">在所有 Linux 主機上下載並安裝 RPM 或 DEB 套件以供 StorageGRID 使用</block>
+  <block id="3817ba0606c17222ac3fe1c6498e0207" category="doc">取得 StorageGRID 軟體升級所需的材料</block>
+  <block id="0a22408415b4a4bb07e0ecef11210172" category="doc">執行 StorageGRID 升級</block>
+  <block id="93b346839943353dc9fd50cea2300270" category="doc">StorageGRID 中已移除或已棄用的功能</block>
+  <block id="d855d3845ee683616ae84298029dfdd4" category="doc">疑難排解 StorageGRID 升級問題</block>
+  <block id="172df2082cc77642f3d62e66373dd8b9" category="doc">StorageGRID 升級快速入門</block>
+  <block id="2919373b1b1c527fda8b22f79683e00a" category="doc">在升級前驗證已安裝的 StorageGRID 版本</block>
 </blocks>

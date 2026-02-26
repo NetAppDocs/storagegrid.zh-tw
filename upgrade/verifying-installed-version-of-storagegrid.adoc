@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, version, current version, previous version 
 summary: 在開始升級之前、請確認先前版本的 StorageGRID 目前已安裝、並套用最新的可用 Hotfix 。 
 ---
-= 驗證安裝的StorageGRID 版本的資訊
+= 在升級前驗證已安裝的 StorageGRID 版本
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

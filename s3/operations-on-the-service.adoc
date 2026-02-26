@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: listbuckets, get service, operations on the service 
 summary: 支援服務營運的支援系統。StorageGRID 
 ---
-= 服務營運
+= StorageGRID 中支援的服務作業
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

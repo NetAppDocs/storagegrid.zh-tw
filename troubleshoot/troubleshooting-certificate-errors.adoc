@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot certificate errors 
 summary: 當您嘗試使用網頁瀏覽器、 S3 用戶端或外部監控工具連線至 StorageGRID 時、如果發現安全性或憑證問題、您應該檢查憑證。 
 ---
-= 疑難排解憑證錯誤
+= 疑難排解 StorageGRID 中的憑證錯誤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade, linux, rpm, deb, 
 summary: 如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開始升級之前、先在這些主機上安裝額外的 RPM 或 Deb 套件。 
 ---
-= Linux ：在所有主機上下載並安裝 RPM 或 Deb 套件
+= 在所有 Linux 主機上下載並安裝 RPM 或 DEB 套件以供 StorageGRID 使用
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -63,6 +63,8 @@ entries:
       url: "/swnodes/validating-storagegrid-configuration.html"
     - title: 啟動StorageGRID主機服務 (Linux)
       url: "/swnodes/starting-storagegrid-host-service.html"
+  - title: 安裝 REST API
+    url: "/swnodes/overview-of-installation-rest-api.html"
   - title: 疑難排解安裝問題
     url: "/swnodes/troubleshooting-installation-issues.html"
   - title: 腳本範例
@@ -93,7 +95,5 @@ entries:
     url: "/swnodes/reviewing-your-configuration-and-completing-installation.html"
   - title: 安裝後準則
     url: "/swnodes/post-installation-guidelines.html"
-- title: 安裝 REST API
-  url: "/swnodes/overview-of-installation-rest-api.html"
 - title: 下一步
   url: "/swnodes/where-to-go-next.html"

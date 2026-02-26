@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ListMultipartUploads, uploads, multipart uploads, bucket 
 summary: ListMultipartuploADS 作業會列出某個儲存庫的進行中多個部分上傳。 
 ---
-= ListMultipartUploads
+= S3 ListMultipartUploads 操作和 StorageGRID 中支援的參數
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

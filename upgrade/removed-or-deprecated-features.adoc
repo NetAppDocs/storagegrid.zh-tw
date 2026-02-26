@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: 在此版本中、某些功能已移除或過時。請檢閱這些項目、瞭解升級前是否需要更新用戶端應用程式或修改組態。 
 ---
-= 已移除或已過時的功能和功能
+= StorageGRID 中已移除或已棄用的功能
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

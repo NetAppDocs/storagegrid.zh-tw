@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot metadata issues 
 summary: 如果發生中繼資料問題、警示會通知您問題的來源、以及建議採取的行動。尤其是、如果觸發低中繼資料儲存警示、您必須新增儲存節點。 
 ---
-= 疑難排解中繼資料問題
+= 疑難排解 StorageGRID 中的中繼資料問題
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

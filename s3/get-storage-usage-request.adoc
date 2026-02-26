@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, GET storage usage request 
 summary: 「Get Storage使用量」要求會告訴您某個帳戶所使用的總儲存容量、以及與該帳戶相關聯的每個儲存區容量。 
 ---
-= 取得儲存使用量要求
+= 使用 GET Storage Usage 請求擷取 StorageGRID 中的帳戶和儲存桶儲存使用量
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

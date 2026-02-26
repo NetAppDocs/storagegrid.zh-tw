@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to confirm object location, object metadata lookup 
 summary: 視問題而定、您可能需要確認物件資料的儲存位置。例如、您可能想要驗證ILM原則是否如預期般執行、而且物件資料是否儲存在預期的位置。 
 ---
-= 確認物件資料位置
+= 確認 StorageGRID 中的物件資料位置
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

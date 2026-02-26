@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: consistency, consistency control, consistency values 
 summary: 一致性可在物件的可用度與這些物件在不同儲存節點和站台之間的一致性之間取得平衡。您可以根據應用程式的需求變更一致性。 
 ---
-= 一致性
+= StorageGRID S3 REST API 如何平衡可用性和一致性
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: get object 
 summary: 您可以使用S3取得物件要求、從S3儲存區擷取物件。 
 ---
-= GetObject
+= 使用 GetObject 請求從 StorageGRID 中的儲存桶檢索物件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

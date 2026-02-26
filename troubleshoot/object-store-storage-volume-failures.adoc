@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to confirm object location, object metadata lookup 
 summary: 儲存節點上的基礎儲存設備分為物件存放區。物件存放區也稱為儲存磁碟區。 
 ---
-= 物件存放區（儲存磁碟區）故障
+= 了解 StorageGRID 中儲存磁碟區的物件存放區故障
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

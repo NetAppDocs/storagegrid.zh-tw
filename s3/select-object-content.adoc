@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SelectObjectContent, filter object content 
 summary: 您可以使用S3 SelectObjectContent要求、根據簡單的SQL陳述來篩選S3物件的內容。 
 ---
-= 選取物件內容
+= 使用 S3 SelectObjectContent 請求在 StorageGRID 中篩選物件資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

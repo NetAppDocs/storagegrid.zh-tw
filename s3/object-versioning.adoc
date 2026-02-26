@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object version, object versioning 
 summary: 如果您想要保留多個物件版本、可以設定貯體的版本設定狀態。啟用貯體版本設定有助於防止意外刪除物件、並可讓您擷取及還原物件的舊版。 
 ---
-= 物件版本管理
+= StorageGRID 如何使用物件版本控制
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

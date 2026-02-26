@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bucket, buckets, operations on buckets 
 summary: 本節說明StorageGRID 此「物件」的「物件」功能如何執行S3 REST API作業。 
 ---
-= 物件上的作業
+= StorageGRID 如何實作物件的 S3 REST API 作業
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

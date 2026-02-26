@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: UploadPart, UploadPartCopy, multipart uploads, uploads, 
 summary: 上傳 PartCopy 作業會將現有物件的資料複製為資料來源、以上傳物件的一部分。 
 ---
-= 上傳PartCopy
+= 使用 S3 UploadPartCopy 操作將物件的一部分上傳到 StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

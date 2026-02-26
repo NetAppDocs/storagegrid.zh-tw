@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot the Low object data storage alert 
 summary: 低物件資料儲存警報監控每個儲存節點上可用於儲存物件資料的空間大小。 
 ---
-= 疑難排解低物件資料儲存警示
+= 解決 StorageGRID 中的低物件資料儲存警示
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 UploadPart operation 
 summary: 上傳 Part 作業會上傳物件的多部分上傳中的某個零件。 
 ---
-= 上傳零件
+= StorageGRID 中 S3 UploadPart 作業支援和不支援的要求標頭
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

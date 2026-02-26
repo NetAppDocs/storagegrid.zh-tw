@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade, troubleshoot, troubleshooting, errors, upgrade precheck 
 summary: 如果執行升級時發生問題、您可以自行解決問題。如果您無法解決問題、請盡可能收集更多資訊、然後聯絡技術支援部門。 
 ---
-= 疑難排解升級問題
+= 疑難排解 StorageGRID 升級問題
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

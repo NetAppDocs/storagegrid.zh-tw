@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, GET last access time request 
 summary: 「取得時段上次存取時間」要求可讓您決定是否為個別的時區啟用或停用上次存取時間更新。 
 ---
-= 取得時段上次存取時間
+= 使用 GET Bucket last access time 請求從 StorageGRID 中擷取儲存區的最後存取時間狀態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

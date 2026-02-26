@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: multipart upload, object, object size 
 summary: 「 CompleteMultpartUpload 」（ CompleteMultpartupload ）作業可組合先前上傳的零件、完成物件的多部分上傳。 
 ---
-= 完成多個部分上傳
+= StorageGRID S3 REST API 如何完成多部分上傳
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

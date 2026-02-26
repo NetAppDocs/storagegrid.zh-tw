@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bucket policy examples 
 summary: 使用本節中的範例、為貯體建立 StorageGRID 存取原則。 
 ---
-= 貯體原則範例
+= StorageGRID S3 REST API 儲存區原則範例
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

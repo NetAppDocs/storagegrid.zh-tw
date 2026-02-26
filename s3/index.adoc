@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: about s3, s3 rest api, s3 overview 
 summary: 支援Simple Storage Service（S3）API、這是一組代表性狀態傳輸（REST）網路服務。StorageGRID 
 ---
-= S3 REST API 支援的版本與更新
+= StorageGRID S3 REST API 支援的版本和更新
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

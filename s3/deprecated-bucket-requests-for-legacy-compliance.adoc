@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, deprecated bucket requests 
 summary: 您可能需要使用StorageGRID Sfs3 REST API來管理使用舊版Compliance功能所建立的儲存區。 
 ---
-= 已過時的資源桶要求、適用於舊版法規遵循
+= 已棄用的儲存區請求（針對舊版 StorageGRID 法規遵循）
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot load balancer caching 
 summary: 了解負載平衡器快取可能存在的問題以及如何解決這些問題。 
 ---
-= 排查負載平衡器快取問題
+= 了解 StorageGRID 中的負載平衡器快取問題
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: authenticate requests, authenticating, requests 
 summary: 支援使用S3 API驗證和匿名存取物件的功能。StorageGRID 
 ---
-= 驗證要求
+= StorageGRID S3 REST API 如何驗證請求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

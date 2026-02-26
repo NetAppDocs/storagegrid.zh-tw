@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, GET bucket consistency 
 summary: 「取得貯體一致性」要求可讓您判斷套用至特定貯體的一致性。 
 ---
-= 取得庫位一致性
+= 使用 GET Bucket consistency 請求在 StorageGRID 中檢索儲存桶一致性層級
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

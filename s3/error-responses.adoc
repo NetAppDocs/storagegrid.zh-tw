@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: error, error responses 
 summary: 支援所有適用的標準S3 REST API錯誤回應。StorageGRID此外、此功能還會加入數個自訂回應。StorageGRID 
 ---
-= 錯誤回應
+= StorageGRID S3 REST API 錯誤回應
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

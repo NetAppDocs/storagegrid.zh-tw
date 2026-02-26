@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: operations, multipart uploads, uploads, rest API 
 summary: 本節說明StorageGRID 此功能如何支援多部份上傳作業。 
 ---
-= 多部份上傳作業
+= StorageGRID 中支援的多部分上傳作業
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

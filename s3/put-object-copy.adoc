@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: put object copy, CopyObject 
 summary: 您可以使用 S3 CopyObject 要求來建立已儲存在 S3 中的物件複本。CopyObject 作業與執行 GET 、然後執行 Put 相同。 
 ---
-= CopyObject
+= 使用 S3 CopyObject 請求在 StorageGRID 中建立物件的副本
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

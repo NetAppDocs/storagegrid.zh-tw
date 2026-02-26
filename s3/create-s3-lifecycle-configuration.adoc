@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 lifecycle, object deletion, bucket 
 summary: 您可以建立S3生命週期組態、以控制何時從StorageGRID 作業系統刪除特定物件。 
 ---
-= 建立S3生命週期組態
+= 了解 StorageGRID 的 S3 生命週期組態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot S3 PUT Object size too large alert, S3 PutObject size 
 summary: 如果租戶嘗試執行超過 S3 大小上限 5 GiB 的非多部分 PutObject 作業、則會觸發 S3 「放置物件太大」警示。 
 ---
-= 疑難排解 S3 「將物件大小放得太大」警示
+= 解決 StorageGRID 中 S3 PUT 物件大小過大的警示
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

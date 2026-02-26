@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, deprecated GET compliance requests 
 summary: Get Bucket法規遵循要求已過時。不過、您可以繼續使用此要求來判斷現有舊版相容儲存區目前有效的法規遵循設定。 
 ---
-= 已過時：Get Bucket Compliance要求
+= StorageGRID 中已棄用的 GET Bucket compliance 請求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

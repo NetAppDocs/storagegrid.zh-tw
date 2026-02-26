@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot lost object data, how to troubleshoot missing object data 
 summary: 物件可擷取的原因有多種、包括從用戶端應用程式讀取要求、複寫物件資料的背景驗證、ILM重新評估、以及在儲存節點還原期間還原物件資料。 
 ---
-= 疑難排解遺失和遺失的物件資料
+= 了解 StorageGRID 中遺失和缺少的物件資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

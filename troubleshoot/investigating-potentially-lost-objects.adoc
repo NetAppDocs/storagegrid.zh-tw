@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: lost objects, investigating, objects 
 summary: 當觸發「物品可能遺失」警報時，必須立即展開調查。收集受影響對象的資訊並聯絡技術支援。 
 ---
-= 調查可能遺失的物品
+= 解決 StorageGRID 中可能遺失物件的警示
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, GET bucket metadata notification configuration 
 summary: 「Get Bucket中繼資料」通知組態要求可讓您擷取組態XML、以設定個別儲存區的搜尋整合。 
 ---
-= 取得Bucket中繼資料通知組態
+= 使用 GET Bucket 元資料通知組態要求在 StorageGRID 中設定搜尋整合
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

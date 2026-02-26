@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tenant management api, api, api version, swagger, rest api 
 summary: StorageGRID 12.0 使用租用戶管理 API 的第 4 版。版本 4 棄用了版本 3；但是，版本 1、2 和 3 仍然受支援。 
 ---
-= 租戶管理API變更
+= StorageGRID 中租戶管理 API 的變更
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
