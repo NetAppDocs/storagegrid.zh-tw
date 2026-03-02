@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SYSU, Node Start 
 summary: 重新啟動服務時、會產生此訊息、指出先前的關機是否乾淨（命令）或不正常（非預期）。 
 ---
-= SYSU：節點啟動
+= StorageGRID 中節點啟動的 SYSU 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

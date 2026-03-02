@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, log file formats, log formats, log file format, log format 
 summary: 稽核記錄檔位於每個管理節點、並包含個別稽核訊息的集合。 
 ---
-= 稽核記錄檔格式
+= 了解 StorageGRID 中稽核記錄檔的格式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

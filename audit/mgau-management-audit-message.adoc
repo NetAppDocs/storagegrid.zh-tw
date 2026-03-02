@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, MGAU, Management audit message 
 summary: 「管理」類別會將使用者要求記錄至管理API。並非取得API或取得API要求的每個要求、都會以使用者名稱、IP和API要求類型來記錄回應。 
 ---
-= MGAU：管理稽核訊息
+= StorageGRID 中管理 API 請求的 MGAU 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

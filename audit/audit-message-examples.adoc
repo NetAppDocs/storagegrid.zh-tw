@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit message examples, audit.log, atyp, sput, s3 put 
 summary: 您可以在每個稽核訊息中找到詳細資訊。所有稽核訊息都使用相同的格式。 
 ---
-= 稽核訊息範例
+= StorageGRID 稽核訊息格式和範例
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

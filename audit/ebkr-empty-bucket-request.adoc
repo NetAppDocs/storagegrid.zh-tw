@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, EBKR, Empty Bucket Request 
 summary: 此訊息表示使用者已傳送開啟或關閉清空貯體（即刪除貯體物件或停止刪除物件）的要求。 
 ---
-= EBKR ：清空庫位要求
+= StorageGRID 中空白儲存貯體要求的 EBKR 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

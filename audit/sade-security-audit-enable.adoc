@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SADE, Security Audit Enable 
 summary: 此訊息表示來源服務（節點ID）已還原稽核訊息記錄；稽核訊息將再次收集及傳送。 
 ---
-= SAade：啟用安全性稽核
+= StorageGRID 中安全稽核啟用的 SADE 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

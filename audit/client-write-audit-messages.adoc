@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, messages, client write, OVWR, SDEL, SPOS, SPUT, SUPD, WDEL, WPUT, S3 
 summary: S3 用戶端應用程式要求建立或修改物件時、會記錄用戶端寫入稽核訊息。 
 ---
-= 用戶端寫入稽核訊息
+= StorageGRID 中用戶端寫入作業的稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

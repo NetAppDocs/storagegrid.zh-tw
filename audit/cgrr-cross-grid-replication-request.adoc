@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cgrr, cross-grid replication request, audit message, 
 summary: 當 StorageGRID 嘗試跨網格複寫作業來複寫網格同盟連線中的資料桶之間的物件時、就會產生此訊息。 
 ---
-= CGRR ：跨網格複寫要求
+= StorageGRID 中跨網格複寫請求的 CGRR 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

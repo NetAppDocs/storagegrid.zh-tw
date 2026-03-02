@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SGET, S3 GET 
 summary: 當S3用戶端發出Get交易時、會要求擷取物件或列出儲存區中的物件。如果交易成功、伺服器就會發出此訊息。 
 ---
-= SGET：S3取得
+= StorageGRID 中 S3 GET 交易的 SGET 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

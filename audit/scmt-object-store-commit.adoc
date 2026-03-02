@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SCMT, Object Store Commit 
 summary: 網格內容在提交（意即持續儲存）之前、無法使用或辨識為已儲存。持續儲存的內容已完全寫入磁碟、並通過相關的完整性檢查。此訊息會在內容區塊提交至儲存設備時發出。 
 ---
-= SCMT：物件存放區提交
+= StorageGRID 中物件存放區認可的 SCMT 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

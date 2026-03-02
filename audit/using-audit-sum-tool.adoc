@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, tool, audit-sum, audit sum, write, read, head, delete, minimum time, maximum time, average time, minimum size, maximum size, average size 
 summary: 您可以使用稽核加總工具來計算寫入、讀取、顯示及刪除稽核訊息、並查看每種作業類型的最小、最大和平均時間（或大小）。 
 ---
-= 使用稽核加總工具
+= 使用 audit-sum 工具彙總 StorageGRID 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

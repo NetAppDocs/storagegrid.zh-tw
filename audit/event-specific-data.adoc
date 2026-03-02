@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit message, event, shea, s3 head 
 summary: 稽核日誌中的每個稽核訊息都會記錄特定於系統事件的資料。 
 ---
-= 事件特定資料
+= StorageGRID 稽核訊息中的事件特定資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

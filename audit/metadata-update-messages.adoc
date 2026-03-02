@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, Metadata update, S3 metadata update, SUPD 
 summary: 當S3用戶端更新物件的中繼資料時、就會產生稽核訊息。 
 ---
-= 中繼資料更新訊息
+= StorageGRID 中 S3 物件中繼資料更新的稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

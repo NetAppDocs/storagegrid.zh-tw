@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SDEL, S3 DELETE 
 summary: 當S3用戶端發出刪除交易時、會要求移除指定的物件或儲存區。如果交易成功、伺服器就會發出此訊息。 
 ---
-= SDEL：S3刪除
+= StorageGRID 中 S3 DELETE 交易的 SDEL 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

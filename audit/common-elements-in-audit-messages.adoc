@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, messages, message, common elements, AMID, ANID, ASES, ASQN, ATID, ATIM, ATYP, AVER, RSLT 
 summary: 所有稽核訊息都包含通用元素。 
 ---
-= 稽核訊息中的一般元素
+= StorageGRID 稽核訊息中的常見元素
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

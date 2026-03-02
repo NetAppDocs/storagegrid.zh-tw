@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bror, bucket read only request, empty bucket, audit message, 
 summary: 當貯體進入或退出唯讀模式時、 LDR 服務會產生此稽核訊息。例如、貯體在清空時會進入唯讀模式。 
 ---
-= BROR ：貯體唯讀要求
+= StorageGRID 中儲存貯體唯讀要求的 BROR 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

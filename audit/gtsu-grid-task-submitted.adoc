@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, GTSU, Grid Task Submitted 
 summary: 此稽核訊息表示已將網格工作提交至CMN服務。 
 ---
-= GTSU：已提交Grid工作
+= StorageGRID 中已提交網格任務的 GTSU 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

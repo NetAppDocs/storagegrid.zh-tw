@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audi, message, GNRG, GNDS Registration 
 summary: 當服務已更新StorageGRID 或登錄有關自身的資訊、並將其登錄到該系統時、CMN服務會產生此稽核訊息。 
 ---
-= GNRG：GNDS登錄
+= StorageGRID 中 GNDS 註冊的 GNRG 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

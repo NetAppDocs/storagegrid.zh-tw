@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SADD, Security Audit Disable 
 summary: 此訊息表示來源服務（節點ID）已關閉稽核訊息記錄；稽核訊息將不再收集或傳送。 
 ---
-= Sadd：停用安全性稽核
+= StorageGRID 中停用安全稽核的 SADD 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

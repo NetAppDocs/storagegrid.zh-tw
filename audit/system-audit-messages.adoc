@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, messages, system, ECOC, ETAF, GNRG, GNUR, GTED, GTST, GTSU, LLST, OLST, SADD, SADE, SVRF, SVRU, SYSD, SYST, SYSU, VLST 
 summary: 屬於系統稽核類別的稽核訊息用於與稽核系統本身、網格節點狀態、全系統工作活動（網格工作）和服務備份作業相關的事件。 
 ---
-= 系統稽核訊息
+= StorageGRID 中系統事件的稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

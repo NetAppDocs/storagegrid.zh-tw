@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, CBRE, Object Receive End 
 summary: 當內容區塊從一個節點傳輸至另一個節點時、此訊息會由目的地實體發出。 
 ---
-= CBRE：物件接收結束
+= StorageGRID 中物件接收結束的 CBRE 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

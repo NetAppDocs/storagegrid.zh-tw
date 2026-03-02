@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, CBSE, Object Send End 
 summary: 當內容區塊從一個節點傳輸至另一個節點時、此訊息會由來源實體發出。 
 ---
-= CBSE：物件傳送結束
+= StorageGRID 中物件傳送結束的 CBSE 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

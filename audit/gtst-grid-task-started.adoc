@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, GTST, Grid Task Started 
 summary: 此稽核訊息表示CMN服務已開始處理指定的網格工作。稽核訊息會緊接著Grid工作提交訊息、顯示內部Grid工作提交服務所啟動並選取自動啟動的網格工作。對於提交至「擱置」資料表的網格工作、此訊息會在使用者啟動網格工作時產生。 
 ---
-= GTST：網格工作已開始
+= StorageGRID 中已啟動網格任務的 GTST 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

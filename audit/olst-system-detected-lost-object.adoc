@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, OLST, System Detected Lost Object 
 summary: 當DDS服務找不到StorageGRID 任何物件的複本時、就會產生此訊息。 
 ---
-= OLST：系統偵測到遺失物件
+= StorageGRID 中系統偵測到遺失物件的 OLST 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

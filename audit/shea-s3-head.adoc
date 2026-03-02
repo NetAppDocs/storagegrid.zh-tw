@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SHEA, S3 HEAD 
 summary: 當 S3 用戶端發出 HEAD 操作時，會發出請求來檢查物件或儲存桶是否存在並擷取有關物件的元資料。如果操作成功，伺服器將發出此訊息。 
 ---
-= Shea：S3負責人
+= StorageGRID 中 S3 HEAD 操作的 SHEA 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

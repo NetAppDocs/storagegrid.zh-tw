@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, flow, retention 
 summary: 所有StorageGRID 的支援服務都會在正常系統運作期間產生稽核訊息。您應該瞭解這些稽核訊息是如何在StorageGRID 整個過程中、透過這個系統移到audit.log檔案中的。 
 ---
-= 稽核訊息流程與保留
+= 稽核訊息如何透過 StorageGRID 系統傳輸到 audit.log 檔案以進行保留
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

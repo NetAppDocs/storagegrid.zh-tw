@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, tool, audit-explain, audit explain, translate audit messages, translate messages, translate audit message, translate message 
 summary: 您可以使用稽核說明工具、將稽核記錄中的稽核訊息轉譯為易讀格式。 
 ---
-= 使用稽核說明工具
+= 使用 audit-explain 工具翻譯 StorageGRID 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

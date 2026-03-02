@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, EBDL, Empty Bucket Delete 
 summary: ILM 掃描器刪除了儲存庫中刪除所有物件的物件（執行清空儲存庫作業）。 
 ---
-= EBDL ：清空庫位刪除
+= StorageGRID 中空白儲存貯體物件刪除的 EBDL 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

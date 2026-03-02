@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SYSD, Node Stop 
 summary: 正常停止服務時、會產生此訊息、表示已要求關機。通常只有在後續重新啟動之後才會傳送此訊息、因為稽核訊息佇列不會在關機之前清除。如果服務尚未重新啟動、請尋找在關機順序開頭傳送的SYST訊息。 
 ---
-= SYSD：節點停止
+= StorageGRID 中正常節點停止的 SYSD 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

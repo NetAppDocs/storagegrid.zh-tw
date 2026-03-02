@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit, object storage, object management, object retrieval, node transfer, verification, BROR, CBSE, CBRE, CGRR, EBDL, EBKR, SCMT, SREM 
 summary: 您應該熟悉屬於物件儲存稽核類別的稽核訊息。這些是StorageGRID 與儲存及管理等物件相關的事件、這些事件都在整個系統的範圍內。包括物件儲存與擷取、網格節點對網格節點傳輸及驗證。 
 ---
-= 物件儲存稽核訊息
+= StorageGRID 中物件儲存事件的稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

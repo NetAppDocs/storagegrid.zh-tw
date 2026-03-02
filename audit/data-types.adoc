@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, data, types, UI32, UI64, FC32, IPAD, CSTR, IPAD 
 summary: 不同的資料類型可用來將資訊儲存在稽核訊息中。 
 ---
-= 資料類型
+= StorageGRID 稽核訊息中的資料類型
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

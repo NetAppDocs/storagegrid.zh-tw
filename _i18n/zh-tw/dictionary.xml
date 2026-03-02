@@ -5027,7 +5027,6 @@
   <block id="8232222668b75bf8df1c6efee33845d5" category="section-title">稽核訊息的時間</block>
   <block id="840fdff90357d8176c08c5555b95375d" category="paragraph">由於網格節點之間的時間差異、物件大小和網路延遲等因素、不同服務所產生的稽核訊息順序可能與本節範例所示的順序不同。</block>
   <block id="a55807ad3c4b6a709492f40b0aa4f58d" category="summary">以下各節將詳細說明系統傳回的稽核訊息。每個稽核訊息都會先列在表格中、並依訊息所代表的活動類別來分組相關訊息。這些群組對於瞭解稽核的活動類型、以及選取所需的稽核訊息篩選類型都很有用。</block>
-  <block id="ae88731080a7d306d96e8a11f3c448f2" category="doc">稽核訊息說明</block>
   <block id="1fa82f0d9cfdc444ea3c588aa0e5af12" category="paragraph">稽核訊息也會依其四個字元的代碼的字母順序列出。此字母清單可讓您尋找特定訊息的相關資訊。</block>
   <block id="55707b5bb81de0dd32c15ec80cc1b3c9" category="paragraph">本章中使用的四個字元代碼為稽核訊息中的 ATYP 值、如下列範例訊息所示：</block>
   <block id="3bf95038033062d72428b0314e78d78c" category="summary">當貯體進入或退出唯讀模式時、 LDR 服務會產生此稽核訊息。例如、貯體在清空時會進入唯讀模式。</block>
@@ -22188,4 +22187,67 @@
   <block id="d855d3845ee683616ae84298029dfdd4" category="doc">疑難排解 StorageGRID 升級問題</block>
   <block id="172df2082cc77642f3d62e66373dd8b9" category="doc">StorageGRID 升級快速入門</block>
   <block id="2919373b1b1c527fda8b22f79683e00a" category="doc">在升級前驗證已安裝的 StorageGRID 版本</block>
+  <block id="bad71a65bc75e8ef834ee7361effa4de" category="doc">從 StorageGRID 管理節點命令列存取稽核記錄檔</block>
+  <block id="4aa5635c08bc966c8122c4f8241b252f" category="doc">了解 StorageGRID 中稽核記錄檔的格式</block>
+  <block id="2ea38890fcd15843f390a9bcb1f1c998" category="doc">了解 StorageGRID 中的稽核記錄檔輪替</block>
+  <block id="ce4cfad23c7ea4126a2c947ad7a6c1f9" category="doc">StorageGRID 稽核訊息格式和範例</block>
+  <block id="1e1ee426582ad070b1faf5d7429b2692" category="doc">稽核訊息如何透過 StorageGRID 系統傳輸到 audit.log 檔案以進行保留</block>
+  <block id="ca45d9810dc056779a967342e0774fb3" category="doc">了解 StorageGRID 稽核訊息的結構</block>
+  <block id="9daab6153bedf495948cf07aa7928d52" category="doc">當 StorageGRID 產生稽核訊息時</block>
+  <block id="e4efdabc448b411e21db46872eb294db" category="doc">了解 StorageGRID 中的稽核訊息類型和代碼</block>
+  <block id="a7290bce32812cc2978ae05744245b89" category="doc">StorageGRID 中儲存貯體唯讀要求的 BROR 稽核訊息</block>
+  <block id="b525957e7034d38b7da1d79f2ea81e6b" category="doc">StorageGRID 中物件接收開始的 CBRB 稽核訊息</block>
+  <block id="993ced4d9dd78858a9cd305ae6ac35bd" category="doc">StorageGRID 中物件接收結束的 CBRE 稽核訊息</block>
+  <block id="2ef5ece98e4e322bc4961341076d617d" category="doc">StorageGRID 中物件傳送開始的 CBSB 稽核訊息</block>
+  <block id="d4fc25a82f433f8436277db291dc9a8a" category="doc">StorageGRID 中物件傳送結束的 CBSE 稽核訊息</block>
+  <block id="0dd1a7a45f405e809e010645c0f0dbb0" category="doc">StorageGRID 中跨網格複寫請求的 CGRR 稽核訊息</block>
+  <block id="fe1241442edb181949ce020695dca6f9" category="doc">StorageGRID 中用於用戶端讀取作業的稽核訊息</block>
+  <block id="2f86b8362fd192426401ee01001dc7b0" category="doc">StorageGRID 中用戶端寫入作業的稽核訊息</block>
+  <block id="737459ed47ac588f8f80ba7fc0497f0a" category="doc">StorageGRID 稽核訊息中的常見元素</block>
+  <block id="90380d09777e197ffd0736dcc58be30e" category="doc">StorageGRID 稽核訊息中的資料類型</block>
+  <block id="74ea34238f22cbad91b3d92f0968f53a" category="doc">StorageGRID 中空白儲存貯體物件刪除的 EBDL 稽核訊息</block>
+  <block id="cff7f2c3ec9dd03e2559677e4a753bff" category="doc">StorageGRID 中空白儲存貯體要求的 EBKR 稽核訊息</block>
+  <block id="ef2ec052d21adffcaea375522fa26260" category="doc">StorageGRID 中遺失銷毀編碼資料的 ECMC 稽核訊息</block>
+  <block id="853bd1c5817bb5a04da3bb90c698e17a" category="doc">StorageGRID 中毀損的抹除編碼資料的 ECOC 稽核訊息</block>
+  <block id="3ce43e34425fca3bce3d926cfb135a72" category="doc">StorageGRID 中安全驗證失敗的 ETAF 稽核訊息</block>
+  <block id="d6dd6db6cfc2c9e7a98047e5b7270f0f" category="doc">StorageGRID 稽核訊息中的事件特定資料</block>
+  <block id="0ac038512916cc95b556119b0a4cdcc3" category="doc">StorageGRID 中 GNDS 註冊的 GNRG 稽核訊息</block>
+  <block id="be06203e1247027592db718fb510f38f" category="doc">StorageGRID 中 GNDS 取消註冊的 GNUR 稽核訊息</block>
+  <block id="cc75e38248434295f7867a1ac212c30f" category="doc">StorageGRID 中已結束網格工作的 GTED 稽核訊息</block>
+  <block id="d6a92c974b1438cf014c1dd498d14976" category="doc">StorageGRID 中已啟動網格任務的 GTST 稽核訊息</block>
+  <block id="7ea0f5176fd187ba1feb10e4af6a74af" category="doc">StorageGRID 中已提交網格任務的 GTSU 稽核訊息</block>
+  <block id="889552931f154f17e7cd5a93f36df36a" category="doc">StorageGRID 中 ILM 啟動刪除的 IDEL 稽核訊息</block>
+  <block id="9411f2f05188836ba7fdaf10711d26f1" category="doc">StorageGRID ILM 稽核訊息</block>
+  <block id="e2ad36dd8405d83415e48cc5ad176f09" category="doc">StorageGRID 中覆寫物件清理的 LKCU 稽核訊息</block>
+  <block id="a35a0013a58f83e7332da6c1ef4515fd" category="doc">StorageGRID 中洩漏物件清理的 LKDM 稽核訊息</block>
+  <block id="05d8c27da80379e5de6737b8ae66f043" category="doc">StorageGRID 中遺失物件複本位置的 LLST 稽核訊息</block>
+  <block id="a9ce1b7b699086f02e1544fde9696ec1" category="doc">StorageGRID 管理稽核訊息</block>
+  <block id="594f329ee7e6395a04117096d55606d8" category="doc">StorageGRID 中 S3 物件中繼資料更新的稽核訊息</block>
+  <block id="2ebee7451d3a4d717540842d46ba002a" category="doc">StorageGRID 中管理 API 請求的 MGAU 稽核訊息</block>
+  <block id="4247e0e5c8674b46c8ed294c61554c34" category="doc">StorageGRID 中物件刪除交易的稽核訊息</block>
+  <block id="b687a78af5552770a8c7ad777d6dcaf6" category="doc">StorageGRID 中物件擷取交易的稽核訊息</block>
+  <block id="3e269b969dbf5738d2638b755535405c" category="doc">StorageGRID 中物件擷取交易的稽核訊息</block>
+  <block id="fead8836a75730522daa29de113f7907" category="doc">StorageGRID 中物件儲存事件的稽核訊息</block>
+  <block id="edb01d45c092186cc08f13a0ac083602" category="doc">StorageGRID 中系統偵測到遺失物件的 OLST 稽核訊息</block>
+  <block id="c19206ca9e6755445b572c20a68e0b32" category="doc">StorageGRID 中符合 ILM 規則的 ORLM 稽核訊息</block>
+  <block id="c5b5794737030f96990f1e226b67ead3" category="doc">StorageGRID 中物件覆寫的 OVWR 稽核訊息</block>
+  <block id="d707b736a5bb04394bbc1fb14a906a69" category="doc">StorageGRID 中 S3 Select 請求的 S3SL 稽核訊息</block>
+  <block id="d5fc87bff0dc8aa521620a4f4c8a0a2c" category="doc">StorageGRID 中停用安全稽核的 SADD 稽核訊息</block>
+  <block id="914a7184b42ec21e8107a27082014f0b" category="doc">StorageGRID 中安全稽核啟用的 SADE 稽核訊息</block>
+  <block id="f7a3b9f2103c40fe4a54ab3d952c82be" category="doc">StorageGRID 中物件存放區認可的 SCMT 稽核訊息</block>
+  <block id="a29894f8c655b9f324ea69beffb1ad90" category="doc">StorageGRID 中 S3 DELETE 交易的 SDEL 稽核訊息</block>
+  <block id="4c1e87f1dc1790aff9de83f8a3f0d20c" category="doc">StorageGRID 中 S3 GET 交易的 SGET 稽核訊息</block>
+  <block id="24e6a1cd6430e63b6401749240b8707d" category="doc">StorageGRID 中 S3 HEAD 操作的 SHEA 稽核訊息</block>
+  <block id="8376b1a7cce9741d939bd560d24a6be4" category="doc">StorageGRID 中 S3 POST 交易的 SPOS 稽核訊息</block>
+  <block id="9b0e2bfcdfa29cf0dc7e428123056d12" category="doc">StorageGRID 中 S3 PUT 交易的 SPUT 稽核訊息</block>
+  <block id="831dcf3255aa923ab098c84dba5c09bb" category="doc">StorageGRID 中物件存放區移除的 SREM 稽核訊息</block>
+  <block id="7c1ec052202fedb5a9d8c7ebe5adf11c" category="doc">StorageGRID 中 S3 中繼資料更新的 SUPD 稽核訊息</block>
+  <block id="2d22bd2316d071422327e26a4c01ac24" category="doc">StorageGRID 中物件存放區驗證失敗的 SVRF 稽核訊息</block>
+  <block id="e4c4123786bfcf3c97224a144ac21e60" category="doc">StorageGRID 中未知物件存放區內容的 SVRU 稽核訊息</block>
+  <block id="cedfdd6d2f438bd5f5aa0b9201cf53d6" category="doc">StorageGRID 中正常節點停止的 SYSD 稽核訊息</block>
+  <block id="2bdbd282555f9ba756bc98a2a11f0098" category="doc">StorageGRID 中節點停止的 SYST 稽核訊息</block>
+  <block id="42ae8acd0841d00dbdaf2573224f09e1" category="doc">StorageGRID 中系統事件的稽核訊息</block>
+  <block id="8a22c21079273856d5d0254e007b482b" category="doc">StorageGRID 中節點啟動的 SYSU 稽核訊息</block>
+  <block id="229f88740e16b4b58ce15dcccdf9517d" category="doc">使用 audit-explain 工具翻譯 StorageGRID 稽核訊息</block>
+  <block id="7ea557961e2f5fa9e34f48380a976af5" category="doc">使用 audit-sum 工具彙總 StorageGRID 稽核訊息</block>
 </blocks>

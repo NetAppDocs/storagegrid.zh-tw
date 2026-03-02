@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object delete transaction, S3 delete, SDEL, WDEL 
 summary: 您可以找出 S3 API 特定稽核訊息、以識別稽核記錄中的物件刪除交易。 
 ---
-= 物件刪除交易
+= StorageGRID 中物件刪除交易的稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

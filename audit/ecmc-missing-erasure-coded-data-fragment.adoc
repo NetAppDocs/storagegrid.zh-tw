@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, ECMC, Missing Erasure-Coded Data Fragment 
 summary: 此稽核訊息表示系統偵測到遺失的銷毀編碼資料片段。 
 ---
-= ECMC ：遺失抹除編碼資料片段
+= StorageGRID 中遺失銷毀編碼資料的 ECMC 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

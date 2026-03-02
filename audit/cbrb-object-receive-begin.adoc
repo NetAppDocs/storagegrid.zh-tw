@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, CBRB, Object Receive Begin 
 summary: 在正常系統作業期間、內容區塊會在存取、複寫及保留資料時、在不同節點之間持續傳輸。當內容區塊從一個節點傳輸至另一個節點時、此訊息會由目的地實體發出。 
 ---
-= CBRB：物件接收開始
+= StorageGRID 中物件接收開始的 CBRB 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

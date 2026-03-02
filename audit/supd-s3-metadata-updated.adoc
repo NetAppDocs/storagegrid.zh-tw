@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SUPD, S3 Metadata Updated 
 summary: 當S3用戶端更新擷取物件的中繼資料時、此訊息會由S3 API產生。如果中繼資料更新成功、伺服器就會發出此訊息。 
 ---
-= SUBPD：S3中繼資料已更新
+= StorageGRID 中 S3 中繼資料更新的 SUPD 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

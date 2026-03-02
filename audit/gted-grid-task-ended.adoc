@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, GTED, Grid Task Ended 
 summary: 此稽核訊息表示CMN服務已完成處理指定的網格工作、並已將工作移至「歷史」表格。如果結果為SUCS、ABRT或ROLf、則會出現對應的Grid工作已開始稽核訊息。其他結果則表示此網格工作的處理從未開始。 
 ---
-= GTED：網格工作已結束
+= StorageGRID 中已結束網格工作的 GTED 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

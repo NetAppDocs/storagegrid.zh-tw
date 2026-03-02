@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message formats, message format 
 summary: 在這個系統內交換的稽核訊息StorageGRID 包括所有訊息通用的標準資訊、以及說明所報告事件或活動的特定內容。 
 ---
-= 稽核訊息格式
+= 了解 StorageGRID 稽核訊息的結構
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

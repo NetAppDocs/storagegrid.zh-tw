@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SREM, Object Store Remove 
 summary: 此訊息會在內容從持續儲存設備中移除時發出、而且無法再透過一般API存取。 
 ---
-= Srem：物件存放區移除
+= StorageGRID 中物件存放區移除的 SREM 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SPUT, S3 PUT 
 summary: 當S3用戶端發出PUT交易時、系統會要求建立新的物件或儲存區。如果交易成功、伺服器就會發出此訊息。 
 ---
-= SPUT：S3
+= StorageGRID 中 S3 PUT 交易的 SPUT 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

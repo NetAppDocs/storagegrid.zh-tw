@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, ETAF, Security Authentication Failed 
 summary: 當使用傳輸層安全性（TLS）的連線嘗試失敗時、就會產生此訊息。 
 ---
-= ETAF：安全驗證失敗
+= StorageGRID 中安全驗證失敗的 ETAF 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

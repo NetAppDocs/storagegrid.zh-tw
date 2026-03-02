@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SPOS, S3 POST 
 summary: 當S3用戶端發出POST物件要求時、如果交易成功、伺服器就會發出此訊息。 
 ---
-= SPOS：S3 POST
+= StorageGRID 中 S3 POST 交易的 SPOS 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

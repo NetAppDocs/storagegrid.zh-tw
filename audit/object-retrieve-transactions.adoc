@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object retrieve, transactions, SGET, WGET 
 summary: 您可以找出 S3 API 專屬稽核訊息、以識別稽核記錄中的物件擷取交易。 
 ---
-= 物件擷取交易
+= StorageGRID 中物件擷取交易的稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

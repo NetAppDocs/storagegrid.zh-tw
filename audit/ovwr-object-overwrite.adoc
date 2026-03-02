@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, OVWR, Object Overwrite 
 summary: 當外部（用戶端要求）作業導致一個物件被另一個物件覆寫時、就會產生此訊息。 
 ---
-= OW寫入：物件覆寫
+= StorageGRID 中物件覆寫的 OVWR 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

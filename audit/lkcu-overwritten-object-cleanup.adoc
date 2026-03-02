@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, LKCU, Overwritten Object Cleanup 
 summary: 此訊息是在StorageGRID 將先前需要清除以釋放儲存空間的覆寫物件移除時產生。當 S3 用戶端將物件寫入已包含物件的路徑時、物件會被覆寫。移除程序會自動在背景執行。 
 ---
-= LKCU：覆寫物件清理
+= StorageGRID 中覆寫物件清理的 LKCU 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

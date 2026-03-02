@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, GNUR, GNDS Unregistration 
 summary: 當服務從StorageGRID 該系統中取消登錄其本身的資訊時、CMN服務會產生此稽核訊息。 
 ---
-= GNur：GNDS取消登錄
+= StorageGRID 中 GNDS 取消註冊的 GNUR 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

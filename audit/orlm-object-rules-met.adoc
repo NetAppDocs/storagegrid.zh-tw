@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit message, ORLM, Object Rules Met, ilm rule 
 summary: 此訊息是在物件依照ILM規則所指定的方式成功儲存及複製時產生。 
 ---
-= ORLM：符合物件規則
+= StorageGRID 中符合 ILM 規則的 ORLM 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

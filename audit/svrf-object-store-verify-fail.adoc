@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SVRF, Object Store Verify Fail 
 summary: 每當內容區塊未通過驗證程序時、就會發出此訊息。每次從磁碟讀取或寫入複寫的物件資料時、都會執行數項驗證和完整性檢查、以確保傳送給要求使用者的資料與原先擷取到系統的資料相同。如果其中任何一項檢查失敗、系統會自動隔離毀損的複寫物件資料、以防止再次擷取。 
 ---
-= SVRF：物件存放區驗證失敗
+= StorageGRID 中物件存放區驗證失敗的 SVRF 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

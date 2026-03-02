@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, log, log file, access, accessing 
 summary: 稽核共用包含作用中的audit.log檔案和任何壓縮的稽核記錄檔。您可以直接從管理節點的命令列存取稽核記錄檔。 
 ---
-= 存取稽核記錄檔
+= 從 StorageGRID 管理節點命令列存取稽核記錄檔
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

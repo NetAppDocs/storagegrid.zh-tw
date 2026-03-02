@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, log, object lifecycle, ingest, retrieve, delete, s3, timing, ILM, Information lifecycle management 
 summary: 每次擷取、擷取或刪除物件時、都會產生稽核訊息。您可以找出 S3 API 特定稽核訊息、在稽核記錄中識別這些交易。 
 ---
-= 何時產生稽核訊息？
+= 當 StorageGRID 產生稽核訊息時
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

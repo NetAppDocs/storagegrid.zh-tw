@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, messages, message 
 summary: 以下各節將詳細說明系統傳回的稽核訊息。每個稽核訊息都會先列在表格中、並依訊息所代表的活動類別來分組相關訊息。這些群組對於瞭解稽核的活動類型、以及選取所需的稽核訊息篩選類型都很有用。 
 ---
-= 稽核訊息說明
+= 了解 StorageGRID 中的稽核訊息類型和代碼
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit messages, ILM, IDEL, LKCU, ORLM 
 summary: 屬於 ILM 稽核類別的稽核訊息是用於資訊生命週期作業的相關事件。 
 ---
-= ILM 稽核訊息
+= StorageGRID ILM 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
