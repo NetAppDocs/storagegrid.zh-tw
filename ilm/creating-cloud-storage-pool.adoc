@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create cloud storage pool 
 summary: Cloud Storage Pool 會指定單一外部 Amazon S3 儲存區或其他 S3 相容供應商、或 Azure Blob 儲存容器。 
 ---
-= 建立雲端儲存資源池
+= 在 StorageGRID 中建立雲端儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

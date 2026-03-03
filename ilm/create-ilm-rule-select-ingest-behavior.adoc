@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ilm rule step 3, define ingest behavior 
 summary: 「建立 ILM 規則」精靈的步驟 3 \ （選擇擷取行為）可讓您選擇在此規則篩選的物件在擷取時的保護方式。 
 ---
-= 步驟 3 之 3 ：選取擷取行為
+= 選擇 StorageGRID ILM 規則的擷取行為
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

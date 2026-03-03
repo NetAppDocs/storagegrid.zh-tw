@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ilm lifecycle, object lifecycle and ILM 
 summary: 瞭解StorageGRID 如何在物件生命週期的每個階段使用ILM來管理物件、有助於您設計更有效的原則。 
 ---
-= ILM如何在整個物件生命週期內運作
+= ILM 在 StorageGRID 中物件生命週期內的運作方式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

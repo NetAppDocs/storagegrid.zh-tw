@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is a storage grade, create storage grade 
 summary: 儲存等級可識別儲存節點所使用的儲存類型。如果您希望 ILM 規則將特定物件放置在特定的儲存節點上、則可以建立儲存等級。 
 ---
-= 建立及指派儲存等級
+= 在 StorageGRID 中建立並指派儲存等級
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

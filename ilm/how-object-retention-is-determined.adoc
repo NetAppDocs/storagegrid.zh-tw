@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how object retention is determined 
 summary: 支援網格管理員和個別租戶使用者的選項、可指定儲存物件的時間長度。StorageGRID一般而言、租戶使用者所提供的任何保留指示、均優先於網格管理員所提供的保留指示。 
 ---
-= 如何判斷物件保留
+= StorageGRID 如何確定物件保留
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: site-loss protection, cross-site replication, storage pools 
 summary: 如果您的 StorageGRID 部署包含多個站台、您可以使用複寫和銷毀編碼搭配適當設定的儲存集區、以啟用站台遺失保護。 
 ---
-= 啟用站台遺失保護
+= StorageGRID 中使用儲存池的站台遺失保護
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

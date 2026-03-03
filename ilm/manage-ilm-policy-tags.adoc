@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ILM policy tag 
 summary: 您可以檢視 ILM 原則標籤詳細資料、編輯標籤或移除標籤。 
 ---
-= 管理 ILM 原則標籤
+= 在 StorageGRID 中管理 ILM 原則標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

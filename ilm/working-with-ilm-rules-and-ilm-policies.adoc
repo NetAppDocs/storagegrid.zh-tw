@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove ilm rule, edit ilm rule, clone ilm rule, ilm queue 
 summary: 隨著儲存需求的變更、您可能需要設置不同的原則、或修改與原則相關的 ILM 規則。您可以檢視 ILM 指標來判斷系統效能。 
 ---
-= 使用 ILM 原則和 ILM 規則
+= 在 StorageGRID 中使用 ILM 原則和 ILM 規則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

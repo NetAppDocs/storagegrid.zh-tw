@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: consistency error, s3 object lock and consistency 
 summary: 如果站台上的資料中心站台或多個儲存節點無法使用、您可能需要協助S3租戶使用者將變更套用至S3物件鎖定或舊版法規遵循組態。 
 ---
-= 更新S3物件鎖定或舊版法規遵循組態時、可解決一致性錯誤
+= 解決在 StorageGRID 中更新 S3 Object Lock 或舊版法規遵循設定時的一致性錯誤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

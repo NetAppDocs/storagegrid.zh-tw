@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is a storage pool 
 summary: 儲存池是儲存節點的邏輯群組。 
 ---
-= 什麼是儲存池？
+= 了解 StorageGRID 中的儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

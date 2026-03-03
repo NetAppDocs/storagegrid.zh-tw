@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: change ILM policy, example ILM policy, information lifecycle policy example 
 summary: 如果您需要變更資料保護、或是新增網站、您可以建立並啟動新的 ILM 原則。 
 ---
-= 範例 6 ：變更 ILM 原則
+= 變更 ILM 原則如何影響 StorageGRID 效能
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

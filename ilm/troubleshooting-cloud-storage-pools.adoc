@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cloud storage pool, troubleshoot 
 summary: 使用這些疑難排解步驟、協助解決您在建立、編輯或刪除雲端儲存池時可能遇到的錯誤。 
 ---
-= 疑難排解雲端儲存資源池
+= 疑難排解 StorageGRID 中的雲端儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

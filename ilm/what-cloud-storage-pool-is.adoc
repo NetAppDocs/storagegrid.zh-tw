@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is a cloud storage pool 
 summary: Cloud Storage Pool可讓您使用ILM將物件資料移出StorageGRID 您的系統之外。例如、您可能想要將不常存取的物件移至成本較低的雲端儲存設備、例如 Amazon S3 Glacier 、 S3 Glacier Deep Archive 、 Google Cloud 、或 Microsoft Azure Blob 儲存設備中的歸檔存取層。或者、您可能想要維護StorageGRID 一份支援物件的雲端備份、以加強災難恢復。 
 ---
-= 什麼是雲端儲存池？
+= 了解 StorageGRID 中的雲端儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

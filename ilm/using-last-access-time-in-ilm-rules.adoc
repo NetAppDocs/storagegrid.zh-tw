@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: last access time, ilm rule reference time 
 summary: 您可以使用上次存取時間做為 ILM 規則的參考時間。例如、您可能想要保留過去三個月在本機儲存節點上檢視過的物件、同時將最近未檢視過的物件移至異地位置。如果您希望 ILM 規則僅套用至上次在特定日期存取的物件、也可以將上次存取時間用作進階篩選器。 
 ---
-= 在 ILM 規則中使用上次存取時間
+= 在 StorageGRID ILM 規則中使用上次存取時間
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

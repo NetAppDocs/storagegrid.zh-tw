@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable s3 object lock, object lock 
 summary: 如果S3租戶帳戶在儲存物件資料時需要遵守法規要求、您必須為整個StorageGRID 整個整個系統啟用S3物件鎖定。啟用全域S3物件鎖定設定、可讓任何S3租戶使用者使用S3物件鎖定來建立及管理儲存區和物件。 
 ---
-= 全域啟用S3物件鎖定
+= 在 StorageGRID 中全域啟用 S3 物件鎖定
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

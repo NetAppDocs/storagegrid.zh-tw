@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is information lifecycle rule, ilm rule 
 summary: 若要管理物件、請建立一組資訊生命週期管理（ILM）規則、並將其組織成ILM原則。 
 ---
-= 使用 ILM 規則來管理物件
+= 了解 StorageGRID 中的 ILM 規則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

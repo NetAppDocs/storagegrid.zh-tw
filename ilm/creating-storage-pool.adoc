@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create storage pool 
 summary: 您可以建立儲存資源池、以判斷StorageGRID 哪些地方會儲存物件資料、以及使用的儲存類型。每個儲存資源池都包含一個或多個站台、以及一個或多個儲存等級。 
 ---
-= 建立儲存資源池
+= 在 StorageGRID 中建立儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

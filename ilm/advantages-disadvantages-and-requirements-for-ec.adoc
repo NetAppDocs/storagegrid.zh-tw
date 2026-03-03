@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: erasure coding advantages, disadvantages, EC requirements 
 summary: 在決定是否使用複寫或銷毀編碼來保護物件資料免於遺失之前、您應該先瞭解銷毀編碼的優點、缺點及要求。 
 ---
-= 銷毀編碼的優缺點與要求
+= StorageGRID 中抹除編碼的優點、缺點和要求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

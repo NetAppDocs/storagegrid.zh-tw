@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ILM policy,S3 Object Lock 
 summary: 在定義ILM原則時、您可以使用本範例中的S3儲存區、ILM規則和ILM原則作為起點、以符合已啟用S3物件鎖定之儲存區中物件的物件保護和保留需求。 
 ---
-= 範例7：S3物件鎖定的符合ILM原則
+= StorageGRID 中 S3 物件鎖定的相容 ILM 原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cloud storage pools, cloudmirror replication 
 summary: 開始使用Cloud Storage Pool時、瞭解Cloud Storage Pool與StorageGRID VMware CloudMirror複寫服務之間的相似點和差異可能會有所幫助。 
 ---
-= 比較雲端儲存資源池和CloudMirror複寫
+= StorageGRID 中的雲端儲存資源池與 CloudMirror 複寫
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

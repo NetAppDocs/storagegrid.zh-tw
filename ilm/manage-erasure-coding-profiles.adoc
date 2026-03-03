@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename erasure-coding profile, ec profile 
 summary: 您可以檢視抹除編碼設定檔的詳細資料、並視需要重新命名設定檔。如果目前未在任何 ILM 規則中使用抹除編碼設定檔、您可以停用該設定檔。 
 ---
-= 管理銷毀編碼設定檔
+= 在 StorageGRID 中管理銷毀編碼設定檔
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

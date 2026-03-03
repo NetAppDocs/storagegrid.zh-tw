@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replication, object copies 
 summary: 複寫是 StorageGRID 用來儲存物件資料的兩種方法之一。當物件符合使用複寫的 ILM 規則時、系統會建立物件資料的精確複本、並將複本儲存在儲存節點上。 
 ---
-= 什麼是複寫？
+= 了解 StorageGRID 中的複寫
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

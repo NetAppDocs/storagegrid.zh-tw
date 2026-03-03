@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ILM rule step 1, define basics 
 summary: 建立 ILM 規則精靈的步驟 1 \ （輸入詳細資料）可讓您輸入規則的名稱和說明、並定義規則的篩選條件。 
 ---
-= 步驟 3 之 1 ：輸入詳細資料
+= 輸入 StorageGRID ILM 規則的詳細資訊和篩選條件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

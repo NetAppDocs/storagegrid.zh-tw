@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object versions, example ILM rule, information lifecycle rule examples 
 summary: 如果您有啟用版本設定的 S3 儲存區、則可以在 ILM 原則中加入使用非目前時間做為參考時間的規則、以管理非目前物件版本。 
 ---
-= 範例4：S3版本化物件的ILM規則和原則
+= StorageGRID 中非當前 S3 物件版本的 ILM 規則和原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

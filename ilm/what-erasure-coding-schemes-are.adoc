@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: erasure-coding scheme 
 summary: 銷毀編碼方案可控制每個物件所建立的資料片段數量、以及同位元檢查片段數量。 
 ---
-= 什麼是銷毀編碼方案？
+= 了解 StorageGRID 中的抹除編碼方案
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

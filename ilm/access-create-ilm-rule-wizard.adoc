@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create ILM rule, information lifecycle rule 
 summary: 您可以使用「建立ILM規則」精靈來建立ILM規則。 
 ---
-= 存取建立 ILM 規則精靈
+= 在 StorageGRID 中存取建立 ILM 規則精靈
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

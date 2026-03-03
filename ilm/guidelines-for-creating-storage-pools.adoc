@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage pool guidelines 
 summary: 設定並使用儲存資源池、透過在多個站台之間散佈資料來防止資料遺失。複寫複本和銷毀編碼複本需要不同的儲存池組態。 
 ---
-= 建立儲存資源池的準則
+= StorageGRID 中的儲存資源池組態準則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

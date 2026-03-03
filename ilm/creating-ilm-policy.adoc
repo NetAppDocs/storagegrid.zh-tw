@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create ILM policy 
 summary: 建立一或多個 ILM 原則以符合您的服務品質要求。 
 ---
-= 建立 ILM 原則
+= 在 StorageGRID 中建立 ILM 原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

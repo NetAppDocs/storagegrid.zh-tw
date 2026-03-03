@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: dual commit, single commit, number of copies for replication 
 summary: 建立ILM規則以建立複寫複本時、您應該在放置指示中、隨時至少指定兩個複本。 
 ---
-= 為何不應使用單一複製複寫
+= StorageGRID 中單一複本複寫的風險
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

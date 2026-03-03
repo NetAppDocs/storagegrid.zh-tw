@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is erasure coding, what is ec 
 summary: 銷毀編碼是 StorageGRID 用來儲存物件資料的兩種方法之一。當物件符合使用抹除編碼的 ILM 規則時、這些物件會切換成資料片段、會計算額外的同位元區隔片段、而且每個片段都會儲存在不同的儲存節點上。 
 ---
-= 什麼是銷毀編碼？
+= 了解 StorageGRID 中的抹除編碼
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

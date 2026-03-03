@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage pool, view details 
 summary: 您可以檢視儲存資源池的詳細資料、以判斷儲存資源池的使用位置、並查看其中包含哪些節點和儲存等級。 
 ---
-= 檢視儲存資源池詳細資料
+= 在 StorageGRID 中檢視儲存資源池詳細資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

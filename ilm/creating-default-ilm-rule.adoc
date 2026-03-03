@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create default ilm rule 
 summary: 在建立ILM原則之前、您必須建立預設規則、將任何不符合其他規則的物件放入原則中。預設規則無法使用任何篩選器。它必須套用至所有租戶、所有貯體及所有物件版本。 
 ---
-= 建立預設ILM規則
+= 在 StorageGRID 中建立預設 ILM 規則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

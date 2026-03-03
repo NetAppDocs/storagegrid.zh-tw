@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: simulate ilm policy 
 summary: ILM 原則模擬範例提供了建構及修改環境模擬的準則。 
 ---
-= ILM 原則模擬範例
+= StorageGRID 中的 ILM 原則模擬範例
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object lock workflow 
 summary: 身為網格管理員、您必須與租戶使用者密切協調、以確保物件受到保護、並符合其保留需求。 
 ---
-= S3 物件鎖定工作
+= StorageGRID 中的 S3 Object Lock 工作流程
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

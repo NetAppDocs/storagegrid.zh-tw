@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove storage pool 
 summary: 您可以移除未使用的儲存資源池。 
 ---
-= 移除儲存資源池
+= 移除 StorageGRID 中的儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

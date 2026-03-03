@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: verify ilm policy, object metadata lookup 
 summary: 啟動 ILM 原則後、將代表性測試物件擷取至 StorageGRID 系統、然後執行物件中繼資料查詢、確認複本是否依照預期製作、並放置在正確的位置。 
 ---
-= 使用物件中繼資料查詢來驗證ILM原則
+= 使用 StorageGRID 中的物件中繼資料查詢來驗證 ILM 原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

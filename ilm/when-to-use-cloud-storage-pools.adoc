@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: use cloud storage pool, benefits of cloud storage pools 
 summary: 您可以使用 Cloud Storage Pool 將資料備份或分層至外部位置。此外、您可以將資料備份或分層到多個雲端。 
 ---
-= 何時使用雲端儲存資源池
+= StorageGRID 中的 Cloud Storage Pool 使用案例
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

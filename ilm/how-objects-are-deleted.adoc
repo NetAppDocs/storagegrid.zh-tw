@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ILM deletion, how objects are deleted 
 summary: 由於S3儲存區生命週期到期或ILM原則要求到期、因此可直接回應用戶端要求或自動刪除物件。StorageGRID瞭解可刪除物件的不同方式、StorageGRID 以及如何處理刪除要求、有助於您更有效地管理物件。 
 ---
-= 如何刪除物件
+= StorageGRID 如何刪除物件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

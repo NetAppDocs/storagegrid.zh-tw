@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: lifecycle of cloud storage pool object 
 summary: 在實作雲端儲存資源池之前、請先檢閱儲存在每種類型雲端儲存資源池中的物件生命週期。 
 ---
-= Cloud Storage Pool物件的生命週期
+= StorageGRID 中雲端儲存資源池物件的生命週期
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

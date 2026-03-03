@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: edit storage pool 
 summary: 您可以編輯儲存資源池以變更其名稱、或更新站台和儲存等級。 
 ---
-= 編輯儲存資源池
+= 在 StorageGRID 中編輯儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

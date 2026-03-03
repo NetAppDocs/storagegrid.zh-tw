@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: example ILM rule, information lifecycle rule examples 
 summary: 定義ILM原則以符合物件保護和保留需求時、您可以使用下列範例規則和原則作為起點。 
 ---
-= 範例1：物件儲存的ILM規則與原則
+= StorageGRID 中基本物件保護和保留的 ILM 規則和原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

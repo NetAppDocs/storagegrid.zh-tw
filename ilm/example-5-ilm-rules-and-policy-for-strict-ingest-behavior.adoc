@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: strict ingest example, example ILM rule, information lifecycle rule examples 
 summary: 您可以使用位置篩選器和規則中嚴格的擷取行為、防止物件儲存在特定的資料中心位置。 
 ---
-= 範例5：嚴格擷取行為的ILM規則與原則
+= StorageGRID 中嚴格擷取行為的 ILM 規則和原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

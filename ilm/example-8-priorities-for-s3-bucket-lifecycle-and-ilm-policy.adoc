@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retention priority, example S3 bucket lifecycle, example ILM policy 
 summary: 根據您的生命週期組態、物件會遵循 S3 儲存區生命週期或 ILM 原則的保留設定。 
 ---
-= 範例 8 ： S3 儲存區生命週期和 ILM 原則的優先順序
+= S3 儲存貯體生命週期與 ILM 原則在 StorageGRID 中的互動方式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

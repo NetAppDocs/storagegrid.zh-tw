@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: edit cloud storage pool 
 summary: 您可以編輯Cloud Storage Pool來變更其名稱、服務端點或其他詳細資料、但是您無法變更Cloud Storage Pool的S3儲存區或Azure容器。 
 ---
-= 編輯雲端儲存資源池
+= 在 StorageGRID 中編輯雲端儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

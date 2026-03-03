@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ingest options, balance ingest, strict ingest, dual commit ingest 
 summary: 瞭解擷取時保護資料的三種選項（平衡、嚴格或雙重承諾）各有哪些優缺點、可協助您決定要為ILM規則選取哪一種選項。 
 ---
-= 擷取選項的優點、缺點和限制
+= StorageGRID 中 ILM 擷取選項的優點、缺點和限制
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

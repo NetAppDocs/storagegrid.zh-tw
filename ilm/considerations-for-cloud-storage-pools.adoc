@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is a cloud storage pool, considerations for a cloud storage pool 
 summary: 如果您打算使用雲端儲存資源池將物件移出StorageGRID 整個作業系統、則必須檢閱設定和使用雲端儲存資源池的考量事項。 
 ---
-= 雲端儲存資源池的考量
+= StorageGRID 中的雲端儲存資源池需求與限制
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

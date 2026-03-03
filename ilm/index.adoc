@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: information lifecycle management overview, about information lifecycle management, ilm overview, about ilm 
 summary: ILM 原則中的資訊生命週期管理（ ILM ）規則會指示 StorageGRID 如何建立及散佈物件資料複本、以及如何隨時間管理這些複本。 
 ---
-= 使用ILM管理物件
+= 使用 ILM 管理 StorageGRID 中的物件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

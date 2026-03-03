@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: example ILM rule, information lifecycle rule examples 
 summary: 您可以使用下列範例規則和原則、確保大於 1 MB 的影像會被銷毀編碼、而且兩個複本會由較小的影像組成。 
 ---
-= 範例3：ILM規則與原則、可更有效保護映像檔案
+= StorageGRID 中用於保護映像檔案的 ILM 規則和原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

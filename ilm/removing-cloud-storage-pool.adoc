@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove cloud storage pool 
 summary: 如果 Cloud Storage Pool 未用於 ILM 規則、而且不包含物件資料、您可以將其移除。 
 ---
-= 移除雲端儲存資源池
+= 在 StorageGRID 中移除雲端儲存資源池
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

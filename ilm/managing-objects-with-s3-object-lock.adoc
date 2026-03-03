@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 object lock, manage objects with object lock 
 summary: 身為網格管理員、您可以為StorageGRID 您的系統啟用S3物件鎖定、並實作符合法規的ILM原則、以確保特定S3儲存區中的物件在指定時間內不會被刪除或覆寫。 
 ---
-= 使用S3物件鎖定來管理物件
+= S3 物件鎖如何保護 StorageGRID 中的物件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
