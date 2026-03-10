@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to validate StorageGRID configuration 
 summary: 在/etc/storagegrid /節點中為StorageGRID 每個節點建立組態檔案之後、您必須驗證這些檔案的內容。 
 ---
-= 驗證StorageGRID配置 (Linux)
+= 在 Linux 上驗證 StorageGRID 組態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

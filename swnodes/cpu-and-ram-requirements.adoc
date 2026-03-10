@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cpu, ram, cpu cores 
 summary: 安裝StorageGRID 支援功能軟體之前、請先確認並設定硬體、使其準備好支援StorageGRID 該系統。 
 ---
-= CPU與RAM需求
+= StorageGRID 的 CPU 和 RAM 需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

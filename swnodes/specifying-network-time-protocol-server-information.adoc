@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to specify Network Time Protocol server information 
 summary: 您必須為StorageGRID 該系統指定網路時間傳輸協定（NTP）組態資訊、以便在不同的伺服器上執行的作業能夠保持同步。 
 ---
-= 指定網路時間傳輸協定伺服器資訊
+= 指定 StorageGRID 的網路時間協定伺服器資訊
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

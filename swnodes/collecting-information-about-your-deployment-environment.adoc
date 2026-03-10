@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to collect information about your vmware deployment environment 
 summary: 在部署網格節點之前、您必須先收集網路組態和VMware環境的相關資訊。 
 ---
-= 收集有關部署環境的資訊（VMware）
+= 收集有關您的 VMware 環境的 StorageGRID 資訊
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to specify Grid Network subnets 
 summary: 您必須指定網格網路上使用的子網路。 
 ---
-= 指定網格網路子網路
+= 指定 StorageGRID 的 Grid Network 子網路
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

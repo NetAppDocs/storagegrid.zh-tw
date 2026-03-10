@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure host storage 
 summary: 您必須為每個 Linux 主機指派區塊儲存磁碟區。 
 ---
-= 配置主機儲存（Linux）
+= 為 Linux 部署配置 StorageGRID 主機儲存
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

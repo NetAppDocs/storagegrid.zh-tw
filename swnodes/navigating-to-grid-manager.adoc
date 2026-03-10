@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to navigate to Grid Manager 
 summary: 您可以使用Grid Manager來定義設定StorageGRID 您的一套系統所需的所有資訊。 
 ---
-= 瀏覽至Grid Manager
+= 導航至 StorageGRID Grid Manager
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

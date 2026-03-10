@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure the host network 
 summary: 在主機上完成Linux安裝之後、您可能需要執行一些額外的組態、以便在每個主機上準備一組適合對應至StorageGRID 稍後部署之支援節點的網路介面。 
 ---
-= 配置主機網路（Linux）
+= 為 Linux 部署配置 StorageGRID 主機網路
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

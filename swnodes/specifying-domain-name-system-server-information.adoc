@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to specify domain name system server information, dns 
 summary: 您必須指定 StorageGRID 系統的 DNS 資訊、才能使用主機名稱而非 IP 位址來存取外部伺服器。 
 ---
-= 指定 DNS 伺服器資訊
+= 指定 StorageGRID 的 DNS 伺服器資訊
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

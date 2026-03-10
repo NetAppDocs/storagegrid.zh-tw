@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to start host service 
 summary: 若要啟動StorageGRID 您的支援節點、並確保在主機重新開機後重新啟動節點、您必須啟用StorageGRID 並啟動該支援中心服務。 
 ---
-= 啟動StorageGRID主機服務 (Linux)
+= 在 Linux 上啟動 StorageGRID 主機服務
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

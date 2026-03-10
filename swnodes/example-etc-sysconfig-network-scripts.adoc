@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to aggregate red hat linux interface, how to aggregate rhel interface, LACP bond, network scripts 
 summary: 您可以使用範例檔案、將四個Linux實體介面集合成單一LACP連結、然後建立三個VLAN介面將連結子化、做StorageGRID 為「物件網格」、「管理」和「用戶端網路」介面。 
 ---
-= 範例 /etc/sysconfig/network-scripts (RHEL)
+= 以下範例展示如何在 RHEL 上將 StorageGRID 的四個實體介面合併為一個綁定。
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

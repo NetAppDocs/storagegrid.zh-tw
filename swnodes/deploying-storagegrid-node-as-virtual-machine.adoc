@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to deploy grid nodes in vsphere or vsphere web client, port, remap, port remap, vmware 
 summary: 您可以使用VMware vSphere Web Client將每個網格節點部署為虛擬機器。在部署期間、每個網格節點都會建立並連線至一個或多個StorageGRID 站台網路。 
 ---
-= 將StorageGRID節點部署為虛擬機器 (VMware)
+= 使用 VMware vSphere 將網格節點部署為 StorageGRID 的虛擬機
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

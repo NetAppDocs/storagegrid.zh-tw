@@ -2,9 +2,9 @@
 permalink: swnodes/automating-installation-linux.html 
 sidebar: sidebar 
 keywords: how to automate linux installation 
-summary: 您可以自動化StorageGRID主機服務的 Linux 安裝和網格節點的設定。 
+summary: 您可以自動安裝 StorageGRID 主機服務並設定 Linux 上的網格節點。 
 ---
-= 自動化安裝（Linux）
+= 在 Linux 系統上自動安裝 StorageGRID 主機服務並設定網格節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

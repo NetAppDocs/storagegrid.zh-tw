@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: software requirements 
 summary: 您可以使用虛擬機器來裝載任何類型的 StorageGRID 節點。每個網格節點都需要一部虛擬機器。 
 ---
-= 軟體需求
+= StorageGRID 的軟體需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure container engine storage volume, Docker, Podman 
 summary: 在安裝 Docker 或 Podman 容器引擎之前，您可能需要格式化儲存磁碟區並掛載它。 
 ---
-= 配置容器引擎儲存磁碟區（Linux）
+= 在 Linux 上為 StorageGRID 配置容器引擎儲存磁碟區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: installation files, how to verify files 
 summary: 如有必要、您可以手動驗證 StorageGRID 安裝歸檔中的檔案。 
 ---
-= 手動驗證安裝檔案（選用）
+= 驗證 StorageGRID 安裝檔案
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

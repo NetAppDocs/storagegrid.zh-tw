@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: installation materials 
 summary: 安裝 StorageGRID 之前、請收集並準備所需的資訊和資料。 
 ---
-= 必要資訊與資料
+= StorageGRID 所需的資訊和資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

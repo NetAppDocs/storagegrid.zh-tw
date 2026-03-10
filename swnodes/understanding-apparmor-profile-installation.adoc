@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to install AppArmor profile 
 summary: 如果您是在自行部署的Ubuntu環境中操作、並使用強制使用的AppArmor存取控制系統、則與您安裝在基礎系統上的套件相關聯的AppArmor設定檔可能會遭到安裝StorageGRID 有支援此功能的相應套件封鎖。 
 ---
-= 了解 AppArmor 設定檔安裝（Ubuntu 和 Debian）
+= 了解 Ubuntu 和 Debian 上 StorageGRID 的 AppArmor 設定檔
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

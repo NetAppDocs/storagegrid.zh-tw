@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: example debian node configuration file, example ubuntu linux node configuration file, example red hat linux node configuration file, example rhel node configuration file 
 summary: 您可以使用範例節點組態檔來協助設定StorageGRID 適用於您的整套系統的節點組態檔。這些範例顯示所有類型網格節點的節點組態檔。 
 ---
-= 節點設定檔範例（Linux）
+= Linux 系統上 StorageGRID 節點的範例設定檔
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

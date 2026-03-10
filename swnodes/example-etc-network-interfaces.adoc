@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: example etc network interfaces 
 summary: /etc/network/interfaces檔案包含三個區段、分別定義實體介面、連結介面和VLAN介面。您可以將這三個範例區段合併成單一檔案、將四個Linux實體介面集合成單一LACP連結、然後建立三個VLAN介面將連結子化、作為StorageGRID 「電網」、「管理」和「用戶端網路」介面使用。 
 ---
-= 範例 /etc/network/interfaces（Ubuntu 和 Debian）
+= 在 Ubuntu 和 Debian 上聚合 StorageGRID 實體介面的範例
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

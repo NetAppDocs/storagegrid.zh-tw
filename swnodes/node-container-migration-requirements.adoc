@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to migrate a node 
 summary: 節點移轉功能可讓您手動將節點從一部主機移至另一部主機。一般而言、這兩個主機都位於同一個實體資料中心。 
 ---
-= 節點容器遷移需求（Linux）
+= StorageGRID 節點容器遷移需求 (Linux)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

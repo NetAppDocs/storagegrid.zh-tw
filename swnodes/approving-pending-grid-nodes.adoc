@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to approve pending grid nodes 
 summary: 您必須先核准每個網格節點、才能加入StorageGRID 該系統。 
 ---
-= 核准擱置的網格節點
+= 批准 StorageGRID 的待處理網格節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

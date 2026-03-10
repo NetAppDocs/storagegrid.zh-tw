@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create rhel ubuntu or debian node configuration files, port, remap, port remap 
 summary: 節點組態檔案是小型的文字檔、可提供StorageGRID 支援此支援所需的資訊、以啟動節點並將其連線至適當的網路和區塊儲存資源。節點組態檔用於虛擬節點、不用於應用裝置節點。 
 ---
-= 為 Linux 部署建立節點設定檔
+= 為 Linux 部署建立 StorageGRID 節點組態檔
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

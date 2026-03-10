@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to review your configuration and complete installation 
 summary: 您必須仔細檢閱輸入的組態資訊、以確保安裝順利完成。 
 ---
-= 檢閱組態並完成安裝
+= 檢查您的 StorageGRID 組態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
