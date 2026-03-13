@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: mib, snmp, monitoring 
 summary: MIB 檔案包含有關網格中節點的受管理資源和服務內容的定義和資訊。您可以存取定義 StorageGRID 物件和通知的 MIB 檔案。這些檔案可用於監控您的網格。 
 ---
-= 存取 MIB 檔案
+= 存取 StorageGRID MIB 檔案
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

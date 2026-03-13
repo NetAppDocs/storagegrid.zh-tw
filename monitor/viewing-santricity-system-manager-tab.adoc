@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SANtricity System Manager tab, hardware diagnostics 
 summary: 「支援系統管理程式」索引標籤可讓您存取《支援系統管理程式》、而無需設定或連接儲存應用裝置的管理連接埠。SANtricity SANtricity您可以使用此索引標籤來檢閱硬體診斷與環境資訊、以及與磁碟機相關的問題。 
 ---
-= 檢視 SANtricity 系統管理員標籤（僅限 E 系列）
+= 檢視 StorageGRID SANtricity System Manager 標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

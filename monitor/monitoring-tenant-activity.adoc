@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to monitor tenant activity 
 summary: 所有 S3 用戶端活動都與 StorageGRID 租戶帳戶相關聯。您可以使用 Grid Manager 來監控所有租戶或特定租戶的儲存使用量或網路流量。您可以使用稽核記錄或 Grafana 儀表板來收集租戶如何使用 StorageGRID 的詳細資訊。 
 ---
-= 監控租戶活動
+= 監控 StorageGRID 中的租戶活動
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ilm tab 
 summary: 'ILM 索引標籤提供資訊生命週期管理 \(ILM\ 作業的相關資訊。' 
 ---
-= 檢視ILM索引標籤
+= 檢視 StorageGRID ILM 索引標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

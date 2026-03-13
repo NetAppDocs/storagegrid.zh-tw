@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create custom alert rules 
 summary: 您可以建立自訂警示規則、以定義自己觸發警示的條件。 
 ---
-= 建立自訂警示規則
+= 在 StorageGRID 中建立自訂警示規則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

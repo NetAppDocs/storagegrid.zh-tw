@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to manage alert rules 
 summary: 警示規則定義觸發特定警示的條件。包含一組預設警示規則、您可以使用或修改這些規則、也可以建立自訂警示規則。StorageGRID 
 ---
-= 檢視警示規則
+= 檢視 StorageGRID 警示規則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

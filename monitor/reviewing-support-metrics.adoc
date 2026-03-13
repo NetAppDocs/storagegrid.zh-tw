@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view support metrics, how to review support metrics 
 summary: 疑難排解問題時、您可以與技術支援部門合作、檢閱StorageGRID 有關您的整套系統的詳細指標和圖表。 
 ---
-= 檢視支援指標
+= 檢閱 StorageGRID 支援指標
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

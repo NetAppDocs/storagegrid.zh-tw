@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, monitor connection, cross grid replication metrics 
 summary: 您可以監控所有網格同盟連線的基本資訊、特定連線的詳細資訊、或是關於跨網格複寫作業的 Prometheus 指標。您可以從任一網格監控連線。 
 ---
-= 監控網格同盟連線
+= 監控 StorageGRID 網格聯盟連線
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: lifecycle management, lifecycle, monitoring, ILM, information lifecycle management 
 summary: 資訊生命週期管理（ILM）系統可為儲存在網格上的所有物件提供資料管理功能。您必須監控 ILM 作業、以瞭解網格是否能處理目前負載、或是否需要更多資源。 
 ---
-= 監控資訊生命週期管理
+= 監控 StorageGRID 中的資訊生命週期管理
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

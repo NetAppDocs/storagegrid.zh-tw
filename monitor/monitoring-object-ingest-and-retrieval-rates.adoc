@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object ingest rates, object retrieval rates, monitor s3, client operations 
 summary: 您可以監控物件擷取和擷取速率、以及物件計數、查詢和驗證的度量。您可以檢視用戶端應用程式在StorageGRID 讀取、寫入及修改物件時、成功和失敗的嘗試次數。 
 ---
-= 監控 S3 用戶端作業
+= 監控 StorageGRID 中的 S3 用戶端作業
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

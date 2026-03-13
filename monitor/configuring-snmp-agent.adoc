@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: snmp agent, mib, trap, inform 
 summary: 您可以將 StorageGRID SNMP 代理程式設定為使用協力廠商 SNMP 管理系統來進行唯讀 MIB 存取和通知。 
 ---
-= 設定SNMP代理程式
+= 在 StorageGRID 中設定 SNMP 代理程式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

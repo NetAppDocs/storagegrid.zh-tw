@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use snmp notifications for alerts 
 summary: 如果您想StorageGRID 要在警示發生時傳送SNMP通知、您必須啟用StorageGRID 此功能、並設定一個或多個設陷目的地。 
 ---
-= 設定SNMP警示通知
+= 設定 StorageGRID 警示的 SNMP 通知
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

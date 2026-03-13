@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to review audit messages, how to view audit messages 
 summary: 稽核訊息可協助您更深入瞭解StorageGRID 您的作業系統的詳細操作。您可以使用稽核記錄來疑難排解問題、並評估效能。 
 ---
-= 檢閱稽核訊息
+= 檢閱 StorageGRID 稽核訊息
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

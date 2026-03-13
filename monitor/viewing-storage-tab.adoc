@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage tab 
 summary: 「Storage（儲存設備）」索引標籤摘要說明儲存可用度和其他儲存指標。 
 ---
-= 檢視「儲存設備」索引標籤
+= 檢視 StorageGRID 儲存選項卡
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

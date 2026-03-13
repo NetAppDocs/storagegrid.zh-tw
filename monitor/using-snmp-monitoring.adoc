@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: snmp, monitoring 
 summary: 如果您想StorageGRID 要使用簡易網路管理傳輸協定（SNMP）監控效能、您必須設定StorageGRID 包含在更新中的SNMP代理程式。 
 ---
-= 使用SNMP監控
+= 在 StorageGRID 中使用 SNMP 監控
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: overview tab 
 summary: 「總覽」索引標籤提供每個節點的基本資訊。也會顯示目前影響節點的任何警示。 
 ---
-= 檢視「總覽」索引標籤
+= 檢視 StorageGRID 概覽標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

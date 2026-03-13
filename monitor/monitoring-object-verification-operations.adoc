@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object, verification 
 summary: 這個支援系統可驗證儲存節點上物件資料的完整性、同時檢查毀損和遺失的物件。StorageGRID 
 ---
-= 監控物件驗證作業
+= 監控 StorageGRID 中的物件驗證作業
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

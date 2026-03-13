@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to disable alert rules, how to remove a custom alert rule 
 summary: 或者、您可以設定靜音、以暫時抑制警示通知。 
 ---
-= 靜音警示通知
+= 在 StorageGRID 中靜音警示通知
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: alerts reference 
 summary: 此參考會列出出現在 Grid Manager 中的預設警示。建議的動作會顯示在您收到的警示訊息中。 
 ---
-= 警示參考資料
+= StorageGRID 中的警示
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

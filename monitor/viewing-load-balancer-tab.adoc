@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: load balancer tab 
 summary: 負載平衡器索引標籤包含與負載平衡器服務作業相關的效能和診斷圖表。 
 ---
-= 檢視負載平衡器索引標籤
+= 檢視 StorageGRID 負載平衡器索引標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

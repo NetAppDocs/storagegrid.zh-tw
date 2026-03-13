@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: nodes page 
 summary: 當您需要比儀表板更詳細的 StorageGRID 系統資訊時、可以使用「節點」頁面來檢視整個網格、網格中的每個站台、以及站台上的每個節點的度量。 
 ---
-= 檢視「節點」頁面
+= 檢視 StorageGRID Nodes 頁面
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

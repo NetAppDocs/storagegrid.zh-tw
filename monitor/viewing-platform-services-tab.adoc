@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: platform services tab 
 summary: Platform Services（平台服務）索引標籤提供站台上任何S3平台服務作業的相關資訊。 
 ---
-= 檢視平台服務索引標籤
+= 檢視 StorageGRID 平台服務標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: autosupport, triggering autosupport, manually triggering autosupport, autosupport triggers 
 summary: 為了協助技術支援人員疑難排解 StorageGRID 系統的問題、您可以手動觸發要傳送的 AutoSupport 套件。 
 ---
-= 手動觸發 AutoSupport 套件
+= 手動觸發 StorageGRID AutoSupport 套件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

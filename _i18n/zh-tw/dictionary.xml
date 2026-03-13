@@ -13465,7 +13465,6 @@
   <block id="e57b0f10d4342d5673225274ed2bb775" category="paragraph">*附註*：觸發此警示時、系統會立即傳送通知（除非被另一個靜音所抑制）。如果目前觸發此警示、可能需要幾分鐘的時間才能傳送電子郵件或SNMP通知、以及更新「警示」頁面。</block>
   <block id="857d5d7ee65510e6e075bcc30f5897c3" category="paragraph"><block ref="857d5d7ee65510e6e075bcc30f5897c3" category="inline-link-macro-rx"></block></block>
   <block id="5aea472d3db9f9834f499a6e4dee09df" category="summary">如果您想StorageGRID 要在警示發生時傳送SNMP通知、您必須啟用StorageGRID 此功能、並設定一個或多個設陷目的地。</block>
-  <block id="119cbf7ab94b300da64ed851a97d7cca" category="doc">設定SNMP警示通知</block>
   <block id="7a7c42d7b65400e682853261ace60a8c" category="paragraph">若要瞭解如何設定 SNMP 代理程式，請參閱<block ref="f9a4d9ab77328020922c10b14fc934b8" category="inline-link-macro-rx"></block>。</block>
   <block id="4221e8ead34b19955f0cccbc4e63fa29" category="paragraph">設定StorageGRID 完SURE SNMP代理程式後、即可傳送兩種事件導向通知：</block>
   <block id="47c787e9853c03aaa713fea6b7b9108b" category="list-text">設陷是 SNMP 代理程式傳送的通知、不需要管理系統的認可。陷阱可讓管理系統知道StorageGRID 在某些情況下發生、例如觸發警示。SNMP的所有三個版本均支援陷阱。</block>
@@ -13964,7 +13963,6 @@
   <block id="bce44e0c4105003ae5866334c2f3a117" category="image-alt">節點頁面站台層級平台服務</block>
   <block id="df3ce291724d15e3e72d26432c87aede" category="paragraph">如需 S3 平台服務的詳細資訊，包括疑難排解詳細資料<block ref="4640a278e78a848b558df56bce73aa30" category="inline-link-macro-rx"></block>，請參閱。</block>
   <block id="fceb307437ab4b102d4b15c88a70796a" category="summary">「支援系統管理程式」索引標籤可讓您存取《支援系統管理程式》、而無需設定或連接儲存應用裝置的管理連接埠。SANtricity SANtricity您可以使用此索引標籤來檢閱硬體診斷與環境資訊、以及與磁碟機相關的問題。</block>
-  <block id="ab30bf592c1429bfb782e86de2b48695" category="doc">檢視 SANtricity 系統管理員標籤（僅限 E 系列）</block>
   <block id="c1b333cc299b106e6ee2f4ef947ed700" category="inline-link">維護組態程序</block>
   <block id="2bddcaefbdf0415bd04b3330132c6df7" category="admonition">從SANtricity Grid Manager存取「支援系統管理程式」通常只是為了監控應用裝置硬體、以及設定E系列AutoSupport 的功能。SANtricity 系統管理員中的許多功能和作業（例如升級韌體）不適用於監控 StorageGRID 應用裝置。為避免發生問題、請務必遵循設備的硬體維護指示。若要升級 SANtricity 韌體、請參閱<block ref="7374623d34a4f09bdc402a2339df5b21" category="inline-link-rx"></block>儲存設備的。</block>
   <block id="146fff57b79cd1671a8fd5d2b3e03f26" category="admonition">只有使用 E 系列硬體的儲存設備節點才會顯示 SANtricity 系統管理員標籤。</block>
@@ -22319,4 +22317,55 @@
   <block id="99338b2092d742dd94cdbfda526c0a11" category="doc">了解 Ubuntu 和 Debian 上 StorageGRID 的 AppArmor 設定檔</block>
   <block id="98aa7914da23c23c17397495d2e4e32f" category="doc">在 Linux 上驗證 StorageGRID 組態</block>
   <block id="fdc2003b3d4c7693ecfe54d694baa432" category="doc">了解安裝 StorageGRID 後所需和選用的步驟</block>
+  <block id="7f28f4bb5b2c2a034c9343cdc4665220" category="doc">了解 StorageGRID bycast.log</block>
+  <block id="45305581a630cb910c895edc933b8f96" category="doc">存取 StorageGRID MIB 檔案</block>
+  <block id="049f1042daa5629999abdfb7a9cf59b9" category="doc">StorageGRID 中的警示</block>
+  <block id="ba9de53ee1533082facf9b57f60c7324" category="doc">收集 StorageGRID 日誌檔案和系統資料</block>
+  <block id="98a50730c42a34ec17b7528a061ea365" category="doc">StorageGRID 中常用的 Prometheus 指標</block>
+  <block id="dae13a2a792b7021ff6f581d7786b1ec" category="doc">在 StorageGRID 中設定記錄管理</block>
+  <block id="70d30a00ec4787f8475a80796ccb1bb3" category="doc">在 StorageGRID 中設定 SNMP 代理程式</block>
+  <block id="4acad7082841531856b85f3ed1df5ff2" category="doc">StorageGRID 中的外部 syslog 伺服器</block>
+  <block id="6e31e4043a4c6d78c773818d76cf4db0" category="doc">在 StorageGRID 中建立自訂警示規則</block>
+  <block id="739de284eaa3753eb7f3f5ff1b929fa7" category="doc">為 StorageGRID 建立自訂監控應用程式</block>
+  <block id="68e3f242c1f6cea7ecb724db386a2110" category="doc">StorageGRID 中的部署和維護日誌</block>
+  <block id="7b65ba794877fcee9caf04ac7a44ecbd" category="doc">停用 StorageGRID 中的警示規則</block>
+  <block id="409a6401d7ef6f78046420ec4f3d1a74" category="doc">在 StorageGRID 中編輯警示規則</block>
+  <block id="a04838d927055093bf6c3a40faf1208e" category="doc">設定 StorageGRID 警示的電子郵件通知</block>
+  <block id="7ecf02edabde6433162c4259fcb868e5" category="doc">監控 StorageGRID 網格聯盟連線</block>
+  <block id="e8ff5fe9b8a5ce650694e7b950daea90" category="doc">在 StorageGRID 中監控什麼和何時監控</block>
+  <block id="c9ae141d4d9b875d44329c6bd74d98e7" category="doc">StorageGRID 日誌檔案</block>
+  <block id="ee154ecd8ba1c96681f5e925026c66a9" category="doc">變更 StorageGRID 中的 I/O 優先順序</block>
+  <block id="913df6450163ad718ef4b7cfc3b933e7" category="doc">管理 StorageGRID 中的警示</block>
+  <block id="5937cc48cbc3369a4adaa644908210c6" category="doc">手動觸發 StorageGRID AutoSupport 套件</block>
+  <block id="7a5c0f7c67c117a5d9d97ce74e82d799" category="doc">監控 StorageGRID 中的資訊生命週期管理</block>
+  <block id="08a23f1bbe23d5e4cbc2e399ac6e7ab4" category="doc">監控 StorageGRID 中的負載平衡作業</block>
+  <block id="8c8e3b04a4fe64a691c823587cb22f3b" category="doc">監控 StorageGRID 中的網路和系統資源</block>
+  <block id="18552c883814d30057c91d71a45f9304" category="doc">監控 StorageGRID 中的 S3 用戶端作業</block>
+  <block id="0230d2c428df228a3682a3ae2a1ef27e" category="doc">監控 StorageGRID 中的物件驗證作業</block>
+  <block id="134a662017a272818194bbd64fa5c58c" category="doc">監控 StorageGRID 中的 PUT 和 GET 效能</block>
+  <block id="91728faf28e7f6d1ca8c54f58ef7ebc8" category="doc">監控 StorageGRID 中的儲存容量</block>
+  <block id="6c2a75e3c4c2f4023fe27ce7dd15e21a" category="doc">監控 StorageGRID 中的系統健全狀況</block>
+  <block id="a03ba7227dbd877e7c9fca947303776d" category="doc">監控 StorageGRID 中的租戶活動</block>
+  <block id="4b7308b22737a9f8acd730138fdacd79" category="doc">移除 StorageGRID 中的自訂警示規則</block>
+  <block id="d9fcc54b472c52af6b5c1ec36e5d39a9" category="doc">檢閱 StorageGRID 稽核訊息</block>
+  <block id="6cf857ac505ca9942d049ab3e3c1eb86" category="doc">檢閱 StorageGRID 支援指標</block>
+  <block id="fa1a4c23dbd77a2563d0ea580bc2be93" category="doc">在 StorageGRID 中執行診斷</block>
+  <block id="43a8cf96f4420b42f6b7231691e94744" category="doc">在 StorageGRID 中靜音警示通知</block>
+  <block id="121679d8674b25db5bb324f6ed9306f4" category="doc">設定 StorageGRID 警示的 SNMP 通知</block>
+  <block id="ae5a1c7bed1dbbe6ebc154a8c5e12dd2" category="doc">更新 StorageGRID SNMP 代理程式</block>
+  <block id="5c0a0d990b756bb3ce70e0b4aa822ff7" category="doc">在 StorageGRID 中使用 SNMP 監控</block>
+  <block id="9f607b085bb577fe35f890e157c5530f" category="doc">使用 StorageGRID Tasks 標籤</block>
+  <block id="90f800e21d011b471797bac9d6ca1cee" category="doc">檢視 StorageGRID 警示規則</block>
+  <block id="29305d75c2ce9c809d5bb422fecb555e" category="doc">在 StorageGRID 中檢視及管理儀表板</block>
+  <block id="373e14f3c1be1f85f9d4dce56ae641cd" category="doc">檢視 StorageGRID 硬體索引標籤</block>
+  <block id="c67d938ec9c379583a3711bab5ab05aa" category="doc">檢視 StorageGRID ILM 索引標籤</block>
+  <block id="dbaac8c5e2ead6527db7c641925503ff" category="doc">檢視 StorageGRID 負載平衡器索引標籤</block>
+  <block id="f2b6e0bb5600646b2c610b3f4ba68de7" category="doc">檢視 StorageGRID 管理磁碟機標籤</block>
+  <block id="c4ab9aa506740da62b8c7bc1c883e7de" category="doc">檢視 StorageGRID 網路標籤</block>
+  <block id="c13e95ef9d27911974b4bc4c13a6d378" category="doc">檢視 StorageGRID Nodes 頁面</block>
+  <block id="a7c347c86cc90d073fd2bf2543fb81f1" category="doc">檢視 StorageGRID Objects 標籤</block>
+  <block id="0684e9b85e5bad059b71c21c41c22b90" category="doc">檢視 StorageGRID 概覽標籤</block>
+  <block id="48c30909d9f0243c276dd341dc3fc8b2" category="doc">檢視 StorageGRID 平台服務標籤</block>
+  <block id="e0690abb592b8f7ab4c32d62d13d9791" category="doc">檢視 StorageGRID SANtricity System Manager 標籤</block>
+  <block id="9ef07a976193836337ebc26e151e35f5" category="doc">檢視 StorageGRID 儲存選項卡</block>
 </blocks>

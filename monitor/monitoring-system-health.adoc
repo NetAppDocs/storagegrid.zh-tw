@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to monitor system health, how to view system health 
 summary: 每天監控 StorageGRID 系統的整體健全狀況。 
 ---
-= 監控系統健全狀況
+= 監控 StorageGRID 中的系統健全狀況
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

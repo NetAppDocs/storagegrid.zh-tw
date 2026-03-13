@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to update the SNMP agent 
 summary: 您可以停用 SNMP 通知、更新社群字串、或新增或移除代理程式位址、 USM 使用者和設陷目的地。 
 ---
-= 更新SNMP代理程式
+= 更新 StorageGRID SNMP 代理程式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

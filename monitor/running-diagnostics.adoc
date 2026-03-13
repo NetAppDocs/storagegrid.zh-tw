@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to run diagnostics 
 summary: 疑難排解問題時、您可以與技術支援部門合作、在StorageGRID 您的故障排除系統上執行診斷、並檢閱結果。 
 ---
-= 執行診斷
+= 在 StorageGRID 中執行診斷
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

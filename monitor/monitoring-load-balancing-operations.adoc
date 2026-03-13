@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: load balancing, monitoring 
 summary: 如果您使用負載平衡器來管理用戶端與StorageGRID VMware的連線、則應先設定系統、然後在進行任何組態變更或執行擴充之後、監控負載平衡作業。 
 ---
-= 監控負載平衡作業
+= 監控 StorageGRID 中的負載平衡作業
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

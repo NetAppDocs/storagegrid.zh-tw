@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: objects tab 
 summary: 物件索引標籤提供 S3 擷取和擷取速率的相關資訊。 
 ---
-= 檢視「物件」索引標籤
+= 檢視 StorageGRID Objects 標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

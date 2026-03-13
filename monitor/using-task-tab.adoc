@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Tasks tab, rename node, reboot node, storage state, maintenance mode 
 summary: 所有節點均顯示「任務」標籤。您可以使用此標籤重新命名或重新啟動節點，或將設備節點置於維護模式。對於儲存節點，您可以設定儲存狀態。 
 ---
-= 使用工作索引標籤
+= 使用 StorageGRID Tasks 標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

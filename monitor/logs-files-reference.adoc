@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: log, logs, log files 
 summary: 提供記錄、可用來擷取事件、診斷訊息和錯誤狀況。StorageGRID系統可能會要求您收集記錄檔、並將其轉送至技術支援部門、以協助進行疑難排解。 
 ---
-= 記錄檔參考
+= StorageGRID 日誌檔案
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

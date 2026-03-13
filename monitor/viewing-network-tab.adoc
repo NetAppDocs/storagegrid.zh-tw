@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network tab 
 summary: 「網路」索引標籤會顯示圖表、顯示在節點、站台或網格上所有網路介面上接收和傳送的網路流量。 
 ---
-= 檢視「網路」索引標籤
+= 檢視 StorageGRID 網路標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

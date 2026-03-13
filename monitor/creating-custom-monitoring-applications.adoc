@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: custom monitoring, monitoring, dashboard 
 summary: 您可以使用StorageGRID Grid Management API提供的功能表來建置自訂的監控應用程式和儀表板。 
 ---
-= 建立自訂監控應用程式
+= 為 StorageGRID 建立自訂監控應用程式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

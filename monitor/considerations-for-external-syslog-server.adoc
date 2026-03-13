@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: syslog server, external syslog server, sizing, sizing syslog server, audit messages 
 summary: 外部syslog伺服器是StorageGRID 指不屬於功能區的伺服器、可用來在單一位置收集系統稽核資訊。使用外部 Syslog 伺服器可減少管理節點上的網路流量、並更有效率地管理稽核資訊。 
 ---
-= 使用外部 Syslog 伺服器的考量事項
+= StorageGRID 中的外部 syslog 伺服器
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

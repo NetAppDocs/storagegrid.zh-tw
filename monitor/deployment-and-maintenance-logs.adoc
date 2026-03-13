@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: deployment, logs, Maintenance 
 summary: 您可以使用部署和維護記錄來疑難排解問題。 
 ---
-= 部署與維護記錄
+= StorageGRID 中的部署和維護日誌
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Manage drives tab, hardware diagnostics, fail drive, logically replace drive 
 summary: 「管理磁碟機」索引標籤可讓您存取詳細資料、並在支援此功能的應用裝置中執行磁碟機的疑難排解和維護工作。 
 ---
-= 檢視管理磁碟機索引標籤
+= 檢視 StorageGRID 管理磁碟機標籤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

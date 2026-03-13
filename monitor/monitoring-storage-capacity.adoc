@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to monitor storage capacity 
 summary: 監控可用空間總量、確保StorageGRID 不讓物件或物件中繼資料的儲存空間耗盡。 
 ---
-= 監控儲存容量
+= 監控 StorageGRID 中的儲存容量
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

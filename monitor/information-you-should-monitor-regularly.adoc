@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: when to monitor, what to monitor 
 summary: 即使 StorageGRID 系統在發生錯誤或網格的某些部分無法使用時仍可繼續運作、您仍應在潛在問題影響網格效率或可用度之前進行監控和解決。 
 ---
-= 監控內容和時間
+= 在 StorageGRID 中監控什麼和何時監控
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

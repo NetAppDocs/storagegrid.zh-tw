@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bycast, log 
 summary: '檔案/var/local/log/bycast.log是StorageGRID 適用於整個解決程序的主要疑難排解檔案。每個網格節點都有一個 `bycast.log`檔案。檔案包含該網格節點的特定訊息。' 
 ---
-= 關於bycast.log
+= 了解 StorageGRID bycast.log
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

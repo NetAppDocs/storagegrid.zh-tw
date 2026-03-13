@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view dashboard, how to configure dashboard 
 summary: 您可以使用儀表板一眼就能監控系統活動。您可以建立自訂儀表板來監控 StorageGRID 的實作。 
 ---
-= 檢視及管理儀表板
+= 在 StorageGRID 中檢視及管理儀表板
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

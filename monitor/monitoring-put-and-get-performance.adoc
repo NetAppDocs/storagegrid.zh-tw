@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: put, get, performance 
 summary: 您可以監控特定作業（例如物件存放區和擷取）的效能、以協助識別可能需要進一步調查的變更。 
 ---
-= 監控成效、獲得效能
+= 監控 StorageGRID 中的 PUT 和 GET 效能
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
