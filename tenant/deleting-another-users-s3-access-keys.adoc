@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete access key for other user 
 summary: 如果您使用的是S3租戶、且您擁有適當的權限、則可以刪除其他使用者的S3存取金鑰。刪除存取金鑰之後、就無法再使用它來存取租戶帳戶中的物件和儲存區。 
 ---
-= 刪除其他使用者的S3存取金鑰
+= 刪除 StorageGRID 中其他使用者的 S3 存取金鑰
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

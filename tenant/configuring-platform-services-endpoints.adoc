@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure platform services endpoint 
 summary: 您必須先將至少一個端點設定為平台服務的目的地、才能為某個服務區段設定平台服務。 
 ---
-= 設定平台服務端點
+= 在 StorageGRID 中設定平台服務端點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

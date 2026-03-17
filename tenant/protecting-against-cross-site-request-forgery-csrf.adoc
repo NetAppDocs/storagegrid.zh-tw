@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to protect against cross-site request forgery, csrf 
 summary: 您可以使用CSRF權杖來強化使用Cookie的驗證功能、協助防範跨網站要求偽造（CSRF）攻擊StorageGRID 。Grid Manager與租戶管理程式會自動啟用此安全功能、其他API用戶端則可選擇是否在登入時啟用。 
 ---
-= 防範跨網站要求偽造（CSRF）
+= 防止 StorageGRID 中的跨網站請求偽造
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

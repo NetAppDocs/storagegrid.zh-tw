@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to change bucket versioning, disabled versioning, enabled versioning, suspended versioning 
 summary: 如果您使用的是 S3 租戶、則可以變更 S3 儲存區的版本設定狀態。 
 ---
-= 變更儲存區的物件版本設定
+= 變更 StorageGRID 中 S3 儲存貯體的物件版本管理
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

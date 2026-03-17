@@ -1,10 +1,10 @@
 ---
 permalink: tenant/manage-bucket-policy.html 
 sidebar: sidebar 
-keywords: how to create S3 tenant groups, federated group, local group 
+keywords: bucket policy, S3 bucket policy, manage bucket policy 
 summary: 您可以控制 S3 貯體和該貯體中物件的使用者存取。 
 ---
-= 管理貯體原則
+= 管理 StorageGRID 儲存貯體原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

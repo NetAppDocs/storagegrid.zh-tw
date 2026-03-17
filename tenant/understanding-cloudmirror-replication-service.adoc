@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cloudmirror replication 
 summary: 如果您想StorageGRID 要將新增至儲存區的指定物件複寫到一或多個目的地儲存區、則可以針對S3儲存區啟用CloudMirror複寫。 
 ---
-= 瞭解 CloudMirror 複寫服務
+= 了解 StorageGRID CloudMirror 複製服務
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to manage bucket consistency, how to change bucket consistency, read after new write, read-after-new-write, strong site, strong-site, strong global, strong-global 
 summary: 一致性值可用來指定儲存區設定變更的可用度、並在儲存節點和站台之間的物件可用度與這些物件一致性之間取得平衡。您可以將一致性值變更為不同於預設值、讓用戶端應用程式能夠滿足其作業需求。 
 ---
-= 管理貯體一致性
+= 管理 StorageGRID 儲存貯體一致性
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

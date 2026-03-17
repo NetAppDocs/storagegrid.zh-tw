@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure search integration service 
 summary: 您可以建立搜尋整合組態 XML 、並使用 Tenant Manager 將 XML 套用至貯體、以啟用貯體的搜尋整合。 
 ---
-= 設定搜尋整合服務
+= 在 StorageGRID 中設定搜尋整合服務
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

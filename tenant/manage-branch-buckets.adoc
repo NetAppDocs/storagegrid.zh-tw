@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create branch bucket 
 summary: 使用租戶管理器建立和查看分支儲存桶的詳細資訊。 
 ---
-= 管理分支儲存桶
+= 管理 StorageGRID 分支儲存區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

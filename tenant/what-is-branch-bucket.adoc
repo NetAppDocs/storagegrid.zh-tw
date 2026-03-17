@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create branch bucket 
 summary: 分支儲存桶提供對儲存桶中在特定時間存在的物件的存取。 
 ---
-= 什麼是分支桶？
+= 了解 StorageGRID 分支儲存貯體
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

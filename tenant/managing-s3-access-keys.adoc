@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to manage s3 access key 
 summary: S3租戶帳戶的每位使用者都必須擁有存取金鑰、才能在StorageGRID 這個系統中儲存及擷取物件。存取金鑰包含存取金鑰ID和秘密存取金鑰。 
 ---
-= 管理S3存取金鑰
+= 在 StorageGRID 中管理 S3 存取金鑰
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create other user S3 access key 
 summary: 如果您使用的是S3租戶、而且您擁有適當的權限、則可以為其他使用者建立S3存取金鑰、例如需要存取儲存區和物件的應用程式。 
 ---
-= 建立其他使用者的S3存取金鑰
+= 在 StorageGRID 中建立其他使用者的 S3 存取金鑰
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

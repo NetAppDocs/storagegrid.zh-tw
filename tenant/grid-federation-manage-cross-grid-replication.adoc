@@ -2,9 +2,9 @@
 permalink: tenant/grid-federation-manage-cross-grid-replication.html 
 sidebar: sidebar 
 keywords: grid federation, cross-grid replication, use grid federation connection, replicate client delete markers, s3 bucket 
-summary: 如果您的租戶帳戶在建立時已獲指派「使用網格同盟連線」權限、您可以使用跨網格複寫、在租戶來源網格上的貯體和租戶目的地網格上的貯體之間自動複寫物件。跨網格複寫可在一個或兩個方向進行。 
+summary: 如果您的租用戶帳戶在建立時被指派了 Use grid federation connection 權限，則可以使用跨網格複製功能，在租用戶來源網格的儲存桶和租用戶目標網格的儲存桶之間自動複製物件。跨網格複製可以單向或雙向進行。 
 ---
-= 管理跨網格複寫
+= 在 StorageGRID 中管理跨網格複寫
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to specify platform services urn 
 summary: 當您建立平台服務端點時、必須指定唯一的資源名稱（URN）。當您為平台服務建立組態 XML 時、您將使用 URN 來參考端點。每個端點的URN必須是唯一的。 
 ---
-= 指定平台服務端點的URN
+= 為 StorageGRID 平台服務端點指定 URN
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

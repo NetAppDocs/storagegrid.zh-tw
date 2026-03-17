@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to enable or disable last access time updates 
 summary: 當網格管理員建立StorageGRID 資訊生命週期管理（ILM）規則以供選用時、他們可以選擇性地指定物件的上次存取時間、以決定是否要將該物件移至不同的儲存位置。如果您使用的是S3租戶、您可以針對S3儲存區中的物件啟用上次存取時間更新、藉此充分利用這類規則。 
 ---
-= 啟用或停用上次存取時間更新
+= 啟用或停用 StorageGRID 中的上次存取時間更新
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

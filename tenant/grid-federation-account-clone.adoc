@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: account clone, cloning tenant, grid federation, cross-grid replication 
 summary: 如果建立或編輯租戶以使用網格同盟連線、則該租戶會從一個 StorageGRID 系統（來源租戶）複寫到另一個 StorageGRID 系統（複本租戶）。複寫租用戶之後、任何新增至來源租用戶的群組和使用者都會複製到複本租用戶。 
 ---
-= 複製租戶群組和使用者
+= 在 StorageGRID 中複製租戶群組和使用者
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

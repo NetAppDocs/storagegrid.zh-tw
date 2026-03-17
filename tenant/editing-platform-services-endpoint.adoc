@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to edit platform services endpoint 
 summary: 您可以編輯平台服務端點的組態、以變更其名稱、URI或其他詳細資料。例如、您可能需要更新過期的認證資料、或是變更URI以指向備份Elasticsearch索引以進行容錯移轉。您無法變更平台服務端點的URN。 
 ---
-= 編輯平台服務端點
+= 在 StorageGRID 中編輯平台服務端點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

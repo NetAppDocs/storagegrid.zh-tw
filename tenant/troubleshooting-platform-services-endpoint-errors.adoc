@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot platform services endpoint 
 summary: 如果 StorageGRID 嘗試與平台服務端點通訊時發生錯誤、儀表板上會顯示訊息。在「Platform Services Endives」（平台服務端點）頁面上、最後一個錯誤欄位會指出錯誤發生的時間已過多久。如果端點認證的相關權限不正確、則不會顯示錯誤。 
 ---
-= 疑難排解平台服務端點錯誤
+= 疑難排解 StorageGRID 平台服務端點錯誤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

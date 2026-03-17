@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create local tenant users, manage users 
 summary: 您可以建立本機使用者並將其指派給本機群組、以決定這些使用者可以存取哪些功能。租戶管理程式包含一個預先定義的本機使用者、名稱為「 root 」。雖然您可以新增及移除本機使用者、但無法移除根使用者。 
 ---
-= 管理使用者
+= 管理 StorageGRID 租戶使用者
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

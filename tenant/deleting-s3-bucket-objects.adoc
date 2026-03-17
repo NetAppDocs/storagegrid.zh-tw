@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete bucket objects, empty bucket 
 summary: 您可以使用 Tenant Manager 刪除一個或多個貯體中的物件。 
 ---
-= 刪除貯體中的物件
+= 從 StorageGRID S3 儲存貯體中刪除物件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

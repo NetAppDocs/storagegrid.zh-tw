@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to understand tenant management api 
 summary: 您可以使用租戶管理REST API（而非租戶管理程式使用者介面）來執行系統管理工作。例如、您可能想要使用API來自動化作業、或更快建立多個實體、例如使用者。 
 ---
-= 瞭解租戶管理API
+= 了解 StorageGRID Tenant Management API
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use identity federation, how to use federated groups with Tenant Manager 
 summary: 使用身分識別聯盟可更快設定租戶群組和使用者、並可讓租戶使用者使用熟悉的認證登入租戶帳戶。 
 ---
-= 使用身分識別聯盟
+= 在 StorageGRID 中使用身分識別聯盟
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

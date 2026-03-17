@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete S3 bucket 
 summary: 您可以使用租戶管理程式刪除空的S3儲存區。 
 ---
-= 刪除S3儲存區
+= 刪除 StorageGRID S3 儲存貯體
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to edit tenant group name 
 summary: 您可以編輯群組的顯示名稱。您無法編輯群組的唯一名稱。 
 ---
-= 編輯群組名稱
+= 在 StorageGRID 中編輯租戶群組名稱
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure cross-origin resource sharing, cors 
 summary: 如果您想讓其他網域中的 Web 應用程式能夠存取 S3 儲存區中的儲存區和物件、您可以為 S3 儲存區設定跨來源資源共用（ CORS ）。 
 ---
-= 為儲存桶和物件配置StorageGRID CORS
+= 在 StorageGRID 中設定 S3 儲存貯體的 CORS
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

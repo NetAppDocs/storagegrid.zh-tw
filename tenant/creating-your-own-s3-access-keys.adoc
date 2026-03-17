@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create your own S3 access key 
 summary: 如果您使用的是S3租戶、而且您擁有適當的權限、則可以建立自己的S3存取金鑰。您必須擁有存取金鑰才能存取您的貯體和物件。 
 ---
-= 建立自己的S3存取金鑰
+= 在 StorageGRID 中建立您自己的 S3 存取金鑰
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

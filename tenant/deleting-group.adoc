@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete tenant group 
 summary: 您可以從系統中刪除群組。只屬於該群組的任何使用者將無法再登入租戶管理程式或使用租戶帳戶。 
 ---
-= 刪除群組
+= 刪除 StorageGRID 租用戶群組
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

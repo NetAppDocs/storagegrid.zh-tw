@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view bucket details 
 summary: 您可以檢視租戶帳戶中的貯體。 
 ---
-= 檢視貯體詳細資料
+= 在 StorageGRID 中檢視 S3 儲存貯體詳細資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

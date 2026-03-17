@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tenant management permissions 
 summary: 建立租戶群組之前、請先考量您要指派給該群組的權限。租戶管理權限可決定使用者可以使用租戶管理程式或租戶管理API執行哪些工作。使用者可以屬於一或多個群組。如果使用者屬於多個群組、則權限是累積性的。 
 ---
-= 租戶管理權限
+= StorageGRID 租戶管理權限
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

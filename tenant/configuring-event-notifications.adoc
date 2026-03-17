@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure event notifications, bucket notification 
 summary: 您可以建立通知組態 XML 、並使用 Tenant Manager 將 XML 套用至貯體、以啟用貯體的通知。 
 ---
-= 設定事件通知
+= 在 StorageGRID 中設定事件通知
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

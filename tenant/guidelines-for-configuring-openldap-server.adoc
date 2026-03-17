@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure open ldap 
 summary: 如果您要使用OpenLDAP伺服器進行身分識別聯盟、則必須在OpenLDAP伺服器上設定特定設定。 
 ---
-= 設定OpenLDAP伺服器的準則
+= 為 StorageGRID 設定 OpenLDAP 伺服器
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

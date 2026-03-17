@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view and edit group 
 summary: 當您檢視群組的詳細資料時，可以變更群組的顯示名稱、權限、原則及屬於群組的使用者。 
 ---
-= 檢視及編輯群組詳細資料
+= 在 StorageGRID 中檢視及編輯租戶群組詳細資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

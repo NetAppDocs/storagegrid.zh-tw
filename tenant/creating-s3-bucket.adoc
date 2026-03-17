@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create S3 bucket 
 summary: 您可以使用租戶管理程式來建立S3儲存區以供物件資料使用。 
 ---
-= 建立S3儲存區
+= 建立 StorageGRID S3 儲存區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

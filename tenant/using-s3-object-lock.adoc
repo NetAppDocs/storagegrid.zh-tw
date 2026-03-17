@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use s3 object lock 
 summary: 如果貯體和物件必須符合保留法規要求、您可以使用 S3 物件鎖定。 
 ---
-= 使用 S3 物件鎖定來保留物件
+= 使用 S3 物件鎖定來保留 StorageGRID 中的物件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

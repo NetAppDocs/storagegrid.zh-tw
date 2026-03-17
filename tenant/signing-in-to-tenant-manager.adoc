@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to sign in to tenant manager 
 summary: 若要存取租戶管理程式、請在支援的網頁瀏覽器網址列中輸入租戶的URL。 
 ---
-= 登入租戶管理程式
+= Sign in 至 StorageGRID 租戶管理器
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

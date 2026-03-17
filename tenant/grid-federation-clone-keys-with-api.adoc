@@ -2,16 +2,16 @@
 permalink: tenant/grid-federation-clone-keys-with-api.html 
 sidebar: sidebar 
 keywords: s3 access key, secret key id, account clone, tenant manager api 
-summary: 如果您的租戶帳戶具有使用網格同盟連線權限、您可以使用租戶管理 API 、手動將 S3 存取金鑰從來源網格上的租戶複製到目的地網格上的租戶。 
+summary: 如果您的 StorageGRID 租用戶帳戶具有使用網格聯合連線權限，則可以使用租用戶管理 API 手動複製 S3 存取金鑰。 
 ---
-= 使用 API 複製 S3 存取金鑰
+= 使用租用戶管理 API 在 StorageGRID 網格之間複製 S3 存取金鑰
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、您可以使用租戶管理 API 、將 S3 存取金鑰從來源網格上的租戶手動複製到目的地網格上的租戶。
+如果您的 StorageGRID 租用戶帳戶具有 *Use grid federation connection* 權限，則可以使用租用戶管理 API 手動將來源網格上的租用戶的 S3 存取金鑰複製到目標網格上的租用戶。
 
 .開始之前
 * 租戶帳戶具有 * 使用網格同盟連線 * 權限。

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to assign ilm policy tag to bucket 
 summary: 根據您的物件儲存需求、選擇 ILM 原則標籤指派給貯體。 
 ---
-= 將 ILM 原則標籤套用至貯體
+= 將 ILM 策略標籤套用至 StorageGRID 儲存貯體
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

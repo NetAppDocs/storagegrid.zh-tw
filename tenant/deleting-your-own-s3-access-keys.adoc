@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete S3 access key 
 summary: 如果您使用的是S3租戶、而且您擁有適當的權限、則可以刪除自己的S3存取金鑰。刪除存取金鑰之後、就無法再使用它來存取租戶帳戶中的物件和儲存區。 
 ---
-= 刪除您自己的S3存取金鑰
+= 在 StorageGRID 中刪除您自己的 S3 存取金鑰
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use s3 console 
 summary: 您可以使用 S3 Console 來檢視和管理 S3 儲存區中的物件。 
 ---
-= 使用 S3 Console
+= 在 StorageGRID 中使用 S3 Console
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

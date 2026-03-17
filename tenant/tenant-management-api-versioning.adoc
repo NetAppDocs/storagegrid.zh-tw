@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tenant management api version 
 summary: 租戶管理API使用版本管理來支援不中斷營運的升級。 
 ---
-= 租戶管理API版本管理
+= StorageGRID 租戶管理 API 版本控制
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

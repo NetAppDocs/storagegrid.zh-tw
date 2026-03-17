@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure CloudMirror replication, replication xml 
 summary: 您可以建立貯體複寫組態 XML 、並使用 Tenant Manager 將 XML 套用至貯體、以啟用某個貯體的 CloudMirror 複寫功能。 
 ---
-= 設定CloudMirror複寫
+= 在 StorageGRID 中設定 CloudMirror 複寫
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

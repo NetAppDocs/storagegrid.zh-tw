@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete tenant platform services endpoint 
 summary: 如果您不想再使用相關的平台服務、可以刪除端點。 
 ---
-= 刪除平台服務端點
+= 刪除 StorageGRID 平台服務端點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

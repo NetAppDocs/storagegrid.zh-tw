@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 bucket event notification, sequencer key 
 summary: 如果您想要 StorageGRID 將指定事件的通知傳送至目的地 Kafka 叢集或 Amazon Simple Notification Service 、您可以啟用 S3 儲存區的事件通知。 
 ---
-= 瞭解庫存箱通知
+= 了解 StorageGRID 針對 S3 儲存區的事件通知
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

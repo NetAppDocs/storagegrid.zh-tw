@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: update default retention for s3 object lock bucket, default retention mode, default retention period, compliance, governance 
 summary: 如果您在建立貯體時啟用 S3 物件鎖定、則可以編輯貯體以變更預設保留設定。您可以啟用（或停用）預設保留、並設定預設保留模式和保留期間。 
 ---
-= 更新 S3 物件鎖定預設保留
+= 更新 StorageGRID 中的 S3 Object Lock 預設保留
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

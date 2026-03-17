@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation connection, view, clear error, last error 
 summary: 如果您的租戶帳戶具有使用網格同盟連線權限、您可以檢視允許的連線。 
 ---
-= 檢視網格同盟連線
+= 在 StorageGRID 中檢視網格聯盟連線
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

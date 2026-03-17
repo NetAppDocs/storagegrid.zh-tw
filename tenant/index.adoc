@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: use tenant account 
 summary: '租用戶帳戶可讓您使用簡單儲存服務 (S3) REST API 在StorageGRID系統中儲存和擷取物件。' 
 ---
-= 使用租戶帳戶
+= 使用StorageGRID 綁定帳戶
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
