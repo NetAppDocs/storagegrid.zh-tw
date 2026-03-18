@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, dns, modify dns 
 summary: 您可以執行指令碼、以不同方式為每個網格節點設定 DNS 、而不是針對整個部署進行全域 DNS 設定。 
 ---
-= 修改單一網格節點的DNS組態
+= 修改單一 StorageGRID 節點的 DNS 組態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

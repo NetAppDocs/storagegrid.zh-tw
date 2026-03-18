@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, node ip address, change node ip, change node ip address, changing node ip, changing node ip address 
 summary: 如果您需要變更網格中所有節點的網格網路IP位址、則必須遵循此特殊程序。您無法使用變更個別節點的程序來變更整個網格網路IP。 
 ---
-= 變更網格中所有節點的IP位址
+= 更改 StorageGRID 網格中所有節點的 IP 位址
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

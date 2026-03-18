@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, node shutdown, shut down node, node shut down 
 summary: 您可以從節點的命令Shell關閉網格節點。 
 ---
-= 關閉網格節點
+= 關閉 StorageGRID 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

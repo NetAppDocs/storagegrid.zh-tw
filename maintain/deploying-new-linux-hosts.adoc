@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, deploy linux host, new host, new linux host 
 summary: 除了一些例外、您可以像在初始安裝程序中一樣、準備新的主機。 
 ---
-= 部署新的Linux主機
+= 為 StorageGRID 部署新的 Linux 主機
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, terminate service, terminating service, force terminate 
 summary: '如果您需要立即停止服務、可以使用 `force-stop`命令。' 
 ---
-= 強制服務終止
+= 強制 StorageGRID 服務終止
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

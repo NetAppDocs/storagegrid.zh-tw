@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, appliance storage volume, appliance volume, remount appliance storage volume, remount volume, remounting appliance storage volume, remounting volume, reformat appliance storage volume, reformat volume, reformatting appliance storage volume, reformatting volume 
 summary: 您必須手動執行兩個指令碼、才能重新掛載保留的儲存磁碟區、並重新格式化任何故障的儲存磁碟區。第一個指令碼會重新掛載已正確格式化為StorageGRID 「循環儲存磁碟區」的磁碟區。第二個指令碼會重新格式化任何未掛載的磁碟區、視需要重新建置Cassandra資料庫、然後啟動服務。 
 ---
-= 重新掛載及重新格式化應用裝置儲存磁碟區（手動步驟）
+= 重新掛載並重新格式化 StorageGRID 應用裝置儲存磁碟區（手動步驟）
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

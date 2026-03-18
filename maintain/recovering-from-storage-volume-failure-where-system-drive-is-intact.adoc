@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, storage volume failure, volume failure, system drive intact 
 summary: 您必須完成一系列的工作、才能還原軟體型儲存節點、其中儲存節點上的一個或多個儲存磁碟區發生故障、但系統磁碟機仍未受損。如果只有儲存磁碟區故障、StorageGRID 則儲存節點仍可用於作業系統。 
 ---
-= 從系統磁碟機不受影響的儲存磁碟區故障中恢復
+= 在系統磁碟機完好的情況下，從 StorageGRID 儲存磁碟區故障中恢復
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

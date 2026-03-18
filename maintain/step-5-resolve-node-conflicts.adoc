@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, resolve node conflict 
 summary: 從「取消委任網站」精靈的步驟5（解決節點衝突）、您可以判斷StorageGRID 出您的不穩定系統中是否有任何節點中斷連線、或所選網站上的任何節點是否屬於高可用度（HA）群組。解決任何節點衝突之後、請從本頁開始取消委任程序。 
 ---
-= 步驟5：解決節點衝突（並開始取消委任）
+= 解決 StorageGRID 中的節點衝突並啟動站台汰除
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

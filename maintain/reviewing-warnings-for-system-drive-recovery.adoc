@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, system drive warning, storage node 
 summary: 在恢復儲存節點的故障系統磁碟機之前、請先檢閱網格節點恢復的一般警告和注意事項、以及下列特定警告。 
 ---
-= 儲存節點系統磁碟機恢復的警告
+= StorageGRID 儲存節點系統磁碟機復原警告
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

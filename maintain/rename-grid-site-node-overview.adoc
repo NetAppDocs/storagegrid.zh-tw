@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename grid, rename site, rename node, display name, system name 
 summary: 您可以視需要變更整個 Grid Manager 、每個站台及每個節點的顯示名稱。您可以在需要時安全地更新顯示名稱。 
 ---
-= 請使用重新命名程序
+= 使用 StorageGRID 重新命名程序
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

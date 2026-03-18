@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to decommission 
 summary: 您可以執行取消委任程序、將網格節點或整個站台從StorageGRID 整套系統中永久移除。 
 ---
-= 取消委任節點或站台
+= 停用 StorageGRID 節點或站台
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

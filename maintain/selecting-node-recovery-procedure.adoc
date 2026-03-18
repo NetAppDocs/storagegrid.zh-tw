@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, procedure 
 summary: 您必須針對發生故障的節點類型、選取正確的還原程序。 
 ---
-= 選取節點還原程序
+= 選擇 StorageGRID 節點還原程序
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

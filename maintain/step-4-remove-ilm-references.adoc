@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, remove ilm reference 
 summary: 從「取消委任網站」精靈的步驟 4 \ （移除 ILM 參考資料 \ ）、您必須刪除或編輯任何未使用的 ILM 規則以參照網站、即使這些規則未用於任何 ILM 原則。 
 ---
-= 步驟4：移除ILM參考
+= 移除 StorageGRID 中對站台的 ILM 參照
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

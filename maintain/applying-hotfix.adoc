@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, hotfix, software update 
 summary: 熱修復程式會先自動套用至主要管理節點。然後、您必須核准將此修補程式應用到其他網格節點、直到所有節點都執行相同的軟體版本為止。您可以選取核准個別的網格節點、網格節點群組或所有網格節點、以自訂核准順序。 
 ---
-= 套用修補程式
+= 在 StorageGRID 中套用 Hotfix
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

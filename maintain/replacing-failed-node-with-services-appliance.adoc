@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, replace failed node, services appliance 
 summary: 您可以使用服務應用裝置來復原故障的閘道節點、故障的非主要管理節點、或是位於 VMware 、 Linux 主機或服務應用裝置上的故障主要管理節點。此程序是網格節點還原程序的一個步驟。 
 ---
-= 使用服務應用裝置來更換故障節點
+= 使用服務應用裝置更換故障的 StorageGRID 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

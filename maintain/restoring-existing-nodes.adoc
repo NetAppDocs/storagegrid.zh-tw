@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, restore node to host, node configuration file, start host service 
 summary: 若要將故障的網格節點還原至新的 Linux 主機、請執行下列步驟來還原節點組態檔案。 
 ---
-= 將網格節點還原至主機
+= 將 StorageGRID 節點還原至主機
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

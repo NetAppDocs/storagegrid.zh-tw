@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename grid, rename sites, rename node, change display name, bulk rename tool 
 summary: 您可以使用此程序來新增或更新用於網格、站台和節點的顯示名稱。您可以同時重新命名單一項目、多個名稱、甚至所有項目。定義或更新顯示名稱不會以任何方式影響 StorageGRID 作業。 
 ---
-= 新增或更新顯示名稱
+= 新增或更新 StorageGRID 顯示名稱
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

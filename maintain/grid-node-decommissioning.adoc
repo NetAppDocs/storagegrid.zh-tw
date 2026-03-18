@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission, remove grid node 
 summary: 您可以使用節點取消委任程序、在一或多個站台上移除一或多個網格節點。您無法取消委任主管理節點。 
 ---
-= 網格節點取消委任
+= StorageGRID 網格節點汰除
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

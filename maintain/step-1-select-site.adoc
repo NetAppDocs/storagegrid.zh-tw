@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, select site 
 summary: 若要判斷某個網站是否可以停用、請從存取「取消委任網站」精靈開始。 
 ---
-= 步驟1：選取站台
+= 在 StorageGRID 中選取要取消委任的站台
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

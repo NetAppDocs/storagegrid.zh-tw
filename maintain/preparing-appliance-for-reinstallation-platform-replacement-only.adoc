@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, appliance, reinstallation appliance, reinstall appliance 
 summary: 在恢復服務應用裝置上裝載的網格節點時、您必須先準備好應用裝置以重新安裝StorageGRID 該軟體。 
 ---
-= 準備設備以重新安裝（僅限平台更換）
+= 準備 StorageGRID 設備以進行重新安裝 （僅限平台更換）
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

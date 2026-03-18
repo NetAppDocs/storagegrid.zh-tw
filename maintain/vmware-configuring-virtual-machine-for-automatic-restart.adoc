@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, vmware, automatic restart, auto restart, configure automatic restart, configure auto restart 
 summary: 如果虛擬機器在VMware vSphere Hypervisor重新啟動後未重新啟動、您可能需要設定虛擬機器以自動重新啟動。 
 ---
-= VMware：設定虛擬機器以自動重新啟動
+= 在 StorageGRID 中配置 VMware 虛擬機器以自動重新啟動
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

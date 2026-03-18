@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission nodes, storage node, multiple storage nodes 
 summary: 如果您需要移除多個儲存節點、可以依序或平行取消委任。 
 ---
-= 取消委任多個儲存節點
+= 停用多個 StorageGRID 儲存節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

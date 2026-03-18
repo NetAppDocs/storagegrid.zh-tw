@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, replace storage node, replacing storage node 
 summary: 如果系統磁碟機故障、您必須先更換儲存節點。 
 ---
-= 更換儲存節點
+= 更換 StorageGRID Storage Node
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, storage volume recovery, storage state, storage volume 
 summary: 恢復儲存磁碟區之後、您必須確認儲存節點的所需狀態已設定為「線上」、並確保在重新啟動儲存節點伺服器時、狀態預設為「線上」。 
 ---
-= 恢復儲存磁碟區後、請檢查儲存狀態
+= 恢復 StorageGRID 儲存磁碟區後檢查儲存狀態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

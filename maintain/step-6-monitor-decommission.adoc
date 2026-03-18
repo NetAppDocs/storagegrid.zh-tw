@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, monitor decommission, decommission 
 summary: 從取消配置網站頁面精靈的步驟6（監控取消配置）、您可以在移除網站時監控進度。 
 ---
-= 步驟6：監控取消委任
+= 在 StorageGRID 中監控站台取消委任進度
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

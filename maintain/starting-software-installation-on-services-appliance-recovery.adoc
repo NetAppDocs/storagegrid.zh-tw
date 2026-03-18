@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, services appliance, start software installation 
 summary: 若要在服務應用裝置上安裝閘道節點或管理節點、請使用設備隨附的 StorageGRID 應用裝置安裝程式。 
 ---
-= 開始在服務應用裝置上安裝軟體
+= 在服務設備上啟動 StorageGRID 軟體安裝
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

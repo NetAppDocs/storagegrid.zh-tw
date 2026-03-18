@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recovery package 
 summary: 如果發生故障，恢復包檔案可讓您恢復StorageGRID系統。 
 ---
-= 下載恢復包
+= 下載 StorageGRID 恢復套件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

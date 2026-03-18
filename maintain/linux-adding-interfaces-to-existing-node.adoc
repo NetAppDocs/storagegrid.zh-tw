@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add interfaces, add client network interface, add admin network interface 
 summary: 請使用這些步驟、在安裝管理網路或用戶端網路之後、將介面新增至Linux節點。 
 ---
-= Linux：將管理或用戶端介面新增至現有節點
+= 在 StorageGRID 中將管理或用戶端介面新增至 Linux 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

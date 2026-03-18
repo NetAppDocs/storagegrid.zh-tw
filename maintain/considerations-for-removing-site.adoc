@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to remove site 
 summary: 在使用站台取消委任程序移除站台之前、您必須先檢閱考量事項。 
 ---
-= 移除站台的考量
+= StorageGRID 中的站台停用考量
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

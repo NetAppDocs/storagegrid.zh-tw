@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, disconnected nodes, decommission node 
 summary: 您可能需要取消委任目前未連線至網格的節點（健全狀況為未知或管理性關閉的節點）。 
 ---
-= 取消委任中斷連線的網格節點
+= 停用已中斷連線的 StorageGRID 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

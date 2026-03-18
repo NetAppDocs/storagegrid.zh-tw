@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, appliance 
 summary: 直到安裝完成為止、才會StorageGRID 顯示此狀態。軟體安裝完成後、即會重新啟動應用裝置。 
 ---
-= 監控服務應用裝置安裝
+= 監控 StorageGRID 服務應用裝置安裝
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

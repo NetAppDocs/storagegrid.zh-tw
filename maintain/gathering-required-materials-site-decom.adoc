@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission 
 summary: 在取消委任站台之前、您必須先取得下列資料。 
 ---
-= 收集所需資料
+= 收集 StorageGRID 站台汰除所需的資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

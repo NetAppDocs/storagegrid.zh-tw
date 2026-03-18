@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, data repair 
 summary: 在解除委任網格節點之前、您必須確認沒有任何資料修復工作處於作用中狀態。如果有任何修復失敗、您必須重新啟動它們、並讓它們在執行取消委任程序之前完成。 
 ---
-= 檢查資料修復工作
+= 檢查 StorageGRID 中的資料修復工作
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

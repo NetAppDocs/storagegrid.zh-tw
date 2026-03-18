@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, storage volume, failed storage volume, unmount failed volume 
 summary: 在恢復儲存磁碟區故障的儲存節點時、您必須識別並卸載故障的磁碟區。您必須確認只有故障的儲存磁碟區才會重新格式化為還原程序的一部分。 
 ---
-= 識別並卸載故障的儲存磁碟區
+= 識別並卸載 StorageGRID 中故障的儲存磁碟區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

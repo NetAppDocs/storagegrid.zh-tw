@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, donotstart, do not start, donotstart file, do not start file 
 summary: 如果您在技術支援的指導下執行各種維護或組態程序、可能會要求您使用DoNotStart檔案、以防止伺服器管理員啟動或重新啟動時啟動服務。 
 ---
-= 使用DoNotStart檔案
+= 使用 StorageGRID DoNotStart 文件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

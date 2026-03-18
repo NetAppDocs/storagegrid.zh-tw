@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore replicated data, restore erasure-coded data, recover storage node, recover storage volume 
 summary: 在系統磁碟機完好無損的儲存節點上還原儲存磁碟區之後、您可以還原儲存磁碟區故障時遺失的複寫或刪除編碼物件資料。 
 ---
-= 將物件資料還原至系統磁碟機不受影響的儲存磁碟區
+= 將物件資料還原至系統磁碟機完好的 StorageGRID 儲存磁碟區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, non-primary admin node 
 summary: 更換非主要管理節點之後、您必須在Grid Manager中選取「Start Recovery」（開始還原）、將新節點設定為故障節點的替換節點。 
 ---
-= 選取「Start Recovery」（開始還原）以設定非主要管理節點
+= 選擇 Start Recovery 以設定非主要 StorageGRID Admin Node
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

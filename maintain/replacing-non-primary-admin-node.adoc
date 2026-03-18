@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, replace non-primary admin node, replacing non-primary admin node, non-primary admin node 
 summary: 若要恢復非主要管理節點、您必須先更換實體或虛擬硬體。 
 ---
-= 取代非主要管理節點
+= 替換非主要 StorageGRID 管理節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

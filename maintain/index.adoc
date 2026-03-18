@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: maintain overview, maintenance overview, about maintain, about maintenance 
 summary: 網格維護工作包括汰換節點或站台、重新命名網格、節點或站台、以及維護網路。您也可以執行主機和中介軟體程序、以及網格節點程序。 
 ---
-= 網格維護
+= StorageGRID 網格維護
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission admin node, decommission gateway node 
 summary: 檢閱解除委任管理節點或閘道節點的考量事項。 
 ---
-= 解除委任管理節點或閘道節點的考量事項
+= StorageGRID 管理或閘道節點取消委任考量
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

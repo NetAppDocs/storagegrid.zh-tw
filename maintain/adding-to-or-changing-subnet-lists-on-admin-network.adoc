@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, subnet list, admin network 
 summary: 您可以在一或多個節點的管理網路子網路清單中新增、刪除或變更子網路。 
 ---
-= 新增或變更管理網路上的子網路清單
+= 在 StorageGRID 中新增或變更管理網路上的子網路清單
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

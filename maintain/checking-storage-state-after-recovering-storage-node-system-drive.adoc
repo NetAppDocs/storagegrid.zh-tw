@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, storage node recovery, system drive, storage state 
 summary: 恢復儲存節點的系統磁碟機後、您必須確認儲存節點的所需狀態已設定為「線上」、並確保在重新啟動儲存節點伺服器時、狀態預設為「線上」。 
 ---
-= 恢復儲存節點系統磁碟機後、請檢查儲存狀態
+= 恢復 StorageGRID 儲存節點系統磁碟機後、檢查儲存狀態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

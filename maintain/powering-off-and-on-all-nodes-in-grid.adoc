@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, power nodes, power on nodes, power off nodes, power down nodes 
 summary: 例如、如果您要搬移資料中心、可能需要關閉整個StorageGRID 的整套功能。這些步驟提供建議的執行管制關機和開機順序的高階概觀。 
 ---
-= 關閉和開啟網格中的所有節點
+= 關閉並開啟所有 StorageGRID 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

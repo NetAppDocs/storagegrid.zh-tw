@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, stop services, power down host, power off host 
 summary: 在關閉主機電源之前、您必須停止該主機上所有網格節點上的服務。 
 ---
-= 關閉主機電源
+= 關閉 StorageGRID 主機
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

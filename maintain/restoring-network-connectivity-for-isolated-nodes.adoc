@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, network connection, restore network connection, isolated node, restore isolated node connection 
 summary: 在某些情況下、一或多個節點群組可能無法與網格的其他部分聯絡。例如、站台或網格範圍內的 IP 位址變更可能會導致隔離節點。 
 ---
-= 還原隔離節點的網路連線能力
+= 恢復隔離的 StorageGRID 節點的網路連線
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

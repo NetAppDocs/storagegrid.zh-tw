@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, maintenance, maintain, failed storage volumes, failed volumes, cassandra, cassandra rebuild, rebuild cassandra, cassandra database 
 summary: 您必須執行指令碼、重新格式化及重新掛載故障儲存磁碟區上的儲存設備、並在系統判斷有必要時、在儲存節點上重新建置Cassandra資料庫。 
 ---
-= 恢復故障的儲存磁碟區並重建Cassandra資料庫
+= 在 StorageGRID 中恢復故障的儲存磁碟區並重建 Cassandra 資料庫
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

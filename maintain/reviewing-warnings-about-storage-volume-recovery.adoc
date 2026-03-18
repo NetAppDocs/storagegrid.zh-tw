@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, volume warning 
 summary: 在恢復儲存節點的故障儲存磁碟區之前、您必須檢閱下列警告。 
 ---
-= 儲存磁碟區恢復警告
+= StorageGRID 儲存磁碟區復原警告
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

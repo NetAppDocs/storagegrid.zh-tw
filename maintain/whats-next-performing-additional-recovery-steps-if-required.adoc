@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, corrective action, additional recovery 
 summary: 視您在StorageGRID 替換主機上執行的支援功能而定、您可能需要為每個節點執行額外的恢復步驟。 
 ---
-= 接下來：視需要執行其他恢復步驟
+= 執行額外的 StorageGRID 節點還原步驟
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

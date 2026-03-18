@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, linux, linux host, bare metal host, baremetal host, remove port remap, removing port remap, port remap 
 summary: 如果您想要設定負載平衡器服務的端點、而且想要使用已設定為連接埠重新對應對應對應對應對應對應對應對應對應對應的連接埠、則必須先移除現有的連接埠重新對應、否則端點將無法生效。 
 ---
-= 移除裸機主機上的連接埠重新對應
+= 移除裸機主機上的 StorageGRID 連接埠重新映射
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

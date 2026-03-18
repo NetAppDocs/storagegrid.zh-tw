@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, service error state, error, error state 
 summary: 如果偵測到某項服務已進入錯誤狀態、請嘗試重新啟動該服務。 
 ---
-= 具有錯誤狀態的服務
+= StorageGRID 中處於錯誤狀態的服務
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

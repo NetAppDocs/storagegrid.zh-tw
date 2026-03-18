@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit log, copy audit log, copying audit log, primary admin node, primary admin node 
 summary: 如果能夠從故障的主管理節點複製稽核記錄、您應該保留這些記錄、以維護網格的系統活動與使用記錄。您可以在保留的稽核記錄啟動並執行後、將其還原至恢復的主要管理節點。 
 ---
-= 從故障的主要管理節點複製稽核記錄
+= 從發生故障的主 StorageGRID 管理節點複製稽核日誌
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

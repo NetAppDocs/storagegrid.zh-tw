@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, linux, migrate node, migrating node, new host for node 
 summary: 您可以將一個或多個 StorageGRID 節點從一個 Linux 主機移轉到另一個 Linux 主機、以執行主機維護、而不會影響網格的功能或可用度。 
 ---
-= Linux：將網格節點移轉至新主機
+= 將 StorageGRID 節點遷移到新的 Linux 主機
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

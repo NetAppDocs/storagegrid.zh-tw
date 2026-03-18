@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage node decommission, considerations, appliance node clone 
 summary: 在解除委任儲存節點之前、請考慮是否可以改為複製節點。然後、如果您決定取消委任節點、請檢閱 StorageGRID 在取消委任程序期間如何管理物件和中繼資料。 
 ---
-= 解除委任儲存節點的考量事項
+= StorageGRID 中的儲存節點汰換考量事項
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

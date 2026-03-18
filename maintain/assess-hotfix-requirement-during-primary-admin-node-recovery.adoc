@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, primary admin node, hotfix 
 summary: 在恢復主管理節點之後，確定是否需要應用修復程序。 
 ---
-= 判斷主要管理節點的 Hotfix 需求
+= 確定 StorageGRID 中主要管理節點的 Hotfix 需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

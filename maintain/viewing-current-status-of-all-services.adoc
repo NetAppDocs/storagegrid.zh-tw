@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, service, status 
 summary: 您可以隨時檢視在網格節點上執行的所有服務目前狀態。 
 ---
-= 檢視所有服務的目前狀態
+= 查看所有 StorageGRID 服務的目前狀態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

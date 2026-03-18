@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, site recovery, technical support, tech support 
 summary: 如果整個StorageGRID 站台故障或多個儲存節點故障、您必須聯絡技術支援部門。技術支援人員將評估您的情況、擬定恢復計畫、然後以符合業務目標的方式還原故障節點或站台、最佳化恢復時間、並防止不必要的資料遺失。 
 ---
-= 技術支援如何恢復網站
+= 技術支援如何恢復 StorageGRID 站台
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, appliance storage node failure, workflow 
 summary: 無論StorageGRID 是從系統磁碟機遺失或僅從儲存磁碟區遺失中恢復、恢復故障的故障的功能相同。 
 ---
-= 恢復應用裝置儲存節點的警告
+= 恢復 StorageGRID 應用裝置儲存節點的警告
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

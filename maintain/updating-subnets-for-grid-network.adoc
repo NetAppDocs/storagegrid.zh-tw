@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, subnet, grid network, update subnets 
 summary: 此技術可維護網格網路（eth0）上用於在網格節點之間進行通訊的網路子網路清單。StorageGRID這些項目包括StorageGRID 您的系統所在站台用於Grid Network的子網路、以及透過Grid Network閘道存取的NTP、DNS、LDAP或其他外部伺服器所使用的任何子網路。當您在擴充中新增網格節點或新站台時、可能需要更新或新增子網路至網格網路。 
 ---
-= 更新Grid Network的子網路
+= 更新 StorageGRID Grid Network 的子網路
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

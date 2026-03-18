@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, server manager, log file 
 summary: 如果使用伺服器管理員時發生問題、請檢查其記錄檔。 
 ---
-= 伺服器管理員疑難排解
+= 疑難排解 StorageGRID 中的 Server Manager
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

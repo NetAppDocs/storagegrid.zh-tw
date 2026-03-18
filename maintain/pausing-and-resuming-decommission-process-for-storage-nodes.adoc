@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to pause decommission 
 summary: 如果您需要執行第二個維護程序、可以在特定階段暫停儲存節點的取消委任程序。完成其他程序之後、您就可以繼續解除委任。 
 ---
-= 暫停並恢復儲存節點的取消委任程序
+= 暫停和恢復 StorageGRID 儲存節點的停用流程
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

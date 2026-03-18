@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, revise ilm policies 
 summary: 從「取消委任網站」精靈的步驟 3 \ （修訂 ILM 原則 \ ）、您可以判斷該網站是否由任何 ILM 原則參照。 
 ---
-= 步驟 3 ：修改 ILM 原則
+= 修訂 StorageGRID 中站台停用的 ILM 原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

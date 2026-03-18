@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace VMware node 
 summary: 當您恢復託管在 VMware 上的故障 StorageGRID 節點時、請移除故障節點並部署恢復節點。 
 ---
-= 更換 VMware 節點
+= 更換 StorageGRID 中的 VMware 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, subnet list, grid network 
 summary: 您可以使用變更IP工具來新增或變更網格網路上的子網路。 
 ---
-= 新增或變更Grid Network上的子網路清單
+= 在 StorageGRID 中新增或變更 Grid Network 上的子網路清單
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

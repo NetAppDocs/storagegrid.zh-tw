@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, ntp, ntp server, configure ntp, configuring ntp 
 summary: 您可以新增、更新或移除網路時間傳輸協定（ NTP ）伺服器、以確保資料在 StorageGRID 系統的網格節點之間準確同步。 
 ---
-= 管理NTP伺服器
+= 在 StorageGRID 中管理 NTP 伺服器
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

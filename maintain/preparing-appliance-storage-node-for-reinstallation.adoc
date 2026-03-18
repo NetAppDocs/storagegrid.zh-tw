@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, appliance, reinstallation appliance, reinstall appliance 
 summary: 恢復應用裝置儲存節點時、您必須先準備好應用裝置以重新安裝StorageGRID 還原軟體。 
 ---
-= 準備設備儲存節點以重新安裝
+= 準備 StorageGRID 應用裝置儲存節點以進行重新安裝
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

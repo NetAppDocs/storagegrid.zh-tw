@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configure ip address, change IP tool, ethernet, dhcp, ha group 
 summary: 您可以使用變更IP工具來設定網格節點的IP位址、以執行網路組態。 
 ---
-= IP 位址準則
+= StorageGRID IP 位址準則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

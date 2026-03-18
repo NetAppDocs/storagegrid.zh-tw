@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, reboot node, command shell reboot 
 summary: 如果您需要更密切地監控重新開機作業、或是無法存取 Grid Manager 、您可以登入網格節點、然後從命令 Shell 執行 Server Manager 重新開機命令。 
 ---
-= 從命令Shell重新開機網格節點
+= 從命令列重新啟動 StorageGRID 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

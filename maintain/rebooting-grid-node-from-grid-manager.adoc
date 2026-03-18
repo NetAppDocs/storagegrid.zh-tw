@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reboot grid node, tasks tab 
 summary: 您可以從「節點」頁面上的「工作」索引標籤、重新啟動個別的網格節點。 
 ---
-= 從「工作」標籤重新啟動網格節點
+= 從「任務」標籤重新啟動 StorageGRID 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

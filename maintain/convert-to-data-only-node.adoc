@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, convert node, data-only node 
 summary: 為了提高效能，您可以將較慢的非 ADC 儲存節點轉換為僅資料的儲存節點。 
 ---
-= 將儲存節點轉換為僅資料節點
+= 將 StorageGRID Storage Node 轉換為僅資料節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, admin node failure, workflow 
 summary: 管理節點的還原程序取決於它是主要管理節點還是非主要管理節點。 
 ---
-= 主要或非主要管理節點恢復
+= StorageGRID 中的主要或非主要管理節點恢復
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

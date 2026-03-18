@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace linux node 
 summary: 如果故障需要您部署一或多個新的實體或虛擬主機、或在現有主機上重新安裝 Linux 、請先部署並設定替換主機、然後才能恢復網格節點。此程序是所有類型網格節點的網格節點還原程序之一。 
 ---
-= 取代 Linux 節點
+= 更換 StorageGRID 中的 Linux 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

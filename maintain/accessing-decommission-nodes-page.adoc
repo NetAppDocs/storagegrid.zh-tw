@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission nodes, decommissioning nodes, maintenance task 
 summary: 當您存取Grid Manager中的「取消委任節點」頁面時、您可以一覽哪些節點可以停用。 
 ---
-= 存取「取消委任節點」頁面
+= 存取 StorageGRID 中的解除委任節點頁面
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

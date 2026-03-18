@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore replicated data, restore erasure-coded data, recover appliance storage node, recover storage volume 
 summary: '您可以從命令列使用指令碼來監控修復工作的狀態 `repair-data`。' 
 ---
-= 監控修復資料工作
+= 監控 StorageGRID 修復資料工作
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

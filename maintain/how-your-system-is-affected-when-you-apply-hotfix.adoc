@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, hotfix 
 summary: 您必須瞭StorageGRID 解套用修補程式時、您的整個系統將會受到什麼影響。 
 ---
-= 套用熱修復程式時、系統受到的影響
+= 應用熱修復程式後 StorageGRID 會受到怎樣的影響
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

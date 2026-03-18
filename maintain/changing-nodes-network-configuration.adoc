@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, network configuration, node network configuration 
 summary: 您可以使用變更IP工具來變更一或多個節點的網路組態。您可以變更Grid Network的組態、或新增、變更或移除管理或用戶端網路。 
 ---
-= 變更節點網路組態
+= 變更 StorageGRID 中的節點網路組態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

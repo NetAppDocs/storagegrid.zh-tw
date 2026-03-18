@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, node decommission, decommission 
 summary: 在執行網格節點取消委任之前、您必須先取得下列資訊。 
 ---
-= 收集所需資料
+= 收集 StorageGRID 節點退役所需的材料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

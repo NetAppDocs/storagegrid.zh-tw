@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, hotfix 
 summary: 在套用修補程式之前、您必須先取得所有必要資料。 
 ---
-= 取得修補程式所需的資料
+= 取得 StorageGRID 熱修復程式所需的材料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

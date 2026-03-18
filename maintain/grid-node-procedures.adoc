@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, grid node procedure 
 summary: 您可能需要執行與特定網格節點或節點服務相關的維護程序。 
 ---
-= 節點維護程序
+= StorageGRID 節點維護程序
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

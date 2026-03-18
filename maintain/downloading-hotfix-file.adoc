@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, hotfix, download 
 summary: 您必須先下載此修復程式檔案、才能套用此修復程式。 
 ---
-= 下載修補程式檔案
+= 下載 StorageGRID Hotfix 檔案
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, dns, configuring dns, configure dns, domain name system 
 summary: 您可以新增、移除及更新 DNS 伺服器、以便使用完整網域名稱 \（ FQDN ）主機名稱、而非 IP 位址。 
 ---
-= 設定 DNS 伺服器
+= 在 StorageGRID 中設定 DNS 伺服器
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

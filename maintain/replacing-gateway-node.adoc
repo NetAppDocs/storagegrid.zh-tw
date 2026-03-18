@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, replace gateway node, replacing gateway node 
 summary: 您可以將故障的閘道節點更換為在相同實體或虛擬硬體上執行的閘道節點、或是將在VMware上執行的閘道節點或Linux主機替換為在服務應用裝置上裝載的閘道節點。 
 ---
-= 更換閘道節點
+= 替換 StorageGRID Gateway Node
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

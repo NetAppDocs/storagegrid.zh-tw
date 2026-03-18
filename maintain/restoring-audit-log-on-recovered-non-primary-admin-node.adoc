@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, restore audit log, non-primary admin node 
 summary: 如果您能夠從故障的非主要管理節點保留稽核記錄、以便保留歷史稽核記錄資訊、您可以將其複製到您要恢復的非主要管理節點。 
 ---
-= 在恢復的非主要管理節點上還原稽核記錄
+= 在已復原的非主 StorageGRID 管理節點上還原稽核記錄
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

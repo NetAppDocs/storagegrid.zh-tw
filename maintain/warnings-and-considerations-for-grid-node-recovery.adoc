@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, warning 
 summary: 如果網格節點故障、您必須盡快恢復。開始之前、您必須檢閱所有節點還原的警告和考量事項。 
 ---
-= 網格節點還原的警告與考量
+= StorageGRID 節點恢復的警告和注意事項
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

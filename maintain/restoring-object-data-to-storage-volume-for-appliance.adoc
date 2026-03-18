@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore replicated data, restore erasure-coded data, recover appliance storage node, recover storage volume 
 summary: 為應用裝置儲存節點恢復儲存磁碟區之後、您可以還原儲存節點故障時遺失的複寫或刪除編碼物件資料。 
 ---
-= 將物件資料還原至應用裝置的儲存磁碟區
+= 將物件資料還原至 StorageGRID 應用裝置的儲存磁碟區
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

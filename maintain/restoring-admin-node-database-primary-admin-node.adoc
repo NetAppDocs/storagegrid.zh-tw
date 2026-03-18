@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, restore admin node database, restore database, primary admin node 
 summary: 如果您想要保留失敗的主要管理節點上的屬性和警示歷史資訊、可以還原管理節點資料庫。只有StorageGRID 當您的系統包含另一個管理節點時、才能還原此資料庫。 
 ---
-= 恢復主管理節點時還原管理節點資料庫
+= 復原主管理節點時，還原 StorageGRID 管理節點資料庫
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

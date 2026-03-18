@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, restore, volume 
 summary: 您可以使用 Grid Manager 還原故障儲存磁碟區或儲存節點的物件資料。您也可以使用 Grid Manager 來監控進行中的還原程序、並顯示還原歷程記錄。 
 ---
-= 使用 Grid Manager 還原物件資料
+= 使用 StorageGRID Grid Manager 還原物件資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

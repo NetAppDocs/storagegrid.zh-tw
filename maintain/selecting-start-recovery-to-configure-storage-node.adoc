@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, storage node 
 summary: 更換儲存節點之後、您必須在Grid Manager中選取「Start Recovery」（開始還原）、將新節點設定為故障節點的替換節點。 
 ---
-= 選取「Start Recovery（開始恢復）」以設定儲存節點
+= 選擇 Start Recovery 以配置 StorageGRID Storage Node
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

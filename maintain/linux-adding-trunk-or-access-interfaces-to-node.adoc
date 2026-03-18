@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add extra interface to node, trunk interface, access interface 
 summary: 您可以在安裝Linux節點之後、將額外的主幹或存取介面新增至該節點。您新增的介面會顯示在「VLAN介面」頁面和「HA群組」頁面上。 
 ---
-= Linux：新增主幹或存取介面至節點
+= 在 StorageGRID 中將主幹或存取介面新增至 Linux 節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

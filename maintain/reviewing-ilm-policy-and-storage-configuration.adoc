@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, restore, ilm policy, storage configuration 
 summary: 如果您打算取消委任儲存節點、則在StorageGRID 開始汰換程序之前、應先檢閱您的一套NetApp系統的ILM原則。 
 ---
-= 檢閱ILM原則和儲存組態
+= 檢閱 StorageGRID ILM 原則和儲存組態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

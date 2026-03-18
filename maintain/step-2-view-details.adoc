@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, view details 
 summary: 從「取消委任網站」精靈的步驟2（檢視詳細資料）、您可以檢閱網站中包含哪些節點、查看每個儲存節點上已使用多少空間、以及評估網格中其他站台可用的空間。 
 ---
-= 步驟2：檢視詳細資料
+= 在 StorageGRID 中取消委任之前、請先檢閱站台詳細資料
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

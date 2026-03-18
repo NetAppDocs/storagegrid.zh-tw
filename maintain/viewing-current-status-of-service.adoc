@@ -2,16 +2,16 @@
 permalink: maintain/viewing-current-status-of-service.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, service, status 
-summary: 您可以隨時檢視在網格節點上執行的服務目前狀態。 
+summary: 您可以隨時查看網格節點上執行的服務目前狀態。 
 ---
-= 檢視服務的目前狀態
+= 查看 StorageGRID 服務的目前狀態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-您可以隨時檢視在網格節點上執行的服務目前狀態。
+您可以隨時查看網格節點上執行的服務目前狀態。
 
 .開始之前
 您有 `Passwords.txt`檔案。
