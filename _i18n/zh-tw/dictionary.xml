@@ -22512,4 +22512,8 @@
   <block id="b6e841c67b4ef63fe77648e6f57aa6ee" category="doc">在 StorageGRID 中配置 VMware 虛擬機器以自動重新啟動</block>
   <block id="807ae05570dc1f7d5284ecf1dfb47729" category="doc">StorageGRID 節點恢復的警告和注意事項</block>
   <block id="3a77f932aff0f8b652e9025611ded394" category="doc">執行額外的 StorageGRID 節點還原步驟</block>
+  <block id="bff2bbc312f37e03f5b46a937a332ac5" category="paragraph"><block ref="4b0687a2e975e23f3780e4795fb926d7" prefix=" " category="inline-code"></block>已被接受，但無法正常使用。</block>
+  <block id="e254488ba3d309d41798939c9911f8c2" category="paragraph"><block ref="f8aee9049e87bcd785ed83b147f235e4" prefix=" " category="inline-code"></block>已被接受，但無法正常使用。</block>
+  <block id="e3e16bb73c0250a6a229fb457b4f957e" category="list-text">限制</block>
+  <block id="cbbcf2982eaa107551967ef41b946c6f" category="list-text">The<block ref="b4eaa868c5a9d3d78f9ca606a3cb09eb" prefix=" " category="inline-code"></block> 和<block ref="bf6d5c936f034a1c80c1d489d85a9cfb" prefix=" " category="inline-code"></block> 標頭已被接受，但無法正常工作。</block>
 </blocks>
