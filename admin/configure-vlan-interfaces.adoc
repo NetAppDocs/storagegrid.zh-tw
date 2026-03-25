@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure vlan interfaces, vlan interfaces, trunk interface 
 summary: 您可以在管理節點和閘道節點上建立虛擬LAN（VLAN）介面、並在HA群組和負載平衡器端點中使用這些介面來隔離和分割流量、以確保安全性、靈活度和效能。 
 ---
-= 設定VLAN介面
+= 在 StorageGRID 中設定 VLAN 介面
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

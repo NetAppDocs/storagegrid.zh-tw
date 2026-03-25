@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: firewall access, firewall ports, external firewall 
 summary: 您可以在外部防火牆開啟或關閉特定連接埠。 
 ---
-= 控制外部防火牆的存取
+= 在外部防火牆控制 StorageGRID 存取
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: manage high availability group, ha groups, admin node, gateway node, active interface, backup interface, priority order 
 summary: '高可用度 \(HA\) 群組可為 S3 用戶端提供高可用度的資料連線、並可與 Grid Manager 和 Tenant Manager 進行高可用度連線。' 
 ---
-= 什麼是高可用度（ HA ）群組？
+= 了解 StorageGRID 高可用性群組
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

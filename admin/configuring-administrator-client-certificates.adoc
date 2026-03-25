@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: client certificates, prometheus 
 summary: 用戶端憑證可讓獲授權的外部用戶端存取StorageGRID 《The》《The VMware資料庫》、為外部工具提供安全的監控StorageGRID 方式。 
 ---
-= 設定用戶端憑證
+= 在 StorageGRID 中設定用戶端憑證
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

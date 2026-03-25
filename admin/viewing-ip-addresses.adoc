@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ip address, view ip addresses for nodes, what is node ip address 
 summary: 您可以檢視StorageGRID 您的系統的各個網格節點的IP位址。然後、您可以使用此 IP 位址登入命令列的網格節點、並執行各種維護程序。 
 ---
-= 檢視IP位址
+= 在 StorageGRID 中檢視 IP 位址
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

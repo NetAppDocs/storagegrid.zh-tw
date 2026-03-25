@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: sso configuration 
 summary: 啟用單一登入（SSO）之前、您必須確認至少有一位同盟使用者可以登入Grid Manager、並登入任何現有租戶帳戶的租戶管理程式。 
 ---
-= 確認同盟使用者可以登入
+= 確認聯合使用者可以登入 StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

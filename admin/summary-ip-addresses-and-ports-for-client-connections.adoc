@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ip addresses for client, how to connect to storagegrid, ports, vip 
 summary: 若要儲存或擷取物件、 S3 用戶端應用程式會連線到負載平衡器服務（包含在所有管理節點和閘道節點上）、或是連接到所有儲存節點上的本機分配路由器（ LDR ）服務。 
 ---
-= 摘要：用於用戶端連線的IP位址和連接埠
+= StorageGRID 客戶端連線的 IP 位址和連接埠
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: single sign on, sso, SAML 
 summary: '啟用單一登入 (SSO) 後，只有使用貴組織實作的 SSO 登入流程授權使用者的憑證後，使用者才可以存取網格管理員、租用戶管理器、網格管理 API 或租用戶管理 API。本機使用者無法登入StorageGRID。' 
 ---
-= SSO 的工作原理
+= 了解 StorageGRID 單一登入
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

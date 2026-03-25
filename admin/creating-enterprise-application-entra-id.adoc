@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enterprise application, entra id, single sign on, sso 
 summary: 您使用 Entra ID 為系統中的每個管理節點建立一個企業應用程式。 
 ---
-= 在 Entra ID 中建立企業應用程式
+= 在 Entra ID 中為 StorageGRID 建立企業應用程式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

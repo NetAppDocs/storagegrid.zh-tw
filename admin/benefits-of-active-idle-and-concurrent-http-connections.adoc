@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: active http connection benefits, idle http connection benefits, concurrent http connection benefits 
 summary: 如何設定HTTP連線、可能會影響StorageGRID 到整個系統的效能。組態會因HTTP連線為作用中或閒置狀態、或是您同時有多個連線而有所不同。 
 ---
-= 作用中、閒置及並行HTTP連線的優點
+= StorageGRID 中活動、閒置和並行 HTTP 連線的優勢
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

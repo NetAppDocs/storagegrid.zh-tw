@@ -797,7 +797,6 @@
   <block id="2c2174fde5f4ed4c741ed61fc3dc05c4" category="list-text">選擇*重試*。</block>
   <block id="c9484d6b31ae236ffa6bc8f6ddaf3676" category="admonition">重試只會變更先前密碼變更嘗試期間失敗之節點上的節點主控台密碼。</block>
   <block id="b9e2ce9117be7757e2f0adf0f1db512f" category="summary">變更管理節點的 SSH 存取密碼也會更新網格中每個節點的唯一內部 SSH 金鑰集。主要管理節點使用這些 SSH 金鑰、使用安全、無密碼驗證來存取節點。</block>
-  <block id="2ec7587fe4594d40b9b3ae49bf3c2125" category="doc">變更管理節點的 SSH 存取密碼</block>
   <block id="10d263affcd167f18b758d09e37f31c5" category="paragraph">使用 SSH 金鑰、以 VM 或實體主控台連線上的 root 使用者身分或登入節點<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block>。</block>
   <block id="def6442b40fbdb1a12e60eb99451c140" category="paragraph">SSH金鑰有個別的SSH存取密碼、用於節點之間的通訊。此程序不會變更這些項目。</block>
   <block id="8b5d808517c04f038641d5002d48a2cc" category="list-text">在 * 變更 SSH 金鑰 * 下、選取 * 進行變更 * 。</block>
@@ -860,7 +859,6 @@
   <block id="09982321cd27a5563e21336b52d94e76" category="list-text">如果用戶端直接連線至儲存節點、且您想使用 HTTP 連線、則可選擇 * 啟用儲存節點連線的 HTTP * 。</block>
   <block id="7b4eac3f15dfb9b0f0552098e4562335" category="admonition">啟用正式作業網格的HTTP時請務必小心、因為要求會以未加密的方式傳送。</block>
   <block id="81fb1c4f2eac8421fcc636f357364c08" category="summary">如果root使用者被鎖定在帳戶之外、您可能需要變更租戶的本機root使用者密碼。</block>
-  <block id="79b604971169e90289377a38ce5551a8" category="doc">變更租戶本機root使用者的密碼</block>
   <block id="b043ecb42a45aa8e9c1bdcec5cdfd54e" category="paragraph">如果root使用者被鎖定在帳戶之外、您可能需要變更租戶本機root使用者的密碼。</block>
   <block id="ffe3c19c16dd476884b2ee334c11cdfe" category="inline-link-macro">特定存取權限</block>
   <block id="aa2c219a538a18da6b3b59ecb1727561" category="list-text">您有 <block ref="7c21d5a5fcf54bf7f839903f3ee5b912" category="inline-link-macro-rx"></block>。</block>
@@ -889,7 +887,6 @@
   <block id="762ae44791b5a689d059551c640acb5c" category="list-text">重新輸入新密碼。</block>
   <block id="cbf27659540e8a2c5efb805b2e6ab6c3" category="summary">下圖提供設定HA群組的不同方式範例。每個選項都有優點和缺點。</block>
   <block id="71372ac93f8ea7ee8796d5b7bdbe7326" category="doc">HA群組的組態選項</block>
-  <block id="4100475a234d24140a62ab5740ed58e4" category="paragraph">下圖提供不同的HA群組設定方式範例。每個選項都有優點和缺點。</block>
   <block id="26733da8622fe4f5075a30670a2c3bef" category="paragraph">在圖中、藍色表示HA群組中的主要介面、黃色表示HA群組中的備份介面。</block>
   <block id="b846c1de6e408e7f28ec71489b5995eb" category="image-alt">HA範例</block>
   <block id="c82ef7140bd506fd80de1db2ca0b3dfc" category="paragraph">下表摘要說明各HA組態的優點、如圖所示。</block>
@@ -1183,7 +1180,6 @@
   <block id="48d0fa42987f4d3497e343955d7a4885" category="list-text">選擇*是*以確認您的選擇。</block>
   <block id="90beb233b2a5596b08ec37b12a857683" category="paragraph">您選取的所有VLAN介面都會移除。VLAN介面頁面上會出現綠色的成功橫幅。</block>
   <block id="d2db2aec7e8704698daae73c6fb06964" category="summary">如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、您可以在管理節點和技術支援（ AutoSupport ）之間設定非透明的 Proxy 伺服器。</block>
-  <block id="0f692c867809ab57e46b758808e9b066" category="doc">設定管理 Proxy 設定</block>
   <block id="528e605653bcc804605cbe3a4fb8a1f6" category="paragraph">如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、則可以在管理節點和技術支援（ AutoSupport ）之間設定不透明的 Proxy 伺服器。</block>
   <block id="cc54d79adb8758119dd82b7e1bc4389f" category="paragraph">如需 AutoSupport 的詳細資訊，請參閱<block ref="7f6692541d0f8fa1e1cd5a982650d767" category="inline-link-macro-rx"></block>。</block>
   <block id="9676d279f4f3da76a376efe327ee9d49" category="paragraph">您可以設定單一管理 Proxy 的設定。</block>
@@ -1801,7 +1797,6 @@
   <block id="aa2a5379a78f7e8e393ce0486c3d950f" category="inline-link-macro">變更複雜密碼</block>
   <block id="3c349cc162066939e5b2ae86e30b7a93" category="inline-link-macro">變更節點主控台密碼</block>
   <block id="87f0c196d801a1f65e181a33fac90edb" category="summary">使用內部憑證授權單位（CA）來保護內部流量。StorageGRID如果您上傳自己的憑證、此憑證不會變更。</block>
-  <block id="d53505680bc38b422b14b73cfc42e6b1" category="doc">複製Grid CA憑證</block>
   <block id="0d3ed81da3601d29dee4e4d04f4c470d" category="paragraph">使用內部憑證授權單位（CA）來保護內部流量。StorageGRID如果您上傳自己的憑證、此憑證不會變更。</block>
   <block id="1914c92f5f37d6765a897b6d7c8450c4" category="paragraph">如果已設定自訂伺服器憑證、用戶端應用程式應使用自訂伺服器憑證來驗證伺服器。他們不應該從StorageGRID 這個系統複製CA憑證。</block>
   <block id="45c64e15304a6b1879104b70217d3255" category="list-text">在 * 憑證 PEM* 區段中、下載或複製憑證。</block>
@@ -1916,7 +1911,6 @@
   <block id="f62e4d7ab8827b9a38876953b2c22ada" category="list-text">選取*「Apply」（套用）*、然後選取*「OK」（確定）*。</block>
   <block id="cf99c01efb12e12f7e4a61ccb0e38931" category="paragraph">依賴方屬性會儲存並關閉。</block>
   <block id="d962439b904956ead48e456c1fed404d" category="summary">您可以使用PingFedate為系統中的每個管理節點建立服務供應商（SP）連線。為了加速程序、您將從StorageGRID Set供 匯入SAML中繼資料。</block>
-  <block id="df1265098c9f1e23e4ca91dc29e60fd9" category="doc">在PingFedate中建立服務供應商（SP）連線</block>
   <block id="f9869855d86340ca931503bcc313341b" category="paragraph">您可以使用PingFedate為系統中的每個管理節點建立服務供應商（SP）連線。為了加速程序、您將從StorageGRID S倚賴 者處匯入SAML中繼資料。</block>
   <block id="8a609db02ecb9c2e1acad1df457b767f" category="list-text">您已設定StorageGRID 單一登入以供使用、並選擇* Ping federate*作為SSO類型。</block>
   <block id="65f52b48237f5a9792f284df4b2acfc2" category="list-text">您已下載系統中每個管理節點的* SAML中繼資料*。</block>
@@ -2232,7 +2226,6 @@
   <block id="4b00b87b1cc27f66bb954d12949dac14" category="list-text">對於 * 設定最大保留期間 * 、請輸入一個值、然後從下拉式清單中選取時間週期。</block>
   <block id="b29fb0219f80bb3addc8ef53fb2fb4c5" category="list-text">對於 * 允許規範模式 * 、請選取核取方塊。</block>
   <block id="11835232abc875ea47d6f1310fde360d" category="summary">您可以編輯流量分類原則來變更其名稱或說明、或建立、編輯或刪除原則的任何規則或限制。</block>
-  <block id="38f8f1df314d28c79ae6a3e2d4041702" category="doc">編輯流量分類原則</block>
   <block id="e06aa7fde235be261dca10b463b90329" category="paragraph">此時會出現「流量分類原則」頁面、並在表格中列出現有的原則。</block>
   <block id="4e749ec8b8c36f0c60844d52c3f105b5" category="inline-link-macro">建立流量分類原則</block>
   <block id="b8b412ce6565f8478a2627bb6eee5979" category="list-text">使用「動作」功能表或「詳細資料」頁面編輯原則。請參閱<block ref="2229483cfc16cb7d73e1377579481795" category="inline-link-macro-rx"></block>以瞭解要輸入的內容。</block>
@@ -2740,7 +2733,6 @@
   <block id="98323aac71902a2f22a342d2415121f7" category="list-text">如果您無法解決警示、請聯絡技術支援部門。</block>
   <block id="0be87333fa251bbe25cfab9b3a43b81d" category="paragraph">問題解決後、跨網格複寫將會正常進行。</block>
   <block id="8564823d5da1416323b37cc2295950f5" category="summary">帳戶複製是自動複寫租戶帳戶、租戶群組、租戶使用者、以及選擇性的 在網格同盟連線中的 StorageGRID 系統之間使用 S3 存取金鑰。</block>
-  <block id="0781f2ff88456f309a3924703d24c306" category="doc">什麼是帳戶複製？</block>
   <block id="69fd9dc8a13d18be006633784032f7c6" category="inline-link-macro">網格同盟連線</block>
   <block id="1b9dde4d9783218bf46d09064c2e0d44" category="paragraph">帳戶複製是在中的 StorageGRID 系統之間自動複寫租戶帳戶、租戶群組、租戶使用者、以及選擇性的 S3 存取金鑰<block ref="0cb2659fed6636b76bda464232907e78" category="inline-link-macro-rx"></block>。</block>
   <block id="068ca2f5a9ce21090f7b9e1634f321ae" category="paragraph">需要複製帳戶<block ref="e5e3a9582cf034264f42071b7ae364d5" category="inline-link-macro-rx"></block>。將帳戶資訊從來源 StorageGRID 系統複製到目的地 StorageGRID 系統、可確保租戶使用者和群組能夠存取任一網格上的對應儲存區和物件。</block>
@@ -2788,7 +2780,6 @@
   <block id="505156f69cc084895c7d035eff0562b9" category="list-text">或者、也可以將 S3 存取金鑰從來源租戶複製到目的地租戶。</block>
   <block id="3b9dd7629a77b80075c08a2ee48bd3c1" category="paragraph">如需有關授權租戶帳戶工作流程的詳細資訊、以及如何複製群組、使用者和 S3 存取金鑰、請參閱<block ref="fa636d70dbf00b54173874de417080be" category="inline-link-macro-rx"></block>和<block ref="69ae0a536769e88fa91576741c0ec4d4" category="inline-link-macro-rx"></block>。</block>
   <block id="25b79cb11edc5d134d624bdfdca88f36" category="summary">跨網格複寫是在網格同盟連線中連接的兩個 StorageGRID 系統中、在所選的 S3 儲存區之間自動複寫物件。跨網格複寫需要帳戶複製。</block>
-  <block id="bc2a3959e674ad4bc20ab3508e42db0d" category="doc">什麼是跨網格複寫？</block>
   <block id="d07101362fa89edd1f67bc2ed8d09fd7" category="inline-link-macro">帳戶複製</block>
   <block id="4d275e4de61bb84448acafe64088557a" category="paragraph">跨網格複寫是在中連接的兩個 StorageGRID 系統中、在所選的 S3 儲存區之間自動複寫物件<block ref="0cb2659fed6636b76bda464232907e78" category="inline-link-macro-rx"></block>。<block ref="d74da0c76037e80048678d288a05c6b7" category="inline-link-macro-rx"></block>為跨網格複寫所需。</block>
   <block id="eeb242ac6f9dcdbee5cb0cca557fca16" category="section-title">跨網格複寫的工作流程</block>
@@ -2929,7 +2920,6 @@
   <block id="298217ca69867dc3dbe8d7c6b8d8273e" category="paragraph">或者、您也可以將額外的介面新增至節點。例如、您可能想要將主幹介面新增至管理節點或閘道節點、以便用來<block ref="ac8929122e804e5b209516588eae6e82" category="inline-link-macro-rx"></block>分隔屬於不同應用程式或租戶的流量。或者，您可能想要新增存取介面以在中使用<block ref="5687d1b7c591365d4b478cab4cfa289c" category="inline-link-macro-rx"></block>。</block>
   <block id="f0217e2333c713087624fffa5c28294a" category="paragraph">若要新增主幹或存取介面、請參閱下列內容：</block>
   <block id="298293acaf97685392f5e4dac86be624" category="summary">您可以使用高可用度（HA）群組、為StorageGRID 物件資料和管理用途提供高可用度的連接至物件資料。</block>
-  <block id="4ca94df7576705c5e4edbcafe47531fc" category="doc">如何使用HA群組？</block>
   <block id="de2d143881b19725476a3617b9926ef2" category="list-text">HA群組可提供高可用度的管理連線至Grid Manager或Tenant Manager。</block>
   <block id="332fff5589776942306da495f277b233" category="list-text">HA 群組可為 S3 用戶端提供高可用度的資料連線。</block>
   <block id="5d4735631a3ab0fa457db9c3aacf50a2" category="list-text">僅包含一個介面的HA群組可讓您提供多個VIP位址、並明確設定IPv6位址。</block>
@@ -3074,7 +3064,6 @@
   <block id="590ba53362ae9806b6816ec75a243ae5" category="list-text">取得由StorageGRID 外部KMS核發的公有用戶端憑證、以及用戶端憑證的私密金鑰。</block>
   <block id="18d77619bc7c79ae5f695fc3dd66c081" category="paragraph">用戶端憑證StorageGRID 可讓支援驗證本身到KMS。</block>
   <block id="f23d60ebd08d6de24ec7705d41cc93d2" category="summary">金鑰管理伺服器（ KMS ）是外部的協力廠商系統、使用金鑰管理互通性傳輸協定（ KMIP ）、為關聯 StorageGRID 站台上的 StorageGRID 應用裝置節點提供加密金鑰。</block>
-  <block id="b2efa747a2183943604c8db36a37b5d1" category="doc">什麼是金鑰管理伺服器（KMS）？</block>
   <block id="a6ee34df66416f97be73201d810d3f1c" category="paragraph">金鑰管理伺服器（KMS）是一種外部的第三方系統StorageGRID 、可透過StorageGRID 金鑰管理互通性傳輸協定（KMIP）、為相關聯的站台上的應用裝置節點提供加密金鑰。</block>
   <block id="062fe6ab3c8bbbe54030510df5fb989c" category="paragraph">StorageGRID 僅支援特定的金鑰管理伺服器。如需受支援產品與版本的清單，請使用<block ref="59eff0a7409a2083b143c03284b14f62" category="inline-link-rx"></block>。</block>
   <block id="78879d2cac3520c405321f6d1cdaf942" category="paragraph">您可以使用一或多個金鑰管理伺服器、來管理StorageGRID 安裝期間啟用*節點加密*設定的任何節點的節點加密金鑰。即使從資料中心移除應用裝置、將關鍵管理伺服器與這些應用裝置節點搭配使用、也能保護資料。應用裝置磁碟區加密後、除非節點可以與 KMS 通訊、否則您無法存取應用裝置上的任何資料。</block>
@@ -3369,7 +3358,6 @@
   <block id="8704b7af5a2b93d3941c628849f397f7" category="inline-image-macro">復原圖示</block>
   <block id="af83c188917832d2c4c9c134609a01f7" category="paragraph">若要取消變更、請選取 <block ref="4800630432b18a4547d73ebabd4c93f8" category="inline-image-macro-rx" type="image"></block>* 回復 * 。</block>
   <block id="576820c1bb3ed6e65db506a22226bd92" category="summary">平台服務包括CloudMirror複寫、事件通知及搜尋整合服務。</block>
-  <block id="9b0014cfa3fbbcf33e5ad66e336d4bd5" category="doc">什麼是平台服務？</block>
   <block id="9626e0404084f4f05deffe252b44205c" category="paragraph">如果您為S3租戶帳戶啟用平台服務、則必須設定網格、讓租戶能夠存取使用這些服務所需的外部資源。</block>
   <block id="0012dc948f477da090adb8b845d6dbe3" category="section-title">CloudMirror複寫</block>
   <block id="76b9c576411c2912860683380096ca19" category="paragraph">StorageGRID CloudMirror 複寫服務用於將特定物件從 StorageGRID 儲存庫鏡射到指定的外部目的地。</block>
@@ -3544,7 +3532,6 @@
   <block id="bda90421676565ea5bce60929e24b214" category="section-title">新增儲存節點</block>
   <block id="2f89e09d98b36823a3fd4f2c40508d58" category="paragraph">您可以新增儲存節點來增加儲存容量。新增儲存設備時、必須仔細考量目前使用中的ILM規則和容量需求。請參閱的說明<block ref="ed7fb2693d9c519671d6120bad3f19e1" category="inline-link-macro-rx"></block>。</block>
   <block id="553bad178e08adf3e81522270ae21ae1" category="summary">高可用度 \(HA\) 群組可為 S3 用戶端提供高可用度的資料連線、並可與 Grid Manager 和 Tenant Manager 進行高可用度連線。</block>
-  <block id="90ea2b74a7c4a9c29f5c2948416d4fdd" category="doc">什麼是高可用度（ HA ）群組？</block>
   <block id="1501308fa7b3db557531ef662c17093a" category="paragraph">高可用度（ HA ）群組可為 S3 用戶端提供高可用度的資料連線、以及與 Grid Manager 和 Tenant Manager 的高可用度連線。</block>
   <block id="6bc314f562d758e9865c7c6fe88bdabc" category="paragraph">您可以將多個管理節點和閘道節點的網路介面分組為高可用度（HA）群組。如果HA群組中的作用中介面故障、備份介面就能管理工作負載。</block>
   <block id="d78135669af79d3a2cf5f6308653ec8d" category="paragraph">每個HA群組均可存取所選節點上的共享服務。</block>
@@ -3765,7 +3752,6 @@
   <block id="26b01d3a7e8be445ab090cc0bcf61f9a" category="list-text">若要增加系統的物件中繼資料容量、請<block ref="52237c56bb284a0429fb8b38b6de8e84" category="inline-link-macro-rx"></block>新增儲存節點。</block>
   <block id="7fe57dc7b83566b3573d1b2010b8469c" category="doc">管理儲存節點</block>
   <block id="e8e2d2b9fcf0bb7a2aca936e601cf7a9" category="summary">租戶帳戶可讓您使用簡易儲存服務（ S3 ） REST API 來儲存及擷取 StorageGRID 系統中的物件。</block>
-  <block id="0ca5b907506158c93ce087938cd754fa" category="doc">什麼是租戶帳戶？</block>
   <block id="1ee86a0125bcd863b0a061af54cdf220" category="paragraph">租戶帳戶可讓您使用簡易儲存服務（ S3 ） REST API 來儲存及擷取 StorageGRID 系統中的物件。</block>
   <block id="46962c8c4a9896875715e760cf4b2674" category="inline-link">StorageGRID 11.8 ：管理租戶</block>
   <block id="b63879b81a8d044dc420f87c916f170f" category="admonition">Swift 詳細資料已從此文件網站版本中移除。請參閱。<block ref="48396f73b32bbdbf5d2ead0cde358832" category="inline-link-rx"></block></block>
@@ -3794,7 +3780,6 @@
   <block id="6c9d341bb7ba287b3a8f6521b7c4a8ce" category="list-text">監控儲存使用量</block>
   <block id="9ac1878c3918b7c952baadee46c53b60" category="admonition">雖然 S3 租戶使用者可以使用 Tenant Manager 來建立和管理 S3 存取金鑰和貯體、但他們必須使用 S3 用戶端應用程式來擷取和管理物件。如需詳細資訊、請參閱 <block ref="b2e9605f9891eaecc5b3ed34b309acc3" category="inline-link-macro-rx"></block> 。</block>
   <block id="63ac0798ea8538bfd7d6b3c026022f0c" category="summary">流量分類原則可讓您識別及監控不同類型的網路流量。這些原則有助於限制和監控流量、以提升您的服務品質（ QoS ）產品。</block>
-  <block id="7330087c15ea39f90af46a9b46f11487" category="doc">什麼是流量分類原則？</block>
   <block id="ca80ef30ae4e001596aa25908ed4702c" category="paragraph">流量分類原則會套用至StorageGRID 閘道節點和管理節點的「動態負載平衡器」服務上的端點。若要建立流量分類原則、您必須已經建立負載平衡器端點。</block>
   <block id="df0867d41c5943344555e6588b7d723e" category="section-title">符合的規則</block>
   <block id="507d75e24074bd0c53b5f5569af8d6cb" category="paragraph">每個流量分類原則都包含一或多個相符的規則、用以識別與下列一或多個實體相關的網路流量：</block>
@@ -4279,7 +4264,6 @@
   <block id="f9ae7e057a884af0f2073587d77ba0d1" category="paragraph">系統會驗證並顯示新的授權檔案。</block>
   <block id="7868f61447922d514bcc52acb5335a6f" category="list-text">輸入資源配置通關密碼。</block>
   <block id="a8569eb76e7da43624dd173b39844833" category="summary">如果您已設定並啟用單一登入（SSO）、且使用Active Directory做為SSO供應商、則必須發出一系列API要求、以取得適用於Grid Management API或租戶管理API的驗證權杖。</block>
-  <block id="61a525e4054c3ed8076190610eef2451" category="doc">如果啟用單一登入、請使用API（Active Directory）</block>
   <block id="ee1f2e1a54d9ae788ccb0b6c87844a4d" category="inline-link-macro">已設定並啟用單一登入（SSO）</block>
   <block id="ec520baf1c3ab6a0a89c0a5898cb80ea" category="section-title">如果啟用單一登入、請登入API</block>
   <block id="fb6be15b5e8d63d5866811553baa9b6f" category="paragraph">如果您使用Active Directory做為SSO身分識別供應商、則適用這些指示。</block>
@@ -4351,7 +4335,6 @@
   <block id="f93353d3194e903344af68e34760f06e" category="image-alt">提示輸入密碼和MFA</block>
   <block id="776c3a1164b2d8288eae2c0ab38969a8" category="admonition">指令碼假設MFA是使用Microsoft驗證者完成。您可能需要修改指令碼、以支援其他形式的 MFA （例如輸入在文字訊息中收到的程式碼）。</block>
   <block id="0e3b8c599b62f7f1911b4a63afbaace6" category="summary">如果您已設定並啟用單一登入（SSO）、而且使用PingFedate做為SSO供應商、則必須發出一系列API要求、以取得適用於Grid Management API或租戶管理API的驗證權杖。</block>
-  <block id="c41f81deac11c3e51228fdf61f535be6" category="doc">如果啟用單一登入、請使用API（PingFedate）</block>
   <block id="b50edd3f70c61fc0857f63933fad8dea" category="paragraph">如果您使用PingFedate做為SSO身分識別供應商、則適用這些指示</block>
   <block id="0781f2d9515b042d96d3a68fa21c684b" category="list-text">SSO方法。您可以輸入「 pingfederate 」的任何變化（ PINGFEDESTATE 、 pingfederate 等）。</block>
   <block id="0721a1873916c216602753686fbd6c15" category="list-text">安裝了鏡面的網域StorageGRID 。此欄位不適用於PingFedate。您可以將其保留空白或輸入任何值。</block>
@@ -4364,7 +4347,6 @@
   <block id="36e5369f6a37e13ee8eaae0a085ce34f" category="list-text">傳送內含認證的Cookie：</block>
   <block id="0fd95255c00190af69e5d2fe3488d940" category="paragraph">如果已啟用單一登入（SSO）、您必須發出一系列API要求、以登出Grid Management API或租戶管理API。如果您使用PingFedate做為SSO身分識別供應商、則適用這些指示</block>
   <block id="c33f841424bd677b4ba65c63fc5d55e3" category="summary">您可以使用 S3 設定精靈、將 StorageGRID 設定為 S3 應用程式的物件儲存系統。</block>
-  <block id="62b058960a10d37641c7ef5a75ec7ce9" category="doc">存取並完成 S3 設定精靈</block>
   <block id="79d874f2307b6cdadba81e33edb4cc9e" category="paragraph">您可以使用 S3 設定精靈來設定 StorageGRID 、以便搭配 S3 應用程式使用。安裝精靈提供應用程式存取 StorageGRID 儲存區和儲存物件所需的值。</block>
   <block id="47a1811ce81f7c640108f915729bf8d9" category="list-text">您已檢閱<block ref="683a80f76aff4cef04b135ae294367a7" category="inline-link-macro-rx"></block>以使用精靈。</block>
   <block id="defe779c37728ef608211035634695fa" category="list-text">使用登入 Grid Manager <block ref="8541e765dc24b449de04adfc628aed4e" category="inline-link-macro-rx"></block>。</block>
@@ -4475,7 +4457,6 @@
   <block id="8c2c046896647315b67168a633e0823f" category="list-text">檢閱摘要。</block>
   <block id="212e22eeef755216c60261fdc62ee6f9" category="list-text">請記下後續步驟中的詳細資料、其中說明在連線到 S3 用戶端之前可能需要的其他組態。例如、選取 * 以 root 身分登入 * 會將您帶到租戶管理員、您可以在其中新增租戶使用者、建立其他貯體、以及更新貯體設定。</block>
   <block id="5753765678d8483e7e85ea863a051b7f" category="list-text">使用您從 StorageGRID 下載的檔案或手動取得的值來設定應用程式。</block>
-  <block id="e0be492868eacf911ea3b0c53b715833" category="doc">使用 S3 設定精靈：考量與需求</block>
   <block id="5445eac3b3250da24e7f727f93210484" category="section-title">何時使用 S3 設定精靈</block>
   <block id="d589237567019f02cc095aae58763295" category="paragraph">S3 安裝精靈會引導您完成每個步驟、設定 StorageGRID 以搭配 S3 應用程式使用。在完成精靈的過程中、您可以下載檔案、以便在 S3 應用程式中輸入值。使用精靈可更快速地設定您的系統、並確保您的設定符合 StorageGRID 最佳實務做法。</block>
   <block id="55cf1c9f0958b75028043a7a7dcfa70f" category="paragraph">如果您有<block ref="299f84f12022fa731b81029e5e21583b" category="inline-link-macro-rx"></block>、可以在開始使用 StorageGRID Grid Manager 時完成 S3 設定精靈、也可以在稍後隨時存取並完成精靈。視您的需求而定、您也可以手動設定部分或全部必要項目、然後使用精靈來組合 S3 應用程式所需的值。</block>
@@ -4828,7 +4809,6 @@
   <block id="86f7d1a64c415dbe7948ca36a1e3bf52" category="summary">您必須使用支援的網頁瀏覽器。</block>
   <block id="c1ed048791176afc0254edb31158ccb2" category="doc">網頁瀏覽器需求</block>
   <block id="251acd665cb92974accd098cd86149f1" category="summary">AutoSupport 功能可讓 StorageGRID 將健全狀況和狀態套件傳送至 NetApp 技術支援。</block>
-  <block id="75cc5d5d0ad414e3c3a9a859eab55ba6" category="doc">什麼是AutoSupport 功能？</block>
   <block id="56c33d0d379a6b052965328021e02606" category="paragraph">StorageGRID 有兩種類型的 AutoSupport ：</block>
   <block id="7a62f73e838ed7243090a85efdbbf13f" category="inline-link-macro">變更預設的 AutoSupport 組態</block>
   <block id="8ac720806caf3dce8a60cd2bd682ab68" category="list-text">* StorageGRID AutoSupport * 回報 StorageGRID 軟體問題。在您第一次安裝 StorageGRID 時、預設為啟用。如有需要、您可以<block ref="c6081e710dc6a6ae7ef854a7895fba55" category="inline-link-macro-rx"></block>。</block>
@@ -4900,7 +4880,6 @@
   <block id="5d4163a979e537ed9d9159851b49ee88" category="paragraph">NetApp asup-General-on + NetApp asup-hostname + NetApp asup-OS 版本 + NetApp asup-SERIAL -num + NetApp asup-Subject + NetApp asup-system-id + NetApp asup-model 名稱 +</block>
   <block id="3d9f75e08245c9bebec6ff50d4118f63" category="paragraph">AutoSupport 標頭資料。</block>
   <block id="aa314a7d0ee49482f6621fd05553d16b" category="summary">物件分割是將物件分割成一組較小的固定大小物件、以最佳化大型物件的儲存和資源使用量的程序。S3多重部分上傳也會建立分段物件、並有代表每個部分的物件。</block>
-  <block id="e7839d9bb0a256965fb5ddf64510d9c2" category="doc">什麼是物件區隔？</block>
   <block id="44064194df06fe4e0a7c72935009b759" category="paragraph">將物件擷取至StorageGRID 物件系統時、LdR服務會將物件分割成區段、並建立區段容器、將所有區段的標頭資訊列為內容。</block>
   <block id="1d78826b2bdb4ac4913d28faa50b954e" category="image-alt">物件分割工作流程</block>
   <block id="a1563dee24b9a94a56345b66f3553195" category="paragraph">在擷取區段容器時、LMR服務會從區段組合原始物件、並將物件傳回用戶端。</block>
@@ -4908,7 +4887,6 @@
   <block id="b476824c1eb7a9441ca268db480f106f" category="paragraph">每個區段均由StorageGRID 整個系統獨立處理、並有助於計算託管物件和儲存物件等屬性的數量。例如、如果將儲存在StorageGRID 物件叢集系統中的物件分割成兩個區段、則在擷取完成後、「Managed物件」的值會增加三倍、如下所示：</block>
   <block id="4b19aed98748d98fae26c12341a3808b" category="paragraph"><block ref="ea6f38494bae41db8b8356e816b21c54" prefix="" category="inline-code"></block></block>
   <block id="1f8c0d16a5817ce9b2c107e79fceb993" category="summary">利用三個儲存磁碟區浮點、確保儲存節點在極低空間執行之前、安全地轉換為唯讀狀態、並允許已轉換為唯讀狀態的儲存節點再次變成讀寫狀態。StorageGRID</block>
-  <block id="774b0edc84bb05e7b164d869b3736e93" category="doc">什麼是儲存Volume浮水印？</block>
   <block id="2dc9e6a29b969dbcfa032deab6e6f88f" category="image-alt">儲存Volume浮點</block>
   <block id="03c4d1b5224b39e255fa1eb5798ef5ef" category="admonition">儲存Volume浮點僅適用於複寫和銷毀編碼物件資料所使用的空間。若要瞭解磁碟區 0 上保留給物件中繼資料的空間、請前往<block ref="c91dd2d40973f6e1abcec316fa83fcf8" category="inline-link-macro-rx"></block>。</block>
   <block id="6d2a767d9f295a6e5399d656aa7b79e7" category="section-title">什麼是軟式唯讀浮水印？</block>
@@ -20506,7 +20484,6 @@
   <block id="f96f5f3b77f856eb706666d6aa178f4b" category="paragraph">關閉「匯入聯合使用者」對話方塊後，成功匯入的使用者的聯合使用者資訊將顯示在「使用者」頁面上。</block>
   <block id="715eec56e39450785db62e95c91072ae" category="list-text">支援 HTTP POST 通知請求的外部或本機託管的 webhook 端點。</block>
   <block id="ac1d22d3ea54615a9c8c024fbf498f7c" category="paragraph">此端點可以託管在各種 Web 伺服器、框架或資料處理工具（例如 Fluentd）上。</block>
-  <block id="2bdcf95a11c4618d6febaf60414c52de" category="doc">SSO 的要求和注意事項</block>
   <block id="4df90909cc2d04997870c4949a39d14b" category="list-text">微軟Entra ID</block>
   <block id="f6efea3fcc3d7cf81bf41e6f5efe50bf" category="section-title">Entra ID 的注意事項</block>
   <block id="f6da143e919ab8175e5f178b256dc2f8" category="paragraph">如果您使用 Entra ID 作為 SSO 類型，且使用者的使用者主體名稱不使用 sAMAccountName 作為前綴，則當StorageGRID與 LDAP 伺服器失去連線時，可能會發生登入問題。若要允許使用者登入，您必須恢復與 LDAP 伺服器的連線。</block>
@@ -20537,7 +20514,6 @@
   <block id="3d3ced0d44142164069c5c3c6ef72100" category="paragraph">如果你有<block ref="2bdf6db661aaec2c0c4af030da81f111" category="inline-link-macro-rx"></block>並且您使用 Active Directory 作為 SSO 提供程序，則必須發出一系列 API 請求以取得對網格管理 API 或租用戶管理 API 有效的身份驗證令牌。</block>
   <block id="b720fec785df7aecd6859f530e74fc2c" category="list-text">這<block ref="f4bee333530cbc2e78bf050ea8804741" prefix=" " category="inline-code"></block>Python 腳本，位於StorageGRID安裝檔目錄中<block ref="b55680554d5b9c679a6ba1cac7d72945" prefix="(" category="inline-code"></block>對於 RHEL，<block ref="d00375484edba3870abbb94cb03e6ad9" prefix=" " category="inline-code"></block>適用於 Ubuntu 或 Debian，以及<block ref="b4731b01ff217659f3a3b19ef46fb901" prefix=" " category="inline-code"></block>對於 VMware)。</block>
   <block id="7a8b640c1491159932a13d2b744bd282" category="summary">如果您已設定並啟用單一登入 (SSO) 並使用 Entra ID 作為 SSO 提供程序，則可以使用兩個範例腳本來取得對網格管理 API 或租用戶管理 API 有效的驗證令牌。</block>
-  <block id="7ed2ceadd75cb2defd44ab67c2e3f279" category="doc">如果啟用了單一登錄，則使用 API（Entra ID）</block>
   <block id="a5e1c6f1bb6fe902255152b219a56714" category="paragraph">如果你有<block ref="2bdf6db661aaec2c0c4af030da81f111" category="inline-link-macro-rx"></block>並且您使用 Entra ID 作為 SSO 提供程序，您可以使用兩個範例腳本來取得對網格管理 API 或租用戶管理 API 有效的身份驗證令牌。</block>
   <block id="a6b6a1070df0402e411f0d2040222b07" category="section-title">如果啟用了 Entra ID 單一登入，Sign inAPI</block>
   <block id="939cd67dfc27e438c6ce73136bb1d671" category="paragraph">如果您使用 Entra ID 作為 SSO 身分提供者，則適用這些說明</block>
@@ -22516,4 +22492,108 @@
   <block id="e254488ba3d309d41798939c9911f8c2" category="paragraph"><block ref="f8aee9049e87bcd785ed83b147f235e4" prefix=" " category="inline-code"></block>已被接受，但無法正常使用。</block>
   <block id="e3e16bb73c0250a6a229fb457b4f957e" category="list-text">限制</block>
   <block id="cbbcf2982eaa107551967ef41b946c6f" category="list-text">The<block ref="b4eaa868c5a9d3d78f9ca606a3cb09eb" prefix=" " category="inline-code"></block> 和<block ref="bf6d5c936f034a1c80c1d489d85a9cfb" prefix=" " category="inline-code"></block> 標頭已被接受，但無法正常工作。</block>
+  <block id="e656b5491b22532678114f4fbdaa1610" category="doc">StorageGRID 中的管理員群組權限</block>
+  <block id="2fafbe9399731066698cba7a22a9d98b" category="doc">StorageGRID 中活動、閒置和並行 HTTP 連線的優勢</block>
+  <block id="83bb1d612c89834b42cec2d83dacc83f" category="doc">在 StorageGRID 中變更節點主控台密碼</block>
+  <block id="f7acc5beeaff6fa8ae65c8cdb5b46d65" category="doc">變更 StorageGRID 管理節點的 SSH 存取密碼</block>
+  <block id="6806a046fe26f30732eafb5133f50ed4" category="doc">更改 StorageGRID 介面安全性設定</block>
+  <block id="c7df19c208f439791014a495b809d3ea" category="doc">設定 StorageGRID 網路和物件安全</block>
+  <block id="ba4a8b5efd4295d128f32e61d7b80a9a" category="doc">變更 StorageGRID 租戶本機 root 使用者的密碼</block>
+  <block id="69fb5270d8501628724dc282f16e337f" category="doc">更改 StorageGRID 佈建通關密碼</block>
+  <block id="43d678b53379a3d1440824eab7807f8c" category="doc">更改 StorageGRID Grid Manager 密碼</block>
+  <block id="ddbbd58ec52e453e1e1b2064db997d42" category="doc">StorageGRID 高可用性群組的設定選項</block>
+  <block id="68267d7f1974ac7c77b85f531c62d72d" category="paragraph">以下圖表提供了配置高可用性（ HA ）群組的不同方法範例。每個選項都有優點和缺點。</block>
+  <block id="ad9a106ee3d0cea49f1a5d64a50631ed" category="doc">在 StorageGRID 中設定 AutoSupport</block>
+  <block id="5b1831a6b864b389563179f80b571730" category="doc">配置 StorageGRID 內部防火牆</block>
+  <block id="952ed655ae129900d2e3679c4432bfce" category="doc">在 StorageGRID 中設定高可用性群組</block>
+  <block id="79041b73ee27783cdfb91f0d49e6aac6" category="doc">在 StorageGRID 中設定 SSO</block>
+  <block id="e6edc46a4ce9c87c3e6ad961ab2a686f" category="doc">在 StorageGRID 中設定 VLAN 介面</block>
+  <block id="616981215ce6b9fa59ffc9651de256e9" category="doc">在 StorageGRID 中設定管理 Proxy 設定</block>
+  <block id="43d294a40caf45d3511ccfa901859e60" category="doc">在 StorageGRID 中設定用戶端憑證</block>
+  <block id="46c67c7bc8240ad144d0cb0bf46a62e1" category="doc">設定 S3 用戶端連線至 StorageGRID</block>
+  <block id="5a96dbbedcdc5b6cf09e2819243c6f39" category="doc">在 StorageGRID 中設定管理介面憑證</block>
+  <block id="07727d184cfbd983d40789020990fbec" category="doc">在 StorageGRID 中設定 S3 API 憑證</block>
+  <block id="8998ef23e9a04f41a7a4ded42ba2aea7" category="doc">配置 StorageGRID 負載平衡器端點</block>
+  <block id="b1ee2c2a899090a06c6f92e5f8c9b6a0" category="doc">配置 StorageGRID 網路設定</block>
+  <block id="3ba770aa6bc458de2f0e8d42c56a0c3c" category="doc">在 StorageGRID 中設定 S3 端點網域名稱</block>
+  <block id="2657d974e5f7a154ad94460342069a7f" category="doc">配置 StorageGRID 儲存代理</block>
+  <block id="0a404d249bc5df320d2e5801cbcff312" category="doc">壓縮 StorageGRID 中儲存的物件</block>
+  <block id="488fa1938dfc30f12e2ea7df6e14bd35" category="doc">確認聯合使用者可以登入 StorageGRID</block>
+  <block id="d623e0663d973a29403bb2a8f07bfa24" category="doc">在外部防火牆控制 StorageGRID 存取</block>
+  <block id="c4a27e41d2befa7918ff2a1a3401120c" category="doc">複製 StorageGRID Grid CA 憑證</block>
+  <block id="55a109b13fa6c1819189f8bf1b589539" category="doc">在 Entra ID 中為 StorageGRID 建立企業應用程式</block>
+  <block id="e71b1b06c23722e350fb890edbd08e4b" category="doc">在 AD FS 中為 StorageGRID 建立信賴方信任</block>
+  <block id="5c8768360bc3add6f986d6fcf88a2f1c" category="doc">在 PingFederate 中為 StorageGRID 建立服務提供者連線</block>
+  <block id="4edaa60c9937249d495a21ebad57d1fa" category="doc">建立 StorageGRID 租用戶帳戶</block>
+  <block id="536efae08f5a66b5027f7fb713c908c4" category="doc">建立 StorageGRID 流量分類原則</block>
+  <block id="77db5d6474a0be6b29dac4642b467ce5" category="doc">使用 API 停用 StorageGRID 功能</block>
+  <block id="4c28d42e3a685e5a55e1108e4b225841" category="doc">刪除 StorageGRID 租用戶帳戶</block>
+  <block id="5deac957e9e2749c9e7f8ecb53b1d6dd" category="doc">刪除 StorageGRID 流量分類原則</block>
+  <block id="1305125ef35bce9aba3b404ecce24a27" category="doc">停用 StorageGRID 中的 SSO</block>
+  <block id="e7f24b8d07b09f8d1d157b8ae93d944f" category="doc">編輯 StorageGRID 租用戶帳戶</block>
+  <block id="4a9ab8b66638f2b4bb2e63ad2f05288f" category="doc">編輯 StorageGRID 流量分類原則</block>
+  <block id="fd2b86e7b0f22db7147c430d2253fe4e" category="doc">StorageGRID 中支援的伺服器憑證類型</block>
+  <block id="4975660222433f1f79eefc23953205fc" category="doc">比較 StorageGRID 中的跨網格複寫和 CloudMirror 複寫</block>
+  <block id="3b10772597d3767578c5a4101018e3dc" category="doc">建立 StorageGRID 網格聯合連線</block>
+  <block id="1ab7e372f065dc1278919699f2bc2daf" category="doc">管理 StorageGRID 網格聯合連線</block>
+  <block id="76873ea3dc755d9257ac585b6d81c1ad" category="doc">管理 StorageGRID 網格聯盟的允許租戶</block>
+  <block id="d3c3ab0d8d2d2050c16f40ee6c8a78c2" category="doc">了解 StorageGRID 網格聯邦</block>
+  <block id="22710ec4c8b06feb899a3d952c7eac11" category="doc">識別並重試失敗的 StorageGRID 複寫作業</block>
+  <block id="93385c87374bc32f53b25687459398b1" category="doc">排查 StorageGRID 中的網格聯合錯誤</block>
+  <block id="06a14f6f51a6462ec971e14799a806fb" category="doc">瞭解 StorageGRID 中的帳戶複製</block>
+  <block id="a85796ee4929e8515a57b0de6ed01958" category="doc">瞭解 StorageGRID 中的跨網格複寫</block>
+  <block id="00fcad4c66580f7ea6e705c1fdf91a1b" category="doc">StorageGRID 中的 Grid Management API 操作</block>
+  <block id="d5911056906370adb01fb93f27f9935a" category="doc">StorageGRID 中的 Grid Management API 版本控制</block>
+  <block id="735b9ce6f01208619f90fb7fea208aef" category="doc">StorageGRID HA 群組如何提供高可用性</block>
+  <block id="a5079696ea6ae02dac073feb193c8c06" category="doc">了解 StorageGRID 單一登入</block>
+  <block id="9d8500a6899a13b6ad728fed791b7313" category="doc">識別 StorageGRID 中的主要管理節點</block>
+  <block id="d9935d602270c0890bda51cf4c54038d" category="doc">在 StorageGRID 中增加 Metadata Reserved Space 設定</block>
+  <block id="b2fbd5635c053f0e3d7c9b28b01185c8" category="doc">在 StorageGRID 中新增金鑰管理伺服器</block>
+  <block id="7192c09d8ffa0eac80401cce16e94e0b" category="doc">瞭解 StorageGRID 中的金鑰管理伺服器</block>
+  <block id="e02e05673187741fe768538b44688e39" category="doc">StorageGRID 金鑰管理伺服器需求和注意事項</block>
+  <block id="ca3b2717989ff854632cede88e70158a" category="doc">變更 StorageGRID 站台的 KMS 時的注意事項</block>
+  <block id="6a1ee5e1784256cf7e86076501d3dc4a" category="doc">在 StorageGRID 中管理金鑰管理伺服器</block>
+  <block id="9b5bbc084f2d104083d8751e54262a11" category="doc">StorageGRID 金鑰管理伺服器和應用裝置組態</block>
+  <block id="09a88ef1794c48731bb636730446e88a" category="doc">管理 StorageGRID 中的外部 SSH 存取</block>
+  <block id="0279455ebf53d279e5e36186fa2d2b99" category="doc">管理 StorageGRID 中的內部防火牆控制</block>
+  <block id="5c1bf18de302b4681b518d03d95244ce" category="doc">在 StorageGRID 中管理連結成本</block>
+  <block id="3e85de6df2dd95cc48a794d3a0cf3253" category="doc">了解 StorageGRID 平台服務</block>
+  <block id="bff8a6d4a5c9b7808c8df0614a73f4ef" category="doc">在 StorageGRID 中為租戶帳戶管理 S3 Select</block>
+  <block id="9d5aea490449584aa79af7a9773ea7df" category="doc">在 StorageGRID 中管理安全性</block>
+  <block id="023ded0fd3398c2bc139d6f3e8e60601" category="doc">管理 StorageGRID 中的 TLS 和 SSH 原則</block>
+  <block id="9fdedbd98525fccad2b5bc292e5860c4" category="doc">管理 StorageGRID 中的管理員群組</block>
+  <block id="5b75febca1fd325357f607e770dceee3" category="doc">在 StorageGRID 中管理已滿的 Storage Nodes</block>
+  <block id="6838264fdd48cc177aef44080d20c0af" category="doc">了解 StorageGRID 高可用性群組</block>
+  <block id="ca300a4f4a41fb35017ba01fec40f859" category="doc">了解 StorageGRID 負載平衡</block>
+  <block id="e229b0e7984ff183869663f26185593f" category="doc">在 StorageGRID 中管理物件中繼資料儲存</block>
+  <block id="2877b66336ddb93289feba7d41708b6d" category="doc">StorageGRID 中的租戶帳戶</block>
+  <block id="bde8e8794cfa7087c700ab509cf922a8" category="doc">StorageGRID 中的流量分類原則</block>
+  <block id="75b169b09c68fa60c0a548af1aae1a64" category="doc">在 StorageGRID 中管理使用者</block>
+  <block id="5890630038e8a5af00ef285967b05a61" category="doc">手動觸發 StorageGRID 中的 AutoSupport 套件</block>
+  <block id="79ffddd7fe351e499a3bcb51f7a18518" category="doc">StorageGRID 平台服務的網路和連接埠</block>
+  <block id="5bfe94f72f07d79b028292425e45536d" category="doc">按站點交付 StorageGRID 平台服務訊息</block>
+  <block id="aaa5967d89084df864a0c1f94301fc10" category="doc">防止 StorageGRID 中的跨站請求偽造（CSRF）攻擊</block>
+  <block id="70a04fe5d79967e5a1071f9350979e7e" category="doc">StorageGRID 單一登入的要求和注意事項</block>
+  <block id="db57aef240d2967e1bf94adc69169788" category="doc">StorageGRID 中 S3 用戶端的安全性</block>
+  <block id="ee83175d4b9a5e7891c102f3d58b96e3" category="doc">Sign in 至 StorageGRID Grid Manager</block>
+  <block id="4838a289b3c8adc7bcdca78cac2af3b9" category="doc">登出 StorageGRID Grid Manager</block>
+  <block id="cc756c71d728c3c5c769f3e7003921b5" category="doc">StorageGRID 客戶端連線的 IP 位址和連接埠</block>
+  <block id="474e8d4eb3dea2c29840925f080ff8ee" category="doc">StorageGRID 中支援的用於出站 TLS 連線的加密套件</block>
+  <block id="dc90bbcd3143a896b6a7faad7fbbcf77" category="doc">暫時停用並重新啟用 StorageGRID 管理節點的 SSO</block>
+  <block id="28e643d9b9a895bcc9e1ffb1acd14a0b" category="doc">StorageGRID AutoSupport 套件故障排除</block>
+  <block id="159d746619db7f5b11f2c49331f9f2ac" category="doc">疑難排解 StorageGRID 平台服務</block>
+  <block id="2fd6a10cfd42d55d78b88595d1510333" category="doc">如果啟用了單一登入（Active Directory），請使用 StorageGRID API</block>
+  <block id="8e250e91d5f6e148f89c9dc8ef22335d" category="doc">如果啟用了單一登入 （Entra ID），請使用 StorageGRID API</block>
+  <block id="5c48eecd4084f78e970f6d1d98a1b833" category="doc">如果啟用單一登入，請使用 StorageGRID API（PingFederate）</block>
+  <block id="1ea9426fc43b779df45c473bcea89f3a" category="doc">在 StorageGRID 中存取並完成 S3 設定精靈</block>
+  <block id="210ce2b5617060982b728c6f6b309e9d" category="doc">StorageGRID S3 設定精靈的考量與需求</block>
+  <block id="b204310922543738cd00aed0ebe08c77" category="doc">使用 StorageGRID Grid Management API</block>
+  <block id="da0383750d8c3aa208276d09ff4dfcf0" category="doc">在 StorageGRID 中使用多個管理節點</block>
+  <block id="2c09e3b62eca5a9b4cc22bbc8fe06b2c" category="doc">管理 StorageGRID 中的安全性憑證</block>
+  <block id="ad88afaa8506407435698f19316b5377" category="doc">在 StorageGRID 中檢視 IP 位址</block>
+  <block id="54ba09f021e0a309f59c9f2c4c6395cd" category="doc">在 StorageGRID 中檢視網路流量指標</block>
+  <block id="d9f5d426fbf3ec84441fc22cf8dc78d1" category="doc">StorageGRID 的 Web 瀏覽器需求</block>
+  <block id="61bdb933800e17d9f000dd1e60d8fadb" category="doc">了解 AutoSupport 在 StorageGRID 中的應用</block>
+  <block id="883e5c2cbeefdb615fa4e126598862ec" category="doc">了解 StorageGRID 中的物件分割</block>
+  <block id="1143cf2c3ea50fb56691b766519817ba" category="doc">了解 StorageGRID 中的儲存磁碟區浮水印</block>
 </blocks>

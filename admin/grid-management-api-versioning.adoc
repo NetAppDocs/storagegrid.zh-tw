@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid management api, api versioning 
 summary: Grid Management API使用版本管理來支援不中斷營運的升級。 
 ---
-= Grid Management API版本管理
+= StorageGRID 中的 Grid Management API 版本控制
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

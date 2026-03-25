@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: increase metadata reserved space setting 
 summary: 如果您的儲存節點符合 RAM 和可用空間的特定需求、您可能可以增加中繼資料保留空間系統設定。 
 ---
-= 增加中繼資料保留空間設定
+= 在 StorageGRID 中增加 Metadata Reserved Space 設定
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

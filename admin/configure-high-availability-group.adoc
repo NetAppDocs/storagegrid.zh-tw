@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure high availability group, node priority order, failover 
 summary: 您可以設定高可用度（HA）群組、以提供對管理節點或閘道節點上服務的高可用度存取。 
 ---
-= 設定高可用度群組
+= 在 StorageGRID 中設定高可用性群組
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

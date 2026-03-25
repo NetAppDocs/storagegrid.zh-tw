@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 connection, connect to storagegrid, s3 setup wizard 
 summary: 身為網格管理員、您可以管理組態選項、以控制 S3 用戶端應用程式如何連線至 StorageGRID 系統、以儲存及擷取資料。 
 ---
-= 設定 S3 用戶端連線
+= 設定 S3 用戶端連線至 StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

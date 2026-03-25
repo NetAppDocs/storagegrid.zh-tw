@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rsa, ecdsa, custom certificate encryption 
 summary: 支援使用RSA或ECDSA（Elliptic曲線數位簽章演算法）加密的伺服器StorageGRID 憑證。 
 ---
-= 支援的伺服器憑證類型
+= StorageGRID 中支援的伺服器憑證類型
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

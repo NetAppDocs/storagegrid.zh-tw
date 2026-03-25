@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to manage local users 
 summary: 您可以檢視本機和聯盟使用者。您也可以建立本機使用者、並將其指派給本機管理群組、以決定這些使用者可以存取哪些Grid Manager功能。 
 ---
-= 管理使用者
+= 在 StorageGRID 中管理使用者
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Grid Management API,  API operations 
 summary: Grid Management API會將可用的API作業組織到下列各節。 
 ---
-= 網格管理API作業
+= StorageGRID 中的 Grid Management API 操作
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

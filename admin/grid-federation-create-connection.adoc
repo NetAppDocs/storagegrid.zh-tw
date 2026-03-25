@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, create connection, configure connection 
 summary: 如果您想要複製租戶詳細資料並複寫物件資料、可以在兩個 StorageGRID 系統之間建立網格同盟連線。 
 ---
-= 建立網格同盟連線
+= 建立 StorageGRID 網格聯合連線
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

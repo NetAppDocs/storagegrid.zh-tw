@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: provisioning passphrase, change passphrase 
 summary: 使用此程序更改StorageGRID配置密碼。恢復、擴充和維護過程都需要密碼。下載恢復包備份也需要密碼，其中包括網格拓撲資訊、網格節點控制台密碼和StorageGRID系統的加密金鑰。 
 ---
-= 變更資源配置通關密碼
+= 更改 StorageGRID 佈建通關密碼
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

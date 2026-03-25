@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure autosupport, what is autosupport-on-demand 
 summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 StorageGRID 時啟用。不過、您必須在每個應用裝置上設定硬體 AutoSupport 。您可以視需要變更 AutoSupport 組態。 
 ---
-= 設定AutoSupport 功能
+= 在 StorageGRID 中設定 AutoSupport
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

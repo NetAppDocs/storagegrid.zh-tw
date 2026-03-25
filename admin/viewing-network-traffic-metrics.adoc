@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network traffic, traffic classification policy, monitor traffic 
 summary: 您可以從「流量分類原則」頁面檢視可用的圖表、以監控網路流量。 
 ---
-= 檢視網路流量指標
+= 在 StorageGRID 中檢視網路流量指標
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

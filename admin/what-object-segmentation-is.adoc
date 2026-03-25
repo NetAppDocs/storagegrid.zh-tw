@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object segmentation, multipart upload 
 summary: 物件分割是將物件分割成一組較小的固定大小物件、以最佳化大型物件的儲存和資源使用量的程序。S3多重部分上傳也會建立分段物件、並有代表每個部分的物件。 
 ---
-= 什麼是物件區隔？
+= 了解 StorageGRID 中的物件分割
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

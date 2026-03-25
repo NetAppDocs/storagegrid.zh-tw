@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cross-grid replication, cloudmirror replication 
 summary: 開始使用網格同盟時、請檢閱跨網格複寫與 StorageGRID CloudMirror 複寫服務之間的相似點和差異。 
 ---
-= 比較跨網格複寫和 CloudMirror 複寫
+= 比較 StorageGRID 中的跨網格複寫和 CloudMirror 複寫
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network settings, vlan interface, traffic classification 
 summary: 您可以從Grid Manager設定各種網路設定、以微調StorageGRID 您的系統運作。 
 ---
-= 設定網路設定
+= 配置 StorageGRID 網路設定
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

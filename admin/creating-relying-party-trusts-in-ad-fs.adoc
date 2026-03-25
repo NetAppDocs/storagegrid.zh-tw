@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: relying party trust, active directory, ad fs, single sign on, sso 
 summary: 您必須使用Active Directory Federation Services（AD FS）為系統中的每個管理節點建立信賴關係人信任。您可以使用PowerShell命令、從StorageGRID 支援中心匯入SAML中繼資料、或手動輸入資料、來建立依賴方信任。 
 ---
-= 在AD FS中建立依賴方信任
+= 在 AD FS 中為 StorageGRID 建立信賴方信任
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: primary admin node, configuration management node 
 summary: 主要管理節點提供的功能比非主要管理節點更多。例如、某些維護程序必須使用主要管理節點來執行。 
 ---
-= 識別主要管理節點
+= 識別 StorageGRID 中的主要管理節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

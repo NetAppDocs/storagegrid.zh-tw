@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: kms, appliance configuration, node encryption 
 summary: 在使用金鑰管理伺StorageGRID 服器（KMS）來保護應用裝置節點上的資訊安全之前、您必須先完成兩項組態工作：設定一或多個KMS伺服器、以及啟用應用裝置節點的節點加密。完成這兩項組態工作之後、就會自動執行金鑰管理程序。 
 ---
-= KMS 與應用裝置組態
+= StorageGRID 金鑰管理伺服器和應用裝置組態
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to access storagegrid API if SSO is enabled with ADFS 
 summary: 如果您已設定並啟用單一登入（SSO）、且使用Active Directory做為SSO供應商、則必須發出一系列API要求、以取得適用於Grid Management API或租戶管理API的驗證權杖。 
 ---
-= 如果啟用單一登入、請使用API（Active Directory）
+= 如果啟用了單一登入（Active Directory），請使用 StorageGRID API
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

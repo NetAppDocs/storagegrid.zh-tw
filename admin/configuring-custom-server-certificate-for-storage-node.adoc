@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: global S3 API certificate 
 summary: 您可以取代或還原用於 S3 用戶端連線至儲存節點或負載平衡器端點的伺服器憑證。置換的自訂伺服器憑證是您組織專屬的。 
 ---
-= 設定 S3 API 憑證
+= 在 StorageGRID 中設定 S3 API 憑證
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

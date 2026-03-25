@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, cross-grid replication, account clone, cgr, disaster recovery 
 summary: 您可以使用網格同盟來複製租戶、並在兩個 StorageGRID 系統之間複寫其物件、以進行災難恢復。 
 ---
-= 什麼是網格同盟？
+= 了解 StorageGRID 網格聯邦
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

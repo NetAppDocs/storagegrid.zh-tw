@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: account clone, tenant replication, disaster recovery, grid federation 
 summary: 帳戶複製是自動複寫租戶帳戶、租戶群組、租戶使用者、以及選擇性的 在網格同盟連線中的 StorageGRID 系統之間使用 S3 存取金鑰。 
 ---
-= 什麼是帳戶複製？
+= 瞭解 StorageGRID 中的帳戶複製
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

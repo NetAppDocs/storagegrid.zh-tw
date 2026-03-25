@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: custom certificates, grid manager, tenant manager, management interface certificate 
 summary: 您可以使用StorageGRID 單一自訂伺服器憑證來取代預設的支援伺服器憑證、讓使用者能夠存取Grid Manager和租戶管理程式、而不會遇到安全性警告。您也可以還原為預設的管理介面憑證、或是產生新的憑證。 
 ---
-= 設定管理介面憑證
+= 在 StorageGRID 中設定管理介面憑證
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create tenant, tenant account 
 summary: 您必須建立至少一個租戶帳戶、以控制StorageGRID 對您的作業系統儲存設備的存取。 
 ---
-= 建立租戶帳戶
+= 建立 StorageGRID 租用戶帳戶
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: deactivate features from api 
 summary: 您可以使用Grid Management API來完全停用StorageGRID 作業系統中的某些功能。停用某項功能時、將無法指派權限給任何人、以執行與該功能相關的工作。 
 ---
-= 使用API停用功能
+= 使用 API 停用 StorageGRID 功能
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

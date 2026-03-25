@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable http, storage node connections 
 summary: 您可以設定網路和物件安全性來加密儲存的物件、防止某些 S3 要求、或允許用戶端連線至儲存節點使用 HTTP 而非 HTTPS 。 
 ---
-= 設定網路和物件安全性
+= 設定 StorageGRID 網路和物件安全
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

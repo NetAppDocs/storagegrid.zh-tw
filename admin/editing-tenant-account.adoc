@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: edit tenant account, change tenant name, allow platform services, tenant quota 
 summary: 您可以編輯租戶帳戶、以變更顯示名稱、儲存配額或租戶權限。 
 ---
-= 編輯租戶帳戶
+= 編輯 StorageGRID 租用戶帳戶
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

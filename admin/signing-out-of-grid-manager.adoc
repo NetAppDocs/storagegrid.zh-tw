@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid manager, sign on, log out 
 summary: 使用Grid Manager之後、您必須登出、以確保未獲授權的使用者無法存取StorageGRID 該系統。根據瀏覽器Cookie設定、關閉瀏覽器可能不會將您登出系統。 
 ---
-= 登出Grid Manager
+= 登出 StorageGRID Grid Manager
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

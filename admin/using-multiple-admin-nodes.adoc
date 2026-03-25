@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: admin nodes, more than one admin node, multiple admin nodes 
 summary: 包含多個管理節點的支援系統可讓您持續監控及設定您的支援系統、即使其中一個管理節點故障亦然。StorageGRID StorageGRID 
 ---
-= 使用多個管理節點
+= 在 StorageGRID 中使用多個管理節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

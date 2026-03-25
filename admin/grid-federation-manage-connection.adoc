@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, edit connection, remove connection, rotate certificates 
 summary: 管理 StorageGRID 系統之間的網格同盟連線、包括編輯連線詳細資料、旋轉憑證、移除租戶權限、以及移除未使用的連線。 
 ---
-= 管理網格同盟連線
+= 管理 StorageGRID 網格聯合連線
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

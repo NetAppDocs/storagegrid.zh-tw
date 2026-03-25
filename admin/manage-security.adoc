@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to manage security 
 summary: 您可以從Grid Manager設定各種安全性設定、以協助保護StorageGRID 您的作業系統。 
 ---
-= 管理安全性
+= 在 StorageGRID 中管理安全性
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: firewall, privileged IP address, untrusted client network, configure firewall controls, monitor 
 summary: 您可以設定特定內部 StorageGRID 連接埠的網路存取。 
 ---
-= 設定內部防火牆
+= 配置 StorageGRID 內部防火牆
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

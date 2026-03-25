@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid manager, sign in, log in 
 summary: 您可以在支援的網頁瀏覽器的位址列中輸入管理節點的完整網域名稱（FQDN）或IP位址、以存取Grid Manager登入頁面。 
 ---
-= 登入Grid Manager
+= Sign in 至 StorageGRID Grid Manager
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

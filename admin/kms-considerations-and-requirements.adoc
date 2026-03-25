@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Key Management Interoperability Protocol, kmip version, kms requirements, use key management server 
 summary: 在設定外部金鑰管理伺服器（KMS）之前、您必須先瞭解考量事項與需求。 
 ---
-= 使用金鑰管理伺服器的考量與要求
+= StorageGRID 金鑰管理伺服器需求和注意事項
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

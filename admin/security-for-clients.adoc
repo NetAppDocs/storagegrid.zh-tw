@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security, S3, client application, TLS 
 summary: StorageGRID 租戶帳戶使用 S3 用戶端應用程式、將物件資料儲存至 StorageGRID 。您應該檢閱為用戶端應用程式實作的安全性措施。 
 ---
-= S3 用戶端的安全性
+= StorageGRID 中 S3 用戶端的安全性
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

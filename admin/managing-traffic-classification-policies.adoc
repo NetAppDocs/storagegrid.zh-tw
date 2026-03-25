@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: QoS, quality of service, traffic classification, best practices, limit traffic, monitor traffic 
 summary: 流量分類原則可讓您識別及監控不同類型的網路流量。這些原則有助於限制和監控流量、以提升您的服務品質（ QoS ）產品。 
 ---
-= 什麼是流量分類原則？
+= StorageGRID 中的流量分類原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

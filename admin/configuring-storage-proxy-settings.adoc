@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage proxy, non-transparent proxy, platform service endpoint 
 summary: 如果您使用的是平台服務或雲端儲存資源池、可以在儲存節點和外部S3端點之間設定不透明的Proxy。例如、您可能需要不透明的Proxy、才能將平台服務訊息傳送至外部端點、例如網際網路上的端點。 
 ---
-= 設定儲存 Proxy
+= 配置 StorageGRID 儲存代理
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

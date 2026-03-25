@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object compression, compress stored objects 
 summary: 您可以啟用物件壓縮、以減少儲存在 StorageGRID 中的物件大小、讓物件消耗的儲存空間更少。 
 ---
-= 壓縮儲存的物件
+= 壓縮 StorageGRID 中儲存的物件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

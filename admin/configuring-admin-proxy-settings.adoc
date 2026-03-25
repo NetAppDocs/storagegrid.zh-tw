@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: admin proxy, autosupport, non-transparent proxy 
 summary: 如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、您可以在管理節點和技術支援（ AutoSupport ）之間設定非透明的 Proxy 伺服器。 
 ---
-= 設定管理 Proxy 設定
+= 在 StorageGRID 中設定管理 Proxy 設定
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

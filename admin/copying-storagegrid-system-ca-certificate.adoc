@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid ca certificate, copy certificate 
 summary: 使用內部憑證授權單位（CA）來保護內部流量。StorageGRID如果您上傳自己的憑證、此憑證不會變更。 
 ---
-= 複製Grid CA憑證
+= 複製 StorageGRID Grid CA 憑證
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

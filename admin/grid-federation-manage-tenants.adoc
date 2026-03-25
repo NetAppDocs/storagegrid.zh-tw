@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, manage tenant, use grid federation permission, remove permission, cross grid replication 
 summary: 您可以允許 S3 租戶帳戶在兩個 StorageGRID 系統之間使用網格同盟連線。當租戶可以使用連線時、必須採取特殊步驟來編輯租戶詳細資料、或永久移除租戶使用連線的權限。 
 ---
-= 管理 Grid Federation 的允許租戶
+= 管理 StorageGRID 網格聯盟的允許租戶
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

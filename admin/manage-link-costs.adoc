@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: link cost, site latency, manage link costs, prioritize sites 
 summary: 連結成本可讓您在有兩個以上的資料中心站台存在時、排定哪個資料中心站台提供所要求的服務的優先順序。您可以調整連結成本、以反映站台之間的延遲。 
 ---
-= 管理連結成本
+= 在 StorageGRID 中管理連結成本
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

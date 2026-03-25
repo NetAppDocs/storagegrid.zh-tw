@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: manage load balancing, balance workload, client ingest, client retrieval, distribute connection 
 summary: 您可以使用負載平衡來處理來自 S3 用戶端的擷取和擷取工作負載。 
 ---
-= 負載平衡考量
+= 了解 StorageGRID 負載平衡
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

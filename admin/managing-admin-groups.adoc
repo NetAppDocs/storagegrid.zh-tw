@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what are admin groups, user permissions 
 summary: 您可以建立管理群組、以管理一或多個管理使用者的安全性權限。使用者必須屬於某個群組、才能獲得StorageGRID 存取該系統的權限。 
 ---
-= 管理管理群組
+= 管理 StorageGRID 中的管理員群組
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

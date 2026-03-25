@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure load balancer endpoint, how to attach certificate to load balancer endpoint 
 summary: 負載平衡器端點決定連接到閘道和管理節點上的 StorageGRID 負載平衡器時、 S3 用戶端可以使用的連接埠和網路傳輸協定。您也可以使用端點來存取 Grid Manager 、 Tenant Manager 或兩者。 
 ---
-= 設定負載平衡器端點
+= 配置 StorageGRID 負載平衡器端點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

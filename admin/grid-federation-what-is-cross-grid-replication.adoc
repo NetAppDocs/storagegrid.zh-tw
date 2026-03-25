@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cross-grid replication, cgr, disaster recovery, grid federation 
 summary: 跨網格複寫是在網格同盟連線中連接的兩個 StorageGRID 系統中、在所選的 S3 儲存區之間自動複寫物件。跨網格複寫需要帳戶複製。 
 ---
-= 什麼是跨網格複寫？
+= 瞭解 StorageGRID 中的跨網格複寫
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

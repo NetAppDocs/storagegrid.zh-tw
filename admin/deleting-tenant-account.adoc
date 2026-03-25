@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tenant, delete, remove tenant 
 summary: 若要永久移除租戶對系統的存取權、您可以刪除租戶帳戶。 
 ---
-= 刪除租戶帳戶
+= 刪除 StorageGRID 租用戶帳戶
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

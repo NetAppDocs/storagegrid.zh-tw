@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: traffic classification, network traffic, traffic limits, policy 
 summary: 如果您想要依儲存區、租戶、IP子網路或負載平衡器端點來監控及選擇性地限制網路流量、請建立流量分類原則。您也可以根據頻寬、並行要求數或要求率、來設定原則限制。 
 ---
-= 建立流量分類原則
+= 建立 StorageGRID 流量分類原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

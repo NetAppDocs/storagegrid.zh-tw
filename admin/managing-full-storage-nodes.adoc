@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage node is full 
 summary: 當儲存節點達到容量時、您必須StorageGRID 透過新增的儲存設備來擴充此功能。有三種選項可供選擇：新增儲存磁碟區、新增儲存擴充櫃、以及新增儲存節點。 
 ---
-= 管理完整儲存節點
+= 在 StorageGRID 中管理已滿的 Storage Nodes
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

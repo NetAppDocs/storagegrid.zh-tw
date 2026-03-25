@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use identity federation, how to use federated groups with Grid Manager 
 summary: 使用身分識別聯盟可更快設定群組和使用者、並讓使用者StorageGRID 使用熟悉的認證登入到這個功能。 
 ---
-= 使用身分識別聯盟
+= 在 StorageGRID 中使用身分識別聯盟
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

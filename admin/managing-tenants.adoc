@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: manage tenants, tenant account, what is a tenant 
 summary: 租戶帳戶可讓您使用簡易儲存服務（ S3 ） REST API 來儲存及擷取 StorageGRID 系統中的物件。 
 ---
-= 什麼是租戶帳戶？
+= StorageGRID 中的租戶帳戶
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

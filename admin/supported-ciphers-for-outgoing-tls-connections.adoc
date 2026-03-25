@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tls cipher suites, transport layer security connections 
 summary: 支援一組有限的加密套件、以便傳輸層安全（TLS）連線至用於身分識別聯盟和雲端儲存集區的外部系統。StorageGRID 
 ---
-= 用於傳出TLS連線的支援密碼
+= StorageGRID 中支援的用於出站 TLS 連線的加密套件
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

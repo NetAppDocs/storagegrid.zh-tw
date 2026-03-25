@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: TLS and SSH policy, secure connection, FIPS, Common Criteria 
 summary: TLS 和 SSH 原則決定使用哪些通訊協定和加密程式來建立與用戶端應用程式的安全 TLS 連線、以及安全的 SSH 連線至內部 StorageGRID 服務。 
 ---
-= 管理 TLS 和 SSH 原則
+= 管理 StorageGRID 中的 TLS 和 SSH 原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

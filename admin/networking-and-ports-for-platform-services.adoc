@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: platform services, ports for platform services, 443, 80 
 summary: 如果您允許S3租戶使用平台服務、則必須設定網格的網路連線、以確保平台服務訊息可傳送至目的地。 
 ---
-= 平台服務的網路和連接埠
+= StorageGRID 平台服務的網路和連接埠
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

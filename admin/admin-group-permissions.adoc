@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: admin group permissions 
 summary: 建立管理使用者群組時、您可以選取一或多個權限來控制對Grid Manager特定功能的存取。然後、您可以將每個使用者指派給一或多個這些管理群組、以決定使用者可以執行哪些工作。 
 ---
-= 管理群組權限
+= StorageGRID 中的管理員群組權限
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

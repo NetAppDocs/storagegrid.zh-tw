@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add kms, key management server 
 summary: 您可以使用StorageGRID 「驗鑰管理伺服器」精靈來新增每個KMS或KMS叢集。 
 ---
-= 新增金鑰管理伺服器（KMS）
+= 在 StorageGRID 中新增金鑰管理伺服器
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

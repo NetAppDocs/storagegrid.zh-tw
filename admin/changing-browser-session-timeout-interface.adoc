@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security, browser inactivity timeout, management API stack track 
 summary: 介面安全性設定可讓您控制使用者是否在超過指定時間的非作用中狀態下登出、以及是否在 API 錯誤回應中包含堆疊追蹤。 
 ---
-= 變更介面安全性設定
+= 更改 StorageGRID 介面安全性設定
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

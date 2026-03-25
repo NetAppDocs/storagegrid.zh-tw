@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, troubleshoot 
 summary: 解決跨網格複寫永久性故障警示後、您應該判斷是否有任何物件或刪除標記無法複寫到其他網格。接著您可以重新擷取這些物件、或使用 Grid Management API 來重試複寫。 
 ---
-= 識別並重試失敗的複寫作業
+= 識別並重試失敗的 StorageGRID 複寫作業
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

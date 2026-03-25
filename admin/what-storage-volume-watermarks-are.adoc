@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what are storage volume watermarks, storage volume soft read-only watermark, storage volume hard read-only watermark, storage volume read-write watermark 
 summary: 利用三個儲存磁碟區浮點、確保儲存節點在極低空間執行之前、安全地轉換為唯讀狀態、並允許已轉換為唯讀狀態的儲存節點再次變成讀寫狀態。StorageGRID 
 ---
-= 什麼是儲存Volume浮水印？
+= 了解 StorageGRID 中的儲存磁碟區浮水印
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

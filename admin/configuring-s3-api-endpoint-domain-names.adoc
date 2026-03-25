@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 endpoint domain names, virtual-hosted-style requests 
 summary: 若要支援 S3 虛擬代管型要求、您必須使用 Grid Manager 來設定 S3 用戶端所連線的 S3 端點網域名稱清單。 
 ---
-= 設定 S3 端點網域名稱
+= 在 StorageGRID 中設定 S3 端點網域名稱
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

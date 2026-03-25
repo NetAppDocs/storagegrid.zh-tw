@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security, external, ssh, access 
 summary: 透過封鎖或允許外部 SSH 存取來管理 SSH 保護。 
 ---
-= 管理外部 SSH 訪問
+= 管理 StorageGRID 中的外部 SSH 存取
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

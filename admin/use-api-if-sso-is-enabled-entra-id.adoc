@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to access storagegrid API if SSO is enabled with Entra ID 
 summary: '如果您已設定並啟用單一登入 (SSO) 並使用 Entra ID 作為 SSO 提供程序，則可以使用兩個範例腳本來取得對網格管理 API 或租用戶管理 API 有效的驗證令牌。' 
 ---
-= 如果啟用了單一登錄，則使用 API（Entra ID）
+= 如果啟用了單一登入 （Entra ID），請使用 StorageGRID API
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

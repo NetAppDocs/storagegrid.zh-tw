@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: troubleshoot, grid federation connection, account clone, cross-grid replication, alerts, errors 
 summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨網格複寫相關的警示和錯誤。 
 ---
-= 疑難排解網格同盟錯誤
+= 排查 StorageGRID 中的網格聯合錯誤
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object metadata, metadata capacity, best practices 
 summary: 物件中繼資料容量StorageGRID 的功能可控制可儲存在該系統上的物件數量上限。為了確保StorageGRID 您的系統有足夠空間儲存新物件、您必須瞭解StorageGRID 哪些地方及如何儲存物件中繼資料。 
 ---
-= 管理物件中繼資料儲存
+= 在 StorageGRID 中管理物件中繼資料儲存
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
