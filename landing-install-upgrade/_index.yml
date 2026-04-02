@@ -30,7 +30,7 @@ indexpage:
   - title: 升級或 Hotfix
     links:
     - title: 新增功能
-      url: "../upgrade/whats-new.html"
+      url: "../release-notes/whats-new.html"
     - title: 預估完成時間
       url: "../upgrade/estimating-time-to-complete-upgrade.html"
     - title: 系統在升級期間的影響

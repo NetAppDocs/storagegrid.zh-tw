@@ -1,0 +1,8 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html 
+redirect: storagegrid/release-notes/changes-to-grid-management-api.html 
+---
+= 
+:allow-uri-read: 
+
+

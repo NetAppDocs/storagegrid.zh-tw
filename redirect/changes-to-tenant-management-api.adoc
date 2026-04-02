@@ -1,0 +1,8 @@
+---
+permalink: upgrade/changes-to-tenant-management-api.html 
+redirect: storagegrid/release-notes/changes-to-tenant-management-api.html 
+---
+= 
+:allow-uri-read: 
+
+

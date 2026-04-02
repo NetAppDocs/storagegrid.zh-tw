@@ -9,10 +9,8 @@ indexpage:
   tiles:
   - title: 開始使用
     links:
-    - title: 版本資訊
-      url: "/release-notes/index.html"
     - title: 新增功能
-      url: "/upgrade/whats-new.html"
+      url: "/release-notes/whats-new.html"
     - title: 深入瞭解StorageGRID
       url: "/primer/index.html"
     - title: 網路準則

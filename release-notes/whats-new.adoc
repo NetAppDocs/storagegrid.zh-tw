@@ -1,8 +1,8 @@
 ---
-permalink: upgrade/whats-new.html 
+permalink: release-notes/whats-new.html 
 sidebar: sidebar 
 keywords: what is new in StorageGRID 12.0 
-summary: 此 StorageGRID 版本引進下列功能和功能變更。 
+summary: StorageGRID 12.0 擴展了物件儲存容量，提高了對 AI/ML 工作負載的支援，加強了網格聯合，簡化了系統管理，並增強了整個平台的安全性。 
 ---
 = StorageGRID 12.0 中的新功能
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: 此 StorageGRID 版本引進下列功能和功能變更。
 
 
 [role="lead"]
-此 StorageGRID 版本引進下列功能和功能變更。
+StorageGRID 12.0 擴展了物件儲存容量，提高了對 AI/ML 工作負載的支援，加強了網格聯合，簡化了系統管理，並增強了整個平台的安全性。
+
+有關 StorageGRID 12.0 最新版本中已修復問題和已知問題的詳細資訊，請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["StorageGRID 12.0 版本說明"^]。您必須使用 NetApp 帳戶登入或建立帳戶才能存取版本資訊。
 
 
 

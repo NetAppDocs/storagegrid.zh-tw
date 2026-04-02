@@ -5,14 +5,6 @@ entries:
 - title: 升級之前
   pdf-filename: 升級StorageGRID 版軟體
   url: "/upgrade/index.html"
-- title: StorageGRID 12.0 中的新功能
-  url: "/upgrade/whats-new.html"
-- title: 已移除或已過時的功能
-  url: "/upgrade/removed-or-deprecated-features.html"
-- title: Grid Management API變更
-  url: "/upgrade/changes-to-grid-management-api.html"
-- title: 租戶管理API變更
-  url: "/upgrade/changes-to-tenant-management-api.html"
 - title: 規劃及準備升級
   entries:
   - title: 預估完成升級所需的時間

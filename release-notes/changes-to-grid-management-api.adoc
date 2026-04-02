@@ -1,5 +1,5 @@
 ---
-permalink: upgrade/changes-to-grid-management-api.html 
+permalink: release-notes/changes-to-grid-management-api.html 
 sidebar: sidebar 
 keywords: grid management api, api, api version, swagger, rest api, usageCacheDuration 
 summary: StorageGRID 12.0 使用網格管理 API 的第 4 版。版本 4 棄用了版本 3；但是，版本 1、2 和 3 仍然受支援。 

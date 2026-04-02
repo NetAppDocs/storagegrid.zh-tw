@@ -33,7 +33,7 @@ image::../media/grid-federation-workflow.png[網格同盟連線工作流程]
 
 * 用於網格同盟的網格必須執行相同的 StorageGRID 版本、或兩者之間的主要版本差異不超過一個。
 +
-有關版本要求的詳細信息，請參閱link:../release-notes/index.html["版本資訊"]。
+有關版本要求的詳細資訊，請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["版本資訊"^]。您必須使用 NetApp 帳戶登入或建立帳戶，才能存取版本資訊。
 
 * 網格可以有一個或多個網格同盟連線到其他網格。每個網格同盟連線都與任何其他連線相互關聯。例如、如果 Grid 1 與 Grid 2 有一個連線、而與 Grid 3 有第二個連線、則 Grid 2 和 Grid 3 之間不會有任何隱含連線。
 * 網格同盟連線是雙向的。建立連線後、您可以從任一網格監控及管理連線。
