@@ -15647,7 +15647,6 @@
   <block id="da143bd713c73758e299b3188a897d97" category="paragraph">PutObjectTagging( 物件的特定版本 )</block>
   <block id="ad7a61dfa7691a38e467ddde8dc38e2b" category="paragraph">S3：PuttOverwriteObject</block>
   <block id="28e5f48e9f12d4928897b706c15e527a" category="paragraph">S3：恢復物件</block>
-  <block id="b3e4a893c4097db1cfeae128bbb3c905" category="section-title">使用PuttOverwriteObject權限</block>
   <block id="6c317e8e1ec90a09ffb3d8b4ca791675" category="paragraph">S3：PuttOverwriteObject權限是套StorageGRID 用至建立或更新物件之作業的自訂功能。此權限的設定決定用戶端是否可以覆寫物件的資料、使用者定義的中繼資料或S3物件標記。</block>
   <block id="1bc5fcfe5f57d14d91d77c8997cc078b" category="paragraph">此權限的可能設定包括：</block>
   <block id="69af541b0b169c4d4d91f6522c907953" category="list-text">*允許*：用戶端可以覆寫物件。這是預設設定。</block>
@@ -21247,7 +21246,6 @@
   <block id="ba3fad21d7f52a443de6c373a33908e0" category="summary">使用本節中的範例來建立StorageGRID會話策略。</block>
   <block id="e5637736ed22b046bf6f1d029d2406c4" category="paragraph">使用以下範例建立StorageGRID會話策略。</block>
   <block id="e6d9424c66e16aa26a841e483b4a8a64" category="section-title">範例：設定允許物件檢索的會話策略</block>
-  <block id="65ab8e63845a926499868ca64c76b0fd" category="paragraph">在此範例中，會話的主體只允許從 bucket1 中檢索物件。除StorageGRID特定操作（例如使用<block ref="7e7b37438f9fa0700e8f48ce0ea6a221" category="inline-link-macro-rx"></block>允許。當呼叫 AssumeRole API 時，會話策略可以作為 JSON 檔案提供。</block>
   <block id="d0524c9bd1349e3b6fd45b1ef7d5411d" category="paragraph"><block ref="d0524c9bd1349e3b6fd45b1ef7d5411d" category="inline-link-macro-rx"></block></block>
   <block id="e23559e0bf68769e45a08c99f29c7fde" category="paragraph">StorageGRID支援以下特定版本的 STS、S3 和 HTTP：</block>
   <block id="70375949a2fc1aa5c11633ccd0c8ed10" category="paragraph">STS AssumeRole API 規範</block>
@@ -22594,4 +22592,6 @@
   <block id="092df1287c3acdf3c872558644d4e30e" category="list-text"><block ref="092df1287c3acdf3c872558644d4e30e" category="inline-link-macro-rx"></block></block>
   <block id="3b386f0ccc5453f7cbb6010b301aec07" category="list-text"><block ref="61cda4d7b81c38c42a9e02c953d8be03" category="inline-link-rx"></block>.您必須登入現有 NetApp 帳戶或建立帳戶才能存取發行說明。請務必在開始升級前仔細閱讀這些說明。</block>
   <block id="9e48ce3918382a0700088e38500a5865" category="sidebar">已移除或已過時的功能和特性</block>
+  <block id="873c3907e55471a2991eab6c77d98a3b" category="paragraph">在本例中，工作階段的主體僅被允許從 bucket1 擷取物件。所有其他動作均被隱含拒絕，但 StorageGRID 特有的動作（例如使用 <block ref="d3f47673c653efb165a71bf92d9fcb27" category="inline-link-macro-rx"></block> 權限）除外。工作階段原則可以在呼叫 AssumeRole API 時以 JSON 檔案的形式提供。</block>
+  <block id="ba1177d7dec9e949d93252540acfb636" category="section-title">[[use-putoverwriteobject-permission]]使用 PutOverwriteObject 權限</block>
 </blocks>
