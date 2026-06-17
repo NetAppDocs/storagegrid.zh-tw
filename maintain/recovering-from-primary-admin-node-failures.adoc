@@ -2,7 +2,7 @@
 permalink: maintain/recovering-from-primary-admin-node-failures.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, primary admin node failure 
-summary: 您必須完成一組特定的工作、才能從主要管理節點故障中恢復。主管理節點裝載網格的組態管理節點（CMN\）服務。 
+summary: 您必須完成一組特定的工作、才能從主要管理節點故障中恢復。主管理節點裝載網格的組態管理節點（CMN）服務。 
 ---
 = 從主 StorageGRID 管理節點故障中恢復
 :allow-uri-read: 
@@ -14,7 +14,7 @@ summary: 您必須完成一組特定的工作、才能從主要管理節點故�
 您必須完成一組特定的工作、才能從主要管理節點故障中恢復。主管理節點裝載網格的組態管理節點（CMN）服務。
 
 
-CAUTION: 您必須立即修復或更換故障的主要管理節點、否則網格可能會喪失擷取新物件的能力。確切的時間週期取決於您的物件擷取速度：如果您需要更準確地評估網格的時間範圍、請聯絡技術支援部門。
+CAUTION: 您必須及時修復或更換故障的主要管理節點，否則可能無法執行某些維護程序。
 
 請遵循下列高階步驟來恢復主要管理節點：
 

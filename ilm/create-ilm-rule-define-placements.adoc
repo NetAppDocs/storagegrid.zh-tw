@@ -2,7 +2,7 @@
 permalink: ilm/create-ilm-rule-define-placements.html 
 sidebar: sidebar 
 keywords: ilm rule step 2, define placements 
-summary: 「建立 ILM 規則」精靈的「定義放置位置」步驟可讓您定義放置指示、以決定物件的儲存時間、複本類型 \ （複寫或刪除編碼 \ ）、儲存位置和複本數量。 
+summary: 建立 ILM 規則精靈的「定義放置」步驟可讓您定義放置指令，以確定物件的儲存時間、副本類型（複製或糾刪碼）、儲存位置和副本數量。 
 ---
 = 定義 StorageGRID ILM 規則的放置說明
 :allow-uri-read: 

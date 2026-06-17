@@ -1049,7 +1049,6 @@
   <block id="0421868a23fb3767cfcf718ff3308fbb" category="paragraph">例如、您可以選取 * 在顯示的節點上不信任 * 、將所有節點新增至「不信任的用戶端網路」清單、然後使用個別節點旁的切換、將該單一節點新增至「信任的用戶端網路」清單。</block>
   <block id="3541930bcc5e283a83129565382fc878" category="admonition">使用表格右側的捲軸、確定您已檢視所有可用的節點。使用搜尋欄位輸入節點名稱、即可尋找任何節點的設定。您可以輸入部分名稱。例如、如果您輸入 * GW* 、則會顯示字串 "Gw" 做為其名稱一部分的所有節點。</block>
   <block id="64330ec23376fc3fdede81a9d845b921" category="paragraph">新的防火牆設定會立即套用及強制執行。如果尚未設定負載平衡器端點、現有的用戶端連線可能會失敗。</block>
-  <block id="2bac2a9db8d1d2a83e5727ca17a665a8" category="summary">您可以設定高可用度（HA）群組、以提供對管理節點或閘道節點上服務的高可用度存取。</block>
   <block id="695051253dbc789698d5194b75b79b5c" category="paragraph">您可以設定高可用度（HA）群組、以提供對管理節點或閘道節點上服務的高可用度存取。</block>
   <block id="8b5e438fbef870eab4036d606acda64e" category="list-text">如果您打算在HA群組中使用VLAN介面、則表示您已建立VLAN介面。請參閱。 <block ref="01da7ed8ad97a3e972d8ef8ebd2e0eb6" category="inline-link-macro-rx"></block></block>
   <block id="e65ab31bf8d6f5d27e0f3cdbb1f13763" category="list-text">如果您打算針對HA群組中的節點使用存取介面、則已建立介面：</block>
@@ -1128,7 +1127,6 @@
   <block id="19549ba3514bb3b7c42681c9f41f0cc6" category="list-text">選取 * 動作 * &gt; * 移除 HA 群組 * 。</block>
   <block id="71146ab38c96d993610bb6bd368a05ee" category="list-text">檢閱訊息並選擇*刪除HA群組*以確認您的選擇。</block>
   <block id="22428c8a702ba8e76abe7f39f4380daf" category="paragraph">您選取的所有HA群組都會移除。「高可用度群組」頁面上會出現綠色的成功橫幅。</block>
-  <block id="04b9586e37ab00800fcbe1348820076c" category="summary">您可以在管理節點和閘道節點上建立虛擬LAN（VLAN）介面、並在HA群組和負載平衡器端點中使用這些介面來隔離和分割流量、以確保安全性、靈活度和效能。</block>
   <block id="065bd625c8d55e9a1a4e451b54286127" category="section-title">VLAN介面考量</block>
   <block id="8980ad0ec123fa8838f8dab8a28ab627" category="list-text">您可以輸入VLAN ID、然後在一個或多個節點上選擇父介面、藉此建立VLAN介面。</block>
   <block id="617058e2da7d9e2f9df95e8cd36cc44b" category="list-text">父介面必須設定為交換器的主幹介面。</block>
@@ -1179,7 +1177,6 @@
   <block id="9ecf62a8eff0ca351ef76d4fbbba015d" category="list-text">選取您要移除之每個 VLAN 介面的核取方塊。然後選取*「動作*」&gt;*「刪除*」。</block>
   <block id="48d0fa42987f4d3497e343955d7a4885" category="list-text">選擇*是*以確認您的選擇。</block>
   <block id="90beb233b2a5596b08ec37b12a857683" category="paragraph">您選取的所有VLAN介面都會移除。VLAN介面頁面上會出現綠色的成功橫幅。</block>
-  <block id="d2db2aec7e8704698daae73c6fb06964" category="summary">如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、您可以在管理節點和技術支援（ AutoSupport ）之間設定非透明的 Proxy 伺服器。</block>
   <block id="528e605653bcc804605cbe3a4fb8a1f6" category="paragraph">如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、則可以在管理節點和技術支援（ AutoSupport ）之間設定不透明的 Proxy 伺服器。</block>
   <block id="cc54d79adb8758119dd82b7e1bc4389f" category="paragraph">如需 AutoSupport 的詳細資訊，請參閱<block ref="7f6692541d0f8fa1e1cd5a982650d767" category="inline-link-macro-rx"></block>。</block>
   <block id="9676d279f4f3da76a376efe327ee9d49" category="paragraph">您可以設定單一管理 Proxy 的設定。</block>
@@ -1730,7 +1727,6 @@
   <block id="1264dc43646be10eeb7b70143ec85203" category="paragraph">如果從壓縮物件讀取範圍、用戶端要求可能會逾時。</block>
   <block id="88beb670f24983c75f4e8760c6f5ccfe" category="admonition">如果您需要壓縮物件、而用戶端應用程式必須使用範圍讀取、請增加應用程式的讀取逾時。</block>
   <block id="dbf0635cf488a6d925de943d1bb04c9e" category="list-text">選中 *Compress Stored objects* 複選框。</block>
-  <block id="d5103c9d8c738419b383537e4dcc9355" category="summary">啟用單一登入（SSO）之前、您必須確認至少有一位同盟使用者可以登入Grid Manager、並登入任何現有租戶帳戶的租戶管理程式。</block>
   <block id="f2eecc659d2ee1aa565f0c4cbfa2d500" category="doc">確認同盟使用者可以登入</block>
   <block id="72c849fceb08889da81dca36cbc1af67" category="paragraph">啟用單一登入（SSO）之前、您必須確認至少有一位同盟使用者可以登入Grid Manager、並登入任何現有租戶帳戶的租戶管理程式。</block>
   <block id="4a784ed01aa8702e6e0e74153403440a" category="list-text">您已設定身分識別聯盟。</block>
@@ -1778,7 +1774,6 @@
   <block id="3f79e38f5c51aba71bc4d4045d64f70c" category="list-text"><block ref="3f79e38f5c51aba71bc4d4045d64f70c" category="inline-link-macro-rx"></block></block>
   <block id="c91dc8854f2cb3ba4055b32323bf4823" category="list-text"><block ref="c91dc8854f2cb3ba4055b32323bf4823" category="inline-link-macro-rx"></block></block>
   <block id="7942854d23be1ec40bdabc33a8aa939f" category="list-text"><block ref="7942854d23be1ec40bdabc33a8aa939f" category="inline-link-macro-rx"></block></block>
-  <block id="d53bc18e2f6b5414301e6a2bf0fce050" category="summary">您可以透過StorageGRID 建立或匯入群組和使用者、並指派權限給每個群組、來控制哪些人可以存取功能、以及使用者可以執行哪些工作。您也可以選擇啟用單一登入（SSO）、建立用戶端憑證、以及變更網格密碼。</block>
   <block id="bc9233f931dc855a18053f5e4d5eaa84" category="doc">控制StorageGRID 功能存取</block>
   <block id="c8de5e6ce631079ce7376fd8633e364d" category="paragraph">您可以透過StorageGRID 建立或匯入群組和使用者、並指派權限給每個群組、來控制哪些人可以存取功能、以及使用者可以執行哪些工作。您也可以選擇啟用單一登入（SSO）、建立用戶端憑證、以及變更網格密碼。</block>
   <block id="437a66357f6258839c0eb2f1d447273c" category="section-title">控制對Grid Manager的存取</block>
@@ -1796,7 +1791,6 @@
   <block id="cedf7e4aa3bdcb1e816d3b3fc19f1b0b" category="section-title">變更資源配置複雜密碼</block>
   <block id="aa2a5379a78f7e8e393ce0486c3d950f" category="inline-link-macro">變更複雜密碼</block>
   <block id="3c349cc162066939e5b2ae86e30b7a93" category="inline-link-macro">變更節點主控台密碼</block>
-  <block id="87f0c196d801a1f65e181a33fac90edb" category="summary">使用內部憑證授權單位（CA）來保護內部流量。StorageGRID如果您上傳自己的憑證、此憑證不會變更。</block>
   <block id="0d3ed81da3601d29dee4e4d04f4c470d" category="paragraph">使用內部憑證授權單位（CA）來保護內部流量。StorageGRID如果您上傳自己的憑證、此憑證不會變更。</block>
   <block id="1914c92f5f37d6765a897b6d7c8450c4" category="paragraph">如果已設定自訂伺服器憑證、用戶端應用程式應使用自訂伺服器憑證來驗證伺服器。他們不應該從StorageGRID 這個系統複製CA憑證。</block>
   <block id="45c64e15304a6b1879104b70217d3255" category="list-text">在 * 憑證 PEM* 區段中、下載或複製憑證。</block>
@@ -2190,7 +2184,6 @@
   <block id="6e582c70316b881832f021b20e7d0ab6" category="list-text">選取原則名稱旁邊的 * 移除 * 按鈕。</block>
   <block id="45e3252bd3e68375f07a86ebb4c8b4f4" category="list-text">選取 * 是 * 以確認您要刪除原則。</block>
   <block id="36c3aba72fd1e7689f5e4596808a8abb" category="paragraph">原則即會刪除。</block>
-  <block id="c64f8194c4c72529125e6b83812a360a" category="summary">如果您不想再使用此功能、可以停用單一登入（SSO）。您必須先停用單一登入、才能停用身分識別聯盟。</block>
   <block id="df2d4becb3b5d94b4a297a18f67e27dd" category="paragraph">如果您不想再使用此功能、可以停用單一登入（SSO）。您必須先停用單一登入、才能停用身分識別聯盟。</block>
   <block id="2879ad3a59345a666466885a2d29156b" category="paragraph">此時會出現「單一登入」頁面。</block>
   <block id="4116bc9d4f411a70fa131096b879639b" category="paragraph">此時會出現一則警告訊息、指出本機使用者現在可以登入。</block>
@@ -3062,12 +3055,10 @@
   <block id="74a6648d3d1177a6995530a0b7d5ce3c" category="list-text">伺服器憑證必須符合KMS KMIP介面所使用的憑證、後者通常使用連接埠5696。</block>
   <block id="590ba53362ae9806b6816ec75a243ae5" category="list-text">取得由StorageGRID 外部KMS核發的公有用戶端憑證、以及用戶端憑證的私密金鑰。</block>
   <block id="18d77619bc7c79ae5f695fc3dd66c081" category="paragraph">用戶端憑證StorageGRID 可讓支援驗證本身到KMS。</block>
-  <block id="f23d60ebd08d6de24ec7705d41cc93d2" category="summary">金鑰管理伺服器（ KMS ）是外部的協力廠商系統、使用金鑰管理互通性傳輸協定（ KMIP ）、為關聯 StorageGRID 站台上的 StorageGRID 應用裝置節點提供加密金鑰。</block>
   <block id="a6ee34df66416f97be73201d810d3f1c" category="paragraph">金鑰管理伺服器（KMS）是一種外部的第三方系統StorageGRID 、可透過StorageGRID 金鑰管理互通性傳輸協定（KMIP）、為相關聯的站台上的應用裝置節點提供加密金鑰。</block>
   <block id="062fe6ab3c8bbbe54030510df5fb989c" category="paragraph">StorageGRID 僅支援特定的金鑰管理伺服器。如需受支援產品與版本的清單，請使用<block ref="59eff0a7409a2083b143c03284b14f62" category="inline-link-rx"></block>。</block>
   <block id="78879d2cac3520c405321f6d1cdaf942" category="paragraph">您可以使用一或多個金鑰管理伺服器、來管理StorageGRID 安裝期間啟用*節點加密*設定的任何節點的節點加密金鑰。即使從資料中心移除應用裝置、將關鍵管理伺服器與這些應用裝置節點搭配使用、也能保護資料。應用裝置磁碟區加密後、除非節點可以與 KMS 通訊、否則您無法存取應用裝置上的任何資料。</block>
   <block id="71e73494019330903d6bf422837702d9" category="admonition">不建立或管理用於加密和解密應用裝置節點的外部金鑰。StorageGRID如果您打算使用外部金鑰管理伺服器來保護StorageGRID 這些資料、您必須瞭解如何設定該伺服器、而且必須瞭解如何管理加密金鑰。執行關鍵管理工作的範圍超出這些指示的範圍。如果您需要協助、請參閱金鑰管理伺服器的文件、或聯絡技術支援部門。</block>
-  <block id="c2ed142e8fc6d5c5d4a138380ec7d153" category="summary">在設定外部金鑰管理伺服器（KMS）之前、您必須先瞭解考量事項與需求。</block>
   <block id="e6ff445302b54ca5e3c1903fed224731" category="doc">使用金鑰管理伺服器的考量與要求</block>
   <block id="a7cf9652ae0c1a8db0c5987f2e64cb28" category="paragraph">在設定外部金鑰管理伺服器（KMS）之前、您必須先瞭解考量事項與需求。</block>
   <block id="5d20385a59a99aabba05ee9e22d99801" category="section-title">支援哪個版本的 KMIP ？</block>
@@ -3108,7 +3099,6 @@
   <block id="8ebe10e1d54040e586c67767b6e1bb37" category="inline-link">清除 KMS 組態</block>
   <block id="a68188aa191d7f7d21a229041cca26c6" category="paragraph">如果您需要將加密的應用裝置安裝到另一個StorageGRID 版本、則必須先取消委任網格節點、才能將物件資料移到另一個節點。然後，您可以使用 StorageGRID 應用裝置安裝程式來<block ref="2a85234f587961e620cee3ecae8e94c0" category="inline-link-rx"></block>。清除KMS組態會停用「*節點加密*」設定、並移除應用裝置節點與StorageGRID 本網站KMS組態之間的關聯。</block>
   <block id="5138d4a232e53a370d152842fd22c2d5" category="admonition">由於無法存取KMS加密金鑰、因此無法再存取設備上的任何資料、而且會永久鎖定。</block>
-  <block id="55bcc6476c504097f3311ad77ff02902" category="summary">每個金鑰管理伺服器（KMS）或KMS叢集都會為單一站台或一組站台的所有應用裝置節點提供加密金鑰。如果您需要變更站台使用的KMS、可能需要將加密金鑰從一個KMS複製到另一個KMS。</block>
   <block id="c958a905673d8e2be5e268f8fb102144" category="paragraph">每個金鑰管理伺服器（KMS）或KMS叢集都會為單一站台或一組站台的所有應用裝置節點提供加密金鑰。如果您需要變更站台使用的KMS、可能需要將加密金鑰從一個KMS複製到另一個KMS。</block>
   <block id="43485406a01cbf849dd4827fe2908744" category="paragraph">如果您變更站台使用的KMS、則必須確保該站台先前加密的應用裝置節點可以使用儲存在新KMS上的金鑰來解密。在某些情況下、您可能需要將目前版本的加密金鑰從原始KMS複製到新的KMS。您必須確保KMS擁有正確的金鑰、以便在站台上解密加密的應用裝置節點。</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例如：</block>
@@ -3134,7 +3124,6 @@
   <block id="ce99b936d008f046d62295164b50da49" category="paragraph">您想讓站台的KMS使用不同的伺服器。</block>
   <block id="1d4fa404985a2314592249443f6e5af4" category="list-text">如果站台上的應用裝置節點已由現有的KMS加密、請使用KMS軟體將目前版本的加密金鑰從現有的KMS複製到新的KMS。</block>
   <block id="44bf2005dcef0e98db4cf1c8e335f93f" category="list-text">使用Grid Manager編輯現有的KMS組態、然後輸入新的主機名稱或IP位址。</block>
-  <block id="5465867749bbddf80cc4901bd25309ea" category="summary">管理金鑰管理伺服器（ KMS ）包括檢視或編輯詳細資料、管理憑證、檢視加密節點、以及在不再需要時移除 KMS 。</block>
   <block id="b9a079c98a41168993557b200663b34c" category="doc">管理 KMS</block>
   <block id="3c53d9e0964dbd4b45ddf44982862ac5" category="paragraph">管理金鑰管理伺服器（ KMS ）包括檢視或編輯詳細資料、管理憑證、檢視加密節點、以及在不再需要時移除 KMS 。</block>
   <block id="79a2f8016ba6dd5a14e1b5ac0ab8f8ca" category="inline-link-macro">必要的存取權限</block>
@@ -3243,7 +3232,6 @@
   <block id="cebf0fb29c6016424d6324439e9e3ac2" category="list-text">您正在移除網站專屬 KMS 、此網站沒有啟用節點加密的應用裝置節點。</block>
   <block id="74219797e38c3fca8d6168cbf792f585" category="list-text">您正在移除預設的 KMS 、但每個具有節點加密的站台都已存在特定站台的 KMS 。</block>
   <block id="e3d5444797afc31d5bf26c7a1ee585cf" category="paragraph">KMS組態隨即移除。</block>
-  <block id="9e1af7a2c3fb792f1a58c66d575260d5" category="summary">在使用金鑰管理伺StorageGRID 服器（KMS）來保護應用裝置節點上的資訊安全之前、您必須先完成兩項組態工作：設定一或多個KMS伺服器、以及啟用應用裝置節點的節點加密。完成這兩項組態工作之後、就會自動執行金鑰管理程序。</block>
   <block id="37f067de539d00c4fa8969c9da730bc3" category="doc">KMS 與應用裝置組態</block>
   <block id="1313d81ac8c929685f5eefb0405daba1" category="paragraph">在使用金鑰管理伺服器（KMS）來保護StorageGRID 應用裝置節點上的各項資料之前、您必須先完成兩項組態工作：設定一或多個KMS伺服器、以及為應用裝置節點啟用節點加密。完成這兩項組態工作之後、就會自動執行金鑰管理程序。</block>
   <block id="3d199ab4137b78a36da482c901703852" category="paragraph">流程圖顯示使用KMS保護StorageGRID 應用裝置節點上的資訊安全的高階步驟。</block>
@@ -3530,7 +3518,6 @@
   <block id="c74fee6cdbf35f73120aa3b6b9b8b6e1" category="paragraph">某些 StorageGRID 應用裝置儲存節點（例如 SG6060 或 SG6160 ）可支援額外的儲存櫃。如果StorageGRID 您擁有擴充功能尚未擴充至最大容量的不完整產品、您可以新增儲存櫃來增加容量。請參閱的說明<block ref="ed7fb2693d9c519671d6120bad3f19e1" category="inline-link-macro-rx"></block>。</block>
   <block id="bda90421676565ea5bce60929e24b214" category="section-title">新增儲存節點</block>
   <block id="2f89e09d98b36823a3fd4f2c40508d58" category="paragraph">您可以新增儲存節點來增加儲存容量。新增儲存設備時、必須仔細考量目前使用中的ILM規則和容量需求。請參閱的說明<block ref="ed7fb2693d9c519671d6120bad3f19e1" category="inline-link-macro-rx"></block>。</block>
-  <block id="553bad178e08adf3e81522270ae21ae1" category="summary">高可用度 \(HA\) 群組可為 S3 用戶端提供高可用度的資料連線、並可與 Grid Manager 和 Tenant Manager 進行高可用度連線。</block>
   <block id="1501308fa7b3db557531ef662c17093a" category="paragraph">高可用度（ HA ）群組可為 S3 用戶端提供高可用度的資料連線、以及與 Grid Manager 和 Tenant Manager 的高可用度連線。</block>
   <block id="6bc314f562d758e9865c7c6fe88bdabc" category="paragraph">您可以將多個管理節點和閘道節點的網路介面分組為高可用度（HA）群組。如果HA群組中的作用中介面故障、備份介面就能管理工作負載。</block>
   <block id="d78135669af79d3a2cf5f6308653ec8d" category="paragraph">每個HA群組均可存取所選節點上的共享服務。</block>
@@ -3750,7 +3737,6 @@
   <block id="f36cfb6ad7ff2195cdb2ca25504da4f9" category="inline-link-macro">展開網格</block>
   <block id="26b01d3a7e8be445ab090cc0bcf61f9a" category="list-text">若要增加系統的物件中繼資料容量、請<block ref="52237c56bb284a0429fb8b38b6de8e84" category="inline-link-macro-rx"></block>新增儲存節點。</block>
   <block id="7fe57dc7b83566b3573d1b2010b8469c" category="doc">管理儲存節點</block>
-  <block id="e8e2d2b9fcf0bb7a2aca936e601cf7a9" category="summary">租戶帳戶可讓您使用簡易儲存服務（ S3 ） REST API 來儲存及擷取 StorageGRID 系統中的物件。</block>
   <block id="1ee86a0125bcd863b0a061af54cdf220" category="paragraph">租戶帳戶可讓您使用簡易儲存服務（ S3 ） REST API 來儲存及擷取 StorageGRID 系統中的物件。</block>
   <block id="46962c8c4a9896875715e760cf4b2674" category="inline-link">StorageGRID 11.8 ：管理租戶</block>
   <block id="b63879b81a8d044dc420f87c916f170f" category="admonition">Swift 詳細資料已從此文件網站版本中移除。請參閱。<block ref="48396f73b32bbdbf5d2ead0cde358832" category="inline-link-rx"></block></block>
@@ -3897,7 +3883,6 @@
   <block id="332d9b42d81dda65e3e58d5a729a756d" category="paragraph">如果用戶端隨後在資料中心站台2的相同物件上執行S3 API刪除作業、則會觸發有關刪除動作的通知、並從資料中心站台2傳送。</block>
   <block id="3bc93e94d0745e466712737560679d68" category="image-alt">顯示站台2物件動作的圖表會觸發站台2的通知</block>
   <block id="6438a184cfa6f046aa1b4f61e69ce316" category="paragraph">請確定每個站台的網路設定都能讓平台服務訊息傳送到目的地。</block>
-  <block id="067e4689a9a8e40282fa9d6848ab459a" category="summary">您可以使用CSRF權杖來強化使用Cookie的驗證功能、協助防範跨網站要求偽造（CSRF）攻擊StorageGRID 。Grid Manager與租戶管理程式會自動啟用此安全功能、其他API用戶端則可選擇是否在登入時啟用。</block>
   <block id="e094fa8370e3e1bb66e0ce64183f49d0" category="doc">防範跨網站要求偽造（CSRF）</block>
   <block id="1c4e0a3638e16a9280bf8c158e42972b" category="paragraph">您StorageGRID 可以使用CSRF權杖來強化使用Cookie的驗證功能、協助防範跨網站要求偽造（CSRF）攻擊。Grid Manager與租戶管理程式會自動啟用此安全功能、其他API用戶端則可選擇是否在登入時啟用。</block>
   <block id="42a16c81ec6a2d59d9d0305375f90ed8" category="paragraph">攻擊者若能觸發要求至不同網站（例如HTTP表單POST）、可能會導致使用登入使用者的Cookie發出特定要求。</block>
@@ -4056,7 +4041,6 @@
   <block id="cccbe5f11f7d682d6c10a96a9dc8a5fa" category="paragraph">如果正確、綠色橫幅中會出現訊息：「您的 AutoSupport 組態已通過驗證。」</block>
   <block id="809451bb9d4680fbf2258eb0a1b3abf0" category="paragraph">如果測試失敗、則會在紅色橫幅中顯示錯誤訊息。請檢查您的 StorageGRID DNS 設定和網路、確定<block ref="db773a9b073a8d224eb080755be1c537" category="inline-link-macro-rx"></block>可以連線至 NetApp 支援網站、然後再試一次測試。</block>
   <block id="a4d88db2a4ee235c805a3b0808854c6f" category="paragraph">隨即儲存組態、並顯示確認訊息：「 AutoSupport 傳遞方法已設定。」</block>
-  <block id="91259d6093de5e6134754bff93a7cf72" category="summary">您可以在支援的網頁瀏覽器的位址列中輸入管理節點的完整網域名稱（FQDN）或IP位址、以存取Grid Manager登入頁面。</block>
   <block id="2643df34198bbb5b3edb94da0c34e249" category="paragraph">您可以在支援的網頁瀏覽器的位址列中輸入管理節點的完整網域名稱（FQDN）或IP位址、以存取Grid Manager登入頁面。</block>
   <block id="970b7d292bc483c70231a10c33b5c627" category="paragraph">每StorageGRID 個系統包含一個主要管理節點和任意數量的非主要管理節點。您可以登入任何管理節點上的Grid Manager來管理StorageGRID 此系統。不過、某些維護程序只能從主要管理節點執行。</block>
   <block id="f214fb6cd4a76c84923dc9bc83b0fbcc" category="section-title">連線至 HA 群組</block>
@@ -4151,12 +4135,10 @@
   <block id="9664ccfa6ada3c1df2b4dd0658212b40" category="admonition">如果連接埠號碼為 80 或 443 、則端點只能在 Gateway 節點上設定、因為這些連接埠是保留在管理節點上。所有其他連接埠都在閘道節點和管理節點上設定。</block>
   <block id="63eb72f5eb86b1be925cd20e58831098" category="list-text">從表格中選取端點名稱。</block>
   <block id="f68d50c9845e4a15da007fca5164e519" category="list-text">確認 * 用戶端類型 * （ S3 ）符合將使用端點的用戶端應用程式。</block>
-  <block id="79f7c5fcbd484af79ffe951e0173da9a" category="summary">支援一組有限的加密套件、以便傳輸層安全（TLS）連線至用於身分識別聯盟和雲端儲存集區的外部系統。StorageGRID</block>
   <block id="5c091c58af9f43cdf17112ef408362cf" category="doc">用於傳出TLS連線的支援密碼</block>
   <block id="5779618b5532ebc609ce86cf78e63e8f" category="paragraph">支援一組有限的加密套件、以便傳輸層安全（TLS）連線至用於身分識別聯盟和雲端儲存資源池的外部系統。StorageGRID</block>
   <block id="ef0908745f63f0dbd464c3d481dd268f" category="paragraph">支援TLS 1.2和TLS 1.3、可連線至用於身分識別聯盟和雲端儲存資源池的外部系統。StorageGRID</block>
   <block id="fd2d80c2639c1aa37e19313a1c958c73" category="admonition">StorageGRID 中無法設定 TLS 組態選項、例如傳輸協定版本、加密算法、金鑰交換演算法和 MAC 演算法。如果您有關於這些設定的特定要求、請聯絡您的NetApp客戶代表。</block>
-  <block id="9b256403644dc564a14877f7d87cc59f" category="summary">如果單一登入（SSO）系統當機、您可能無法登入Grid Manager。在此情況下、您可以暫時停用及重新啟用單一管理節點的SSO。若要停用及重新啟用SSO、您必須存取節點的命令Shell。</block>
   <block id="8efb04eb679352c4c11d27cbec12c44c" category="paragraph">如果單一登入（SSO）系統當機、您可能無法登入Grid Manager。在此情況下、您可以暫時停用及重新啟用單一管理節點的SSO。若要停用及重新啟用SSO、您必須存取節點的命令Shell。</block>
   <block id="c11fb3ca256de9ff6eaf6aa6c1eb8b84" category="list-text">您知道本機root使用者的密碼。</block>
   <block id="c470c7dd2a73685d6de3f643294ee65f" category="paragraph">停用單一管理節點的SSO之後、您可以以本機根使用者的身分登入Grid Manager。若要保護StorageGRID 您的不穩定系統、您必須在登出時、使用節點的命令Shell在管理節點上重新啟用SSO。</block>
@@ -4181,7 +4163,6 @@
   <block id="24fde520d3e145885b478db73f39b588" category="list-text">重新啟動網格節點：<block ref="2b755b30293f2f9f79ec1c86ab0943f2" prefix=" " category="inline-code"></block></block>
   <block id="3bb24c70115721fa55364d023ae31930" category="list-text">從網頁瀏覽器、從相同的管理節點存取Grid Manager。</block>
   <block id="b2398934e1498b1f275e2e37001859ad" category="list-text">確認StorageGRID 畫面出現「畫面不顯示登入」頁面、且您必須輸入SSO認證、才能存取Grid Manager。</block>
-  <block id="0fc5a6b5097dfe267b97406b446e3ca7" category="summary">如果嘗試傳送 AutoSupport 套件失敗、 StorageGRID 系統會根據 AutoSupport 套件類型採取不同的動作。您可以選取「支援」 &gt;&gt; 「工具」 &gt;&gt; 「 AutoSupport 」 &gt;&gt; 「結果」來檢查 AutoSupport 套件的狀態。</block>
   <block id="433fdcdd89fa69e3a6cc0d66071bbb25" category="doc">疑難排解 AutoSupport 套件</block>
   <block id="b94500e2ad3e62b442ccf3ccc614482d" category="paragraph">當 AutoSupport 套件無法傳送時、「失敗」會出現在 * AutoSupport * 頁面的 * 結果 * 索引標籤上。</block>
   <block id="a1136965cfba1b7847cb7539686f6ea4" category="inline-link-macro">確認 Proxy 伺服器組態設定正確無誤</block>
@@ -4203,7 +4184,6 @@
   <block id="7821bffcb6683e1bd7e69751e09d960e" category="paragraph">瞭解如何<block ref="31f3ad5338f4a82dfd49acc09e4797da" category="inline-link-macro-rx"></block>。</block>
   <block id="930b1b048df4fadac290666768849b06" category="section-title">修正 AutoSupport 套件故障</block>
   <block id="4e6049f4e0fa6886b6988b77bf454cc2" category="paragraph">如果發生故障且選擇了使用SMTP,請確認StorageGRID 該系統的電子郵件伺服器已正確設定,而且您的電子郵件伺服器正在執行中。AutoSupport 頁面上可能會出現下列錯誤訊息：<block ref="a6275ddcc64b0462fdfec03c01f96765" prefix=" " category="inline-code"></block></block>
-  <block id="12c59932c3e5913edaf1e343b08c1725" category="summary">平台服務中使用的端點是由租戶使用者在租戶管理程式中建立和維護、但是、如果租戶在設定或使用平台服務時遇到問題、您可能可以使用Grid Manager來協助解決問題。</block>
   <block id="20ac4d96fef3f3f076d50b28df7dd8f2" category="doc">疑難排解平台服務</block>
   <block id="38ac39db56fd3862825ebc159d60d105" category="section-title">新端點的問題</block>
   <block id="086597b8fabc96831bf2c79b5f3f604b" category="paragraph">租戶必須先使用租戶管理程式建立一或多個端點、才能使用平台服務。每個端點代表一個平台服務的外部目的地、例如 StorageGRID S3 儲存庫、 Amazon Web Services 儲存庫、 Amazon Simple Notification Service 主題、 Kafka 主題、或本地或 AWS 上託管的 ElasticSearch 叢集。每個端點都包括外部資源的位置、以及存取該資源所需的認證資料。</block>
@@ -5213,7 +5193,6 @@
   <block id="5371f6bd6ee18611881ed54cd957e924" category="paragraph">包含毀損的銷毀編碼片段的R地理DB Volume。</block>
   <block id="08394064384a00c128e362edb0dde06c" category="paragraph">CCID</block>
   <block id="a19cc6772ec675c680a4ac4f4619460b" category="paragraph">毀損的銷毀編碼片段的識別碼。</block>
-  <block id="74853f1efb7fb7f733a28e3bda4ab969" category="summary">當使用傳輸層安全性（TLS）的連線嘗試失敗時、就會產生此訊息。</block>
   <block id="27dd26e4a09e20a86f454400841f40f7" category="doc">ETAF：安全驗證失敗</block>
   <block id="dac402dc87a8c3ff0fcd747a6d5537f9" category="paragraph">當使用傳輸層安全性（TLS）的連線嘗試失敗時、就會產生此訊息。</block>
   <block id="b22d0c6e1f9b054381af1160fa390c51" category="paragraph">驗證失敗之TCP/IP連線的唯一系統識別碼。</block>
@@ -5402,7 +5381,6 @@
   <block id="00954e2717191e6d6c8667f98918be59" category="paragraph">區塊所屬物件的識別碼。</block>
   <block id="c82cc1b122fff63c0a15fa81e2328d51" category="paragraph">外洩區塊所屬物件的 CBID 。</block>
   <block id="a24cb3351a033f01362c2e99064b8d7b" category="paragraph">區塊大小（以位元組為單位）。</block>
-  <block id="14564ecbe1d6bf2c1a155342947c5668" category="summary">只要找不到物件複本的位置（複寫或刪除編碼 \ ）、就會產生此訊息。</block>
   <block id="db1929946644c5230f92569bd2f4aa98" category="doc">LLST：位置遺失</block>
   <block id="2a36d7386a2330842006182693c8c891" category="paragraph">每當找不到物件複本（複寫或刪除編碼）的位置時、就會產生此訊息。</block>
   <block id="b11bf355beb581a5a7107d262cf99feb" category="paragraph">CBIL</block>
@@ -5592,7 +5570,6 @@
   <block id="f9fd64e4e188495f16e0952939ed632a" category="list-text">背景驗證程序會偵測複寫物件資料的複本是否毀損。該系統會執行ILM評估、以取代毀損的物件。StorageGRID</block>
   <block id="9131b612eee6f29422a749f6d7d93ae2" category="list-text"><block ref="9131b612eee6f29422a749f6d7d93ae2" category="inline-link-macro-rx"></block></block>
   <block id="73601c50b4b36d7634ede573340ee42c" category="list-text"><block ref="73601c50b4b36d7634ede573340ee42c" category="inline-link-macro-rx"></block></block>
-  <block id="3b9cb7dce5a333f9bbf5d94ac8cbceb9" category="summary">當外部（用戶端要求）作業導致一個物件被另一個物件覆寫時、就會產生此訊息。</block>
   <block id="508efd1788616858f226977cb04d1723" category="paragraph">當外部（用戶端要求）作業導致一個物件被另一個物件覆寫時、就會產生此訊息。</block>
   <block id="4b81bc26d7597200919b8e8af6c053ab" category="paragraph">內容區塊識別碼（新增）</block>
   <block id="7087fb49bbac7b84d9a8326e56beec9b" category="paragraph">新物件的CBID。</block>
@@ -5651,9 +5628,7 @@
   <block id="184dc52ba3668a9bebcb02b985ee4e6b" category="paragraph">傳送要求之使用者的 S3 存取金鑰 ID 。</block>
   <block id="bc4c2e04b2bf11400d6a62b5bd31c451" category="paragraph">S3租戶帳戶ID（要求寄件者）</block>
   <block id="8cf91bbbc9e57c8176797f24df551e02" category="paragraph">傳送要求之使用者的租戶帳戶ID。</block>
-  <block id="9850b5467a2f79580d0a31b2859b58e5" category="summary">此訊息表示來源服務（節點ID）已關閉稽核訊息記錄；稽核訊息將不再收集或傳送。</block>
   <block id="335efa9192440d9fd0b59cd57593a11d" category="doc">Sadd：停用安全性稽核</block>
-  <block id="540bfaa13583db363a071d456902bb62" category="paragraph">此訊息表示來源服務（節點ID）已關閉稽核訊息記錄；稽核訊息將不再收集或傳送。</block>
   <block id="84e06dedf55dfbac5289a669cbe11389" category="paragraph">AeTM</block>
   <block id="98ca0aa9265b3a4f01f8de2831e63cf0" category="paragraph">啟用方法</block>
   <block id="d5fc7935d48e632d23ce7fe7fd680a31" category="paragraph">用來停用稽核的方法。</block>
@@ -5661,13 +5636,10 @@
   <block id="92f1b1481fa6ff46c4a3caae78354dab" category="paragraph">使用者名稱</block>
   <block id="6484538e3d549ee3430cd05983b4d390" category="paragraph">執行命令以停用稽核記錄的使用者名稱。</block>
   <block id="4805a6d7f7ed5add2ffc30794f7d1c7b" category="paragraph">此訊息表示先前已啟用記錄、但現在已停用。這通常只會在大量擷取期間使用、以改善系統效能。在大量活動之後、系統會還原稽核（減量）、然後永久封鎖停用稽核的功能。</block>
-  <block id="03d30dd02852f2403759e5923b7992e5" category="summary">此訊息表示來源服務（節點ID）已還原稽核訊息記錄；稽核訊息將再次收集及傳送。</block>
   <block id="24f21fcc981a1be3167a96a1e9a29802" category="doc">SAade：啟用安全性稽核</block>
-  <block id="b36751bdf4ad530f3237e29e37937453" category="paragraph">此訊息表示來源服務（節點ID）已還原稽核訊息記錄；稽核訊息將再次收集及傳送。</block>
   <block id="de675ce1ab98b5e259a7df6804c916b3" category="paragraph">用於啟用稽核的方法。</block>
   <block id="a0385e1dab99c8706a4ba5542218bd6f" category="paragraph">執行命令以啟用稽核記錄的使用者名稱。</block>
   <block id="014d0858e50a2a885e7f97ff430df594" category="paragraph">此訊息表示記錄先前已停用（SADD）、但現在已還原。這通常只會在大量擷取期間使用、以改善系統效能。在大量活動之後、系統會還原稽核、並永久封鎖停用稽核的功能。</block>
-  <block id="5503a36523125d839abbb90a94471f97" category="summary">網格內容在提交（意即持續儲存）之前、無法使用或辨識為已儲存。持續儲存的內容已完全寫入磁碟、並通過相關的完整性檢查。此訊息會在內容區塊提交至儲存設備時發出。</block>
   <block id="283480314f6ec8df609d8c133fd93dad" category="doc">SCMT：物件存放區提交</block>
   <block id="40f41bc6baa12503a6b0de49818e6ad4" category="paragraph">在提交網格內容之前、網格內容將無法使用或辨識為儲存內容（亦即持續儲存）。持續儲存的內容已完全寫入磁碟、並通過相關的完整性檢查。此訊息會在內容區塊提交至儲存設備時發出。</block>
   <block id="980b5e8403a1bca28b3e14c5ba2f14d9" category="paragraph">提交至永久儲存設備之內容區塊的唯一識別碼。</block>
@@ -5819,11 +5791,9 @@
   <block id="baa03a9642e97d2bcc7e4bb2b763299f" category="paragraph">關機性質：</block>
   <block id="18b319a1457205b2bff2626c43bbd6f1" category="paragraph">SUCS：系統正常關機。</block>
   <block id="72fe1aa912e7c9c9f629c3795cd848b7" category="paragraph">此訊息並不表示主機伺服器是否正在停止、僅表示報告服務。SYSD 的 RSLT 無法指示「不正常」關機、因為訊息只會由「乾淨」關機所產生。</block>
-  <block id="6764087403e8142bc5ae4432592f7bfd" category="summary">當服務正常停止時、會產生此訊息、表示已要求關機、且服務已啟動關機順序。Syst可用來判斷是否在重新啟動服務之前要求關機（不像在重新啟動服務之後傳送的SYSD）。</block>
   <block id="cec53141d4019a88e6cc8fbf86f089a9" category="doc">Syst：節點停止</block>
   <block id="b27f1723f01ed4e6ba56e7f72c47f0c7" category="paragraph">當服務正常停止時、會產生此訊息、表示已要求關機、且服務已啟動關機順序。Syst可用來判斷是否在重新啟動服務之前要求關機（不像在重新啟動服務之後傳送的SYSD）。</block>
   <block id="e71bafd6cfe427f7103771699d28c446" category="paragraph">此訊息並不表示主機伺服器是否正在停止、僅表示報告服務。SYST 訊息的 RSLT 代碼無法表示「不正常」關機、因為訊息只會由「乾淨」關機所產生。</block>
-  <block id="1a977c2740947ae172aa57864fcd92ca" category="summary">屬於系統稽核類別的稽核訊息用於與稽核系統本身、網格節點狀態、全系統工作活動（網格工作）和服務備份作業相關的事件。</block>
   <block id="7483d9bdb3975c2dc4c182437bb694a4" category="doc">系統稽核訊息</block>
   <block id="58c4273a9c31a427ea0cf0d392ed765b" category="paragraph">屬於系統稽核類別的稽核訊息用於與稽核系統本身、網格節點狀態、全系統工作活動（網格工作）和服務備份作業相關的事件。</block>
   <block id="b05c23fab98df11c755ba516f5df83c0" category="paragraph">ECMC</block>
@@ -5878,7 +5848,6 @@
   <block id="f350c2f296e166fca0951d8836d343b9" category="paragraph">節點啟動：服務已啟動；先前關機的性質會在訊息中指出。</block>
   <block id="b7cfedbe1811331329e4810cf9b1bc8d" category="inline-link-macro">SYSU：節點啟動</block>
   <block id="22e4f583e4f35ec2cb374521a267df49" category="paragraph"><block ref="22e4f583e4f35ec2cb374521a267df49" category="inline-link-macro-rx"></block></block>
-  <block id="3e32134dee8a4cdf3a44b97bcabcf9a3" category="summary">重新啟動服務時、會產生此訊息、指出先前的關機是否乾淨（命令）或不正常（非預期）。</block>
   <block id="7dcc1561fb75c3a3407701c65190b36b" category="paragraph">重新啟動服務時、會產生此訊息、指出先前的關機是否乾淨（命令）或不正常（非預期）。</block>
   <block id="d1ac091c7a7283551758a437386e0bd8" category="paragraph">SUCS：系統完全關機。</block>
   <block id="b20af54e46a6d87aee7f1e17e56420f8" category="paragraph">DSDN：系統並未完全關機。</block>
@@ -5909,7 +5878,6 @@
   <block id="0e88d3e0f1715864c175aa6790a20f1c" category="paragraph"><block ref="0f8467883e775471d917848f726019a6" prefix="" category="inline-code"></block></block>
   <block id="1713154cab15aa47283552b64a30420d" category="paragraph">此<block ref="d9f6ddaf911ac5193019e802d77ec830" prefix=" " category="inline-code"></block>工具會列印指定檔案中所有訊息的人類可讀判讀。</block>
   <block id="e8e149b144a0717a4977a47120474a70" category="admonition">為了減少線條長度並協助閱讀、預設不會顯示時間戳記。如果您想查看時間戳記，請使用時間戳記<block ref="b7cc4b6b2b8c0f37377b5cc259385de0" prefix="(" category="inline-code"></block>選項。</block>
-  <block id="ed491f17d86f2f60f919fbba287ce57d" category="summary">您可以使用稽核加總工具來計算寫入、讀取、顯示及刪除稽核訊息、並查看每種作業類型的最小、最大和平均時間（或大小）。</block>
   <block id="3539db799365db37f7139222cc7c8583" category="doc">使用稽核加總工具</block>
   <block id="e8af90e6b4ab2862cd480bff8617bbb6" category="paragraph">您可以使用此<block ref="98652e25f6ffeee4422cebd5a6a08b5e" prefix=" " category="inline-code"></block>工具來計算寫入、讀取、標頭及刪除稽核訊息、並查看每種作業類型的最小、最大及平均時間（或大小）。</block>
   <block id="52d66f363da1e6c43b8cad8c39754ada" category="paragraph"><block ref="98652e25f6ffeee4422cebd5a6a08b5e" prefix=" " category="inline-code"></block>主要管理節點上提供的工具會摘要說明記錄的寫入、讀取和刪除作業數、以及這些作業所需的時間。</block>
@@ -6021,7 +5989,6 @@
   <block id="bc9c838c697b5f530d60b89d50e997e2" category="paragraph">這項一般建議針對單一站台網格和磁碟區編碼提供站台遺失保護的網格、提供廣泛的銷毀編碼方案合理的結果。</block>
   <block id="81f8120b5a1cdbbad82c371e24d5f3c0" category="inline-link-macro">重新平衡銷毀編碼資料的考量事項</block>
   <block id="4ede0449ea951d01a12af7b795e92a95" category="paragraph">要更好地瞭解導致此建議的因素或爲您的站點制定更精確的計劃，請參閱<block ref="7d25f358497317f659c2db22c4c6c293" category="inline-link-macro-rx"></block>。如需針對您的情況最佳化的自訂建議、請聯絡您的 NetApp 專業服務顧問。</block>
-  <block id="1866752605f992dfd684eef9e628040a" category="summary">如果您部署的資訊生命週期管理（ILM）原則包含建立物件複本的規則、您必須考量要新增多少儲存設備、以及新增儲存磁碟區或儲存節點的位置。</block>
   <block id="9a474ffb92665e66f03b21fe04f8e6d3" category="paragraph">如果您部署的資訊生命週期管理（ILM）原則包含建立物件複本的規則、您必須考量要新增多少儲存設備、以及新增儲存磁碟區或儲存節點的位置。</block>
   <block id="af1fd265f139aea36f56248a2ac62442" category="inline-link-macro">新增儲存設備</block>
   <block id="fe2305d334b4447bc488c4506311b3c0" category="inline-link-macro">什麼是複寫</block>
@@ -6351,7 +6318,6 @@
   <block id="5a8a4438e90339f07b4891ad2785d4fb" category="list-text">如果任何新節點在先前未使用的子網路上有 Grid Network IP 位址、您就已經<block ref="24c8f5a5a8d2086ad6ce506147b9bba9" category="inline-link-macro-rx"></block>進入 Grid Network 子網路清單。否則、您必須取消擴充、新增子網路、然後重新開始程序。</block>
   <block id="beb5227c5efbbf02585c9d1ec9489b21" category="list-text">您並未在網格網路上的網格節點之間或 StorageGRID 站台之間使用網路位址轉譯（ NAT ）。當您將私有的IPv4位址用於Grid Network時、這些位址必須從每個站台的每個網格節點直接路由傳送。只有在使用對網格中所有節點透明的通道應用程式時、才支援使用NAT跨公共網路區段橋接網格網路、亦即網格節點不需要知道公有IP位址。</block>
   <block id="480af48e828afbfa1816ccdc755eb7d8" category="paragraph">此NAT限制僅適用於網格節點和網格網路。視需要、您可以在外部用戶端和網格節點之間使用NAT、例如為閘道節點提供公有IP位址。</block>
-  <block id="6798bb838ffb0ade9cf73e433faeec42" category="summary">您可以StorageGRID 將儲存磁碟區新增至現有的儲存節點、或新增儲存節點至現有站台、以擴充您的物件儲存容量。您必須以符合資訊生命週期管理（ILM）原則要求的方式新增儲存容量。</block>
   <block id="fee85f6532071490787cdf8c4673baae" category="paragraph">您可以StorageGRID 將儲存磁碟區新增至現有的儲存節點、或新增儲存節點至現有站台、以擴充您的物件儲存容量。您必須以符合資訊生命週期管理（ILM）原則要求的方式新增儲存容量。</block>
   <block id="b62c4ad2f840caefd72fd3a9f2e73c72" category="section-title">新增儲存磁碟區的準則</block>
   <block id="182afeb31ff237b5fae525bfc71db84b" category="paragraph">在將儲存磁碟區新增至現有儲存節點之前、請先檢閱下列準則與限制：</block>
@@ -6532,7 +6498,6 @@
   <block id="e672e10078627fba425f9d2685be7854" category="paragraph">如果您要新增站台、請使用<block ref="96f4e4f95f0e0289c198d5c9638a6878" prefix=" " category="inline-code"></block>監控 Cassandra 串流的進度、並查看在「擴充 Cassandra 叢集」階段中、已將多少中繼資料複製到新站台。新站台上的資料負載總計應在目前站台總數的20%之內。</block>
   <block id="92625e230cc7eca27b540aba48a99363" category="list-text">繼續監控擴充作業、直到所有工作都完成、且「*組態擴充*」按鈕再次出現。</block>
   <block id="999fca7ebec80349c34cf2345b1bb5b1" category="paragraph">視您新增的網格節點類型而定、請執行其他整合和組態步驟。請參閱。 <block ref="7bbbd136c64662b4b1ccbae8386cfb58" category="inline-link-macro-rx"></block></block>
-  <block id="81e6563c7c6220dbdafd8d62cb12e319" category="summary">新增儲存節點之後、您可以使用抹除編碼重新平衡程序、在現有和新的儲存節點之間重新分配銷毀編碼片段。</block>
   <block id="87b10012cdfaf0aea9a720dc9d84e0c0" category="paragraph">新增儲存節點之後、您可以使用抹除編碼（ EC ）重新平衡程序、在現有和新的儲存節點之間重新分配銷毀編碼片段。</block>
   <block id="c59847e935463624e4bee62b6e03753e" category="list-text">您已完成新增儲存節點的擴充步驟。</block>
   <block id="59e226631d3318880a0518a39d85dcfa" category="inline-link-macro">重新平衡銷毀編碼資料的考量事項</block>
@@ -6707,7 +6672,6 @@
   <block id="d31df0f235ff2b2f8121434981c03a1c" category="list-text">將一或多個集合體附加至雲端層。</block>
   <block id="b02f533bb85a030df04eef66040650dd" category="list-text">您也可以建立磁碟區分層原則。</block>
   <block id="e6ac89dd976f36fffee17fbe4a5d290b" category="summary">設定StorageGRID 使用FabricPool 搭配使用的功能時、您可以選擇性地建立一或多個高可用度（HA）群組。HA 群組是每個節點包含 StorageGRID 負載平衡器服務的集合。HA 群組可以包含閘道節點、管理節點或兩者。</block>
-  <block id="f5a7af4d3fad56e6c795b67f0b4f749e" category="paragraph">設定StorageGRID 使用FabricPool 搭配使用的功能時、您可以選擇性地建立一或多個高可用度（HA）群組。HA 群組是每個節點包含 StorageGRID 負載平衡器服務的集合。HA 群組可以包含閘道節點、管理節點或兩者。</block>
   <block id="a7e5f34fa970e845f942b1ebc182a103" category="paragraph">您可以使用 HA 群組來協助保持 FabricPool 資料連線可用。HA 群組使用虛擬 IP 位址（ VIP ）來提供高可用度的負載平衡器服務存取權。如果 HA 群組中的作用中介面故障、備份介面就能管理工作負載、對 FabricPool 作業的影響微乎其微。</block>
   <block id="1cf5447ba16eb2b18335de18edb657c4" category="inline-link-macro">存取並完成 FabricPool 設定精靈</block>
   <block id="f2b1ca43ace0acee7b6cb7cdd9f93796" category="paragraph">如需此工作的詳細資訊，請參閱<block ref="1426cbe087243652f493f474111cf1b0" category="inline-link-macro-rx"></block>。要使用 FabricPool 安裝嚮導完成此任務，請轉至<block ref="c6986fe93679fc5bdd244963d74ca0fc" category="inline-link-macro-rx"></block>。</block>
@@ -7267,7 +7231,6 @@
   <block id="c1409a0e897e34a11fdc483bd40c9f2e" category="list-text">儲存效率：</block>
   <block id="b1d3c4aef0d73caa261fddf283d367f2" category="list-text">單一站台部署、只需一個銷毀編碼複本、而非多個複製複本、即可有效保護資料。</block>
   <block id="49ad338894ab83d6834e0ab50d5c4af9" category="list-text">站台間延遲低於100毫秒的多站台部署。</block>
-  <block id="2c67e952529710175ee9e785fffe410f" category="summary">瞭解擷取時保護資料的三種選項（平衡、嚴格或雙重承諾）各有哪些優缺點、可協助您決定要為ILM規則選取哪一種選項。</block>
   <block id="96a1130ae9bdab610cd224ccc6b908eb" category="doc">擷取選項的優點、缺點和限制</block>
   <block id="186b0c4f403d34cb966c7813705568a4" category="paragraph">瞭解擷取時保護資料的三種選項（平衡、嚴格或雙重提交）各有哪些優缺點、可協助您決定要為ILM規則選取哪一種選項。</block>
   <block id="9e97e40c3a3bda31e7186d41026ac56e" category="inline-link-macro">擷取選項</block>
@@ -7391,7 +7354,6 @@
   <block id="c0464d379d7b43f89d6eaec16c570e40" category="section-title">Azure：不支援生命週期管理</block>
   <block id="20e48a85838efada68401e1038310d23" category="paragraph">請勿將 Azure Blob 儲存生命週期管理用於與雲端儲存池搭配使用的容器。生命週期作業可能會干擾Cloud Storage Pool作業。</block>
   <block id="b98add78bd541586d1006913bb24dcc7" category="paragraph"><block ref="b98add78bd541586d1006913bb24dcc7" category="inline-link-macro-rx"></block></block>
-  <block id="aa75de34657574dc36274cf641363cc5" category="summary">「建立 ILM 規則」精靈的「定義放置位置」步驟可讓您定義放置指示、以決定物件的儲存時間、複本類型 \ （複寫或刪除編碼 \ ）、儲存位置和複本數量。</block>
   <block id="f96e97b3fa21b1ab16490de02e77ba26" category="doc">步驟2（共3步）：定義放置位置</block>
   <block id="cc43429059d5235e1b13e529dab3de51" category="paragraph">「建立 ILM 規則」精靈的 * 定義放置位置 * 步驟可讓您定義放置指示、以決定物件的儲存時間、複本類型（複寫或刪除編碼）、儲存位置及複本數量。</block>
   <block id="46dbfb1e8c23d87e20a07e02d0cf6c7d" category="paragraph">ILM規則可以包含一或多個放置指示。每項放置指示均適用於單一時間段。當您使用多個指示時、時間段必須是連續的、且至少必須在第0天開始一項指示。指令可以永遠繼續、或直到您不再需要任何物件複本為止。</block>
@@ -7463,7 +7425,6 @@
   <block id="dc4f4c88f03b175e4b79814f7e906791" category="image-alt">ILM規則保留圖</block>
   <block id="e9fbb8f558392e71beb78be25683bf5f" category="inline-link-macro">步驟 3 （選擇擷取行為）</block>
   <block id="f4a43c50af368af9c41ef682f3d6bcc6" category="list-text">選擇*繼續*。<block ref="994abddf990aed63979bca9831f0997b" category="inline-link-macro-rx"></block>將顯示「建立 ILM 規則」精靈的。</block>
-  <block id="e2f72f806bc77164d7432ac2e01a1de9" category="summary">建立 ILM 規則精靈的步驟 1 \ （輸入詳細資料）可讓您輸入規則的名稱和說明、並定義規則的篩選條件。</block>
   <block id="a902fcbe0b9feb5cd815c2e2f7c46e08" category="doc">步驟 3 之 1 ：輸入詳細資料</block>
   <block id="fb62282c066421cddbf2355c102cbebe" category="paragraph">「建立 ILM 規則」精靈的 * 輸入詳細資料 * 步驟可讓您輸入規則的名稱和說明、並定義規則的篩選條件。</block>
   <block id="8cbbd57ffc00f9230695b9bc548e7ada" category="paragraph">輸入規則的說明和定義篩選是選擇性的。</block>
@@ -7539,7 +7500,6 @@
   <block id="d87d32128ac369c94b338746c813dfbd" category="image-alt">物件大小的進階篩選範例</block>
   <block id="af140d26ab379b656899b7985455178f" category="paragraph">使用多個項目可讓您精確控制要比對的物件。在下列範例中、規則會套用至將 Brand A 或 Brand B 做為 camera 類型使用者中繼資料值的物件。不過、此規則僅適用於小於10 MB的Brand B物件。</block>
   <block id="0e30f851855aa1a4ca9c28fdf4175b73" category="image-alt">使用者中繼資料的進階篩選範例</block>
-  <block id="13f9c4a42467d381d6c948c8cbabb6b3" category="summary">「建立 ILM 規則」精靈的步驟 3 \ （選擇擷取行為）可讓您選擇在此規則篩選的物件在擷取時的保護方式。</block>
   <block id="e9d3166a21086dd2e09b5d6408539abb" category="doc">步驟 3 之 3 ：選取擷取行為</block>
   <block id="f6585c9304a58dced3952b9b864ea34b" category="paragraph">「建立 ILM 規則」精靈的 * 選取擷取行為 * 步驟可讓您選擇在此規則篩選的物件在擷取時如何受到保護。</block>
   <block id="d40787885c9359b9b497350211614aef" category="paragraph">可以製作過渡複本、並將物件排入佇列、以便稍後進行ILM評估、也可以製作複本、以立即符合規則的放置指示。StorageGRID</block>
@@ -7853,7 +7813,6 @@
   <block id="2e979835dd62324f5bfe217449ba4974" category="section-title">嚴格</block>
   <block id="11c2a75d33bacf14600908fcbb6e7961" category="paragraph">當您選取「嚴格」選項時StorageGRID 、會在擷取中使用同步放置、並立即製作規則放置說明中指定的所有物件複本。如果 StorageGRID 無法建立所有複本、則擷取會失敗、例如、所需的儲存位置暫時無法使用。用戶端必須重試此作業。</block>
   <block id="5bb8ead85f99871e8bd4d54783ccb40b" category="paragraph">如果您有作業或法規要求、只要將物件立即儲存在ILM規則中所述的位置、請使用嚴格選項。例如、為了滿足法規要求、您可能需要使用嚴格選項和位置限制進階篩選器、以確保物件永遠不會儲存在特定資料中心。</block>
-  <block id="d97c137431a8bd72029f9d85e1b60383" category="summary">您可以編輯Cloud Storage Pool來變更其名稱、服務端點或其他詳細資料、但是您無法變更Cloud Storage Pool的S3儲存區或Azure容器。</block>
   <block id="5430041ae2f4cb9087dae938b48b6b58" category="doc">編輯雲端儲存資源池</block>
   <block id="beec8317d1c654f23e51a8b18865bda2" category="paragraph">您可以編輯 Cloud Storage Pool 來變更其名稱、服務端點或其他詳細資料、但是您無法變更 Cloud Storage Pool 的 S3 儲存區或 Azure 容器。</block>
   <block id="6abb1f6f8cf26728a109f14792c3fb63" category="paragraph">Cloud Storage Pools表格會列出現有的Cloud Storage Pools。</block>
@@ -8304,7 +8263,6 @@
   <block id="eae1d49d311ae5be60b6c3eae92c7fb9" category="list-text">刪除在 StorageGRID 11.7 或更早版本中建立的標記只能透過 S3 用戶端要求移除、但不能由 ILM 、貯體生命週期規則或刪除貯體作業中的物件移除。</block>
   <block id="a6b429d9f48e7cab3cba9b64ee8d9a45" category="list-text">從在 StorageGRID 11.8 或更新版本中建立的貯體中刪除標記、可由 ILM 、貯體生命週期規則、貯體作業中的刪除物件、或明確刪除 S3 用戶端。</block>
   <block id="6d0e61b2118949052808f5b73b2e4d44" category="list-text"><block ref="6d0e61b2118949052808f5b73b2e4d44" category="inline-link-macro-rx"></block></block>
-  <block id="32b8f579606f9af7497aeea62d9c5693" category="summary">資訊生命週期管理（ILM）原則是一組有序的ILM規則、可決定StorageGRID 整個系統如何長期管理物件資料。</block>
   <block id="eaf1f38ffad5f3c3703030d4272a9bd2" category="paragraph">資訊生命週期管理（ILM）原則是一組依序排列的ILM規則、可決定StorageGRID 整個過程中、物件資料的管理方式。</block>
   <block id="e8c723f7168875735d8d19e27279f135" category="admonition">如果ILM原則設定不正確、可能導致無法恢復的資料遺失。啟動ILM原則之前、請仔細檢閱ILM原則及其ILM規則、然後模擬ILM原則。請務必確認ILM原則是否正常運作。</block>
   <block id="9bb6a532e658facbdc4db39edf4adc59" category="section-title">預設 ILM 原則</block>
@@ -8359,7 +8317,6 @@
   <block id="7738107556bbc104c615f4904507257d" category="list-text">請確定原則中的規則順序正確。當原則啟動時、新物件和現有物件會依照列出的順序進行評估、從上方開始。例如、如果原則中的第一個規則符合某個物件、則任何其他規則都不會評估該物件。</block>
   <block id="820629642e3b1cb2e0d32b6438ba374b" category="list-text">每個 ILM 原則的最後一個規則是預設的 ILM 規則、無法使用任何篩選器。如果某個物件未被其他規則比對、則預設規則會控制該物件放置的位置、以及保留多久。</block>
   <block id="92bb80fa0a19ead93ae30380e9dc8f8a" category="list-text">在啟動新原則之前、請先檢閱原則對現有物件放置位置所做的任何變更。變更現有物件的位置、可能會在評估和實作新放置位置時、導致暫時性資源問題。</block>
-  <block id="a1a659c6493b085f252cc57382618925" category="summary">ILM 原則中的資訊生命週期管理（ ILM ）規則會指示 StorageGRID 如何建立及散佈物件資料複本、以及如何隨時間管理這些複本。</block>
   <block id="c510e4391e53655340a166b97766f29a" category="paragraph">ILM 原則中的資訊生命週期管理（ ILM ）規則會指示 StorageGRID 如何建立及散佈物件資料複本、以及如何隨時間管理這些複本。</block>
   <block id="d38f896ddbb0d7082fbc18cef60547e0" category="paragraph">設計及實作 ILM 規則與原則需要仔細規劃。您必須瞭StorageGRID 解作業需求、您的作業系統拓撲、物件保護需求、以及可用的儲存類型。然後、您必須決定要如何複製、分散及儲存不同類型的物件。</block>
   <block id="7c6e3c47f7e8f82eb6a48bfd995b5dc2" category="inline-link-macro">ILM 如何在物件生命週期中運作</block>
@@ -8891,7 +8848,6 @@
   <block id="d3d9446802a44259755d38e6d163e820" category="paragraph">10</block>
   <block id="6512bd43d9caa6e02c990b0a82652dca" category="paragraph">11</block>
   <block id="c51ce410c124a10e0db5e4b97fc2af39" category="paragraph">13</block>
-  <block id="21cdd235d92fb15abc28e08f77c6053c" category="summary">若要管理物件、請建立一組資訊生命週期管理（ILM）規則、並將其組織成ILM原則。</block>
   <block id="0a81a53b823d402f0ba8988363bbedea" category="paragraph">若要管理物件、請建立一組資訊生命週期管理（ILM）規則、並將其組織成ILM原則。</block>
   <block id="0f42db882606bd36e121dd738422d11e" category="paragraph">系統中擷取的每個物件都會根據作用中原則進行評估。當原則中的規則符合物件的中繼資料時、規則中的指示會決定StorageGRID 哪些動作需要複製及儲存該物件。</block>
   <block id="326f27e291823b4c6c2eb3c843f0e23b" category="admonition">物件中繼資料並非由 ILM 規則管理。相反地、物件中繼資料會儲存在Cassandra資料庫的中繼資料儲存區中。每個站台會自動維護三個物件中繼資料複本、以保護資料免於遺失。</block>
@@ -9407,7 +9363,6 @@
   <block id="e51ed48137ec4e1d67c68b83da729e67" category="inline-link-macro">取消委任程序已暫停</block>
   <block id="122e06c51053069550f864795b6e2555" category="inline-link-macro">升級 StorageGRID 軟體</block>
   <block id="22135de788032c63ee471eae2e44f9a7" category="admonition">如果<block ref="3435c1792b89b33d74099a1adc2ac877" category="inline-link-macro-rx"></block>是節點或站點，則可以安全地應用修復程序。此外、StorageGRID 您也可以在更新程序的最後階段套用修補程式。請參閱的說明<block ref="180505c97177662e9c6981b5a2fc3c9b" category="inline-link-macro-rx"></block>。</block>
-  <block id="7508acbe01c96842ca6d470ea204f468" category="summary">您可以新增、移除及更新 DNS 伺服器、以便使用完整網域名稱 \（ FQDN ）主機名稱、而非 IP 位址。</block>
   <block id="5254df7b70826462d79af217bb5142d5" category="doc">設定 DNS 伺服器</block>
   <block id="b32e366c8fe62901cf50e612fc7a8d24" category="paragraph">您可以新增、更新及移除 DNS 伺服器、以便使用完整網域名稱（ FQDN ）主機名稱、而非 IP 位址。</block>
   <block id="daec3afda782dd3d75cdc5cb161420e7" category="paragraph">若要在指定外部目的地的主機名稱時使用完整網域名稱（ FQDN ）而非 IP 位址、請指定您要使用的每個 DNS 伺服器的 IP 位址。這些項目用於 AutoSupport 、警示電子郵件、 SNMP 通知、平台服務端點、雲端儲存池、 還有更多。</block>
@@ -9436,7 +9391,6 @@
   <block id="4e9f1d78c21d6e09903f27bcec914036" category="list-text">您無法將用戶端網路 IP 位址變更為指派給用戶端網路介面上設定的 HA 群組的現有虛擬 IP 位址值。</block>
   <block id="bd20a32730af5a471f0076f9c322df8e" category="list-text">如果 Grid 網路介面包含在 HA 群組中、您就無法將該介面的 Grid 網路 IP 位址變更為 HA 群組所設定之子網路以外的位址。</block>
   <block id="9d8515f7b621a733e1d60fbf0198c77c" category="list-text">您無法將 Grid Network IP 位址變更為指派給 Grid Network 介面上設定的 HA 群組的現有虛擬 IP 位址值。</block>
-  <block id="4796dc2369cd6d57ed4265445c2e440a" category="summary">您可以新增、更新或移除網路時間傳輸協定（ NTP ）伺服器、以確保資料在 StorageGRID 系統的網格節點之間準確同步。</block>
   <block id="fda083d99776d9db39cb9af9b8202f93" category="paragraph">您可以新增、更新或移除網路時間傳輸協定（ NTP ）伺服器、以確保資料在 StorageGRID 系統的網格節點之間準確同步。</block>
   <block id="11634d6fc384495a42346192f5eeade4" category="list-text">您有要設定的 NTP 伺服器的 IPv4 位址。</block>
   <block id="67dc478c3c87242bfec371c487ca5a71" category="section-title">StorageGRID 如何使用 NTP</block>
@@ -9685,7 +9639,6 @@
   <block id="84508747231c716e448376b26f2e737b" category="list-text">請確保已淘汰的網格節點磁碟機已清除。使用市售的資料抹除工具或服務、永久且安全地移除磁碟機中的資料。</block>
   <block id="66bb499d1d6e9c0a4e1c872e5a1742db" category="inline-link">在維護模式中監控節點加密</block>
   <block id="b1c86d0ba83eaa8dfe28a47e6d6ec1f0" category="list-text">如果您停用了某個應用裝置節點、但設備上的資料是使用節點加密來保護、請使用StorageGRID 此應用裝置安裝程式來清除金鑰管理伺服器組態（清除KMS）。如果您要將應用裝置新增至其他網格、則必須清除KMS組態。有關說明，請參閱<block ref="65491cee836ef1f0be1141ca5618fdf7" category="inline-link-rx"></block>。</block>
-  <block id="bbb94353dffd534ca2d5f1cb42c909d7" category="summary">您可能需要取消委任目前未連線至網格的節點（健全狀況為未知或管理性關閉的節點）。</block>
   <block id="cc17181c3c5d251c9e08a81437ff3b3c" category="doc">取消委任中斷連線的網格節點</block>
   <block id="fd0f2337dbc929e6872f7768ccb2be50" category="paragraph">您可能需要取消委任目前未連線至網格的節點（健全狀況為未知或管理性關閉的節點）。</block>
   <block id="f6b496f87476d74c7f43c83549b26d8c" category="list-text">您已取得所有必要項目。</block>
@@ -10173,7 +10126,6 @@
   <block id="0805b98633df5eabbe0b53865022d35e" category="doc">從歸檔節點故障中恢復</block>
   <block id="c3b8c70c8a19a39ca7c7a51e04a60d8a" category="inline-link">從歸檔節點故障中恢復（ StorageGRID 11.8 doc 網站）</block>
   <block id="8f585d8ff60bd7cc88de2c4db3563bd9" category="paragraph">有關恢復歸檔節點的信息，請參見<block ref="d88cfbef1fe6bd7ae7387a49d0be2d41" category="inline-link-rx"></block>。</block>
-  <block id="068ed2fb70ce846a6cf68e82e60bc492" category="summary">您必須完成下列工作、才能從非主要管理節點故障中恢復。一個管理節點裝載組態管理節點（CMN\）服務、稱為主要管理節點。雖然您可以擁有多個管理節點、但每StorageGRID 個支援系統僅包含一個主要管理節點。所有其他管理節點均為非主要管理節點。</block>
   <block id="8746e10b4598bd07fba5db9dacb733ce" category="paragraph">您必須完成下列工作、才能從非主要管理節點故障中恢復。一個管理節點裝載組態管理節點（CMN）服務、稱為主要管理節點。雖然您可以擁有多個管理節點、但每StorageGRID 個支援系統僅包含一個主要管理節點。所有其他管理節點均為非主要管理節點。</block>
   <block id="fc2c60a7f3bbcf74357336e39b0a2ef4" category="paragraph">請遵循下列高階步驟來恢復非主要管理節點：</block>
   <block id="6275d7ecf1fc1fac926211dd1e9a82b4" category="inline-link-macro">從故障的非主要管理節點複製稽核記錄</block>
@@ -10188,9 +10140,7 @@
   <block id="67227c9399e01ba451e3ae5c5f0235e4" category="list-text"><block ref="67227c9399e01ba451e3ae5c5f0235e4" category="inline-link-macro-rx"></block></block>
   <block id="4d4c0dbc8ee021e9e0600022a1f280ce" category="inline-link-macro">還原非主要管理節點時的 Prometheus 指標</block>
   <block id="73b7c3355ab2212ab5cd4756b3473a30" category="list-text"><block ref="73b7c3355ab2212ab5cd4756b3473a30" category="inline-link-macro-rx"></block></block>
-  <block id="9739ca1b43dc3eb1bf403302d16e652a" category="summary">您必須完成一組特定的工作、才能從主要管理節點故障中恢復。主管理節點裝載網格的組態管理節點（CMN\）服務。</block>
   <block id="dbf9e9e8d97f01254fe445247d4ba1f2" category="paragraph">您必須完成一組特定的工作、才能從主要管理節點故障中恢復。主管理節點裝載網格的組態管理節點（CMN）服務。</block>
-  <block id="1285318d9f6efe981fca22e001181767" category="admonition">您必須立即修復或更換故障的主要管理節點、否則網格可能會喪失擷取新物件的能力。確切的時間週期取決於您的物件擷取速度：如果您需要更準確地評估網格的時間範圍、請聯絡技術支援部門。</block>
   <block id="004d2ede21cf7c5c3cfdb8f72deb09b5" category="paragraph">請遵循下列高階步驟來恢復主要管理節點：</block>
   <block id="57ef3f7cd9adc0466dee9577a57ea964" category="list-text"><block ref="57ef3f7cd9adc0466dee9577a57ea964" category="inline-link-macro-rx"></block></block>
   <block id="96ca4685ac3f991c63ae23e1205f8866" category="inline-link-macro">更換主管理節點</block>
@@ -11001,7 +10951,6 @@
   <block id="2c327d3e22ff437db3e65987f5f6b683" category="list-text">如果可以取消委任、請選取站台的選項按鈕。</block>
   <block id="a16c624bdd067812a4c06e15b7f658e8" category="paragraph">*下一步*按鈕已啟用。</block>
   <block id="8546a01f3e9fe19ac9a8d992b56851c8" category="paragraph">步驟2（檢視詳細資料）隨即出現。</block>
-  <block id="e5c99deaf400537b6dd55cf4bbe8dd07" category="summary">從「取消委任網站」精靈的步驟2（檢視詳細資料）、您可以檢閱網站中包含哪些節點、查看每個儲存節點上已使用多少空間、以及評估網格中其他站台可用的空間。</block>
   <block id="c425892ae74feee241d4126d8ccd2bd8" category="paragraph">從「取消委任網站」精靈的步驟2（檢視詳細資料）、您可以檢閱網站中包含哪些節點、查看每個儲存節點上已使用多少空間、以及評估網格中其他站台可用的空間。</block>
   <block id="68480ce7432f17728d0f0a5126701c12" category="paragraph">在解除委任站台之前、您必須先檢閱站台上存在多少物件資料。</block>
   <block id="2f19d71553be2e6ef6c3d513570413ef" category="list-text">如果您要執行連線站台取消委任、則必須先瞭解站台目前有多少物件資料存在、然後再更新ILM。根據站台容量和資料保護需求、您可以建立新的ILM規則、將資料移至其他站台、或從站台刪除物件資料。</block>
@@ -11032,7 +10981,6 @@
   <block id="8104a0905ac429796205f94b054c95d8" category="paragraph">如果您正在執行連線站台取消委任、且計畫使用ILM從所選站台移除物件資料（而非僅刪除）、則必須確保其他站台有足夠的容量來容納已移動的資料、並確保仍有足夠的容量可供未來成長使用。</block>
   <block id="090ef93c154f4a00f3b40cae1eaeeb4b" category="admonition">如果您要移除之站台的*已用空間*大於*其他站台的可用空間總計*、就會出現警告。為了確保在移除站台後仍有足夠的可用儲存容量、您可能需要先執行擴充、才能執行此程序。</block>
   <block id="0a8c9a04e28f7474941e01195b74a1fe" category="paragraph">此時會出現步驟3（修訂ILM原則）。</block>
-  <block id="fd96294a44e03a0395905c48f8995c68" category="summary">從「取消委任網站」精靈的步驟 3 \ （修訂 ILM 原則 \ ）、您可以判斷該網站是否由任何 ILM 原則參照。</block>
   <block id="7c5a4f240ba4da55a6c752dd19551ad6" category="paragraph">從「取消委任網站」精靈的步驟 3 （修訂 ILM 原則）開始、您可以判斷該網站是否由任何 ILM 原則參照。</block>
   <block id="a8ab35fad5b72b758eec4c92ffbce62a" category="inline-link-macro">使用 ILM 管理物件</block>
   <block id="309d7b9d8f01c8ffe57260b387a663fd" category="paragraph">您對如何操作有很好的瞭解<block ref="cb90a8e8fa97610b3fc58e894aabc5bd" category="inline-link-macro-rx"></block>。您熟悉建立儲存資源池和 ILM 規則、以及模擬和啟動 ILM 原則。</block>
@@ -11075,7 +11023,6 @@
   <block id="e2e9336ba0c0bc29d2e667d6e7a15e75" category="list-text"><block ref="831b6e7acf4c82c2d7914fc31b3a8516" category="inline-link-macro-rx"></block>。</block>
   <block id="403ba4ad300167e2dfc3d620c7198309" category="list-text">當您完成 ILM 規則和原則的變更時、步驟 3 （修訂 ILM 原則）中不應再列出原則。選擇*下一步*。</block>
   <block id="d7faf29aea7b593688d72e2bdc54fddb" category="paragraph">此時會出現步驟4（移除ILM參考）。</block>
-  <block id="ea354d8eca2de1702e79bede4e1bc1b3" category="summary">從「取消委任網站」精靈的步驟 4 \ （移除 ILM 參考資料 \ ）、您必須刪除或編輯任何未使用的 ILM 規則以參照網站、即使這些規則未用於任何 ILM 原則。</block>
   <block id="37fd7245fa240f809f55d1129acad41c" category="paragraph">從「取消委任網站」精靈的步驟 4 （移除 ILM 參考）中、您必須刪除或編輯任何未使用的 ILM 規則、以參照該網站、即使這些規則未用於任何 ILM 原則。</block>
   <block id="d56b2eb4e1929a57af59a0da8d016ed9" category="list-text">判斷是否有任何未使用的ILM規則是指該站台。</block>
   <block id="5f838fab9fb8fe1efdc1373f27a51893" category="paragraph">如果列出任何 ILM 規則、這些規則仍會參照網站、但不會用於任何原則。</block>
@@ -11088,7 +11035,6 @@
   <block id="0958b89ec0330ed53af2764ac4d74806" category="list-text">確認沒有未使用的 ILM 規則會參照網站、且「 * 下一步 * 」按鈕已啟用。</block>
   <block id="ca4dd0a7f99507a877d7ea47c8e45987" category="admonition">移除站台時、任何其他參照站台的儲存資源池和銷毀編碼設定檔都將會失效。當 StorageGRID 取消網站配置時、它會自動停用參照該網站的任何未使用的銷毀編碼設定檔、並自動刪除任何參照該網站的未使用儲存池。所有儲存節點儲存池（ StorageGRID 11.6 及更早版本）都會移除、因為它使用「 All Sites 」（所有站台）站台。</block>
   <block id="41a36adbb5465a1f32e451894f43abbd" category="paragraph">此時會出現步驟5（解決節點衝突）。</block>
-  <block id="d25f9cfccba6ac34b2cc5ae677f30b8b" category="summary">從「取消委任網站」精靈的步驟5（解決節點衝突）、您可以判斷StorageGRID 出您的不穩定系統中是否有任何節點中斷連線、或所選網站上的任何節點是否屬於高可用度（HA）群組。解決任何節點衝突之後、請從本頁開始取消委任程序。</block>
   <block id="d705190e29460c4a4d75ad5c356b2dd2" category="paragraph">從「取消委任網站」精靈的步驟5（解決節點衝突）、您可以判斷StorageGRID 您的系統中是否有任何節點中斷連線、或所選網站上的任何節點是否屬於高可用度（HA）群組。解決任何節點衝突之後、請從本頁開始取消委任程序。</block>
   <block id="57147a1b80edfcc38a0b446e18614175" category="paragraph">您必須確保StorageGRID 您的整個作業系統中的所有節點都處於正確狀態、如下所示：</block>
   <block id="0274240d86e41f7de4b7b3f03f020ccf" category="list-text">StorageGRID 系統中的所有節點都必須連接（<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>）。</block>
@@ -11120,7 +11066,6 @@
   <block id="ac2f87bb0671c8b2abcada34b6e528a6" category="image-alt">取消委任站台步驟5網格組態</block>
   <block id="0f646d8a6bfa049c42fa19de2fa0a411" category="paragraph">當產生新的網格組態時、會出現步驟6（監控取消配置）。</block>
   <block id="df4eefe17da5f848e4d4494ba5e3e741" category="admonition">在取消委任完成之前、*上一個*按鈕會保持停用狀態。</block>
-  <block id="4c22edef0431b61082d7f8ab60957082" category="summary">從取消配置網站頁面精靈的步驟6（監控取消配置）、您可以在移除網站時監控進度。</block>
   <block id="dc9f85b00a336dab81c7cbed28819046" category="paragraph">從取消配置網站頁面精靈的步驟6（監控取消配置）、您可以在移除網站時監控進度。</block>
   <block id="3d26c7690371c29d1a71779085da347e" category="paragraph">當執行此動作時、若從連線的站台移除節點、則會依照下列順序移除節點：StorageGRID</block>
   <block id="53cc3f903082af16815be0a6d415e50f" category="paragraph">當用這個順序移除中斷連線的站台時、它會移除節點：StorageGRID</block>
@@ -11204,14 +11149,12 @@
   <block id="c97be49fc00f5e4e814f0d26349951e0" category="admonition">如需符合網格版本、您可以在部署節點時使用次要版本、而不需要先部署主要版本。</block>
   <block id="ee560a5ab29c3a382429910f8920533d" category="list-text">然後將修補程式11._A.B.y_套用至主要管理節點。</block>
   <block id="d420b76fd181f34f84e4eff9473bf704" category="paragraph">如需更多資訊、請參閱 <block ref="0f7e5cf7b0acc83099b9ae176fbc4e3c" category="inline-link-macro-rx"></block>。</block>
-  <block id="1301965e69ee8054282a33bdd0aa4cfb" category="summary">如果停用後仍有太少的管理網域控制站（ ADA\ ）服務、您可能無法取消委任某個站台上的特定儲存節點。</block>
   <block id="440e1a338dc560bde163dd40a8e91151" category="paragraph">如果停用後仍有太少的管理網域控制站（ ADC ）服務、您可能無法取消委任某個站台上的特定儲存節點。</block>
   <block id="c68dd5c9975099029e803c8f5d7e4f31" category="paragraph">在某些儲存節點上找到的 ADC 服務可維護網格拓撲資訊、並為網格提供組態服務。這個支援系統要求每個站台及任何時間都能達到特定的ADC服務量。StorageGRID</block>
   <block id="200c93c6b4fdb53d5366e7a95c8b560f" category="paragraph">如果移除節點會導致不再符合 ADC 仲裁、則無法取消委任儲存節點。為了在汰換期間滿足 ADC 仲裁、每個站台至少必須有三個儲存節點、才能使用 ADC 服務。如果站台有三個以上的儲存節點搭配 ADC 服務、則在汰換之後、這些節點中的大多數必須保持可用：<block ref="4211978c656f7edd7e4ff82da42de09d" prefix=" " category="inline-code"></block></block>
   <block id="e4b7e0ab3b99536b9564b83e54ea8a90" category="paragraph">例如、假設某個站台目前包含六個具有 ADC 服務的儲存節點、而您想要取消委任三個儲存節點。由於必須達到ADC仲裁要求、您必須完成下列兩個取消委任程序：</block>
   <block id="541b0a9500e210842b5a0bea1d7860b4" category="list-text">在第一次取消委任程序中、您必須確保具有 ADC 服務的四個儲存節點仍然可用<block ref="120388508c3378c57c91cb963db7dc6f" prefix=" " category="inline-code"></block>：。這表示您一開始只能取消委任兩個儲存節點。</block>
   <block id="1180a13c0273c83a6e0b2dcd9a7a6f62" category="inline-link-macro">擴充</block>
-  <block id="edbd56f2ea5880112e22d36d8b3ec23c" category="summary">此技術可維護網格網路（eth0）上用於在網格節點之間進行通訊的網路子網路清單。StorageGRID這些項目包括StorageGRID 您的系統所在站台用於Grid Network的子網路、以及透過Grid Network閘道存取的NTP、DNS、LDAP或其他外部伺服器所使用的任何子網路。當您在擴充中新增網格節點或新站台時、可能需要更新或新增子網路至網格網路。</block>
   <block id="f8153373f958e72aba681fc671ee09a1" category="paragraph">此技術可維護網格網路（eth0）上用於在網格節點之間進行通訊的網路子網路清單。StorageGRID這些項目包括StorageGRID 您的系統所在站台用於Grid Network的子網路、以及透過Grid Network閘道存取的NTP、DNS、LDAP或其他外部伺服器所使用的任何子網路。當您在擴充中新增網格節點或新站台時、可能需要更新或新增子網路至網格網路。</block>
   <block id="2ec6fea9343e6ef95068011c2d234b00" category="paragraph">如果您執行的擴充活動包括新增子網路、則必須在開始擴充程序之前、將新的子網路新增至 Grid Network 子網路清單。否則、您必須取消擴充、新增子網路、然後重新開始擴充。</block>
   <block id="6472ebd697896367072475821c59b879" category="section-title">新增子網路</block>
@@ -12980,7 +12923,6 @@
   <block id="7fa8b5c0906633a9de5197a27e76cf51" category="list-text">假設您已設定StorageGRID 好Sing SNMP代理程式、系統就會傳送簡單網路管理傳輸協定（SNMP）通知。</block>
   <block id="da186c9bc32b667cc064dd384f82bc71" category="paragraph">您可以建立自訂警示、編輯或停用警示、以及管理警示通知。</block>
   <block id="2769439193c58b8146d87ea44c31025a" category="paragraph">若要深入瞭解：</block>
-  <block id="21aa63c36007f6ef6c08607cfb860a49" category="summary">資訊生命週期管理（ILM）系統可為儲存在網格上的所有物件提供資料管理功能。您必須監控 ILM 作業、以瞭解網格是否能處理目前負載、或是否需要更多資源。</block>
   <block id="c98bb23835172f45faeebe5475bd1c5d" category="doc">監控資訊生命週期管理</block>
   <block id="29330bfca999d4dde88aaaad8c75451b" category="paragraph">資訊生命週期管理（ILM）系統可為儲存在網格上的所有物件提供資料管理。您必須監控 ILM 作業、以瞭解網格是否能處理目前負載、或是否需要更多資源。</block>
   <block id="40e99225947e56e95206840cb44221a5" category="paragraph">StorageGRID 系統會套用主動式 ILM 原則來管理物件。ILM 原則和相關的 ILM 規則決定製作多少份複本、建立的複本類型、放置複本的位置、以及每份複本的保留時間長度。</block>
@@ -13568,7 +13510,6 @@
   <block id="f60903d922406f8c88785fc1cb4efb1a" category="list-text">更新 SNMP 代理程式組態後、請選取 * 儲存 * 。</block>
   <block id="a5f79c6244cc32278c3c397b78184d51" category="admonition">Grid Manager 會隨每個版本一起更新、可能與此頁面上的範例螢幕擷取畫面不符。</block>
   <block id="62b9fd5f57698fb8537dd7c237606430" category="image-alt">「節點」頁面「網路」標籤</block>
-  <block id="f68366a374481bffaca438ea64f97802" category="summary">如果您想StorageGRID 要使用簡易網路管理傳輸協定（SNMP）監控效能、您必須設定StorageGRID 包含在更新中的SNMP代理程式。</block>
   <block id="622b033776b8eeef4ea052760c388c6e" category="paragraph">如果您想StorageGRID 要使用簡單網路管理傳輸協定（SNMP）監控效能、您必須設定StorageGRID 包含在資訊區中的SNMP代理程式。</block>
   <block id="c43e03bb960f4ea126761905d86f5f62" category="list-text"><block ref="c43e03bb960f4ea126761905d86f5f62" category="inline-link-macro-rx"></block></block>
   <block id="82ec2cd6fda87713f588da75c3b1d0ed" category="section-title">功能</block>
@@ -13828,7 +13769,6 @@
   <block id="f033ab37c30201f73f142449d037028d" category="paragraph">80</block>
   <block id="04c3c5ce7e750b8e5c7e22ca25812013" category="list-text">選取* Storage *以檢視服務應用裝置上磁碟裝置和磁碟區的相關資訊。</block>
   <block id="a7ee73b21fcaa9d61ce70ca3b12fe9e4" category="image-alt">節點頁面儲存索引標籤服務設備</block>
-  <block id="19a24891fc5a362ee6b5a6ea8843026e" category="summary">ILM 索引標籤提供資訊生命週期管理 \(ILM\ 作業的相關資訊。</block>
   <block id="27a0fd0c569f158e6921ded397a0b9a2" category="doc">檢視ILM索引標籤</block>
   <block id="01909c41a7115bfafbab0f2fdd36b2ee" category="paragraph">ILM 索引標籤提供資訊生命週期管理（ ILM ）作業的相關資訊。</block>
   <block id="f4eaf419d40f87395a6c8b77991d8695" category="paragraph">此時會顯示每個儲存節點、每個站台及整個網格的ILM索引標籤。針對每個站台和網格、ILM索引標籤會顯示一段時間內ILM佇列的圖表。對於網格、此索引標籤也提供完成所有物件完整ILM掃描的預估時間。</block>
@@ -13972,7 +13912,6 @@
   <block id="34e6deded431afe26b1b395ef69f107d" category="list-text"><block ref="34e6deded431afe26b1b395ef69f107d" category="inline-link-rx"></block></block>
   <block id="c86250c301f4bbbf9b239f8f66663957" category="inline-link">連接埠連結模式（ SG100 和 SG1000 ）</block>
   <block id="019a7460d8901417b4349cb603a12cbc" category="list-text"><block ref="019a7460d8901417b4349cb603a12cbc" category="inline-link-rx"></block></block>
-  <block id="64c447f451d342767c98def707652e74" category="summary">擁有用戶端網路為選用功能。使用用戶端網路可將用戶端網路流量（例如 S3\ ）與網格內部流量分開、使網格網路更安全。未設定管理網路時、用戶端或網格網路均可處理管理流量。</block>
   <block id="944e265fa7097777bac0db9709454c7c" category="doc">用戶端網路拓撲</block>
   <block id="a386e112cc159968099060d528ca60de" category="paragraph">擁有用戶端網路為選用功能。使用用戶端網路可將用戶端網路流量（例如 S3 ）與網格內部流量分開、使網格網路更安全。未設定管理網路時、用戶端或網格網路均可處理管理流量。</block>
   <block id="f7b9c07610b96220d716f215ef24abed" category="paragraph">當您設定用戶端網路時、會為所設定節點的eth2介面建立主機IP位址、子網路遮罩和閘道IP位址。每個節點的用戶端網路可以獨立於任何其他節點上的用戶端網路。</block>
@@ -14123,7 +14062,6 @@
   <block id="f7046f795968fa35ae33cac87bb40df3" category="list-text"><block ref="f7046f795968fa35ae33cac87bb40df3" category="inline-link-rx"></block></block>
   <block id="81d30f27f9c152fce29694383f874d16" category="list-title">安裝軟體型節點</block>
   <block id="87d88e9d74ad61dbbf65a4432f2119b1" category="list-title">設定及管理StorageGRID 功能</block>
-  <block id="9f6353da86fa1f6ae96f6a022e88709b" category="summary">除了連接埠22、80、123和443以外、內部防火牆僅允許連入網格網路上的特定連接埠（請參閱外部通訊資訊）StorageGRID 。負載平衡器端點所定義的連接埠也接受連線。</block>
   <block id="d6551410e0a6c8c712af2331c2b66254" category="paragraph">StorageGRID 內部防火牆允許連入網格網路上的特定連接埠。負載平衡器端點所定義的連接埠也接受連線。</block>
   <block id="5d704155823ccea3b11689d40751ca9e" category="admonition">NetApp建議您在網格節點之間啟用網際網路控制訊息傳輸協定（ICMP）流量。當無法到達網格節點時、允許 ICMP 流量可改善容錯移轉效能。</block>
   <block id="9bc21390021a5ef6871628f6cb9e8f1c" category="inline-link-macro">高可用度群組</block>
@@ -14781,7 +14719,6 @@
   <block id="9d05ef06ebdc67a101585178eed6a5d8" category="image-alt">以周遭文字說明的圖表</block>
   <block id="04a82b54de6796ce0241c74eb07d9632" category="paragraph">S3 用戶端會在 StorageGRID 中儲存及擷取物件。其他用戶端則用於傳送電子郵件通知、存取StorageGRID 「資訊管理」介面、以及選擇性存取稽核共用。</block>
   <block id="99ad82cc99848e42086faa6240227683" category="paragraph">S3 用戶端可以連線至閘道節點或管理節點、以使用負載平衡介面來連接儲存節點。或者、 S3 用戶端也可以使用 HTTPS 直接連線至儲存節點。</block>
-  <block id="7c0ca6c6457dbf4accb8843b947a93a9" category="summary">您可以使用資訊生命週期管理 \(ILM\ ）來控制 StorageGRID 系統中所有物件的放置、持續時間和擷取行為。ILM規則可決定StorageGRID 物件的儲存方式。您可以設定一或多個ILM規則、然後將其新增至ILM原則。</block>
   <block id="a919635d077daa2a324311314027e27f" category="paragraph">ILM規則定義：</block>
   <block id="dbeb82c0871eecc06aa0118b5a5c56d0" category="list-text">儲存類型與位置。物件可以儲存在儲存節點或雲端儲存池中。</block>
   <block id="41a05bfc52085ed93031280111cc6ca0" category="list-text">所製作的物件複本類型。複本可以複寫或銷毀編碼。</block>
@@ -15326,7 +15263,6 @@
   <block id="70d31ef9e14f9e7cda6ecc86f266dde0" category="list-text">如果您已部署至少一個節點、請按一下*探索網格網路子網路*、自動填入網格網路子網路清單、其中包含已向網格管理程式註冊之網格節點所報告的子網路。</block>
   <block id="aa44d80d0b1b586b69d29141b9c51bc4" category="list-text">您必須手動新增 NTP 、 DNS 、 LDAP 或其他透過網格網路閘道存取的外部伺服器的任何子網路。</block>
   <block id="cdc0f2546642f2b7d996ad995971c289" category="image-alt">指定子網路</block>
-  <block id="683bd1c68c25fd315ddae3626d2754c2" category="summary">您必須為StorageGRID 該系統指定網路時間傳輸協定（NTP）組態資訊、以便在不同的伺服器上執行的作業能夠保持同步。</block>
   <block id="9a4375a5e5b05719430782253d306c47" category="paragraph">您必須為StorageGRID 該系統指定網路時間傳輸協定（NTP）組態資訊、以便在不同的伺服器上執行的作業能夠保持同步。</block>
   <block id="7a30646f1ecdc7ac8e119e103d88b005" category="paragraph">您必須為NTP伺服器指定IPV4位址。</block>
   <block id="db37ebcb1facc0e0edc8dcfddd35d847" category="paragraph">您必須指定外部NTP伺服器。指定的NTP伺服器必須使用NTP傳輸協定。</block>
@@ -16287,7 +16223,6 @@
   <block id="34493df26f09d68569fd8042cbebf835" category="paragraph">如果您上傳了多個部分的物件、或StorageGRID 是將一個大型物件分割成多個區段、StorageGRID 則透過取樣物件的一部分或區段、決定該物件是否可在Cloud Storage Pool中使用。在某些情況下、當物件的某些部分已經轉換為無法擷取的狀態、或物件的某些部分尚未還原時、 HeadObject 要求可能會錯誤傳回<block ref="f12b05a4e10f77dba89977ed50289282" prefix=" " category="inline-code"></block>。</block>
   <block id="b7b839cd3b86c2531cdac79711eccc96" category="section-title">HeadObject 和跨網格複寫</block>
   <block id="57376e412a51caaf6b835ee6d6b11895" category="paragraph">如果您正在使用<block ref="f4856baac97a972c032af70104c6961a" category="inline-link-macro-rx"></block>並<block ref="a9e7b49b207f2152f2f2cf82acfd5ae2" category="inline-link-macro-rx"></block>已啟用貯體、則 S3 用戶端可以發出 HeadObject 要求、以驗證物件的複寫狀態。回應包含 StorageGRID 專屬回應標頭、其中包含<block ref="349f2558b0122acbc616838711df3954" prefix=" " category="inline-code"></block>下列其中一個值：</block>
-  <block id="4cd5a7f174d630af20833309639f7089" category="summary">支援Simple Storage Service（S3）API、這是一組代表性狀態傳輸（REST）網路服務。StorageGRID</block>
   <block id="48f3ce98574e51e6f2fb1e0b16dc6a90" category="paragraph">支援簡單儲存服務（S3）API、此API是以代表狀態傳輸（REST）網路服務的形式實作。StorageGRID</block>
   <block id="8ecf0bb2d3ac4db3fc0a087dee7aa9a3" category="paragraph">S3 REST API 的支援可讓您將專為 S3 Web 服務開發的服務導向應用程式、與使用 StorageGRID 系統的內部部署物件儲存設備連線。用戶端應用程式目前使用 S3 REST API 呼叫的變更最少。</block>
   <block id="2e5d14f7919ff3c6138e7845aec4f915" category="section-title">支援的版本</block>
@@ -17210,7 +17145,6 @@
   <block id="1d3c335bf457fc53b5f8b0d96daa4879" category="list-text">確認物件已複寫至目的地儲存區。</block>
   <block id="9422beb9026e2ec3ec7abaa6fb1a204a" category="paragraph">對於小型物件、複寫作業很快就會完成。</block>
   <block id="7e2044d6ea8e4712eeee3b9cf7a6cd52" category="paragraph"><block ref="7e2044d6ea8e4712eeee3b9cf7a6cd52" category="inline-link-macro-rx"></block></block>
-  <block id="6f21dffb639ad10eee1ec10c40c58fcb" category="summary">如果您想讓其他網域中的 Web 應用程式能夠存取 S3 儲存區中的儲存區和物件、您可以為 S3 儲存區設定跨來源資源共用（ CORS ）。</block>
   <block id="7b869d9293e578b591bdfdd03de60f12" category="paragraph">如果您想讓其他網域中的 Web 應用程式能夠存取 S3 貯體中的貯體和物件、則可以為 S3 貯體設定跨來源資源共享（ CORS ）。</block>
   <block id="8334cc4d0ab3882ade189c19f7855b5b" category="inline-link-macro">管理所有貯體或檢視所有貯體權限</block>
   <block id="34baaee6559a423e211df09c3cc32fed" category="list-text">對於 Get CORS 組態要求、您屬於具有的使用者群組<block ref="59fa2918e3c7426df8595a5183579cd0" category="inline-link-macro-rx"></block>。這些權限會覆寫群組或儲存區原則中的權限設定。</block>
@@ -17663,7 +17597,6 @@
   <block id="c66e97e084f90c6df43604b07596da39" category="list-text">選擇*測試並儲存變更*。</block>
   <block id="cd8685af15984f419c9889a200868531" category="list-text">如果可以使用指定的認證資料來連線至端點、則會出現一則成功訊息。端點的連線會從每個站台的一個節點進行驗證。</block>
   <block id="bf60bec136bb49c62d80dd4d8abc430c" category="list-text">當端點驗證失敗時、會出現錯誤訊息。修改端點以修正錯誤、然後選取*測試並儲存變更*。</block>
-  <block id="e6247528749afe3edf70742ed252e8a5" category="summary">當網格管理員建立StorageGRID 資訊生命週期管理（ILM）規則以供選用時、他們可以選擇性地指定物件的上次存取時間、以決定是否要將該物件移至不同的儲存位置。如果您使用的是S3租戶、您可以針對S3儲存區中的物件啟用上次存取時間更新、藉此充分利用這類規則。</block>
   <block id="f907202c8bd8f31bf218f215637fad08" category="paragraph">當網格管理員為StorageGRID 某個系統建立資訊生命週期管理（ILM）規則時、他們可以選擇性地指定物件的上次存取時間、以決定是否要將該物件移到不同的儲存位置。如果您使用的是S3租戶、您可以針對S3儲存區中的物件啟用上次存取時間更新、藉此充分利用這類規則。</block>
   <block id="fdea272b33919b1a82ba7648580922dd" category="paragraph">這些指示僅適用於至少包含一個 ILM 規則的 StorageGRID 系統、該規則使用 * 上次存取時間 * 選項作為進階篩選器或參考時間。如果您的支援系統不包含此類規則、您可以忽略這些指示StorageGRID 。如需詳細資訊、請參閱 <block ref="0ee7eb1c2e54090381f8fa7cef3a7479" category="inline-link-macro-rx"></block> 。</block>
   <block id="8b01ab1bddd127d986ed2b1262cdc8cc" category="paragraph">* 上次存取時間 * 是 ILM 規則的 * 參考時間 * 放置指示可用的選項之一。將規則的參考時間設為上次存取時間、可讓網格管理員根據上次擷取（讀取或檢視）物件的時間、指定物件放置在特定儲存位置。</block>
@@ -17683,7 +17616,6 @@
   <block id="035cb7fc081f46b22ed79706751c2ea8" category="paragraph">要求列出物件或物件版本</block>
   <block id="4e78963b1f37e20799f542537c1e847e" category="list-text">從 *Bucket options* 標籤中、選取 * 上次存取時間更新 * 手風琴。</block>
   <block id="3acab972800e1e0602663a569b5986b6" category="list-text">啟用或停用上次存取時間更新。</block>
-  <block id="a66eee58cdbf284e6750e672decf5fa2" category="summary">如果建立或編輯租戶以使用網格同盟連線、則該租戶會從一個 StorageGRID 系統（來源租戶）複寫到另一個 StorageGRID 系統（複本租戶）。複寫租用戶之後、任何新增至來源租用戶的群組和使用者都會複製到複本租用戶。</block>
   <block id="d00badaf3f9bab25d5f8807f0d23522c" category="paragraph">如果建立或編輯租戶以使用網格同盟連線、則該租戶會從一個 StorageGRID 系統（來源租戶）複寫到另一個 StorageGRID 系統（複本租戶）。複寫租用戶之後、任何新增至來源租用戶的群組和使用者都會複製到複本租用戶。</block>
   <block id="7355ea640ad882d5d465a1b3979e2d8a" category="paragraph">最初建立租戶的 StorageGRID 系統是租戶的 _ 來源網格 _ 。複寫租戶的 StorageGRID 系統是租戶的 _ 目的地網格 _ 。兩個租戶帳戶都有相同的帳戶 ID 、名稱、說明、儲存配額和指派的權限、 但目的地租戶最初並沒有 root 使用者密碼。如需詳細資訊、請參閱<block ref="6abca4483e1eebe249eacebffcb8d0c2" category="inline-link-macro-rx"></block>和<block ref="e60b4e117b57a47ee88fce431b1bd5c8" category="inline-link-macro-rx"></block>。</block>
   <block id="532aaaab109afc382303ddd61efc69e1" category="paragraph">貯體物件需要複製租戶帳戶資訊<block ref="0a0eb7b2ba3557a5e6d8cb456a868f8e" category="inline-link-macro-rx"></block>。在兩個網格上擁有相同的租戶群組和使用者、可確保您存取任一網格上對應的貯體和物件。</block>
@@ -17949,7 +17881,6 @@
   <block id="769966d4caef036636f45b4dc5d402af" category="admonition">如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、而且您刪除了群組、 StorageGRID 將不會刪除其他網格上的對應群組。如果您需要保持此資訊同步、您必須從兩個方格中刪除相同的群組。</block>
   <block id="f7952cce19d11a7c906beaf907ac585c" category="list-text">選擇 * 行動 * &gt; * 刪除群組 * 或 * 行動 * &gt; * 刪除群組 * 。</block>
   <block id="bebe4baad542c12fca7478d24f9e67a2" category="list-text">選取 * 刪除群組 * 或 * 刪除群組 * 。</block>
-  <block id="77ad97c2c714e90d814894d6ab10e02d" category="summary">您可以建立本機使用者並將其指派給本機群組、以決定這些使用者可以存取哪些功能。租戶管理程式包含一個預先定義的本機使用者、名稱為「 root 」。雖然您可以新增及移除本機使用者、但無法移除根使用者。</block>
   <block id="39e0d5760a021d7fb740932fe54363cd" category="admonition">如果您的 StorageGRID 系統啟用單一登入（ SSO ）、本機使用者將無法登入租戶管理員或租戶管理 API 、不過他們可以根據群組權限使用用戶端應用程式來存取租戶的資源。</block>
   <block id="285e4c35025090d3e947d040422c8d06" category="section-title">[[create-user]] 建立本機使用者</block>
   <block id="62c0f9581bb34061e3e5160b04b09431" category="paragraph">您可以建立本機使用者並將其指派給一或多個本機群組、以控制其存取權限。</block>
@@ -19260,7 +19191,6 @@
   <block id="f2c1560398520afbe147a2e59127c31f" category="admonition">在某些情況下、 NetApp 可能會比指定時間更快終止對特定功能的支援。</block>
   <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">功能</block>
   <block id="00ed72e0cd57055f61b8b765e24c0be9" category="cell">先前文件的連結</block>
-  <block id="cfe31677120ecfab54c206e2ada850ab" category="paragraph">舊版警示（ _ 非警示 _ ）</block>
   <block id="d5ea7948543575caf640dfac21a2efc5" category="inline-link">警告參考資料（ StorageGRID 11.8 ）</block>
   <block id="ddaf4b1ac18c1f1278734ad02b52fd22" category="paragraph"><block ref="ddaf4b1ac18c1f1278734ad02b52fd22" category="inline-link-rx"></block></block>
   <block id="5abf376a7b2f51c35643632839aa54e1" category="paragraph">歸檔節點支援</block>
@@ -20172,7 +20102,6 @@
   <block id="76bed862baaf1d09d9943e738fad8a39" category="list-text">*VMware（安裝節點後）*：<block ref="7edc540b37c022b5af5f3c4e74b80ad8" category="inline-link-macro-rx"></block></block>
   <block id="64de3bf1bd2de3352e0004427d68a56b" category="list-text">選擇*設定* &gt; *網路* &gt; *高可用性群組*。</block>
   <block id="36821bb5833dcd987c2fa857fe3ff8af" category="list-text">前往*配置* &gt; *網路* &gt; *負載平衡器端點*。</block>
-  <block id="2df10d0f1b45556613573d94ccb70071" category="summary">您可以依照設定 SSO 精靈並進入沙盒模式來設定和測試單一登入 (SSO)，然後為所有StorageGRID使用者啟用它。啟用 SSO 後，您可以在需要時返回沙盒模式以變更或重新測試配置。</block>
   <block id="46228312aaeac2a3bb2b38042b077c8e" category="doc">配置 SSO</block>
   <block id="7e8deb5508033dce4d76cdcb11d67bdd" category="paragraph">您可以依照設定 SSO 精靈並進入沙盒模式來設定和測試單一登入 (SSO)，然後為所有StorageGRID使用者啟用它。啟用 SSO 後，您可以在需要時返回沙盒模式以變更或重新測試配置。</block>
   <block id="e932793a8a8611b57aa327ad738b4df6" category="list-text">對於身分聯合 *LDAP 服務類型*，您可以根據計畫使用的 SSO 身分提供者選擇 Active Directory 或 Entra ID。</block>
@@ -22594,4 +22523,44 @@
   <block id="9e48ce3918382a0700088e38500a5865" category="sidebar">已移除或已過時的功能和特性</block>
   <block id="873c3907e55471a2991eab6c77d98a3b" category="paragraph">在本例中，工作階段的主體僅被允許從 bucket1 擷取物件。所有其他動作均被隱含拒絕，但 StorageGRID 特有的動作（例如使用 <block ref="d3f47673c653efb165a71bf92d9fcb27" category="inline-link-macro-rx"></block> 權限）除外。工作階段原則可以在呼叫 AssumeRole API 時以 JSON 檔案的形式提供。</block>
   <block id="ba1177d7dec9e949d93252540acfb636" category="section-title">[[use-putoverwriteobject-permission]]使用 PutOverwriteObject 權限</block>
+  <block id="45f2068c8c99b41f07bb55400190abdb" category="summary">您可以依照「設定 SSO」精靈的步驟進入沙盒模式，在為所有 StorageGRID 使用者啟用單一登入 （SSO） 之前，對其進行設定和測試。啟用 SSO 後，您可以視需要返回沙盒模式來變更或重新測試組態。</block>
+  <block id="0a51f84e6be43565f49734e391d586d6" category="summary">您可以在管理節點和閘道節點上建立虛擬區域網路 （VLAN） 介面，並在 HA 群組和負載平衡器端點中使用這些介面來隔離和分割流量，以提升安全性、靈活性和效能。</block>
+  <block id="9a747b90fd029927b8e137d42367645b" category="summary">StorageGRID 使用內部憑證授權單位 (CA) 來保護內部流量。即使您上傳了自己的憑證，此憑證也不會變更。</block>
+  <block id="9946acf0764161ad1ca277fb66d7c72c" category="summary">金鑰管理伺服器 (KMS) 是一個外部第三方系統，使用金鑰管理互通性協定 (KMIP) 向關聯的 StorageGRID 站台上的 StorageGRID 應用裝置節點提供加密金鑰。</block>
+  <block id="9ad306a500375f307428297c36a6189c" category="summary">在使用金鑰管理伺服器 (KMS) 保護裝置節點上的 StorageGRID 資料之前，您必須完成兩個設定任務：設定一個或多個 KMS 伺服器，並為裝置節點啟用節點加密。完成這兩項設定任務後，金鑰管理程序將自動進行。</block>
+  <block id="6f7091c9d50d37819be6f3b7dc500df4" category="summary">當儲存節點達到容量上限時，您必須透過新增儲存設備來擴充 StorageGRID 系統。有三種選擇：新增儲存磁碟區、新增儲存擴充架和新增 Storage Nodes。</block>
+  <block id="14ca4e9f345bd22e1130524d29dc58e7" category="summary">您可以使用 CSRF 權杖來增強使用 cookie 的驗證，進而協助保護 StorageGRID 免受跨站請求偽造 （CSRF） 攻擊。</block>
+  <block id="a67eaed1337a7fa2ad77fcd3ec802308" category="summary">如果單一登入 (SSO) 系統發生故障，您可能無法登入 Grid Manager。在這種情況下，您可以暫時停用並重新啟用一個管理節點的 SSO。若要停用並重新啟用 SSO，您必須存取該節點的命令列介面。</block>
+  <block id="df6172d74d950d37dd4817c97ef04a61" category="summary">如果嘗試傳送 AutoSupport 套件失敗，StorageGRID 系統會根據 AutoSupport 套件的類型採取不同的動作。</block>
+  <block id="370c93c6ac850a2bb06fd126d13d0667" category="summary">平台服務中使用的端點由租用戶使用者在 Tenant Manager 中建立和維護。但是，如果租用戶在設定或使用平台服務時遇到問題，您可以嘗試使用 Grid Manager 來協助解決問題。</block>
+  <block id="f40750ca481b0384e79a88b9688db2f0" category="summary">當洩漏的資料區塊已清理或刪除時，會產生 LKDM 稽核訊息。</block>
+  <block id="1b0466887d83b95dd5ce473aec550545" category="summary">當找不到物件副本（複製的或糾刪碼的）的位置時，就會產生此訊息。</block>
+  <block id="a10fa91317e5baf328c705259785656f" category="summary">此訊息表示來源服務（節點 ID）已關閉稽核訊息日誌記錄。StorageGRID 不再收集或傳遞稽核訊息。</block>
+  <block id="5e810aeca3189c0c14a2c7e7e1a8ef31" category="summary">此訊息表示來源服務（節點 ID）已還原稽核訊息日誌記錄。StorageGRID 再次收集和傳遞稽核訊息。</block>
+  <block id="07a74d98948298f35df7e9d052f254ea" category="summary">您可以使用 audit-sum 工具來統計寫入、讀取、head 和刪除稽核訊息的數量，並查看每種操作類型的最小、最大和平均時間（或大小）。</block>
+  <block id="68c19b15490f3fceb13c8fd343fab69b" category="summary">新增 Storage Nodes 後，您可以使用銷除編碼重新平衡程序，在現有和新的 Storage Nodes 之間重新分配銷除編碼片段。</block>
+  <block id="406e4e7ae9e1251a6c9d4a09f0eb44f6" category="list-text">192,168,130,121</block>
+  <block id="2450a551d9011a0f14beaba79c8d448f" category="list-text">192,168,131,121</block>
+  <block id="5c83a256b3eb52dbcdfb1ada17dfbca7" category="list-text">192,168,130,122</block>
+  <block id="84f455617b6484318234867418b6d0b0" category="list-text">192,168,131,122</block>
+  <block id="91f88cfd270ee9d1031cf622a7fda380" category="summary">設定 StorageGRID 以與 FabricPool 一起使用時，您可以選擇建立一個或多個高可用性 （HA） 群組。</block>
+  <block id="aa84cda4e6a13cdb7258b0040b6acf12" category="summary">建立 ILM 規則精靈的「定義放置」步驟可讓您定義放置指令，以確定物件的儲存時間、副本類型（複製或糾刪碼）、儲存位置和副本數量。</block>
+  <block id="f3f1fb7ebf369db343578e1c8be5ca59" category="summary">建立 ILM 規則精靈的步驟 1（輸入詳細資料）可讓您輸入規則的名稱和描述，並為規則定義篩選器。</block>
+  <block id="db4be330f7af15384035e7ed3904a307" category="summary">建立 ILM 規則精靈的步驟 3（選擇擷取行為）可讓您選擇此規則篩選的物件在擷取時的保護方式。</block>
+  <block id="0073a23e75a8c3ad14a403e95b12d486" category="summary">建立 ILM 規則時，您可以指定三種選項之一來保護擷取時的物件：雙重提交、嚴格或平衡。</block>
+  <block id="923e05f8e9f10ebfe0ba16acbbf2e7ab" category="summary">您可以編輯雲端儲存池來變更其名稱、服務端點或其他詳細資訊，但無法變更雲端儲存池的 S3 儲存桶或 Azure 容器。</block>
+  <block id="66a43d26a9a9969d477611353504f218" category="summary">您可以新增、刪除和更新 DNS 伺服器，以便使用完整網域名稱 (FQDN) 主機名稱，而非 IP 位址。</block>
+  <block id="d94cc623ac89921a07b5d7888decd7b8" category="admonition">您必須及時修復或更換故障的主要管理節點，否則可能無法執行某些維護程序。</block>
+  <block id="b1514cdee03f914e9f4e8941f197cae2" category="summary">StorageGRID 內部防火牆僅允許傳入連線存取 Grid Network 上的特定連接埠，但連接埠 22、80、123 和 443 除外（請參閱有關外部通訊的資訊）。負載平衡器端點定義的連接埠也接受連線。</block>
+  <block id="6e00444b87f3acf759eb78dfbb1a7f8e" category="summary">您可以使用資訊生命週期管理 （ILM） 來控制 StorageGRID 系統中所有物件的放置、儲存時間長度和擷取行為。ILM 規則決定 StorageGRID 如何隨時間儲存物件。您可以設定一個或多個 ILM 規則，然後將其新增至 ILM 原則。</block>
+  <block id="0ad9b9efe69695d0981cf905e4c96ab1" category="summary">StorageGRID 12.0 使用 Grid Management API 的第 4 版。第 4 版已棄用第 3 版。但是，第 1 版、第 2 版和第 3 版仍然受支援。</block>
+  <block id="01fa494fa11d0e6390391c450a4eefc8" category="summary">StorageGRID 12.0 使用租用戶管理 API 的第 4 版。第 4 版已棄用第 3 版。但是，第 1 版、第 2 版和第 3 版仍然受支援。</block>
+  <block id="1813fde648d868a1172195891c49041d" category="paragraph">警報，舊版（_非警示_）</block>
+  <block id="857bfc51755451ef542bbdd4afd86a2b" category="paragraph">電子郵件設定（舊版）</block>
+  <block id="10fc84cdc50d93bc74a517b8e75b7fbb" category="inline-link">設定警報通知（舊系統）（StorageGRID 11.8）</block>
+  <block id="9db1b0c42b6e7ee6a66d948a48a583f1" category="paragraph"><block ref="9db1b0c42b6e7ee6a66d948a48a583f1" category="inline-link-rx"></block></block>
+  <block id="ce57159354976305a0c15f68080559f2" category="summary">如果用戶端請求發生衝突，例如兩個用戶端寫入同一個金鑰，則依照「最後寫入優先」的原則進行解決。</block>
+  <block id="41add53b76385c1cfec185d0fce35525" category="summary">StorageGRID 使用 Amazon Web Services (AWS) 原則語言，讓 S3 租用戶控制對儲存桶及其內部物件的存取。</block>
+  <block id="645b547f076b1435ab93ecfb6b8276b8" category="summary">當網格管理員為 StorageGRID 系統建立資訊生命週期管理 （ILM） 規則時，可以選擇指定使用物件的最後存取時間來決定是否將該物件移至不同的儲存位置。如果您使用的是 S3 租用戶，則可以透過啟用 S3 儲存桶中物件的最後存取時間更新來利用此類規則。</block>
+  <block id="f3ed3bb4cd199fdbb3afb78b18d31ba8" category="summary">您可以建立本機使用者並將其指派到本機群組，以確定這些使用者可以存取哪些功能。租用戶管理器包含一個預先定義的本機使用者，名為<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>。雖然您可以新增和刪除本機使用者，但無法刪除 root 使用者。</block>
 </blocks>

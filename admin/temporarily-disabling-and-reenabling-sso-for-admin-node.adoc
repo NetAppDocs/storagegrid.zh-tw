@@ -2,7 +2,7 @@
 permalink: admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html 
 sidebar: sidebar 
 keywords: signing in when sso is down, single sign on failure 
-summary: 如果單一登入（SSO）系統當機、您可能無法登入Grid Manager。在此情況下、您可以暫時停用及重新啟用單一管理節點的SSO。若要停用及重新啟用SSO、您必須存取節點的命令Shell。 
+summary: '如果單一登入 (SSO) 系統發生故障，您可能無法登入 Grid Manager。在這種情況下，您可以暫時停用並重新啟用一個管理節點的 SSO。若要停用並重新啟用 SSO，您必須存取該節點的命令列介面。' 
 ---
 = 暫時停用並重新啟用 StorageGRID 管理節點的 SSO
 :allow-uri-read: 

@@ -39,7 +39,7 @@ NOTE: 在某些情況下、 NetApp 可能會比指定時間更快終止對特定
 
 
  a| 
-舊版警示（ _ 非警示 _ ）
+警報，舊版（_非警示_）
  a| 
 11.7
  a| 
@@ -104,6 +104,19 @@ Docker Container Engine
 待定
  a| 
 不再支援將 Docker 作為純軟體部署的容器引擎。 Docker 將在未來的版本中被另一個容器引擎取代。請參閱link:../swnodes/software-requirements.html["基於軟體的節點的軟體要求"]了解目前支援的 Docker 版本清單。
+
+
+
+ a| 
+電子郵件設定（舊版）
+ a| 
+11.9
+ a| 
+12.0
+ a| 
+12.1
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/monitor/managing-alarms.html#configure-notifications-for-alarms-legacy-system["設定警報通知（舊系統）（StorageGRID 11.8）"^]
 
 
 

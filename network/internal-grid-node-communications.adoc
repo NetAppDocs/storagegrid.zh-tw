@@ -2,7 +2,7 @@
 permalink: network/internal-grid-node-communications.html 
 sidebar: sidebar 
 keywords: storagegrid, network port, internal communications, ports, TCP, UDP, grid communications, port 
-summary: 除了連接埠22、80、123和443以外、內部防火牆僅允許連入網格網路上的特定連接埠（請參閱外部通訊資訊）StorageGRID 。負載平衡器端點所定義的連接埠也接受連線。 
+summary: StorageGRID 內部防火牆僅允許傳入連線存取 Grid Network 上的特定連接埠，但連接埠 22、80、123 和 443 除外（請參閱有關外部通訊的資訊）。負載平衡器端點定義的連接埠也接受連線。 
 ---
 = StorageGRID 的內部網格節點通訊
 :allow-uri-read: 

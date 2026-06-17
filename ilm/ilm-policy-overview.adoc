@@ -2,7 +2,7 @@
 permalink: ilm/ilm-policy-overview.html 
 sidebar: sidebar 
 keywords: ILM policy, information lifecycle policy considerations 
-summary: 資訊生命週期管理（ILM）原則是一組有序的ILM規則、可決定StorageGRID 整個系統如何長期管理物件資料。 
+summary: 資訊生命週期管理（ILM）原則是一組依序排列的ILM規則、可決定StorageGRID 整個過程中、物件資料的管理方式。 
 ---
 = 了解 StorageGRID 中的 ILM 原則
 :allow-uri-read: 

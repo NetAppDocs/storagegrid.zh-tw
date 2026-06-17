@@ -2,7 +2,7 @@
 permalink: audit/llst-location-lost.html 
 sidebar: sidebar 
 keywords: storagegrid, audit, message, LLST, Location Lost 
-summary: 只要找不到物件複本的位置（複寫或刪除編碼 \ ）、就會產生此訊息。 
+summary: 當找不到物件副本（複製的或糾刪碼的）的位置時，就會產生此訊息。 
 ---
 = StorageGRID 中遺失物件複本位置的 LLST 稽核訊息
 :allow-uri-read: 
