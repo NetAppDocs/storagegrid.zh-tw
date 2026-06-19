@@ -2,7 +2,7 @@
 permalink: tenant/manage-users.html 
 sidebar: sidebar 
 keywords: how to create local tenant users, manage users 
-summary: '您可以建立本機使用者並將其指派到本機群組，以確定這些使用者可以存取哪些功能。租用戶管理器包含一個預先定義的本機使用者，名為 `root`。雖然您可以新增和刪除本機使用者，但無法刪除 root 使用者。' 
+summary: 您可以建立本機使用者並將其指派到本機群組，以確定這些使用者可以存取哪些功能。Tenant Manager 包含一個名為 root 的預先定義本機使用者。雖然您可以新增和刪除本機使用者，但無法刪除 root 使用者。 
 ---
 = 管理 StorageGRID 租戶使用者
 :allow-uri-read: 

@@ -2,7 +2,7 @@
 permalink: ilm/editing-cloud-storage-pool.html 
 sidebar: sidebar 
 keywords: edit cloud storage pool 
-summary: 您可以編輯雲端儲存池來變更其名稱、服務端點或其他詳細資訊，但無法變更雲端儲存池的 S3 儲存桶或 Azure 容器。 
+summary: 您可以編輯雲端儲存池，變更其名稱、服務端點或其他詳細資訊。但是，您無法變更雲端儲存池的 S3 儲存桶或 Azure 容器。 
 ---
 = 在 StorageGRID 中編輯雲端儲存資源池
 :allow-uri-read: 

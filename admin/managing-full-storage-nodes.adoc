@@ -2,7 +2,7 @@
 permalink: admin/managing-full-storage-nodes.html 
 sidebar: sidebar 
 keywords: storage node is full 
-summary: 當儲存節點達到容量上限時，您必須透過新增儲存設備來擴充 StorageGRID 系統。有三種選擇：新增儲存磁碟區、新增儲存擴充架和新增 Storage Nodes。 
+summary: 當儲存節點達到容量上限時，您必須透過新增儲存空間來擴充 StorageGRID 系統。您可以透過新增儲存磁碟區、新增儲存擴充架和新增儲存節點來完成此操作。 
 ---
 = 在 StorageGRID 中管理已滿的 Storage Nodes
 :allow-uri-read: 

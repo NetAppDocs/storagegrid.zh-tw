@@ -2,7 +2,7 @@
 permalink: admin/kms-overview-of-kms-and-appliance-configuration.html 
 sidebar: sidebar 
 keywords: kms, appliance configuration, node encryption 
-summary: '在使用金鑰管理伺服器 (KMS) 保護裝置節點上的 StorageGRID 資料之前，您必須完成兩個設定任務：設定一個或多個 KMS 伺服器，並為裝置節點啟用節點加密。完成這兩項設定任務後，金鑰管理程序將自動進行。' 
+summary: '在使用金鑰管理伺服器 (KMS) 保護裝置節點上的 StorageGRID 資料之前，您必須設定一個或多個 KMS 伺服器，並為裝置節點啟用節點加密。完成這兩項設定任務後，金鑰管理程序將自動進行。' 
 ---
 = StorageGRID 金鑰管理伺服器和應用裝置組態
 :allow-uri-read: 

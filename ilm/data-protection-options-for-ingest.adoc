@@ -2,7 +2,7 @@
 permalink: ilm/data-protection-options-for-ingest.html 
 sidebar: sidebar 
 keywords: ingest options, balanced ingest, strict ingest, dual-commit ingest 
-summary: 建立 ILM 規則時，您可以指定三種選項之一來保護擷取時的物件：雙重提交、嚴格或平衡。 
+summary: 建立 ILM 規則時，您可以透過指定雙重提交、嚴格或平衡來保護擷取時的物件。 
 ---
 = StorageGRID 中的 ILM 擷取選項
 :allow-uri-read: 

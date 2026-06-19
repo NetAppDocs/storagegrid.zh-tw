@@ -5792,7 +5792,6 @@
   <block id="18b319a1457205b2bff2626c43bbd6f1" category="paragraph">SUCS：系統正常關機。</block>
   <block id="72fe1aa912e7c9c9f629c3795cd848b7" category="paragraph">此訊息並不表示主機伺服器是否正在停止、僅表示報告服務。SYSD 的 RSLT 無法指示「不正常」關機、因為訊息只會由「乾淨」關機所產生。</block>
   <block id="cec53141d4019a88e6cc8fbf86f089a9" category="doc">Syst：節點停止</block>
-  <block id="b27f1723f01ed4e6ba56e7f72c47f0c7" category="paragraph">當服務正常停止時、會產生此訊息、表示已要求關機、且服務已啟動關機順序。Syst可用來判斷是否在重新啟動服務之前要求關機（不像在重新啟動服務之後傳送的SYSD）。</block>
   <block id="e71bafd6cfe427f7103771699d28c446" category="paragraph">此訊息並不表示主機伺服器是否正在停止、僅表示報告服務。SYST 訊息的 RSLT 代碼無法表示「不正常」關機、因為訊息只會由「乾淨」關機所產生。</block>
   <block id="7483d9bdb3975c2dc4c182437bb694a4" category="doc">系統稽核訊息</block>
   <block id="58c4273a9c31a427ea0cf0d392ed765b" category="paragraph">屬於系統稽核類別的稽核訊息用於與稽核系統本身、網格節點狀態、全系統工作活動（網格工作）和服務備份作業相關的事件。</block>
@@ -11246,7 +11245,6 @@
   <block id="7e72b57441c9c51337eded2ebea514cf" category="list-text">如果您新增了區塊裝置。</block>
   <block id="1ffa9850e4c14bfd6d3df8c56958d732" category="list-text">如果<block ref="d8ddda31e5a0d4ce9b854da840ffbd98" prefix=" " category="inline-code"></block>組態檔案變數的值<block ref="3119b7b82dd898f7462f0b5d6eb6aa1d" prefix=" " category="inline-code"></block>是指不包含與主機故障前相同資料的區塊裝置。</block>
   <block id="48f97e522c4520a7940451a58ed97690" category="paragraph"><block ref="48f97e522c4520a7940451a58ed97690" category="inline-link-macro-rx"></block></block>
-  <block id="4eb656b08f6a86cc9d74753ecadea8ed" category="summary">檔案/var/local/log/bycast.log是StorageGRID 適用於整個解決程序的主要疑難排解檔案。每個網格節點都有一個<block ref="027a013000ae74a3c6ae81d2374960c5" prefix=" " category="inline-code"></block>檔案。檔案包含該網格節點的特定訊息。</block>
   <block id="e0e45fb10e6855ca539f6ac3bf4f1dcc" category="doc">關於bycast.log</block>
   <block id="1dbc2cb58d7d224da0374403bb6c90b8" category="paragraph">檔案<block ref="33b32e693430bed6ba34a22a572a3022" prefix=" " category="inline-code"></block>是 StorageGRID 軟體的主要疑難排解檔案。每個網格節點都有一個<block ref="027a013000ae74a3c6ae81d2374960c5" prefix=" " category="inline-code"></block>檔案。檔案包含該網格節點的特定訊息。</block>
   <block id="88437af1449d58935d6c39f3ed36b6e4" category="paragraph">檔案<block ref="b208fec279ec6e313ea662d2cf46eb63" prefix=" " category="inline-code"></block>是的子集<block ref="027a013000ae74a3c6ae81d2374960c5" prefix=" " category="inline-code"></block>。其中包含嚴重性錯誤和嚴重的訊息。</block>
@@ -22527,8 +22525,6 @@
   <block id="0a51f84e6be43565f49734e391d586d6" category="summary">您可以在管理節點和閘道節點上建立虛擬區域網路 （VLAN） 介面，並在 HA 群組和負載平衡器端點中使用這些介面來隔離和分割流量，以提升安全性、靈活性和效能。</block>
   <block id="9a747b90fd029927b8e137d42367645b" category="summary">StorageGRID 使用內部憑證授權單位 (CA) 來保護內部流量。即使您上傳了自己的憑證，此憑證也不會變更。</block>
   <block id="9946acf0764161ad1ca277fb66d7c72c" category="summary">金鑰管理伺服器 (KMS) 是一個外部第三方系統，使用金鑰管理互通性協定 (KMIP) 向關聯的 StorageGRID 站台上的 StorageGRID 應用裝置節點提供加密金鑰。</block>
-  <block id="9ad306a500375f307428297c36a6189c" category="summary">在使用金鑰管理伺服器 (KMS) 保護裝置節點上的 StorageGRID 資料之前，您必須完成兩個設定任務：設定一個或多個 KMS 伺服器，並為裝置節點啟用節點加密。完成這兩項設定任務後，金鑰管理程序將自動進行。</block>
-  <block id="6f7091c9d50d37819be6f3b7dc500df4" category="summary">當儲存節點達到容量上限時，您必須透過新增儲存設備來擴充 StorageGRID 系統。有三種選擇：新增儲存磁碟區、新增儲存擴充架和新增 Storage Nodes。</block>
   <block id="14ca4e9f345bd22e1130524d29dc58e7" category="summary">您可以使用 CSRF 權杖來增強使用 cookie 的驗證，進而協助保護 StorageGRID 免受跨站請求偽造 （CSRF） 攻擊。</block>
   <block id="a67eaed1337a7fa2ad77fcd3ec802308" category="summary">如果單一登入 (SSO) 系統發生故障，您可能無法登入 Grid Manager。在這種情況下，您可以暫時停用並重新啟用一個管理節點的 SSO。若要停用並重新啟用 SSO，您必須存取該節點的命令列介面。</block>
   <block id="df6172d74d950d37dd4817c97ef04a61" category="summary">如果嘗試傳送 AutoSupport 套件失敗，StorageGRID 系統會根據 AutoSupport 套件的類型採取不同的動作。</block>
@@ -22543,12 +22539,9 @@
   <block id="2450a551d9011a0f14beaba79c8d448f" category="list-text">192,168,131,121</block>
   <block id="5c83a256b3eb52dbcdfb1ada17dfbca7" category="list-text">192,168,130,122</block>
   <block id="84f455617b6484318234867418b6d0b0" category="list-text">192,168,131,122</block>
-  <block id="91f88cfd270ee9d1031cf622a7fda380" category="summary">設定 StorageGRID 以與 FabricPool 一起使用時，您可以選擇建立一個或多個高可用性 （HA） 群組。</block>
   <block id="aa84cda4e6a13cdb7258b0040b6acf12" category="summary">建立 ILM 規則精靈的「定義放置」步驟可讓您定義放置指令，以確定物件的儲存時間、副本類型（複製或糾刪碼）、儲存位置和副本數量。</block>
   <block id="f3f1fb7ebf369db343578e1c8be5ca59" category="summary">建立 ILM 規則精靈的步驟 1（輸入詳細資料）可讓您輸入規則的名稱和描述，並為規則定義篩選器。</block>
   <block id="db4be330f7af15384035e7ed3904a307" category="summary">建立 ILM 規則精靈的步驟 3（選擇擷取行為）可讓您選擇此規則篩選的物件在擷取時的保護方式。</block>
-  <block id="0073a23e75a8c3ad14a403e95b12d486" category="summary">建立 ILM 規則時，您可以指定三種選項之一來保護擷取時的物件：雙重提交、嚴格或平衡。</block>
-  <block id="923e05f8e9f10ebfe0ba16acbbf2e7ab" category="summary">您可以編輯雲端儲存池來變更其名稱、服務端點或其他詳細資訊，但無法變更雲端儲存池的 S3 儲存桶或 Azure 容器。</block>
   <block id="66a43d26a9a9969d477611353504f218" category="summary">您可以新增、刪除和更新 DNS 伺服器，以便使用完整網域名稱 (FQDN) 主機名稱，而非 IP 位址。</block>
   <block id="d94cc623ac89921a07b5d7888decd7b8" category="admonition">您必須及時修復或更換故障的主要管理節點，否則可能無法執行某些維護程序。</block>
   <block id="b1514cdee03f914e9f4e8941f197cae2" category="summary">StorageGRID 內部防火牆僅允許傳入連線存取 Grid Network 上的特定連接埠，但連接埠 22、80、123 和 443 除外（請參閱有關外部通訊的資訊）。負載平衡器端點定義的連接埠也接受連線。</block>
@@ -22562,5 +22555,12 @@
   <block id="ce57159354976305a0c15f68080559f2" category="summary">如果用戶端請求發生衝突，例如兩個用戶端寫入同一個金鑰，則依照「最後寫入優先」的原則進行解決。</block>
   <block id="41add53b76385c1cfec185d0fce35525" category="summary">StorageGRID 使用 Amazon Web Services (AWS) 原則語言，讓 S3 租用戶控制對儲存桶及其內部物件的存取。</block>
   <block id="645b547f076b1435ab93ecfb6b8276b8" category="summary">當網格管理員為 StorageGRID 系統建立資訊生命週期管理 （ILM） 規則時，可以選擇指定使用物件的最後存取時間來決定是否將該物件移至不同的儲存位置。如果您使用的是 S3 租用戶，則可以透過啟用 S3 儲存桶中物件的最後存取時間更新來利用此類規則。</block>
-  <block id="f3ed3bb4cd199fdbb3afb78b18d31ba8" category="summary">您可以建立本機使用者並將其指派到本機群組，以確定這些使用者可以存取哪些功能。租用戶管理器包含一個預先定義的本機使用者，名為<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>。雖然您可以新增和刪除本機使用者，但無法刪除 root 使用者。</block>
+  <block id="822c34260cd78ac38cd99329aa3e5a3b" category="summary">在使用金鑰管理伺服器 (KMS) 保護裝置節點上的 StorageGRID 資料之前，您必須設定一個或多個 KMS 伺服器，並為裝置節點啟用節點加密。完成這兩項設定任務後，金鑰管理程序將自動進行。</block>
+  <block id="e693dda230afd2d83416e8120197a98e" category="summary">當儲存節點達到容量上限時，您必須透過新增儲存空間來擴充 StorageGRID 系統。您可以透過新增儲存磁碟區、新增儲存擴充架和新增儲存節點來完成此操作。</block>
+  <block id="c3309f139167d0386607ef2eb427e7d5" category="summary">當服務正常停止時，會產生此訊息以表示已要求關閉服務，且該服務已啟動其關閉序列。SYST 可用於在服務重新啟動之前確定是否已要求關閉服務（與通常在服務重新啟動後發送的 SYSD 不同）。</block>
+  <block id="86bdcc38a4720beb4e890a6840cc3ee1" category="summary">建立 ILM 規則時，您可以透過指定雙重提交、嚴格或平衡來保護擷取時的物件。</block>
+  <block id="9f9feddd1c197316c69c1cbf011dc9e8" category="summary">您可以編輯雲端儲存池，變更其名稱、服務端點或其他詳細資訊。但是，您無法變更雲端儲存池的 S3 儲存桶或 Azure 容器。</block>
+  <block id="543bd89978f2ce67f3480c26cda30ada" category="summary">如果需要立即停止某項服務，可以使用 force-stop 指令。</block>
+  <block id="99037eda333142413e79b78b242ce29f" category="summary">檔案 /var/local/log/bycast.log 是 StorageGRID 軟體的主要故障排除檔案。每個網格節點都有一個 bycast.log 檔案。該檔案包含特定於該網格節點的訊息。</block>
+  <block id="4a9f0469ea88de1927e989ba0544b1cb" category="summary">您可以建立本機使用者並將其指派到本機群組，以確定這些使用者可以存取哪些功能。Tenant Manager 包含一個名為 root 的預先定義本機使用者。雖然您可以新增和刪除本機使用者，但無法刪除 root 使用者。</block>
 </blocks>
