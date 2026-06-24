@@ -17,7 +17,7 @@ ILM 索引標籤提供資訊生命週期管理（ ILM ）作業的相關資訊�
 
 對於儲存節點、 ILM 索引標籤會提供有關 ILM 評估和背景驗證的詳細資料、以用於銷毀編碼物件。
 
-image::../media/nodes_page_ilm_tab.png[節點頁面ILM索引標籤]
+image:nodes_page_ilm_tab.png["節點頁面ILM索引標籤"]
 
 .相關資訊
 * link:monitoring-information-lifecycle-management.html["監控資訊生命週期管理"]

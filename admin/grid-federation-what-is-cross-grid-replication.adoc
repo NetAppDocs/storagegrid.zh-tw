@@ -19,7 +19,7 @@ summary: 跨網格複寫是在網格同盟連線中連接的兩個 StorageGRID �
 
 工作流程圖總結了在兩個網格上的儲存桶之間配置跨網格複製的步驟。
 
-image::../media/grid-federation-cgr-workflow.png[跨網格複寫工作流程]
+image:grid-federation-cgr-workflow.png["跨網格複寫工作流程"]
 
 
 
@@ -50,7 +50,7 @@ link:../tenant/grid-federation-manage-cross-grid-replication.html["管理跨網�
 
 如果僅為一個網格上的儲存桶啟用跨網格複製，則新增至該儲存桶（來源儲存桶）的物件將複製到另一個網格上的對應儲存桶（目標儲存桶）。但是，新增到目標儲存桶的物件不會被複製回來源。圖中，啟用了跨網格複製 `my-bucket`從網格 1 到網格 2，但在另一個方向則無法啟用。
 
-image::../media/grid-federation-cross-grid-replication-one-direction.png[顯示單向網格同盟連線的影像]
+image:grid-federation-cross-grid-replication-one-direction.png["顯示單向網格同盟連線的影像"]
 
 
 
@@ -58,7 +58,7 @@ image::../media/grid-federation-cross-grid-replication-one-direction.png[顯示�
 
 如果您在兩個網格上為相同的儲存格啟用跨網格複寫、則新增至任一儲存格的物件都會複寫至其他網格。在圖中、雙向啟用跨網格複寫 `my-bucket`。
 
-image::../media/grid-federation-cross-grid-replication.png[影像顯示複寫的單一方向、與雙向複寫比較]
+image:grid-federation-cross-grid-replication.png["影像顯示複寫的單一方向、與雙向複寫比較"]
 
 
 
@@ -137,7 +137,7 @@ NOTE: StorageGRID不支援 `x-amz-replication-status`標頭。
 
 在圖中，當link:../tenant/grid-federation-manage-cross-grid-replication.html["已啟用跨網格複寫"]。包含版本 ID 的來源儲存桶的刪除請求不會從目標儲存桶中刪除物件。不包含版本 ID 的來源儲存桶的刪除請求似乎會刪除目標儲存桶中的物件。
 
-image::../media/grid-federation-cross-grid-replication-delete.png[顯示在兩個網格上複寫用戶端刪除的影像]
+image:grid-federation-cross-grid-replication-delete.png["顯示在兩個網格上複寫用戶端刪除的影像"]
 
 
 NOTE: 如果您想要在網格之間保持物件刪除同步、請為兩個網格上的儲存格建立對應的物件刪除link:../s3/create-s3-lifecycle-configuration.html["S3 生命週期組態"]。

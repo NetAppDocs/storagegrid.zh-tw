@@ -42,7 +42,7 @@ CAUTION: 某些擴充步驟和階段可能需要大量時間才能在大型網�
 此時會出現「Grid Expansion（網格擴充）」「擱置節點」區段會列出已準備好新增的節點。
 
 +
-image::../media/grid_expansion_page.png[顯示Grid Expansion頁面的快照]
+image:grid_expansion_page.png["顯示Grid Expansion頁面的快照"]
 
 . 選擇*組態擴充*。
 +
@@ -60,7 +60,7 @@ image::../media/grid_expansion_page.png[顯示Grid Expansion頁面的快照]
 視需要、您可以將游標放在節點的 * 網格網路 MAC 位址 * 上、以查看該節點的詳細資料。
 
 +
-image::../media/grid_node_details.png[Grid Node詳細資料的快照]
+image:grid_node_details.png["Grid Node詳細資料的快照"]
 
 +
 

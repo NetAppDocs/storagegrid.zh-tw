@@ -27,7 +27,7 @@ summary: 若要判斷某個網站是否可以停用、請從存取「取消委�
 此時會出現取消委任網站精靈的步驟1（選取網站）。此步驟包含StorageGRID 您的系統中站台的字母清單。
 
 +
-image::../media/decommission_site_step_select_site.png[取消委任站台步驟1選取站台]
+image:decommission_site_step_select_site.png["取消委任站台步驟1選取站台"]
 
 . 檢視「*已使用的儲存容量*」欄中的值、以判斷每個站台目前使用多少儲存空間來處理物件資料。
 +
@@ -54,7 +54,7 @@ NOTE: 如果網站無法停用的原因不止一個、則會顯示最重要的�
 
 
  a| 
-綠色複選標記（image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]）
+綠色對勾（image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]）
  a| 
 您可以取消委任此站台。
  a| 
@@ -83,7 +83,7 @@ NOTE: 如果網站無法停用的原因不止一個、則會顯示最重要的�
  a| 
 否。此站台的所有節點都會中斷連線。請聯絡您的NetApp客戶代表。
  a| 
-除非站台中的每個節點都已連線（）、否則您無法執行已連線的站台取消委任image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]。
+除非站點中的每個節點都已連接，否則無法執行已連接站點的停用操作（image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]）。
  a| 
 如果您想要執行中斷連線的站台取消委任、您必須聯絡NetApp客戶代表、由他檢閱您的需求、並啟用「取消委任站台」精靈的其餘部分。
 
@@ -91,7 +91,7 @@ NOTE: 如果網站無法停用的原因不止一個、則會顯示最重要的�
 
 |===
 +
-此範例顯示StorageGRID 包含三個站台的一套解決系統。Raleigh 和 Sunnyvale 網站的綠色核取記號（image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]）表示您可以取消委任這些網站。不過、您無法取消委任溫哥華網站、因為它包含主要管理節點。
+此範例展示了一個包含三個站點的 StorageGRID 系統。Raleigh 和 Sunnyvale 站點的綠色核取記號（image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]）表示您可以取消委任這些站點。但是，您無法取消委任 Vancouver 站點，因為它包含主要管理節點。
 
 
 

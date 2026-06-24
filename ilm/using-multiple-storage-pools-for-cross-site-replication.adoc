@@ -40,9 +40,9 @@ CAUTION: 在配置StorageGRID部署以進行站點遺失保護時，也必須考
 
 ILM 規則放置位置：
 
-image::../media/ilm_replication_at_2_sites.png[在 2 個站台每個複本複本 1 個]
+image:ilm_replication_at_2_sites.png["在 2 個站台每個複本複本 1 個"]
 
-image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[在 2 個站台中的每個站台建立 1 個複本 - 站台專屬儲存池]
+image:ilm_replication_make_2_copies_2_pools_2_sites.png["在 2 個站台中的每個站台建立 1 個複本 - 站台專屬儲存池"]
 
 如果某個站台遺失、則可在另一個站台取得物件複本。
 
@@ -58,7 +58,7 @@ image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[在 2 個站�
 
 ILM 規則放置位置：
 
-image::../media/ilm_erasure_coding_site_loss_protection_4+2.png[EC 1 儲存池 9 儲存節點 3 站台]
+image:ilm_erasure_coding_site_loss_protection_4+2.png["EC 1 儲存池 9 儲存節點 3 站台"]
 
 在此範例中：
 
@@ -72,8 +72,8 @@ NOTE: 在包含任意數量站台的儲存集區中、除了兩個站台之外�
 
 使用 4+2 銷毀編碼方案的 ILM 規則：
 
-image::../media/ec_three_sites_4_plus_2_site_loss_example_template.png[使用 4+2 EC 方案在 3 個站台上進行銷毀編碼、以儲存物件]
+image:ec_three_sites_4_plus_2_site_loss_example_template.png["使用 4+2 EC 方案在 3 個站台上進行銷毀編碼、以儲存物件"]
 
 如果某個站台遺失、資料仍可恢復：
 
-image::../media/ec_three_sites_4_plus_2_site_loss_example.png[銷毀編碼 4+2 EC 方案 1 站台遺失]
+image:ec_three_sites_4_plus_2_site_loss_example.png["銷毀編碼 4+2 EC 方案 1 站台遺失"]

@@ -43,7 +43,7 @@ NOTE: 當 S3 貯體生命週期設定完成時、生命週期到期動作會覆�
 
 == 用戶端刪除的資料流
 
-image::../media/delete_data_flow.png[用戶端刪除資料流程]
+image:delete_data_flow.png["用戶端刪除資料流程"]
 
 . LMR服務會從用戶端應用程式接收刪除要求。
 . LDR服務會更新中繼資料存放區、使物件看起來會被用戶端要求刪除、並指示ILM引擎移除所有物件資料複本。
@@ -54,7 +54,7 @@ image::../media/delete_data_flow.png[用戶端刪除資料流程]
 
 == ILM刪除的資料流
 
-image::../media/automatic_deletion_data_flow.png[自動刪除資料流程]
+image:automatic_deletion_data_flow.png["自動刪除資料流程"]
 
 . ILM引擎會判斷物件需要刪除。
 . ILM引擎會通知中繼資料存放區。中繼資料儲存區會更新物件中繼資料、使物件看起來會被刪除以供用戶端要求使用。

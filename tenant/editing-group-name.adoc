@@ -26,7 +26,7 @@ summary: 您可以編輯群組的顯示名稱。您無法編輯群組的唯一�
 「編輯群組名稱」對話方塊隨即出現。
 
 +
-image::../media/edit_group_name.png[編輯群組名稱]
+image:edit_group_name.png["編輯群組名稱"]
 
 . 如果您正在編輯本機群組、請視需要更新顯示名稱。
 +

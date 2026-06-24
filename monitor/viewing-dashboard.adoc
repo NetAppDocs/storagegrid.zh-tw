@@ -18,7 +18,7 @@ TIP: 若要變更 Grid Manager 中顯示的儲存值單位、請選取 Grid Mana
 
 您的儀表板可能會因系統組態而異。
 
-image::../media/grid_manager_dashboard.png[Grid Manager儀表板]
+image:grid_manager_dashboard.png["Grid Manager儀表板"]
 
 
 
@@ -69,7 +69,7 @@ ILM
 CPU 、資料和記憶體使用量、依節點而定。S3 依節點執行作業。節點對站台發佈。
 
 |===
-有些卡片可以最大化、以便檢視。選取卡片右上角的最大化圖示image:../media/icon_dashboard_card_maximize.png["最大化圖示"]。若要關閉最大化的卡片、請選取最小化圖示image:../media/icon_dashboard_card_minimize.png["最小化圖示"]或選取 * 關閉 * 。
+部分卡片可以最大化以便更清晰地查看。選擇卡片右上角的最大化圖示 image:icon_dashboard_card_maximize.png["最大化圖示"]。若要關閉已最大化的卡片，請選擇最小化圖示 image:icon_dashboard_card_minimize.png["最小化圖示"] 或選取 *Close*。
 
 
 
@@ -91,7 +91,7 @@ NOTE: 如果您除了「根目錄」存取權限之外、還擁有其他任何�
 
 若要管理儀表板、請選取 * 動作 * > * 管理儀表板 * 。
 
-image::../media/dashboard_manage.png[管理儀表板]
+image:dashboard_manage.png["管理儀表板"]
 
 
 
@@ -112,4 +112,4 @@ NOTE: 系統提供的儀表板無法編輯或移除。
 * 選取卡片頂端的 * S* 、 * M* 、 * L* 或 * XL* 、以選取個別卡片的大小
 
 
-image::../media/dashboard_configure.png[設定儀表板]
+image:dashboard_configure.png["設定儀表板"]

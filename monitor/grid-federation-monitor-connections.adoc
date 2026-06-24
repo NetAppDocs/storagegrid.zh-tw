@@ -39,7 +39,7 @@ summary: 您可以監控所有網格同盟連線的基本資訊、特定連線�
 
 
 +
-image::../media/grid-federation-connections-tab.png[網格同盟連線索引標籤]
+image:grid-federation-connections-tab.png["網格同盟連線索引標籤"]
 
 . 若要查看此網格上具有「 * 使用網格同盟連線 * 」權限的所有租戶帳戶的基本資訊、請選取 * 允許租戶 * 索引標籤。
 +
@@ -51,7 +51,7 @@ image::../media/grid-federation-connections-tab.png[網格同盟連線索引標�
 ** 選擇允許的租戶，然後選擇link:../admin/grid-federation-manage-tenants.html["移除權限"]。
 ** 檢查跨網格複寫錯誤、並清除最後一個錯誤（如果有）。請參閱。 link:../admin/grid-federation-troubleshoot.html["疑難排解網格同盟錯誤"]
 +
-image::../media/grid-federation-permitted-tenants-tab.png[Grid Federation 的「允許租戶」標籤]
+image:grid-federation-permitted-tenants-tab.png["Grid Federation 的「允許租戶」標籤"]
 
 
 
@@ -82,7 +82,7 @@ image::../media/grid-federation-permitted-tenants-tab.png[Grid Federation 的「
 ** link:../admin/grid-federation-manage-tenants.html["移除租戶權限"]以使用連線。
 ** 檢查跨網格複寫錯誤、並清除最後一個錯誤。請參閱。 link:../admin/grid-federation-troubleshoot.html["疑難排解網格同盟錯誤"]
 +
-image::../media/grid-federation-permitted-tenants-tab-for-connection.png[GRID - Federation 允許的租戶 - 標籤 - 連線]
+image:grid-federation-permitted-tenants-tab-for-connection.png["GRID - Federation 允許的租戶 - 標籤 - 連線"]
 
 
 
@@ -94,7 +94,7 @@ image::../media/grid-federation-permitted-tenants-tab-for-connection.png[GRID - 
 ** link:../admin/grid-federation-manage-connection.html["旋轉連線憑證"]。
 ** 選取 * 伺服器 * 或 * 用戶端 * 以檢視或下載相關的憑證、或複製憑證 PEM 。
 +
-image::../media/grid-federation-certificates-tab.png[GRID 同盟憑證索引標籤]
+image:grid-federation-certificates-tab.png["GRID 同盟憑證索引標籤"]
 
 
 

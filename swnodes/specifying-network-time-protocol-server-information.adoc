@@ -38,7 +38,7 @@ CAUTION: 請確定每個站台至少有兩個節點可以存取至少四個外�
 . 在「*伺服器1*到*伺服器4*」文字方塊中、指定至少四部NTP伺服器的IPV4位址。
 . 如有必要、請選取最後一個項目旁的加號、以新增其他伺服器項目。
 +
-image::../media/8_gmi_installer_ntp_page.gif[此影像由周邊文字說明。]
+image:8_gmi_installer_ntp_page.gif["此影像由周邊文字說明。"]
 
 . 選擇*下一步*。
 

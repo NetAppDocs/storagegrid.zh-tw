@@ -15,7 +15,7 @@ summary: 物件分割是將物件分割成一組較小的固定大小物件、�
 
 將物件擷取至StorageGRID 物件系統時、LdR服務會將物件分割成區段、並建立區段容器、將所有區段的標頭資訊列為內容。
 
-image::../media/object_segmentation_diagram.gif[物件分割工作流程]
+image:object_segmentation_diagram.gif["物件分割工作流程"]
 
 在擷取區段容器時、LMR服務會從區段組合原始物件、並將物件傳回用戶端。
 

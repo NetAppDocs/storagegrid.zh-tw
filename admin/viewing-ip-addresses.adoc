@@ -26,6 +26,6 @@ summary: 您可以檢視StorageGRID 您的系統的各個網格節點的IP位址
 該網格節點的IP位址會列在表格中。
 
 +
-image::../media/nodes_page_overview_tab_extended.png[節點頁面IP位址]
+image:nodes_page_overview_tab_extended.png["節點頁面IP位址"]
 
 

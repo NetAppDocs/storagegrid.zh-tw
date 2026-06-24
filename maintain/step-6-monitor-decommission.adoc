@@ -33,7 +33,7 @@ summary: 從取消配置網站頁面精靈的步驟6（監控取消配置）、�
 .步驟
 . 一旦產生新的恢復包，請下載該檔案。
 +
-image::../media/decommission_site_step_6_recovery_package.png[站點退役第 6 步恢復包]
+image:decommission_site_step_6_recovery_package.png["站點退役第 6 步恢復包"]
 
 +
 
@@ -56,14 +56,14 @@ NOTE: 復原包檔案必須是安全的，因為它包含可用於從StorageGRID
 當您在步驟3中啟動新的ILM原則（修訂ILM原則）時、資料便會開始移動。資料會在整個取消委任程序期間移動。
 
 +
-image::../media/decommission_site_step_6_data_movement.png[取消委任站台步驟6資料移動]
+image:decommission_site_step_6_data_movement.png["取消委任站台步驟6資料移動"]
 
 . 在頁面的「節點進度」區段中、監控節點移除時取消委任程序的進度。
 +
 移除儲存節點時、每個節點都會經歷一系列階段。雖然這些階段大多發生得很快、甚至難以察覺、但您可能需要等待數天甚至數週、才能完成其他階段、視需要移動多少資料而定。需要更多時間來管理銷毀編碼資料並重新評估ILM。
 
 +
-image::../media/decommission_site_step_6_storage_node.png[取消委任站台步驟6儲存節點]
+image:decommission_site_step_6_storage_node.png["取消委任站台步驟6儲存節點"]
 
 +
 如果您正在監控連線站台取消委任的進度、請參閱下表以瞭解儲存節點的取消委任階段：
@@ -213,7 +213,7 @@ LMR設定狀態
 +
 ** 在*修復Cassandra *步驟中、StorageGRID 針對保留在網格中的Cassandra叢集進行必要的修復。視網格中剩餘的儲存節點數量而定、這些修復可能需要數天或更久的時間。
 +
-image::../media/decommission_site_step_6_repair_cassandra.png[取消委任站台步驟6修復Cassandra]
+image:decommission_site_step_6_repair_cassandra.png["取消委任站台步驟6修復Cassandra"]
 
 ** 在「*停用EC設定檔與刪除儲存資源池*」步驟中、會進行下列ILM變更：
 +
@@ -227,13 +227,13 @@ NOTE: 所有儲存節點儲存池（ StorageGRID 11.6 及更早版本）也會�
 
 ** 最後、在「*移除組態*」步驟中、任何對站台及其節點的剩餘參照都會從網格的其餘部分移除。
 +
-image::../media/decommission_site_step_6_remove_configuration.png[取消委任站台步驟6移除組態]
+image:decommission_site_step_6_remove_configuration.png["取消委任站台步驟6移除組態"]
 
 
 
 . 當取消委任程序完成時、取消委任網站頁面會顯示成功訊息、且移除的網站將不再顯示。
 +
-image::../media/decommission_site_success_message.png[取消委任站台成功訊息]
+image:decommission_site_success_message.png["取消委任站台成功訊息"]
 
 
 

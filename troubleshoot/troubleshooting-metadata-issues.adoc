@@ -21,7 +21,7 @@ summary: 如果發生中繼資料問題、警示會通知您問題的來源、�
 
 針對物件中繼資料、在每個儲存節點的Volume 0上保留一定的空間量。StorageGRID此空間稱為 _ 實際保留空間 _ 、可細分為物件中繼資料（允許的中繼資料空間）所允許的空間、以及關鍵資料庫作業（例如壓縮和修復）所需的空間。允許的中繼資料空間可控制整體物件容量。
 
-image::../media/metadata_allowed_space_volume_0.png[中繼資料允許空間Volume 0]
+image:metadata_allowed_space_volume_0.png["中繼資料允許空間Volume 0"]
 
 如果物件中繼資料佔用的空間超過中繼資料所允許的 100% 、資料庫作業就無法有效執行、而且會發生錯誤。
 

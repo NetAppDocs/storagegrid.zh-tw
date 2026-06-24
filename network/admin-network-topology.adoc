@@ -19,6 +19,6 @@ summary: 擁有管理網路是選擇性的。使用管理網路和網格網路�
 
 在此範例中、 Grid Network 用於 S3 用戶端要求和物件管理相關的流量、而管理網路則用於管理功能。
 
-image::../media/grid_admin_networks.png[網格管理網路]
+image:grid_admin_networks.png["網格管理網路"]
 
-image::../media/grid_admin_networks_ips.png[網格管理網路IP]
+image:grid_admin_networks_ips.png["網格管理網路IP"]

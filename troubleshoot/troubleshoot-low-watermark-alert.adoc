@@ -88,7 +88,7 @@ Volume 3.
 . 針對網格中的每個站台、展開節點清單。
 . 檢閱每個站台之每個儲存節點的「*物件資料已使用*」欄中所顯示的百分比值。
 +
-image::../media/nodes_page_object_data_used_with_alert.png[節點頁面、顯示3個SnS使用的物件資料]
+image:nodes_page_object_data_used_with_alert.png["節點頁面、顯示3個SnS使用的物件資料"]
 
 . 請遵循適當步驟：
 +

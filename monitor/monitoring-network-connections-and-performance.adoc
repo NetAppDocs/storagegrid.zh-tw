@@ -29,26 +29,26 @@ summary: 節點和站台之間的網路完整性和頻寬、以及個別網格�
 此時會出現「節點」頁面。網格中的每個節點都會以表格格式列出。
 
 +
-image::../media/nodes_menu.png[節點功能表]
+image:nodes_menu.png["節點功能表"]
 
 . 選取網格名稱、特定資料中心站台或網格節點、然後選取*網路*索引標籤。
 +
 網路流量圖表提供整個網格、資料中心站台或節點的整體網路流量摘要。
 
 +
-image::../media/nodes_page_network_traffic_graph.png[節點頁面網路流量圖]
+image:nodes_page_network_traffic_graph.png["節點頁面網路流量圖"]
 
 +
 .. 如果您選取了網格節點、請向下捲動以檢閱頁面的「*網路介面*」區段。
 +
-image::../media/nodes_page_network_interfaces.png[節點頁面網路介面]
+image:nodes_page_network_interfaces.png["節點頁面網路介面"]
 
 .. 對於網格節點、請向下捲動以檢閱頁面的「*網路通訊*」區段。
 +
 「接收和傳輸」表格顯示已在每個網路上接收和傳送多少位元組和封包、以及其他接收和傳輸度量。
 
 +
-image::../media/nodes_page_network_communication.png[節點頁面網路通訊]
+image:nodes_page_network_communication.png["節點頁面網路通訊"]
 
 
 
@@ -59,7 +59,7 @@ image::../media/nodes_page_network_communication.png[節點頁面網路通訊]
 「流量分類原則」頁面隨即出現、表中會列出現有的原則。
 
 +
-image::../media/traffic_classification_policies_main_screen_w_examples.png[圖表的流量原則範例]
+image:traffic_classification_policies_main_screen_w_examples.png["圖表的流量原則範例"]
 
 .. 若要檢視顯示與原則相關聯之網路度量的圖表、請選取原則左側的選項按鈕、然後按一下* Metrics *。
 .. 檢閱圖表以瞭解與原則相關的網路流量。
@@ -85,7 +85,7 @@ image::../media/traffic_classification_policies_main_screen_w_examples.png[圖�
 . 從*節點*頁面中選擇節點。
 . 選取「*硬體*」索引標籤以顯示CPU使用率和記憶體使用率的圖表。
 +
-image::../media/nodes_page_hardware_tab_graphs.png[節點頁面硬體索引標籤]
+image:nodes_page_hardware_tab_graphs.png["節點頁面硬體索引標籤"]
 
 . 若要顯示不同的時間間隔、請選取圖表或圖表上方的其中一個控制項。您可以顯示1小時、1天、1週或1個月的可用時間間隔資訊。您也可以設定自訂時間間隔、以便指定日期和時間範圍。
 . 如果節點裝載在儲存設備或服務應用裝置上、請向下捲動以檢視元件表。所有元件的狀態應為「標稱」。調查其他狀態的元件。

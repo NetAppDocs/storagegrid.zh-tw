@@ -17,7 +17,7 @@ summary: 使用物件儲存時、儲存單元是物件、而非檔案或區塊�
 
 物件型儲存系統中的每個物件都有兩個部分：物件資料和物件中繼資料。
 
-image::../media/object_conceptual_drawing.png[物件]
+image:object_conceptual_drawing.png["物件"]
 
 
 
@@ -56,7 +56,7 @@ image::../media/object_conceptual_drawing.png[物件]
 
 在下列範例中、「製作2份複本」規則會指定將每個物件的兩個複寫複本放在包含三個儲存節點的儲存資源池中。
 
-image::../media/ilm_replication_make_2_copies.png[建立2份複本規則]
+image:ilm_replication_make_2_copies.png["建立2份複本規則"]
 
 
 
@@ -66,7 +66,7 @@ image::../media/ilm_replication_make_2_copies.png[建立2份複本規則]
 
 以下範例說明在物件資料上使用銷毀編碼。在此範例中、ILM規則使用4+2銷毀編碼方案。每個物件會分割成四個等量資料片段、並從物件資料計算兩個同位元檢查片段。這六個片段中的每個片段都儲存在三個資料中心的不同儲存節點上、以針對節點故障或站台遺失提供資料保護。
 
-image::../media/ec_three_sites_4_plus_2.png[銷毀三個站台4 + 2]
+image:ec_three_sites_4_plus_2.png["銷毀三個站台4 + 2"]
 
 .相關資訊
 * link:../ilm/index.html["使用ILM管理物件"]

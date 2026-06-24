@@ -82,7 +82,7 @@ TIP: 使用 S3 物件鎖定的貯體將保留在 * 刪除物件：唯讀 * 狀�
 
 
 +
-image::../media/delete-bucket-objects-in-progress.png[顯示要刪除之貯體物件的螢幕擷取畫面]
+image:delete-bucket-objects-in-progress.png["顯示要刪除之貯體物件的螢幕擷取畫面"]
 
 . 在作業執行時視需要選取 * 停止刪除物件 * 以停止處理程序。然後、您也可以選擇 * 刪除貯體中的物件 * 來恢復處理程序。
 +
@@ -93,7 +93,7 @@ image::../media/delete-bucket-objects-in-progress.png[顯示要刪除之貯體�
 當貯體為空時、狀態橫幅會更新、但貯體仍為唯讀。
 
 +
-image::../media/delete-bucket-objects-complete.png[顯示已刪除所有貯體物件的螢幕擷取畫面]
+image:delete-bucket-objects-complete.png["顯示已刪除所有貯體物件的螢幕擷取畫面"]
 
 . 執行下列其中一項：
 +

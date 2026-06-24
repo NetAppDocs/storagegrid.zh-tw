@@ -32,14 +32,14 @@ CAUTION: 決定將警示規則設為靜音時請務必小心。如果您將警�
 「靜音」頁面隨即出現。
 
 +
-image::../media/alerts_silences_page.png[警示>靜音頁面]
+image:alerts_silences_page.png["Alerts > Silences 頁面"]
 
 . 選擇* Create *（建立*）。
 +
 「建立靜音」對話方塊隨即出現。
 
 +
-image::../media/alerts_create_silence.png[警示>建立靜音]
+image:alerts_create_silence.png["警報 > 建立靜默"]
 
 . 選取或輸入下列資訊：
 +

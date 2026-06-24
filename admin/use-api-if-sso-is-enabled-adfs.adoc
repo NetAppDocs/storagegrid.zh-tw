@@ -58,7 +58,7 @@ NOTE: 範例Curl工作流程無法防止其他使用者看到密碼。
 ** 解決這個StorageGRID 問題
 ** 租戶帳戶ID（如果您要存取租戶管理API）。
 +
-image::../media/sso_auth_python_script_adfs.png[AD FS的SSO驗證指令碼]
+image:sso_auth_python_script_adfs.png["AD FS的SSO驗證指令碼"]
 
 +
 輸出中提供了驗證權杖。StorageGRID您現在可以將權杖用於其他要求、類似於未使用SSO時使用API的方式。

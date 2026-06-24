@@ -29,7 +29,7 @@ StorageGRID系統可以部署到單一資料中心站點或多個資料中心站
 
 在部署單一站台的StorageGRID 情況下、將會集中化整個過程中的基礎架構和運作。
 
-image::../media/data_center_site_single.png[單一資料中心站台]
+image:data_center_site_single.png["單一資料中心站台"]
 
 
 
@@ -39,7 +39,7 @@ image::../media/data_center_site_single.png[單一資料中心站台]
 
 站點通常位於不同故障域的地理位置，例如地震斷層線或洪氾區。透過將資料自動分發到其他站點，實現資料共享和災難復原。
 
-image::../media/data_center_sites_multiple.png[多個資料中心站台]
+image:data_center_sites_multiple.png["多個資料中心站台"]
 
 單一資料中心內還可以存在多個邏輯站點，以允許使用分散式複製和擦除編碼來提高可用性和彈性。
 
@@ -55,7 +55,7 @@ image::../media/data_center_sites_multiple.png[多個資料中心站台]
 
 下圖顯示StorageGRID 如何在一個E不到 位的系統中排列網格節點。
 
-image::../media/grid_nodes_and_components.png[以周遭文字說明的圖表]
+image:grid_nodes_and_components.png["以周遭文字說明的圖表"]
 
 S3 用戶端會在 StorageGRID 中儲存及擷取物件。其他用戶端則用於傳送電子郵件通知、存取StorageGRID 「資訊管理」介面、以及選擇性存取稽核共用。
 

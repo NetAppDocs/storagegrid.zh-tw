@@ -24,7 +24,7 @@ summary: 您必須指定 StorageGRID 系統的 DNS 資訊、才能使用主機�
 . 在「*伺服器1*」文字方塊中、指定至少一個DNS伺服器的IPV4位址。
 . 如有必要、請選取最後一個項目旁的加號、以新增其他伺服器項目。
 +
-image::../media/9_gmi_installer_dns_page.gif[此影像由周邊文字說明。]
+image:9_gmi_installer_dns_page.gif["此影像由周邊文字說明。"]
 
 +
 最佳實務做法是指定至少兩部DNS伺服器。您最多可以指定六個DNS伺服器。

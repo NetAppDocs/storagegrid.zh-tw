@@ -38,7 +38,7 @@ summary: 物件中繼資料容量StorageGRID 的功能可控制可儲存在該�
 
 此圖代表兩個站台的儲存節點。每個站台都有相同數量的物件中繼資料、而且每個站台的中繼資料會在該站台的所有儲存節點之間細分。
 
-image::../media/metadata_space_across_sites.png[跨站台的中繼資料空間]
+image:metadata_space_across_sites.png["跨站台的中繼資料空間"]
 
 
 
@@ -46,7 +46,7 @@ image::../media/metadata_space_across_sites.png[跨站台的中繼資料空間]
 
 此圖代表單一儲存節點的儲存磁碟區。
 
-image::../media/metadata_space_storage_node.png[中繼資料空間儲存節點]
+image:metadata_space_storage_node.png["中繼資料空間儲存節點"]
 
 如圖所示StorageGRID 、在每個儲存節點的儲存磁碟區0上、利用此功能保留空間來儲存物件中繼資料。它會使用保留空間來儲存物件中繼資料、並執行必要的資料庫作業。儲存磁碟區0和儲存節點中所有其他儲存磁碟區的剩餘空間、僅用於物件資料（複寫複本和銷毀編碼片段）。
 
@@ -165,7 +165,7 @@ _中繼 資料保留空間 _ 是系統範圍的設定、代表將保留給每個
 . 選擇* Storage*（儲存設備）選項卡。
 . 將游標放在「已使用的儲存空間 - 物件中繼資料」圖表上、然後找出 * 實際保留 * 值。
 +
-image::../media/storage_used_object_metadata_actual_reserved.png[使用的儲存設備-物件中繼資料-實際保留]
+image:storage_used_object_metadata_actual_reserved.png["使用的儲存設備-物件中繼資料-實際保留"]
 
 
 
@@ -187,7 +187,7 @@ image::../media/storage_used_object_metadata_actual_reserved.png[使用的儲存
 
 每個儲存節點的中繼資料實際保留空間、都會細分為物件中繼資料可用空間（_allowed中繼資料空間_）、以及必要資料庫作業（例如壓縮與修復）和未來硬體與軟體升級所需的空間。允許的中繼資料空間可控制整體物件容量。
 
-image::../media/metadata_allowed_space_volume_0.png[中繼資料允許空間Volume 0]
+image:metadata_allowed_space_volume_0.png["中繼資料允許空間Volume 0"]
 
 下表顯示StorageGRID 根據節點的記憶體容量和中繼資料的實際保留空間、如何針對不同的儲存節點計算*允許的中繼資料空間*。
 
@@ -242,7 +242,7 @@ image::../media/metadata_allowed_space_volume_0.png[中繼資料允許空間Volu
 . 選擇* Storage*（儲存設備）選項卡。
 . 將游標放在「已使用的儲存空間 - 物件中繼資料」圖表上、然後找出 * 允許 * 值。
 +
-image::../media/storage_used_object_metadata_allowed.png[使用的儲存設備-物件中繼資料-允許]
+image:storage_used_object_metadata_allowed.png["使用的儲存設備-物件中繼資料-允許"]
 
 
 
@@ -316,7 +316,7 @@ SN3
 
 由於物件中繼資料會平均分散於站台的儲存節點、因此本範例中的每個節點只能容納1.32 TB的中繼資料。無法使用額外的 0.66 TB 的 SN2 和 SN3 中繼資料空間。
 
-image::../media/metadata_space_three_storage_nodes.png[中繼資料空間三個儲存節點]
+image:metadata_space_three_storage_nodes.png["中繼資料空間三個儲存節點"]
 
 同樣地、StorageGRID 由於每StorageGRID 個站台的所有物件中繼資料都是由每個站台的StorageGRID 物件中繼資料容量所決定、因此整個作業系統的中繼資料容量取決於最小站台的物件中繼資料容量。
 

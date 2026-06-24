@@ -19,13 +19,13 @@ summary: 如果 StorageGRID 嘗試與平台服務端點通訊時發生錯誤、�
 
 如果過去 7 天內發生任何平台服務端點錯誤、租戶管理器儀表板會顯示警示訊息。您可以移至「平台服務端點」頁面、查看錯誤的詳細資料。
 
-image::../media/tenant_dashboard_endpoint_error.png[儀表板上的端點錯誤訊息]
+image:tenant_dashboard_endpoint_error.png["儀表板上的端點錯誤訊息"]
 
 儀表板上出現的相同錯誤也會出現在「平台服務端點」頁面頂端。若要檢視更詳細的錯誤訊息：
 
 .步驟
 . 從端點清單中、選取有錯誤的端點。
-. 在端點詳細資料頁面上、選取*連線*。此索引標籤只會顯示端點最近發生的錯誤、並指出錯誤發生的時間已過多久。過去 7 天內發生了包含紅色 X 圖示的錯誤image:../media/icon_alert_red_critical.png["紅色X圖示"]。
+. 在端點詳細資料頁面上，選擇 *Connection*。此標籤僅顯示端點的最新錯誤，並指示錯誤發生的時間。帶有紅色 X 圖示的錯誤 image:icon_alert_red_critical.png["紅色X圖示"] 表示過去 7 天內發生的錯誤。
 
 
 

@@ -36,7 +36,7 @@ CAUTION: 將配置密碼儲存在安全的位置。它是安裝、擴充和維�
 資源配置通關密碼變更完成時、系統會顯示綠色的成功標語。
 
 +
-image::../media/change_provisioning_passphrase_success.png[資源配置複雜密碼的成功訊息已變更]
+image:change_provisioning_passphrase_success.png["資源配置複雜密碼的成功訊息已變更"]
 
 . 選擇*恢復套件*。
 . 輸入新的設定密碼來下載新的復原包。

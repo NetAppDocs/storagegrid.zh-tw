@@ -20,7 +20,7 @@ summary: 安裝StorageGRID 時、您必須至少建立一個站台。您可以�
 根據網格拓撲的需求新增更多站台。您最多可以新增16個站台。
 
 +
-image::../media/3_gmi_installer_sites_page.gif[此影像由周邊文字說明。]
+image:3_gmi_installer_sites_page.gif["此影像由周邊文字說明。"]
 
 . 單擊 * 下一步 * 。
 

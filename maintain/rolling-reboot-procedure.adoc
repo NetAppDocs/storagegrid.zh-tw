@@ -62,7 +62,7 @@ StorageGRID 重新開機網格節點時、會在每個節點上發出 `reboot`�
 . 檢閱 * 節點名稱 * 欄中的連線狀態和警示圖示。
 +
 
-TIP: 如果節點與網格中斷連線、則無法重新開機。具有以下圖示的節點將停用核取方塊：image:../media/icon_alarm_gray_administratively_down.png["灰色問號圖示"]或image:../media/icon_alarm_blue_unknown.png["藍色問號圖示"]。
+TIP: 如果節點與網格斷開連接，則無法重新啟動該節點。帶有以下圖示的節點的核取方塊將被停用：image:icon_alarm_gray_administratively_down.png["灰色問號圖示"] 或 image:icon_alarm_blue_unknown.png["藍色問號圖示"]。
 
 . 如果有任何節點有作用中警示、請檢閱 * 警示摘要 * 欄中的警示清單。
 +

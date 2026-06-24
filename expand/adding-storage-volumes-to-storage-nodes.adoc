@@ -39,7 +39,7 @@ NOTE: 物件中繼資料一律儲存在物件存放區0中。
 為了協助您解讀磁碟讀取及寫入與磁碟區掛載點相關的統計資料、「磁碟裝置」表格*名稱*欄（即_sdc_、_sdd_、_sde_等）中顯示的名稱第一部分、會與「磁碟區」表格*「裝置*」欄中顯示的值相符。
 
 +
-image::../media/nodes_page_storage_tables_vol_expansion.png[節點頁面儲存表格]
+image:nodes_page_storage_tables_vol_expansion.png["節點頁面儲存表格"]
 
 . 依照平台的指示、將新的儲存磁碟區新增至儲存節點。
 +

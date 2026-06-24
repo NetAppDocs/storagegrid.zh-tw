@@ -22,4 +22,4 @@ summary: 您可以將這三個網路設定為一個網路拓撲、其中包含�
 
 * 拓撲範例：網格、管理和用戶端網路 *
 
-image::../media/grid_admin_client_networks.png[網格管理用戶端網路]
+image:grid_admin_client_networks.png["網格管理用戶端網路"]

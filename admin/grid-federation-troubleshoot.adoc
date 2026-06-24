@@ -104,10 +104,7 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 . 選取租戶名稱以顯示詳細資料頁面。
 . 選擇 * 重試帳戶複製 * 。
 +
-image::../media/grid-federation-retry-account-clone.png[顯示錯誤訊息和重試帳戶複製按鈕的螢幕擷取畫面]
-
-+
-如果錯誤已解決、則租戶帳戶現在將會複製到其他網格。
+image:grid-federation-retry-account-clone.png["顯示錯誤訊息和重試帳戶複製按鈕的螢幕擷取畫面"] 如果錯誤已解決，租用戶帳戶現在將複製到另一個網格。
 
 
 
@@ -122,7 +119,7 @@ image::../media/grid-federation-retry-account-clone.png[顯示錯誤訊息和重
 .問題
 當link:../monitor/grid-federation-monitor-connections.html["檢視網格同盟連線"]（或連線時link:grid-federation-manage-tenants.html["管理允許的租戶"]）您在連線詳細資料頁面的 * 最後一個錯誤 * 欄中發現錯誤。例如：
 
-image::../media/grid-federation-last-error.png[顯示網格同盟連線最後一個錯誤欄中訊息的螢幕擷取畫面]
+image:grid-federation-last-error.png["顯示網格同盟連線最後一個錯誤欄中訊息的螢幕擷取畫面"]
 
 .詳細資料
 對於每個網格聯合連接，*最後一個錯誤*列顯示租戶資料複製到另一個網格時發生的最近錯誤（如果有）。此列僅顯示最後發生的跨網格複製錯誤；不會顯示可能發生的先前錯誤。此列中的錯誤可能由於以下原因之一而發生：

@@ -395,7 +395,7 @@ NOTE: 設備儲存節點還可以擁有最多 48 個儲存磁碟區。
 
 如圖所示StorageGRID 、在每個儲存節點的儲存磁碟區0上、利用此功能保留空間來儲存物件中繼資料。儲存Volume 0和儲存節點中任何其他儲存磁碟區上的任何剩餘空間、均專供物件資料使用。
 
-image::../media/metadata_space_storage_node.png[中繼資料空間儲存節點]
+image:metadata_space_storage_node.png["中繼資料空間儲存節點"]
 
 為了提供備援並保護物件中繼資料免於遺失、StorageGRID 我們在每個站台儲存系統中所有物件的三份中繼資料複本。物件中繼資料的三個複本會平均分散於每個站台的所有儲存節點。
 

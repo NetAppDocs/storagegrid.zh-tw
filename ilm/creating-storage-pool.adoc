@@ -64,7 +64,7 @@ NOTE: 對於 StorageGRID 11.6 或更早版本的新安裝、每當您新增資�
 NOTE: 如果您為網站新增多個具有不同儲存等級的項目、則會發出警告。
 
 +
-要刪除某個條目，請選擇刪除圖標image:../media/icon-x-to-remove.png["刪除圖示"]。
+若要刪除條目，請選擇刪除圖示 image:icon-x-to-remove.png["刪除圖示"]。
 
 . 當您對所選項目感到滿意時、請選取*「Save（儲存）」*。
 +

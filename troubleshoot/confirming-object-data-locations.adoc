@@ -31,7 +31,7 @@ summary: 視問題而定、您可能需要確認物件資料的儲存位置。�
 
 . 如果您要查詢物件的特定版本、請輸入版本ID（選用）。
 +
-image::../media/object_lookup.png[物件查詢頁面]
+image:object_lookup.png["物件查詢頁面"]
 
 . 選擇*查詢*。
 +
@@ -52,6 +52,6 @@ link:../ilm/verifying-ilm-policy-with-object-metadata-lookup.html["物件中繼�
 
 
 +
-image::../media/object_lookup_results.png[物件查詢結果]
+image:object_lookup_results.png["物件查詢結果"]
 
 

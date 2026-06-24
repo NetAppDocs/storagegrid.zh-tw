@@ -68,7 +68,7 @@ NOTE: 如果 HA 群組具有 DHCP 指派的 IP 位址、則無法將介面新增
 
 在此範例中、主要管理節點已新增至兩個HA群組。此節點目前是管理用戶端群組的作用中介面、FabricPool 也是適用於「支援客戶」群組的備份介面。
 
-image::../media/ha_group_primary_interface.png[HA群組主要介面]
+image:ha_group_primary_interface.png["HA群組主要介面"]
 
 
 

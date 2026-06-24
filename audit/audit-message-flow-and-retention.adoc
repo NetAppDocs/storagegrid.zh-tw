@@ -27,7 +27,7 @@ summary: 所有StorageGRID 的支援服務都會在正常系統運作期間產�
 
 每個管理節點都會將稽核訊息儲存在文字記錄檔中；使用中的記錄檔會命名為 `audit.log`。
 
-image::../media/audit_message_flow.gif[摘要報告透過中繼之稽核訊息流程的圖表]
+image:audit_message_flow.gif["摘要報告透過中繼之稽核訊息流程的圖表"]
 
 
 
@@ -37,7 +37,7 @@ image::../media/audit_message_flow.gif[摘要報告透過中繼之稽核訊息�
 
 當節點產生或中繼稽核訊息時，該訊息將儲存在網格節點系統磁碟上的稽核訊息佇列中。訊息的副本始終保存在審計訊息佇列中，直到該訊息寫入管理節點的稽核日誌檔案為止 `/var/local/audit/export`目錄。這有助於防止審計訊息在傳輸過程中遺失。
 
-image::../media/audit_message_retention.gif[摘要報告AMS稽核訊息接收的圖表]
+image:audit_message_retention.gif["摘要報告AMS稽核訊息接收的圖表"]
 
 由於網路連線問題或審計容量不足，審計訊息佇列可能會暫時增加。隨著佇列的增加，它們會消耗每個節點的更多可用空間 `/var/local/`目錄。如果問題仍然存在，並且節點的審計訊息目錄變得太滿，則各個節點將優先處理其積壓訊息，並暫時無法接收新訊息。
 

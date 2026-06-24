@@ -386,7 +386,7 @@ ILM掃描率
 
 [cols="1a,2a,4a"]
 |===
-| image:../media/feature_checkmark.gif["核取符號"] | 項目 | 附註 
+| image:feature_checkmark.gif["核取符號"] | 項目 | 附註 
 
 
  a| 

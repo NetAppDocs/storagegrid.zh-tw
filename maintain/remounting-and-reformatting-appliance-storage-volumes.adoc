@@ -215,7 +215,7 @@ NOTE: 部分StorageGRID 還原程序會使用Reaper來處理Cassandra的修復�
 「恢復」頁面上的進度列和「階段」欄位可提供指令碼的高層級狀態 `sn-recovery-postinstall.sh`。
 
 +
-image::../media/recovering_cassandra.png[顯示Grid Management Interface恢復進度的快照]
+image:recovering_cassandra.png["顯示Grid Management Interface恢復進度的快照"]
 
 . 指令碼在節點上啟動服務之後 `sn-recovery-postinstall.sh`、您可以將物件資料還原至指令碼格式化的任何儲存磁碟區。
 +

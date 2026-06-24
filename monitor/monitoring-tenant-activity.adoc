@@ -35,10 +35,10 @@ summary: 所有 S3 用戶端活動都與 StorageGRID 租戶帳戶相關聯。您
 NOTE: 屬於該租戶的所有物件的邏輯大小包括未完成和正在進行的分段上傳。此大小不包括用於 ILM 策略的額外實體空間。已用空間值是估計值。這些估計值受到攝取時間、網路連接和節點狀態的影響。
 
 +
-image::../media/tenant_accounts_page.png[租戶帳戶頁面]
+image:tenant_accounts_page.png["租戶帳戶頁面"]
 
-. 您也可以選擇 * 登入 / 複製 URL* 欄中的登入連結、登入租戶帳戶image:../media/icon_tenant_sign_in.png["租戶登入圖示"]。
-. 您也可以選擇 * 登入 / 複製 URL* 欄中的複本 URL 連結、複製租戶登入頁面的 URL image:../media/icon_tenant_copy_url.png["租戶複製URL圖示"]。
+. （可選）透過選擇 *Sign in/Copy URL* 欄中的登入連結 image:icon_tenant_sign_in.png["租戶登入圖示"] 登入租用戶帳戶。
+. （可選）在 *Sign in/Copy URL* 欄中選取複製 URL 連結 image:icon_tenant_copy_url.png["租戶複製URL圖示"]，以複製租用戶登入頁面的 URL。
 . 您也可以選擇 * 匯出至 CSV* 來檢視和匯出 `.csv`包含所有租戶使用值的檔案。
 +
 系統會提示您開啟或儲存 `.csv`檔案。
@@ -47,7 +47,7 @@ image::../media/tenant_accounts_page.png[租戶帳戶頁面]
 檔案內容 `.csv`如下所示：
 
 +
-image::../media/tenant_accounts_example_csv.png[租戶帳戶範例為.csv]
+image:tenant_accounts_example_csv.png["租戶帳戶範例為.csv"]
 
 +
 您可以在試算表應用程式中開啟 `.csv`檔案、或在自動化中使用。
@@ -70,7 +70,7 @@ image::../media/tenant_accounts_example_csv.png[租戶帳戶範例為.csv]
 此時會顯示租戶詳細資料頁面。
 
 +
-image::../media/tenant_usage_modal.png[租戶使用模式]
+image:tenant_usage_modal.png["租戶使用模式"]
 
 . 檢閱頁面頂端的租戶總覽。
 +
@@ -91,7 +91,7 @@ NOTE: 屬於該租戶的所有物件的邏輯大小包括未完成和正在進�
 您可以將游標放在橫條圖上、以查看每個儲存桶或容器所使用的儲存設備。您可以將游標放在可用空間區段上、以查看剩餘的儲存配額量。
 
 +
-image::../media/tenant_bucket_space_consumption_GM.png[租戶庫位使用量長條圖]
+image:tenant_bucket_space_consumption_GM.png["租戶庫位使用量長條圖"]
 
 +
 
@@ -114,7 +114,7 @@ NOTE: 您可以啟用 * 租戶配額使用量高 * 警示規則、以判斷租�
 個別 S3 租戶檔案的內容 `.csv`如下所示：
 
 +
-image::../media/tenant_bucket_details_csv.png[租戶桶詳細資料CSV範例]
+image:tenant_bucket_details_csv.png["租戶桶詳細資料CSV範例"]
 
 +
 您可以在試算表應用程式中開啟 `.csv`檔案、或在自動化中使用。

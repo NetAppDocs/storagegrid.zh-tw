@@ -69,7 +69,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 使用欄標題來排序列、或輸入搜尋詞彙以更快找到介面。
 
 +
-image::../media/ha_group_add_interfaces.png[HA群組新增介面]
+image:ha_group_add_interfaces.png["HA群組新增介面"]
 
 +
 
@@ -84,7 +84,7 @@ NOTE: 建立VLAN介面之後、請等待5分鐘、讓新介面出現在表格中
 ** 如果您在不同類型的節點上選取介面、則會顯示資訊注意事項。系統會提醒您、如果發生容錯移轉、先前作用中節點所提供的服務可能無法在新作用中節點上使用。例如、備份閘道節點無法提供管理節點服務的 HA 保護。同樣地、備份管理節點也無法執行主要管理節點所能提供的所有維護程序。
 ** 如果您無法選取介面、則其核取方塊會停用。工具提示提供更多資訊。
 +
-image::../media/vlan_parent_interface_tooltip.png[VLAN介面工具秘訣]
+image:vlan_parent_interface_tooltip.png["VLAN介面工具秘訣"]
 
 ** 如果介面的子網路值或閘道與其他選取的介面衝突、則無法選取介面。
 ** 如果設定的介面沒有靜態 IP 位址、則無法選取該介面。
@@ -105,7 +105,7 @@ image::../media/vlan_parent_interface_tooltip.png[VLAN介面工具秘訣]
 清單中的第一個介面是主要介面。主介面是作用中介面、除非發生故障。
 
 +
-image::../media/ha_group_determine_failover.png[HA群組決定優先順序]
+image:ha_group_determine_failover.png["HA群組決定優先順序"]
 
 +
 
@@ -128,7 +128,7 @@ TIP: 如果HA群組可存取Grid Manager、則您必須在主要管理節點上�
 NOTE: 如果您使用32位元前置碼、VIP網路位址也會做為閘道位址和VIP位址。
 
 +
-image::../media/ha_group_select_virtual_ips.png[HA群組會輸入VIP]
+image:ha_group_select_virtual_ips.png["HA群組會輸入VIP"]
 
 . 或者、如果任何 S3 管理用戶端或租戶用戶端將從不同的子網路存取這些 VIP 位址、請輸入 * 閘道 IP 位址 * 。閘道位址必須位於VIP子網路內。
 +

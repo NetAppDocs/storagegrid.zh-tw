@@ -201,8 +201,8 @@ NOTE: 非目前時間僅適用於啟用版本設定的儲存區中的 S3 物件�
 * 第二個中繼資料值會指定小於或等於100 MB的物件。
 
 
-image::../media/advanced_filtering_size_between.png[物件大小的進階篩選範例]
+image:advanced_filtering_size_between.png["物件大小的進階篩選範例"]
 
 使用多個項目可讓您精確控制要比對的物件。在下列範例中、規則會套用至將 Brand A 或 Brand B 做為 camera 類型使用者中繼資料值的物件。不過、此規則僅適用於小於10 MB的Brand B物件。
 
-image::../media/advanced_filtering_multiple_rows.png[使用者中繼資料的進階篩選範例]
+image:advanced_filtering_multiple_rows.png["使用者中繼資料的進階篩選範例"]

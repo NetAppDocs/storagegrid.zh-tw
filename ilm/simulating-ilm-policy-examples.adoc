@@ -28,7 +28,7 @@ ILM 原則模擬範例提供了建構及修改環境模擬的準則。
 
 模擬原則之後、請確認每個物件都符合正確的規則。
 
-image::../media/simulate_policy_screen.png[模擬原則結果]
+image:simulate_policy_screen.png["模擬原則結果"]
 
 在此範例中：
 
@@ -57,7 +57,7 @@ image::../media/simulate_policy_screen.png[模擬原則結果]
 模擬結果隨即出現、顯示 `Havok.png`物件已符合 *PNG* 規則。
 
 +
-image::../media/simulate_reorder_rules_pngs_result.png[範例 2 ：模擬 ILM 原則時重新排序規則]
+image:simulate_reorder_rules_pngs_result.png["範例 2 ：模擬 ILM 原則時重新排序規則"]
 
 +
 但是 `Havok.png`，它的目的是測試 *X-men * 規則。
@@ -75,7 +75,7 @@ image::../media/simulate_reorder_rules_pngs_result.png[範例 2 ：模擬 ILM �
 您先前測試的物件會根據更新的原則重新評估、並顯示新的模擬結果。在範例中、「規則相符」欄顯示 `Havok.png`物件現在符合預期的 X-men 中繼資料規則。上一匹配列顯示 PNGs 規則與上一模擬中的對象匹配。
 
 +
-image::../media/simulate_reorder_rules_correct_result.png[範例 2 ：模擬 ILM 原則時重新排序規則]
+image:simulate_reorder_rules_correct_result.png["範例 2 ：模擬 ILM 原則時重新排序規則"]
 
 
 
@@ -87,7 +87,7 @@ image::../media/simulate_reorder_rules_correct_result.png[範例 2 ：模擬 ILM
 
 在此範例中、*示範*原則正在模擬中。此原則旨在尋找具有使用者中繼資料的物件 `series=x-men`。不過、針對物件模擬此原則時、會發生非預期的結果 `Beast.jpg`。物件不符合X-men中繼資料規則、而是符合預設規則、兩個複本複製兩個資料中心。
 
-image::../media/simulate_results_for_object_wrong_metadata.png[範例 3 ：模擬 ILM 原則時修正規則]
+image:simulate_results_for_object_wrong_metadata.png["範例 3 ：模擬 ILM 原則時修正規則"]
 
 當測試物件與原則中的預期規則不符時、您必須檢查原則中的每個規則、並修正任何錯誤。
 
@@ -108,6 +108,6 @@ image::../media/simulate_results_for_object_wrong_metadata.png[範例 3 ：模�
 在此範例中、修正後的 X-men 規則現在會根據使用者中繼資料來比對 `Beast.jpg`物件 `series=x-men`、如預期般。
 
 +
-image::../media/simulate_results_for_object_corrected_metadata.png[範例 3 ：模擬 ILM 原則時修正規則]
+image:simulate_results_for_object_corrected_metadata.png["範例 3 ：模擬 ILM 原則時修正規則"]
 
 

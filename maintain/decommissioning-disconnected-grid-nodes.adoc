@@ -24,7 +24,7 @@ summary: 您可能需要取消委任目前未連線至網格的節點（健全�
 
 
 .關於這項工作
-您可以在 *Health* 欄中尋找藍色的未知圖示或灰色的管理性關閉圖示image:../media/icon_alarm_gray_administratively_down.png["圖示管理性關閉"]、來識別中斷連線的節點image:../media/icon_alarm_blue_unknown.png["圖示未知"]。
+您可以透過在 *Health* 欄中尋找藍色的「未知」圖示 image:icon_alarm_blue_unknown.png["圖示未知"] 或灰色的「管理關閉」圖示 image:icon_alarm_gray_administratively_down.png["圖示管理性關閉"] 來識別斷開連線的節點。
 
 在解除委任任何中斷連線的節點之前、請注意下列事項：
 

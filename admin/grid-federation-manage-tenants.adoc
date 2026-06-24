@@ -58,7 +58,7 @@ TIP: 本機根使用者必須先登入目的地網格上複寫的租用戶、該
 如果這是租戶的來源網格（也就是說、如果租戶是在此網格上建立的）、就會出現橫幅、提醒您租戶已複製到另一個網格。如果您編輯或刪除此租用戶、您的變更將不會同步至其他網格。
 
 +
-image::../media/grid-federation-tenant-detail.png[租戶詳細資料頁面中的網格同盟索引標籤]
+image:grid-federation-tenant-detail.png["租戶詳細資料頁面中的網格同盟索引標籤"]
 
 . （可選）選擇 *Grid Federation （網格聯盟link:../monitor/grid-federation-monitor-connections.html["監控網格同盟連線"]） * 選項卡至。
 
@@ -96,7 +96,7 @@ image::../media/grid-federation-tenant-detail.png[租戶詳細資料頁面中的
 
 若要防止租戶使用網格同盟連線、您必須移除 * 使用網格同盟連線 * 權限。
 
-image::../media/grid-federation-remove-permission.png[移除網格同盟連線的步驟]
+image:grid-federation-remove-permission.png["移除網格同盟連線的步驟"]
 
 移除租戶使用網格同盟連線的權限之前、請注意下列事項：
 
@@ -167,7 +167,7 @@ TIP: 如果任何租戶貯體已啟用跨網格複寫、則無法移除 * 使用
 ** 如果權限可以移除、您會返回詳細資料頁面、並顯示成功訊息。此租用戶無法再使用網格同盟連線。
 ** 如果一或多個租戶貯體仍啟用跨網格複寫、則會顯示錯誤。
 +
-image::../media/grid-federation-remove-permission-error.png[如果租戶已啟用貯體的 cgrr 、則會顯示錯誤訊息]
+image:grid-federation-remove-permission-error.png["如果租戶已啟用貯體的 cgrr 、則會顯示錯誤訊息"]
 
 +
 您可以執行下列其中一項：

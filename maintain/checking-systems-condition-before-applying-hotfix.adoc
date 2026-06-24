@@ -16,7 +16,7 @@ summary: 您必須驗證系統是否已準備好容納此修復程式。
 . 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 . 如有可能、請確定系統正常運作、且所有網格節點均已連接至網格。
 +
-連接的節點在「節點」頁面上有綠色核取記號image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]。
+已連線的節點在「節點」頁面上會顯示綠色對勾 image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]。
 
 . 如有可能、請檢查並解決任何目前的警示。
 . 確保沒有其他維護程序在進行中、例如升級、恢復、擴充或取消委任程序。

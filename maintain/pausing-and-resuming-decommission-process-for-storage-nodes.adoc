@@ -40,7 +40,7 @@ NOTE: 只有在達到ILM評估或銷毀編碼資料解除委任階段時、才�
 目前階段會暫停、並啟用*恢復*按鈕。
 
 +
-image::../media/decommission_nodes_procedure_paused.png[取消委任節點程序暫停]
+image:decommission_nodes_procedure_paused.png["取消委任節點程序暫停"]
 
 . 完成其他維護程序之後、選取*恢復*以繼續取消委任。
 

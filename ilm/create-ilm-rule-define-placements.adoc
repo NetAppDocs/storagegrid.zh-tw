@@ -23,7 +23,7 @@ ILM規則可以包含一或多個放置指示。每項放置指示均適用於�
 
 在此範例中、 ILM 規則會在站台 1 中儲存一個複寫複本、並在站台 2 中儲存第一年的複寫複本。一年後、便會製作2+1銷毀編碼的複本、並僅儲存於一個站台。
 
-image::../media/ilm_create_ilm_rule_wizard_2.png[建立 ILM 規則精靈步驟 2]
+image:ilm_create_ilm_rule_wizard_2.png["建立 ILM 規則精靈步驟 2"]
 
 .步驟
 . 對於 * 參考時間 * 、請選取在計算放置指示的開始時間時要使用的時間類型。
@@ -170,7 +170,7 @@ NOTE: 銷毀編碼最適合大於1 MB的物件。請勿對小於 200 KB 的物�
 請參閱 link:using-multiple-storage-pools-for-cross-site-replication.html["啟用站台遺失保護。"]
 
 +
-image::../media/ilm_rule_retention_diagram.png[ILM規則保留圖]
+image:ilm_rule_retention_diagram.png["ILM規則保留圖"]
 
 
 

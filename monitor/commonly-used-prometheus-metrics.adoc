@@ -31,7 +31,7 @@ Prometheus 所收集的指標會在 Grid Manager 的多個位置使用：
 
 * *節點頁面*：節點頁面上可用索引標籤上的圖表使用Grafana視覺化工具來顯示Prometheus所收集的時間序列指標。Grafana以圖表和圖表格式顯示時間序列資料、而Prometheus則是後端資料來源。
 +
-image::../media/nodes_page_network_traffic_graph.png[Prometheus圖表]
+image:nodes_page_network_traffic_graph.png["Prometheus圖表"]
 
 * *警示*：當使用Prometheus度量的警示規則條件評估為真時、警示會在特定嚴重性層級觸發。
 * * Grid Management API*：您可以在自訂警示規則中使用Prometheus指標、或搭配外部自動化工具來監控StorageGRID 您的VMware系統。您可從Grid Management API取得Prometheus指標的完整清單。（從 Grid Manager 頂端選取說明圖示、然後選取 * API 說明文件 * > * 規格 * 。）雖然有超過一千種指標可供使用、但監控最關鍵StorageGRID 的功能只需要相對較少的數量。

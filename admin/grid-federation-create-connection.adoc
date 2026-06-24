@@ -15,7 +15,7 @@ summary: 如果您想要複製租戶詳細資料並複寫物件資料、可以�
 
 如圖所示、建立網格同盟連線包括兩個網格上的步驟。您可以在一個網格上新增連線、然後在另一個網格上完成連線。您可以從任一網格開始。
 
-image::../media/grid-federation-create-connection.png[在兩個網格上建立連線步驟的圖形總覽]
+image:grid-federation-create-connection.png["在兩個網格上建立連線步驟的圖形總覽"]
 
 .開始之前
 * 您已檢閱link:grid-federation-overview.html["考量與要求"]以設定網格同盟連線。

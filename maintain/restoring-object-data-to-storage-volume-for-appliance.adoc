@@ -34,7 +34,7 @@ NOTE: 修復資料指令碼已過時、將在未來版本中移除。如有可�
 == 使用 `repair-data`指令碼還原物件資料
 
 .開始之前
-* 您已確認復原的儲存節點的連線狀態為*已連線*image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]在網格管理器中的 *節點* > *概覽* 標籤上。
+* 您已確認，在 Grid Manager 的「節點」>「概覽」標籤中，已復原的儲存節點的連線狀態為「已連線」image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]。
 
 
 .關於這項工作

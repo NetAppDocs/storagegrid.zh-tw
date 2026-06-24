@@ -44,7 +44,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 舉例來StorageGRID 說、假設在主機1上執行的支援節點a已設定下列介面對應：
 
-image::../media/eth0_bond.gif[此影像由周邊文字說明。]
+image:eth0_bond.gif["此影像由周邊文字說明。"]
 
 箭頭的左側對應StorageGRID 於從一個包含網格、管理和用戶端網路介面的資訊（分別為網格、管理和用戶端網路介面）的舊介面。箭頭的右側對應於提供這些網路的實際主機介面、這些網路是三個附屬於同一個實體介面連結的VLAN介面。
 
@@ -66,4 +66,4 @@ image::../media/eth0_bond.gif[此影像由周邊文字說明。]
 
 以下範例顯示 StorageGRID 儲存節點的區塊裝置對應解決方案、其中主機上正在使用 DM 多重路徑、而別名欄位已用於 `/etc/multipath.conf`提供所有主機上一致且易記的區塊裝置名稱。
 
-image::../media/block_device_mapping_rhel.gif[區塊設備映射]
+image:block_device_mapping_rhel.gif["區塊設備映射"]

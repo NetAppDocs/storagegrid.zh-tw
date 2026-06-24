@@ -17,7 +17,7 @@ NetApp ® StorageGRID ® 是一套軟體定義的物件儲存套件、可在公�
 
 由分散各地、備援的異質節點所組成、可與現有和新一代用戶端應用程式整合。StorageGRID
 
-image::../media/storagegrid_system_diagram.png[映像與多個用戶端]
+image:storagegrid_system_diagram.png["映像與多個用戶端"]
 
 
 NOTE: 已移除對歸檔節點的支援。透過 S3 API 將物件從歸檔節點移至外部歸檔儲存系統link:../ilm/what-cloud-storage-pool-is.html["ILM 雲端儲存資源池"]、已由取代、提供更多功能。

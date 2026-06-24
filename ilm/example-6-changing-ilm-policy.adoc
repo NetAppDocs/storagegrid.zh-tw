@@ -47,7 +47,7 @@ NOTE: StorageGRID 認為每個銷毀編碼設定檔都是唯一的、而且在�
 
 在此範例中、主動式ILM原則最初是針對雙站台StorageGRID 的作業系統而設計、並使用兩個ILM規則。
 
-image::../media/policy_6_active_policy.png[ILM原則6作用中原則範例]
+image:policy_6_active_policy.png["ILM原則6作用中原則範例"]
 
 在此ILM原則中、屬於租戶A的物件在單一站台上受到2+1銷毀編碼的保護、而屬於所有其他租戶的物件則使用雙複製複寫在兩個站台上受到保護。
 

@@ -24,6 +24,6 @@ summary: 最簡單的網路拓撲是透過僅設定Grid Network來建立。
 
 NOTE: 此拓撲適用於外部無法使用的單一站台部署、概念驗證或測試部署、或協力廠商負載平衡器做為用戶端存取界限。如有可能、網格網路應僅用於內部流量。管理網路和用戶端網路都有額外的防火牆限制、可封鎖外部的內部服務流量。支援將Grid Network用於外部用戶端流量、但這種使用方式可提供較少的保護層。
 
-image::../media/grid_network.png[網格網路]
+image:grid_network.png["網格網路"]
 
-image::../media/grid_network_ips.png[網格網路IP]
+image:grid_network_ips.png["網格網路IP"]

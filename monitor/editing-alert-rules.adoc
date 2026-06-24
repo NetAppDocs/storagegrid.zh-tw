@@ -35,7 +35,7 @@ CAUTION: 決定編輯警示規則時請務必小心。如果您變更觸發值�
 「編輯規則」對話方塊隨即出現。此範例顯示預設警示規則、「唯一名稱」、「說明」和「建議動作」欄位已停用、無法編輯。
 
 +
-image::../media/alert_rules_edit_rule.png[警示>編輯規則]
+image:alert_rules_edit_rule.png["提醒 > 編輯規則"]
 
 . 選取或清除 *Enabled* 核取方塊、以判斷目前是否啟用此警示規則。
 +
@@ -86,7 +86,7 @@ NOTE: 您無法編輯預設警示規則的此資訊。
 NOTE: 如果您想要將已編輯的預設警示規則的條件還原回原始值、請選取修改條件右側的三個點。
 
 +
-image::../media/alert_rules_edit_revert_to_default.png[警示規則：將已編輯的條件還原為預設值]
+image:alert_rules_edit_revert_to_default.png["警示規則：將已編輯的條件還原為預設值"]
 
 +
 

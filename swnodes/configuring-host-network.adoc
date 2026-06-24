@@ -104,7 +104,7 @@ NOTE: 如果您不想使用 MAC 位址複製、而是希望允許所有介面接
 
 範例1說明簡單的實體介面對應、只需極少或不需要主機端組態。
 
-image::../media/rhel_install_vlan_diag_1.gif[安裝VLAN圖]
+image:rhel_install_vlan_diag_1.gif["安裝VLAN圖"]
 
 Linux 作業系統創建 `ensXYZ`在安裝或啟動期間自動新增接口，或在熱添加接口時新增接口。除了確保介面設定為啟動後自動啟動之外，不需要進行任何設定。您必須確定哪個 ensXYZ 對應哪個StorageGRID網路（網格、管理或用戶端），以便您可以在稍後的設定過程中提供正確的對應。
 
@@ -125,7 +125,7 @@ Linux 作業系統創建 `ensXYZ`在安裝或啟動期間自動新增接口，�
 
 如果同一主機上的節點網路需要不同的VLAN和子網路、您可以在連結上新增VLAN介面、然後將它們對應到主機（如圖中的bond0.1004所示）。
 
-image::../media/rhel_install_vlan_diag_2.gif[VLAN 介面]
+image:rhel_install_vlan_diag_2.gif["VLAN 介面"]
 
 .步驟
 . 將StorageGRID 用於實現無線網路連接的所有實體網路介面、整合到單一LACP連結中。

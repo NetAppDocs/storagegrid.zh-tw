@@ -15,10 +15,10 @@ summary: 所有平台服務作業都是以每個站台為基礎來執行。
 
 也就是、如果租戶使用用戶端連線至資料中心站台1的閘道節點、在物件上執行S3 API建立作業、則會觸發該動作的通知、並從資料中心站台1傳送。
 
-image::../media/notification_multiple_sites.gif[顯示站台1物件上的動作會觸發站台1的通知]
+image:notification_multiple_sites.gif["顯示站台1物件上的動作會觸發站台1的通知"]
 
 如果用戶端隨後在資料中心站台2的相同物件上執行S3 API刪除作業、則會觸發有關刪除動作的通知、並從資料中心站台2傳送。
 
-image::../media/notifications_site_2.gif[顯示站台2物件動作的圖表會觸發站台2的通知]
+image:notifications_site_2.gif["顯示站台2物件動作的圖表會觸發站台2的通知"]
 
 請確定每個站台的網路設定都能讓平台服務訊息傳送到目的地。

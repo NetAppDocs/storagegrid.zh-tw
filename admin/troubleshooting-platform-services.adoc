@@ -32,11 +32,11 @@ NOTE: 如果未啟用租戶帳戶的平台服務、端點建立將會失敗。
 
 如果 StorageGRID 嘗試連線至現有端點時發生錯誤、租戶管理程式的儀表板上會顯示訊息。
 
-image::../media/tenant_dashboard_endpoint_error.png[儀表板上的端點錯誤訊息]
+image:tenant_dashboard_endpoint_error.png["儀表板上的端點錯誤訊息"]
 
-租戶使用者可前往「端點」頁面、檢閱每個端點的最新錯誤訊息、並判斷錯誤發生時間多久前。「*最後一個錯誤*」欄會顯示每個端點的最新錯誤訊息、並指出錯誤發生時間已多久。包含圖示的錯誤image:../media/icon_alert_red_critical.png["紅色X圖示"]發生在過去 7 天內。
+租用戶使用者可以前往「端點」頁面，查看每個端點的最新錯誤訊息，並確認錯誤發生的時間。「上次錯誤」欄位顯示每個端點的最新錯誤訊息，並指示錯誤發生的時間。包含 image:icon_alert_red_critical.png["紅色X圖示"] 圖示的錯誤表示過去 7 天內發生的錯誤。
 
-image::../media/endpoints_last_error.png[顯示「上次錯誤」欄的「端點」頁面的快照]
+image:endpoints_last_error.png["顯示「上次錯誤」欄的「端點」頁面的快照"]
 
 
 NOTE: *最後一個錯誤*欄中的某些錯誤訊息可能會在括弧中包含一個記錄ID。網格管理員或技術支援人員可以使用此ID、在bytcast記錄中找到更多有關錯誤的詳細資訊。
@@ -120,7 +120,7 @@ CloudMirror要求較容易受到目的地端點效能的影響、因為這些要
 . 選擇「*站台_*>*平台服務*」。
 . 檢視「要求錯誤率」圖表。
 +
-image::../media/nodes_page_site_level_platform_services.gif[節點頁面站台層級平台服務]
+image:nodes_page_site_level_platform_services.gif["節點頁面站台層級平台服務"]
 
 
 

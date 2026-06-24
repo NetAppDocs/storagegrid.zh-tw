@@ -29,6 +29,6 @@ summary: 您可以監控物件擷取和擷取速率、以及物件計數、查�
 圖表顯示節點的擷取和擷取速率。索引標籤也包含物件計數、中繼資料查詢和驗證作業的度量。
 
 +
-image::../media/nodes_storage_node_objects_help.png[節點>_Storage Nod_>物件>屬性說明的快照]
+image:nodes_storage_node_objects_help.png["節點 > _儲存節點_ > 物件 > 屬性說明的螢幕截圖"]
 
 

@@ -17,7 +17,7 @@ summary: 負載平衡器索引標籤包含與負載平衡器服務作業相關�
 
 如果沒有透過負載平衡器服務執行 I/O 、或未設定負載平衡器、則圖表會顯示「無資料」。
 
-image::../media/nodes_page_load_balancer_tab.png[節點頁面負載平衡器索引標籤]
+image:nodes_page_load_balancer_tab.png["節點頁面負載平衡器索引標籤"]
 
 
 

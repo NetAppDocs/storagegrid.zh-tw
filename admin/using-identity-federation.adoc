@@ -48,7 +48,7 @@ NOTE: 如果您想使用未列出的 LDAP v3 服務，請聯絡技術支援。
 . 選取*啟用身分識別聯盟*。
 . 在LDAP服務類型區段中、選取您要設定的LDAP服務類型。
 +
-image::../media/ldap_service_type.png[顯示LDAP服務類型選項的「身分識別聯盟」頁面]
+image:ldap_service_type.png["顯示LDAP服務類型選項的「身分識別聯盟」頁面"]
 
 +
 選擇*其他*以設定使用Oracle Directory Server的LDAP伺服器值。
@@ -159,7 +159,7 @@ NOTE: 如果您的 Active Directory 伺服器強制執行 LDAP 簽名，則不�
 例如、輸入您自己的使用者名稱和密碼。請勿在使用者名稱中包含任何特殊字元、例如 @ 或 / 。
 
 +
-image::../media/identity_federation_test_connection.png[驗證繫結使用者名稱格式的身分識別聯盟提示]
+image:identity_federation_test_connection.png["驗證繫結使用者名稱格式的身分識別聯盟提示"]
 
 +
 ** 如果連線設定有效、就會出現「測試連線成功」訊息。選取*「Save（儲存）」*以儲存組態。

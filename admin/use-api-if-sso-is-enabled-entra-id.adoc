@@ -62,7 +62,7 @@ SSO 操作可以透過一系列 API 請求來執行，但這樣做並不簡單�
 
 . 出現提示時，輸入密碼並準備在要求時向 Entra ID 提供 MFA 授權。
 +
-image::../media/sso_api_password_mfa.png[提示輸入密碼和MFA]
+image:sso_api_password_mfa.png["提示輸入密碼和MFA"]
 
 +
 

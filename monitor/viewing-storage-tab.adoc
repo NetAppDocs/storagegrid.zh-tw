@@ -24,7 +24,7 @@ summary: 「Storage（儲存設備）」索引標籤摘要說明儲存可用度�
 
 NOTE: 當節點未連線至網格時、例如在升級期間或中斷連線狀態時、某些度量可能無法使用或排除在站台和網格總計之外。節點重新連線至網格之後、請等待數分鐘、讓值穩定下來。
 
-image::../media/nodes_storage_node_storage_tab.png[節點>儲存節點>儲存索引標籤]
+image:nodes_storage_node_storage_tab.png["節點 > 儲存節點 > 儲存索引標籤"]
 
 
 
@@ -32,7 +32,7 @@ image::../media/nodes_storage_node_storage_tab.png[節點>儲存節點>儲存索
 
 對於所有節點、「Storage（儲存）」索引標籤包含節點上磁碟裝置和磁碟區的詳細資料。對於儲存節點、「物件存放區」表格提供每個儲存磁碟區的相關資訊。
 
-image::../media/nodes_page_storage_tables.png[節點頁面儲存表格]
+image:nodes_page_storage_tables.png["節點頁面儲存表格"]
 
 .相關資訊
 link:monitoring-storage-capacity.html["監控儲存容量"]

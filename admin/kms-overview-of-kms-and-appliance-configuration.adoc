@@ -15,7 +15,7 @@ summary: '在使用金鑰管理伺服器 (KMS) 保護裝置節點上的 StorageG
 
 流程圖顯示使用KMS保護StorageGRID 應用裝置節點上的資訊安全的高階步驟。
 
-image::../media/kms_configuration_overview.png[KMS 組態工作流程、如下列文字所述]
+image:kms_configuration_overview.png["KMS 組態工作流程、如下列文字所述"]
 
 流程圖會顯示KMS設定與應用裝置設定並行執行、不過您可以根據需求、在新應用裝置節點啟用節點加密之前或之後、設定金鑰管理伺服器。
 

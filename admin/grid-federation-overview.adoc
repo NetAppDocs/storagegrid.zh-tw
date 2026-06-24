@@ -25,7 +25,7 @@ summary: 您可以使用網格同盟來複製租戶、並在兩個 StorageGRID �
 
 工作流程圖摘要說明在兩個網格之間設定網格同盟連線的步驟。
 
-image::../media/grid-federation-workflow.png[網格同盟連線工作流程]
+image:grid-federation-workflow.png["網格同盟連線工作流程"]
 
 
 
@@ -85,7 +85,7 @@ image::../media/grid-federation-workflow.png[網格同盟連線工作流程]
 * 伺服器和用戶端憑證、用於驗證和加密從網格 2 傳送至網格 1 的資訊
 
 
-image::../media/grid-federation-certificates.png[網格同盟憑證]
+image:grid-federation-certificates.png["網格同盟憑證"]
 
 依預設、憑證的有效期限為 730 天（ 2 年）。當這些憑證接近到期日時、「 * 網格聯合憑證到期日 * 」警示會提醒您旋轉憑證、您可以使用 Grid Manager 來進行。
 

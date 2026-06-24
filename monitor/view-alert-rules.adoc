@@ -30,7 +30,7 @@ video::2eea81c5-8323-417f-b0a0-b1ff008506c1[panopto]
 此時會出現警示規則頁面。
 
 +
-image::../media/alert_rules_page.png[警示規則頁面]
+image:alert_rules_page.png["警示規則頁面"]
 
 . 檢閱警示規則表中的資訊：
 +
@@ -51,9 +51,9 @@ image::../media/alert_rules_page.png[警示規則頁面]
  a| 
 判斷何時觸發此警示的Prometheus運算式。警示可在下列一個或多個嚴重性層級觸發、但不需要每個嚴重性層級的條件。
 
-** *Critical * image:../media/icon_alert_red_critical.png["圖示警示紅色嚴重"]（嚴重）：存在異常情況，已停止 StorageGRID 節點或服務的正常操作。您必須立即解決基礎問題。如果問題仍未解決、可能會導致服務中斷和資料遺失。
-** * 重大 * image:../media/icon_alert_orange_major.png["圖示警示橘色主要"]：存在異常狀況、影響目前作業或接近臨界警示的臨界值。您應調查重大警示並解決任何潛在問題、確保異常狀況不會停止StorageGRID 執行任何節點或服務的正常運作。
-** * 次要 * image:../media/icon_alert_yellow_minor.png["圖示警示黃色次要"]：系統正常運作、但存在異常狀況、若系統繼續運作、可能會影響系統的運作能力。您應該監控並解決未自行清除的次要警示、以確保不會造成更嚴重的問題。
+** *Critical* image:icon_alert_red_critical.png["圖示警示紅色嚴重"]：StorageGRID 節點或服務出現異常情況，導致其正常運作停止。您必須立即解決根本問題。如果問題無法解決，可能會導致服務中斷和資料遺失。
+** *重大* image:icon_alert_orange_major.png["圖示警示橘色主要"]：存在異常情況，該情況正在影響目前作業或接近嚴重警示的閾值。您應調查重大警示並解決任何潛在問題，以確保異常情況不會停止 StorageGRID 節點或服務的正常運作。
+** *輕微* image:icon_alert_yellow_minor.png["圖示警示黃色次要"]：系統目前運作正常，但有異常情況，如果持續下去可能會影響系統運作。您應監控並解決不會自行消失的輕微警示，以確保它們不會導致更嚴重的問題。
 
 
 

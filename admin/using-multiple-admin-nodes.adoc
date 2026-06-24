@@ -15,7 +15,7 @@ summary: 包含多個管理節點的支援系統可讓您持續監控及設定�
 
 如果管理節點無法使用、屬性處理會繼續、警示仍會觸發、電子郵件通知和 AutoSupport 套件仍會傳送。不過、擁有多個管理節點並不提供容錯移轉保護、只有通知和 AutoSupport 套件除外。
 
-image::../media/admin_node_redundancy.png[管理節點備援圖表]
+image:admin_node_redundancy.png["管理節點備援圖表"]
 
 如果管理節點故障、有兩個選項可以繼續檢視及設定StorageGRID 功能不全的系統：
 

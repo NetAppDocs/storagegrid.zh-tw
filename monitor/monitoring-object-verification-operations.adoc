@@ -45,14 +45,14 @@ NOTE: 如果系統偵測到無法自動修正的毀損物件、就會觸發 * �
 +
 *** 若要檢查複寫的物件資料驗證、請查看「驗證」區段中的屬性。
 +
-image::../media/nodes_storage_node_object_verification.png[節點>儲存節點>物件>驗證]
+image:nodes_storage_node_object_verification.png["節點 > 儲存節點 > 物件 > 驗證"]
 
 *** 若要檢查以銷毀編碼的片段驗證、請選取「*儲存節點_*>* ILM *」、然後查看「刪除編碼驗證」區段中的屬性。
 +
-image::../media/nodes_storage_node_ilm_ec_verification.png[節點>儲存節點> ILM > EC驗證]
+image:nodes_storage_node_ilm_ec_verification.png["節點 > 儲存節點 > ILM > EC 驗證"]
 
 +
-選取屬性名稱旁的問號image:../media/icon_nms_question.png["問號"]、以顯示說明文字。
+選擇屬性名稱旁的問號 image:icon_nms_question.png["問號"] 即可顯示說明文字。
 
 
 
@@ -63,7 +63,7 @@ image::../media/nodes_storage_node_ilm_ec_verification.png[節點>儲存節點> 
 .. 選擇*維護* > *物件存在檢查* > *作業記錄*。
 .. 掃描偵測到的缺失物件副本列。如果任何作業導致 100 個或更多物件副本遺失，並且觸發了「物件可能遺失」警報，請聯絡技術支援。
 +
-image::../media/oec_job_history.png[物件存在檢查工作歷程記錄]
+image:oec_job_history.png["物件存在檢查工作歷程記錄"]
 
 
 

@@ -52,7 +52,7 @@ summary: 啟動 ILM 原則後、將代表性測試物件擷取至 StorageGRID �
 
 NOTE: 以下螢幕擷取畫面為範例。您的結果會因 StorageGRID 版本而異。
 
-image::../media/object_lookup_results.png[物件查詢結果]
+image:object_lookup_results.png["物件查詢結果"]
 
 .相關資訊
 link:../s3/index.html["使用S3 REST API"]

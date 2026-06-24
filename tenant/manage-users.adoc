@@ -40,7 +40,7 @@ NOTE: 如果您的 StorageGRID 系統啟用單一登入（ SSO ）、本機使�
 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、則藍色橫幅會指出這是租戶的來源網格。您在此網格上建立的任何本機使用者都會複製到連線中的其他網格。
 
 +
-image::../media/grid-federation-tenant-user-banner.png[如果這是租戶來源網格、則會在「使用者」頁面上顯示藍色橫幅]
+image:grid-federation-tenant-user-banner.png["如果這是租戶來源網格、則會在「使用者」頁面上顯示藍色橫幅"]
 
 . 選取*建立使用者*。
 
@@ -157,7 +157,7 @@ image::../media/grid-federation-tenant-user-banner.png[如果這是租戶來源�
 
 . 視需要編輯使用者設定。如需輸入內容的詳細資訊、請參閱<<create-user,建立本機使用者>>。
 +
-.. 在概述部分中，通過選擇名稱或編輯圖標來更改全名image:../media/icon_edit_tm.png["編輯圖示"]。
+.. 在「概覽」部分，選擇名稱或編輯圖示 image:icon_edit_tm.png["編輯圖示"] 即可變更全名。
 +
 您無法變更使用者名稱。
 

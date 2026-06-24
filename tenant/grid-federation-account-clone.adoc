@@ -23,7 +23,7 @@ summary: 如果建立或編輯租戶以使用網格同盟連線、則該租戶�
 
 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、請檢閱工作流程圖、查看您將執行哪些步驟來複製群組、使用者和 S3 存取金鑰。
 
-image::../media/grid-federation-account-clone-workflow-tm.png[帳戶複製的租戶工作流程。下列文字說明步驟。]
+image:grid-federation-account-clone-workflow-tm.png["帳戶複製的租戶工作流程。下列文字說明步驟。"]
 
 以下是工作流程的主要步驟：
 
@@ -69,7 +69,7 @@ image::../media/grid-federation-account-clone-workflow-tm.png[帳戶複製的租
 
 原始群組及其複本具有相同的存取模式、群組權限和 S3 群組原則。有關說明，請參閱link:creating-groups-for-s3-tenant.html["為S3租戶建立群組"]。
 
-image::../media/grid-federation-account-clone.png[顯示本機群組已從來源網格複製到目的地網格的影像]
+image:grid-federation-account-clone.png["顯示本機群組已從來源網格複製到目的地網格的影像"]
 
 
 NOTE: 當您在來源網格上建立本機群組時所選取的任何使用者、都不會被複製到目的地網格時納入其中。因此、建立群組時請勿選取使用者。而是在建立使用者時選取群組。
@@ -82,7 +82,7 @@ NOTE: 當您在來源網格上建立本機群組時所選取的任何使用者�
 
 出於安全原因，本機使用者密碼不會被複製到目標網格。如果本機使用者需要存取目標網格上的租用戶管理器，則租用戶帳戶的根用戶必須在目標網格上為該用戶新增密碼。有關說明，請參閱link:manage-users.html["管理使用者"]。
 
-image::../media/grid-federation-local-user-clone.png[顯示本機使用者已從來源網格複製到目的地網格的影像]
+image:grid-federation-local-user-clone.png["顯示本機使用者已從來源網格複製到目的地網格的影像"]
 
 
 
@@ -94,7 +94,7 @@ image::../media/grid-federation-local-user-clone.png[顯示本機使用者已從
 
 為來源租戶建立同盟群組並複製到目的地租戶之後、同盟使用者可以在任一網格上登入租戶。
 
-image::../media/grid-federation-federated-group-clone.png[顯示同盟群組已從來源網格複製到目的地網格的影像]
+image:grid-federation-federated-group-clone.png["顯示同盟群組已從來源網格複製到目的地網格的影像"]
 
 
 
@@ -108,7 +108,7 @@ StorageGRID 不會自動複製 S3 存取金鑰、因為每個網格上都有不�
 * 如果您需要在兩個網格上使用相同的金鑰、您可以在來源網格上建立金鑰、然後使用 Tenant Manager API 手動將金鑰link:../tenant/grid-federation-clone-keys-with-api.html["複製金鑰"]傳送至目的地網格。
 
 
-image::../media/grid-federation-s3-access-key.png[顯示 S3 存取金鑰可選擇性地從來源網格複製到目的地網格的影像]
+image:grid-federation-s3-access-key.png["顯示 S3 存取金鑰可選擇性地從來源網格複製到目的地網格的影像"]
 
 
 NOTE: 當您複製同盟使用者的 S3 存取金鑰時、使用者和 S3 存取金鑰都會複製到目的地租戶。
@@ -119,7 +119,7 @@ NOTE: 當您複製同盟使用者的 S3 存取金鑰時、使用者和 S3 存取
 
 只會從租戶的來源網格到租戶的目的地網格進行複製。如果您在租戶的目的地網格上建立或匯入群組和使用者、 StorageGRID 將不會將這些項目複製回租戶的來源網格。
 
-image::../media/grid-federation-account-not-cloned.png[顯示目的地網格詳細資料的影像不會複製到來源網格]
+image:grid-federation-account-not-cloned.png["顯示目的地網格詳細資料的影像不會複製到來源網格"]
 
 
 
@@ -129,4 +129,4 @@ image::../media/grid-federation-account-not-cloned.png[顯示目的地網格詳�
 
 如果您在任一網格上編輯或刪除群組、使用者或存取金鑰、您的變更將不會複製到其他網格。
 
-image::../media/grid-federation-account-clone-edit-delete.png[顯示已編輯或刪除的詳細資料不會複製的影像]
+image:grid-federation-account-clone-edit-delete.png["顯示已編輯或刪除的詳細資料不會複製的影像"]

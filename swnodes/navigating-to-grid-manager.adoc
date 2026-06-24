@@ -47,6 +47,6 @@ summary: 您可以使用Grid Manager來定義設定StorageGRID 您的一套系�
 此時會出現用來設定StorageGRID 資訊網格的頁面。
 
 +
-image::../media/gmi_installer_first_screen.gif[StorageGRID 安裝程式第一個畫面]
+image:gmi_installer_first_screen.gif["StorageGRID 安裝程式第一個畫面"]
 
 

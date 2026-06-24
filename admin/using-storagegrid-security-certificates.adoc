@@ -48,7 +48,7 @@ NOTE: 此外、還包括所有網格上相同的作業系統CA憑證。StorageGR
 .步驟
 . 從網格管理員中，選擇*配置* > *安全性* > *證書*。
 +
-image::security_certificates.png[「憑證」頁面]
+image:security_certificates.png["「憑證」頁面"]
 
 . 選取「憑證」頁面上的索引標籤、以取得每個憑證類別的相關資訊、並存取憑證設定。如果您有link:admin-group-permissions.html["適當的權限"]，則可以存取索引標籤。
 +

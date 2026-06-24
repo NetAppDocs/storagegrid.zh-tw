@@ -58,6 +58,6 @@ summary: '您可以新增、刪除和更新 DNS 伺服器，以便使用完整�
 
 .步驟
 . 選擇*維護* > *網路* > *DNS 伺服器*。
-. 選取 IP 位址旁的刪除圖示image:../media/icon-x-to-remove.png["刪除圖示"]。
+. 選擇 IP 位址旁的刪除圖示 image:icon-x-to-remove.png["刪除圖示"]。
 . 選擇*保存*。
 

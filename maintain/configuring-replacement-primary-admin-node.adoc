@@ -36,7 +36,7 @@ summary: 更換節點必須設定為StorageGRID 適用於您的整套系統的�
 
 . 單擊*恢復故障的主管理節點*。
 +
-image::../media/install_or_recover_primary_admin_node.png[安裝或恢復主管理節點]
+image:install_or_recover_primary_admin_node.png["安裝或恢復主管理節點"]
 
 . 上傳恢復包的最新備份：
 +

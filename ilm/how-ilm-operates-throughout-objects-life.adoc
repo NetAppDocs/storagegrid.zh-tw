@@ -29,4 +29,4 @@ NOTE: 如果儲存庫中的物件處於合法保留狀態、或是指定了保�
 
 此圖摘要說明ILM在物件生命週期內的運作方式。
 
-image::../media/overview_of_object_lifecycle.png[物件生命週期總覽]
+image:overview_of_object_lifecycle.png["物件生命週期總覽"]

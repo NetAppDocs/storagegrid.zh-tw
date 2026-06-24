@@ -25,7 +25,7 @@ summary: 您必須指定網格網路上使用的子網路。
 ** 如果您已部署至少一個節點、請按一下*探索網格網路子網路*、自動填入網格網路子網路清單、其中包含已向網格管理程式註冊之網格節點所報告的子網路。
 ** 您必須手動新增 NTP 、 DNS 、 LDAP 或其他透過網格網路閘道存取的外部伺服器的任何子網路。
 +
-image::../media/4_gmi_installer_grid_network_page.gif[指定子網路]
+image:4_gmi_installer_grid_network_page.gif["指定子網路"]
 
 
 

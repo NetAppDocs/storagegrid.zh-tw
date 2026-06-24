@@ -18,7 +18,7 @@ Storage Node的LMR服務會查詢中繼資料存放區以找出物件資料的�
 
 NOTE: 如果唯一的物件複本位於 AWS Glacier 儲存設備或 Azure 歸檔層、則用戶端應用程式必須發出 S3 RestoreObject 要求、才能將可擷取的複本還原至 Cloud Storage Pool 。
 
-image::../media/retrieve_data_flow.png[擷取]
+image:retrieve_data_flow.png["擷取"]
 
 . LMR服務會從用戶端應用程式接收擷取要求。
 . LDR服務會查詢中繼資料存放區、以取得物件資料位置和中繼資料。

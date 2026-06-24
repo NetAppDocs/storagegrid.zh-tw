@@ -30,7 +30,7 @@ NOTE: 如果一個或多個磁碟區離線（未掛載）、或是它們在線�
 
 NOTE: 如果一個或多個磁碟區在取消委任期間離線、則在這些磁碟區重新上線後、取消委任程序就會完成。
 
-* 所有網格節點都有正常（綠色）健全狀況image:../media/icon_alert_green_checkmark.png["綠色核取記號圖示"]。如果您在「* Health *」（*健全狀況*）欄中看到下列其中一個圖示、您必須嘗試解決此問題：
+* 所有網格節點均顯示正常（綠色）狀態image:icon_alert_green_checkmark.png["綠色核取記號圖示"]。如果在 *Health* 欄中看到以下圖示之一，則必須嘗試解決問題：
 +
 [cols="1a,1a,3a"]
 |===
@@ -38,7 +38,7 @@ NOTE: 如果一個或多個磁碟區在取消委任期間離線、則在這些�
 
 
  a| 
-image:../media/icon_alarm_yellow_notice.gif["黃色方塊圖示"]
+image:icon_alarm_yellow_notice.gif["黃色方塊圖示"]
  a| 
 黃色
  a| 
@@ -47,7 +47,7 @@ image:../media/icon_alarm_yellow_notice.gif["黃色方塊圖示"]
 
 
  a| 
-image:../media/icon_alert_yellow_minor.png["淺橘鑽石圖示"]
+image:icon_alert_yellow_minor.png["淺橘鑽石圖示"]
  a| 
 淡橘色
  a| 
@@ -56,7 +56,7 @@ image:../media/icon_alert_yellow_minor.png["淺橘鑽石圖示"]
 
 
  a| 
-image:../media/icon_alert_orange_major.png["暗橘鑽石圖示"]
+image:icon_alert_orange_major.png["暗橘鑽石圖示"]
  a| 
 暗橘色
  a| 
@@ -65,7 +65,7 @@ image:../media/icon_alert_orange_major.png["暗橘鑽石圖示"]
 
 
  a| 
-image:../media/icon_alert_red_critical.png["紅色x圖示"]
+image:icon_alert_red_critical.png["紅色x圖示"]
  a| 
 紅色
  a| 

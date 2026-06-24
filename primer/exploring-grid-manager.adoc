@@ -28,9 +28,9 @@ NOTE: Grid Manager 會隨每個版本一起更新、可能與此頁面上的範�
 
 儀表板包含有關系統健全狀況和效能、儲存使用、 ILM 程序、 S3 作業和網格中節點的資訊。您可以link:../monitor/viewing-dashboard.html["設定儀表板"]從內含有效監控系統所需資訊的卡片集合中進行選擇。
 
-image::../media/grid_manager_dashboard_and_menu.png[Grid Manager中的儀表板]
+image:grid_manager_dashboard_and_menu.png["Grid Manager中的儀表板"]
 
-如需每張卡片所顯示資訊的說明、請選取該卡片的說明圖示image:../media/icon_nms_question.png["問號圖示"]。
+若要了解每張卡片上顯示的資訊，請選擇該卡片的說明圖示 image:icon_nms_question.png["問號圖示"]。
 
 
 
@@ -44,7 +44,7 @@ image::../media/grid_manager_dashboard_and_menu.png[Grid Manager中的儀表板]
 
 == 說明功能表
 
-說明功能表image:../media/icon-help-menu-bar.png["功能表列上的說明圖示"]可讓您存取：
+說明選單 image:icon-help-menu-bar.png["功能表列上的說明圖示"] 提供以下項目的存取：
 
 * 這link:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool"]和link:../admin/use-s3-setup-wizard.html["S3 設定"]巫師
 * 目前版本的StorageGRID文件站點

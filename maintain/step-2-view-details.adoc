@@ -27,19 +27,19 @@ CAUTION: 如果您正在執行中斷連線的站台解除委任、 ILM 將無法
 .步驟
 . 在步驟2（檢視詳細資料）中、檢閱與您選取要移除之站台相關的任何警告。
 +
-image::../media/decommission_site_step_2_site_warnings.png[取消委任站台步驟2站台警告]
+image:decommission_site_step_2_site_warnings.png["取消委任站台步驟2站台警告"]
 
 +
 在下列情況下會出現警告：
 
 +
 ** 站台包括閘道節點。如果 S3 用戶端目前正在連線至此節點、您必須在另一個站台上設定對等節點。在繼續取消委任程序之前、請確定用戶端可以連線至更換節點。
-** 站台混合了已連接的（）和已中斷連image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]線的節點（image:../media/icon_alarm_gray_administratively_down.png["圖示警示灰階管理性關閉"]或image:../media/icon_alarm_blue_unknown.png["圖示警示藍色不明"]）。在移除此網站之前、您必須先將所有離線節點重新連線。
+** 該站點包含已連接（image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]）和已斷開連接的節點（image:icon_alarm_gray_administratively_down.png["圖示警示灰階管理性關閉"]或image:icon_alarm_blue_unknown.png["圖示警示藍色不明"]）。在移除此站點之前，您必須先將所有離線節點重新上線。
 
 
 . 檢閱您選取要移除之網站的詳細資料。
 +
-image::../media/decommission_site_step_2_view_details.png[取消委任站台步驟2檢視詳細資料]
+image:decommission_site_step_2_view_details.png["取消委任站台步驟2檢視詳細資料"]
 
 +
 所選網站包含下列資訊：
@@ -54,9 +54,9 @@ image::../media/decommission_site_step_2_view_details.png[取消委任站台步�
 
 ** 節點名稱、類型和連線狀態：
 +
-*** image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]（已連線）
-*** image:../media/icon_alarm_gray_administratively_down.png["圖示警示灰階管理性關閉"]（管理性關閉）
-*** image:../media/icon_alarm_blue_unknown.png["圖示警示藍色不明"]（未知）
+*** image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]（已連接）
+*** image:icon_alarm_gray_administratively_down.png["圖示警示灰階管理性關閉"]（管理性關閉）
+*** image:icon_alarm_blue_unknown.png["圖示警示藍色不明"]（未知）
 
 
 ** 每個節點的詳細資料：
@@ -69,7 +69,7 @@ image::../media/decommission_site_step_2_view_details.png[取消委任站台步�
 
 . 在頁面的「其他站台的詳細資料」區段中、評估網格中其他站台的可用空間。
 +
-image::../media/decommission_site_step_2_view_details_for_other_sites.png[取消委任站台步驟2檢視其他站台的詳細資料]
+image:decommission_site_step_2_view_details_for_other_sites.png["取消委任站台步驟2檢視其他站台的詳細資料"]
 
 +
 如果您正在執行連線站台取消委任、且計畫使用ILM從所選站台移除物件資料（而非僅刪除）、則必須確保其他站台有足夠的容量來容納已移動的資料、並確保仍有足夠的容量可供未來成長使用。

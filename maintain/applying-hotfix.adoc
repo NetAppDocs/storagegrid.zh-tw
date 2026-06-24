@@ -31,14 +31,14 @@ summary: 熱修復程式會先自動套用至主要管理節點。然後、您�
 此時會出現「軟體更新」頁面。
 
 +
-image::../media/software_update_landing.png[軟體更新登陸頁面]
+image:software_update_landing.png["軟體更新登陸頁面"]
 
 . 選取*套用Hotfiy*。
 +
 出現「此修復」頁面。StorageGRID
 
 +
-image::../media/hotfix_choose_file.png[熱修復程式選擇「檔案」]
+image:hotfix_choose_file.png["熱修復程式選擇「檔案」"]
 
 . 選取您從 NetApp 支援網站 下載的 Hotfix 檔案。
 +
@@ -81,7 +81,7 @@ NOTE: 如果報告了任何錯誤、請解決這些錯誤、重新上傳修復�
 
 .. 進度列會到達完成狀態、然後主管理節點會顯示為「完成」。
 +
-image::../media/hotfix_progress_table.png[修復程序進度表]
+image:hotfix_progress_table.png["修復程序進度表"]
 
 
 
@@ -108,7 +108,7 @@ NOTE: 您必須先完成StorageGRID 此解決方案、才能開始進行其他�
 當「階段」進度超過「佇列中」時、 * 移除 * 按鈕會隱藏、您無法再從 Hotfix 程序中移除節點。
 
 +
-image::../media/approve_all_progresstable.png[使用「移除」按鈕進行修復]
+image:approve_all_progresstable.png["使用「移除」按鈕進行修復"]
 
 
 

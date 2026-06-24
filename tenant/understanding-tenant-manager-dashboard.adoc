@@ -18,7 +18,7 @@ NOTE: 屬於該租戶的所有物件的邏輯大小包括未完成和正在進�
 
 物件上傳後、儀表板看起來像以下範例：
 
-image::../media/tenant_dashboard_with_buckets.png[儀表板-目標清單]
+image:tenant_dashboard_with_buckets.png["儀表板-目標清單"]
 
 
 
@@ -48,11 +48,11 @@ CAUTION: 配額使用量是根據內部預估、在某些情況下可能會超�
 您可以將游標放在任何圖表區段上、以檢視該區段或容器所耗用的總空間。
 
 +
-image::../media/tenant_dashboard_storage_usage_segment.png[長條圖區段]
+image:tenant_dashboard_storage_usage_segment.png["長條圖區段"]
 
 * 若要對應長條圖、請列出最大的貯體或容器清單、包括物件資料的總數量、以及每個貯體或容器的物件數目。
 +
-image::../media/tenant_dashboard_buckets.png[租戶儀表板鏟斗]
+image:tenant_dashboard_buckets.png["租戶儀表板鏟斗"]
 
 +
 如果租戶擁有超過九個貯體或容器、則所有其他貯體或容器都會合併成清單底部的單一項目。
@@ -89,6 +89,6 @@ NOTE: 若要變更租戶管理程式中顯示的儲存值單位、請選取租�
 
 如果您使用 Grid Manager 來設定一個或多個端點以搭配平台服務使用、租戶管理程式儀表板會在過去七天內發生任何端點錯誤時、顯示警示。
 
-image::../media/tenant_dashboard_endpoint_error.png[顯示端點訊息的儀表板]
+image:tenant_dashboard_endpoint_error.png["顯示端點訊息的儀表板"]
 
 若要查看有關的詳細資料link:troubleshooting-platform-services-endpoint-errors.html["平台服務端點錯誤"]、請選取 * 端點 * 以顯示端點頁面。

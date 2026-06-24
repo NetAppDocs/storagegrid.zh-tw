@@ -25,9 +25,9 @@ summary: 疑難排解問題時、您可以與技術支援部門合作、在Stora
 .關於這項工作
 「診斷」頁面會針對網格的目前狀態執行一組診斷檢查。每項診斷檢查都有三種狀態之一：
 
-* image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]* 正常 * ：所有值都在正常範圍內。
-* image:../media/icon_alert_yellow_minor.png["圖示警示黃色次要"]* 注意 * ：一個或多個值超出正常範圍。
-* image:../media/icon_alert_red_critical.png["圖示警示紅色嚴重"]* 注意 * ：一個或多個值明顯超出正常範圍。
+* image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"] *Normal*：所有數值均在正常範圍內。
+* image:icon_alert_yellow_minor.png["圖示警示黃色次要"] *Attention*：一個或多個數值超出正常範圍。
+* image:icon_alert_red_critical.png["圖示警示紅色嚴重"] *Caution*：其中一個或多個數值明顯超出正常範圍。
 
 
 診斷狀態與目前警示無關、可能無法指出網格的作業問題。例如、即使未觸發警示、診斷檢查仍可能顯示「警示」狀態。
@@ -41,7 +41,7 @@ summary: 疑難排解問題時、您可以與技術支援部門合作、在Stora
 在此範例中，一個診斷具有「注意」狀態，三個診斷具有「正常」狀態。
 
 +
-image::../media/support_diagnostics_page.png[支援診斷頁面]
+image:support_diagnostics_page.png["支援診斷頁面"]
 
 . 若要深入瞭解特定診斷、請按一下列中的任何位置。
 +
@@ -57,7 +57,7 @@ NOTE: 您無法變更這些臨界值。
 
 ** *狀態值*：圖形和表格（螢幕截圖中未顯示表格）顯示整個StorageGRID系統的診斷狀態和值。在此範例中，顯示了StorageGRID系統中每個節點的目前 CPU 使用率。所有節點值均低於注意和警告閾值，因此診斷的整體狀態為正常。
 +
-image::../media/support_diagnostics_cpu_utilization.png[診斷狀態值範例]
+image:support_diagnostics_cpu_utilization.png["診斷狀態值範例"]
 
 
 
@@ -73,13 +73,13 @@ image::../media/support_diagnostics_cpu_utilization.png[診斷狀態值範例]
 NOTE: 您也可以從 *支援* > *工具* > *指標* 頁面的 Grafana 部分存取預先建立的 Grafana 儀表板。
 
 +
-image::../media/grafana_dashboard_nodes.png[Grafana儀表板節點]
+image:grafana_dashboard_nodes.png["Grafana儀表板節點"]
 
 . *選用*：若要查看Prometheus運算式一段時間的圖表、請按一下*在Prometheus*中檢視。
 +
 隨即顯示診斷所使用之運算式的Prometheus圖表。
 
 +
-image::../media/support_diagnostics_prometheus_png.png[支援診斷Prometheus頁面]
+image:support_diagnostics_prometheus_png.png["支援診斷Prometheus頁面"]
 
 

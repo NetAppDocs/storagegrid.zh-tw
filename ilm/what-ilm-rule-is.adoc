@@ -79,15 +79,15 @@ ILM規則有三個元素：
 
 此範例顯示在「建立 ILM 規則」精靈的「定義放置位置」頁面上的兩個放置指示。
 
-image::../media/ilm_rule_multiple_placements_in_single_time_period.png[Grid Manager的ILM放置畫面]
+image:ilm_rule_multiple_placements_in_single_time_period.png["Grid Manager的ILM放置畫面"]
 
-第一年的第一次放置指示image:../media/icon_number_1.png["圖示編號 1"]有兩行：
+第一個放置指令 image:icon_number_1.png["圖示編號 1"] 針對第一年有兩行：
 
 * 第一行會在兩個資料中心站台建立兩個複寫的物件複本。
 * 第二行使用所有資料中心站台建立 6+3 銷毀編碼複本。
 
 
-第二個放置指示image:../media/icon_number_2.png["圖示編號 1"]會在一年後建立兩份複本、並永遠保留這些複本。
+第二項安置指示image:icon_number_2.png["圖示編號 1"]會在一年後建立兩份副本，並永久保留這些副本。
 
 當您定義規則的放置指示集時、必須確保至少有一個放置指示從第0天開始、且您定義的時間週期之間沒有任何落差、 最後的放置指示會持續執行、直到您不再需要任何物件複本為止。
 

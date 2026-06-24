@@ -67,7 +67,7 @@ NOTE: 選取警示、而非警示群組的標題。
 
 
 +
-image::../media/nodes_page_storage_used_object_data.png[節點頁面儲存使用的物件資料]
+image:nodes_page_storage_used_object_data.png["節點頁面儲存使用的物件資料"]
 
 . 選取圖表上方的時間控制項、以檢視不同時段的儲存使用情形。
 +

@@ -30,7 +30,7 @@ NOTE: 「指標」頁面上提供的工具僅供技術支援使用。這些工�
 此處顯示「指標」頁面的範例：
 
 +
-image::../media/metrics_page.png[度量頁面]
+image:metrics_page.png["度量頁面"]
 
 . 若要查詢StorageGRID 目前的各項指標值、並檢視一段時間內的值圖表、請按一下「Prometheus」區段中的連結。
 +
@@ -45,6 +45,6 @@ NOTE: 名稱中包含_Private的指標僅供內部使用、StorageGRID 可能會
 此時會出現所選連結的Grafana介面。
 
 +
-image::../media/metrics_page_grafana.png[度量頁面Grafana]
+image:metrics_page_grafana.png["度量頁面Grafana"]
 
 

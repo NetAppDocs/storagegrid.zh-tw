@@ -63,7 +63,7 @@ NOTE: 如果StorageGRID 啟用了單一登入（SSO）功能、您必須執行�
 
 展開每個API作業時、您可以看到其HTTP動作、端點URL、任何必要或選用參數的清單、要求本文的範例（視需要）、以及可能的回應。
 
-image::../media/tenant_api_swagger_example.gif[顯示Swagger API中Get Groups作業的範例]
+image:tenant_api_swagger_example.gif["顯示Swagger API中Get Groups作業的範例"]
 
 
 

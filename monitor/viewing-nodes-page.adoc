@@ -24,7 +24,7 @@ NOTE: 若要變更 Grid Manager 中顯示的儲存值單位、請選取 Grid Man
 
 NOTE: 所示的螢幕擷取畫面為範例。您的結果可能會因 StorageGRID 版本而異。
 
-image::../media/nodes_table.png[節點功能表]
+image:nodes_table.png["節點功能表"]
 
 
 
@@ -38,7 +38,7 @@ image::../media/nodes_table.png[節點功能表]
 
 
  a| 
-image:../media/icon_alarm_blue_unknown.png["藍色問號圖示"]
+image:icon_alarm_blue_unknown.png["藍色問號圖示"]
  a| 
 *未連線-未知*
 
@@ -55,7 +55,7 @@ image:../media/icon_alarm_blue_unknown.png["藍色問號圖示"]
 
 
  a| 
-image:../media/icon_alarm_gray_administratively_down.png["灰色問號圖示"]
+image:icon_alarm_gray_administratively_down.png["灰色問號圖示"]
  a| 
 *未連線-管理性關機*
 
@@ -78,11 +78,11 @@ image:../media/icon_alarm_gray_administratively_down.png["灰色問號圖示"]
 
 如果節點有作用中警示、節點名稱旁會出現下列其中一個圖示：
 
-image:../media/icon_alert_red_critical.png["圖示警示紅色嚴重"]* 重大 * ：存在異常狀況、已停止 StorageGRID 節點或服務的正常作業。您必須立即解決基礎問題。如果問題仍未解決、可能會導致服務中斷和資料遺失。
+image:icon_alert_red_critical.png["圖示警示紅色嚴重"] *Critical*：StorageGRID 節點或服務出現異常情況，導致其正常運作停止。您必須立即解決根本問題。如果問題無法解決，可能會導致服務中斷和資料遺失。
 
-image:../media/icon_alert_orange_major.png["圖示警示橘色主要"]* 重大 * ：存在異常狀況、影響目前作業或接近臨界警示的臨界值。您應調查重大警示並解決任何潛在問題、確保異常狀況不會停止StorageGRID 執行任何節點或服務的正常運作。
+image:icon_alert_orange_major.png["圖示警示橘色主要"] *Major*：存在異常情況，該情況正在影響目前作業或接近嚴重警示的臨界值。您應調查重大警示並解決任何根本問題，以確保異常情況不會停止 StorageGRID 節點或服務的正常運作。
 
-image:../media/icon_alert_yellow_minor.png["圖示警示黃色次要"]* 次要 * ：系統正常運作、但存在異常狀況、可能會影響系統在繼續運作時的運作能力。您應該監控並解決未自行清除的次要警示、以確保不會造成更嚴重的問題。
+image:icon_alert_yellow_minor.png["圖示警示黃色次要"] *Minor*：系統目前運作正常，但有異常情況，如果持續下去可能會影響系統運作。您應監控並解決不會自行消失的輕微警報，以確保它們不會導致更嚴重的問題。
 
 
 

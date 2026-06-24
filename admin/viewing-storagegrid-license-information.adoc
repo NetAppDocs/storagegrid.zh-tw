@@ -19,7 +19,7 @@ summary: 您可以視StorageGRID 需要檢視您的支援資訊、例如網格�
 .關於這項工作
 如果此 StorageGRID 系統的軟體授權有問題、儀表板上的健全狀況狀態卡會包含授權狀態圖示和 * 授權 * 連結。此數字表示授權相關問題的數量。
 
-image::../media/dashboard_health_panel_license_status.png[儀表板健全狀況狀態卡授權狀態]
+image:dashboard_health_panel_license_status.png["儀表板健全狀況狀態卡授權狀態"]
 
 .步驟
 . 執行下列其中一項動作、即可存取「授權」頁面：

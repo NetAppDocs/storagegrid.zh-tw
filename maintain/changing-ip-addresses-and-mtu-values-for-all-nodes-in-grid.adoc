@@ -60,7 +60,7 @@ NOTE: 如有必要、請新增新IP位址的子網路。
 主功能表隨即出現。根據預設， `Selected nodes`欄位設定為 `all`。
 
 +
-image::../media/change_ip_tool_main_menu.png[顯示變更IP工具歡迎畫面的快照]
+image:change_ip_tool_main_menu.png["顯示變更IP工具歡迎畫面的快照"]
 
 . 在主功能表上、選取* 2*以編輯所有節點的IP/子網路遮罩、閘道和MTU資訊。
 +
@@ -85,7 +85,7 @@ image::../media/change_ip_tool_main_menu.png[顯示變更IP工具歡迎畫面的
 +
 ** *5*：顯示輸出中的編輯內容、這些編輯內容被隔離、僅顯示變更的項目。變更會以綠色（新增）或紅色（刪除）強調顯示、如範例輸出所示：
 +
-image::../media/change_ip_tool_edit_ip_mask_sample_output.png[周邊文字所述的螢幕擷取畫面]
+image:change_ip_tool_edit_ip_mask_sample_output.png["周邊文字所述的螢幕擷取畫面"]
 
 ** *6*：顯示輸出中顯示完整組態的編輯內容。變更會以綠色（新增）或紅色（刪除）強調顯示。
 +
@@ -102,13 +102,13 @@ NOTE: 某些命令列介面可能會使用刪除線格式顯示新增和刪除�
 在此範例中、驗證傳回錯誤。
 
 +
-image::../media/change_ip_tool_validate_sample_error_messages.gif[周邊文字所述的螢幕擷取畫面]
+image:change_ip_tool_validate_sample_error_messages.gif["周邊文字所述的螢幕擷取畫面"]
 
 +
 在此範例中、驗證已通過。
 
 +
-image::../media/change_ip_tool_validate_sample_passed_messages.gif[周邊文字所述的螢幕擷取畫面]
+image:change_ip_tool_validate_sample_passed_messages.gif["周邊文字所述的螢幕擷取畫面"]
 
 . 驗證通過後、請選取 *10* 以套用新的網路組態。
 . 選取*登臺*以在下次重新啟動節點時套用變更。

@@ -60,7 +60,7 @@ NOTE: 您使用變更IP工具對網路所做的任何變更、都會傳播至Sto
 主功能表隨即出現。
 
 +
-image::../media/change_ip_tool_main_menu.png[顯示變更IP工具歡迎畫面的快照]
+image:change_ip_tool_main_menu.png["顯示變更IP工具歡迎畫面的快照"]
 
 . （可選）選擇* 1*以選擇要更新的節點。然後選取下列其中一個選項：
 +
@@ -111,7 +111,7 @@ image::../media/change_ip_tool_main_menu.png[顯示變更IP工具歡迎畫面的
 +
 ** *5*：顯示輸出中的編輯內容、這些編輯內容被隔離、僅顯示變更的項目。變更會以綠色（新增）或紅色（刪除）強調顯示、如範例輸出所示：
 +
-image::../media/change_ip_tool_edit_ip_mask_sample_output.png[周邊文字所述的螢幕擷取畫面]
+image:change_ip_tool_edit_ip_mask_sample_output.png["周邊文字所述的螢幕擷取畫面"]
 
 ** *6*：顯示輸出中顯示完整組態的編輯內容。變更會以綠色（新增）或紅色（刪除）強調顯示。
 +
@@ -128,13 +128,13 @@ NOTE: 某些命令列介面可能會使用刪除線格式顯示新增和刪除�
 在此範例中、驗證傳回錯誤。
 
 +
-image::../media/change_ip_tool_validate_sample_error_messages.gif[周邊文字所述的螢幕擷取畫面]
+image:change_ip_tool_validate_sample_error_messages.gif["周邊文字所述的螢幕擷取畫面"]
 
 +
 在此範例中、驗證已通過。
 
 +
-image::../media/change_ip_tool_validate_sample_passed_messages.gif[周邊文字所述的螢幕擷取畫面]
+image:change_ip_tool_validate_sample_passed_messages.gif["周邊文字所述的螢幕擷取畫面"]
 
 . 驗證通過後、請選擇下列其中一個選項：
 +

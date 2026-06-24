@@ -84,7 +84,7 @@ CAUTION: 下列ILM規則和原則僅為範例。有許多方法可以設定ILM�
 嚴格。請務必在擷取時使用此規則的放置位置。如果無法在巴黎資料中心儲存兩份物件複本、則擷取作業會失敗。
 
 |===
-image::../media/ilm_rule_1_example_5_strict_ingest.png[ILM規則1範例5嚴格擷取]
+image:ilm_rule_1_example_5_strict_ingest.png["ILM規則1範例5嚴格擷取"]
 
 
 

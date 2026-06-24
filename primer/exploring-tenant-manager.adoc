@@ -28,7 +28,7 @@ NOTE: 租戶管理程式會隨每個版本一起更新、可能與本頁的範�
 
 長條圖上方顯示的值是租戶所有貯體或容器所使用空間的總和。如果在建立帳戶時指定租戶可用的GB、TB或PB上限、也會顯示已使用及剩餘的配額量。
 
-image::../media/tenant_dashboard_with_buckets.png[租戶管理器儀表板]
+image:tenant_dashboard_with_buckets.png["租戶管理器儀表板"]
 
 
 

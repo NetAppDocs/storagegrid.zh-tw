@@ -77,7 +77,7 @@ summary: 如果您想要在警示發生時傳送電子郵件通知、您必須�
 
 .. 在「收件者」區段中、輸入每個電子郵件清單的電子郵件地址、或在發生警示時應接收電子郵件的人員。
 +
-選取加號圖示image:../media/icon_plus_sign_black_on_white.gif["加號圖示"]以新增收件者。
+點選加號圖示 image:icon_plus_sign_black_on_white.gif["加號圖示"] 以新增收件人。
 
 
 
@@ -101,7 +101,7 @@ summary: 如果您想要在警示發生時傳送電子郵件通知、您必須�
 
 +
 
-NOTE: 如果您需要編輯電子郵件設定、請選取鉛筆圖示image:../media/icon_edit_tm.png["編輯圖示"]以更新此欄位。
+NOTE: 如果需要編輯電子郵件設定，請選擇鉛筆圖示 image:icon_edit_tm.png["編輯圖示"] 來更新此欄位。
 
 
 
@@ -167,7 +167,7 @@ NOTE: 測試警示通知時、您必須登入每個管理節點以驗證連線�
 
 電子郵件通知包含下列資訊：
 
-image::../media/alerts_email_notification.png[警示電子郵件通知]
+image:alerts_email_notification.png["警示電子郵件通知"]
 
 [cols="1a,6a"]
 |===

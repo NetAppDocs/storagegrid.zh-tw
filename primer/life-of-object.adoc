@@ -21,7 +21,7 @@ summary: 物件的生命週期由不同階段組成。每個階段都代表物�
 * *刪除*：從網格中移除所有物件複本的程序。物件可因用戶端應用程式傳送刪除要求至StorageGRID 該系統而刪除、或StorageGRID 是因物件壽命到期時執行的自動程序而刪除。
 
 
-image::../media/object_lifecycle.png[顯示物件壽命的圖表]
+image:object_lifecycle.png["顯示物件壽命的圖表"]
 
 .相關資訊
 * link:../ilm/index.html["使用ILM管理物件"]

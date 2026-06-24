@@ -44,21 +44,21 @@ NOTE: 此程序僅適用於設定 E 系列 AutoSupport 套件的 StorageGRID Pro
 出現「系統管理程式」首頁。SANtricity
 
 +
-image::../media/autosupport_santricity_home_page.png[首頁AutoSupport SANtricity]
+image:autosupport_santricity_home_page.png["首頁AutoSupport SANtricity"]
 
 . 選擇*支援* > *支援中心* > *AutoSupport*。
 +
 畫面上會出現「介紹操作」頁面。AutoSupport
 
 +
-image::../media/autosupport_santricity_operations.png[營運AutoSupport SANtricity AutoSupport]
+image:autosupport_santricity_operations.png["營運AutoSupport SANtricity AutoSupport"]
 
 . 選擇*設定AutoSupport 「供應方法」*。
 +
 此時會出現「設定AutoSupport 供應方法」頁面。
 
 +
-image::../media/autosupport_configure_delivery_santricity.png[執行不需執行的功能AutoSupport AutoSupport SANtricity]
+image:autosupport_configure_delivery_santricity.png["執行不需執行的功能AutoSupport AutoSupport SANtricity"]
 
 . 選擇* HTTPS *作為交付方法。
 +

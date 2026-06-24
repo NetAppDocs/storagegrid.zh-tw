@@ -33,7 +33,7 @@ NOTE: 某些 StorageGRID 服務尚未更新、無法在這些原則中使用密�
 「 *TLS 與 SSH 原則 * 」標籤會顯示可用的原則。目前作用中的原則會在原則方塊上以綠色核取記號表示。
 
 +
-image::../media/securitysettings_tls_ssh_policies_current.png[TLS 和 SSH 原則]
+image:securitysettings_tls_ssh_policies_current.png["TLS 和 SSH 原則"]
 
 . 查看標籤以了解可用的策略。
 +
@@ -119,7 +119,7 @@ NetApp StorageGRID Kernel Crypto API 模組僅存在於 VM 和StorageGRID設備�
 . 從最類似您要建立之自訂原則的原則方塊中、選取 * 檢視詳細資料 * 。
 . 選取 * 複製到剪貼簿 * 、然後選取 * 取消 * 。
 +
-image::../media/securitysettings-custom-security-policy-copy.png[複製現有原則以建立自訂原則]
+image:securitysettings-custom-security-policy-copy.png["複製現有原則以建立自訂原則"]
 
 . 從 * 自訂原則 * 方塊中、選取 * 設定與使用 * 。
 . 貼上您複製的 JSON 、然後進行任何必要的變更。

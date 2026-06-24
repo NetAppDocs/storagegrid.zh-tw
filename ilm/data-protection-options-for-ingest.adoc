@@ -21,7 +21,7 @@ summary: 建立 ILM 規則時，您可以透過指定雙重提交、嚴格或平
 
 流程圖會顯示當物件與使用三個擷取選項中每個選項的ILM規則相符時、會發生什麼情況。
 
-image::../media/ingest_object_lifecycle.png[顯示每個擷取選項的物件擷取發生方式的圖表]
+image:ingest_object_lifecycle.png["顯示每個擷取選項的物件擷取發生方式的圖表"]
 
 
 

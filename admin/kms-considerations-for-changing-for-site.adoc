@@ -20,15 +20,15 @@ summary: 每個金鑰管理伺服器（KMS）或KMS叢集都會為單一站台�
 . 您一開始會設定預設 KMS 、以套用至所有沒有專屬 KMS 的網站。
 . 儲存KMS時、所有啟用「*節點加密*」設定的應用裝置節點都會連線至KMS、並要求加密金鑰。此金鑰用於加密所有站台的應用裝置節點。此相同金鑰也必須用於解密這些應用裝置。
 +
-image::../media/kms_default_key.png[KMS預設金鑰]
+image:kms_default_key.png["KMS預設金鑰"]
 
 . 您決定為單一站台新增站台專屬的KMS（圖中的資料中心3）。不過、由於應用裝置節點已加密、因此當您嘗試儲存站台特定KMS的組態時、就會發生驗證錯誤。發生此錯誤的原因是站台特定的KMS沒有正確的金鑰來解密該站台的節點。
 +
-image::../media/kms_wrong_key.png[公里錯誤金鑰]
+image:kms_wrong_key.png["公里錯誤金鑰"]
 
 . 若要解決此問題、請將目前版本的加密金鑰從預設KMS複製到新的KMS。（技術上、您可以將原始金鑰複製到具有相同別名的新金鑰。原始金鑰會成為新金鑰的先前版本。）網站專屬的 KMS 現在擁有正確的金鑰、可將資料中心 3 的應用裝置節點解密、以便儲存在 StorageGRID 中。
 +
-image::../media/kms_copied_key.png[已複製公里金鑰]
+image:kms_copied_key.png["已複製公里金鑰"]
 
 
 

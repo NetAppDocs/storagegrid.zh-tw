@@ -205,7 +205,7 @@ CAUTION: 如果連線任一端的憑證過期、連線將會停止運作、而�
 
 您可以從連線中的任一網格移除網格同盟連線。如圖所示、您必須在兩個網格上執行必要步驟、以確認任一網格上的任何租戶都未使用連線。
 
-image::../media/grid-federation-remove-connection.png[移除網格同盟連線的步驟]
+image:grid-federation-remove-connection.png["移除網格同盟連線的步驟"]
 
 移除連線之前、請注意下列事項：
 

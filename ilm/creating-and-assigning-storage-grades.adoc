@@ -35,13 +35,13 @@ NOTE: 請勿創造超過必要的儲存等級。例如、請勿為每個儲存�
 . 選擇* ILM *>* Storage等級*。
 . 定義自訂儲存等級：
 +
-.. 針對您要新增的每個自訂儲存等級、選取 * 插入 * image:../media/icon_nms_insert.gif["插入圖示"]以新增列。
+.. 對於要新增的每個自訂儲存等級，請選擇 *Insert* image:icon_nms_insert.gif["插入圖示"] 以新增一行。
 .. 輸入描述性標籤。
 +
-image::../media/editing_storage_grades.gif[儲存等級頁面]
+image:editing_storage_grades.gif["儲存等級頁面"]
 
 .. 選取*套用變更*。
-.. 或者、如果您需要修改儲存的標籤、請選取 * 編輯 * image:../media/icon_nms_edit.gif["編輯圖示"]、然後選取 * 套用變更 * 。
+.. 如果需要修改已儲存的標籤，請選擇「編輯」 image:icon_nms_edit.gif["編輯圖示"] 並選擇「套用變更」。
 +
 
 NOTE: 您無法刪除儲存成績。
@@ -50,10 +50,10 @@ NOTE: 您無法刪除儲存成績。
 
 . 將新的儲存等級指派給儲存節點：
 +
-.. 在 LDR 列表中找到 Storage Node ，然後選擇其 *Edit* 圖標image:../media/icon_nms_edit.gif["編輯圖示"]。
+.. 在 LDR 清單中找到儲存節點，然後選擇其 *Edit* 圖示 image:icon_nms_edit.gif["編輯圖示"]。
 .. 從清單中選取適當的儲存等級。
 +
-image::../media/assigning_storage_grades_to_storage_nodes.gif[儲存等級頁面]
+image:assigning_storage_grades_to_storage_nodes.gif["儲存等級頁面"]
 
 +
 

@@ -26,7 +26,7 @@ summary: 您可以使用 S3 設定精靈、將 StorageGRID 設定為 S3 應用�
 . 使用登入 Grid Manager link:web-browser-requirements.html["支援的網頁瀏覽器"]。
 . 如果儀表板上出現 * FabricPool 和 S3 設定精靈 * 橫幅、請選取橫幅中的連結。如果橫幅不再出現、請從 Grid Manager 的標題列中選取說明圖示、然後選取 * FabricPool 和 S3 設定精靈 * 。
 +
-image::../media/help_menu.png[說明功能表]
+image:help_menu.png["說明功能表"]
 
 . 在 FabricPool and S3 安裝精靈頁面的 S3 應用程式區段中、選取 * 立即設定 * 。
 
@@ -409,7 +409,7 @@ TIP: 如果已啟用網格的 S3 物件鎖定功能、則在此步驟建立的�
 . 如果您選取 * 自動建立 root 使用者 S3 存取金鑰 * 、請執行下列其中一項或兩項操作：
 +
 ** 選取 * 下載存取金鑰 * 以下載 `.csv`包含租戶帳戶名稱、存取金鑰 ID 和秘密存取金鑰的檔案。
-** 選擇複製圖標（image:../media/icon_tenant_copy_url.png["複製圖示"]）將訪問密鑰 ID 和加密訪問密鑰複製到剪貼板。
+** 選擇複製圖示（image:icon_tenant_copy_url.png["複製圖示"]）將存取金鑰 ID 和秘密存取金鑰複製到剪貼簿。
 
 
 . 選取 * 下載組態值 * 以下載 `.txt`包含負載平衡器端點、租戶、貯體和根使用者設定的檔案。

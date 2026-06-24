@@ -25,7 +25,7 @@ summary: 物件資料由作用中的ILM原則及其ILM規則管理。ILM 規則�
 
 LMR服務中的ILM引擎可控制複寫、並確保正確的複本數量儲存在正確的位置、且時間正確。
 
-image::../media/replication_data_flow.png[顯示相關文字中所述程序的圖表]
+image:replication_data_flow.png["顯示相關文字中所述程序的圖表"]
 
 . ILM引擎會查詢ADC服務、以判斷ILM規則所指定之儲存資源池內的最佳目的地LMR服務。然後、它會傳送命令給該LMR服務、以啟動複寫。
 . 目的地LDR服務會查詢ADC服務、以找出最佳來源位置。然後將複寫要求傳送至來源LdR服務。
@@ -42,7 +42,7 @@ image::../media/replication_data_flow.png[顯示相關文字中所述程序的�
 
 ILM 引擎是 LDR 服務的元件、可控制銷毀編碼、並確保將銷毀編碼設定檔套用至物件資料。
 
-image::../media/erasure_coding_data_flow.png[銷毀編碼資料流程]
+image:erasure_coding_data_flow.png["銷毀編碼資料流程"]
 
 . ILM引擎會查詢ADC服務、以判斷哪些DDS服務最能執行銷毀編碼作業。確定後、 ILM 引擎會傳送「初始化」要求給該服務。
 . DDS服務會指示LMR銷毀物件資料的程式碼。
@@ -60,7 +60,7 @@ image::../media/erasure_coding_data_flow.png[銷毀編碼資料流程]
 
 ILM引擎是LDR服務的一項元件、而Data Mover服務則可控制物件移至雲端儲存池的動作。
 
-image::../media/cloud_storage_pool_data_flow.png[雲端儲存資源池資料流]
+image:cloud_storage_pool_data_flow.png["雲端儲存資源池資料流"]
 
 . ILM引擎會選取要複寫至雲端儲存資源池的Data Mover服務。
 . Data Mover服務會將物件資料傳送至Cloud Storage Pool。

@@ -70,4 +70,4 @@ summary: 為了確保物件中繼資料有足夠的可用空間、您可能需�
 
 右圖顯示在站台新增兩個儲存節點之後、如何重新分配現有的中繼資料。每個節點上的中繼資料量已減少、*低中繼資料儲存設備*警示不再觸發、而且中繼資料可用空間也已增加。
 
-image::../media/metadata_space_after_expansion.png[新增兩個儲存節點之後重新分配的中繼資料圖表]
+image:metadata_space_after_expansion.png["新增兩個儲存節點之後重新分配的中繼資料圖表"]

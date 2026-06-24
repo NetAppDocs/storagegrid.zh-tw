@@ -23,7 +23,7 @@ summary: 在建立ILM原則之前、您必須建立預設規則、將任何不�
 
 在此範例原則中、第一個規則僅適用於屬於 test-租 戶 -1 的物件。最後一個預設規則會套用至屬於所有其他租戶帳戶的物件。
 
-image::../media/ilm_policies_page_default_rule.png[ILM原則頁面預設規則]
+image:ilm_policies_page_default_rule.png["ILM原則頁面預設規則"]
 
 建立預設規則時、請謹記下列需求：
 

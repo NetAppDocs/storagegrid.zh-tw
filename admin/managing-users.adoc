@@ -109,7 +109,7 @@ NOTE: 本機使用者可以使用 Grid Manager 橫幅中的 * 變更密碼 * 選
 
  a| 
 .. 選取使用者名稱以顯示詳細資料。
-.. 選擇編輯圖示image:../media/icon_edit_tm.png["編輯圖示"]。
+.. 選擇編輯圖示 image:icon_edit_tm.png["編輯圖示"]。
 .. 輸入新名稱。
 .. 選取*儲存變更*。
 

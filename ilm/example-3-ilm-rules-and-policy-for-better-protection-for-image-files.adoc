@@ -66,7 +66,7 @@ EC 影像檔案 > 1 MB
 使用三個站台建立2+1銷毀編碼複本
 
 |===
-image::../media/policy_3_rule_1_ec_images_adv_filtering.png[ILM規則1例如3：將EC用於大於1 MB的映像檔]
+image:policy_3_rule_1_ec_images_adv_filtering.png["ILM規則1例如3：將EC用於大於1 MB的映像檔"]
 
 由於此規則已設定為原則中的第一個規則、因此銷毀編碼放置指示僅適用於大於 1 MB 的 .jpg 和 .png 檔案。
 
@@ -121,4 +121,4 @@ image::../media/policy_3_rule_1_ec_images_adv_filtering.png[ILM規則1例如3：
 * 預設規則會套用至所有剩餘的物件（即任何非映像檔案）。
 
 
-image::../media/policy_3_configured_policy.png[範例3的ILM原則：為映像檔提供更好的保護]
+image:policy_3_configured_policy.png["範例3的ILM原則：為映像檔提供更好的保護"]

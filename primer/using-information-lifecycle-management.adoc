@@ -81,7 +81,7 @@ StorageGRID 系統的主動式 ILM 原則可控制所有物件的放置、持續
 
 
 
-image::../media/ilm_policy_and_rules.png[ILM原則與規則]
+image:ilm_policy_and_rules.png["ILM原則與規則"]
 
 .相關資訊
 * link:../ilm/index.html["使用ILM管理物件"]

@@ -19,7 +19,7 @@ summary: 如果您的租用戶帳戶在建立時被指派了 Use grid federation
 
 工作流程圖總結了配置兩個網格上的儲存桶之間的跨網格複製所執行的步驟。圖表下方對這些步驟進行了更詳細的描述。
 
-image::../media/grid-federation-cgr-workflow.png[跨網格複寫工作流程]
+image:grid-federation-cgr-workflow.png["跨網格複寫工作流程"]
 
 
 
@@ -86,7 +86,7 @@ TIP: 根據需要、每個貯體可以使用不同的區域。
 *** * 是 * （預設）：刪除標記會新增至來源貯體、並複寫至目的地貯體。
 *** *否*：刪除標記已新增至來源儲存桶，但未複製到目標儲存桶。
 +
-image::../media/grid-federation-cross-grid-replication-client-deletes.png[顯示在兩個網格上複寫用戶端刪除的影像]
+image:grid-federation-cross-grid-replication-client-deletes.png["顯示在兩個網格上複寫用戶端刪除的影像"]
 
 +
 

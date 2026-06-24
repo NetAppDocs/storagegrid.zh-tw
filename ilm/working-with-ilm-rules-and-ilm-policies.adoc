@@ -85,7 +85,7 @@ CAUTION: 如果ILM原則設定不正確、可能導致無法恢復的資料遺�
 . 選擇* ILM *>* Rules *。
 . 選取您要檢視其詳細資料的規則名稱。範例：
 +
-image::../media/ilm_rule_details_page.png[ILM 規則詳細資料頁面]
+image:ilm_rule_details_page.png["ILM 規則詳細資料頁面"]
 
 
 
@@ -174,9 +174,9 @@ NOTE: 由於儀表板可以自訂、因此 ILM 索引標籤可能無法使用。
 
 . 監控 ILM 索引標籤上的度量。
 +
-您可以選取問號image:../media/icon_nms_question.png["問號圖示"]、查看 ILM 索引標籤上項目的說明。
+您可以選取問號 image:icon_nms_question.png["問號圖示"] 以查看 ILM 索引標籤上的項目說明。
 
 +
-image::../media/ilm_metrics_on_dashboard.png[Grid Manager 儀表板上的 ILM 計量]
+image:ilm_metrics_on_dashboard.png["Grid Manager 儀表板上的 ILM 計量"]
 
 

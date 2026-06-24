@@ -21,7 +21,7 @@ summary: 「總覽」索引標籤提供每個節點的基本資訊。也會顯�
 
 「概觀」索引標籤的「節點資訊」區段會列出有關節點的基本資訊。
 
-image::../media/nodes_page_overview_tab.png[節點頁面總覽索引標籤]
+image:nodes_page_overview_tab.png["節點頁面總覽索引標籤"]
 
 節點的總覽資訊包括下列項目：
 
@@ -31,13 +31,13 @@ image::../media/nodes_page_overview_tab.png[節點頁面總覽索引標籤]
 * * ID*：節點的唯一識別碼、也稱為UUID。
 * *連線狀態*：三種狀態之一。此時會顯示最嚴重狀態的圖示。
 +
-** * 未知 * image:../media/icon_alarm_blue_unknown.png["藍色問號圖示"]：由於未知原因，節點未連接到網格，或一個或多個服務意外關閉。例如、節點之間的網路連線已中斷、電源中斷或服務中斷。也可能會觸發*無法與node*通訊警示。其他警示也可能處於作用中狀態。這種情況需要立即注意。
+** *未知* image:icon_alarm_blue_unknown.png["藍色問號圖示"]：由於未知原因，節點未連接到網格，或一項或多項服務意外中斷。例如，節點間的網路連線中斷、斷電或某項服務中斷。此時可能還會觸發 *無法與節點通訊* 警報。此外，可能還有其他警報。這種情況需要立即處理。
 +
 
 NOTE: 在託管關機作業期間、節點可能會顯示為「未知」。在這些情況下、您可以忽略「未知」狀態。
 
-** *administratively down* image:../media/icon_alarm_gray_administratively_down.png["灰色問號圖示"]（管理性關閉 * ）：由於預期的原因，節點未連接到網格。例如、節點或節點上的服務已正常關機、節點正在重新開機、或軟體正在升級。一個或多個警示也可能處於作用中狀態。
-** *Connected * image:../media/icon_alert_green_checkmark.png["圖示警示綠色核取記號"]：節點已連接至網格。
+** *Administratively down* image:icon_alarm_gray_administratively_down.png["灰色問號圖示"]：節點因預期原因未連接至網格。例如，節點或其上的服務已正常關閉、節點正在重新開機，或軟體正在升級。也可能有一個或多個警示處於作用中狀態。
+** *已連接* image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]：節點已連接至網格。
 
 
 * *使用的儲存設備*：僅適用於儲存節點。
@@ -57,6 +57,6 @@ NOTE: 在託管關機作業期間、節點可能會顯示為「未知」。在�
 
 Overview （概述）選項卡的 Alerts link:monitoring-system-health.html#view-current-and-resolved-alerts["目前影響此節點且尚未靜音的警示"]（警報）部分列出了任何。選取警示名稱以檢視其他詳細資料和建議的動作。
 
-image::../media/nodes_page_alerts_table.png[節點頁面警示表]
+image:nodes_page_alerts_table.png["節點頁面警示表"]
 
 也包含的警示link:monitoring-system-health.html#monitor-node-connection-states["節點連線狀態"]。

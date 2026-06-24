@@ -27,7 +27,7 @@ NOTE: 根據網路連線能力、節點狀態和 Cassandra 作業、在整個網
 .步驟
 . 選擇*租戶*。
 +
-image::../media/tenant_accounts_page.png[租戶帳戶頁面]
+image:tenant_accounts_page.png["租戶帳戶頁面"]
 
 . 找出您要編輯的租戶帳戶。
 +

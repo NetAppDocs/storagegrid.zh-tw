@@ -21,7 +21,7 @@ summary: 帳戶複製是自動複寫租戶帳戶、租戶群組、租戶使用�
 
 工作流程圖顯示網格管理員和允許的租戶設定帳戶複製所需執行的步驟。這些步驟會在之後執行link:grid-federation-create-connection.html["已設定網格同盟連線"]。
 
-image::../media/grid-federation-account-clone-workflow.png[帳戶複製工作流程]
+image:grid-federation-account-clone-workflow.png["帳戶複製工作流程"]
 
 
 

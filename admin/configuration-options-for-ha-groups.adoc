@@ -15,7 +15,7 @@ summary: 下圖提供設定HA群組的不同方式範例。每個選項都有優
 
 在圖中、藍色表示HA群組中的主要介面、黃色表示HA群組中的備份介面。
 
-image::../media/high_availability_examples.png[HA範例]
+image:high_availability_examples.png["HA範例"]
 
 下表摘要說明各HA組態的優點、如圖所示。
 

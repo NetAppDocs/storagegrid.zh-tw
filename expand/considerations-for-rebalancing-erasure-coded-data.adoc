@@ -44,7 +44,7 @@ EC重新平衡程序：
 例如、假設三個 200-TB 節點各填滿 80% （ 200 和 #215 ； 0.8 = 每個節點 160 TB 、或站台 480 TB ）。如果您新增一個 400 TB 節點並執行重新平衡程序、所有節點現在將擁有大約相同數量的銷毀程式碼資料（ 480/4 = 120 TB ）。不過、較大節點使用的（ % ）將會少於較小節點使用的（ % ）。
 
 +
-image::../media/used_space_with_larger_node.png[擴充前已用空間]
+image:used_space_with_larger_node.png["擴充前已用空間"]
 
 
 
@@ -64,7 +64,7 @@ EC 重新平衡程序重新分配現有的擦除編碼數據，以確保節點�
 * ILM原則對所有大於1.0 MB的物件使用2+1銷毀編碼規則、而對較小的物件使用雙複製複寫規則。
 * 所有儲存節點都已完全滿。在主要嚴重性層級觸發 * 物件儲存空間不足 * 警示。
 +
-image::../media/used_space_before_expansion.png[擴充前已用空間]
+image:used_space_before_expansion.png["擴充前已用空間"]
 
 
 
@@ -74,7 +74,7 @@ image::../media/used_space_before_expansion.png[擴充前已用空間]
 
 若要瞭解何時不需要 EC 重新平衡、請假設您新增了三個（或更多）新的儲存節點。在這種情況下、您不需要執行 EC 重新平衡。原始儲存節點將保持完整狀態、但新物件現在將使用三個新節點來進行 2+1 銷毀編碼和 #8212 ；兩個資料片段和一個同位元區隔片段都可以儲存在不同的節點上。
 
-image::../media/used_space_after_3_node_expansion.png[3 節點擴充後的使用空間]
+image:used_space_after_3_node_expansion.png["3 節點擴充後的使用空間"]
 
 
 CAUTION: 雖然您可以在此案例中執行 EC 重新平衡程序、但移動現有的銷毀編碼資料將會暫時降低網格的效能、這可能會影響用戶端作業。
@@ -85,11 +85,11 @@ CAUTION: 雖然您可以在此案例中執行 EC 重新平衡程序、但移動�
 
 若要瞭解何時需要 EC 重新平衡、假設您只能新增兩個儲存節點、而不能新增三個。由於 2+1 配置需要至少三個儲存節點才能有可用空間、因此無法將空節點用於新的銷毀編碼資料。
 
-image::../media/used_space_after_2_node_expansion.png[2 節點擴充後的使用空間]
+image:used_space_after_2_node_expansion.png["2 節點擴充後的使用空間"]
 
 若要使用新的儲存節點、您應該執行 EC 重新平衡程序。執行此程序時、 StorageGRID 會在站台的所有儲存節點之間重新分配現有的銷毀編碼資料和同位元區段。在此範例中、當 EC 重新平衡程序完成時、所有五個節點現在只有 60% 的空間已滿、而且物件可以繼續擷取至所有儲存節點上的 2+1 銷毀編碼方案。
 
-image::../media/used_space_after_ec_rebalance.png[EC重新平衡後的已用空間]
+image:used_space_after_ec_rebalance.png["EC重新平衡後的已用空間"]
 
 
 

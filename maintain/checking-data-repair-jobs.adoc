@@ -37,7 +37,7 @@ summary: 在解除委任網格節點之前、您必須確認沒有任何資料�
 ** 如果您從未執行過資料修復工作、則輸出為 `No job found`。您不需要重新啟動任何修復工作。
 ** 如果資料修復工作先前執行或目前正在執行、則輸出會列出修復的資訊。每項維修都有唯一的維修ID。
 +
-image::../media/repair-data-status.png[維修資料狀態]
+image:repair-data-status.png["維修資料狀態"]
 
 
 

@@ -37,7 +37,7 @@ NOTE: 您必須擁有SANtricity 更新版本的韌體8.70才能SANtricity 使用
 
 索引標籤會顯示SANtricity 「系統管理程式」的首頁。
 
-image::../media/nodes_page_santricity_tab.png[節點頁SANtricity 面「鏈結」索引標籤]
+image:nodes_page_santricity_tab.png["節點頁SANtricity 面「鏈結」索引標籤"]
 
 
 NOTE: 您可以使用SANtricity 「更新系統管理程式」連結、在SANtricity 新的瀏覽器視窗中開啟「更新系統管理程式」、以便更輕鬆地檢視。

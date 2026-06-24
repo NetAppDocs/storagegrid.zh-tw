@@ -65,7 +65,7 @@ NOTE: 如果您僅變更Grid Network Subnet List（網格網路子網路清單�
 主功能表隨即出現。
 
 +
-image::../media/change_ip_tool_main_menu.png[顯示變更IP工具歡迎畫面的快照]
+image:change_ip_tool_main_menu.png["顯示變更IP工具歡迎畫面的快照"]
 
 . 在主功能表上、選取編輯Grid Network子網路的選項（選項* 4*）。
 +
@@ -93,7 +93,7 @@ TIP: 您可以使用「向上箭頭」將先前輸入的值重新叫用至目前
 
 以下輸入範例顯示網格網路子網路清單的子網路設定：
 
-image::../media/change_ip_tool_gnsl_sample_input.gif[周邊文字所述的螢幕擷取畫面]
+image:change_ip_tool_gnsl_sample_input.gif["周邊文字所述的螢幕擷取畫面"]
 
 --
 . 準備好後、輸入* q*返回主功能表畫面。您的變更會保留到清除或套用為止。
@@ -101,7 +101,7 @@ image::../media/change_ip_tool_gnsl_sample_input.gif[周邊文字所述的螢幕
 +
 ** 選擇選項*5*可在隔離的輸出中顯示編輯內容、僅顯示變更的項目。變更會以綠色（新增）或紅色（刪除）反白顯示、如下面的範例輸出所示：
 +
-image::../media/change_ip_tool_gnsl_sample_output.gif[周邊文字所述的螢幕擷取畫面]
+image:change_ip_tool_gnsl_sample_output.gif["周邊文字所述的螢幕擷取畫面"]
 
 ** 選擇選項*6*可在顯示完整組態的輸出中顯示編輯內容。變更會以綠色（新增）或紅色（刪除）強調顯示。
 +

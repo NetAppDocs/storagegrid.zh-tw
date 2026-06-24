@@ -37,7 +37,7 @@ summary: 更換儲存節點之後、您必須在Grid Manager中選取「Start Re
 . 輸入*配置密碼*。
 . 單擊*開始恢復*。
 +
-image::../media/4b_select_recovery_node.png[顯示「維護」>「恢復」頁面的快照]
+image:4b_select_recovery_node.png["螢幕截圖顯示「維護 > 恢復」頁面"]
 
 . 監控恢復網格節點表格中的恢復進度。
 +
@@ -45,7 +45,7 @@ image::../media/4b_select_recovery_node.png[顯示「維護」>「恢復」頁�
 NOTE: 在恢復程序執行期間、您可以按一下*重設*來開始新的恢復。此時會出現一個對話方塊、表示如果您重設程序、節點將保持在不確定的狀態。
 
 +
-image::../media/recovery_reset_warning.gif[顯示重設恢復警告對話方塊的快照]
+image:recovery_reset_warning.gif["顯示重設恢復警告對話方塊的快照"]
 
 +
 如果您想在重設程序後重試恢復、則必須將節點還原至預先安裝的狀態、如下所示：
@@ -57,6 +57,6 @@ image::../media/recovery_reset_warning.gif[顯示重設恢復警告對話方塊�
 
 . 當儲存節點到達「等待手動步驟」階段時、請前往link:remounting-and-reformatting-storage-volumes-manual-steps.html["重新掛載及重新格式化儲存磁碟區（手動步驟）"]。
 +
-image::../media/recovery_reset_button.gif[顯示「等待手動步驟」階段的快照]
+image:recovery_reset_button.gif["顯示「等待手動步驟」階段的快照"]
 
 

@@ -19,7 +19,7 @@ summary: 擷取或儲存作業是由用戶端與StorageGRID 該系統之間定�
 
 當用戶端將物件擷取至StorageGRID 物件系統時、儲存節點上的LMR服務會處理要求、並將中繼資料和資料儲存至磁碟。
 
-image::../media/ingest_data_flow.png[以同步放置擷取]
+image:ingest_data_flow.png["以同步放置擷取"]
 
 . 用戶端應用程式會建立物件、StorageGRID 並透過HTTP PUT要求將物件傳送至該系統。
 . 系統會根據系統的ILM原則來評估物件。

@@ -19,9 +19,9 @@ summary: 擁有用戶端網路為選用功能。使用用戶端網路可將用�
 
 在此範例中、用戶端網路用於 S3 用戶端要求和管理功能、而 Grid Network 則專用於內部物件管理作業。
 
-image::../media/grid_client_networks.png[網格用戶端網路]
+image:grid_client_networks.png["網格用戶端網路"]
 
-image::../media/grid_client_networks_ips.png[網格用戶端網路IP]
+image:grid_client_networks_ips.png["網格用戶端網路IP"]
 
 .相關資訊
 link:../maintain/changing-nodes-network-configuration.html["變更節點網路組態"]

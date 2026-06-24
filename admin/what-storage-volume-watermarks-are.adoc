@@ -13,7 +13,7 @@ summary: 利用三個儲存磁碟區浮點、確保儲存節點在極低空間�
 [role="lead"]
 利用三個儲存磁碟區浮點、確保儲存節點在極低空間執行之前、安全地轉換為唯讀狀態、並允許已轉換為唯讀狀態的儲存節點再次變成讀寫狀態。StorageGRID
 
-image::../media/storage_volume_watermarks.png[儲存Volume浮點]
+image:storage_volume_watermarks.png["儲存Volume浮點"]
 
 
 NOTE: 儲存Volume浮點僅適用於複寫和銷毀編碼物件資料所使用的空間。若要瞭解磁碟區 0 上保留給物件中繼資料的空間、請前往link:managing-object-metadata-storage.html["管理物件中繼資料儲存"]。

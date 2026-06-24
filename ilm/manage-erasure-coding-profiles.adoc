@@ -75,7 +75,7 @@ TIP: 確認沒有任何銷毀編碼的資料修復作業或取消委任程序正
 如果在任何 ILM 規則中使用抹除編碼設定檔、則無法停用該設定檔。在範例中、 2+1 Data Center 1 設定檔至少用於一個 ILM 規則。
 
 +
-image::../media/ec_profile_used_in_ilm_rule.png[ILM規則中使用的EC設定檔]
+image:ec_profile_used_in_ilm_rule.png["ILM規則中使用的EC設定檔"]
 
 . 如果在ILM規則中使用設定檔、請遵循下列步驟：
 +

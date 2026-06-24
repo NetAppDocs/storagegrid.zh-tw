@@ -57,7 +57,7 @@ NOTE: 銷毀編碼最適合大於1 MB的物件。請勿對小於 200 KB 的物�
 使用三個站台建立2+1銷毀編碼複本
 
 |===
-image::../media/policy_2_rule_1_ec_objects_adv_filtering.png[ILM規則1例如2：所有大於1 MB的物件都使用EC]
+image:policy_2_rule_1_ec_objects_adv_filtering.png["ILM規則1例如2：所有大於1 MB的物件都使用EC"]
 
 
 

@@ -16,7 +16,7 @@ summary: 您必須仔細檢閱輸入的組態資訊、以確保安裝順利完�
 .步驟
 . 查看* Summary（摘要）*頁面。
 +
-image::../media/11_gmi_installer_summary_page.gif[Grid Manager安裝程式摘要頁面]
+image:11_gmi_installer_summary_page.gif["Grid Manager安裝程式摘要頁面"]
 
 . 確認所有網格組態資訊均正確無誤。使用「摘要」頁面上的「修改」連結、即可返回並修正任何錯誤。
 . 按一下「*安裝*」。
@@ -38,7 +38,7 @@ CAUTION: 必須保護恢復套件檔案、因為其中包含可用於從StorageG
 如果安裝仍在進行中、則會顯示狀態頁面。此頁面會指出每個網格節點的安裝進度。
 
 +
-image::../media/12_gmi_installer_status_page.gif[此影像由周邊文字說明。]
+image:12_gmi_installer_status_page.gif["此影像由周邊文字說明。"]
 
 +
 當到達所有網格節點的完整階段時、會出現Grid Manager的登入頁面。

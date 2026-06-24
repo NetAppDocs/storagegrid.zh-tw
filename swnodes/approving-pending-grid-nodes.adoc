@@ -27,7 +27,7 @@ NOTE: 如果缺少網格節點、請確認已成功部署該節點、並為 Admi
 
 . 選取您要核准之擱置節點旁的選項按鈕。
 +
-image::../media/5_gmi_installer_grid_nodes_pending.gif[此影像由周邊文字說明。]
+image:5_gmi_installer_grid_nodes_pending.gif["此影像由周邊文字說明。"]
 
 . 按一下*核准*。
 . 在「一般設定」中、視需要修改下列內容的設定：
@@ -125,7 +125,7 @@ NOTE: 如果您選取DHCP作為用戶端網路組態、並在此變更值、新�
 網格節點項目會移至「核准的節點」清單。
 
 +
-image::../media/7_gmi_installer_grid_nodes_approved.gif[此影像由周邊文字說明。]
+image:7_gmi_installer_grid_nodes_approved.gif["此影像由周邊文字說明。"]
 
 . 針對您要核准的每個擱置的網格節點、重複這些步驟。
 +

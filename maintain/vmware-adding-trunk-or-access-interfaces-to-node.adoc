@@ -34,7 +34,7 @@ CAUTION: 當軟體升級、還原程序或擴充程序作用中時、請勿嘗�
 .步驟
 . 在vCenter中、將新的網路介面卡（輸入VMXNET3）新增至管理節點和閘道節點VM。選中 * Connected * （已連接 * ）和 * Connect at Power On* （開機時連接）複選框。
 +
-image::../media/vcenter.png[vCenter]
+image:vcenter.png["vCenter"]
 
 . 使用SSH登入管理節點或閘道節點。
 . 用於 `ip link show`確認偵測到新的網路介面 ens256 。

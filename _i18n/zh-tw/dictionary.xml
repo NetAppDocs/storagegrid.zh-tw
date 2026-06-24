@@ -1154,7 +1154,6 @@
   <block id="d6397084ee793908266c533df4a9bc5d" category="list-text">如果您需要變更VLAN ID或說明、請選取頁面頂端的*輸入VLAN詳細資料*。</block>
   <block id="e7d1175007b4f18833ed8a94a768fef8" category="list-text">如果您需要變更父介面、請選取頁面頂端的*選擇父介面*、或選取*上一個*。</block>
   <block id="a0049c1b6457af34e067968e24fc76c0" category="inline-image-macro">垃圾桶圖示</block>
-  <block id="b51873d0023757bdf57d56ee6bc47a55" category="list-text">如果需要刪除父接口，請選擇回收站<block ref="fed0dd1ccdb81645a489a6ee40d7a1a3" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="61906ab831a0a1f2fcee735248f9e88b" category="section-title">編輯VLAN介面</block>
   <block id="073fd975fc53c66ea6a17211fa2e466d" category="paragraph">編輯VLAN介面時、您可以進行下列類型的變更：</block>
   <block id="ce47e7c90258ab131d79e56c7bd7981f" category="list-text">變更VLAN ID或說明。</block>
@@ -1579,7 +1578,6 @@
   <block id="21dc1187d83c65752c71e602987887c4" category="list-text">輸入新名稱。</block>
   <block id="b681427bf39a7a0ea41ec9971b63c563" category="list-text">選取端點名稱以顯示詳細資料。</block>
   <block id="b297ad1ba7728a10b26cb76256d7d7ad" category="inline-image-macro">編輯圖示</block>
-  <block id="114e64031daf1405489e7866d0999b4c" category="list-text">選擇編輯圖示<block ref="b67b468b391ab50f9ec30894cf44ee94" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="810168ac6cb9f3119868b1dcace3d0d6" category="paragraph">編輯端點連接埠</block>
   <block id="b433b0f6576894da9797ad837929549c" category="list-text">選取 * 動作 * &gt; * 編輯端點連接埠 *</block>
   <block id="3ab76fb0639d3099db1b9cd4ad5d9c3e" category="list-text">輸入有效的連接埠號碼。</block>
@@ -1647,7 +1645,6 @@
   <block id="11037dad1b504dd6700f6a932db6175e" category="section-title">刪除 S3 端點網域名稱</block>
   <block id="50292ad15161bd71293d09b0fbeb3bf0" category="paragraph">如果您移除 S3 應用程式使用的名稱、虛擬代管樣式的要求將會失敗。</block>
   <block id="5f11c7889df3330ff1f653f5e5702931" category="inline-image-macro">刪除圖示</block>
-  <block id="abd2dec4c502a8fd15a15f174a7be882" category="list-text">選取網域名稱旁的刪除圖示<block ref="afc5361cae8047bced297a9bbef55bfe" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="8d66bbf4fcee2c863e7fde4a0e9d7655" category="list-text">選擇 * 是 * 以確認刪除。</block>
   <block id="e42d6ef5f3dd4c029f685d0f581da357" category="inline-link-macro">檢視IP位址</block>
   <block id="8387e4040ced232a148a0527e8834250" category="list-text"><block ref="8387e4040ced232a148a0527e8834250" category="inline-link-macro-rx"></block></block>
@@ -2674,7 +2671,6 @@
   <block id="7c3b8adeaeb20afb19503cb0336cd7fc" category="list-text">選取租戶名稱以顯示詳細資料頁面。</block>
   <block id="0e0fd6ca9507c291325fb0a901464e31" category="list-text">選擇 * 重試帳戶複製 * 。</block>
   <block id="7b0f096c14abf319bdf4836050faf2ff" category="image-alt">顯示錯誤訊息和重試帳戶複製按鈕的螢幕擷取畫面</block>
-  <block id="02cc28045b5cbbbb4e9877c634403fe1" category="paragraph">如果錯誤已解決、則租戶帳戶現在將會複製到其他網格。</block>
   <block id="480b7810c8703dfb0e857abb2157b49c" category="section-title">跨網格複寫警示和錯誤</block>
   <block id="4e0207ee106c0679a0d9a7c97eb9cc9c" category="section-title">顯示連線或租戶的最後一個錯誤</block>
   <block id="ee188993af39d185da946569e8f4d53b" category="inline-link-macro">檢視網格同盟連線</block>
@@ -3343,7 +3339,6 @@
   <block id="81f1e6e461c3a43ae3478c99ea40bdb7" category="list-text">在「*連結來源*」下選取站台、然後在「*連結目的地*」下輸入介於0和100之間的成本值。</block>
   <block id="ff6000a7c0db4da91bc9e91059b33299" category="paragraph">如果來源與目的地相同、則無法變更連結成本。</block>
   <block id="8704b7af5a2b93d3941c628849f397f7" category="inline-image-macro">復原圖示</block>
-  <block id="af83c188917832d2c4c9c134609a01f7" category="paragraph">若要取消變更、請選取 <block ref="4800630432b18a4547d73ebabd4c93f8" category="inline-image-macro-rx" type="image"></block>* 回復 * 。</block>
   <block id="576820c1bb3ed6e65db506a22226bd92" category="summary">平台服務包括CloudMirror複寫、事件通知及搜尋整合服務。</block>
   <block id="9626e0404084f4f05deffe252b44205c" category="paragraph">如果您為S3租戶帳戶啟用平台服務、則必須設定網格、讓租戶能夠存取使用這些服務所需的外部資源。</block>
   <block id="0012dc948f477da090adb8b845d6dbe3" category="section-title">CloudMirror複寫</block>
@@ -4194,7 +4189,6 @@
   <block id="1e2e56474ee2fef2ea5b66d201fe9408" category="paragraph">如果 StorageGRID 嘗試連線至現有端點時發生錯誤、租戶管理程式的儀表板上會顯示訊息。</block>
   <block id="e139def6fdbaad83c211511954ae90e2" category="image-alt">儀表板上的端點錯誤訊息</block>
   <block id="ed73f4016ee6866ed2e4236ca92efe88" category="inline-image-macro">紅色X圖示</block>
-  <block id="0ecac2e4277e2b405e156d5eccbf2e78" category="paragraph">租戶使用者可前往「端點」頁面、檢閱每個端點的最新錯誤訊息、並判斷錯誤發生時間多久前。「*最後一個錯誤*」欄會顯示每個端點的最新錯誤訊息、並指出錯誤發生時間已多久。包含圖示的錯誤<block ref="bb86e4e1464ab87ed499ed81e05f4c80" category="inline-image-macro-rx" type="image"></block>發生在過去 7 天內。</block>
   <block id="825321de5cd0ebfeb1df124fc5af52f5" category="image-alt">顯示「上次錯誤」欄的「端點」頁面的快照</block>
   <block id="ec11c8669c15b407030cc8c5aaf56774" category="admonition">*最後一個錯誤*欄中的某些錯誤訊息可能會在括弧中包含一個記錄ID。網格管理員或技術支援人員可以使用此ID、在bytcast記錄中找到更多有關錯誤的詳細資訊。</block>
   <block id="6ce84b15338c14177ea2eb95564323d6" category="section-title">與Proxy伺服器相關的問題</block>
@@ -4418,7 +4412,6 @@
   <block id="a1a3ccee59bfceee46b139012e8949bd" category="list-text">如果您選取 * 自動建立 root 使用者 S3 存取金鑰 * 、請執行下列其中一項或兩項操作：</block>
   <block id="b66d89ddfe7d310039feb0b8ff602644" category="list-text">選取 * 下載存取金鑰 * 以下載<block ref="01b1b6ebeb388697cca6712b58439069" prefix=" " category="inline-code"></block>包含租戶帳戶名稱、存取金鑰 ID 和秘密存取金鑰的檔案。</block>
   <block id="a06830f6529f6906a9bc99fc0e3b04cb" category="inline-image-macro">複製圖示</block>
-  <block id="914d6a4e39435960cf560b2e3209cb3d" category="list-text">選擇複製圖標（<block ref="a48b3fad987f5cd0c8509deacc8d3759" category="inline-image-macro-rx" type="image"></block>）將訪問密鑰 ID 和加密訪問密鑰複製到剪貼板。</block>
   <block id="8c81e8b5d47c4628d505b7e5d9e1137e" category="list-text">選取 * 下載組態值 * 以下載<block ref="be4117b0c842c4be8f9960294bdc2cd1" prefix=" " category="inline-code"></block>包含負載平衡器端點、租戶、貯體和根使用者設定的檔案。</block>
   <block id="499f5cc1d5cc417f8afbf3f25d2d857a" category="list-text">將此資訊儲存至安全的位置。</block>
   <block id="773e9f5dc877ec765269ae3eb02314f9" category="admonition">在複製兩個存取金鑰之前、請勿關閉此頁面。關閉此頁面後、金鑰將無法使用。請務必將此資訊儲存在安全的位置、因為此資訊可用於從 StorageGRID 系統取得資料。</block>
@@ -6899,7 +6892,6 @@
   <block id="4d208c04f42d59f63645d41223a94233" category="list-text">選取 * 繼續 * 以前往下載資料步驟。</block>
   <block id="b78845f37898ea1047d418c3ab8090aa" category="section-title">步驟 4 / 9 ：下載 ONTAP 設定</block>
   <block id="e5d90762f9a6e8c5fc890dca52c8c8b8" category="paragraph">在此步驟中、您可以下載檔案、以便在 ONTAP 系統管理員中輸入值。</block>
-  <block id="1434ee5c623f11a2970f0678fb1860ea" category="list-text">（可選）選擇複製圖標（<block ref="a48b3fad987f5cd0c8509deacc8d3759" category="inline-image-macro-rx" type="image"></block>）將訪問密鑰 ID 和加密訪問密鑰複製到剪貼板。</block>
   <block id="9c2e33201a07e0ea3689cda20b30adbe" category="paragraph">這些值會包含在下載檔案中、但您可能想要個別儲存。</block>
   <block id="c22933919782a4589d0f7463b3ffa17f" category="list-text">選取 * 下載 ONTAP 設定 * 下載包含您目前所輸入值的文字檔。</block>
   <block id="f0cca6149ebe3d31b21ad601ba301301" category="paragraph">此<block ref="63aed5ae8d7d9245cceb7e263b4b00b5" prefix=" " category="inline-code"></block>檔案包含將 StorageGRID 設定為 FabricPool 雲端層的物件儲存系統所需的資訊、包括：</block>
@@ -7304,7 +7296,6 @@
   <block id="ac4fe0e251007f8357b77913ac0d5970" category="list-text">輸入建立S3儲存區時要使用的區域名稱。</block>
   <block id="181804874769384ea301854e21f3f63e" category="paragraph">當您建立對應的S3儲存區時、必須使用此確切的區域名稱作為位置限制要求元素。</block>
   <block id="5eb9d3393a78162884478d38a6c07811" category="inline-image-macro">移除圖示</block>
-  <block id="9a89375cdc7180b560bfebbd68f1f598" category="list-text">要刪除未使用的區域，請選擇刪除圖標<block ref="8463f44835bd6ae55986fe2887ec573c" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="5329878a0b16d20738bbccbfbfada5dc" category="paragraph">如果您嘗試移除目前用於任何原則（作用中或非作用中）的區域、就會出現錯誤訊息。</block>
   <block id="7e32dba734f9dc01735c1104556a8c23" category="list-text">完成變更後、請選取*「Save（儲存）」*。</block>
   <block id="c6c899f96c69018de9ed57e9d0b622cd" category="inline-link-macro">在ILM規則中使用進階篩選器</block>
@@ -7522,14 +7513,11 @@
   <block id="377e36f9f6166b27066e38332ca5f447" category="list-text">選擇* ILM *&gt;* Storage等級*。</block>
   <block id="5e29712b330c53e5197741af40c687be" category="list-text">定義自訂儲存等級：</block>
   <block id="408ea845582fc67ccb1d6fd994905d7e" category="inline-image-macro">插入圖示</block>
-  <block id="57ec6a3b519ea534a1f6875c3ea766d1" category="list-text">針對您要新增的每個自訂儲存等級、選取 * 插入 * <block ref="dfb08760b64381661b6ad5fb07ea4ec1" category="inline-image-macro-rx" type="image"></block>以新增列。</block>
   <block id="55d5ccdf1b43bb95dea2bbae395c7100" category="list-text">輸入描述性標籤。</block>
   <block id="8db46e44720002b9905d8722431c89b8" category="image-alt">儲存等級頁面</block>
   <block id="44040e214e919d86d6a1f3f26db3d22c" category="inline-image-macro">編輯圖示</block>
-  <block id="187bbe42ead607df05be5c37da574750" category="list-text">或者、如果您需要修改儲存的標籤、請選取 * 編輯 * <block ref="e35d994e85aefde09ee638754a178187" category="inline-image-macro-rx" type="image"></block>、然後選取 * 套用變更 * 。</block>
   <block id="5264e8aa60ddc8946b0e142d402dbbab" category="admonition">您無法刪除儲存成績。</block>
   <block id="98c138e07d1130e2c1e45731598e1c4c" category="list-text">將新的儲存等級指派給儲存節點：</block>
-  <block id="738d8ec99a703e654896c849436870bf" category="list-text">在 LDR 列表中找到 Storage Node ，然後選擇其 *Edit* 圖標<block ref="e35d994e85aefde09ee638754a178187" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="026fc6463c3628f52f4602f781c8ee21" category="list-text">從清單中選取適當的儲存等級。</block>
   <block id="6aaa5b114aa47409d1bac014b3b960e8" category="admonition">只能將儲存等級指派給指定的儲存節點一次。從故障中恢復的儲存節點會維持先前指派的儲存等級。請勿在 ILM 原則啟動後變更此指派。如果指派變更、資料會根據新的儲存等級儲存。</block>
   <block id="646347f109a236639a7a152774e55845" category="summary">Cloud Storage Pool 會指定單一外部 Amazon S3 儲存區或其他 S3 相容供應商、或 Azure Blob 儲存容器。</block>
@@ -7731,7 +7719,6 @@
   <block id="9f802f851597412c97c930b9a2ec84e9" category="list-text">若要判斷哪個儲存池或銷毀編碼設定檔有效、請選取相符規則的名稱、以移至規則詳細資料頁面。</block>
   <block id="ae9f7c48fe0d7464869748206de31601" category="admonition">檢閱現有複寫和刪除編碼物件位置的任何變更。變更現有物件的位置、可能會在評估和實作新放置位置時、導致暫時性資源問題。</block>
   <block id="fd69c5cf902969e6fb71d043085ddee6" category="paragraph-title">結果</block>
-  <block id="aec6510e2e31b748538e344e7a6aedd3" category="paragraph">對原則規則所做的任何編輯、都會反映在 Simulation 結果中、並顯示新的比對和先前的比對。「模擬原則」視窗會保留您測試的物件、直到您為 Simulation 結果清單中的每個物件選取 * 全部清除 * 或移除圖示為止<block ref="8463f44835bd6ae55986fe2887ec573c" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="928bf396427723d55492f28189b1919b" category="inline-link-macro">ILM 原則模擬範例</block>
   <block id="7768ab081aa8b28530d0a45e8ef0bc9a" category="paragraph"><block ref="7768ab081aa8b28530d0a45e8ef0bc9a" category="inline-link-macro-rx"></block></block>
   <block id="41cc703003af3bd75d9609dd9df21ffc" category="section-title">啟動原則</block>
@@ -7791,7 +7778,6 @@
   <block id="cb302c011560fea24075f407934408f5" category="paragraph">儲存等級（ _ 包括所有儲存等級 _ ）包括所選站台上的所有儲存節點。如果您為網格中的儲存節點建立額外的儲存等級、則會在下拉式清單中列出這些等級。</block>
   <block id="c02a8ad5e86bf466b24881c16667b37c" category="list-text">[[enters]] 如果您想要在多站台抹除編碼設定檔中使用儲存池、請選取 * 新增更多節點 * 、將每個站台的項目新增至儲存池。</block>
   <block id="56a324614d93061daef16499921b6786" category="admonition">如果您為網站新增多個具有不同儲存等級的項目、則會發出警告。</block>
-  <block id="de45b2e5820fa4d95fcd7ea5255adc84" category="paragraph">要刪除某個條目，請選擇刪除圖標<block ref="afc5361cae8047bced297a9bbef55bfe" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="32a5ea5bc6033357dcb9f4a659d4fa6d" category="list-text">當您對所選項目感到滿意時、請選取*「Save（儲存）」*。</block>
   <block id="9757e1fa8d444a86c4f9863375a8fbe0" category="paragraph">新的儲存資源池即會新增至清單中。</block>
   <block id="4a556fff4d488e324bb3ec33b1e9f5bf" category="summary">建立 ILM 規則時、您可以指定三個選項之一來保護擷取時的物件：雙重認可、嚴格或平衡。</block>
@@ -8876,10 +8862,8 @@
   <block id="aee7fb80efd276c9de445abeb520e826" category="paragraph">此範例顯示在「建立 ILM 規則」精靈的「定義放置位置」頁面上的兩個放置指示。</block>
   <block id="d9368a972084db7b44a972b00ca8a3c3" category="image-alt">Grid Manager的ILM放置畫面</block>
   <block id="3089b342b82dd5bc26bf4e673bace971" category="inline-image-macro">圖示編號 1</block>
-  <block id="1698fe696117790d6c5b72dca64d1815" category="paragraph">第一年的第一次放置指示<block ref="9151646bed5bc7e7a290991ff4f20280" category="inline-image-macro-rx" type="image"></block>有兩行：</block>
   <block id="beb31697e368508fd620f97070642227" category="list-text">第一行會在兩個資料中心站台建立兩個複寫的物件複本。</block>
   <block id="d1bf65600fdbe451382a254beb381758" category="list-text">第二行使用所有資料中心站台建立 6+3 銷毀編碼複本。</block>
-  <block id="40af1afd5a9bbacfc577f6b347167e56" category="paragraph">第二個放置指示<block ref="4ea7b09a8f855f38032d5e4a101ea13e" category="inline-image-macro-rx" type="image"></block>會在一年後建立兩份複本、並永遠保留這些複本。</block>
   <block id="dd81f53b2bb98f842f98fd54864ddf23" category="paragraph">當您定義規則的放置指示集時、必須確保至少有一個放置指示從第0天開始、且您定義的時間週期之間沒有任何落差、 最後的放置指示會持續執行、直到您不再需要任何物件複本為止。</block>
   <block id="163b0d10bb3728c27754dc96c0eb82b3" category="paragraph">當規則中的每個時間段到期時、將會套用下一個時間段的內容放置指示。系統會建立新的物件複本、並刪除任何不需要的複本。</block>
   <block id="f6cca3fa5ebc2dbf760801de70fa74fe" category="paragraph">擷取行為可控制物件複本是否立即根據規則中的指示放置、或是是否製作了過渡複本、並於稍後套用放置指示。下列擷取行為適用於ILM規則：</block>
@@ -9009,7 +8993,6 @@
   <block id="9ac141bdad0688580ea5e91338246583" category="admonition">由於儀表板可以自訂、因此 ILM 索引標籤可能無法使用。</block>
   <block id="8c4d3da5aad21a82b9be028f8d161f53" category="list-text">監控 ILM 索引標籤上的度量。</block>
   <block id="2123058e0139303a95eadb60d715b5dd" category="inline-image-macro">問號圖示</block>
-  <block id="0efd84660db1af6997a651ef83d7c8fb" category="paragraph">您可以選取問號<block ref="a92f00b6b3c97c9322a6a7f66a54b5d1" category="inline-image-macro-rx" type="image"></block>、查看 ILM 索引標籤上項目的說明。</block>
   <block id="e05fbcea8fcf2fbf16bfb2218ead8cc9" category="image-alt">Grid Manager 儀表板上的 ILM 計量</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律聲明</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律聲明提供版權聲明、商標、專利等存取權限。</block>
@@ -9051,9 +9034,7 @@
   <block id="4b299eec137174801ad902c04da0d602" category="paragraph">如果任何網格節點中斷連線、則無法取消委任已連線的網格節點。</block>
   <block id="1238491eb57e010ebb455654a170dbbc" category="paragraph">「*健全狀況*」欄包含下列其中一個已中斷連線的網格節點圖示：</block>
   <block id="fe2f8597160c7159b9a8aafc980194ab" category="inline-image-macro">灰色問號圖示</block>
-  <block id="a1a97befb574703554fb63ee825cec06" category="list-text"><block ref="25380ee7ab8b4c8df1434662b57f5ead" category="inline-image-macro-rx" type="image"></block>（灰色）：管理性關閉</block>
   <block id="50b455cd9c1ffb05ec290c8cd9006c0d" category="inline-image-macro">藍色問號圖示</block>
-  <block id="634027b404ee1aa4b4c108ea4a344104" category="list-text"><block ref="4bc258a3103ce1ac478adb3044bc2daa" category="inline-image-macro-rx" type="image"></block>（藍色）：未知</block>
   <block id="2b0e7e9601cce5a3d0ad107be3ad03f2" category="inline-link-macro">取消委任所有中斷連線的節點</block>
   <block id="df485eafd9d54e45256b53209636ff53" category="paragraph">您必須將所有中斷連線的節點重新上線、或在移除已連線<block ref="69993a152b8e4169e0acd647ec3cec47" category="inline-link-macro-rx"></block>的節點之前。</block>
   <block id="b448168cb7308705821c2ac9e0e8a210" category="paragraph">* 注意 * ：如果您的網格包含多個中斷連線的節點、軟體會要求您同時將它們全部取消委任、這會增加產生非預期結果的可能性。</block>
@@ -9354,7 +9335,6 @@
   <block id="b3671b952dd443051bddb619152208c9" category="doc">恢復儲存磁碟區後、請檢查儲存狀態</block>
   <block id="3fc78ca2354b46c843d5a9ceb3cf5036" category="summary">您必須驗證系統是否已準備好容納此修復程式。</block>
   <block id="d57b2c17bd336a1b3cd2dcbe4222d3d0" category="list-text">如有可能、請確定系統正常運作、且所有網格節點均已連接至網格。</block>
-  <block id="adceb64f04ee31bdad1c56739ae0294d" category="paragraph">連接的節點在「節點」頁面上有綠色核取記號<block ref="e6bb8575fc62b4796b3c65b885c9e610" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="3ec72a389a515e5ce115ae84c4b22e25" category="list-text">如有可能、請檢查並解決任何目前的警示。</block>
   <block id="d33fb26b04a24e1e53177fbd388bd4f5" category="list-text">確保沒有其他維護程序在進行中、例如升級、恢復、擴充或取消委任程序。</block>
   <block id="80229a55f59b1edef7a0b8094d3f83f3" category="paragraph">在套用修補程式之前、您應該先等待任何作用中的維護程序完成。</block>
@@ -9374,7 +9354,6 @@
   <block id="b966ddb6da3e5efabb23a25214a385ec" category="list-text">選取您要編輯的伺服器名稱 IP 位址、然後進行必要的變更。</block>
   <block id="a2f38ece7b7d2553d76c03a46402a2f7" category="section-title">刪除 DNS 伺服器</block>
   <block id="b173270fa7c678bf536535fca0d50479" category="paragraph">請依照下列步驟刪除 DNS 伺服器的 IP 位址。</block>
-  <block id="b54434b0248f0644b8e00d5ba445ffd9" category="list-text">選取 IP 位址旁的刪除圖示<block ref="afc5361cae8047bced297a9bbef55bfe" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="471679b680f7049038bd7eb78dda9184" category="summary">您可以使用變更IP工具來設定網格節點的IP位址、以執行網路組態。</block>
   <block id="425421e0273ada667d20f2767825bf58" category="doc">IP 位址準則</block>
   <block id="76c9a9e75b5f49d15966087da61faa3b" category="paragraph">您必須使用變更IP工具、對網格部署期間最初設定的網路組態進行大部分變更。使用標準Linux網路命令和檔案進行手動變更、可能不會傳播到所有StorageGRID 的支援服務、也不會在升級、重新開機或節點還原程序期間持續進行。</block>
@@ -9488,7 +9467,6 @@
   <block id="088e1c20f25fe138e062c0e4e11b4951" category="inline-image-macro">圖示警示綠色核取記號</block>
   <block id="2a17cfd91939ccdd200e29193423eaed" category="inline-image-macro">圖示警示灰階管理性關閉</block>
   <block id="34995ba873da348076d20c026ece45c2" category="inline-image-macro">圖示警示藍色不明</block>
-  <block id="941f52e06f9ee1effac64a666367bc70" category="admonition">如果站點混合了已連接的（）和已斷開的節點（<block ref="f3266c02d99c67a6049b4120307bbe26" category="inline-image-macro-rx" type="image"></block>或<block ref="a92fabbc4ee2a5d52499f401dd4d194f" category="inline-image-macro-rx" type="image"></block>），則<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>必須使所有脫機節點重新聯機。</block>
   <block id="932ffa578abb5ede01f1c351fdfb06f6" category="list-text">連線站台取消委任可讓您從StorageGRID 作業系統中移除作業站台。例如、您可以執行連線站台取消委任、以移除功能正常但不再需要的站台。</block>
   <block id="8058fa9455be3be7d81580540e566fee" category="list-text">當使用者移除連線的站台時、它會使用ILM來管理站台的物件資料。StorageGRID在開始連線站台取消委任之前、您必須先從所有ILM規則中移除站台、然後啟動新的ILM原則。ILM程序可同時移轉物件資料和移除站台的內部程序、但最佳做法是在開始實際的取消委任程序之前、先讓ILM步驟完成。</block>
   <block id="b07329a78ea8d33334aeba14e3b2ce79" category="list-text">中斷連線的站台取消委任可讓您從StorageGRID 故障站台系統中移除故障站台。例如、您可以執行中斷連線的站台取消委任、以移除因火災或水災而毀損的站台。</block>
@@ -9498,8 +9476,6 @@
   <block id="9f1bee4dde62315dfd5287285ef187fb" category="paragraph">在移除已連線或已中斷連線的站台之前、您必須瞭解下列需求：</block>
   <block id="42e2a91b49d07bb3a18ee2e229c3ebcb" category="list-text">您無法取消委任包含主要管理節點的網站。</block>
   <block id="b683d87e99d344909881734bb4605084" category="list-text">如果任何節點都有屬於高可用度（ HA ）群組的介面、則無法取消委任站台。您必須編輯HA群組才能移除節點的介面、或移除整個HA群組。</block>
-  <block id="e2f85207b067122595d69e30a9574461" category="list-text">如果站點包含連接的（）和斷開的<block ref="a92fabbc4ee2a5d52499f401dd4d194f" category="inline-image-macro-rx" type="image"></block>（或<block ref="f3266c02d99c67a6049b4120307bbe26" category="inline-image-macro-rx" type="image"></block>）節點的混合，則不能取消委任<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>。</block>
-  <block id="c084c5b9380f9c1147014010108c0909" category="list-text">如果任何其他站台的任何節點中斷連線（或<block ref="f3266c02d99c67a6049b4120307bbe26" category="inline-image-macro-rx" type="image"></block>）、您就無法取消委任站台<block ref="a92fabbc4ee2a5d52499f401dd4d194f" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="474acf8fd95cf67a989f834d3d082f5b" category="list-text">如果正在進行 EC 節點修復作業、則無法啟動站台取消委任程序。請參閱<block ref="fa33e47345e430f2ea3bd7055f5373cc" category="inline-link-macro-rx"></block>以追蹤銷毀編碼資料的修復。</block>
   <block id="b9c9d93335548a13bfef010e7ea13dec" category="list-text">當站台取消委任程序正在執行時：</block>
   <block id="6f6c820693766d41c8a52b7685a4a799" category="list-text">您無法建立 ILM 規則來參照要停用的網站。您也無法編輯現有的 ILM 規則來參照網站。</block>
@@ -9525,7 +9501,6 @@
   <block id="fb331157474dfc06f67b6afd17d2c120" category="admonition">切勿建立單一複本ILM規則來因應網站移除作業。ILM規則只會在任何時間段建立一個複寫複本、使資料有永久遺失的風險。如果只有一個物件複寫複本存在、則當儲存節點故障或發生重大錯誤時、該物件就會遺失。在升級等維護程序期間、您也會暫時失去物件的存取權。</block>
   <block id="ebfb66bfa6a21096aef72185a39da40b" category="section-title">連線站台取消委任的其他需求</block>
   <block id="8528c6339d2ba5edaf68066aa0964e1f" category="paragraph">在移除連線站台之前StorageGRID 、您必須先確認下列事項：</block>
-  <block id="d9a64313d510baecdf04d5044e7ac719" category="list-text">StorageGRID 系統中的所有節點都必須具有 * 已連線 * （）的連線狀態<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>、但節點可以有作用中的警示。</block>
   <block id="d59ec54a433f01aeb7cf0c32b576b47f" category="admonition">如果一個或多個節點中斷連線、您可以完成取消委任網站精靈的步驟1-4。不過、除非所有節點都已連線、否則您無法完成精靈的步驟 5 、以啟動取消委任程序。</block>
   <block id="067bd536e6faef42b628b900da39a163" category="list-text">如果您打算移除的站台包含用於負載平衡的閘道節點或管理節點、您可能需要<block ref="52237c56bb284a0429fb8b38b6de8e84" category="inline-link-macro-rx"></block>在另一個站台新增對等的新節點。在開始站台取消委任程序之前、請確定用戶端可以連線至替換節點。</block>
   <block id="6ce84bfda9c10ba3f29458295639807f" category="list-text">如果您要移除的站台包含高可用度（HA）群組中的任何閘道節點或管理節點、您可以完成「取消委任站台」精靈的步驟1-4。不過、您無法完成精靈的步驟 5 、這會啟動取消委任程序、直到您從所有 HA 群組中移除這些節點為止。如果現有用戶端連線至包含站台節點的HA群組、您必須確保StorageGRID 在站台移除後、它們仍可繼續連線至該站台。</block>
@@ -9540,9 +9515,6 @@
   <block id="51d9093903c48f8e2b64b12ce8b2ed68" category="inline-link-macro">技術支援如何恢復網站</block>
   <block id="1e67f8c5173e11ac4b080a06766d3be7" category="admonition">如果您認為可以從站台恢復或從站台恢復任何物件資料、則不應嘗試中斷站台的停用。請參閱。 <block ref="ae69a49f8134b8abb47c1037e68b19d1" category="inline-link-macro-rx"></block></block>
   <block id="a6f3e308ba04701367f4bcfb193b3478" category="list-text">站台上的所有節點必須具有下列其中一種連線狀態：</block>
-  <block id="2694d180b6fb9e7ba17d739948212af3" category="list-text">*Unkunked*<block ref="a92fabbc4ee2a5d52499f401dd4d194f" category="inline-image-macro-rx" type="image"></block> () ：由於未知原因，節點斷開連接或節點上的服務意外關閉。例如、節點上的服務可能會停止、或是節點因為停電或非預期的停電而失去網路連線。</block>
-  <block id="d3a87006a074e4ccfbdabfe295b0c93a" category="list-text">*administratively down* （<block ref="f3266c02d99c67a6049b4120307bbe26" category="inline-image-macro-rx" type="image"></block>）：由於預期原因、節點未連線至網格。例如、節點上的節點或服務已正常關機。</block>
-  <block id="b404511316f5a9ac275a1d8d10fc4a18" category="list-text">所有其他站台的所有節點都必須具有 * 已連線 * （）的連線狀態<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>；不過、這些其他節點可以有作用中的警示。</block>
   <block id="ab0370a93d56720de6f8911f3b2fafa1" category="list-text">您必須瞭StorageGRID 解、您將不再能夠使用效益分析來檢視或擷取任何儲存在站台上的物件資料。執行此程序時、不會嘗試保留中斷連線站台的任何資料。StorageGRID</block>
   <block id="187b743160941953d341e56f657006b3" category="admonition">如果您的ILM規則和原則是設計用來防止單一站台遺失、則物件的複本仍會存在於其餘站台上。</block>
   <block id="e2c4883a00a08139a155fbed1820ea87" category="list-text">您必須瞭解、如果網站包含唯一的物件複本、則物件會遺失且無法擷取。</block>
@@ -9599,24 +9571,19 @@
   <block id="8b209203ad6428b65db1c66721940108" category="admonition">如果一個或多個磁碟區離線（未掛載）、或是它們在線上（掛載）但處於錯誤狀態、則無法啟動解除委任。</block>
   <block id="39d3c3ed29efbbc4115802d7060c0b1a" category="admonition">如果一個或多個磁碟區在取消委任期間離線、則在這些磁碟區重新上線後、取消委任程序就會完成。</block>
   <block id="46d0c9a71c81072d2359a8eed19f5a79" category="inline-image-macro">綠色核取記號圖示</block>
-  <block id="6757129d44e10fe1104a752b4ec678a9" category="list-text">所有網格節點都有正常（綠色）健全狀況<block ref="681e7649e428ee9fba3ad5e703d73417" category="inline-image-macro-rx" type="image"></block>。如果您在「* Health *」（*健全狀況*）欄中看到下列其中一個圖示、您必須嘗試解決此問題：</block>
   <block id="817434295a673aed431435658b65d9a7" category="cell">圖示</block>
   <block id="cb5feb1b7314637725a2e73bdc9f7295" category="cell">色彩</block>
   <block id="007cc9547ae8884ad597cd92ba505422" category="cell">嚴重性</block>
   <block id="b7bba4fa916f088a036ecdacf9b4d5b3" category="inline-image-macro">黃色方塊圖示</block>
-  <block id="01a199327406045478fb755ae8f94654" category="paragraph"><block ref="01a199327406045478fb755ae8f94654" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51e6cd92b6c45f9affdc158ecca2b8b8" category="paragraph">黃色</block>
   <block id="24efa7ee4511563b16144f39706d594f" category="paragraph">注意</block>
   <block id="7d96e915eeef786be7040a0a16d27113" category="inline-image-macro">淺橘鑽石圖示</block>
-  <block id="acb2a37cdfd9a75002763aa32a7acac3" category="paragraph"><block ref="acb2a37cdfd9a75002763aa32a7acac3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="84daea4a7d6e3a1a9f47d47fc355d825" category="paragraph">淡橘色</block>
   <block id="6fed0c378a4b4e8c1e7dc5c16dabb388" category="paragraph">次要</block>
   <block id="687ef463458c67c9b2ee286c54683e62" category="inline-image-macro">暗橘鑽石圖示</block>
-  <block id="80261db048d16bcb9b65fde6bdf440bb" category="paragraph"><block ref="80261db048d16bcb9b65fde6bdf440bb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9b3d259d5099619cb2fd2deab674e970" category="paragraph">暗橘色</block>
   <block id="3b329734e45b57e60f3df64c2cf412a9" category="paragraph">主要</block>
   <block id="bdc6f5f1e9fa25c0c1aedf374b06f375" category="inline-image-macro">紅色x圖示</block>
-  <block id="073719a3a8576cda99e97d487e181916" category="paragraph"><block ref="073719a3a8576cda99e97d487e181916" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ee38e4d5dd68c4e440825018d549cb47" category="paragraph">紅色</block>
   <block id="278d01e5af56273bae1bb99a98b370cd" category="paragraph">關鍵</block>
   <block id="9ccc316e884d13ff2839114bf6cd2822" category="list-text">如果您先前已停用中斷連線的儲存節點、則資料修復工作都已成功完成。請參閱。 <block ref="fa33e47345e430f2ea3bd7055f5373cc" category="inline-link-macro-rx"></block></block>
@@ -9646,7 +9613,6 @@
   <block id="fb7710f2ee02c4a75037ba128be3b09b" category="list-text">您要取消委任的中斷節點的*可能取消委任*欄會包含綠色核取符號。</block>
   <block id="fcf598d7297f88c57ebeeb455aaa5484" category="inline-image-macro">圖示未知</block>
   <block id="ccf2dfdf226fb19304d24895fc295f33" category="inline-image-macro">圖示管理性關閉</block>
-  <block id="d907000e133c4f625d5c9b34f47aac73" category="paragraph">您可以在 *Health* 欄中尋找藍色的未知圖示或灰色的管理性關閉圖示<block ref="24339aee254f35c1d7d2c801699ed7ce" category="inline-image-macro-rx" type="image"></block>、來識別中斷連線的節點<block ref="73d7ab351738b21b6c2a23de08f5f0e8" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="673632ef4a45ed8745fc309c00ae35c9" category="paragraph">在解除委任任何中斷連線的節點之前、請注意下列事項：</block>
   <block id="eda562e6b7a0d8a2598bb2511ed40106" category="list-text">此程序主要用於移除單一中斷連線的節點。如果您的網格包含多個中斷連線的節點、則軟體會要求您同時取消委任所有節點、進而增加意外結果的可能性。</block>
   <block id="6116de15804a930f16b15e6ae0d752ab" category="admonition">如果您一次取消委任多個中斷連線的儲存節點、可能會導致資料遺失。請參閱。 <block ref="7600223425cf3eff2df70b2f924fdcc2" category="inline-link-macro-rx"></block></block>
@@ -10423,7 +10389,6 @@
   <block id="bb4f5ff2c9778cbac6f631086e9bed44" category="list-text">在 * 顯示名稱 * 欄位中、為清單中的每個項目輸入建議的顯示名稱。</block>
   <block id="efc184da01d5acac496ed55ac46f41b6" category="paragraph">請參閱<block ref="8dbf4ac093cba51b207fcc5bd41e4e4e" category="inline-link-macro-rx"></block>以瞭解命名要求。</block>
   <block id="e5effd73f33363e6db297ed16e82600f" category="inline-image-macro">X 圖示</block>
-  <block id="7caa4349255ab4ff07252c36c6d84ef7" category="list-text">若要移除任何不想重新命名的項目、請在 * 從清單中移除 * 欄中選取<block ref="18116d08cc8314a00ecc5bb14ba684cd" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="16cacdd9574c82911e4e2968b867f253" category="paragraph">如果您不建議項目的新名稱、則必須將其從表格中移除。</block>
   <block id="50755efad4ff1cf826989bda01152972" category="list-text">當您為表格中的所有項目建議新名稱時、請選取 * 重新命名 * 。</block>
   <block id="77d71ebe942d0b4a237fa902d244f20d" category="paragraph">隨即顯示成功訊息。全新的顯示名稱現在會在整個 Grid Manager 中使用。</block>
@@ -10433,14 +10398,11 @@
   <block id="c304e8d9a96334359c13431fa249ad94" category="paragraph">* 重新命名預覽 * 包含 * 建議新名稱 * 步驟所顯示的所有項目。您可以使用預覽來查看取代共用字串後顯示名稱的外觀。</block>
   <block id="1b0b127a030039688489664c847eb241" category="list-text">在 * 現有字串 * 欄位中、輸入您要取代的共用字串。例如，如果要替換的字符串是<block ref="6988a443f3db7bb9d4b0d18fa0ac8b98" prefix=" " category="inline-code"></block>，請輸入 *Data-Center-1* 。</block>
   <block id="bc13c9ef9f7b0d7f555d7135d8b10022" category="paragraph">輸入時、您的文字會在左側名稱中的任何位置反白顯示。</block>
-  <block id="b3cddc378383e528bc26a0e2cac8cbf8" category="list-text">選取<block ref="18116d08cc8314a00ecc5bb14ba684cd" category="inline-image-macro-rx" type="image"></block>以移除您不想使用此工具重新命名的任何項目。</block>
-  <block id="5978a6afb915642cf3c713a919dbdfdb" category="paragraph">例如、假設您想要重新命名包含字串的所有節點<block ref="6988a443f3db7bb9d4b0d18fa0ac8b98" prefix=" " category="inline-code"></block>、但不想重新命名<block ref="6988a443f3db7bb9d4b0d18fa0ac8b98" prefix=" " category="inline-code"></block>站台本身。選取<block ref="18116d08cc8314a00ecc5bb14ba684cd" category="inline-image-macro-rx" type="image"></block>以從重新命名預覽中移除網站。</block>
   <block id="34288841d257ce3de1a6661cbdbcf617" category="image-alt">以前大量重新命名工具</block>
   <block id="29efce69babcd0d1eb5c62b40813964c" category="list-text">在 * 新字串 * 欄位中、輸入您要改用的替換字串。例如，輸入 *DC1* 。</block>
   <block id="2344602372df311dd370e7a9fb97c847" category="paragraph">當您輸入替換字串時、左側的名稱會更新、以便您確認新名稱是否正確。</block>
   <block id="8b70e74b8935296387a21686c8607c80" category="image-alt">之後大量重新命名工具</block>
   <block id="7e25954ba8524112adfaf941f330908b" category="list-text">當您對預覽中顯示的名稱感到滿意時、請選取 * 新增名稱 * 、將名稱新增至 * 建議新名稱 * 步驟的表格。</block>
-  <block id="a07d7355735b351048d395692b261537" category="list-text">進行任何必要的其他變更、或選取<block ref="18116d08cc8314a00ecc5bb14ba684cd" category="inline-image-macro-rx" type="image"></block>以移除您不想重新命名的任何項目。</block>
   <block id="5ef5e32ae776aafc3e1e051939bccd8b" category="list-text">當您準備好重新命名表格中的所有項目時、請選取 * 重新命名 * 。</block>
   <block id="8ccfc811db1bbf24509ef52280cab652" category="paragraph">畫面會顯示成功訊息。全新的顯示名稱現在會在整個 Grid Manager 中使用。</block>
   <block id="317b9cfa3b561d1790471ff14851830a" category="list-text">下載完成後、開啟<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>檔案以查看所有節點的伺服器名稱、以及任何重新命名節點的顯示名稱。</block>
@@ -10451,14 +10413,12 @@
   <block id="8ad5b577f9876a2f7c525ed954d8b9f2" category="list-text">對於 * 選取名稱 * 步驟、請選取您要回復為系統名稱的任何項目。</block>
   <block id="d64a47960b7b4030b75cf1febcd4fd1e" category="list-text">對於「 * 提出新名稱 * 」步驟、請將顯示名稱個別或大量還原回系統名稱。</block>
   <block id="6b09e2159fdb5ac7dd0b643f83e05eaa" category="open-title">個別還原為系統名稱</block>
-  <block id="a4fa43533086bb6074a3f34a2553fe19" category="list-text">複製每個項目的原始系統名稱、並將其貼到 * 顯示名稱 * 欄位、或選取<block ref="18116d08cc8314a00ecc5bb14ba684cd" category="inline-image-macro-rx" type="image"></block>以移除任何您不想還原的項目。</block>
   <block id="efdad6258aff1939d1aa1ba51d6d49b4" category="paragraph">若要回復顯示名稱、系統名稱必須顯示在 * 顯示名稱 * 欄位中、但名稱不區分大小寫。</block>
   <block id="5ee02929de52ce5558adf3e17fbaade3" category="paragraph">隨即顯示成功訊息。不再使用這些項目的顯示名稱。</block>
   <block id="95b5f6215b937697e60c5707641c2005" category="open-title">大量還原為系統名稱</block>
   <block id="a18c9ee24d43ce30580616850cfa9d7e" category="list-text">在 * 現有字串 * 欄位中、輸入您要取代的顯示名稱字串。</block>
   <block id="3b1c1bc4e9b89cfcfcf617c39ab9e8c7" category="list-text">在 * 新字串 * 欄位中、輸入您要改用的系統名稱字串。</block>
   <block id="df8d234fd32933378aadf027f01d8ff0" category="list-text">選取 * 新增名稱 * ，將名稱新增至 * 建議新名稱 * 步驟的表格。</block>
-  <block id="a65ed4036630afb49828143d3b68ea5c" category="list-text">確認 * 顯示名稱 * 欄位中的每個項目都符合 * 系統名稱 * 欄位中的名稱。進行任何變更或選取<block ref="18116d08cc8314a00ecc5bb14ba684cd" category="inline-image-macro-rx" type="image"></block>以移除您不想還原的任何項目。</block>
   <block id="42674bc99e6a1bc91b87aa643fb4d9d0" category="paragraph">畫面會顯示成功訊息。不再使用這些項目的顯示名稱。</block>
   <block id="5ffef09bfad7b20eed386e9867fc7fff" category="paragraph">您還原項目的顯示名稱不再包含在檔案中<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block>。</block>
   <block id="f7499813526e131b476c73f36c6a4c25" category="summary">您可以使用服務應用裝置來復原故障的閘道節點、故障的非主要管理節點、或是位於 VMware 、 Linux 主機或服務應用裝置上的故障主要管理節點。此程序是網格節點還原程序的一個步驟。</block>
@@ -10772,7 +10732,6 @@
   <block id="dddef1816636f841f1e4ab8914d75d08" category="paragraph">第一步是存取「循環重新開機」頁面、然後選取您要重新開機的節點。</block>
   <block id="9eff079a28635a7478771f89787ac83c" category="list-text">檢閱 * 節點名稱 * 欄中的連線狀態和警示圖示。</block>
   <block id="a7aa8e1efa4777cfa11ccebcb71c6928" category="inline-image-macro">灰色問號圖示</block>
-  <block id="44aa52b712f497b0ea31591c0a994339" category="admonition">如果節點與網格中斷連線、則無法重新開機。具有以下圖示的節點將停用核取方塊：<block ref="3c79e522ce0e0f0566d7be4a3b4e202b" category="inline-image-macro-rx" type="image"></block>或<block ref="4bc258a3103ce1ac478adb3044bc2daa" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="43d7d20dd3308b12244714fbfe45da93" category="list-text">如果有任何節點有作用中警示、請檢閱 * 警示摘要 * 欄中的警示清單。</block>
   <block id="1431ad63c9efa87da4568484aaa2e4df" category="inline-link-macro">節點 &amp;gt; 概述索引標籤</block>
   <block id="4fc2b9aed2548cc61006d131ffbc3a21" category="admonition">若要查看節點的所有目前警示、您也可以選取<block ref="7f69db4cd74bfaaa948f449d1d09ea51" category="inline-link-macro-rx"></block>。</block>
@@ -10826,7 +10785,6 @@
   <block id="ca207ce1f030464ac7da0fb2e2f01286" category="list-text">您擁有任何修復工作的開始日期、可用於銷毀編碼資料。</block>
   <block id="882c761a927ffd5a73672783a6f6d1a8" category="list-text">在「Pending Node」（擱置節點）清單中選取您要恢復的網格節點。</block>
   <block id="1b3a06cbfab3aaa563a206f22bdc3b10" category="paragraph">節點在故障後會出現在清單中、但您無法選取節點、直到節點重新安裝並準備好恢復為止。</block>
-  <block id="962ddc79ae58d744f3c3dc1edc480750" category="image-alt">顯示「維護」&gt;「恢復」頁面的快照</block>
   <block id="0b048e521e87ecc4d1badeb03338808e" category="list-text">監控恢復網格節點表格中的恢復進度。</block>
   <block id="cce425aa8f5c0575797b710e78167d1b" category="paragraph">當網格節點達到「等待手動步驟」階段時、請前往下一個主題、並執行手動步驟以重新掛載及重新格式化應用裝置儲存磁碟區。</block>
   <block id="5f482b5c97e5564d5d9fcf7c00226da6" category="image-alt">顯示等待手動步驟階段的快照</block>
@@ -10933,7 +10891,6 @@
   <block id="1b7d46b88db4b0947875fdeb6977c834" category="list-text">請檢閱「*取消委任可能*」欄中的理由、以判斷目前哪些站台可以停用。</block>
   <block id="0fa0bb512b548cf4d884db791c8ac5d5" category="admonition">如果網站無法停用的原因不止一個、則會顯示最重要的原因。</block>
   <block id="c290a5941ad6eb0d5fe8752c15c5fd78" category="cell">下一步</block>
-  <block id="372c98669061ec82754c15cec6a44c7d" category="paragraph">綠色複選標記（<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>）</block>
   <block id="d020aa3a0ffda088afe11bc5ea7edb49" category="paragraph">您可以取消委任此站台。</block>
   <block id="380d235f81bf70ec5eed2484c28c2337" category="inline-xref">下一步</block>
   <block id="a5780aa37db8256c465849802f5e1276" category="paragraph">前往 <block ref="b2f899611680fd0ee95533751a26df9e" category="inline-xref-macro-rx"></block>。</block>
@@ -10943,10 +10900,8 @@
   <block id="2d16f8069f801bde4e70262ce4354484" category="paragraph">否。此網站包含一或多個歸檔節點。</block>
   <block id="a7f003d30171e857748868a34bfb9c1c" category="paragraph">您無法取消委任包含歸檔節點的站台。</block>
   <block id="397f3d746eb86f0b5be40804ea7095a6" category="paragraph">否。此站台的所有節點都會中斷連線。請聯絡您的NetApp客戶代表。</block>
-  <block id="cac9cde2a5c09a860e89996da9f3d601" category="paragraph">除非站台中的每個節點都已連線（）、否則您無法執行已連線的站台取消委任<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="2de0731a069fbcbc1258a3592eda8b3a" category="paragraph">如果您想要執行中斷連線的站台取消委任、您必須聯絡NetApp客戶代表、由他檢閱您的需求、並啟用「取消委任站台」精靈的其餘部分。</block>
   <block id="8f62ccb231fd01717d446421a6d3b56d" category="paragraph">*重要*：請勿讓線上節點離線、以便移除站台。您將遺失資料。</block>
-  <block id="b3dac2f7452b926c0653754a146bebd2" category="paragraph">此範例顯示StorageGRID 包含三個站台的一套解決系統。Raleigh 和 Sunnyvale 網站的綠色核取記號（<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>）表示您可以取消委任這些網站。不過、您無法取消委任溫哥華網站、因為它包含主要管理節點。</block>
   <block id="2c327d3e22ff437db3e65987f5f6b683" category="list-text">如果可以取消委任、請選取站台的選項按鈕。</block>
   <block id="a16c624bdd067812a4c06e15b7f658e8" category="paragraph">*下一步*按鈕已啟用。</block>
   <block id="8546a01f3e9fe19ac9a8d992b56851c8" category="paragraph">步驟2（檢視詳細資料）隨即出現。</block>
@@ -10960,7 +10915,6 @@
   <block id="ef64a437ea89138c41528f8f49b8d7e9" category="image-alt">取消委任站台步驟2站台警告</block>
   <block id="785a5bc953ad36cf7f7680ff7dc03703" category="paragraph">在下列情況下會出現警告：</block>
   <block id="d19927ad09714ff55e541e23ddd65578" category="list-text">站台包括閘道節點。如果 S3 用戶端目前正在連線至此節點、您必須在另一個站台上設定對等節點。在繼續取消委任程序之前、請確定用戶端可以連線至更換節點。</block>
-  <block id="d462ae0ccf5c3f2a20e6f9d7639bbe56" category="list-text">站台混合了已連接的（）和已中斷連<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>線的節點（<block ref="f3266c02d99c67a6049b4120307bbe26" category="inline-image-macro-rx" type="image"></block>或<block ref="a92fabbc4ee2a5d52499f401dd4d194f" category="inline-image-macro-rx" type="image"></block>）。在移除此網站之前、您必須先將所有離線節點重新連線。</block>
   <block id="6f75550314fddb93e542438f1cfd2efa" category="list-text">檢閱您選取要移除之網站的詳細資料。</block>
   <block id="81e30f8b61401c960477e871fb0245fa" category="image-alt">取消委任站台步驟2檢視詳細資料</block>
   <block id="b5e60a9cabb1c8b250e9fb54764bb3c7" category="paragraph">所選網站包含下列資訊：</block>
@@ -10969,9 +10923,6 @@
   <block id="3c6ac7237ebe16b5d8bcebf2b7a37bb3" category="list-text">對於連線站台取消委任、*已用空間*值表示必須將多少物件資料移至其他站台、或是使用ILM刪除。</block>
   <block id="f383848b049430fc2177e5d722b6058e" category="list-text">對於中斷連線的站台取消委任、*已用空間*值會指出當您移除站台時、將無法存取多少物件資料。</block>
   <block id="63c2a6dadf581af61b8c627e8bfae501" category="list-text">節點名稱、類型和連線狀態：</block>
-  <block id="62dd0c8cb8452d18913a58a5c56f336a" category="list-text"><block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>（已連線）</block>
-  <block id="e1d1ab4801f2b210f4d8245f177f444d" category="list-text"><block ref="f3266c02d99c67a6049b4120307bbe26" category="inline-image-macro-rx" type="image"></block>（管理性關閉）</block>
-  <block id="85d597f7085c5a97e818a9198cde1fdc" category="list-text"><block ref="a92fabbc4ee2a5d52499f401dd4d194f" category="inline-image-macro-rx" type="image"></block>（未知）</block>
   <block id="63889ff346c7b06d3d6808172cb30d20" category="list-text">每個節點的詳細資料：</block>
   <block id="fe97c08ad78a6c707490e00d819eb8ed" category="list-text">對於每個儲存節點、已用於物件資料的空間量。</block>
   <block id="c1ab19b1731ce35f6f709cbf81f1d7c2" category="list-text">對於管理節點和閘道節點、該節點目前是否用於高可用度（HA）群組。您無法取消委任 HA 群組中使用的管理節點或閘道節點。在您開始解除委任之前、請先編輯 HA 群組、以移除站台上的所有節點、如果 HA 群組只包含此站台的節點、請將其移除。有關說明，請參閱<block ref="20081eefdd69057a222542a77987826b" category="inline-link-macro-rx"></block>。</block>
@@ -11029,21 +10980,18 @@
   <block id="9eabdc9b45a58b9764ca70caccddea9c" category="list-text">編輯或刪除每個未使用的規則：</block>
   <block id="ecc3cf7c66043a829aaa93efe9015f25" category="list-text">若要編輯規則、請前往 ILM 規則頁面、並更新所有使用抹除編碼設定檔或參照網站的儲存池的放置位置。然後返回*步驟4（移除ILM參考）*。</block>
   <block id="06266f7c2ab49059b82da1d6065f9b36" category="inline-image-macro">圖示垃圾桶</block>
-  <block id="501f0086ad3856f64f8bec94bcf4ffe0" category="list-text">若要刪除規則、請選取垃圾桶圖示<block ref="682c5c9ed7dde476a692c509f05fe7fb" category="inline-image-macro-rx" type="image"></block>、然後選取 * 確定 * 。</block>
   <block id="e6461d722d1c1639071515bb3e279a7d" category="admonition">您必須先刪除 *Make 2 Copies （製作 2 份複本） * 規則、才能取消委任網站。</block>
   <block id="0958b89ec0330ed53af2764ac4d74806" category="list-text">確認沒有未使用的 ILM 規則會參照網站、且「 * 下一步 * 」按鈕已啟用。</block>
   <block id="ca4dd0a7f99507a877d7ea47c8e45987" category="admonition">移除站台時、任何其他參照站台的儲存資源池和銷毀編碼設定檔都將會失效。當 StorageGRID 取消網站配置時、它會自動停用參照該網站的任何未使用的銷毀編碼設定檔、並自動刪除任何參照該網站的未使用儲存池。所有儲存節點儲存池（ StorageGRID 11.6 及更早版本）都會移除、因為它使用「 All Sites 」（所有站台）站台。</block>
   <block id="41a36adbb5465a1f32e451894f43abbd" category="paragraph">此時會出現步驟5（解決節點衝突）。</block>
   <block id="d705190e29460c4a4d75ad5c356b2dd2" category="paragraph">從「取消委任網站」精靈的步驟5（解決節點衝突）、您可以判斷StorageGRID 您的系統中是否有任何節點中斷連線、或所選網站上的任何節點是否屬於高可用度（HA）群組。解決任何節點衝突之後、請從本頁開始取消委任程序。</block>
   <block id="57147a1b80edfcc38a0b446e18614175" category="paragraph">您必須確保StorageGRID 您的整個作業系統中的所有節點都處於正確狀態、如下所示：</block>
-  <block id="0274240d86e41f7de4b7b3f03f020ccf" category="list-text">StorageGRID 系統中的所有節點都必須連接（<block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>）。</block>
   <block id="d354da493243c7ce5be8cd78fd5288d9" category="admonition">如果您執行中斷連線的站台取消委任、則您要移除站台的所有節點都必須中斷連線、而且所有其他站台的所有節點都必須連線。</block>
   <block id="1418b4b7fd02c707692743ac295482b9" category="list-text">您要移除之站台的任何節點都無法擁有屬於高可用度（HA）群組的介面。</block>
   <block id="b0b4d0d637ad416a4437f5c500cb069f" category="paragraph">如果在步驟5（解決節點衝突）中列出任何節點、您必須先修正問題、才能開始取消委任。</block>
   <block id="0a19b357c3297a92de8e9a420e3cdec9" category="paragraph">從本頁開始站台取消委任程序之前、請先檢閱下列考量事項：</block>
   <block id="c4aa83bd170ec0f9793d3dfb26ccae71" category="list-text">您必須留出足夠的時間來完成取消委任程序。</block>
   <block id="1f56150dc3aac71054f479579a85eaf7" category="admonition">如果您需要在連線站台取消委任期間執行其他維護程序、可以在移除儲存節點時暫停該程序。在「取消壓縮複製和刪除編碼資料」階段、 * 暫停 * 按鈕會啟用。</block>
-  <block id="2c7d2ae675fa37f74e9d4f021f0db481" category="list-text">查看步驟 5 （解決節點衝突）中的“ Disconnected nodes （已斷開的節點）”部分，確定 StorageGRID 系統中的任何節點的連接狀態是未知（<block ref="a92fabbc4ee2a5d52499f401dd4d194f" category="inline-image-macro-rx" type="image"></block>）還是管理性關閉（<block ref="f3266c02d99c67a6049b4120307bbe26" category="inline-image-macro-rx" type="image"></block>）。</block>
   <block id="73246c2ecc8a06181a46f2242d87a33e" category="image-alt">取消委任站台步驟5解決節點衝突</block>
   <block id="245f0452d3c3cc8d22b360683a83aeea" category="list-text">如果有任何節點中斷連線、請將其重新連線。</block>
   <block id="f0744af442deaf390c4b01b81bc6ad36" category="inline-link-macro">節點程序</block>
@@ -11162,7 +11110,6 @@
   <block id="203a147426a72d76a2a4a23a0de61c95" category="list-text">輸入資源配置密碼短語、然後選取 * 儲存 * 。</block>
   <block id="0356ec6b4d587e5f4d2782c817a2e96b" category="list-text">在確認對話方塊中選取*是*。</block>
   <block id="d53e54b804fed53573ad367cf74ff3cb" category="section-title">刪除子網路</block>
-  <block id="9fc63de32aeb1368d6120a013ca75a17" category="list-text">選取子網路旁的刪除圖示<block ref="afc5361cae8047bced297a9bbef55bfe" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="409b7f3f7e8a3f7d15a9553d27320fbc" category="summary">如果您在技術支援的指導下執行各種維護或組態程序、可能會要求您使用DoNotStart檔案、以防止伺服器管理員啟動或重新啟動時啟動服務。</block>
   <block id="875120935af9cf3ca8728c8106338a5e" category="doc">使用DoNotStart檔案</block>
   <block id="448068dd2d031236537039b626c6a191" category="admonition">只有在技術支援人員指示您新增或移除DoNotStart檔案時、您才應該新增或移除該檔案。</block>
@@ -12575,7 +12522,6 @@
   <block id="bfe2e644f7a2b28166502519e7eedaf0" category="paragraph">此時會出現警示規則頁面。</block>
   <block id="b92735c18b005b90e348d82dfe8e579e" category="list-text">選取*建立自訂規則*。</block>
   <block id="6b9445223f6159be1e47a1eb007028e6" category="paragraph">「建立自訂規則」對話方塊隨即出現。</block>
-  <block id="d57bc82a0a4aec3cea0a381a214c3976" category="image-alt">警示&gt;建立自訂規則</block>
   <block id="a005331883617b3ea8216a7234bbb0e2" category="list-text">選取或清除 *Enabled* 核取方塊、以判斷目前是否啟用此警示規則。</block>
   <block id="17b446afa699516c7e7d0333e80143d3" category="paragraph">如果停用警示規則、則不會評估其運算式、也不會觸發警示。</block>
   <block id="2c80d3f5692bbddd81bc83e7968f3387" category="list-text">輸入下列資訊：</block>
@@ -12590,7 +12536,6 @@
   <block id="7205790e341b9df06858d3a13b6c4ac4" category="paragraph">運算式可以是任何長度、但會出現在使用者介面的單行上。至少需要一個運算式。</block>
   <block id="5b879aa164c078fb95af9c2869ce7138" category="paragraph">如果節點安裝的RAM容量少於24、000、000、000位元組（24 GB）、則會觸發警示。</block>
   <block id="8a2a172afe4e4e09e63b2a7598d3f1db" category="paragraph"><block ref="2741b7f9d99600ccc8b1f78f49382f2c" prefix="" category="inline-code"></block></block>
-  <block id="7084fb1317245f87563a8a032fc37f7f" category="paragraph">若要查看可用的度量並測試 Prometheus 運算式、請選取說明圖示<block ref="a92f00b6b3c97c9322a6a7f66a54b5d1" category="inline-image-macro-rx" type="image"></block>、然後依循 Grid Management API 「 Metrics 」（計量）區段的連結。</block>
   <block id="26d65c266a57744e3905ba2ed59d80de" category="list-text">在*持續時間*欄位中、輸入觸發警示之前條件必須持續有效的時間量、然後選取時間單位。</block>
   <block id="c6bb8bbdb16404bbfff33f7b30de71a1" category="paragraph">要在條件變爲true時立即觸發警報，請輸入*0*。請增加此值、以防止暫時性情況觸發警示。</block>
   <block id="78ab84795d20ac50a4cf06ccad3e5b95" category="paragraph">預設值為 5 分鐘。</block>
@@ -12601,7 +12546,6 @@
   <block id="c121f671704d63228bc3d916fc93b070" category="inline-link-macro">關於管理StorageGRID 功能的說明</block>
   <block id="b150aa3395888645f5b2153db47e23bb" category="paragraph">您也可以使用外部監控工具（例如Grafana）直接存取Prometheus指標。使用外部工具時、您必須上傳或產生管理用戶端憑證StorageGRID 、才能讓驗證工具的安全性。請參閱<block ref="4640a278e78a848b558df56bce73aa30" category="inline-link-macro-rx"></block>。</block>
   <block id="747363eeb8cf175d8d379b6b6a2bba2d" category="inline-image-macro">「說明 API 文件指標」一節</block>
-  <block id="bce2b16cb7433d8dfdde8085b777a169" category="paragraph">若要檢視度量API作業、包括可用度量的完整清單、請前往Grid Manager。從頁面頂端選取說明圖示、然後選取 * API 文件 * &gt; * 計量 * 。<block ref="3adf2fc565197e5faea93bd4f89eba71" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9097f45118332ca7eaff2a622ec1ead7" category="paragraph">如何實作自訂監控應用程式的詳細資料不在本文件的範圍之內。</block>
   <block id="cbc40b0d465fc054ed718a973451b410" category="summary">您可以使用部署和維護記錄來疑難排解問題。</block>
   <block id="091d3186cae6664d6cdbf9dde9621f11" category="doc">部署與維護記錄</block>
@@ -12636,7 +12580,6 @@
   <block id="5c77e3aae35fb8b4588c30e8205ed8f6" category="admonition">決定編輯警示規則時請務必小心。如果您變更觸發值、則在無法完成關鍵作業之前、可能無法偵測潛在問題。</block>
   <block id="62cb785838d030c30b04d71b89c7d58e" category="list-text">選取您要編輯之警示規則的選項按鈕。</block>
   <block id="cadcf4c46d86ed3090ac57336c65e5dd" category="paragraph">「編輯規則」對話方塊隨即出現。此範例顯示預設警示規則、「唯一名稱」、「說明」和「建議動作」欄位已停用、無法編輯。</block>
-  <block id="09a409ca254c273df70e0309817617f1" category="image-alt">警示&gt;編輯規則</block>
   <block id="1a46ff3236b1fae55da78a5fb3a3c10b" category="admonition">如果停用目前警示的警示規則、您必須等待數分鐘、使警示不再顯示為作用中警示。</block>
   <block id="0e493a6bfb48e2326ca688bf9a6c09ef" category="list-text">如需自訂警示規則、請視需要更新下列資訊。</block>
   <block id="d17093b238cf39cb1f925b3edf8ae840" category="admonition">您無法編輯預設警示規則的此資訊。</block>
@@ -12669,7 +12612,6 @@
   <block id="475a72f75a57b5a0f12f6e51cfd2601f" category="paragraph">例如：<block ref="57085c2a1eebfdc26420f32e215d9e05" prefix=" " category="inline-code"></block></block>
   <block id="ba46b0ad3df187263c776e0276d7eec8" category="list-text">在「收件者」區段中、輸入每個電子郵件清單的電子郵件地址、或在發生警示時應接收電子郵件的人員。</block>
   <block id="768d18144454e6cec5a96d61cb09fd9c" category="inline-image-macro">加號圖示</block>
-  <block id="05045a084adb43520a6255bc944b75a1" category="paragraph">選取加號圖示<block ref="f6ddecbba13eadb6df0e1c1c98c0a538" category="inline-image-macro-rx" type="image"></block>以新增收件者。</block>
   <block id="ccbde703d0afd5439e816185d157dd4d" category="list-text">如果需要傳輸層安全性（TLS）才能與SMTP伺服器通訊、請在傳輸層安全性（TLS）區段中選取*需要TLS*。</block>
   <block id="47c385ee09213ebcc741e67530367e97" category="list-text">在「* CA憑證*」欄位中、提供用於驗證SMTP伺服器識別的CA憑證。</block>
   <block id="c543550065d7f5fcf1711667ca06e6be" category="paragraph">您可以複製內容並貼到這個欄位、或選取*瀏覽*並選取檔案。</block>
@@ -12677,7 +12619,6 @@
   <block id="803121a11c0574d8971165376a85ebcb" category="list-text">如果您的 SMTP 電子郵件伺服器需要電子郵件寄件者提供用戶端憑證以進行驗證、請選取 * 傳送用戶端憑證 * 核取方塊。</block>
   <block id="afd567b9f6b27f6fa435e13ea8202d59" category="list-text">在*用戶端憑證*欄位中、提供要傳送至SMTP伺服器的PEP-編碼用戶端憑證。</block>
   <block id="a1447f1cfa108698fb69a86df637c8f5" category="list-text">在*私密金鑰*欄位中、以未加密的PEM編碼輸入用戶端憑證的私密金鑰。</block>
-  <block id="c01eec0ec8859669add0a3e9db4a71f0" category="admonition">如果您需要編輯電子郵件設定、請選取鉛筆圖示<block ref="b67b468b391ab50f9ec30894cf44ee94" category="inline-image-macro-rx" type="image"></block>以更新此欄位。</block>
   <block id="7a6c2fccc919b58d615e7c950e4b9e83" category="list-text">在「篩選」區段中、選取應產生電子郵件通知的警示嚴重性層級、除非特定警示的規則已設為靜音。</block>
   <block id="78b42552b8cdd7de763ac704052874ce" category="paragraph">次要、主要、關鍵</block>
   <block id="44eac56e2f120e1c305b7b31ee5082fe" category="paragraph">當符合警示規則的次要、主要或關鍵條件時、就會傳送電子郵件通知。</block>
@@ -13008,7 +12949,6 @@
   <block id="826804c36ee98b2a97ab619319034aac" category="paragraph">此圖表顯示整個 StorageGRID 系統的 S3 擷取和擷取速率、單位為每秒位元組數、以及擷取或擷取的資料量。您可以選擇時間間隔或套用自訂時間間隔。</block>
   <block id="16149a038cad581630565c45c20225be" category="list-text">若要查看特定儲存節點的資訊、請從左側清單中選取節點、然後選取 * 物件 * 索引標籤。</block>
   <block id="082750c2648b62986c90cf0416514d12" category="paragraph">圖表顯示節點的擷取和擷取速率。索引標籤也包含物件計數、中繼資料查詢和驗證作業的度量。</block>
-  <block id="ec861c31c45849c5e21e43b31e018269" category="image-alt">節點&gt;_Storage Nod_&gt;物件&gt;屬性說明的快照</block>
   <block id="1e6dbc0f5d11fae4b551980c55d3239d" category="summary">這個支援系統可驗證儲存節點上物件資料的完整性、同時檢查毀損和遺失的物件。StorageGRID</block>
   <block id="454ed16caec04f2d08102e26773e4bb8" category="doc">監控物件驗證作業</block>
   <block id="e4470b6fc9273807063087492441cc04" category="inline-link-macro">驗證程序</block>
@@ -13022,11 +12962,8 @@
   <block id="653723296e07fb83e7f285551494f4f9" category="list-text">檢閱背景驗證的結果：</block>
   <block id="ded6b09af7f78e52a594e2f7c8252151" category="list-text">檢查驗證結果：</block>
   <block id="26fa66c512152a6b0da4bc03bc5db198" category="list-text">若要檢查複寫的物件資料驗證、請查看「驗證」區段中的屬性。</block>
-  <block id="19fbc244cc75c45dacfaea76501e0413" category="image-alt">節點&gt;儲存節點&gt;物件&gt;驗證</block>
   <block id="77bb1812b4fffec767cc5cc94e6fc297" category="list-text">若要檢查以銷毀編碼的片段驗證、請選取「*儲存節點_*&gt;* ILM *」、然後查看「刪除編碼驗證」區段中的屬性。</block>
-  <block id="fb256e72770b774db324b0fe4cd2cfe6" category="image-alt">節點&gt;儲存節點&gt; ILM &gt; EC驗證</block>
   <block id="59b40a4df998529eb7264171ced09202" category="inline-image-macro">問號</block>
-  <block id="92d48526ccbd48a5fb814404551658ba" category="paragraph">選取屬性名稱旁的問號<block ref="299b45f50e7403d875c980dd46a3c64d" category="inline-image-macro-rx" type="image"></block>、以顯示說明文字。</block>
   <block id="1a22c347d8da3a966d7dd23c57f95c7a" category="list-text">檢閱物件存在檢查工作的結果：</block>
   <block id="70cdd16ae942caf7a527b5f0bb6e24f0" category="image-alt">物件存在檢查工作歷程記錄</block>
   <block id="c2c9e402330b29688c9d4703d270dd38" category="summary">您可以監控特定作業（例如物件存放區和擷取）的效能、以協助識別可能需要進一步調查的變更。</block>
@@ -13080,7 +13017,6 @@
   <block id="2f6bd7f07e92c73dfc72f759d916b40b" category="image-alt">節點頁面儲存使用的物件資料</block>
   <block id="d2e15d0d5f1490bc02a7faec7330bc82" category="list-text">檢閱「Volumes and Object Stores」（磁碟區和物件儲存區）表格中的可用值、圖表下方。</block>
   <block id="fdd9dcb0eefb08b8f41766a026a27aa4" category="inline-image-macro">圖表圖示</block>
-  <block id="0f2efb85d3f9ad5d70d8376e67ccbfc8" category="admonition">若要檢視這些值的圖形、請按一下可用欄中的圖表圖示<block ref="fef6c5928d3879aa90997661396b15f7" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="089b2b32cdff74f7ba193e8a17ddb7dc" category="image-alt">物件儲存資料表</block>
   <block id="c1fe1859a80b30010a6e83e1d8689990" category="list-text">監控一段時間內的值、以預估可用儲存空間的使用率。</block>
   <block id="9b75e74377903f14c00278c51c81a573" category="list-text">若要維持正常的系統作業、請先新增儲存節點、新增儲存磁碟區或歸檔物件資料、然後再使用可用空間。</block>
@@ -13138,7 +13074,6 @@
   <block id="b7892d477b12dc24628e8af308cacc13" category="paragraph">此 StorageGRID 系統的軟體授權有問題。您可以<block ref="ab350ef40da6d329d404af57f4e1379e" category="inline-link-macro-rx"></block>。</block>
   <block id="7783ed61b7e087e895c80d6b401ede6a" category="paragraph">如果一個或多個節點與網格中斷連線、關鍵StorageGRID 的功能不正常運作可能會受到影響。監控節點連線狀態、並立即解決任何問題。</block>
   <block id="3d6623b8d5249788a0d797d4bbc5e5a1" category="cell">需要採取行動</block>
-  <block id="4bc258a3103ce1ac478adb3044bc2daa" category="paragraph"><block ref="4bc258a3103ce1ac478adb3044bc2daa" category="inline-image-macro-rx" type="image"></block></block>
   <block id="00bb4ea530cb4f7fb791c2e608346703" category="paragraph">*未連線-未知*</block>
   <block id="93a6bd53c87717d770f34d49e7526b90" category="paragraph">由於不明原因、節點中斷連線或節點上的服務意外停機。例如、節點上的服務可能會停止、或是節點因為停電或非預期的停電而失去網路連線。</block>
   <block id="6cbee94a2ddb027b4849d9180f12f53b" category="paragraph">也可能會觸發*無法與node*通訊警示。其他警示也可能處於作用中狀態。</block>
@@ -13146,7 +13081,6 @@
   <block id="0acafecaa7af6766c2b51a05797fbeb9" category="paragraph">需要立即注意。<block ref="a56aef83524777fadc42596d878e42d0" category="inline-xref-macro-rx"></block>並遵循建議的行動。</block>
   <block id="f023e610bfe53cc5e0329e7059f4e830" category="paragraph">例如、您可能需要重新啟動已停止或重新啟動節點主機的服務。</block>
   <block id="888af5563258e1ec6975dfaa524ef849" category="paragraph">* 注意 * ：在託管關機作業期間、節點可能會顯示為「未知」。在這些情況下、您可以忽略「未知」狀態。</block>
-  <block id="25380ee7ab8b4c8df1434662b57f5ead" category="paragraph"><block ref="25380ee7ab8b4c8df1434662b57f5ead" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9228f7d3cc5c71be9e3cc5aa604f1e89" category="paragraph">*未連線-管理性關機*</block>
   <block id="13d5d028d601ce6b4a527bfdba0b6d6b" category="paragraph">由於預期的原因、節點未連線至網格。</block>
   <block id="65a424ef7122882f49641c91e85063da" category="paragraph">例如、節點或節點上的服務已正常關機、節點正在重新開機、或軟體正在升級。一個或多個警示也可能處於作用中狀態。</block>
@@ -13154,7 +13088,6 @@
   <block id="136856c4575ffb60944d4c46b03a94bc" category="paragraph">判斷是否有任何警示影響此節點。</block>
   <block id="1f9658d9a2837cafda87fd4fe05f4e66" category="inline-xref">選取每個警示</block>
   <block id="779863dbe676b48691bde994d82843a8" category="paragraph">如果有一個或多個警示處於作用中<block ref="004ac5922c55360cd52dd89925344255" category="inline-xref-macro-rx"></block>狀態、請遵循建議的動作。</block>
-  <block id="e6bb8575fc62b4796b3c65b885c9e610" category="paragraph"><block ref="e6bb8575fc62b4796b3c65b885c9e610" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9293166155ac0a710c5f95c73b54619c" category="paragraph">*已連線*</block>
   <block id="954cfccdcb5e0be80280c4185a3944e9" category="paragraph">節點已連線至網格。</block>
   <block id="e8eedad0c370be864050462beebc8141" category="paragraph">無需採取任何行動。</block>
@@ -13167,11 +13100,8 @@
   <block id="21d63154295d6d65b4689d8877097567" category="paragraph">警示名稱及其說明。</block>
   <block id="7bb9e1311069ec8c79c3bce52977b93a" category="paragraph">警示的嚴重性。對於目前警示、如果將多個警示分組、標題列會顯示每個嚴重性發生多少個警示執行個體。</block>
   <block id="dbfc3504ad5dba49cf2f8cc086d358d7" category="inline-image-macro">圖示警示紅色嚴重</block>
-  <block id="4be32f107f934cdcf7f3398f9e20d018" category="paragraph"><block ref="add37a8b1836869fa2f32e6210994c4a" category="inline-image-macro-rx" type="image"></block>* 重大 * ：存在異常狀況、已停止 StorageGRID 節點或服務的正常作業。您必須立即解決基礎問題。如果問題仍未解決、可能會導致服務中斷和資料遺失。</block>
   <block id="9f1fe54b5a85b8e976a61690a11f469d" category="inline-image-macro">圖示警示橘色主要</block>
-  <block id="78924ae0c6d192e9dcdb1235dbfcee99" category="paragraph"><block ref="dc3bc90d4845d312bdb01fdc51a5e011" category="inline-image-macro-rx" type="image"></block>* 重大 * ：存在異常狀況、影響目前作業或接近臨界警示的臨界值。您應調查重大警示並解決任何潛在問題、確保異常狀況不會停止StorageGRID 執行任何節點或服務的正常運作。</block>
   <block id="87fcf5103de79ba9809361927a58d15f" category="inline-image-macro">圖示警示黃色次要</block>
-  <block id="7c9d7b51bd8fb50ebdfebe585fd9430f" category="paragraph"><block ref="fe4a42b5b8d32a4627a8ec799c30fd51" category="inline-image-macro-rx" type="image"></block>* 次要 * ：系統正常運作、但存在異常狀況、可能會影響系統在繼續運作時的運作能力。您應該監控並解決未自行清除的次要警示、以確保不會造成更嚴重的問題。</block>
   <block id="5f728e7ac0f91a89d28bae1a63e11c36" category="paragraph">觸發時間</block>
   <block id="d6725338cbe0743e260d5e242fa72025" category="paragraph">* 目前警示 * ：警示在您當地時間和 UTC 中觸發的日期和時間。如果群組多個警示、標題列會顯示警示最近執行個體（_new__）和警示最舊執行個體（_OLDEST__）的時間。</block>
   <block id="97bbfc9f9000cda0839e2fecfcadf133" category="paragraph">* 已解決的警示 * ：多久前觸發警示。</block>
@@ -13193,10 +13123,8 @@
   <block id="fef7296305a0ee8186bfc5b52f495ea0" category="paragraph">目前警示頁面每兩分鐘會重新整理一次。</block>
   <block id="e591dfca51455e02f40bd6de2aecfdf4" category="inline-image-macro">「減號」圖示</block>
   <block id="643b067c1eaa39289b0571b92d44a7fc" category="inline-image-macro">Up caret圖示</block>
-  <block id="7ec041bd9143ef8ee75d85464a1996e3" category="list-text">要展開警示群組、請選取向下插入記號<block ref="1a853eb26b586393b1013aad48bc9f10" category="inline-image-macro-rx" type="image"></block>。若要收合群組中的個別警示<block ref="7227ef05007cdbaac2bfe6490b9901e1" category="inline-image-macro-rx" type="image"></block>、請選取向上插入記號、或選取群組名稱。</block>
   <block id="3ba13c758b8b04027c2fb21a82b2881c" category="list-text">若要顯示個別警示而非警示群組、請清除 * 群組警示 * 核取方塊。</block>
   <block id="339556f423da0cfde13d076f810d1c08" category="inline-image-macro">排序箭頭圖示</block>
-  <block id="7dccb165f6efee7b88d31feafc53fb27" category="list-text">若要排序目前的警示或警示群組、請選取每個欄標題中的向上 / 向下箭頭<block ref="69253343f61d2797f22f2847e7363e90" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="dc6f2398141f7fe8c59bbbeaa9521ba9" category="list-text">選取*群組警示*時、會同時排序警示群組和每個群組內的個別警示。例如、您可能想要依*觸發時間*排序群組中的警示、以找出特定警示的最新執行個體。</block>
   <block id="33b1e3c1d7dda90ded9bacc43fcbc826" category="list-text">當 * 群組警示 * 被清除時、警示的完整清單會被排序。例如、您可能想要依*節點/站台*排序所有警示、以查看影響特定節點的所有警示。</block>
   <block id="0f51152afb7c8bb0e2e9d4b4f9071ab8" category="list-text">若要依狀態（ * 所有警示 * 、 * 作用中 * 或 * 靜音 * ）篩選目前警示、請使用表格頂端的下拉式功能表。</block>
@@ -13224,9 +13152,7 @@
   <block id="9f415ad637843e80d56c187d231fc24a" category="list-text">檢閱租戶頁面上顯示的資訊。</block>
   <block id="226e1c52e3fc41a339b1bb18beff65c3" category="paragraph">每個租戶都會列出「已使用的邏輯空間」、「配額使用量」、「配額」和「物件」計數。如果未為租戶設定配額、「配額使用量」和「配額」欄位會包含破折號（ &amp;#8212 ；）。</block>
   <block id="e1bf5daf7d6aafdf9fabbcd56e404733" category="inline-image-macro">租戶登入圖示</block>
-  <block id="3ad1a28cb9de84fa9a34b6d045ecf667" category="list-text">您也可以選擇 * 登入 / 複製 URL* 欄中的登入連結、登入租戶帳戶<block ref="18d34a9d1093ccad0864f0868154baa5" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="6bbbeee6478bfef14fa42fb7f441d3af" category="inline-image-macro">租戶複製URL圖示</block>
-  <block id="d335e505305e9be02474d74edda9ec87" category="list-text">您也可以選擇 * 登入 / 複製 URL* 欄中的複本 URL 連結、複製租戶登入頁面的 URL <block ref="241d2b62f33b2be28c2b230f8660dbff" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="8494455f93bf35f0dcbefefe7aba763a" category="list-text">您也可以選擇 * 匯出至 CSV* 來檢視和匯出<block ref="01b1b6ebeb388697cca6712b58439069" prefix=" " category="inline-code"></block>包含所有租戶使用值的檔案。</block>
   <block id="6cfa8d6f3bf676f50d4c33a8816b57bb" category="paragraph">系統會提示您開啟或儲存<block ref="01b1b6ebeb388697cca6712b58439069" prefix=" " category="inline-code"></block>檔案。</block>
   <block id="6195d13eb99aaa10c0acc6512882e0aa" category="paragraph">檔案內容<block ref="01b1b6ebeb388697cca6712b58439069" prefix=" " category="inline-code"></block>如下所示：</block>
@@ -13313,9 +13239,6 @@
   <block id="c95f9d294d262a8692386dd6c8bbf818" category="list-text"><block ref="c95f9d294d262a8692386dd6c8bbf818" category="inline-link-macro-rx"></block></block>
   <block id="d2928f33cf236ccd43151ae3097fe068" category="list-text"><block ref="d2928f33cf236ccd43151ae3097fe068" category="inline-link-macro-rx"></block></block>
   <block id="f8d02bee25f4a81af68f7bcff4452abd" category="paragraph">「診斷」頁面會針對網格的目前狀態執行一組診斷檢查。每項診斷檢查都有三種狀態之一：</block>
-  <block id="5a3258c51cdf9935fb066d10f1dab18e" category="list-text"><block ref="74ffc0550a20e130c0c48f64c788ef99" category="inline-image-macro-rx" type="image"></block>* 正常 * ：所有值都在正常範圍內。</block>
-  <block id="0fca4e5c70d305d78abefcb71c3a10eb" category="list-text"><block ref="fe4a42b5b8d32a4627a8ec799c30fd51" category="inline-image-macro-rx" type="image"></block>* 注意 * ：一個或多個值超出正常範圍。</block>
-  <block id="8b3b2a606b2d0e65270a3aa07bbf60f5" category="list-text"><block ref="add37a8b1836869fa2f32e6210994c4a" category="inline-image-macro-rx" type="image"></block>* 注意 * ：一個或多個值明顯超出正常範圍。</block>
   <block id="8023571261febed7f07fa45e3e15bc22" category="paragraph">診斷狀態與目前警示無關、可能無法指出網格的作業問題。例如、即使未觸發警示、診斷檢查仍可能顯示「警示」狀態。</block>
   <block id="2cdcc8f35e5b1129dbc7f0e6dbdd09f0" category="paragraph">「診斷」頁面隨即出現、並列出每項診斷檢查的結果。結果依嚴重性排序（注意、注意、然後正常）。在每個嚴重性範圍內、結果會依字母順序排序。</block>
   <block id="6a0103fedc90040661741499d5dfa69c" category="image-alt">支援診斷頁面</block>
@@ -13335,9 +13258,7 @@
   <block id="e0011df73d936e22fcc3a724ecf5377d" category="paragraph">如果您已啟用SNMP代理程式、靜音功能也會抑制SNMP設陷並通知。</block>
   <block id="22f02f7b7b5cf2b93236079682e2a871" category="admonition">決定將警示規則設為靜音時請務必小心。如果您將警示設為靜音、則在無法完成關鍵作業之前、可能無法偵測潛在問題。</block>
   <block id="ee5700f1e868a87e2dfef312bf5917f4" category="paragraph">「靜音」頁面隨即出現。</block>
-  <block id="bcd47a1bf96194ef76a75e7f209dfb3d" category="image-alt">警示&gt;靜音頁面</block>
   <block id="72892d3abd24d296031d094ffce9bd4b" category="paragraph">「建立靜音」對話方塊隨即出現。</block>
-  <block id="8565d02dd2cb1e68980d71589d882c39" category="image-alt">警示&gt;建立靜音</block>
   <block id="1d2c1f0f8c4d89bd68134cd0810e1beb" category="list-text">選取或輸入下列資訊：</block>
   <block id="ae5e8c268d0eb61ae92f6ffb37d3b61c" category="paragraph">警示規則</block>
   <block id="11bf80d13b4d80ee9123c16b7634c909" category="paragraph">您要靜音的警示規則名稱。您可以選取任何預設或自訂警示規則、即使警示規則已停用。</block>
@@ -13561,9 +13482,6 @@
   <block id="6612a680d7c86378893df5f75dec9d5d" category="paragraph">警示規則的唯一名稱和說明。自訂警示規則會先列出、然後依循預設警示規則。警示規則名稱是電子郵件通知的主旨。</block>
   <block id="229eb04083e06f419f9ac494329f957d" category="paragraph">條件</block>
   <block id="a07bbfc71f97adc7da4771f10bfde3e8" category="paragraph">判斷何時觸發此警示的Prometheus運算式。警示可在下列一個或多個嚴重性層級觸發、但不需要每個嚴重性層級的條件。</block>
-  <block id="31dc0ff672fb233647e3d58ddfc3a1b8" category="list-text">*Critical * <block ref="add37a8b1836869fa2f32e6210994c4a" category="inline-image-macro-rx" type="image"></block>（嚴重）：存在異常情況，已停止 StorageGRID 節點或服務的正常操作。您必須立即解決基礎問題。如果問題仍未解決、可能會導致服務中斷和資料遺失。</block>
-  <block id="bddee52b983a77a8193c03f4221b41b3" category="list-text">* 重大 * <block ref="dc3bc90d4845d312bdb01fdc51a5e011" category="inline-image-macro-rx" type="image"></block>：存在異常狀況、影響目前作業或接近臨界警示的臨界值。您應調查重大警示並解決任何潛在問題、確保異常狀況不會停止StorageGRID 執行任何節點或服務的正常運作。</block>
-  <block id="78b070d16179b7bdd90027ecb3b74f22" category="list-text">* 次要 * <block ref="fe4a42b5b8d32a4627a8ec799c30fd51" category="inline-image-macro-rx" type="image"></block>：系統正常運作、但存在異常狀況、若系統繼續運作、可能會影響系統的運作能力。您應該監控並解決未自行清除的次要警示、以確保不會造成更嚴重的問題。</block>
   <block id="6407c2cda8af0c4c62093612f8f82a13" category="paragraph">警示規則類型：</block>
   <block id="04a146010c9bf763ec14aac1a4af61f0" category="list-text">*預設*：系統隨附的警示規則。您可以停用預設警示規則、或編輯預設警示規則的條件和持續時間。您無法移除預設的警示規則。</block>
   <block id="474cced7dd48cedb165e4c985683fb9a" category="list-text">*預設*：包含編輯條件或持續時間的預設警示規則。視需要、您可以輕鬆地將修改後的條件還原為原始預設值。</block>
@@ -13586,7 +13504,6 @@
   <block id="39d78e8c9e122ea744f85043a16c24c8" category="paragraph">CPU 、資料和記憶體使用量、依節點而定。S3 依節點執行作業。節點對站台發佈。</block>
   <block id="8706d4e03d04a4fd6026a4ff9d0edc7f" category="inline-image-macro">最大化圖示</block>
   <block id="bd1a10d9bcc4cec06ac431a26bcd0677" category="inline-image-macro">最小化圖示</block>
-  <block id="8ff5b976fc156f95343e749c59db2c06" category="paragraph">有些卡片可以最大化、以便檢視。選取卡片右上角的最大化圖示<block ref="0b909e13726c471aba16bf954a8450d7" category="inline-image-macro-rx" type="image"></block>。若要關閉最大化的卡片、請選取最小化圖示<block ref="293d895f8235ea295e829a6b70f9f8e4" category="inline-image-macro-rx" type="image"></block>或選取 * 關閉 * 。</block>
   <block id="47857fc25850e8ad731f6e5e035c7a44" category="section-title">管理儀表板</block>
   <block id="752ad73b13fe285fd1eeaccfd7e7aa32" category="paragraph">如果您擁有 root 存取權（請參閱<block ref="0f332bac82014590d1fdda02937318f2" category="inline-link-macro-rx"></block>）、您可以針對儀表板執行下列管理工作：</block>
   <block id="4279cb4803f61c6a4d2fdee36fc21c7b" category="list-text">從頭建立自訂儀表板。您可以使用自訂儀表板來控制要顯示哪些 StorageGRID 資訊、以及該資訊的組織方式。</block>
@@ -13612,7 +13529,6 @@
   <block id="1dddf5867caa98eef79e0a363fea59cd" category="doc">檢視硬體索引標籤</block>
   <block id="700ceae0b4a801a506ad1643077d99c8" category="paragraph">顯示所有節點的Hardware（硬體）索引標籤。</block>
   <block id="5455fb7662d4c3f6da92d8a74e47df59" category="paragraph">若要查看 CPU 使用率和記憶體使用率的詳細資料、請將游標放在每個圖表上。</block>
-  <block id="95aa9a13b05e71442c030ff97108ea16" category="image-alt">節點頁面&gt;硬體&gt;記憶體使用量詳細資料</block>
   <block id="03f24a67669241bf0d8cd99cf602d268" category="paragraph">如果節點是應用裝置節點、此索引標籤也會包含一節、其中包含應用裝置硬體的詳細資訊。</block>
   <block id="bab0be690bd5b464e340c73e94a3686b" category="paragraph">「節點」頁面會列出每個應用裝置儲存節點的服務健全狀況及所有運算、磁碟設備和網路資源相關資訊。您也可以看到記憶體、儲存硬體、控制器韌體版本、網路資源、網路介面、 網路位址、以及接收和傳輸資料。</block>
   <block id="f58118113cbec3334b5316b6263796f2" category="list-text">從「節點」頁面、選取應用裝置儲存節點。</block>
@@ -13835,10 +13751,7 @@
   <block id="efd7532fa494a0cc099f0f5ec391e8c4" category="list-text">* 類型 * ：節點類型 - 管理節點、主要管理節點、儲存節點或閘道節點。</block>
   <block id="a8412fad550d612fc754d775edca0967" category="list-text">* ID*：節點的唯一識別碼、也稱為UUID。</block>
   <block id="09a773ec2caae6e66cd881b1e1281534" category="list-text">*連線狀態*：三種狀態之一。此時會顯示最嚴重狀態的圖示。</block>
-  <block id="dc078ed950d964a257078936d1d87d83" category="list-text">* 未知 * <block ref="4bc258a3103ce1ac478adb3044bc2daa" category="inline-image-macro-rx" type="image"></block>：由於未知原因，節點未連接到網格，或一個或多個服務意外關閉。例如、節點之間的網路連線已中斷、電源中斷或服務中斷。也可能會觸發*無法與node*通訊警示。其他警示也可能處於作用中狀態。這種情況需要立即注意。</block>
   <block id="85f208982bded155ee8d0364f910e45c" category="admonition">在託管關機作業期間、節點可能會顯示為「未知」。在這些情況下、您可以忽略「未知」狀態。</block>
-  <block id="bc734fb30dd8c3f2d03dd9cc6fad8e95" category="list-text">*administratively down* <block ref="25380ee7ab8b4c8df1434662b57f5ead" category="inline-image-macro-rx" type="image"></block>（管理性關閉 * ）：由於預期的原因，節點未連接到網格。例如、節點或節點上的服務已正常關機、節點正在重新開機、或軟體正在升級。一個或多個警示也可能處於作用中狀態。</block>
-  <block id="aa9f4ee23b13ccc4c6c487441d06ee35" category="list-text">*Connected * <block ref="e6bb8575fc62b4796b3c65b885c9e610" category="inline-image-macro-rx" type="image"></block>：節點已連接至網格。</block>
   <block id="d27d46b84c79690a06eb4f4dd1e41c37" category="list-text">*使用的儲存設備*：僅適用於儲存節點。</block>
   <block id="7d118e1d7441a8c358e3b5a88043221c" category="list-text">*物件資料*：儲存節點上已使用之物件資料的可用空間總計百分比。</block>
   <block id="59ab0345e5ba9244cb4eea68dc4e1363" category="list-text">*物件中繼資料*：儲存節點上已使用之物件中繼資料的總允許空間百分比。</block>
@@ -13876,7 +13789,6 @@
   <block id="327d2312c9928ed0ea2acc9dfaa69746" category="paragraph">所有節點、每個站台及整個網格都會顯示「儲存」索引標籤。</block>
   <block id="28990d33e8c37614d03480a98388f1e5" category="section-title">儲存使用的圖表</block>
   <block id="9791312046868559e87d231ada645635" category="paragraph">對於儲存節點、每個站台及整個網格、「儲存」索引標籤會顯示物件資料和物件中繼資料一段時間以來使用的儲存容量圖表。</block>
-  <block id="7d0cbce2b262977e711d5b93bfc42ff0" category="image-alt">節點&gt;儲存節點&gt;儲存索引標籤</block>
   <block id="6b61f4bd86ea92e27bf0a0baf0418b33" category="section-title">磁碟裝置、磁碟區和物件會儲存資料表</block>
   <block id="c1ffcbdf69dcf67d4ff03e9aad0d6ca5" category="paragraph">對於所有節點、「Storage（儲存）」索引標籤包含節點上磁碟裝置和磁碟區的詳細資料。對於儲存節點、「物件存放區」表格提供每個儲存磁碟區的相關資訊。</block>
   <block id="70883a046e5dddcbd4fac47d1c01fca4" category="paragraph"><block ref="70883a046e5dddcbd4fac47d1c01fca4" category="inline-link-macro-rx"></block></block>
@@ -14370,13 +14282,11 @@
   <block id="19b45e049487f788df37e64cbfb76ce6" category="inline-link-macro">設定儀表板</block>
   <block id="0dc74f68fc63b52df44b76d3a82461df" category="paragraph">儀表板包含有關系統健全狀況和效能、儲存使用、 ILM 程序、 S3 作業和網格中節點的資訊。您可以<block ref="d95feadbedfef06330d4fe72ebe6202e" category="inline-link-macro-rx"></block>從內含有效監控系統所需資訊的卡片集合中進行選擇。</block>
   <block id="fc97d22c7cd6bfc8960faba77d858e99" category="image-alt">Grid Manager中的儀表板</block>
-  <block id="2c2674992ace5d7f2cba38ba0b2112b8" category="paragraph">如需每張卡片所顯示資訊的說明、請選取該卡片的說明圖示<block ref="a92f00b6b3c97c9322a6a7f66a54b5d1" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="9b47369d72e17f6b7fe04d5bf2ad5986" category="section-title">搜尋欄位</block>
   <block id="d2a564cbc4aacb610566d90bafbae7f3" category="paragraph">標頭列中的*搜尋*欄位可讓您快速瀏覽至Grid Manager中的特定頁面。例如、您可以輸入 * km * 來存取金鑰管理伺服器（ KMS ）頁面。</block>
   <block id="826f63d79d4b7114d450491a1fdc19f2" category="paragraph">您可以使用*搜尋*來尋找Grid Manager側邊列和組態、維護及支援功能表上的項目。您也可以依名稱搜尋網格節點和租戶帳戶等項目。</block>
   <block id="1fe690745f4328fb36b6dbdbe05a9b7b" category="section-title">說明功能表</block>
   <block id="843cd7f8f33e4e5dfe6936cb6d7fc8c7" category="inline-image-macro">功能表列上的說明圖示</block>
-  <block id="e4217298eac682400cb4861a0c514a08" category="paragraph">說明功能表<block ref="da4d3a951eb2ac93ffdde3f72fb66273" category="inline-image-macro-rx" type="image"></block>可讓您存取：</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="inline-link-macro">FabricPool</block>
   <block id="a742b76ca61a6288e7425149f03dcaa7" category="inline-link-macro">S3 設定</block>
   <block id="7495d9f71402d3b1d20f08bd19ac6562" category="inline-link-macro">API 文件</block>
@@ -17586,7 +17496,6 @@
   <block id="f76618a8e4af059632c87ab1f949bbe1" category="list-text">選擇*組態*。</block>
   <block id="5027945b6c4be4b0defa7504fb59a7e9" category="list-text">視需要變更端點的組態。</block>
   <block id="b7572dad4f0a50928337a853c6841b15" category="inline-image-macro">編輯圖示</block>
-  <block id="8ce46f160033326da51d68fff4beaedf" category="list-text">要更改端點的顯示名稱，請選擇編輯圖標<block ref="a1b9a0fa06cda375770178cd8e025967" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="9835545c8f2f1603e9c8189110bb3ca7" category="list-text">視需要變更URI。</block>
   <block id="93d6f7cad85d5875a5e22bc394440f96" category="list-text">視需要變更驗證類型。</block>
   <block id="fafcc46585547e5ef0f56ec16e173e1f" category="list-text">若要進行存取金鑰驗證、請視需要變更金鑰、方法是選取*編輯S3金鑰*、然後貼上新的存取金鑰ID和秘密存取金鑰。如果您需要取消變更、請選取*恢復S3金鑰編輯*。</block>
@@ -17854,7 +17763,6 @@
   <block id="24136e156e7bf638ce4d704425bfb35c" category="list-text">如果租戶帳戶具有「 * 使用網格同盟連線 * 」權限、且您正在租戶來源網格上檢視群組、則會顯示其他欄位：</block>
   <block id="2cb033e41c4dbf0c942d3ad4e0b53a40" category="list-text">克隆狀態，可以是 * 成功 * 或 * 失敗 *</block>
   <block id="3d67b6465f6afa535d92efc5bfd415dc" category="list-text">藍色橫幅表示如果您編輯或刪除此群組、您的變更將不會同步至其他網格。</block>
-  <block id="80428311b08c283534dd3fc3d1b44afa" category="list-text">在概述部分中，通過選擇名稱或編輯圖標來更改顯示名稱<block ref="b67b468b391ab50f9ec30894cf44ee94" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="42510a412a6727f322580fd236c974b9" category="list-text">在 * 群組權限 * 索引標籤上、更新權限、然後選取 * 儲存變更 * 。</block>
   <block id="ca77c2352d6f6ab33d9fef10d4b5bb7d" category="list-text">在 * 群組原則 * 索引標籤上、進行任何變更、然後選取 * 儲存變更 * 。</block>
   <block id="76d15346aaf296645e1240de5b672ff4" category="list-text">若要將一或多個現有的本機使用者新增至群組：</block>
@@ -17920,7 +17828,6 @@
   <block id="bbe111a0af881ce7616046bfb206f164" category="list-text">藍色橫幅表示如果您編輯此使用者、您的變更將不會同步至其他網格。</block>
   <block id="028b9180170b1d5c156e19a11c6a5110" category="inline-xref">建立本機使用者</block>
   <block id="af83e781f3da3e781221214c4d02f6ef" category="list-text">視需要編輯使用者設定。如需輸入內容的詳細資訊、請參閱<block ref="f7492d82e45783a2f071144b5ed44a3f" category="inline-xref-macro-rx"></block>。</block>
-  <block id="ed00c55b7aaef18388aa33751ca33d90" category="list-text">在概述部分中，通過選擇名稱或編輯圖標來更改全名<block ref="b67b468b391ab50f9ec30894cf44ee94" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="ecd99b947205fe77517c69e6d95e4299" category="paragraph">您無法變更使用者名稱。</block>
   <block id="57915556595d34f7dd463bb435eb29be" category="list-text">在 * 密碼 * 標籤上、變更使用者的密碼、然後選取 * 儲存變更 * 。</block>
   <block id="a2f20d39a4efca52c7dc149ecf5c06f8" category="list-text">在 * 存取 * 索引標籤上、選取 * 否 * 以允許使用者登入、或選取 * 是 * 以防止使用者登入。然後、選取 * 儲存變更 * 。</block>
@@ -18043,7 +17950,6 @@
   <block id="4f1dafee9d37267a18ea02d253ff84a4" category="paragraph">如果過去 7 天內發生任何平台服務端點錯誤、租戶管理器儀表板會顯示警示訊息。您可以移至「平台服務端點」頁面、查看錯誤的詳細資料。</block>
   <block id="c809f6058595850bf754b0733de6d706" category="paragraph">儀表板上出現的相同錯誤也會出現在「平台服務端點」頁面頂端。若要檢視更詳細的錯誤訊息：</block>
   <block id="4ae7fbe9bdb9aee1cabe152608d33a13" category="list-text">從端點清單中、選取有錯誤的端點。</block>
-  <block id="d2b8912c04923e3bbda14128b3af9d1a" category="list-text">在端點詳細資料頁面上、選取*連線*。此索引標籤只會顯示端點最近發生的錯誤、並指出錯誤發生的時間已過多久。過去 7 天內發生了包含紅色 X 圖示的錯誤<block ref="bb86e4e1464ab87ed499ed81e05f4c80" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="c9027db42a06f8d2fe6a3364b16f4665" category="section-title">檢查錯誤是否仍為最新狀態</block>
   <block id="c8a2e33d63f7235c78463e8557f57199" category="paragraph">有些錯誤可能會繼續顯示在「*最後一個錯誤*」欄中、即使這些錯誤已解決。若要查看錯誤是否為目前錯誤、或強制從表格中移除已解決的錯誤：</block>
   <block id="706a94abb308de1e0a2786b20cf2ea4b" category="list-text">選取端點。</block>
@@ -18250,7 +18156,6 @@
   <block id="542681d1cbeca7ffd4385db1277fa554" category="image-alt">檢視群組詳細資料</block>
   <block id="597cfb67a487bccdbbcd51a75ed93d6e" category="list-text">視需要變更群組設定。</block>
   <block id="eb8b7f00f2370e5ccaf6d82852a009bd" category="admonition">若要確保儲存變更、請在每個區段進行變更後、選取*儲存變更*。儲存變更時、頁面右上角會出現確認訊息。</block>
-  <block id="4a164e15ba62af76d729485ca4c6f217" category="list-text">或者、選取顯示名稱或編輯圖示<block ref="b67b468b391ab50f9ec30894cf44ee94" category="inline-image-macro-rx" type="image"></block>以更新顯示名稱。</block>
   <block id="1cc9948bbb5bf4516b19425a07d08dc4" category="list-text">或者、請更新權限。</block>
   <block id="5ad436952f90a8ca43beb8cf9d6c3540" category="list-text">對於群組原則、請針對 S3 租戶進行適當的變更。</block>
   <block id="82a8eef89f691246a8ab5a43a2f5821f" category="list-text">如果您正在編輯S3租戶的群組、請選擇不同的S3群組原則。如果您選取自訂S3原則、請視需要更新Json字串。</block>
@@ -18469,7 +18374,6 @@
   <block id="773117be327b642ff5ea0d7b8eae6186" category="section-title">提報資訊檢查清單</block>
   <block id="694b31d3fa5ac3889f0a0a15bede5ff4" category="paragraph">如果您無法自行解決問題、請聯絡技術支援部門。聯絡技術支援人員之前、請先收集下表所列的資訊、以利解決問題。</block>
   <block id="ff037d7af5317204e45b5c03d9eab593" category="inline-image-macro">核取符號</block>
-  <block id="f4e1d2557572eb712e031deff6fd202f" category="cell"><block ref="f4e1d2557572eb712e031deff6fd202f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="76559210dfec4c6d868fff8fa04d41bd" category="paragraph">問題陳述</block>
   <block id="42d87860ad188dd26b1d26ff86387b76" category="paragraph">問題症狀為何？問題從何時開始？是否持續或間歇性發生？如果是間歇性的、發生的時間為何？</block>
   <block id="1933cfbd9fe6e37e9cefaab492b3f745" category="inline-xref">定義問題</block>
@@ -20004,7 +19908,6 @@
   <block id="50016faddecb6504fc6be81535125ffe" category="admonition">此外，您還可以<block ref="b0e65ca62d765f93bf07d7ea58c9c4d7" category="inline-link-macro-rx"></block>並將它們發送至NetApp支援站點。</block>
   <block id="c5dfabd961b15569dce393cd68c0e2d3" category="list-text">如果磁碟區列在「*維護* &gt; *磁碟區復原* &gt; *要復原的節點*」中，請使用<block ref="6605a9aca07c6885d584d59be6fb8082" category="inline-link-macro-rx"></block>。</block>
   <block id="700fd6e3ad2ecc41e77476c8a387fedd" category="list-text">如果磁碟區未在「*維護* &gt; *磁碟區復原* &gt; *要復原的節點*」中列出，請依照下列步驟使用<block ref="684d07bba67979ed1fb6162126d367c2" prefix=" " category="inline-code"></block>腳本來恢復對象資料。</block>
-  <block id="f672bc05f28415d72b2bce81478e87b4" category="list-text">您已確認復原的儲存節點的連線狀態為*已連線*<block ref="e6bb8575fc62b4796b3c65b885c9e610" category="inline-image-macro-rx" type="image"></block>在網格管理器中的 *節點* &gt; *概覽* 標籤上。</block>
   <block id="cad4c5f300b4130b9f6b171e30b91076" category="list-text">選擇 *節點* &gt; *_正在修復的儲存節點_* &gt; *ILM*。</block>
   <block id="244c3a0030ee1e2d1d9e8a70ac6e9b4a" category="list-text">選擇*節點*。</block>
   <block id="d23114a69ff19996da6d0f800022fed6" category="list-text">將遊標放在 ILM 佇列圖上，查看 *掃描速率（物件/秒）* 屬性的值，該值是網格中物件被掃描並排隊等待 ILM 的速率。</block>
@@ -20832,7 +20735,6 @@
   <block id="24004985db6776af7adc964eafca8a3c" category="inline-link-macro">配置主機儲存</block>
   <block id="84664beda72850ad746b570aae02c5b4" category="paragraph">查看以下建議<block ref="e990d0760d4073b5493910e6e5239824" category="inline-link-macro-rx"></block>在繼續進行區塊設備替換之前。</block>
   <block id="beec35e881876998e819561fe34d0cbb" category="list-text">與連線相關的診斷（*支援* &gt; *工具* &gt; *診斷*）</block>
-  <block id="d79b83d7ec8c823f7c09df50e16547db" category="list-text">您已確認要恢復物件的儲存節點的連線狀態為“已連線”<block ref="e6bb8575fc62b4796b3c65b885c9e610" category="inline-image-macro-rx" type="image"></block>在網格管理器中的 *節點* &gt; *概覽* 標籤上。</block>
   <block id="5607ba4eb1530527685632a17781ab23" category="paragraph">更換磁碟機並執行手動步驟格式化磁碟區後，網格管理員會在 *維護* &gt; *磁碟區復原* &gt; *要復原的節點* 標籤上將這些磁碟區顯示為復原的候選磁碟區。</block>
   <block id="aa77185bfa345a1eb21ab5384f56f1a4" category="list-text">如果磁碟區在 *維護* &gt; *磁碟區復原* &gt; *要復原的節點* 中列出，請依照下列步驟還原物件資料。如果滿足以下條件，則會列出卷數：</block>
   <block id="085c52f64178ddf8b5c07852dbed252b" category="list-text">在網格管理員中前往*維護*&gt;*磁碟區復原*。</block>
@@ -22563,4 +22465,393 @@
   <block id="543bd89978f2ce67f3480c26cda30ada" category="summary">如果需要立即停止某項服務，可以使用 force-stop 指令。</block>
   <block id="99037eda333142413e79b78b242ce29f" category="summary">檔案 /var/local/log/bycast.log 是 StorageGRID 軟體的主要故障排除檔案。每個網格節點都有一個 bycast.log 檔案。該檔案包含特定於該網格節點的訊息。</block>
   <block id="4a9f0469ea88de1927e989ba0544b1cb" category="summary">您可以建立本機使用者並將其指派到本機群組，以確定這些使用者可以存取哪些功能。Tenant Manager 包含一個名為 root 的預先定義本機使用者。雖然您可以新增和刪除本機使用者，但無法刪除 root 使用者。</block>
+  <block id="e8edcac89d69ef0cb7409bbfbb95cea4" category="paragraph"><block ref="e8edcac89d69ef0cb7409bbfbb95cea4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d75af7193e90f443ffad0c7fa3bf78e5" category="paragraph"><block ref="d75af7193e90f443ffad0c7fa3bf78e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d650622ade73b00bb71156df2e62186f" category="list-text">您已確認，在 Grid Manager 的「節點」&gt;「概覽」標籤中，已復原的儲存節點的連線狀態為「已連線」<block ref="aadbf8183b933481ba73b379a536dd65" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="4749f0852d629752bfdba98169549fb8" category="paragraph"><block ref="4749f0852d629752bfdba98169549fb8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5529601e11c9a04396e2c1fa314919eb" category="paragraph"><block ref="5529601e11c9a04396e2c1fa314919eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="da4481d816c1ff818c1518bed77c1e6c" category="paragraph"><block ref="da4481d816c1ff818c1518bed77c1e6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e8c4cea71e09d86fd6e4855659d15af2" category="paragraph"><block ref="e8c4cea71e09d86fd6e4855659d15af2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5ea91fd939bbffb73529bb2830cc800c" category="paragraph"><block ref="5ea91fd939bbffb73529bb2830cc800c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fdedb1be015c0ec215ea0fa43b00a706" category="paragraph"><block ref="fdedb1be015c0ec215ea0fa43b00a706" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7d3b0843e9153b16708fd2f455c04428" category="paragraph"><block ref="7d3b0843e9153b16708fd2f455c04428" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6f928a6ce9fb673a9f5dfa2c3a90277d" category="paragraph"><block ref="6f928a6ce9fb673a9f5dfa2c3a90277d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1210f42cb08ed0cde4ae8f7606cdf0df" category="list-text">如果需要刪除父級介面，請選擇垃圾桶圖示<block ref="4bffbfd62ec0f93e0e855fe9785d4c1a" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="6a6a8e586651736e36495328206c71b1" category="paragraph"><block ref="6a6a8e586651736e36495328206c71b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fa40f8c59e6db99c70a800a2503517c7" category="list-text">選擇編輯圖示 <block ref="ddd0c287bb5b482da53cc50dcf12edac" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="bc9c388ce7f0ab7a9e5127310edbf4da" category="list-text">選擇網域名稱旁邊的刪除圖示 <block ref="a44052d9cbb5d2bfeab2880304f7fdf1" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="c54b4d5efecea45fa94b9b68ae31db9d" category="paragraph"><block ref="c54b4d5efecea45fa94b9b68ae31db9d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="94caad96c7d871182073d49cb253b449" category="paragraph"><block ref="94caad96c7d871182073d49cb253b449" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d34d9dd6a33a05398f003164b20f9e3b" category="paragraph"><block ref="d34d9dd6a33a05398f003164b20f9e3b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dd1fd78fd5d7bdbd48a681db1b872bd0" category="paragraph"><block ref="dd1fd78fd5d7bdbd48a681db1b872bd0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="441ca2bbf46db9aa89ba7f2c9ae743ec" category="paragraph"><block ref="441ca2bbf46db9aa89ba7f2c9ae743ec" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="80142f02d8d1c3510612d5797eb9c2cc" category="paragraph"><block ref="80142f02d8d1c3510612d5797eb9c2cc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9fe66890b9d4db25252f8774029305bd" category="paragraph"><block ref="9fe66890b9d4db25252f8774029305bd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5e2bf378ad8cca408d06160ecd9c3855" category="paragraph"><block ref="ac36bb287a48e423ba8064346911f8e1" category="inline-image-macro-rx" type="image"></block> 如果錯誤已解決，租用戶帳戶現在將複製到另一個網格。</block>
+  <block id="183202c0a9f6f46df23f2ac608b9de06" category="paragraph"><block ref="183202c0a9f6f46df23f2ac608b9de06" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d78714d6b7b81e51411991c6c6abca06" category="paragraph"><block ref="d78714d6b7b81e51411991c6c6abca06" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="69303a5dbfb61bcbe07707f52ab2def2" category="paragraph"><block ref="69303a5dbfb61bcbe07707f52ab2def2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="43d3250742677eea26b48576dbe50a8d" category="paragraph"><block ref="43d3250742677eea26b48576dbe50a8d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4c9d94ca657d8da9f61d122dab988f24" category="paragraph"><block ref="4c9d94ca657d8da9f61d122dab988f24" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="047832a9bfefc83bfd49ae6f5786c5c1" category="paragraph"><block ref="047832a9bfefc83bfd49ae6f5786c5c1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6cc433b548319cf64cd1b3988c6ad99b" category="paragraph"><block ref="6cc433b548319cf64cd1b3988c6ad99b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d67fe8a645adb034a6cbb19dda73762c" category="paragraph"><block ref="d67fe8a645adb034a6cbb19dda73762c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b95a51132191bffff9c43ea7a2965a7a" category="paragraph"><block ref="b95a51132191bffff9c43ea7a2965a7a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="413c794d19e6368694bb20c2663cf0c2" category="paragraph"><block ref="413c794d19e6368694bb20c2663cf0c2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6bc8b84a96250ddf0ce28969c50ec02f" category="paragraph"><block ref="6bc8b84a96250ddf0ce28969c50ec02f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9558d0fffbee020fd526e7a4ddd996f0" category="paragraph"><block ref="9558d0fffbee020fd526e7a4ddd996f0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bc29b650516c7bb85274f0cac9d0a183" category="paragraph"><block ref="bc29b650516c7bb85274f0cac9d0a183" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f7cc72c36b2737a4d81cfe01dfda7b7e" category="paragraph">若要取消變更，請選擇 <block ref="72cdb3fcd77a60abe1a771e6ac776782" category="inline-image-macro-rx" type="image"></block>*Revert*。</block>
+  <block id="7b2eb688830fe9a178d5430855106433" category="paragraph"><block ref="7b2eb688830fe9a178d5430855106433" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="29a5f53c3fd68e3effd17e097f582462" category="paragraph"><block ref="29a5f53c3fd68e3effd17e097f582462" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cff2166729c4c5e26713e9873da8f80b" category="paragraph"><block ref="cff2166729c4c5e26713e9873da8f80b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b9f20d9bbd18fbb175ab4841da7df3e5" category="paragraph"><block ref="b9f20d9bbd18fbb175ab4841da7df3e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="de0b11c3bb11ceadd0699ddc1662bd3f" category="paragraph"><block ref="de0b11c3bb11ceadd0699ddc1662bd3f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="de2a78a5aadf680cb3b8b6a1e1e3883a" category="paragraph"><block ref="de2a78a5aadf680cb3b8b6a1e1e3883a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ed93d659f9d675e873b6df59c123e718" category="paragraph"><block ref="ed93d659f9d675e873b6df59c123e718" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="91ab078378898fdbd4c2e7852d0f5fd4" category="paragraph"><block ref="91ab078378898fdbd4c2e7852d0f5fd4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="09a08355e9014f2ec0d6751c74408659" category="paragraph"><block ref="09a08355e9014f2ec0d6751c74408659" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c236e4a95a872f8970310cff52512376" category="paragraph"><block ref="c236e4a95a872f8970310cff52512376" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5fbed0eeeab6897cdcafed097a1ad962" category="paragraph"><block ref="5fbed0eeeab6897cdcafed097a1ad962" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="094ec0430e91ba1067efb048327697d3" category="paragraph"><block ref="094ec0430e91ba1067efb048327697d3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="42d9490f5b8ed765da50ad92596cefda" category="paragraph"><block ref="42d9490f5b8ed765da50ad92596cefda" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="76b48b06d63857460fa418962469c17f" category="paragraph"><block ref="76b48b06d63857460fa418962469c17f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="aa4b9dbbb25515d15461cc6a385b8908" category="paragraph"><block ref="aa4b9dbbb25515d15461cc6a385b8908" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="88ce48805f1e208235b3a57a322c4e00" category="paragraph"><block ref="88ce48805f1e208235b3a57a322c4e00" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9ad08a9507c1263e142e1f8b65840a85" category="paragraph">租用戶使用者可以前往「端點」頁面，查看每個端點的最新錯誤訊息，並確認錯誤發生的時間。「上次錯誤」欄位顯示每個端點的最新錯誤訊息，並指示錯誤發生的時間。包含 <block ref="44e2ee707f0cafab572c5f979e186d53" category="inline-image-macro-rx" type="image"></block> 圖示的錯誤表示過去 7 天內發生的錯誤。</block>
+  <block id="ab0d6d39456b9e4c27767b5c18233d01" category="paragraph"><block ref="ab0d6d39456b9e4c27767b5c18233d01" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f030cd13acbc254fe34bb4a2aed7d738" category="paragraph"><block ref="f030cd13acbc254fe34bb4a2aed7d738" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="79ea32be122ce64e5c4bddf4f7d7b45b" category="paragraph"><block ref="79ea32be122ce64e5c4bddf4f7d7b45b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="390a39fa3aa990b5bcce9cb594a7b469" category="paragraph"><block ref="390a39fa3aa990b5bcce9cb594a7b469" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="26c59354001de22d46c3778b05e960e4" category="paragraph"><block ref="26c59354001de22d46c3778b05e960e4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0d2bc505d5c0d8d5df28faebfcded341" category="paragraph"><block ref="0d2bc505d5c0d8d5df28faebfcded341" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="09f7e87cb0c2d9f7818febefc2014cb0" category="list-text">選擇複製圖示（<block ref="d499c029ac4ba292bbc72b8f0bf7bdb5" category="inline-image-macro-rx" type="image"></block>）將存取金鑰 ID 和秘密存取金鑰複製到剪貼簿。</block>
+  <block id="48834f48f9076390f98e8a721303364d" category="paragraph"><block ref="48834f48f9076390f98e8a721303364d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b25a7f0cee9edbc425e0658ddfe9eb16" category="paragraph"><block ref="b25a7f0cee9edbc425e0658ddfe9eb16" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a16bcd5618d430045f1347dc2a42a97a" category="paragraph"><block ref="a16bcd5618d430045f1347dc2a42a97a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f596173cf4b2d37d9268c2c4e6b0c2c9" category="paragraph"><block ref="f596173cf4b2d37d9268c2c4e6b0c2c9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5b96221a35c980220ecf30be3548f08e" category="paragraph"><block ref="5b96221a35c980220ecf30be3548f08e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f12d599da0fa61bbda0a8a4f415cf997" category="paragraph"><block ref="f12d599da0fa61bbda0a8a4f415cf997" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0a9e25ccd4d88b4024a03296063afb5b" category="paragraph"><block ref="0a9e25ccd4d88b4024a03296063afb5b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e395680b5c8899ab472fb709421d0528" category="paragraph"><block ref="e395680b5c8899ab472fb709421d0528" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8abc4dbb913be3a48069455110f716e5" category="paragraph"><block ref="8abc4dbb913be3a48069455110f716e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6819305cd8e3b67276ddb944992dc5e9" category="paragraph"><block ref="6819305cd8e3b67276ddb944992dc5e9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cdd7b05575764c5d9cc5f2d8e57902f0" category="paragraph"><block ref="cdd7b05575764c5d9cc5f2d8e57902f0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ed1720a4caebab3399ef801718513fb7" category="paragraph"><block ref="ed1720a4caebab3399ef801718513fb7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f1dea7debecae79302fcc9a3f9d15f4d" category="paragraph"><block ref="f1dea7debecae79302fcc9a3f9d15f4d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c683d71dfa6a1e812bab87a67d61773" category="paragraph"><block ref="2c683d71dfa6a1e812bab87a67d61773" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d113e208c14db94d390f9c0455ee723a" category="paragraph"><block ref="d113e208c14db94d390f9c0455ee723a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="57efb33757fcd468cbcaccf2fdf666b4" category="paragraph"><block ref="57efb33757fcd468cbcaccf2fdf666b4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="96ae9f681ec658521e1f24bfdcd33523" category="paragraph"><block ref="96ae9f681ec658521e1f24bfdcd33523" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4dfeed059c328b60336147ebe0d0ffad" category="paragraph"><block ref="4dfeed059c328b60336147ebe0d0ffad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ebe482a507bfebc07fab8a755ef400fd" category="paragraph"><block ref="ebe482a507bfebc07fab8a755ef400fd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="11ce15d06f3ff9fecbab922721bc362b" category="list-text">（可選）選擇複製圖示（<block ref="d499c029ac4ba292bbc72b8f0bf7bdb5" category="inline-image-macro-rx" type="image"></block>）將存取金鑰 ID 和秘密存取金鑰複製到剪貼簿。</block>
+  <block id="f965194d80ec8d2fd31ff35a13c302fe" category="list-text">若要刪除未使用的區域，請選擇刪除圖示 <block ref="64e603b619aa843e0f46ef0cd16375ad" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="e84a271dbe73cfd3fbcd5cd2828fb56b" category="paragraph"><block ref="e84a271dbe73cfd3fbcd5cd2828fb56b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0a6b56e89869bb2903b422ec705c6e08" category="paragraph"><block ref="0a6b56e89869bb2903b422ec705c6e08" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="11ac3b1688e6df08697d739967492a05" category="paragraph"><block ref="11ac3b1688e6df08697d739967492a05" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="615b4dad87c60e9d7a13b702a0452476" category="paragraph"><block ref="615b4dad87c60e9d7a13b702a0452476" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="411161433047b87fb3a4515684f931f4" category="list-text">對於要新增的每個自訂儲存等級，請選擇 *Insert* <block ref="3e594dc98d94f2c40d70586a4c3267a6" category="inline-image-macro-rx" type="image"></block> 以新增一行。</block>
+  <block id="2faabba81aa5f5ee43e0003de3899a89" category="paragraph"><block ref="2faabba81aa5f5ee43e0003de3899a89" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9405bc43ac4f2b09bb2ab2aa12de9f82" category="list-text">如果需要修改已儲存的標籤，請選擇「編輯」 <block ref="0ebcf8caa3ab7a11eee1d4c56c33220c" category="inline-image-macro-rx" type="image"></block> 並選擇「套用變更」。</block>
+  <block id="973bb897b0d4e0f06b2d25fd51360130" category="list-text">在 LDR 清單中找到儲存節點，然後選擇其 *Edit* 圖示 <block ref="0ebcf8caa3ab7a11eee1d4c56c33220c" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="2ef47ca8960bcfc68f9fafdffbceb69a" category="paragraph"><block ref="2ef47ca8960bcfc68f9fafdffbceb69a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="118291f749e716c20abad554956d599e" category="paragraph"><block ref="118291f749e716c20abad554956d599e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fa60faac2ca624dc0c3d1f8336c256fd" category="paragraph">對策略規則的任何修改都會反映在模擬結果中，並顯示新的匹配項和先前的匹配項。「模擬策略」視窗會保留您測試的物件，直到您針對模擬結果清單中的每個物件選擇 *Clear all* 或移除圖示 <block ref="64e603b619aa843e0f46ef0cd16375ad" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="438f0d433b66d148b66ad8957b06e8a9" category="paragraph">若要刪除條目，請選擇刪除圖示 <block ref="a44052d9cbb5d2bfeab2880304f7fdf1" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="c8c430402db1f2292c915cec77e8a1c5" category="paragraph"><block ref="c8c430402db1f2292c915cec77e8a1c5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0bd4ce8d20ac68f8d8410bbe868546bb" category="paragraph"><block ref="0bd4ce8d20ac68f8d8410bbe868546bb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fbaa21d3f799ec0316aa430528952b51" category="paragraph"><block ref="fbaa21d3f799ec0316aa430528952b51" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c722aefd60f3d8175ea997d5b0c33034" category="paragraph"><block ref="c722aefd60f3d8175ea997d5b0c33034" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c14f8f2d96d595b70e5f1ffe2bd7f953" category="paragraph"><block ref="c14f8f2d96d595b70e5f1ffe2bd7f953" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2bbb3433a1dd18bb99728ce11995854a" category="paragraph"><block ref="2bbb3433a1dd18bb99728ce11995854a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e2f33f2d82ab8d894228a9f706e176e7" category="paragraph"><block ref="e2f33f2d82ab8d894228a9f706e176e7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="98adf3eaf8930efcb9ad99427b92c0e8" category="paragraph"><block ref="98adf3eaf8930efcb9ad99427b92c0e8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4cd9aeabf7f1d145a75fda32d357f939" category="paragraph"><block ref="4cd9aeabf7f1d145a75fda32d357f939" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8dbe8736f5033f4213c1c0730ec61664" category="paragraph"><block ref="8dbe8736f5033f4213c1c0730ec61664" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a8cc124a7834dc80fdd274516d24a2dc" category="paragraph"><block ref="a8cc124a7834dc80fdd274516d24a2dc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b326c5ae2f04339cbb02cbdc477a6740" category="paragraph"><block ref="b326c5ae2f04339cbb02cbdc477a6740" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2f714deb0708616a03a5065dc6d317bb" category="paragraph"><block ref="2f714deb0708616a03a5065dc6d317bb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b5d5dfeeaa88f03b9da98092ce31f5c1" category="paragraph"><block ref="b5d5dfeeaa88f03b9da98092ce31f5c1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="90651dcbad7dfee4e56ebfd3957c8ac6" category="paragraph"><block ref="90651dcbad7dfee4e56ebfd3957c8ac6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a6b0ebd595d80b1e8e5ec987d9a94750" category="paragraph"><block ref="a6b0ebd595d80b1e8e5ec987d9a94750" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d230a8c635643ea231dda7a0a6e7749d" category="paragraph"><block ref="d230a8c635643ea231dda7a0a6e7749d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="26920394f13af0aed33912340aaef7c0" category="paragraph"><block ref="26920394f13af0aed33912340aaef7c0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e3e90ee7f5424c90e7adc0a0beb9b6e1" category="paragraph"><block ref="e3e90ee7f5424c90e7adc0a0beb9b6e1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="06d6c5a1aee75b184641f04a8a73682b" category="paragraph"><block ref="06d6c5a1aee75b184641f04a8a73682b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9543bed1db928d5d3ce2e27171ec2674" category="paragraph"><block ref="9543bed1db928d5d3ce2e27171ec2674" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="30eb1999f6fa11bf816e1368eda8da10" category="paragraph"><block ref="30eb1999f6fa11bf816e1368eda8da10" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c3c16a2d7170abf57cb583e3e92b95da" category="paragraph"><block ref="c3c16a2d7170abf57cb583e3e92b95da" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e6761f57ab2d678315a3dc8dfc5b93db" category="paragraph"><block ref="e6761f57ab2d678315a3dc8dfc5b93db" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="96392980ea20df79a26f1b6a2efbbcf1" category="paragraph"><block ref="96392980ea20df79a26f1b6a2efbbcf1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="81a42199df1830b5a417ed9d5914cc2a" category="paragraph"><block ref="81a42199df1830b5a417ed9d5914cc2a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4c3fafb90544a5a5682b615515aac251" category="paragraph"><block ref="4c3fafb90544a5a5682b615515aac251" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4d95fe419af1a20461c2585727930afe" category="paragraph"><block ref="4d95fe419af1a20461c2585727930afe" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="080369cc7e5555aefde70b65607bfb70" category="paragraph"><block ref="080369cc7e5555aefde70b65607bfb70" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3bdd98c5046d504c5580b498a52cb7f3" category="paragraph"><block ref="3bdd98c5046d504c5580b498a52cb7f3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2cb4e9507d530117f50b021a2ec18f47" category="paragraph">第一個放置指令 <block ref="93d66bcb72ea5fa8b266196c1b693a59" category="inline-image-macro-rx" type="image"></block> 針對第一年有兩行：</block>
+  <block id="f1743875da54cab62f4b691443f860ad" category="paragraph">第二項安置指示<block ref="09ad18c363a9e3e634ade8fb293c29a4" category="inline-image-macro-rx" type="image"></block>會在一年後建立兩份副本，並永久保留這些副本。</block>
+  <block id="2a11263459279d290d9fab95e045ec15" category="paragraph"><block ref="2a11263459279d290d9fab95e045ec15" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="05af8d309ee89ad29a9322dcf25d008d" category="paragraph"><block ref="05af8d309ee89ad29a9322dcf25d008d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bced0156129c1d8e2ff89894aed14ba2" category="paragraph"><block ref="bced0156129c1d8e2ff89894aed14ba2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5e30f22c6cff52e89f031d710b735891" category="paragraph"><block ref="5e30f22c6cff52e89f031d710b735891" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c4ff4342fc665ef2d8210ea3c766c064" category="paragraph"><block ref="c4ff4342fc665ef2d8210ea3c766c064" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4976fc1a7f1af3eef66e60986b90be75" category="paragraph">您可以選取問號 <block ref="7b44a79ae6eca82f09e99c29ab031e38" category="inline-image-macro-rx" type="image"></block> 以查看 ILM 索引標籤上的項目說明。</block>
+  <block id="0873fcae1868281be7af63b37723216d" category="paragraph"><block ref="0873fcae1868281be7af63b37723216d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cbd43cc00b266e2c0f71b4ecf8395b6a" category="paragraph"><block ref="cbd43cc00b266e2c0f71b4ecf8395b6a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4422bd8df9aa532742108e1fbc67c736" category="list-text"><block ref="86a1c316668b2d36afaad91f20f214ba" category="inline-image-macro-rx" type="image"></block>（灰色）：管理性關閉</block>
+  <block id="2fc90f3c4c4d4398bf6e6f2e76a33ede" category="list-text"><block ref="40138461fe4772a091ec3513c97ba9cc" category="inline-image-macro-rx" type="image"></block>（藍色）：未知</block>
+  <block id="a1d02d3247d056312bed6ea42ee8b9d6" category="paragraph"><block ref="a1d02d3247d056312bed6ea42ee8b9d6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1459d48e09a496b3f4e0913bf2a672ce" category="paragraph"><block ref="1459d48e09a496b3f4e0913bf2a672ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="977023d1abfd0e367f43a13fd62781c9" category="paragraph"><block ref="977023d1abfd0e367f43a13fd62781c9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1bcfb2b80ae4638f08ef38646f77495f" category="paragraph"><block ref="1bcfb2b80ae4638f08ef38646f77495f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="68738caf70a7027fae2b9c035f3ac9fb" category="paragraph"><block ref="68738caf70a7027fae2b9c035f3ac9fb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="79925974c2190a7ed9ca8e4de65d22b7" category="paragraph"><block ref="79925974c2190a7ed9ca8e4de65d22b7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="993c367309521abdc18073352633579e" category="paragraph"><block ref="993c367309521abdc18073352633579e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dba332d41b6a43592f50728440288951" category="paragraph"><block ref="dba332d41b6a43592f50728440288951" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f24877073f392f5e4adbc0e2a3b7b297" category="paragraph"><block ref="f24877073f392f5e4adbc0e2a3b7b297" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="987a306bc12ced39f267297327dd26cf" category="paragraph"><block ref="987a306bc12ced39f267297327dd26cf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c422861c0f8f9d11b47c3436052e6302" category="paragraph"><block ref="c422861c0f8f9d11b47c3436052e6302" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cd6bc2352c1bdd6576d2aedac7723432" category="paragraph"><block ref="cd6bc2352c1bdd6576d2aedac7723432" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2fde914e89d3694598676e2c4a41d32a" category="paragraph"><block ref="2fde914e89d3694598676e2c4a41d32a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f2da08eb07b02fec7b3485bd029085ee" category="paragraph">已連線的節點在「節點」頁面上會顯示綠色對勾 <block ref="aadbf8183b933481ba73b379a536dd65" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="9d11b0cd5e06d037252f462d14ad1f72" category="list-text">選擇 IP 位址旁的刪除圖示 <block ref="a44052d9cbb5d2bfeab2880304f7fdf1" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="b1b93a2def041a03167c82bbfbabe1bb" category="paragraph"><block ref="b1b93a2def041a03167c82bbfbabe1bb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="27b65a4ca4bf4c12e4088eebdcb3f3f9" category="admonition">如果一個站點包含已連接（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）和已斷開連接的節點（<block ref="418c625af9e29850a28686bdce3a0b47" category="inline-image-macro-rx" type="image"></block>或<block ref="64e485044835e69a86e9a7cb11d376c0" category="inline-image-macro-rx" type="image"></block>），則必須將所有離線節點重新上線。</block>
+  <block id="e3c1dc8a59eb7452837f6bf627600430" category="list-text">如果站台包含已連線（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）和已中斷連線（<block ref="64e485044835e69a86e9a7cb11d376c0" category="inline-image-macro-rx" type="image"></block>或<block ref="418c625af9e29850a28686bdce3a0b47" category="inline-image-macro-rx" type="image"></block>）節點的混合情況，則無法將其取消委任。</block>
+  <block id="b80ef981c4c2cbf0d16eaf186c2b2109" category="list-text">如果任何其他站台上的任何節點已中斷連線（<block ref="64e485044835e69a86e9a7cb11d376c0" category="inline-image-macro-rx" type="image"></block> 或 <block ref="418c625af9e29850a28686bdce3a0b47" category="inline-image-macro-rx" type="image"></block>），則無法取消委任站台。</block>
+  <block id="3e2f7a55d2741abeffe14def38deceae" category="list-text">StorageGRID 系統中的所有節點必須具有 *Connected* 連線狀態（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）；但是，節點可以有活動警報。</block>
+  <block id="bb5e8429a5db0f50a63fd67642bab677" category="list-text">*未知*（<block ref="64e485044835e69a86e9a7cb11d376c0" category="inline-image-macro-rx" type="image"></block>）：由於未知原因，節點斷開連接或節點上的服務意外中斷。例如，節點上的某個服務可能已停止，或者節點可能因斷電或意外中斷而失去網路連線。</block>
+  <block id="846d97fe48c5e8bc835c52c33eb3ff3d" category="list-text">*Administratively Down*（<block ref="418c625af9e29850a28686bdce3a0b47" category="inline-image-macro-rx" type="image"></block>）：節點因預期原因未連接到網格。例如，節點或節點上的服務已正常關閉。</block>
+  <block id="c82fc23341590b623695685e57d9717b" category="list-text">所有其他站點的所有節點必須具有 *已連接* 的連接狀態（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）；但是，這些其他節點可以有活動警報。</block>
+  <block id="eb8be4954a76a650ceeb266525b38ff5" category="list-text">所有網格節點均顯示正常（綠色）狀態<block ref="adecb456c12f9b5a5964c230630119dc" category="inline-image-macro-rx" type="image"></block>。如果在 *Health* 欄中看到以下圖示之一，則必須嘗試解決問題：</block>
+  <block id="d54bc78085810426fb40df48d3e247f7" category="paragraph"><block ref="d54bc78085810426fb40df48d3e247f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8c0ab9ece3f4fba526fbc47171a0661d" category="paragraph"><block ref="8c0ab9ece3f4fba526fbc47171a0661d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="edba1d7c04aaf102372b5bfb45aff3f9" category="paragraph"><block ref="edba1d7c04aaf102372b5bfb45aff3f9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="89b8c54244b0a8158f5060eb484bd64a" category="paragraph"><block ref="89b8c54244b0a8158f5060eb484bd64a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bc3ccdd2ca21ce107261bf3f4811a6a3" category="paragraph">您可以透過在 *Health* 欄中尋找藍色的「未知」圖示 <block ref="2b5609cbe276337a849e78685c1cebba" category="inline-image-macro-rx" type="image"></block> 或灰色的「管理關閉」圖示 <block ref="8222fd7e8d6bc7cffb6e27d85610bee3" category="inline-image-macro-rx" type="image"></block> 來識別斷開連線的節點。</block>
+  <block id="bc1367c13d600f9fdc078472bc3a84d3" category="paragraph"><block ref="bc1367c13d600f9fdc078472bc3a84d3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5257a27aef7928f19a3ab4fa37f711a2" category="paragraph"><block ref="5257a27aef7928f19a3ab4fa37f711a2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5107cd81e08b8c50fc24882d51b767ba" category="list-text">若要移除任何您不想重新命名的項目，請在「從清單中移除」欄中選取 <block ref="bcc47ad1a3fb2f56a597ad66e9e36f1a" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="c1ded37cd04766817ec06e0bcb59c1e3" category="list-text">選擇 <block ref="bcc47ad1a3fb2f56a597ad66e9e36f1a" category="inline-image-macro-rx" type="image"></block> 以移除任何您不想使用此工具重新命名的項目。</block>
+  <block id="e6520ce3f56e74697e928e429ff0b7c1" category="paragraph">例如，假設您想要重新命名所有包含字串 <block ref="6988a443f3db7bb9d4b0d18fa0ac8b98" prefix=" " category="inline-code"></block> 的節點，但不想重新命名 <block ref="6988a443f3db7bb9d4b0d18fa0ac8b98" prefix=" " category="inline-code"></block> 網站本身。選取 <block ref="bcc47ad1a3fb2f56a597ad66e9e36f1a" category="inline-image-macro-rx" type="image"></block> 可從重新命名預覽中移除網站。</block>
+  <block id="1e36050abf9dfdc0a72ab6ace4e3958f" category="paragraph"><block ref="1e36050abf9dfdc0a72ab6ace4e3958f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e8e65d9189af4b76a8ed09b53a609788" category="paragraph"><block ref="e8e65d9189af4b76a8ed09b53a609788" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0e7a8e7ea11cd4be4c8fe5e3338642a0" category="list-text">進行任何其他必要的更改，或選擇 <block ref="bcc47ad1a3fb2f56a597ad66e9e36f1a" category="inline-image-macro-rx" type="image"></block> 以移除您不想重新命名的任何項目。</block>
+  <block id="43e64a716333f01cd1a31b962b12ab85" category="list-text">複製每個項目的原始系統名稱並將其貼上到 *顯示名稱* 欄位中，或選擇 <block ref="bcc47ad1a3fb2f56a597ad66e9e36f1a" category="inline-image-macro-rx" type="image"></block> 以移除任何您不想還原的項目。</block>
+  <block id="d94e41ef553ae6fe69e539afee446c89" category="list-text">確認「顯示名稱」欄位中的每個條目都與「系統名稱」欄位中的名稱一致。進行任何更改，或選擇 <block ref="bcc47ad1a3fb2f56a597ad66e9e36f1a" category="inline-image-macro-rx" type="image"></block> 以移除任何您不想還原的項目。</block>
+  <block id="8a75d6d18420d0cc1566e1af4fdfe6ae" category="list-text">您已確認，在 Grid Manager 的 *Nodes* &gt; *Overview* 標籤中，您正在還原物件的儲存節點的連線狀態為 *Connected* <block ref="aadbf8183b933481ba73b379a536dd65" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="b5a2e9e36b53cf15cb29d33de9a6a7e0" category="admonition">如果節點與網格斷開連接，則無法重新啟動該節點。帶有以下圖示的節點的核取方塊將被停用：<block ref="f274af52256400844b08d2b78b1857f5" category="inline-image-macro-rx" type="image"></block> 或 <block ref="40138461fe4772a091ec3513c97ba9cc" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="5edd76330dacaef3654e523177919812" category="inline-image-macro">螢幕截圖顯示「維護 &gt; 恢復」頁面</block>
+  <block id="688758b74acd64cbbf9ba653bca11d2f" category="paragraph"><block ref="e3977f012c13af74f8b56e080e3d1338" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8cefde5f8367a26f14529bce43b68cd3" category="paragraph"><block ref="8cefde5f8367a26f14529bce43b68cd3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="02c5fb47f2b2446a2c79d2c30b177695" category="paragraph"><block ref="02c5fb47f2b2446a2c79d2c30b177695" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="393654a22e9c72420c8645f57e0d5ab7" category="paragraph"><block ref="393654a22e9c72420c8645f57e0d5ab7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7f7d52eccf6197e6d75abaf375d10546" category="paragraph"><block ref="7f7d52eccf6197e6d75abaf375d10546" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="52efa71117569cc67f16fa328491b4a8" category="paragraph">綠色對勾（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）</block>
+  <block id="2b6f0d84682fa1b1c714d4f3746f9761" category="paragraph">除非站點中的每個節點都已連接，否則無法執行已連接站點的停用操作（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="6ef527bde0881149f0c129d8a64001dd" category="paragraph">此範例展示了一個包含三個站點的 StorageGRID 系統。Raleigh 和 Sunnyvale 站點的綠色核取記號（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）表示您可以取消委任這些站點。但是，您無法取消委任 Vancouver 站點，因為它包含主要管理節點。</block>
+  <block id="a3f5f1c19d31b7d1628cc99389b1e895" category="paragraph"><block ref="a3f5f1c19d31b7d1628cc99389b1e895" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="937428ede07f11bf3f2c6382cdf448b9" category="list-text">該站點包含已連接（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）和已斷開連接的節點（<block ref="418c625af9e29850a28686bdce3a0b47" category="inline-image-macro-rx" type="image"></block>或<block ref="64e485044835e69a86e9a7cb11d376c0" category="inline-image-macro-rx" type="image"></block>）。在移除此站點之前，您必須先將所有離線節點重新上線。</block>
+  <block id="41e347e57cd84507903a278239bf1a44" category="paragraph"><block ref="41e347e57cd84507903a278239bf1a44" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2cef659f90f5f12ea734092655a6783b" category="list-text"><block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>（已連接）</block>
+  <block id="65fd56df2f24d2d4fdcf76dcf0212ca2" category="list-text"><block ref="418c625af9e29850a28686bdce3a0b47" category="inline-image-macro-rx" type="image"></block>（管理性關閉）</block>
+  <block id="e35bc7091c9ebe35c0b536219853e5dd" category="list-text"><block ref="64e485044835e69a86e9a7cb11d376c0" category="inline-image-macro-rx" type="image"></block>（未知）</block>
+  <block id="97e1a23b5c7685b49249fbd1ee722d65" category="paragraph"><block ref="97e1a23b5c7685b49249fbd1ee722d65" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2f139adb8ddc2190638e02b37d07773f" category="list-text">若要刪除規則，請選擇垃圾桶圖示 <block ref="5d9314d84f9b5ad733076f53cc9ce024" category="inline-image-macro-rx" type="image"></block> 並選擇 *OK*。</block>
+  <block id="efad2c8c9430470554ed65b6a338ef34" category="list-text">StorageGRID 系統中的所有節點都必須連接（<block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="7149529ccc1e69e1d40d684672d60dc9" category="list-text">檢視步驟 5（解決節點衝突）中斷開連接的節點部分，以確認 StorageGRID 系統中是否有任何節點的連線狀態為未知（<block ref="64e485044835e69a86e9a7cb11d376c0" category="inline-image-macro-rx" type="image"></block>）或管理關閉（<block ref="418c625af9e29850a28686bdce3a0b47" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="aabc89400bc371549662685d28094025" category="paragraph"><block ref="aabc89400bc371549662685d28094025" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8d6542e3fcb2ed9d3e62308d6e772570" category="paragraph"><block ref="8d6542e3fcb2ed9d3e62308d6e772570" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b109dc4aeb546beccf66f1eb3701bb54" category="paragraph"><block ref="b109dc4aeb546beccf66f1eb3701bb54" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="de6d34ab5d03faa96ede5cc506ec5315" category="paragraph"><block ref="de6d34ab5d03faa96ede5cc506ec5315" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4e875a4ff030e5aff15af63f174f4531" category="paragraph"><block ref="4e875a4ff030e5aff15af63f174f4531" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6ba33ab4ede87208f71817539e81aa8c" category="paragraph"><block ref="6ba33ab4ede87208f71817539e81aa8c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5d16b8e4782589bf81cbaa82c30b6aff" category="paragraph"><block ref="5d16b8e4782589bf81cbaa82c30b6aff" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="deb938125b209ae032536e5d3a5a3c37" category="paragraph"><block ref="deb938125b209ae032536e5d3a5a3c37" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="14486c7427751864bcd4ef397551ec84" category="paragraph"><block ref="14486c7427751864bcd4ef397551ec84" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7d9c4e398252fb3f039561ab83dbc293" category="paragraph"><block ref="7d9c4e398252fb3f039561ab83dbc293" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f55b28db6c9729bd8ceaaead258285f3" category="paragraph"><block ref="f55b28db6c9729bd8ceaaead258285f3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="74d2056661460acaa2e6e19d242d6390" category="list-text">選擇子網路旁的刪除圖示 <block ref="a44052d9cbb5d2bfeab2880304f7fdf1" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="e9d95b01ce432e4e5d3e43d9366c9bc2" category="paragraph"><block ref="e9d95b01ce432e4e5d3e43d9366c9bc2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c8afa945f59ef63d0e1241927c439323" category="paragraph"><block ref="c8afa945f59ef63d0e1241927c439323" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7da2ef345f788a0900c3da04a69b7013" category="paragraph"><block ref="7da2ef345f788a0900c3da04a69b7013" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9308a38f1ce6e81cee36e74b66bf9403" category="inline-image-macro">警報 &gt; 建立自訂規則</block>
+  <block id="013168691ac7798b10362f7b3506596c" category="paragraph"><block ref="dfcbd89ffefc97b3ca9843c500291b27" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a2921a2915fec6d6fab83c1b796aad18" category="paragraph">若要查看可用指標並測試 Prometheus 運算式，請選擇說明圖示 <block ref="7b44a79ae6eca82f09e99c29ab031e38" category="inline-image-macro-rx" type="image"></block> 並點擊連結進入 Grid Management API 的 Metrics 區段。</block>
+  <block id="ddcd0eb73c4f810da07077fdc1af1965" category="paragraph">若要查看指標 API 作業，包括可用指標的完整清單，請前往 Grid Manager。從頁面頂端選取說明圖示，然後選取 *API documentation* &gt; *metrics*。<block ref="40609f7690e445c12d921f768e02192e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="64197826eab40cc1ff71eefddd61ab54" category="inline-image-macro">提醒 &amp;gt; 編輯規則</block>
+  <block id="5e522ca2ab36752e0fb5c66e4aa692b3" category="paragraph"><block ref="3c86eeb4c6791d7579cb1d5bd354d330" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0e9c7355c3261931ad4c1055d17720eb" category="paragraph"><block ref="0e9c7355c3261931ad4c1055d17720eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99fd4ae1b6eb57e87d665ad2b6ab894b" category="paragraph">點選加號圖示 <block ref="2262132453675008ecdede4fe8cf4f1d" category="inline-image-macro-rx" type="image"></block> 以新增收件人。</block>
+  <block id="1805bc4e30332f688787e83824920b0a" category="admonition">如果需要編輯電子郵件設定，請選擇鉛筆圖示 <block ref="ddd0c287bb5b482da53cc50dcf12edac" category="inline-image-macro-rx" type="image"></block> 來更新此欄位。</block>
+  <block id="b17fdbf27916ac5a902b24e89842aa9d" category="paragraph"><block ref="b17fdbf27916ac5a902b24e89842aa9d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8f0b5f6e2c92f407c7f571591bc7f5e2" category="paragraph"><block ref="8f0b5f6e2c92f407c7f571591bc7f5e2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a14ccc28219d029088566c25533fdec8" category="paragraph"><block ref="a14ccc28219d029088566c25533fdec8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c7573a94383650ce5fee73ce26f8ef02" category="paragraph"><block ref="c7573a94383650ce5fee73ce26f8ef02" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1e553fd22c585ed4783768edcee1dfc4" category="paragraph"><block ref="1e553fd22c585ed4783768edcee1dfc4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3a61bfc03a460ae7fec82f3f20519030" category="paragraph"><block ref="3a61bfc03a460ae7fec82f3f20519030" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4bd41257c9b9449362e0a0c14dc00766" category="paragraph"><block ref="4bd41257c9b9449362e0a0c14dc00766" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="36676df19bd0d5b4e239060b1500541c" category="paragraph"><block ref="36676df19bd0d5b4e239060b1500541c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="16dbb189b64a27fd66ba15f9ea5f4344" category="paragraph"><block ref="16dbb189b64a27fd66ba15f9ea5f4344" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3fb62264d6bcdcf309301edf1e2edbb6" category="paragraph"><block ref="3fb62264d6bcdcf309301edf1e2edbb6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1c85dae425071faa332162f878195659" category="paragraph"><block ref="1c85dae425071faa332162f878195659" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7229e12210112811d2ce23ddafe0ea54" category="inline-image-macro">節點 &gt; _儲存節點_ &gt; 物件 &gt; 屬性說明的螢幕截圖</block>
+  <block id="541c55cedee115ff93a9b080ff856fa8" category="paragraph"><block ref="050c1e15b4e06b9f394bfa44be574e70" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9c4a9c6e66b951cdd91469079efbd3da" category="inline-image-macro">節點 &amp;gt; 儲存節點 &amp;gt; 物件 &amp;gt; 驗證</block>
+  <block id="919d5588b1621e3c57cb34beeda16760" category="paragraph"><block ref="11beaee58b6c2e60747779659400ea12" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="23dab94508e5da496521e1eb5a0fa158" category="inline-image-macro">節點 &gt; 儲存節點 &gt; ILM &gt; EC 驗證</block>
+  <block id="3fe451f8d5a56a9aa784841ff4095127" category="paragraph"><block ref="73619c049c31c30ddb9c9549cff67c4f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7e9e1621b286ee8a59a74320ef3a1091" category="paragraph">選擇屬性名稱旁的問號 <block ref="80297768e2eeff8e1010adf1887e28cb" category="inline-image-macro-rx" type="image"></block> 即可顯示說明文字。</block>
+  <block id="7f03e6a438fdebbb180a4202d545761d" category="paragraph"><block ref="7f03e6a438fdebbb180a4202d545761d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="171917b92f142f9fc1bc50455680077c" category="paragraph"><block ref="171917b92f142f9fc1bc50455680077c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dfdb1d2cc7927a7e608e96b5c439ee40" category="paragraph"><block ref="dfdb1d2cc7927a7e608e96b5c439ee40" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7ef8bdb8075e5f3ba29706631a52e666" category="paragraph"><block ref="7ef8bdb8075e5f3ba29706631a52e666" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b2aa4f8a2d9b0a57dfb7bed7d42d8ffd" category="paragraph"><block ref="b2aa4f8a2d9b0a57dfb7bed7d42d8ffd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cf040316f9d6ed2b5fbd229f032902f7" category="paragraph"><block ref="cf040316f9d6ed2b5fbd229f032902f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="04cb8ce24b8d7ba8e7cd919bb9e234db" category="admonition">若要查看這些值的圖表，請按一下「可用」欄中的圖表圖示 <block ref="82965b68a305ff9177001f9d6cff7eaf" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="2aab9101609dabc01ab35a23f8cce81e" category="paragraph"><block ref="2aab9101609dabc01ab35a23f8cce81e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="65320ae90c7b981d9ae4f16c7de2c503" category="paragraph"><block ref="65320ae90c7b981d9ae4f16c7de2c503" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="93014aa93d51c7d3caa1a0622344ca72" category="paragraph"><block ref="93014aa93d51c7d3caa1a0622344ca72" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58a73d0b4badcbe4a6249a33f474401e" category="paragraph"><block ref="58a73d0b4badcbe4a6249a33f474401e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="40138461fe4772a091ec3513c97ba9cc" category="paragraph"><block ref="40138461fe4772a091ec3513c97ba9cc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="86a1c316668b2d36afaad91f20f214ba" category="paragraph"><block ref="86a1c316668b2d36afaad91f20f214ba" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="aadbf8183b933481ba73b379a536dd65" category="paragraph"><block ref="aadbf8183b933481ba73b379a536dd65" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b54f53d440df108399173f7dbb54572b" category="paragraph"><block ref="53c004a5e1db4393794c01f48c522a57" category="inline-image-macro-rx" type="image"></block> *Critical*：StorageGRID 節點或服務出現異常情況，導致其正常運作停止。您必須立即解決根本問題。如果問題無法解決，可能會導致服務中斷和資料遺失。</block>
+  <block id="2a31c1292a507e91a14e153e95956f7d" category="paragraph"><block ref="58a074e0e9f119a42d452edfddf21bc6" category="inline-image-macro-rx" type="image"></block> *Major*：存在異常情況，該情況正在影響目前作業或接近嚴重警示的臨界值。您應調查重大警示並解決任何根本問題，以確保異常情況不會停止 StorageGRID 節點或服務的正常運作。</block>
+  <block id="8c04a655da017ff442910a7d448cd399" category="paragraph"><block ref="820110d3bf3048e20789205a30afd51a" category="inline-image-macro-rx" type="image"></block> *Minor*：系統目前運作正常，但有異常情況，如果持續下去可能會影響系統運作。您應監控並解決不會自行消失的輕微警報，以確保它們不會導致更嚴重的問題。</block>
+  <block id="6089280c9127b4aa7f20c07b6ae0c7b3" category="list-text">若要展開警報組，請選擇向下插入號 <block ref="df28da9f784145901351614258d11086" category="inline-image-macro-rx" type="image"></block>。若要折疊群組中的單一警報，請選擇向上插入號 <block ref="80be7a5460a146a7ec7d371c8582f431" category="inline-image-macro-rx" type="image"></block>，或選擇群組的名稱。</block>
+  <block id="903d1a342c97bedee33bd173ce08dc03" category="list-text">若要對目前警報或警報群組進行排序，請選擇每列標題中的向上/向下箭頭 <block ref="7b030b7adedbccf1c4f81e820b080ed2" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="9d92381bc1f77a586a7da4012a029781" category="list-text">（可選）透過選擇 *Sign in/Copy URL* 欄中的登入連結 <block ref="96017f64695fc763f55e4728ed52d80a" category="inline-image-macro-rx" type="image"></block> 登入租用戶帳戶。</block>
+  <block id="6b11ded8d927f4e35d04a7cdf4aa7256" category="list-text">（可選）在 *Sign in/Copy URL* 欄中選取複製 URL 連結 <block ref="d03cde3ddd28b6d002119b4ba895f6e9" category="inline-image-macro-rx" type="image"></block>，以複製租用戶登入頁面的 URL。</block>
+  <block id="36248c6c4aebbba0a803c681ac07ef67" category="paragraph"><block ref="36248c6c4aebbba0a803c681ac07ef67" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0c10debb08f377c64d6ca225dd008455" category="paragraph"><block ref="0c10debb08f377c64d6ca225dd008455" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dab9828b3b64117455930653171d6d65" category="paragraph"><block ref="dab9828b3b64117455930653171d6d65" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7fc9217444d5e0b4e99c65f2378e1102" category="paragraph"><block ref="7fc9217444d5e0b4e99c65f2378e1102" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e875a846bf5b8c2c7203657444ada161" category="paragraph"><block ref="e875a846bf5b8c2c7203657444ada161" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e705d3f008e6d39d00bb4ce2d5066b43" category="paragraph"><block ref="e705d3f008e6d39d00bb4ce2d5066b43" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a16734ef12d352792be4dd38f9dcbb1e" category="list-text"><block ref="fcabcf6ddf5946d29c6b120d402ffc4b" category="inline-image-macro-rx" type="image"></block> *Normal*：所有數值均在正常範圍內。</block>
+  <block id="52204138c2791f9f9d07773170f278f2" category="list-text"><block ref="820110d3bf3048e20789205a30afd51a" category="inline-image-macro-rx" type="image"></block> *Attention*：一個或多個數值超出正常範圍。</block>
+  <block id="8df8edca3f6f97dd0a2503a42d3a9e9e" category="list-text"><block ref="53c004a5e1db4393794c01f48c522a57" category="inline-image-macro-rx" type="image"></block> *Caution*：其中一個或多個數值明顯超出正常範圍。</block>
+  <block id="4848580044a6792699865aeb43e62feb" category="paragraph"><block ref="4848580044a6792699865aeb43e62feb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d8a49e4b979a0e44cc7467b5902101b4" category="paragraph"><block ref="d8a49e4b979a0e44cc7467b5902101b4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b6f9375e4f9370f00ed3ae1cfa565cc8" category="paragraph"><block ref="b6f9375e4f9370f00ed3ae1cfa565cc8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="abb56cca696dd9a8caac50aa54d6b281" category="paragraph"><block ref="abb56cca696dd9a8caac50aa54d6b281" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b754dba7b5902f30ce2554f43e973fb0" category="inline-image-macro">Alerts &gt; Silences 頁面</block>
+  <block id="3e24da17fb32c718c4594e772804fcbc" category="paragraph"><block ref="1079c24bd2d044fd8247a06715303eb0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ae69cc56e06b5cbed781fa9a0129aa17" category="inline-image-macro">警報 &gt; 建立靜默</block>
+  <block id="811f8f85c54f01ee9d207b6601bcc245" category="paragraph"><block ref="11571c9186962da8a292dc80c2b7641f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f1b6dbb9a33c6b217e0c9d2ed947d74e" category="paragraph"><block ref="f1b6dbb9a33c6b217e0c9d2ed947d74e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c16f2652f3a3c99be080b2fd6bb44864" category="list-text">*Critical* <block ref="53c004a5e1db4393794c01f48c522a57" category="inline-image-macro-rx" type="image"></block>：StorageGRID 節點或服務出現異常情況，導致其正常運作停止。您必須立即解決根本問題。如果問題無法解決，可能會導致服務中斷和資料遺失。</block>
+  <block id="ffc8b1072965d9898f751ba8d3ee8290" category="list-text">*重大* <block ref="58a074e0e9f119a42d452edfddf21bc6" category="inline-image-macro-rx" type="image"></block>：存在異常情況，該情況正在影響目前作業或接近嚴重警示的閾值。您應調查重大警示並解決任何潛在問題，以確保異常情況不會停止 StorageGRID 節點或服務的正常運作。</block>
+  <block id="3876dd0cb77158bf377120f3597d258a" category="list-text">*輕微* <block ref="820110d3bf3048e20789205a30afd51a" category="inline-image-macro-rx" type="image"></block>：系統目前運作正常，但有異常情況，如果持續下去可能會影響系統運作。您應監控並解決不會自行消失的輕微警示，以確保它們不會導致更嚴重的問題。</block>
+  <block id="19ea7e316709b19b429822f3fa686fa1" category="paragraph"><block ref="19ea7e316709b19b429822f3fa686fa1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7d9deca8afc492f6b0c9523d6793e35f" category="paragraph">部分卡片可以最大化以便更清晰地查看。選擇卡片右上角的最大化圖示 <block ref="f19164359274dd1e4a587f902e77b246" category="inline-image-macro-rx" type="image"></block>。若要關閉已最大化的卡片，請選擇最小化圖示 <block ref="fe3202e74a344e8a109109b150d437c7" category="inline-image-macro-rx" type="image"></block> 或選取 *Close*。</block>
+  <block id="01b88aa463847860142f5bc2c164457f" category="paragraph"><block ref="01b88aa463847860142f5bc2c164457f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="042ebe79388f2177d021578e758219dc" category="paragraph"><block ref="042ebe79388f2177d021578e758219dc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bbdc6e6fc0cade0ec822f57e0b15de3f" category="inline-image-macro">節點頁面 &gt; 硬體 &gt; 記憶體使用詳細資料</block>
+  <block id="d61d496091fcf8d46d9015dd27f7a1f1" category="paragraph"><block ref="1f11465cc2ba17f1208eafcb068f3870" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5990b001b6c86008e81e9b290044e9c6" category="paragraph"><block ref="5990b001b6c86008e81e9b290044e9c6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d2f13a0e51ba41080a2a2805dcd04ec5" category="paragraph"><block ref="d2f13a0e51ba41080a2a2805dcd04ec5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3404a9e673af70e50390cf02ba31aed5" category="paragraph"><block ref="3404a9e673af70e50390cf02ba31aed5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9693c0c69bcd753931aca2c461f80b0" category="paragraph"><block ref="d9693c0c69bcd753931aca2c461f80b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ffbc5f0bde2aed4cf9b763df7b803bbc" category="paragraph"><block ref="ffbc5f0bde2aed4cf9b763df7b803bbc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a2fb285ea4f71405b387b9945f942892" category="paragraph"><block ref="a2fb285ea4f71405b387b9945f942892" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c52f42ca1c32ab51e5bf570a23040f77" category="paragraph"><block ref="c52f42ca1c32ab51e5bf570a23040f77" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f8b59f67a737142226080b5b2da2ac13" category="paragraph"><block ref="f8b59f67a737142226080b5b2da2ac13" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4bdae2f60c32cf327626982c09c8d705" category="paragraph"><block ref="4bdae2f60c32cf327626982c09c8d705" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dd88fc259fc9d3f520d6e328c83bd640" category="paragraph"><block ref="dd88fc259fc9d3f520d6e328c83bd640" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f3c674ad9127cc3b1c44fd0281b05526" category="paragraph"><block ref="f3c674ad9127cc3b1c44fd0281b05526" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2541231a2e307a47562808cf0deac0a3" category="paragraph"><block ref="2541231a2e307a47562808cf0deac0a3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="079f0fbe61de7757817bf57541d74f50" category="paragraph"><block ref="079f0fbe61de7757817bf57541d74f50" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1b23e27778ec2d18351157f68f6e6cf2" category="paragraph"><block ref="1b23e27778ec2d18351157f68f6e6cf2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c5d26444a9797c1df9fa39852bf1bd56" category="paragraph"><block ref="c5d26444a9797c1df9fa39852bf1bd56" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="55cc148f91d5c6e8e5fb91a9727d2e5f" category="paragraph"><block ref="55cc148f91d5c6e8e5fb91a9727d2e5f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7ea0455f932be7794613d8872e40e4da" category="list-text">*未知* <block ref="40138461fe4772a091ec3513c97ba9cc" category="inline-image-macro-rx" type="image"></block>：由於未知原因，節點未連接到網格，或一項或多項服務意外中斷。例如，節點間的網路連線中斷、斷電或某項服務中斷。此時可能還會觸發 *無法與節點通訊* 警報。此外，可能還有其他警報。這種情況需要立即處理。</block>
+  <block id="f6a09060c9508d6f5f3cf484f36eb58b" category="list-text">*Administratively down* <block ref="86a1c316668b2d36afaad91f20f214ba" category="inline-image-macro-rx" type="image"></block>：節點因預期原因未連接至網格。例如，節點或其上的服務已正常關閉、節點正在重新開機，或軟體正在升級。也可能有一個或多個警示處於作用中狀態。</block>
+  <block id="aeb85c900726672c266c111fb90c8b5e" category="list-text">*已連接* <block ref="aadbf8183b933481ba73b379a536dd65" category="inline-image-macro-rx" type="image"></block>：節點已連接至網格。</block>
+  <block id="716fec7578ffd96f0ea10746d4b28efe" category="paragraph"><block ref="716fec7578ffd96f0ea10746d4b28efe" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="821cb4a68da359c3b72e4f6e09a3908f" category="paragraph"><block ref="821cb4a68da359c3b72e4f6e09a3908f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9bc2179c3291fd6c941a28b6ce34c892" category="paragraph"><block ref="9bc2179c3291fd6c941a28b6ce34c892" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="45fd783f91d08300a6ec669fdd4a1f31" category="inline-image-macro">節點 &gt; 儲存節點 &gt; 儲存索引標籤</block>
+  <block id="ecf4a06c5607352e811d0949ce711a5d" category="paragraph"><block ref="b42c4ecf2feab95729101bb75d136fe4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ac620076d7e4de26cc55caa7f1f46c64" category="paragraph"><block ref="ac620076d7e4de26cc55caa7f1f46c64" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6946c7db7f8ccdcc74a3d1eb515436a7" category="paragraph"><block ref="6946c7db7f8ccdcc74a3d1eb515436a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0acd9c8df388cd3fe39bf01260de1d0c" category="paragraph"><block ref="0acd9c8df388cd3fe39bf01260de1d0c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b4d8b66422d4def21000ba939a716eb1" category="paragraph"><block ref="b4d8b66422d4def21000ba939a716eb1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ef54fdd40af898441b178fd8133dfc4" category="paragraph"><block ref="3ef54fdd40af898441b178fd8133dfc4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="651af82f0fae8be9d7a589953406d0ae" category="paragraph"><block ref="651af82f0fae8be9d7a589953406d0ae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="852ecf5174d73a7f0335316eb3134c17" category="paragraph"><block ref="852ecf5174d73a7f0335316eb3134c17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="63c4db4dccc0fe47ed12c9f873312c4e" category="paragraph"><block ref="63c4db4dccc0fe47ed12c9f873312c4e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="801650bd0515520fa122d1ef4cf03ee9" category="paragraph"><block ref="801650bd0515520fa122d1ef4cf03ee9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4a8faf36be07033d8b883346479f12ac" category="paragraph"><block ref="4a8faf36be07033d8b883346479f12ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="659d81e4b555389cab5e3f15ee1e4da5" category="paragraph"><block ref="659d81e4b555389cab5e3f15ee1e4da5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dfa699eeeeb62f1e644822984c0e27ca" category="paragraph"><block ref="dfa699eeeeb62f1e644822984c0e27ca" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="17e140d2361118177966e4ac749d4971" category="paragraph"><block ref="17e140d2361118177966e4ac749d4971" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dc8863cb1257ce7d0ab3ba56dc8a7d28" category="paragraph">若要了解每張卡片上顯示的資訊，請選擇該卡片的說明圖示 <block ref="7b44a79ae6eca82f09e99c29ab031e38" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="e409bfd3d249744211473963b0dc3afb" category="paragraph">說明選單 <block ref="cd5ca79cd908020e19e428f5e1a98d64" category="inline-image-macro-rx" type="image"></block> 提供以下項目的存取：</block>
+  <block id="d667a65934092be12601f040695162e6" category="paragraph"><block ref="d667a65934092be12601f040695162e6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="798f79eacc098cd7922e01f6383aecf8" category="paragraph"><block ref="798f79eacc098cd7922e01f6383aecf8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="acd101494babb5733e0575cea1a0d8bd" category="paragraph"><block ref="acd101494babb5733e0575cea1a0d8bd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="210285200f0ee0a2f98c830413545e4f" category="paragraph"><block ref="210285200f0ee0a2f98c830413545e4f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bbf8fa1cf6e13993f8f3581426eaa666" category="paragraph"><block ref="bbf8fa1cf6e13993f8f3581426eaa666" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c9cef9c7908b4040a9a82ba6b6b53695" category="paragraph"><block ref="c9cef9c7908b4040a9a82ba6b6b53695" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="60594ce5431fe5a7b494e562eca4efc9" category="paragraph"><block ref="60594ce5431fe5a7b494e562eca4efc9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cb3e4e0192e2146fd9e43416b265ee9a" category="paragraph"><block ref="cb3e4e0192e2146fd9e43416b265ee9a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="056aa0c4b7b9c4f3a0cb24b295d9bd5a" category="paragraph"><block ref="056aa0c4b7b9c4f3a0cb24b295d9bd5a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9b9ce67147d2400086fc7022a23f51ff" category="paragraph"><block ref="9b9ce67147d2400086fc7022a23f51ff" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="261a1a52ca1ac5e0c11fc6f1a8faed93" category="paragraph"><block ref="261a1a52ca1ac5e0c11fc6f1a8faed93" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="78988a6223ffa5a4ea8d7f708f2dca57" category="paragraph"><block ref="78988a6223ffa5a4ea8d7f708f2dca57" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b6733bfbf5eb740ae9a66f49db35cbe3" category="paragraph"><block ref="b6733bfbf5eb740ae9a66f49db35cbe3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="018eba8956d9b9befd7c27bd4af56c3f" category="paragraph"><block ref="018eba8956d9b9befd7c27bd4af56c3f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1bdfa7d74a30941cf87bae55f014eb98" category="paragraph"><block ref="1bdfa7d74a30941cf87bae55f014eb98" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7ca5eefc7f3001b25256440cc9eaf144" category="paragraph"><block ref="7ca5eefc7f3001b25256440cc9eaf144" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a04f1a5703328e471f25b086971290cc" category="paragraph"><block ref="a04f1a5703328e471f25b086971290cc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="00b84f016dd6e9a77ba672aaed8b488d" category="paragraph"><block ref="00b84f016dd6e9a77ba672aaed8b488d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d1c5e3e4a1bd4ef54066525ddd945f97" category="paragraph"><block ref="d1c5e3e4a1bd4ef54066525ddd945f97" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b1fc021dbc7c7a3e90b4b2101f6cfdca" category="paragraph"><block ref="b1fc021dbc7c7a3e90b4b2101f6cfdca" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e58d399f09e96b1f7945dd5f80fbcc0c" category="paragraph"><block ref="e58d399f09e96b1f7945dd5f80fbcc0c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58bd7618f11fc0539e333aa14595fa57" category="paragraph"><block ref="58bd7618f11fc0539e333aa14595fa57" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="53c7eb39d606f69c5e308e1021f0fe52" category="paragraph"><block ref="53c7eb39d606f69c5e308e1021f0fe52" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="10871c219984215b0605ceba65204622" category="paragraph"><block ref="10871c219984215b0605ceba65204622" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7be72a0f3d41b50e782b5ed0b12dc129" category="paragraph"><block ref="7be72a0f3d41b50e782b5ed0b12dc129" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="15e7a50f1f6a8d6f7f975f85ff2be8f5" category="paragraph"><block ref="15e7a50f1f6a8d6f7f975f85ff2be8f5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="92dc2fe42ec793ea4dd0fa76ce860c15" category="paragraph"><block ref="92dc2fe42ec793ea4dd0fa76ce860c15" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4ea8db47c4867eedab302a343dcb0f83" category="paragraph"><block ref="4ea8db47c4867eedab302a343dcb0f83" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2d573980922363dbdc1d604558ec6331" category="paragraph"><block ref="2d573980922363dbdc1d604558ec6331" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ec7f7c8da3db40e6f8551419548e89c3" category="paragraph"><block ref="ec7f7c8da3db40e6f8551419548e89c3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bacd64e81d29f4812c1036542ba07259" category="paragraph"><block ref="bacd64e81d29f4812c1036542ba07259" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ad9f302b1340e8f31aec98196ca1888e" category="list-text">若要變更端點的顯示名稱，請選擇編輯圖示 <block ref="7d5cc4b4ceaf7b51d8fb45b1273af05b" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="10baa31ad77621478ec48aa755fc3828" category="paragraph"><block ref="10baa31ad77621478ec48aa755fc3828" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9e84865c170d196867356e66f838dc3" category="paragraph"><block ref="a9e84865c170d196867356e66f838dc3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="205436b2e69e68bb67a08351f0070d63" category="paragraph"><block ref="205436b2e69e68bb67a08351f0070d63" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3c31adf29e81e285713900a3d7bd651c" category="paragraph"><block ref="3c31adf29e81e285713900a3d7bd651c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c014a52c1b86ae8b91d983a1dc7cdc3f" category="paragraph"><block ref="c014a52c1b86ae8b91d983a1dc7cdc3f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="750b94234098a906d166fff59ee96ab5" category="paragraph"><block ref="750b94234098a906d166fff59ee96ab5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="27c3dcaa625e424683b83b8601b42b49" category="paragraph"><block ref="27c3dcaa625e424683b83b8601b42b49" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="535191207439b7bc9a4fd049d69049ad" category="paragraph"><block ref="535191207439b7bc9a4fd049d69049ad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fd5093a56fab9a641f86f16f7cd32390" category="paragraph"><block ref="fd5093a56fab9a641f86f16f7cd32390" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e5f40741bac50d0d851ab876392da7ca" category="paragraph"><block ref="e5f40741bac50d0d851ab876392da7ca" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d60cc51c428f9104cc75e9b20d9609e5" category="paragraph"><block ref="d60cc51c428f9104cc75e9b20d9609e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6db5e6f8c98d78fcc8bbf97d75724fd3" category="paragraph"><block ref="6db5e6f8c98d78fcc8bbf97d75724fd3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="88e3f783dd005837cc9f20df16426f8a" category="list-text">在「概覽」部分，選擇名稱或編輯圖示 <block ref="ddd0c287bb5b482da53cc50dcf12edac" category="inline-image-macro-rx" type="image"></block> 即可變更顯示名稱。</block>
+  <block id="a016ae30a1e81eba7385ea64d35776f4" category="paragraph"><block ref="a016ae30a1e81eba7385ea64d35776f4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fa069bf17962536fc6ba80ad136eef72" category="paragraph"><block ref="fa069bf17962536fc6ba80ad136eef72" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d46e31303e1b7b126539d6fd2309f4d9" category="list-text">在「概覽」部分，選擇名稱或編輯圖示 <block ref="ddd0c287bb5b482da53cc50dcf12edac" category="inline-image-macro-rx" type="image"></block> 即可變更全名。</block>
+  <block id="831697bc6110021115117a4efad684f1" category="paragraph"><block ref="831697bc6110021115117a4efad684f1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f182af450905dc62c629f25006106382" category="list-text">在端點詳細資料頁面上，選擇 *Connection*。此標籤僅顯示端點的最新錯誤，並指示錯誤發生的時間。帶有紅色 X 圖示的錯誤 <block ref="44e2ee707f0cafab572c5f979e186d53" category="inline-image-macro-rx" type="image"></block> 表示過去 7 天內發生的錯誤。</block>
+  <block id="bbab910c2055b37b40fb7a3107273504" category="paragraph"><block ref="bbab910c2055b37b40fb7a3107273504" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a51e315344030e3f4758b38759202565" category="paragraph"><block ref="a51e315344030e3f4758b38759202565" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9e5f2170021d97e5b6e8fec748c2d1a1" category="paragraph"><block ref="9e5f2170021d97e5b6e8fec748c2d1a1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e02bc3b9ab47b0a30ec02077f8440ece" category="paragraph"><block ref="e02bc3b9ab47b0a30ec02077f8440ece" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="03d569474ce5f233b7ef1f33b9e5ef47" category="paragraph"><block ref="03d569474ce5f233b7ef1f33b9e5ef47" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f541be4434b8ae51c48633b4b4933bf7" category="paragraph"><block ref="f541be4434b8ae51c48633b4b4933bf7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ce92496e8a5e072add95c591344cf56" category="paragraph"><block ref="3ce92496e8a5e072add95c591344cf56" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6c2ada6b5156697050bb871716e559a7" category="list-text">（可選）選擇顯示名稱或編輯圖示 <block ref="ddd0c287bb5b482da53cc50dcf12edac" category="inline-image-macro-rx" type="image"></block> 以更新顯示名稱。</block>
+  <block id="86eaaff8f50c9ef0525ccec2099a3e34" category="paragraph"><block ref="86eaaff8f50c9ef0525ccec2099a3e34" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="86512d53af6c7cbd5e5ba848b9e530eb" category="cell"><block ref="86512d53af6c7cbd5e5ba848b9e530eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8867a65496062fd044b9165edc0fc871" category="paragraph"><block ref="8867a65496062fd044b9165edc0fc871" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58a49eb623c4a6b9fafad050142d4526" category="paragraph"><block ref="58a49eb623c4a6b9fafad050142d4526" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bb70c14ff3206571f466d4eba7c5ee22" category="paragraph"><block ref="bb70c14ff3206571f466d4eba7c5ee22" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cb92d4f4887328dd78af4c98d48eb460" category="paragraph"><block ref="cb92d4f4887328dd78af4c98d48eb460" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
