@@ -100,6 +100,7 @@ sudo mount container-storage-volume-device /var/lib/podman
 
 
 
+[[install-docker]]
 == 安裝Docker
 
 StorageGRID系統可以作為容器集合在 Linux 上運作。
@@ -141,6 +142,8 @@ sudo docker version
 
 
 
+[[install-podman]]
+[[install-podman-rhel]]
 == 安裝Podman
 
 StorageGRID系統作為容器集合運作。如果您選擇使用 Podman 容器引擎，請依照以下步驟安裝 Podman。否則，<<安裝Docker,安裝Docker>> 。

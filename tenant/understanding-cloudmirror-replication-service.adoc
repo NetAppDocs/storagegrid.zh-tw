@@ -20,18 +20,21 @@ NOTE: 如果來源儲存區已啟用S3物件鎖定、則不支援CloudMirror複�
 
 
 
+[[cloudmirror-and-ilm]]
 == CloudMirror 和 ILM
 
 CloudMirror 複寫作業不受網格的主動式 ILM 原則所影響。CloudMirror服務會在物件儲存到來源儲存區時複寫物件、並盡快將物件傳送到目的地儲存區。物件擷取成功時、會觸發複寫物件的交付。
 
 
 
+[[cloudmirror-and-cross-grid-replication]]
 == CloudMirror 和跨網格複寫
 
 CloudMirror 複寫與跨網格複寫功能有重要的相似之處和差異。請參閱 link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["比較跨網格複寫和 CloudMirror 複寫"]。
 
 
 
+[[cloudmirror-and-s3-buckets]]
 == CloudMirror 和 S3 儲存區
 
 CloudMirror複寫通常設定為使用外部S3儲存區作為目的地。不過、您也可以將複寫設定為使用其他StorageGRID 的支援功能或任何S3相容服務。
@@ -49,6 +52,7 @@ NOTE: 如果您使用 CloudMirror 複寫功能將物件複製到 Amazon S3 目�
 
 
 
+[[deletion-replication-loops-and-events]]
 == 刪除、複寫迴圈和事件
 
 刪除行為:: 與 Amazon S3 服務跨區域複寫（ CRR ）的刪除行為相同。刪除來源貯體中的物件時、絕不會刪除目的地中的複寫物件。如果來源和目的地儲存區都有版本、則會複寫刪除標記。如果目的地貯體沒有版本化、則刪除來源貯體中的物件並不會將刪除標記複寫到目的地貯體、也不會刪除目的地物件。

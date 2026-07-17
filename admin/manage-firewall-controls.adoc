@@ -38,6 +38,7 @@ NOTE: 您在一個索引標籤上所做的設定可能會影響您在其他索�
 
 
 
+[[privileged-address-list-and-manage-external-access-tabs]]
 == 權限位址清單和管理外部存取索引標籤
 
 「貴賓位址清單」標籤可讓您登錄一或多個 IP 位址、以存取已關閉的網格連接埠。「管理外部存取」索引標籤可讓您關閉外部存取、以存取選取的外部連接埠或所有開啟的外部連接埠（外部連接埠為非網格節點預設可存取的連接埠）。這兩個索引標籤通常可以一起使用、以自訂您需要的確切網路存取、以供網格使用。
@@ -47,6 +48,7 @@ NOTE: 預設情況下、特權 IP 位址沒有內部網格連接埠存取。
 
 
 
+[[example-1-use-a-jump-host-for-maintenance-tasks]]
 === 範例 1 ：使用跳躍主機來執行維護工作
 
 假設您想要使用跨接主機（安全強化的主機）進行網路管理。您可以使用下列一般步驟：
@@ -62,6 +64,7 @@ CAUTION: 在封鎖連接埠 443 和 8443 之前、請先新增權限 IP 位址�
 
 
 
+[[example-2-lock-down-sensitive-ports]]
 === 範例 2 ：鎖定敏感連接埠
 
 假設您想要鎖定敏感連接埠和該連接埠上的服務。您可以使用以下一般步驟：
@@ -77,12 +80,14 @@ CAUTION: 在您封鎖存取任何指派給存取 Grid Manager 和 Tenant Manager
 
 
 
+[[example-3-disable-access-to-unused-services]]
 === 範例 3 ：停用對未使用服務的存取
 
 在網路層級、您可以停用一些不想使用的服務。例如、若要封鎖 HTTP S3 用戶端流量、您可以使用「管理外部存取」索引標籤上的切換來封鎖連接埠 18084 。
 
 
 
+[[untrusted-client-networks-tab]]
 == 不受信任的用戶端網路索引標籤
 
 如果您使用的是用戶端網路、StorageGRID 只有在明確設定的端點上接受傳入用戶端流量、才能保護不受惡意攻擊的安全。
@@ -93,6 +98,7 @@ CAUTION: 在您封鎖存取任何指派給存取 Grid Manager 和 Tenant Manager
 
 
 
+[[example-1-gateway-node-only-accepts-https-s3-requests]]
 === 範例1：閘道節點僅接受HTTPS S3要求
 
 假設您希望閘道節點拒絕用戶端網路上除HTTPS S3要求以外的所有傳入流量。您可以執行下列一般步驟：
@@ -105,6 +111,7 @@ CAUTION: 在您封鎖存取任何指派給存取 Grid Manager 和 Tenant Manager
 
 
 
+[[example-2-storage-node-sends-s3-platform-services-requests]]
 === 範例2：儲存節點傳送S3平台服務要求
 
 假設您想要從儲存節點啟用輸出 S3 平台服務流量、但想要防止任何傳入連線到用戶端網路上的該儲存節點。您可以執行以下一般步驟：
@@ -116,6 +123,7 @@ CAUTION: 在您封鎖存取任何指派給存取 Grid Manager 和 Tenant Manager
 
 
 
+[[example-3-limiting-access-to-grid-manager-to-a-subnet]]
 === 範例 3 ：將網格管理程式的存取限制在子網路上
 
 假設您只想在特定子網路上允許 Grid Manager 存取。您可以執行下列步驟：

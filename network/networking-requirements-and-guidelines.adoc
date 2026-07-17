@@ -15,6 +15,7 @@ summary: 您必須驗證目前的網路基礎架構和組態是否可支援計�
 
 
 
+[[general-networking-requirements]]
 == 一般網路需求
 
 所有StorageGRID 的支援部署都必須能夠支援下列連線。
@@ -45,6 +46,7 @@ VLAN 介面僅支援 S3 用戶端連線和 SSH 、 Grid Manager 和 Tenant Manag
 
 
 
+[[wide-area-networks-wans-for-multiple-sites]]
 == 廣域網路（WAN）、適用於多個站台
 
 在設定StorageGRID 包含多個站台的支援系統時、站台之間的WAN連線在計算用戶端流量之前、每個方向的頻寬必須至少為25 Mbit/秒。站台、節點或站台擴充、節點還原及其他作業或組態之間的資料複寫或銷毀編碼、將需要額外的頻寬。
@@ -53,6 +55,7 @@ VLAN 介面僅支援 S3 用戶端連線和 SSH 、 Grid Manager 和 Tenant Manag
 
 
 
+[[connections-for-admin-nodes-and-gateway-nodes]]
 == 管理節點和閘道節點的連線
 
 管理節點必須始終受到不受信任用戶端（例如開放式網際網路上的用戶端）的保護。您必須確保任何不受信任的用戶端都無法存取Grid Network、管理網路或用戶端網路上的任何管理節點。
@@ -61,6 +64,7 @@ VLAN 介面僅支援 S3 用戶端連線和 SSH 、 Grid Manager 和 Tenant Manag
 
 
 
+[[using-network-address-translation-nat]]
 == 使用網路位址轉譯（NAT）
 
 請勿在網格網路上的網格節點之間或 StorageGRID 站台之間使用網路位址轉譯（ NAT ）。當您將私有的IPv4位址用於Grid Network時、這些位址必須從每個站台的每個網格節點直接路由傳送。不過、您可以視需要在外部用戶端和網格節點之間使用NAT、例如為閘道節點提供公有IP位址。只有當您採用對網格中所有節點透明的通道應用程式時、才支援使用NAT來橋接公共網路區段、亦即網格節點不需要知道公有IP位址。

@@ -25,6 +25,7 @@ CAUTION: 下列ILM規則和原則僅為範例。有許多方法可以設定ILM�
 
 
 
+[[ilm-rule-1-for-example-5-strict-ingest-to-guarantee-paris-data-center]]
 == ILM規則1（例如5）：嚴格擷取以保證巴黎資料中心
 
 本範例ILM規則使用嚴格的擷取行為、以保證由巴黎租戶儲存至S3儲存桶的物件、且區域設定為EU-WEST-3區域（巴黎）、永遠不會儲存在美國資料中心。
@@ -88,6 +89,7 @@ image:ilm_rule_1_example_5_strict_ingest.png["ILM規則1範例5嚴格擷取"]
 
 
 
+[[ilm-rule-2-for-example-5-balanced-ingest-for-other-objects]]
 == ILM規則2（例如5）：其他物件的平衡擷取
 
 本範例ILM規則使用平衡擷取行為、為第一個規則不相符的任何物件提供最佳的ILM效率。將會儲存兩份符合此規則的所有物件複本、一份位於美國資料中心、另一份位於巴黎資料中心。如果規則無法立即滿足、則臨時複本會儲存在任何可用位置。
@@ -149,6 +151,7 @@ _未指定_
 |===
 
 
+[[ilm-policy-for-example-5-combining-ingest-behaviors]]
 == ILM原則範例5：結合擷取行為
 
 ILM原則範例包括兩個具有不同擷取行為的規則。

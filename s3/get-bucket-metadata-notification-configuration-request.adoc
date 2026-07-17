@@ -17,6 +17,7 @@ summary: 「Get Bucket中繼資料」通知組態要求可讓您擷取組態XML�
 
 
 
+[[request-example]]
 == 申請範例
 
 此要求會擷取名為的貯體之中繼資料通知組態 `bucket`。
@@ -30,6 +31,7 @@ Host: _host_
 ----
 
 
+[[response]]
 == 回應
 
 回應本文包含儲存區的中繼資料通知組態。中繼資料通知組態可讓您決定儲存區的搜尋整合設定方式。也就是、它可讓您決定要建立索引的物件、以及要將物件中繼資料傳送至哪個端點。
@@ -153,6 +155,7 @@ urn
 |===
 
 
+[[response-example]]
 == 回應範例
 
 標籤之間的 XML  `<MetadataNotificationConfiguration></MetadataNotificationConfiguration>`顯示如何為貯體設定與搜尋整合端點的整合。在此範例中、物件中繼資料會傳送至名為的 Elasticsearch 索引 `current`、並輸入位於名為的 AWS 網域中的 `records`名稱 `2017`。

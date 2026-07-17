@@ -49,6 +49,7 @@ summary: 此技術可維護網格網路（eth0）上用於在網格節點之間�
 ====
 
 
+[[add-a-subnet]]
 == 新增子網路
 
 .步驟
@@ -74,6 +75,7 @@ CAUTION: 復原包檔案必須是安全的，因為它包含可用於從StorageG
 
 
 
+[[edit-a-subnet]]
 == 編輯子網路
 
 .步驟
@@ -91,6 +93,7 @@ CAUTION: 復原包檔案必須是安全的，因為它包含可用於從StorageG
 
 
 
+[[delete-a-subnet]]
 == 刪除子網路
 
 .步驟

@@ -17,6 +17,7 @@ summary: 視您在StorageGRID 替換主機上執行的支援功能而定、您�
 
 
 
+[[corrective-actions-and-next-steps]]
 == 修正行動與後續步驟
 
 在節點更換期間、您可能需要採取下列其中一項修正行動：

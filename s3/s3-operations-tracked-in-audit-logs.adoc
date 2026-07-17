@@ -15,6 +15,7 @@ summary: 稽核訊息是StorageGRID 由支援服務產生、並儲存在文字�
 
 
 
+[[bucket-operations-tracked-in-the-audit-logs]]
 == 稽核記錄中追蹤的庫位作業
 
 * 建立庫位
@@ -32,6 +33,7 @@ summary: 稽核訊息是StorageGRID 由支援服務產生、並儲存在文字�
 
 
 
+[[object-operations-tracked-in-the-audit-logs]]
 == 稽核記錄中追蹤的物件作業
 
 * 完成多個部分上傳

@@ -15,6 +15,7 @@ summary: 使用這些疑難排解步驟、協助解決您在建立、編輯或�
 
 
 
+[[determine-if-an-error-has-occurred]]
 == 確定是否發生錯誤
 
 StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正常運作、進而對每個雲端儲存池執行簡單的健全狀況檢查 `x-ntap-sgws-cloud-pool-uuid`。當 StorageGRID 在端點上遇到錯誤時、它會每分鐘從每個儲存節點執行一次健全狀況檢查。當錯誤解決時、健全狀況檢查就會停止。如果健全狀況檢查偵測到問題、「儲存池」頁面上的「雲端儲存池」表最後一個錯誤欄會顯示訊息。
@@ -25,6 +26,7 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 
 
+[[check-if-an-error-has-been-resolved]]
 == 檢查錯誤是否已解決
 
 解決任何潛在問題之後、您可以判斷錯誤是否已解決。從「雲端儲存池」頁面選取端點、然後選取 * 清除錯誤 * 。確認訊息指出StorageGRID 、由於此錯誤已清除Cloud Storage Pool的錯誤。
@@ -33,6 +35,7 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 
 
+[[error-health-check-failed-error-from-endpoint]]
 == 錯誤：健全狀況檢查失敗。端點發生錯誤
 
 當您開始將此儲存庫用於 Cloud Storage Pool 之後、針對 Amazon S3 儲存區啟用預設保留的 S3 物件鎖定時、可能會遇到此錯誤。如果 Put 作業沒有 HTTP 標頭的有效負載 Checksum 值（例如）、就會發生此錯誤 `Content-MD5`。AWS 在啟用 S3 物件鎖定的情況下、將作業放入貯體時、需要此標頭值。
@@ -41,6 +44,7 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 
 
+[[error-this-cloud-storage-pool-contains-unexpected-content]]
 == 錯誤：此Cloud Storage Pool包含非預期的內容
 
 當您嘗試建立、編輯或刪除雲端儲存池時、可能會遇到此錯誤。如果貯體或容器包含標記檔案、但該檔案沒有包含預期 UUID 的中繼資料欄位、就會發生此錯誤 `x-ntap-sgws-cloud-pool-uuid`。
@@ -60,6 +64,7 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 
 
+[[error-could-not-create-or-update-cloud-storage-pool-error-from-endpoint]]
 == 錯誤：無法建立或更新雲端儲存池。端點發生錯誤
 
 在下列情況下、您可能會遇到此錯誤：
@@ -85,6 +90,7 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 
 
+[[error-failed-to-parse-ca-certificate]]
 == 錯誤：無法剖析CA憑證
 
 當您嘗試建立或編輯雲端儲存資源池時、可能會遇到此錯誤。如果在設定Cloud Storage Pool時、無法剖析您輸入的憑證、就會發生錯誤StorageGRID 。
@@ -93,6 +99,7 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 
 
+[[error-a-cloud-storage-pool-with-this-id-was-not-found]]
 == 錯誤：找不到具有此ID的雲端儲存資源池
 
 當您嘗試編輯或刪除雲端儲存資源池時、可能會遇到此錯誤。如果端點傳回404回應、就會發生此錯誤、這可能代表下列其中一項：
@@ -110,6 +117,7 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 
 
+[[error-could-not-check-the-content-of-the-cloud-storage-pool-error-from-endpoint]]
 == 錯誤：無法檢查Cloud Storage Pool的內容。端點發生錯誤
 
 當您嘗試刪除雲端儲存資源池時、可能會遇到此錯誤。此錯誤表示某種連線或組態問題使StorageGRID 無法讀取Cloud Storage Pool儲存區儲存區內容。
@@ -118,6 +126,7 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 
 
 
+[[error-objects-have-already-been-placed-in-this-bucket]]
 == 錯誤：物件已放置在此儲存區中
 
 當您嘗試刪除雲端儲存資源池時、可能會遇到此錯誤。如果雲端儲存池包含由 ILM 移至該處的資料、設定雲端儲存池之前儲存在儲存區中的資料、或是建立雲端儲存池之後由其他來源放入儲存區的資料、則您無法刪除該儲存池。
@@ -134,6 +143,7 @@ NOTE: 切勿手動刪除ILM可能放置在雲端儲存資源池中的物件。�
 
 
 
+[[error-proxy-encountered-an-external-error-while-trying-to-reach-the-cloud-storage-pool]]
 == 錯誤：Proxy嘗試連至雲端儲存資源池時發生外部錯誤
 
 如果您已在儲存節點和用於雲端儲存池的外部 S3 端點之間設定不透明儲存 Proxy 、則可能會遇到此錯誤。如果外部 Proxy 伺服器無法連線至雲端儲存池端點、就會發生此錯誤。例如、DNS伺服器可能無法解析主機名稱、或是發生外部網路問題。
@@ -146,6 +156,7 @@ NOTE: 切勿手動刪除ILM可能放置在雲端儲存資源池中的物件。�
 
 
 
+[[error-x-509-certificate-is-out-of-validity-period]]
 == 錯誤： X.509 憑證已過有效期間
 
 當您嘗試刪除雲端儲存資源池時、可能會遇到此錯誤。當驗證需要 X.509 憑證以確保驗證正確的外部 Cloud Storage Pool 、且在刪除 Cloud Storage Pool 組態之前、外部 Pool 為空時、就會發生此錯誤。

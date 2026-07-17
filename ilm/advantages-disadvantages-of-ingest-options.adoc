@@ -17,6 +17,7 @@ summary: 瞭解擷取時保護資料的三種選項（平衡、嚴格或雙重�
 
 
 
+[[advantages-of-the-balanced-and-strict-options]]
 == 平衡且嚴格的選項優勢
 
 相較於在擷取期間建立臨時複本的「雙重提交」、兩個同步放置選項可提供下列優點：
@@ -29,6 +30,7 @@ summary: 瞭解擷取時保護資料的三種選項（平衡、嚴格或雙重�
 
 
 
+[[disadvantages-of-the-balanced-and-strict-options]]
 == 平衡且嚴格的選項缺點
 
 相較於雙重承諾、平衡且嚴格的選項有一些缺點：
@@ -46,6 +48,7 @@ summary: 瞭解擷取時保護資料的三種選項（平衡、嚴格或雙重�
 
 
 
+[[limitations-on-object-placements-with-the-balanced-and-strict-options]]
 == 使用平衡且嚴格的選項來限制物件放置
 
 平衡或嚴格的選項無法用於具有下列任一放置指示的 ILM 規則：
@@ -58,6 +61,7 @@ summary: 瞭解擷取時保護資料的三種選項（平衡、嚴格或雙重�
 
 
 
+[[how-ilm-rules-and-consistency-interact-to-affect-data-protection]]
 == ILM 規則與一致性如何互動、以影響資料保護
 
 您的 ILM 規則和一致性選擇都會影響物件的保護方式。這些設定可以互動。
@@ -96,6 +100,7 @@ NOTE: 在選擇一致性值之前，link:../s3/consistency.html["閱讀一致性
 
 
 
+[[example-of-how-consistency-and-ilm-rules-can-interact]]
 == 一致性與 ILM 規則互動方式的範例
 
 假設您有一個三站點網格，具有以下 ILM 規則和以下一致性：

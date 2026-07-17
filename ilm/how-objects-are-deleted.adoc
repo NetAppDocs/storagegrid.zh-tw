@@ -66,6 +66,7 @@ summary: 由於S3儲存區生命週期到期或ILM原則要求到期、因此可
 
 
 
+[[time-required-to-delete-objects]]
 == 刪除物件所需的時間
 
 物件的刪除方式StorageGRID 可能會影響系統的執行方式：
@@ -84,6 +85,8 @@ summary: 由於S3儲存區生命週期到期或ILM原則要求到期、因此可
 
 
 
+[[how-s3-versioned-objects-are-deleted]]
+[[delete-s3-versioned-objects]]
 == 如何刪除S3版本控制物件
 
 啟用S3儲存區的版本管理時、StorageGRID 無論是來自S3用戶端、S3儲存區生命週期到期、或ILM原則需求、均會遵循Amazon S3回應刪除要求的行為。

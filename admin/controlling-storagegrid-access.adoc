@@ -15,6 +15,7 @@ summary: 您可以透過StorageGRID 建立或匯入群組和使用者、並指�
 
 
 
+[[control-access-to-the-grid-manager]]
 == 控制對Grid Manager的存取
 
 您可以透過從身分識別聯盟服務匯入群組和使用者、或設定本機群組和本機使用者、來判斷誰可以存取Grid Manager和Grid Management API。
@@ -30,18 +31,21 @@ NOTE: 如果您想要使用另一項LDAP v3服務、請聯絡技術支援部門�
 
 
 
+[[enable-single-sign-on]]
 == 啟用單一登入
 
 StorageGRID系統支援使用安全性斷言標記語言 2.0 (SAML 2.0) 標準的單一登入 (SSO)。您先請link:how-sso-works.html["設定並啟用 SSO"]，所有使用者必須經過外部身分提供者的驗證，然後才能存取網格管理器、租用戶管理器、網格管理 API 或租用戶管理 API。本機使用者無法登入StorageGRID。
 
 
 
+[[change-provisioning-passphrase]]
 == 變更資源配置複雜密碼
 
 許多安裝和維護過程以及下載StorageGRID恢復包都需要設定密碼。下載StorageGRID系統的網格拓樸資訊和加密金鑰的備份也需要密碼。你可以link:changing-provisioning-passphrase.html["變更複雜密碼"]按要求。
 
 
 
+[[change-node-console-passwords]]
 == 變更節點主控台密碼
 
 網格中的每個節點都有一個節點控制台密碼，您需要使用 SSH 以「管理員」身分登入節點，或以 VM/實體控制台連線上的 root 使用者身分登入。根據需要，您可以link:change-node-console-password.html["變更節點主控台密碼"]對於每個節點。

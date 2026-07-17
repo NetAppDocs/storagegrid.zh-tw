@@ -20,6 +20,7 @@ summary: 「放置貯體一致性」要求可讓您指定套用至在貯體上�
 
 
 
+[[request]]
 == 申請
 
  `x-ntap-sg-consistency`參數必須包含下列其中一個值：
@@ -67,6 +68,7 @@ summary: 「放置貯體一致性」要求可讓您指定套用至在貯體上�
 
 
 
+[[request-example]]
 == 申請範例
 
 [listing, subs="specialcharacters,quotes"]

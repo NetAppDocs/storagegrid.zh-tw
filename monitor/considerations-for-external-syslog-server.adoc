@@ -22,6 +22,7 @@ summary: 外部syslog伺服器是StorageGRID 指不屬於功能區的伺服器�
 
 
 
+[[when-to-use-an-external-syslog-server]]
 == 何時使用外部 Syslog 伺服器
 
 如果您有大型網格、使用多種 S3 應用程式、或想要保留所有稽核資料、外部 Syslog 伺服器就特別有用。將稽核資訊傳送至外部syslog伺服器、可讓您：
@@ -40,6 +41,7 @@ NOTE: 為了在外部 Syslog 伺服器發生故障時最大化完整資料恢復
 
 
 
+[[how-to-configure-an-external-syslog-server]]
 == 如何設定外部 Syslog 伺服器
 
 若要了解如何設定外部 syslog 伺服器，請參閱link:../monitor/configure-log-management.html["設定日誌管理和外部系統日誌伺服器"]。
@@ -57,6 +59,7 @@ NOTE: 如果您使用用戶端憑證、也必須使用用戶端私密金鑰。�
 
 
 
+[[how-to-estimate-the-size-of-the-external-syslog-server]]
 == 如何預估外部syslog伺服器的大小
 
 一般而言、網格的大小可達到所需的處理量、定義為每秒S3作業量或每秒位元組數。例如、您可能需要網格處理每秒1、000次S3作業、或每秒2、000 MB的物件擷取和擷取作業。您應該根據網格的資料需求來調整外部syslog伺服器的大小。
@@ -65,6 +68,7 @@ NOTE: 如果您使用用戶端憑證、也必須使用用戶端私密金鑰。�
 
 
 
+[[use-s3-operations-per-second-in-estimation-formulas]]
 === 在預估公式中使用S3作業/秒
 
 如果網格的處理量大小是以每秒位元組數表示、您必須將此規模轉換為每秒S3作業、才能使用估計公式。若要轉換網格處理量、您必須先判斷平均物件大小、以便使用現有稽核記錄和指標（如果有）中的資訊、或是運用您對StorageGRID 使用物件的應用程式所擁有的知識。例如、如果您的網格大小達到每秒2、000 MB的處理量、而且平均物件大小為2 MB、那麼您的網格大小就能處理每秒1、000次S3作業（2、000 MB / 2 MB）。
@@ -74,6 +78,7 @@ NOTE: 下列各節中的外部syslog伺服器規模調整公式提供一般案�
 
 
 
+[[estimation-formulas-for-audit-logs]]
 === 稽核記錄的估計公式
 
 如果您沒有S3工作負載的相關資訊、而非預期網格支援的每秒S3作業數量、您可以使用下列公式來預估外部syslog伺服器需要處理的稽核記錄數量： 假設您將「稽核層級」設為預設值（所有類別均設為「正常」、但「儲存設備」設為「錯誤」除外）：
@@ -142,6 +147,7 @@ Audit Log Average Size = (570 + K) bytes
 
 
 
+[[estimation-formulas-for-non-default-audit-levels]]
 === 非預設稽核層級的估計公式
 
 提供給稽核記錄的公式會假設使用預設的稽核層級設定（所有類別均設定為「正常」、但儲存區設為「錯誤」除外）。對於非預設稽核層級設定、無法使用估算稽核訊息速率和平均大小的詳細公式。不過、下表可用於粗略估計費率； 您可以使用提供給稽核記錄的平均大小公式、但請注意、這可能會導致預估過度、因為「額外」稽核訊息平均比預設稽核訊息小。
@@ -166,12 +172,14 @@ Audit Log Average Size = (570 + K) bytes
 |===
 
 
+[[estimation-formulas-for-security-events]]
 === 安全性事件的估計公式
 
 安全事件與 S3 作業無關、通常會產生可忽略的記錄和資料量。因此、我們不會提供任何預估公式。
 
 
 
+[[estimation-formulas-for-application-logs]]
 === 應用程式記錄的估計公式
 
 如果您沒有S3工作負載的相關資訊、而不是預期網格支援的每秒S3作業數量、您可以使用下列公式來預估外部syslog伺服器需要處理的應用程式記錄數量：
@@ -227,6 +235,7 @@ S3金鑰名稱、不含儲存區名稱。貯體的作業不包括此欄位。
 |===
 
 
+[[example-sizing-estimations]]
 == 規模估算範例
 
 本節說明如何使用下列資料保護方法來使用網格的估計公式範例：
@@ -237,6 +246,7 @@ S3金鑰名稱、不含儲存區名稱。貯體的作業不包括此欄位。
 
 
 
+[[if-you-use-replication-for-data-protection]]
 === 如果您使用複寫來保護資料
 
 讓P代表S3作業所放置的百分比、其中0≤P≤1（因此、對於100%投入工作負載、P = 1、對於100%取得工作負載、P = 0）。
@@ -254,6 +264,7 @@ Application Log Average Size = (P x (220 + K)) + ((1 - P) x (240 + (0.2 x K))) B
 
 
 
+[[if-you-use-erasure-coding-for-data-protection]]
 === 如果您使用銷毀編碼來保護資料
 
 讓P代表S3作業所放置的百分比、其中0≤P≤1（因此、對於100%投入工作負載、P = 1、對於100%取得工作負載、P = 0）。

@@ -27,6 +27,7 @@ NOTE: 當您複製同盟使用者的 S3 存取金鑰時、使用者和 S3 存取
 
 
 
+[[clone-your-own-access-keys]]
 == 複製您自己的存取金鑰
 
 如果您需要存取兩個網格上的相同儲存格、則可以複製自己的存取金鑰。
@@ -56,6 +57,7 @@ image:grid-federation-clone-access-key.png["租戶管理器 API 輸入值以複�
 
 
 
+[[clone-another-users-access-keys]]
 == 複製其他使用者的存取金鑰
 
 如果其他使用者需要存取兩個網格上的相同儲存格、您可以複製該使用者的存取金鑰。

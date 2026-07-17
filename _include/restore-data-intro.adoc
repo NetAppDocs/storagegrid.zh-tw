@@ -4,6 +4,7 @@
 
 
 
+[[which-procedure-should-i-use]]
 == 我應該使用哪個程序？
 
 請盡可能使用 Grid Manager 中的 * Volume 還原 * 頁面來還原物件資料。
@@ -20,6 +21,7 @@ NOTE: 修復資料指令碼已過時、將在未來版本中移除。如有可�
 
 
 
+[[use-the-repair-data-script-to-restore-object-data]]
 == 使用 `repair-data`指令碼還原物件資料
 
 .開始之前
@@ -37,6 +39,7 @@ NOTE: 修復資料指令碼已過時、將在未來版本中移除。如有可�
 
 
 
+[[about-the-repair-data-script]]
 == 關於 `repair-data`指令碼
 
 若要還原物件資料、請執行 `repair-data`指令碼。此指令碼會開始還原物件資料的程序、並與ILM掃描搭配使用、以確保符合ILM規則。

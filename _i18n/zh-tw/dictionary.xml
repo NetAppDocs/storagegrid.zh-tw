@@ -5210,7 +5210,6 @@
   <block id="308239ed7e43fc89ae81da72046a1cb5" category="summary">稽核日誌中的每個稽核訊息都會記錄特定於系統事件的資料。</block>
   <block id="43e9c4a674688908c439631161649671" category="doc">事件特定資料</block>
   <block id="fe6f2eb2d34a6fb8fcd20196ff437c86" category="paragraph">在識別訊息本身的開啟容器之後<block ref="76918408696376cc0b0c9acf06dc901e" prefix=" " category="inline-code"></block>、下一組屬性會提供有關稽核訊息所描述的事件或動作的資訊。這些屬性會在下列範例中反白顯示：</block>
-  <block id="0db84933e70a875f988a06f943ee983e" category="paragraph">2018-12-05T08：24：45.921845 [AUDT：*\[RSALT\（FC32\）：SUCS\**\[Time（UI64\）：11454\[SAIP\（ipad\）："10.224.0.100"\[S3AI（CStr\）："4196920499* Stls6400c64T64"S=Cs=S64T64T1T64"S=Cs=Cs=S64T64T1T1T64T64T64"1T64T1T1"S=S="S64T64"S=Cs=Cs=S64"S64T1=Cs=Cs=C64T64T64T64T1T1T1T1T1T1="S64T1=Cs=C64T64T64T1=C64"S=Cs="S64T1=C64T1="S64T64T1=C64T64T64T1"S="S</block>
   <block id="330f957a5bec85ad2bedd3f07d7dc2a1" category="paragraph"><block ref="77b67b7419230d63f01bbbe32666b7e8" prefix=" " category="inline-code"></block>元素（在範例中加上底線）會識別產生訊息的事件。此範例訊息包含<block ref="93c5ff5de753ca04c1a8d5c3e6acd152" category="inline-link-macro-rx"></block>訊息代碼（ [ATYP(FC32):Shea ）、表示它是由成功的 S3 頭部要求所產生。</block>
   <block id="bc3cda0f98b17a806d22f17a594d539e" category="summary">當服務已更新StorageGRID 或登錄有關自身的資訊、並將其登錄到該系統時、CMN服務會產生此稽核訊息。</block>
   <block id="372ef73078ea0cb4e30ab742e0c3d63d" category="doc">GNRG：GNDS登錄</block>
@@ -22854,4 +22853,5 @@
   <block id="58a49eb623c4a6b9fafad050142d4526" category="paragraph"><block ref="58a49eb623c4a6b9fafad050142d4526" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bb70c14ff3206571f466d4eba7c5ee22" category="paragraph"><block ref="bb70c14ff3206571f466d4eba7c5ee22" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cb92d4f4887328dd78af4c98d48eb460" category="paragraph"><block ref="cb92d4f4887328dd78af4c98d48eb460" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="07475a26866d8d6533c6342bd2454b1e" category="list-text">包含與 AutoSupport 相關的日誌。</block>
 </blocks>

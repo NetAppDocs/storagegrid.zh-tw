@@ -17,22 +17,26 @@ S3 Select提供一種有效率的方法來搜尋大量資料、而不需要部�
 
 
 
+[[what-is-s3-select]]
 == 什麼是S3 Select？
 
 S3 Select可讓S3用戶端使用SelectObjectContent要求來篩選及擷取物件所需的資料。S3 Select的支援功能包括S3 Select命令與功能的子集。StorageGRID
 
 
 
+[[considerations-and-requirements-for-using-s3-select]]
 == 使用S3 Select的考量與要求
 
 
 
+[[grid-administration-requirements]]
 === 網格管理需求
 
 網格管理員必須授予租戶 S3 Select 權限。當或時選擇 * 允許 S3 Select* link:creating-tenant-account.html["建立租戶"]link:editing-tenant-account.html["編輯租戶"]。
 
 
 
+[[object-format-requirements]]
 === 物件格式需求
 
 您要查詢的物件必須採用下列其中一種格式：
@@ -51,6 +55,7 @@ S3 Select可讓S3用戶端使用SelectObjectContent要求來篩選及擷取物�
 
 
 
+[[endpoint-requirements]]
 === 端點需求
 
 SelectObjectContent 要求必須傳送至link:configuring-load-balancer-endpoints.html["負載平衡器端點StorageGRID"]。
@@ -64,6 +69,7 @@ SelectObjectContent 要求必須傳送至link:configuring-load-balancer-endpoint
 
 
 
+[[general-considerations]]
 === 一般考量
 
 查詢無法直接傳送至儲存節點。

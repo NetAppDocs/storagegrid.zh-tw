@@ -20,6 +20,7 @@ summary: 如果 Cloud Storage Pool 未用於 ILM 規則、而且不包含物件�
 
 
 
+[[if-needed-use-ilm-to-move-object-data]]
 == 如有需要、請使用 ILM 來移動物件資料
 
 如果您要移除的雲端儲存池包含物件資料、則必須使用 ILM 將資料移至其他位置。例如、您可以將資料移至網格上的儲存節點、或移至不同的雲端儲存池。
@@ -47,6 +48,7 @@ summary: 如果 Cloud Storage Pool 未用於 ILM 規則、而且不包含物件�
 
 
 
+[[delete-cloud-storage-pool]]
 == 刪除雲端儲存池
 
 當雲端儲存池是空的且未用於任何 ILM 規則時、您可以將其刪除。

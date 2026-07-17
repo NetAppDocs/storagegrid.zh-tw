@@ -15,6 +15,7 @@ summary: 如果您打算使用雲端儲存資源池將物件移出StorageGRID �
 
 
 
+[[general-considerations]]
 == 一般考量
 
 * 一般而言、Amazon S3 Glacier或Azure Blob儲存設備等雲端歸檔儲存設備、是儲存物件資料的廉價場所。然而、從雲端歸檔儲存設備擷取資料的成本相對較高。若要達到最低的整體成本、您必須考慮何時及多久存取雲端儲存池中的物件。建議僅針對您預期不常存取的內容使用雲端儲存池。
@@ -31,6 +32,7 @@ summary: 如果您打算使用雲端儲存資源池將物件移出StorageGRID �
 
 
 
+[[considerations-for-the-ports-used-for-cloud-storage-pools]]
 == 雲端儲存資源池所用連接埠的考量事項
 
 若要確保ILM規則可將物件移入或移出指定的Cloud Storage Pool、您必須設定包含系統儲存節點的網路。您必須確保下列連接埠可與Cloud Storage Pool通訊。
@@ -47,6 +49,7 @@ summary: 如果您打算使用雲端儲存資源池將物件移出StorageGRID �
 
 
 
+[[considerations-for-costs]]
 == 成本考量
 
 若要使用雲端儲存資源池存取雲端儲存設備、需要透過網路連線才能連線至雲端。您必須考量存取雲端所需的網路基礎架構成本、並根據使用StorageGRID Cloud Storage Pool在介於流通於流通的資料量、適當地配置雲端。
@@ -64,6 +67,7 @@ NOTE: 當物件從StorageGRID 雲端儲存資源池移回支援區時StorageGRID
 
 
 
+[[s3-permissions-required-for-the-cloud-storage-pool-bucket]]
 == S3：Cloud Storage Pool儲存區所需的權限
 
 用於雲端儲存池的外部 S3 儲存區原則必須授予 StorageGRID 權限、才能將物件移至儲存區、取得物件狀態、在需要時從 Glacier 儲存區還原物件等。理想情況下、 StorageGRID 應擁有對儲存庫的完全控制存取權(`s3:*`）；不過、如果無法做到這點、儲存庫原則必須將下列 S3 權限授予 StorageGRID ：
@@ -80,6 +84,7 @@ NOTE: 當物件從StorageGRID 雲端儲存資源池移回支援區時StorageGRID
 
 
 
+[[s3-considerations-for-the-external-buckets-lifecycle]]
 == S3：外部儲存庫生命週期的考量事項
 
 StorageGRID 和雲端儲存資源池中指定的外部 S3 儲存區之間的物件移動、是由 ILM 規則和 StorageGRID 中的主動 ILM 原則所控制。相反地、從雲端儲存資源池中指定的外部S3儲存區、移轉至Amazon S3 Glacier或S3 Glacier Deep歸檔（或移轉至實作Glacier儲存類別的儲存解決方案）的物件、則是由該儲存區的生命週期組態所控制。
@@ -113,12 +118,14 @@ CAUTION: 設定外部儲存庫的生命週期時、切勿使用* Expiration*動�
 
 
 
+[[azure-considerations-for-access-tier]]
 == Azure：存取層的考量
 
 當您設定Azure儲存帳戶時、可以將預設的存取層設定為「Hot」（熱）或「Cool」（冷）。建立用於雲端儲存資源池的儲存帳戶時、您應該使用熱層做為預設層。即使將物件移至雲端儲存資源池時、將層級立即設定為「歸檔」、但使用預設的Hot（熱）設定、可確保您不會在30天內收取從冷卻層移除物件的早期刪除費用。StorageGRID
 
 
 
+[[azure-lifecycle-management-not-supported]]
 == Azure：不支援生命週期管理
 
 請勿將 Azure Blob 儲存生命週期管理用於與雲端儲存池搭配使用的容器。生命週期作業可能會干擾Cloud Storage Pool作業。

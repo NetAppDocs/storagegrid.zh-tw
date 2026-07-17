@@ -60,6 +60,7 @@ Active Directory Federation Service（AD FS）
 
 
 
+[[access-the-wizard]]
 == 存取精靈
 
 .步驟
@@ -73,6 +74,7 @@ NOTE: 如果設定 SSO 設定按鈕已停用，請確認您已將身分提供者
 
 
 
+[[provide-identity-provider-details]]
 == 提供身份提供者詳細信息
 
 .步驟
@@ -101,6 +103,7 @@ CAUTION: 如果您變更 CA 憑證、請立即link:../maintain/starting-or-resta
 
 
 
+[[enter-sandbox-modeprovide-relying-party-identifier]]
 == [[enter-sandbox-mode]]提供依賴方標識符
 
 . 根據您選擇的 SSO 類型填寫「提供依賴方識別碼」頁面上的欄位。
@@ -171,6 +174,7 @@ https://<Federation Service Name>:<port>/pf/federation_metadata.ping?PartnerSpId
 
 
 
+[[configure-relying-party-trusts-enterprise-applications-or-sp-connections]]
 == 設定依賴方信任、企業應用程式或SP連線
 
 儲存配置並進入沙盒模式後，您可以完成並測試所選 SSO 類型的配置。
@@ -231,6 +235,7 @@ StorageGRID可依需求維持沙盒模式。但是，只有聯合用戶和本地
 ====
 
 
+[[test-ssotest-configuration]]
 == [[test-sso]]測試配置
 
 在強制整個StorageGRID系統使用單一登入之前，請確認每個管理節點的單一登入和單一登出均已正確設定。
@@ -294,6 +299,7 @@ StorageGRID可依需求維持沙盒模式。但是，只有聯合用戶和本地
 ====
 
 
+[[enable-single-sign-on]]
 == 啟用單一登入
 
 當您確認可以使用SSO登入每個管理節點時、您可以為整個StorageGRID 支援系統啟用SSO。

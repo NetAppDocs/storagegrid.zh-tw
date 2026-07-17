@@ -15,6 +15,7 @@ summary: 您必須保持StorageGRID 更新的不中斷系統和相關服務、�
 
 
 
+[[upgrades-to-storagegrid-software]]
 == 升級StorageGRID 至更新版軟體
 
 只要可能、您就應該將StorageGRID 更新版的更新版更新為最新的重大版本或先前的重大版本。保持更新有助於縮短已知弱點的作用時間、並減少整體攻擊範圍。StorageGRID此外、最新版的 StorageGRID 通常包含舊版中未包含的安全性強化功能。
@@ -28,6 +29,7 @@ summary: 您必須保持StorageGRID 更新的不中斷系統和相關服務、�
 
 
 
+[[upgrades-to-external-services]]
 == 升級至外部服務
 
 外部服務可能存在間接影響StorageGRID 的漏洞。確保StorageGRID所依賴的服務保持最新。這些服務包括 LDAP、KMS（或 KMIP 伺服器）、DNS 和 NTP。
@@ -36,6 +38,7 @@ summary: 您必須保持StorageGRID 更新的不中斷系統和相關服務、�
 
 
 
+[[upgrades-to-hypervisors]]
 == 升級至Hypervisor
 
 如果StorageGRID 您的VMware節點或其他Hypervisor上執行、則必須確保Hypervisor軟體和韌體為最新版本。
@@ -44,6 +47,7 @@ summary: 您必須保持StorageGRID 更新的不中斷系統和相關服務、�
 
 
 
+[[upgrades-to-linux-nodes]]
 == * 升級至 Linux 節點 *
 
 如果StorageGRID 您的支援節點使用Linux主機平台、則必須確保安全性更新和核心更新已套用至主機作業系統。此外、您必須在有更新可用時、將韌體更新套用至易受影響的硬體。

@@ -15,6 +15,7 @@ summary: 在一個不完善的系統中、網格節點StorageGRID 會處理網�
 
 
 
+[[traffic-types]]
 == 流量類型
 
 [cols="1a,4a,2a"]
@@ -62,6 +63,7 @@ Grid Network是強制性的、可管理所有的網格流量。安裝時可納�
 
 
 
+[[network-interfaces]]
 == 網路介面
 
 使用下列特定介面將各個節點連線至各個網路：StorageGRID
@@ -105,6 +107,7 @@ eth2
 
 
 
+[[network-information-for-each-node]]
 === 每個節點的網路資訊
 
 您必須為節點上啟用的每個網路設定下列項目：
@@ -118,12 +121,14 @@ eth2
 
 
 
+[[high-availability-groups]]
 === 高可用度群組
 
 高可用度（HA）群組可將虛擬IP（VIP）位址新增至Grid或Client Network介面。如需更多資訊、請參閱 link:../admin/managing-high-availability-groups.html["管理高可用度群組"]。
 
 
 
+[[grid-network]]
 == 網格網路
 
 網格網路為必填項目。它用於所有內部StorageGRID 的資訊流量。Grid Network可在網格中的所有節點之間、跨所有站台和子網路提供連線功能。Grid Network上的所有節點都必須能夠與所有其他節點通訊。Grid Network可由多個子網路組成。包含關鍵網格服務（例如NTP）的網路也可新增為網格子網路。
@@ -146,6 +151,7 @@ CAUTION: 設定Grid Network時、您必須確保網路受到不受信任用戶�
 
 
 
+[[admin-network]]
 == 管理網路
 
 管理網路為選用網路。設定後、即可用於系統管理和維護流量。管理網路通常是私有網路、不需要在節點之間進行路由傳送。
@@ -170,6 +176,7 @@ CAUTION: 設定Grid Network時、您必須確保網路受到不受信任用戶�
 
 
 
+[[client-network]]
 == 用戶端網路
 
 用戶端網路為選用項目。設定後、它會用於為 S3 等用戶端應用程式提供網格服務的存取。如果您計畫讓StorageGRID 外部資源（例如雲端儲存資源池或StorageGRID CloudMirror複寫服務）能夠存取這些資料、則外部資源也可以使用用戶端網路。網格節點可透過用戶端網路閘道與任何可連線的子網路進行通訊。
@@ -193,6 +200,7 @@ CAUTION: 設定Grid Network時、您必須確保網路受到不受信任用戶�
 
 
 
+[[optional-vlan-networks]]
 == 選用的VLAN網路
 
 視需要、您可以選擇性地使用虛擬LAN（VLAN）網路來處理用戶端流量和某些類型的管理流量。不過、網格流量無法使用 VLAN 介面。節點之間的內部不間斷流量必須一律使用eth0上的Grid Network。StorageGRID

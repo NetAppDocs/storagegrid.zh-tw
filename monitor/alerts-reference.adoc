@@ -19,6 +19,7 @@ summary: 此參考會列出出現在 Grid Manager 中的預設警示。建議的
 
 
 
+[[appliance-alerts]]
 == 應用裝置警示
 
 [cols="1a,2a"]
@@ -370,6 +371,7 @@ SANtricity軟體版本低於此StorageGRID版本的建議最低版本。
 |===
 
 
+[[audit-and-syslog-alerts]]
 == 稽核與系統記錄警示
 
 [cols="1a,2a"]
@@ -406,6 +408,7 @@ SANtricity軟體版本低於此StorageGRID版本的建議最低版本。
 |===
 
 
+[[bucket-alerts]]
 == 貯體警示
 
 [cols="1a,2a"]
@@ -428,6 +431,7 @@ FabricPool 貯體已啟用版本設定或 S3 物件鎖定、但不支援。
 |===
 
 
+[[cassandra-alerts]]
 == Cassandra 警示
 
 [cols="1a,2a"]
@@ -499,6 +503,7 @@ Cassandra偵測到表格毀損。如果Cassandra偵測到表格毀損、就會�
 |===
 
 
+[[cloud-storage-pool-alerts]]
 == 雲端儲存池警示
 
 [cols="1a,2a"]
@@ -521,6 +526,7 @@ IAM 角色 Anywhere 終端實體憑證即將過期。
 |===
 
 
+[[cross-grid-replication-alerts]]
 == 跨網格複寫警示
 
 [cols="1a,2a"]
@@ -543,6 +549,7 @@ IAM 角色 Anywhere 終端實體憑證即將過期。
 |===
 
 
+[[dhcp-alerts]]
 == DHCP 警示
 
 [cols="1a,2a"]
@@ -572,6 +579,7 @@ DHCP伺服器無法使用。
 |===
 
 
+[[debug-and-trace-alerts]]
 == 偵錯與追蹤警示
 
 [cols="1a,2a"]
@@ -594,6 +602,7 @@ DHCP伺服器無法使用。
 |===
 
 
+[[email-and-autosupport-alerts]]
 == 電子郵件和 AutoSupport 警示
 
 [cols="1a,2a"]
@@ -651,6 +660,7 @@ SSH 外部存取已啟用超過 24 小時。
 |===
 
 
+[[erasure-coding-ec-alerts]]
 == 銷毀編碼（ EC ）警示
 
 [cols="1a,2a"]
@@ -687,6 +697,7 @@ EC 資料的修復工作已停止。
 |===
 
 
+[[expiration-of-certificates-alerts]]
 == 憑證警示過期
 
 [cols="1a,2a"]
@@ -751,6 +762,7 @@ S3 的全球伺服器憑證即將過期。
 |===
 
 
+[[grid-network-alerts]]
 == Grid Network 警示
 
 [cols="1a,2a"]
@@ -766,6 +778,7 @@ Grid Network MTU不符
 |===
 
 
+[[grid-federation-alerts]]
 == 網格同盟警示
 
 [cols="1a,2a"]
@@ -788,6 +801,7 @@ Grid Federation 連線失敗
 |===
 
 
+[[high-usage-or-high-latency-alerts]]
 == 高使用率或高延遲警示
 
 [cols="1a,2a"]
@@ -810,6 +824,7 @@ Cassandra中繼資料查詢的平均時間過長。
 |===
 
 
+[[identity-federation-alerts]]
 == 身分識別聯盟警示
 
 [cols="1a,2a"]
@@ -832,6 +847,7 @@ Cassandra中繼資料查詢的平均時間過長。
 |===
 
 
+[[information-lifecycle-management-ilm-alerts]]
 == 資訊生命週期管理（ ILM ）警示
 
 [cols="1a,2a"]
@@ -854,6 +870,7 @@ ILM掃描速率設定為每秒不到100個物件。
 |===
 
 
+[[key-management-server-kms-alerts]]
 == 金鑰管理伺服器（ KMS ）警示
 
 [cols="1a,2a"]
@@ -932,6 +949,7 @@ KMS 伺服器連線失敗
 |===
 
 
+[[load-balancer-alerts]]
 == 負載平衡器警示
 
 [cols="1a,2a"]
@@ -947,6 +965,7 @@ KMS 伺服器連線失敗
 |===
 
 
+[[local-clock-offset-alerts]]
 == 本機時鐘偏移警示
 
 [cols="1a,2a"]
@@ -962,6 +981,7 @@ KMS 伺服器連線失敗
 |===
 
 
+[[low-memory-or-low-space-alerts]]
 == 記憶體不足或空間不足警示
 
 [cols="1a,2a"]
@@ -1047,6 +1067,7 @@ KMS 伺服器連線失敗
 |===
 
 
+[[node-or-node-network-alerts]]
 == 節點或節點網路警示
 
 [cols="1a,2a"]
@@ -1251,6 +1272,7 @@ TCP 連線使用量
 |===
 
 
+[[object-alerts]]
 == 物件警示
 
 [cols="1a,2a"]
@@ -1301,6 +1323,7 @@ S3 將物件大小放得太大
 |===
 
 
+[[object-corruption-alerts]]
 == 物件損壞警報
 
 [cols="1a,2a"]
@@ -1316,6 +1339,7 @@ S3 將物件大小放得太大
 |===
 
 
+[[platform-services-alerts]]
 == 平台服務警示
 
 [cols="1a,2a"]
@@ -1338,6 +1362,7 @@ S3 將物件大小放得太大
 |===
 
 
+[[storage-volume-alerts]]
 == 儲存磁碟區警示
 
 [cols="1a,2a"]
@@ -1381,6 +1406,7 @@ Volume 還原無法開始複寫資料修復
 |===
 
 
+[[storagegrid-services-alerts]]
 == StorageGRID 服務警示
 
 [cols="1a,2a"]
@@ -1424,6 +1450,7 @@ SSH 服務的組態無效。現在正在使用先前的組態。
 |===
 
 
+[[tenant-alerts]]
 == 租戶警示
 
 [cols="1a,2a"]

@@ -15,6 +15,7 @@ summary: 您可以使用 VMware OVF Tool 自動部署 StorageGRID 中的網格�
 
 
 
+[[automate-grid-node-deployment]]
 == 自動化網格節點部署
 
 使用 VMware OVF 工具來自動化網格節點的部署。
@@ -81,6 +82,7 @@ Bash Shell指令碼用於自動化虛擬網格節點的部署。
 |===
 
 
+[[define-the-configuration-file-for-your-deployment]]
 === 定義部署的組態檔
 
 您可以在 Bash 指令碼所使用的組態檔中、指定部署 StorageGRID 虛擬網格節點所需的資訊 `deploy-vsphere-ovftool.sh`。您可以修改範例組態檔案、這樣就不需要從頭建立檔案。
@@ -97,6 +99,7 @@ Bash Shell指令碼用於自動化虛擬網格節點的部署。
 
 
 
+[[configuration-file-settings]]
 === 組態檔設定
 
  `deploy-vsphere-ovftool.ini`組態檔包含部署虛擬網格節點所需的設定。
@@ -514,6 +517,7 @@ NOTE: 對於管理節點、執行個體必須永遠等於2。
 
 
 
+[[run-the-bash-script]]
 == 執行Bash指令碼
 
 您可以使用 `deploy-vsphere-ovftool.sh` Bash 指令碼和修改後的 deploy-vsphere-ovftool.ini 組態檔、在 VMware vSphere 中自動化 StorageGRID 節點的部署。
@@ -581,6 +585,7 @@ Deployment Summary
 ----
 
 
+[[automate-the-configuration-of-storagegrid]]
 == 自動化StorageGRID 功能組態
 
 部署完網格節點之後、您可以自動化StorageGRID 設定該系統。

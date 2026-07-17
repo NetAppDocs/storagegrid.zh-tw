@@ -31,6 +31,7 @@ summary: 您可以將一個或多個 StorageGRID 節點從一個 Linux 主機移
 ====
 
 
+[[export-node-from-source-host]]
 == 從來源主機匯出節點
 
 首先、請關閉網格節點、然後從來源 Linux 主機匯出。
@@ -91,6 +92,7 @@ want to import it again.
 
 
 
+[[import-node-on-target-host]]
 == 在目標主機上匯入節點
 
 從來源主機匯出節點之後、您將匯入並驗證目標主機上的節點。驗證可確認節點存取的區塊儲存設備和網路介面裝置與來源主機相同。
@@ -133,6 +135,7 @@ Checking for duplication of unique values... PASSED
 
 
 
+[[start-migrated-node]]
 == 啟動移轉的節點
 
 驗證移轉的節點之後、您可以在 _target host_ 上執行命令來啟動節點。

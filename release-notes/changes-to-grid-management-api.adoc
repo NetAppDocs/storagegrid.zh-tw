@@ -20,6 +20,7 @@ NOTE: 您可以繼續使用StorageGRID 12.0 中已棄用的管理 API 版本；�
 
 
 
+[[new-endpoints-for-branch-buckets]]
 == 分支儲存桶的新端點
 
 已新增以下端點，以便您link:../tenant/what-is-branch-bucket.html["管理分支儲存桶"]：
@@ -30,6 +31,7 @@ NOTE: 您可以繼續使用StorageGRID 12.0 中已棄用的管理 API 版本；�
 
 
 
+[[new-private-endpoints-for-move-adc]]
 == Move ADC 的新專用終端點
 
 已新增下列私有端點，以便您link:../maintain/move-adc-service.html["行動 ADC 服務"]從一個儲存節點到同一站點上的另一個儲存節點：
@@ -42,6 +44,7 @@ NOTE: 您可以繼續使用StorageGRID 12.0 中已棄用的管理 API 版本；�
 
 
 
+[[new-private-endpoints-for-convert-to-data-only-node]]
 == 轉換為僅資料節點的新私有端點
 
 已新增下列私有端點，以便您link:../maintain/convert-to-data-only-node.html["轉換一個或多個組合儲存節點"]不包含 ADC 服務到僅資料節點。

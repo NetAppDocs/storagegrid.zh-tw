@@ -82,6 +82,7 @@ NOTE: 磁碟區還原視儲存物件複本的資源可用度而定。磁碟區�
 
 
 
+[[enable-auto-restore-modeenable-automatic-restore-mode]]
 == [[enable 自動還原模式 ]] 啟用自動還原模式
 
 當您啟用自動還原模式時、當磁碟區準備好要還原時、磁碟區還原會自動啟動。
@@ -108,6 +109,7 @@ NOTE: 磁碟區還原視儲存物件複本的資源可用度而定。磁碟區�
 
 
 
+[[manually-restoremanually-restore-failed-volume-or-node]]
 == [[manually -store] 手動還原故障的磁碟區或節點
 
 請依照下列步驟還原故障的磁碟區或節點。
@@ -137,6 +139,7 @@ NOTE: 磁碟區還原視儲存物件複本的資源可用度而定。磁碟區�
 
 
 
+[[view-restoration-progressview-restoration-progress]]
 == [[view-store-progress]] 檢視還原進度
 
 「 * 還原進度 * 」標籤會顯示磁碟區還原程序的狀態、以及要還原節點的磁碟區相關資訊。
@@ -166,6 +169,7 @@ NOTE: 複寫資料還原視儲存複寫複本的資源可用度而定。複寫�
 
 
 
+[[view-restoration-historyview-restoration-history]]
 == [[view-store-history ]] 檢視還原歷史記錄
 
 「 * 還原歷史記錄 * 」標籤會顯示已成功完成的所有磁碟區還原資訊。

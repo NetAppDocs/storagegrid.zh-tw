@@ -18,6 +18,7 @@ TIP: Swift 詳細資料已從此文件網站版本中移除。請參閱。 https
 
 
 
+[[configuration-tasks]]
 == 組態工作
 
 . 根據用戶端應用程式與 StorageGRID 的連線方式、在 StorageGRID 中執行必要工作。
@@ -75,12 +76,14 @@ TIP: Swift 詳細資料已從此文件網站版本中移除。請參閱。 https
 
 
 
+[[information-needed-to-attach-storagegrid-to-a-client-application]]
 == 將 StorageGRID 附加至用戶端應用程式所需的資訊
 
 在將 StorageGRID 附加到 S3 用戶端應用程式之前、您必須先在 StorageGRID 中執行組態步驟、並取得特定值。
 
 
 
+[[what-values-do-i-need]]
 === 我需要什麼價值？
 
 下表顯示您必須在 StorageGRID 中設定的值、以及 S3 應用程式和 DNS 伺服器使用這些值的位置。
@@ -147,6 +150,7 @@ StorageGRID > 租戶與貯體
 |===
 
 
+[[how-do-i-get-these-values]]
 === 如何取得這些價值？
 
 視您的需求而定、您可以執行下列任一動作來取得所需資訊：

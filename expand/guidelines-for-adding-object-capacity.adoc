@@ -15,6 +15,7 @@ summary: 您可以StorageGRID 將儲存磁碟區新增至現有的儲存節點�
 
 
 
+[[guidelines-for-adding-storage-volumes]]
 == 新增儲存磁碟區的準則
 
 在將儲存磁碟區新增至現有儲存節點之前、請先檢閱下列準則與限制：
@@ -38,6 +39,7 @@ summary: 您可以StorageGRID 將儲存磁碟區新增至現有的儲存節點�
 
 
 
+[[guidelines-for-adding-storage-nodes]]
 == 新增儲存節點的準則
 
 在將儲存節點新增至現有站台之前、請先檢閱下列準則與限制：
@@ -53,6 +55,7 @@ summary: 您可以StorageGRID 將儲存磁碟區新增至現有的儲存節點�
 
 
 
+[[guidelines-for-adc-service-on-storage-nodes]]
 == 儲存節點上的ADC服務準則
 
 設定擴充時、您必須選擇是否要在每個新的儲存節點上加入管理網域控制器（ADC）服務。ADC服務會追蹤網格服務的位置和可用度。

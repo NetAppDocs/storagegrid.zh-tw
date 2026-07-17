@@ -15,6 +15,7 @@ summary: 您可能需要使用StorageGRID Sfs3 REST API來管理使用舊版Comp
 
 
 
+[[compliance-feature-deprecated]]
 == 法規遵循功能已過時
 
 先前版本的不支援《支援不符合要求》功能、現已由S3物件鎖定取代。StorageGRID StorageGRID

@@ -17,6 +17,7 @@ summary: 「總覽」索引標籤提供每個節點的基本資訊。也會顯�
 
 
 
+[[node-information]]
 == 節點資訊
 
 「概觀」索引標籤的「節點資訊」區段會列出有關節點的基本資訊。
@@ -53,6 +54,7 @@ NOTE: 在託管關機作業期間、節點可能會顯示為「未知」。在�
 
 
 
+[[alerts]]
 == 警示
 
 Overview （概述）選項卡的 Alerts link:monitoring-system-health.html#view-current-and-resolved-alerts["目前影響此節點且尚未靜音的警示"]（警報）部分列出了任何。選取警示名稱以檢視其他詳細資料和建議的動作。

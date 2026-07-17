@@ -18,6 +18,7 @@ CAUTION: 如果ILM原則設定不正確、可能導致無法恢復的資料遺�
 
 
 
+[[default-ilm-policy]]
 == 預設 ILM 原則
 
 當您安裝 StorageGRID 並新增站台時、系統會自動建立預設的 ILM 原則、如下所示：
@@ -30,12 +31,14 @@ CAUTION: 如果ILM原則設定不正確、可能導致無法恢復的資料遺�
 
 
 
+[[one-or-many-active-ilm-policies]]
 == 一或多個使用中的 ILM 原則？
 
 您一次可以有一個或多個使用中的 ILM 原則。
 
 
 
+[[one-policy]]
 === 單一原則
 
 如果您的網格將使用簡單的資料保護方案、其中只有少數特定租戶和特定貯體規則、請使用單一主動式 ILM 原則。ILM 規則可以包含篩選器、以管理不同的貯體或租戶。
@@ -46,6 +49,7 @@ image:ilm-policies-single.png["單一 ILM 原則圖表"]
 
 
 
+[[multiple-policies]]
 === 多個原則
 
 若要為租戶提供不同的服務品質選項、您一次可以有多個作用中原則。每個原則都可以管理特定租戶、 S3 貯體和物件。當您為一組特定租戶或物件套用或變更一個原則時、套用至其他租戶和物件的原則不會受到影響。
@@ -68,6 +72,7 @@ image:ilm-policies-tags-conceptual.png["多個 ILM 原則圖表"]
 
 
 
+[[how-does-an-ilm-policy-evaluate-objects]]
 == ILM原則如何評估物件？
 
 主動式 ILM 原則可控制物件的放置、持續時間和資料保護。
@@ -81,6 +86,7 @@ image:ilm-policies-tags-conceptual.png["多個 ILM 原則圖表"]
 
 
 
+[[example-ilm-policy]]
 == ILM原則範例
 
 舉例來說、 ILM 原則可能包含三個 ILM 規則、其中指定下列項目：
@@ -110,6 +116,7 @@ image:ilm_policy_and_rules.png["ILM原則與規則"]
 
 
 
+[[what-are-active-and-inactive-policies]]
 == 什麼是作用中和非作用中原則？
 
 每個 StorageGRID 系統必須至少有一個主動式 ILM 原則。如果您想要有多個使用中的 ILM 原則、請建立 ILM 原則標籤、並將原則指派給每個標籤。租戶接著將標籤套用至 S3 貯體。預設原則會套用至未指派原則標記的貯體中所有物件。
@@ -124,6 +131,7 @@ StorageGRID 系統會追蹤已啟用或停用之原則的歷程記錄。
 
 
 
+[[considerations-for-creating-an-ilm-policy]]
 == 建立ILM原則的考量
 
 * 只能在測試系統中使用系統提供的原則「基準 2 複本」原則。對於 StorageGRID 11.6 及更早版本、本原則中的「製作 2 份複本」規則會使用「所有儲存節點」儲存池、其中包含所有站台。如果StorageGRID 您的作業系統有多個站台、則一個物件的兩份複本可能會放在同一個站台上。

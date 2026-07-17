@@ -15,6 +15,7 @@ summary: 您可以在管理節點和閘道節點上建立虛擬區域網路 （V
 
 
 
+[[considerations-for-vlan-interfaces]]
 == VLAN介面考量
 
 * 您可以輸入VLAN ID、然後在一個或多個節點上選擇父介面、藉此建立VLAN介面。
@@ -37,6 +38,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[create-a-vlan-interface]]
 == 建立VLAN介面
 
 .開始之前
@@ -53,6 +55,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[access-the-wizard]]
 === 存取精靈
 
 .步驟
@@ -62,6 +65,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[enter-details-for-the-vlan-interfaces]]
 === 輸入VLAN介面的詳細資料
 
 .步驟
@@ -75,6 +79,7 @@ VLAN ID 不一定是唯一的。例如、您可以使用VLAN ID 200來管理某�
 
 
 
+[[choose-parent-interfaces]]
 === 選擇父介面
 
 下表列出網格中每個站台所有管理節點和閘道節點的可用介面。管理網路（ eth1 ）介面無法用作父介面、也無法顯示。
@@ -92,6 +97,7 @@ image:vlan-create-parent-interfaces.png["VLAN建立精靈父介面"]
 
 
 
+[[confirm-the-settings]]
 === 確認設定
 
 .步驟
@@ -108,6 +114,7 @@ image:vlan-create-parent-interfaces.png["VLAN建立精靈父介面"]
 
 
 
+[[edit-a-vlan-interface]]
 == 編輯VLAN介面
 
 編輯VLAN介面時、您可以進行下列類型的變更：
@@ -141,6 +148,7 @@ image:vlan-create-parent-interfaces.png["VLAN建立精靈父介面"]
 
 
 
+[[remove-a-vlan-interface]]
 == 移除VLAN介面
 
 您可以移除一或多個VLAN介面。

@@ -38,6 +38,7 @@ summary: 您可以使用S3 SelectObjectContent要求、根據簡單的SQL陳述�
 
 
 
+[[csv-request-syntax-example]]
 == CSV 要求語法範例
 
 [source, cli]
@@ -81,6 +82,7 @@ x-amz-expected-bucket-owner: ExpectedBucketOwner
 ----
 
 
+[[parquet-request-syntax-example]]
 == 拼花地板要求語法範例
 
 [source, cli]
@@ -117,6 +119,7 @@ x-amz-expected-bucket-owner: ExpectedBucketOwner
 ----
 
 
+[[sql-query-example]]
 == SQL查詢範例
 
 此查詢會取得州名、2010年人口、2015年估計人口、以及美國統計資料的變更百分比。檔案中非狀態的記錄會被忽略。
@@ -144,6 +147,7 @@ POPESTIMATE2020
 ----
 
 
+[[aws-cli-usage-example-csv]]
 == AWS-CLI 使用範例（ CSV ）
 
 [listing]
@@ -163,6 +167,7 @@ Colorado,5029196,5454328,8.4532796097030221132761578590295546246
 ----
 
 
+[[aws-cli-usage-example-parquet]]
 == AWS-CLI 使用範例（ Parquet ）
 
 [listing]

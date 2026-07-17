@@ -34,6 +34,7 @@ image:kms_copied_key.png["已複製公里金鑰"]
 
 
 
+[[use-cases-for-changing-which-kms-is-used-for-a-site]]
 == 變更站台使用KMS的使用案例
 
 下表摘要列出變更站台KMS的最常見案例所需步驟。

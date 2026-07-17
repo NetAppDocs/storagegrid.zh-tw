@@ -15,12 +15,14 @@ summary:
 
 
 
+[[copyright]]
 == 版權
 
 link:https://www.netapp.com/company/legal/copyright/["https://www.netapp.com/company/legal/copyright/"^]
 
 
 
+[[trademarks]]
 == 商標
 
 NetApp 、 NetApp 標誌及 NetApp 商標頁面上列出的標章均為 NetApp 、 Inc. 的商標。其他公司與產品名稱可能為其各自所有者的商標。
@@ -29,6 +31,7 @@ link:https://www.netapp.com/company/legal/trademarks/["https://www.netapp.com/co
 
 
 
+[[patents]]
 == 專利
 
 如需最新的 NetApp 擁有專利清單、請參閱：
@@ -37,18 +40,21 @@ link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://
 
 
 
+[[privacy-policy]]
 == 隱私權政策
 
 link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
 
 
 
+[[api-license]]
 == API許可證
 
 本文檔不授予對StorageGRID S3 REST API 的任何授權或其他權利。使用或存取StorageGRID S3 REST API 需要與NetApp簽訂單獨的授權協議，並且受該協議約束。
 
 
 
+[[open-source]]
 == 開放原始碼
 
 通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。

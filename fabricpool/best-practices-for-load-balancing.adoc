@@ -17,12 +17,14 @@ summary: 在將 StorageGRID 附加為 FabricPool 雲端層之前、請先檢閱�
 
 
 
+[[best-practices-for-tenant-access-to-the-load-balancer-endpoint-used-for-fabricpool]]
 == 租戶存取用於 FabricPool 的負載平衡器端點的最佳實務做法
 
 您可以控制哪些租戶可以使用特定負載平衡器端點來存取其貯體。您可以允許所有租戶、允許某些租戶、或封鎖某些租戶。建立 FabricPool 使用的負載平衡端點時、請選取 * 允許所有租戶 * 。ONTAP 會加密放置在 StorageGRID 儲存區中的資料、因此這種額外的安全層幾乎不會提供額外的安全性。
 
 
 
+[[best-practices-for-the-security-certificate]]
 == 安全性憑證的最佳實務做法
 
 當您建立用於 FabricPool 的 StorageGRID 負載平衡器端點時、您會提供安全性憑證、讓 ONTAP 能夠使用 StorageGRID 進行驗證。
@@ -38,12 +40,14 @@ summary: 在將 StorageGRID 附加為 FabricPool 雲端層之前、請先檢閱�
 
 
 
+[[add-certificate-to-ontap]]
 === 將憑證新增至 ONTAP
 
 當您將 StorageGRID 新增為 FabricPool 雲端層時、必須在 ONTAP 叢集上安裝相同的憑證、包括根憑證和任何次級憑證授權單位（ CA ）憑證。
 
 
 
+[[manage-certificate-expiration]]
 === 管理憑證過期
 
 

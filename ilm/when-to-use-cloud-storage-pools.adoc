@@ -15,6 +15,7 @@ summary: 您可以使用 Cloud Storage Pool 將資料備份或分層至外部位
 
 
 
+[[back-up-storagegrid-data-to-external-location]]
 == 將 StorageGRID 資料備份到外部位置
 
 您可以使用Cloud Storage Pool將StorageGRID 物件備份到外部位置。
@@ -32,6 +33,7 @@ summary: 您可以使用 Cloud Storage Pool 將資料備份或分層至外部位
 
 
 
+[[tier-data-from-storagegrid-to-external-location]]
 == 將資料從 StorageGRID 分層至外部位置
 
 您可以使用雲端儲存資源池、將物件儲存在StorageGRID 不屬於該系統的地方。例如、假設您有大量物件需要保留、但您預期很少存取這些物件（如果有的話）。您可以使用雲端儲存資源池來分層物件、以降低儲存成本、並釋放StorageGRID 出在效益管理系統中的空間。
@@ -45,6 +47,7 @@ summary: 您可以使用 Cloud Storage Pool 將資料備份或分層至外部位
 
 
 
+[[maintain-multiple-cloud-endpoints]]
 == 維護多個雲端端點
 
 如果您想要將物件資料分層或備份到多個雲端、可以設定多個雲端儲存池端點。ILM規則中的篩選器可讓您指定儲存在每個雲端儲存資源池中的物件。例如、您可能想要將來自 Amazon S3 Glacier 中某些租戶或貯體的物件、以及來自 Azure Blob 儲存區中其他租戶或貯體的物件儲存起來。或者、您可能想要在Amazon S3 Glacier與Azure Blob儲存設備之間移動資料。

@@ -56,6 +56,7 @@ image:health_status_card.png["健全狀況狀態卡 - 儀表板"]
 |===
 
 
+[[monitor-node-connection-states]]
 == 監控節點連線狀態
 
 如果一個或多個節點與網格中斷連線、關鍵StorageGRID 的功能不正常運作可能會受到影響。監控節點連線狀態、並立即解決任何問題。
@@ -111,6 +112,7 @@ image:icon_alert_green_checkmark.png["圖示警示綠色核取記號"]
 |===
 
 
+[[view-current-and-resolved-alerts]]
 == 檢視目前和已解決的警示
 
 * 目前警示 * ：觸發警示時、儀表板上會顯示警示圖示。節點的「節點」頁面上也會顯示警示圖示。如果link:email-alert-notifications.html["已設定警示電子郵件通知"]是、除非警示已靜音、否則也會傳送電子郵件通知。

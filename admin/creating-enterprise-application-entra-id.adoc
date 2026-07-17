@@ -28,6 +28,7 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 
 
 
+[[access-entra-id]]
 == 訪問 Entra ID
 
 .步驟
@@ -38,6 +39,7 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 
 
 
+[[create-enterprise-applications-and-save-storagegrid-sso-configuration]]
 == 建立企業應用程式並儲存StorageGRID 不可靠的SSO組態
 
 若要在StorageGRID中儲存 Entra ID 的 SSO 配置，您必須使用 Entra ID 為每個管理節點建立一個企業應用程式。您將從 Entra ID 複製聯合元資料 URL，並將其貼上到配置 SSO 頁面上對應的 *聯合元資料 URL* 欄位中。
@@ -61,6 +63,7 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 
 
 
+[[download-saml-metadata-for-every-admin-node]]
 == 下載每個管理節點的SAML中繼資料
 
 儲存SSO組態之後、您可以為StorageGRID 您的系統中的每個管理節點下載SAML中繼資料檔案。
@@ -78,6 +81,7 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 
 
 
+[[upload-saml-metadata-to-each-enterprise-application]]
 == 將SAML中繼資料上傳至每個企業應用程式
 
 為每個StorageGRID管理節點下載 SAML 元資料檔案後，在 Entra ID 中執行下列步驟：

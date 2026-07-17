@@ -36,12 +36,15 @@ NOTE: 對端點憑證所做的變更、可能需要15分鐘才能套用至所有
 
 
 
+[[create-a-load-balancer-endpoint]]
+[[create-lb-endpoint]]
 == 建立負載平衡器端點
 
 每個 S3 用戶端負載平衡器端點指定一個連接埠、一個客戶端類型（S3）和一個網路協定（HTTP 或 HTTPS）。管理介面負載平衡器端點指定連接埠、介面類型和不受信任的客戶端網路。
 
 
 
+[[access-the-wizard]]
 === 存取精靈
 
 .步驟
@@ -53,6 +56,7 @@ NOTE: 對端點憑證所做的變更、可能需要15分鐘才能套用至所有
 
 
 
+[[enter-endpoint-details]]
 === 輸入端點詳細資料
 
 .步驟
@@ -163,6 +167,7 @@ NOTE: 對端點憑證所做的變更、可能需要15分鐘才能套用至所有
 
 
 
+[[select-a-binding-mode]]
 === 選取繫結模式
 
 .步驟
@@ -230,6 +235,7 @@ HA群組的虛擬IP
 
 
 
+[[control-tenant-access]]
 === 控制租戶存取
 
 
@@ -270,6 +276,7 @@ NOTE: 管理介面端點只有當端點具有<<enter-endpoint-details,租戶管�
 
 
 
+[[attach-certificate]]
 === 附加憑證
 
 .步驟
@@ -396,6 +403,7 @@ IP
 
 
 
+[[after-you-finish]]
 === 完成後
 
 .步驟
@@ -422,6 +430,7 @@ IP
 
 
 
+[[view-and-edit-load-balancer-endpoints]]
 == 檢視及編輯負載平衡器端點
 
 您可以檢視現有負載平衡器端點的詳細資料、包括安全端點的憑證中繼資料。您可以變更端點的特定設定。
@@ -532,6 +541,7 @@ _n_
 
 
 
+[[remove-load-balancer-endpoints]]
 == 移除負載平衡器端點
 
 您可以使用* Actions（動作）*功能表移除一或多個端點、也可以從詳細資料頁面移除單一端點。

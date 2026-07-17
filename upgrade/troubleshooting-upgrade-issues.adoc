@@ -15,36 +15,42 @@ summary: 如果執行升級時發生問題、您可以自行解決問題。如�
 
 
 
+[[upgrade-does-not-complete]]
 == 升級未完成
 
 下列各節說明如何從部分升級失敗的情況中恢復。
 
 
 
+[[upgrade-precheck-errors]]
 === 升級預先檢查錯誤
 
 若要偵測並解決問題、您可以在開始實際升級之前、手動執行升級前置檢查。大多數預先檢查錯誤都提供如何解決問題的相關資訊。
 
 
 
+[[provisioning-failures]]
 === 資源配置失敗
 
 如果自動資源配置程序失敗、請聯絡技術支援部門。
 
 
 
+[[grid-node-crashes-or-fails-to-start]]
 === 網格節點當機或無法啟動
 
 如果網格節點在升級過程中當機、或在升級完成後無法成功啟動、請聯絡技術支援部門以調查並修正任何潛在問題。
 
 
 
+[[ingest-or-data-retrieval-is-interrupted]]
 === 擷取或資料擷取中斷
 
 如果在您不升級網格節點時、資料擷取或擷取意外中斷、請聯絡技術支援部門。
 
 
 
+[[database-upgrade-errors]]
 === 資料庫升級錯誤
 
 如果資料庫升級失敗並出現錯誤、請重試升級。如果再次失敗、請聯絡技術支援部門。
@@ -54,12 +60,14 @@ link:checking-systems-condition-before-upgrading-software.html["在升級軟體�
 
 
 
+[[user-interface-issues]]
 == 使用者介面問題
 
 在升級期間或之後、您可能會遇到與 Grid Manager 或 Tenant Manager 有關的問題。
 
 
 
+[[grid-manager-displays-multiple-error-messages-during-upgrade]]
 === Grid Manager 會在升級期間顯示多個錯誤訊息
 
 如果您在升級主要管理節點時重新整理瀏覽器或瀏覽至其他 Grid Manager 頁面、可能會看到多則「 503 ：服務無法使用」和「連線至伺服器時發生問題」訊息。您可以安全地忽略這些訊息、這些訊息會在節點升級後立即停止顯示。
@@ -68,6 +76,7 @@ link:checking-systems-condition-before-upgrading-software.html["在升級軟體�
 
 
 
+[[web-interface-does-not-respond-as-expected]]
 === Web介面未如預期回應
 
 Grid Manager或Tenant Manager在StorageGRID 升級完更新版的更新軟體後、可能無法如預期般回應。
@@ -87,6 +96,7 @@ NOTE: 瀏覽器支援通常會針對每StorageGRID 個版本進行變更。
 
 
 
+[[docker-image-availability-check-error-messages]]
 == 「 Docker image Availability check 」錯誤訊息
 
 嘗試開始升級程序時、您可能會收到錯誤訊息、指出「 Docker 映像可用度檢查驗證套件已識別下列問題」。您必須先解決所有問題、才能完成升級。

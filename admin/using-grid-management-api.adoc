@@ -15,6 +15,7 @@ summary: 您可以使用Grid Management REST API而非Grid Manager使用者介�
 
 
 
+[[top-level-resources]]
 == 頂級資源
 
 Grid Management API提供下列頂級資源：
@@ -26,6 +27,7 @@ Grid Management API提供下列頂級資源：
 
 
 
+[[issue-api-requests]]
 == 發出API要求
 
 Grid Management API使用Swagger開放原始碼API平台。Swagger提供直覺式使用者介面、可讓開發人員和非開發人員StorageGRID 利用API在Real-Time中執行作業。

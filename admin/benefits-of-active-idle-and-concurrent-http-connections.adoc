@@ -22,6 +22,7 @@ summary: 如何設定HTTP連線、可能會影響StorageGRID 到整個系統的�
 
 
 
+[[benefits-of-keeping-idle-http-connections-open]]
 == 保持閒置HTTP連線開啟的優點
 
 當客戶端應用程式空閒時，請保持 HTTP 連線開啟以允許後續事務。保持空閒 HTTP 連線開啟最多 10 分鐘。  StorageGRID可能會自動關閉處於開啟狀態且空閒時間超過 10 分鐘的 HTTP 連線。
@@ -40,6 +41,7 @@ summary: 如何設定HTTP連線、可能會影響StorageGRID 到整個系統的�
 
 
 
+[[benefits-of-active-http-connections]]
 == 作用中HTTP連線的優點
 
 對於直接連線至儲存節點的連線、即使 HTTP 連線持續執行交易、您仍應將作用中 HTTP 連線的持續時間限制為最多 10 分鐘。
@@ -63,6 +65,7 @@ summary: 如何設定HTTP連線、可能會影響StorageGRID 到整個系統的�
 
 
 
+[[benefits-of-concurrent-http-connections]]
 == 並行HTTP連線的優點
 
 您應該StorageGRID 將多個TCP/IP連線保持開放狀態、以允許平行處理、進而提升效能。最佳的平行連線數量取決於各種因素。
@@ -92,6 +95,7 @@ StorageGRID系統通常支援多個客戶端應用程式。在確定最大並發
 
 
 
+[[separation-of-http-connection-pools-for-read-and-write-operations]]
 == 分隔HTTP連線集區以進行讀取和寫入作業
 
 您可以使用不同的HTTP連線集區進行讀取和寫入作業、並控制每個集區的使用量。獨立的HTTP連線集區可讓您更有效地控制交易並平衡負載。

@@ -15,6 +15,7 @@ summary: 實作S3 REST API以搭配StorageGRID 使用時、請遵循以下建議
 
 
 
+[[recommendations-for-heads-to-non-existent-objects]]
 == 針對不存在物件的使用者提出建議
 
 如果您的應用程式定期檢查某個物件是否存在於您認為該物件實際上不存在的路徑中，則應使用“可用”link:consistency.html["一致性"] 。例如，如果您的應用程式在 PUT 之前 HEAD 某個位置，則您應該使用「可用」一致性。
@@ -25,6 +26,7 @@ summary: 實作S3 REST API以搭配StorageGRID 使用時、請遵循以下建議
 
 
 
+[[recommendations-for-object-keys]]
 == 物件金鑰建議
 
 請根據第一次建立貯體的時間、遵循下列物件金鑰名稱建議。
@@ -51,6 +53,7 @@ TIP: S3 工作負載的例外情況是、它會在一段短時間後持續移除
 
 
 
+[[recommendations-for-range-reads]]
 == 「範圍讀取」建議
 
 如果link:../admin/configuring-stored-object-compression.html["用於壓縮儲存物件的全域選項"]啟用、 S3 用戶端應用程式應避免執行 GetObject 作業、以指定傳回位元組範圍。這些「範圍讀取」作業效率不彰、因為 StorageGRID 必須有效地解壓縮物件以存取要求的位元組。從非常大的物件要求少量位元組的 GetObject 作業尤其缺乏效率、例如從 50 GB 壓縮物件讀取 10 MB 範圍是效率不彰的。

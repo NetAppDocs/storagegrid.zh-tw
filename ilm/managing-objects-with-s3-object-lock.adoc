@@ -15,6 +15,7 @@ summary: 身為網格管理員、您可以為StorageGRID 您的系統啟用S3物
 
 
 
+[[what-is-s3-object-lock]]
 == 什麼是S3物件鎖定？
 
 「物件鎖定」功能是物件保護解決方案、StorageGRID 相當於Amazon Simple Storage Service（Amazon S3）中的S3物件鎖定。
@@ -31,6 +32,7 @@ summary: 身為網格管理員、您可以為StorageGRID 您的系統啟用S3物
 
 
 
+[[retention-modes]]
 === 保留模式
 
 StorageGRID S3 物件鎖定功能支援兩種保留模式、可將不同層級的保護套用至物件。這些模式相當於 Amazon S3 保留模式。
@@ -53,6 +55,7 @@ StorageGRID S3 物件鎖定功能支援兩種保留模式、可將不同層級�
 
 
 
+[[retention-settings-for-object-versions]]
 === 物件版本的保留設定
 
 如果在啟用 S3 物件鎖定的情況下建立貯體、使用者可以使用 S3 用戶端應用程式、針對新增至貯體的每個物件、選擇性地指定下列保留設定：
@@ -71,6 +74,7 @@ NOTE: 如果物件處於合法保留狀態、則無論物件的保留模式為�
 
 
 
+[[default-retention-setting-for-buckets]]
 === 貯體的預設保留設定
 
 如果在啟用 S3 物件鎖定的情況下建立貯體、使用者可以選擇性地指定貯體的下列預設設定：
@@ -85,6 +89,7 @@ NOTE: 如果物件處於合法保留狀態、則無論物件的保留模式為�
 
 
 
+[[comparing-s3-object-lock-to-legacy-compliance]]
 == 比較S3物件鎖定與舊版法規遵循
 
 S3物件鎖定取代舊StorageGRID 版的Compliance功能。由於 S3 物件鎖定功能符合 Amazon S3 的要求、因此它取代了專屬的 StorageGRID 法規遵循功能、這項功能現在稱為「舊版法規遵循」。

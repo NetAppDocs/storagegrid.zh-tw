@@ -17,6 +17,7 @@ summary: 支援每個網格節點最多三個網路介面、可讓您為每個�
 
 
 
+[[default-storagegrid-networks]]
 == 預設StorageGRID 的網路
 
 根據預設StorageGRID 、每個網格節點支援三個網路介面、可讓您針對每個個別網格節點設定網路、以符合安全性和存取需求。
@@ -25,24 +26,28 @@ summary: 支援每個網格節點最多三個網路介面、可讓您為每個�
 
 
 
+[[grid-network]]
 === 網格網路
 
 必要。Grid Network用於所有內部StorageGRID 的資訊流量。它可在網格中的所有節點之間、跨所有站台和子網路提供連線功能。
 
 
 
+[[admin-network]]
 === 管理網路
 
 選用。管理網路通常用於系統管理和維護。也可用於用戶端傳輸協定存取。管理網路通常是私有網路、不需要在站台之間進行路由傳送。
 
 
 
+[[client-network]]
 === 用戶端網路
 
 選用。用戶端網路是一種開放式網路、通常用於提供 S3 用戶端應用程式的存取、因此 Grid Network 可以隔離和保護。用戶端網路可透過本機閘道與任何可連線的子網路進行通訊。
 
 
 
+[[guidelines]]
 == 準則
 
 * 每個 StorageGRID 節點都需要專屬的網路介面、 IP 位址、子網路遮罩、以及指派給它的每個網路的閘道。
@@ -83,6 +88,7 @@ eth2
 
 
 
+[[optional-interfaces]]
 == 選用介面
 
 或者、您也可以將額外的介面新增至節點。例如、您可能想要將主幹介面新增至管理節點或閘道節點、以便用來link:../admin/configure-vlan-interfaces.html["VLAN 介面"]分隔屬於不同應用程式或租戶的流量。或者，您可能想要新增存取介面以在中使用link:../admin/configure-high-availability-group.html["高可用度（HA）群組"]。

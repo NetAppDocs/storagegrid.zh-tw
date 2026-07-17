@@ -20,6 +20,7 @@ summary: 取得必要的 StorageGRID 資訊之後、您可以前往 ONTAP 將 St
 
 
 
+[[access-ontap-system-manager]]
 == 存取 ONTAP 系統管理員
 
 這些指示說明如何使用 ONTAP 系統管理員將 StorageGRID 新增為雲端層。您可以使用 ONTAP CLI 完成相同的組態。如需相關指示、請前往 https://docs.netapp.com/us-en/ontap/fabricpool/index.html["適用於 FabricPool 的 ONTAP 文件"^]。
@@ -33,6 +34,7 @@ summary: 取得必要的 StorageGRID 資訊之後、您可以前往 ONTAP 將 St
 
 
 
+[[enter-storagegrid-values]]
 == 輸入 StorageGRID 值
 
 如需詳細資訊、請參閱 https://docs.netapp.com/us-en/ontap/fabricpool/index.html["適用於 FabricPool 的 ONTAP 文件"^] 。

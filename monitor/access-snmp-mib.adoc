@@ -17,6 +17,7 @@ MIB 檔案包含有關網格中節點的受管理資源和服務內容的定義�
 
 
 
+[[access-mib-files]]
 == 存取 MIB 檔案
 
 請依照下列步驟存取 MIB 檔案。
@@ -57,6 +58,7 @@ TIP: 此 `snmptranslate`命令有許多選項可用於探索 MIB 。此命令可
 
 
 
+[[mib-file-contents]]
 == MIB 檔案內容
 
 所有物件都位於 StorageGRID OID 之下。
@@ -72,6 +74,7 @@ NetApp StorageGRID 實體的 MIB 模組。
 |===
 
 
+[[mib-objects]]
 == MIB 物件
 
 [cols="1a,1a,1a,1a,1a,2a"]

@@ -17,6 +17,7 @@ summary: 您可以建立S3生命週期組態、以控制何時從StorageGRID 作
 
 
 
+[[what-lifecycle-configuration-is]]
 == 什麼是生命週期組態
 
 生命週期組態是套用至特定S3儲存區中物件的一組規則。每個規則都會指定受影響的物件、以及這些物件何時到期（在特定日期或幾天之後）。
@@ -46,6 +47,7 @@ NOTE: 庫位生命週期組態可搭配已啟用S3物件鎖定的庫位使用、
 
 
 
+[[create-lifecycle-configuration]]
 == 建立生命週期組態
 
 建立生命週期組態的第一步、就是建立一個包含一或多個規則的Json檔案。例如、此Json檔案包含三個規則、如下所示：
@@ -106,6 +108,7 @@ CAUTION: 指定天數的規則是相對於擷取物件的時間。如果目前�
 ----
 
 
+[[apply-lifecycle-configuration-to-bucket]]
 == 將生命週期組態套用至貯體
 
 建立生命週期組態檔案之後、您可以發出 PuttBucketLifecycleConfiguration 要求、將其套用至儲存庫。
@@ -128,6 +131,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 
 
 
+[[validate-that-bucket-lifecycle-expiration-applies-to-object]]
 == 驗證目標是否適用庫位生命週期到期
 
 您可以在發出 PutObject 、 HeadObject 或 GetObject 要求時、判斷生命週期組態中的到期規則是否適用於特定物件。如果套用規則、回應會包含一個 `Expiration`參數、指出物件何時過期、以及相符的到期規則。

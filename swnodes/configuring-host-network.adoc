@@ -39,6 +39,7 @@ NOTE: 請勿直接使用連結或橋接裝置做為容器網路介面。這樣�
 
 
 
+[[considerations-and-recommendations-for-mac-address-cloning]]
 == MAC位址複製的考量與建議
 
 .[[mac_address_cloning]]
@@ -46,6 +47,7 @@ MAC位址複製會導致容器使用主機的MAC位址、而主機使用您指�
 
 
 
+[[enabling-mac-cloning]]
 === 啟用MAC複製
 
 在某些環境中、您可以透過MAC位址複製來增強安全性、因為它可讓您將專用的虛擬NIC用於管理網路、網格網路和用戶端網路。讓容器使用主機上專用NIC的MAC位址、可避免使用雜亂模式網路組態。
@@ -72,6 +74,7 @@ NOTE: 在虛擬主機上啟用MAC複製、而不同時在Hypervisor上啟用雜�
 
 
 
+[[mac-cloning-use-cases]]
 === Mac複製使用案例
 
 有兩種使用案例可考慮使用MAC複製：
@@ -87,6 +90,7 @@ NOTE: 如果您不想使用 MAC 位址複製、而是希望允許所有介面接
 
 
 
+[[mac-cloning-example]]
 === Mac複製範例
 
 以 MAC 位址為 11 ： 22 ： 33 ： 44 ： 55 ： 66 的主機啟用 MAC 複製範例、適用於介面 ens256 、並在節點組態檔案中使用下列金鑰：
@@ -100,6 +104,7 @@ NOTE: 如果您不想使用 MAC 位址複製、而是希望允許所有介面接
 
 
 
+[[example-1-1-to-1-mapping-to-physical-or-virtual-nics]]
 == 範例1：1對1對應至實體或虛擬NIC
 
 範例1說明簡單的實體介面對應、只需極少或不需要主機端組態。
@@ -114,6 +119,7 @@ Linux 作業系統創建 `ensXYZ`在安裝或啟動期間自動新增接口，�
 
 
 
+[[example-2-lacp-bond-carrying-vlans]]
 == 範例2：LACP連結傳輸VLAN
 
 範例2假設您熟悉連結網路介面、以及在所使用的Linux發佈版本上建立VLAN介面。

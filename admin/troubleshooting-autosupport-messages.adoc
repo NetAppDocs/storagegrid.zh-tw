@@ -20,6 +20,7 @@ NOTE: 如果您將代理伺服器設定為將 AutoSupport 套件轉送至 NetApp
 
 
 
+[[weekly-autosupport-package-failure]]
 == 每週 AutoSupport 套件故障
 
 如果每週 AutoSupport 套件無法傳送、 StorageGRID 系統會採取下列動作：
@@ -34,6 +35,7 @@ NOTE: 如果您將代理伺服器設定為將 AutoSupport 套件轉送至 NetApp
 
 
 
+[[user-triggered-or-event-triggered-autosupport-package-failure]]
 == 使用者觸發或事件觸發的 AutoSupport 套件故障
 
 如果使用者觸發或事件觸發的 AutoSupport 套件無法傳送、 StorageGRID 系統會採取下列動作：
@@ -49,6 +51,7 @@ NOTE: 如果您將代理伺服器設定為將 AutoSupport 套件轉送至 NetApp
 
 
 
+[[correct-an-autosupport-package-failure]]
 == 修正 AutoSupport 套件故障
 
 如果發生故障且選擇了使用SMTP,請確認StorageGRID 該系統的電子郵件伺服器已正確設定,而且您的電子郵件伺服器正在執行中。AutoSupport 頁面上可能會出現下列錯誤訊息： `AutoSupport packages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`

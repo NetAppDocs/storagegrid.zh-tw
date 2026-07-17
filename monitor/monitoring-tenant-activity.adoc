@@ -20,6 +20,7 @@ summary: 所有 S3 用戶端活動都與 StorageGRID 租戶帳戶相關聯。您
 
 
 
+[[view-all-tenants]]
 == 檢視所有租戶
 
 租戶頁面會顯示所有目前租戶帳戶的基本資訊。
@@ -60,6 +61,7 @@ image:tenant_accounts_example_csv.png["租戶帳戶範例為.csv"]
 
 
 
+[[view-a-specific-tenant]]
 == 檢視特定租戶
 
 您可以檢視特定租戶的詳細資料。
@@ -128,6 +130,7 @@ image:tenant_bucket_details_csv.png["租戶桶詳細資料CSV範例"]
 
 
 
+[[view-network-traffic]]
 == 檢視網路流量
 
 如果租戶已制定流量分類原則、請檢閱該租戶的網路流量。
@@ -146,6 +149,7 @@ image:tenant_bucket_details_csv.png["租戶桶詳細資料CSV範例"]
 
 
 
+[[use-the-audit-log]]
 == 使用稽核記錄
 
 您也可以選擇使用稽核記錄來更精細地監控租戶的活動。
@@ -164,6 +168,7 @@ image:tenant_bucket_details_csv.png["租戶桶詳細資料CSV範例"]
 
 
 
+[[use-prometheus-metrics]]
 == 使用 Prometheus 指標
 
 您也可以選擇使用 Prometheus 指標來報告租戶活動。

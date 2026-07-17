@@ -20,6 +20,7 @@ NOTE: NetApp建議您在網格節點之間啟用網際網路控制訊息傳輸�
 
 
 
+[[guidelines-for-linux-based-nodes]]
 == Linux型節點準則
 
 如果企業網路策略限制對任何這些連接埠的訪問，您可以在部署時使用部署設定參數重新對應連接埠。有關連接埠重新映射和部署配置參數的更多信息，請參閱link:../swnodes/index.html["在基於軟體的節點上安裝StorageGRID"]。
@@ -29,6 +30,7 @@ NOTE: 對連接埠重新映射的支援已棄用，並將在未來的版本中�
 
 
 
+[[guidelines-for-vmware-based-nodes]]
 == VMware型節點的準則
 
 只有在需要定義VMware網路外部的防火牆限制時、才需設定下列連接埠。
@@ -40,6 +42,7 @@ NOTE: 對連接埠重新映射的支援已棄用，並將在未來的版本中�
 
 
 
+[[guidelines-for-appliance-nodes]]
 == 應用裝置節點準則
 
 如果企業網路原則限制存取任何這些連接埠、您可以使用StorageGRID 《不可靠設備安裝程式》重新對應連接埠。請參閱。 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-remapping-network-ports-for-appliance.html["選用：重新對應應用裝置的網路連接埠"^]
@@ -49,6 +52,7 @@ NOTE: 對連接埠重新映射的支援已棄用，並將在未來的版本中�
 
 
 
+[[storagegrid-internal-ports]]
 == 內部連接埠StorageGRID
 
 [cols="1a,1a,1a,1a,4a"]

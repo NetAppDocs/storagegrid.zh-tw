@@ -24,6 +24,7 @@ summary: 高可用度（ HA ）群組可為 S3 用戶端提供高可用度的資
 
 
 
+[[how-do-you-create-an-ha-group]]
 == 如何建立HA群組？
 
 . 您可以為一個或多個管理節點或閘道節點選取網路介面。您可以使用Grid Network（eth0）介面、用戶端網路（eth2）介面、VLAN介面、或是新增至節點的存取介面。
@@ -40,6 +41,7 @@ NOTE: 如果 HA 群組具有 DHCP 指派的 IP 位址、則無法將介面新增
 
 
 
+[[what-is-the-active-interface]]
 == 什麼是作用中介面？
 
 正常運作期間、HA群組的所有VIP位址都會新增至主要介面、這是優先順序中的第一個介面。只要主介面仍可用、當用戶端連線至群組的任何VIP位址時、就會使用該介面。也就是說、在正常作業期間、主要介面是群組的「作用中」介面。
@@ -48,6 +50,7 @@ NOTE: 如果 HA 群組具有 DHCP 指派的 IP 位址、則無法將介面新增
 
 
 
+[[view-the-current-ha-group-status-of-a-node]]
 == 檢視節點的目前HA群組狀態
 
 若要查看某個節點是否已指派給 HA 群組並確定其目前狀態，請選擇 *Nodes* > *_node_*。
@@ -72,6 +75,7 @@ image:ha_group_primary_interface.png["HA群組主要介面"]
 
 
 
+[[what-happens-when-the-active-interface-fails]]
 == 當作用中介面故障時會發生什麼事？
 
 目前裝載VIP位址的介面是作用中介面。如果HA群組包含多個介面、且作用中介面故障、VIP位址會依照優先順序移至第一個可用的備份介面。如果該介面故障、VIP位址會移至下一個可用的備份介面、依此類推。

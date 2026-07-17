@@ -15,6 +15,7 @@ summary: 檢閱解除委任管理節點或閘道節點的考量事項。
 
 
 
+[[considerations-for-admin-node]]
 == 管理節點的考量事項
 
 * 您無法取消委任主要管理節點。
@@ -27,6 +28,7 @@ summary: 檢閱解除委任管理節點或閘道節點的考量事項。
 
 
 
+[[considerations-for-gateway-node]]
 == 閘道節點的考量事項
 
 * 如果閘道節點的其中一個網路介面是高可用度（ HA ）群組的一部分、您就無法取消委任該節點。您必須先從HA群組移除網路介面。請參閱的說明link:../admin/managing-high-availability-groups.html["管理 HA 群組"]。

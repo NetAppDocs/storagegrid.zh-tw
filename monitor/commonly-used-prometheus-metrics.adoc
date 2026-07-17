@@ -19,12 +19,14 @@ summary: 請參閱這份常用的 Prometheus 指標清單、以更深入瞭解�
 
 
 
+[[what-are-prometheus-metrics]]
 == 什麼是 Prometheus 指標？
 
 Prometheus 指標是時間系列測量。管理節點上的 Prometheus 服務會從所有節點上的服務收集這些度量。度量會儲存在每個管理節點上、直到保留給Prometheus資料的空間已滿為止。當 `/var/local/mysql_ibdata/`磁碟區達到容量時、會先刪除最舊的度量。
 
 
 
+[[where-are-prometheus-metrics-used]]
 == Prometheus 指標在哪裡使用？
 
 Prometheus 所收集的指標會在 Grid Manager 的多個位置使用：
@@ -48,6 +50,7 @@ NOTE: 「指標」頁面中的某些功能和功能表項目會刻意無法運�
 
 
 
+[[list-of-most-common-metrics]]
 == 最常見指標清單
 
 下列清單包含最常用的 Prometheus 指標。
@@ -142,6 +145,7 @@ storagegRid_enture_usage_quota位元組:: 租戶物件可用的最大邏輯空�
 
 
 
+[[get-a-list-of-all-metrics]]
 == 取得所有指標清單
 
 [[Obele-all-argems] 若要取得完整的計量清單、請使用 Grid Management API 。

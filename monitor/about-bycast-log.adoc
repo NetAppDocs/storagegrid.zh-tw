@@ -19,6 +19,7 @@ summary: 檔案 /var/local/log/bycast.log 是 StorageGRID 軟體的主要故障�
 
 
 
+[[file-rotation-for-bycast-log]]
 == bycast.log的檔案旋轉
 
 當檔案達到 1 GB 時 `bycast.log`、會儲存現有檔案、並啟動新的記錄檔。
@@ -39,6 +40,7 @@ link:collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]
 
 
 
+[[messages-in-bycast-log]]
 == bycast.log中的訊息
 
 中的訊息 `bycast.log`是由 ADE （非同步分散式環境）所寫入。ade是每個網格節點服務所使用的執行時間環境。
@@ -99,6 +101,7 @@ UTC系統時間
 |===
 
 
+[[message-severities-in-bycast-log]]
 == bycast.log中的訊息嚴重性
 
 中的訊息 `bycast.log`會指派嚴重性等級。
@@ -113,6 +116,7 @@ UTC系統時間
 
 
 
+[[error-codes-in-bycast-log]]
 == 中的錯誤代碼 `bycast.log`
 
 中的大多數錯誤訊息都 `bycast.log`包含錯誤代碼。

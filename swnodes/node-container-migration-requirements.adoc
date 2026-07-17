@@ -30,6 +30,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[vmware-live-migration-not-supported]]
 == 不支援VMware即時移轉
 
 在 VMware VM 上執行裸機安裝時、 OpenStack Live Migration 和 VMware Live VMotion 會導致虛擬機器時鐘時間跳轉、而且不支援任何類型的網格節點。雖然不多見、但時鐘時間不正確可能導致資料遺失或組態更新。
@@ -38,6 +39,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[consistent-network-interface-names]]
 == 一致的網路介面名稱
 
 若要將節點從一部主機移至另一部主機、 StorageGRID 主機服務需要對節點目前所在位置的外部網路連線能力、在新位置進行複製有一定信心。在主機中使用一致的網路介面名稱、就能獲得這種信心。
@@ -54,6 +56,7 @@ image:eth0_bond.gif["此影像由周邊文字說明。"]
 
 
 
+[[shared-storage]]
 == 共享儲存設備
 
 為了實現快速、低成本的節點移轉、 StorageGRID 節點移轉功能不會實際移動節點資料。相反地、節點移轉是以一對匯出與匯入作業的形式執行、如下所示：

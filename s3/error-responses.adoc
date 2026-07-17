@@ -15,6 +15,7 @@ summary: 支援所有適用的標準S3 REST API錯誤回應。StorageGRID此外�
 
 
 
+[[supported-s3-api-error-codes]]
 == 支援的S3 API錯誤代碼
 
 [cols="1a,1a"]
@@ -289,6 +290,7 @@ TooManyboo
 |===
 
 
+[[storagegrid-custom-error-codes]]
 == 零點自訂錯誤代碼StorageGRID
 
 [cols="2a,2a,1a"]

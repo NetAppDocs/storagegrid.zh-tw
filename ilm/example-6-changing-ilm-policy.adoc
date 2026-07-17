@@ -22,6 +22,7 @@ CAUTION: 下列ILM規則和原則僅為範例。有許多方法可以設定ILM�
 
 
 
+[[how-changing-an-ilm-policy-affects-performance]]
 == 變更 ILM 原則會如何影響效能
 
 當您啟動新的ILM原則時、StorageGRID 可能會暫時影響到您的系統效能、尤其是新原則中的放置指示需要將許多現有物件移至新位置時。
@@ -43,6 +44,7 @@ NOTE: StorageGRID 認為每個銷毀編碼設定檔都是唯一的、而且在�
 
 
 
+[[active-ilm-policy-for-example-6-data-protection-at-two-sites]]
 == 範例6的Active ILM原則：兩個站台的資料保護
 
 在此範例中、主動式ILM原則最初是針對雙站台StorageGRID 的作業系統而設計、並使用兩個ILM規則。
@@ -53,6 +55,7 @@ image:policy_6_active_policy.png["ILM原則6作用中原則範例"]
 
 
 
+[[rule-1-one-site-erasure-coding-for-tenant-a]]
 === 規則1：租戶A的單一站台銷毀編碼
 
 [cols="1a,2a"]
@@ -89,6 +92,7 @@ image:policy_6_active_policy.png["ILM原則6作用中原則範例"]
 |===
 
 
+[[rule-2-two-site-replication-for-other-tenants]]
 === 規則2：為其他租戶進行雙站台複寫
 
 [cols="1a,2a"]
@@ -125,6 +129,7 @@ image:policy_6_active_policy.png["ILM原則6作用中原則範例"]
 |===
 
 
+[[ilm-policy-for-example-6-data-protection-at-three-sites]]
 == ILM 原則範例 6 ：三個站台的資料保護
 
 在此範例中、 ILM 原則正被三站台 StorageGRID 系統的新原則所取代。
@@ -135,6 +140,7 @@ image:policy_6_active_policy.png["ILM原則6作用中原則範例"]
 
 
 
+[[rule-1-three-site-erasure-coding-for-tenant-a]]
 === 規則1：租戶A的三站台銷毀編碼
 
 [cols="1a,2a"]
@@ -171,6 +177,7 @@ image:policy_6_active_policy.png["ILM原則6作用中原則範例"]
 |===
 
 
+[[rule-2-three-site-replication-for-other-tenants]]
 === 規則2：其他租戶的三站台複寫
 
 [cols="1a,2a"]
@@ -207,6 +214,7 @@ image:policy_6_active_policy.png["ILM原則6作用中原則範例"]
 |===
 
 
+[[activating-the-ilm-policy-for-example-6]]
 == 啟動 ILM 原則、例如 6
 
 當您啟動新的 ILM 原則時、現有的物件可能會移至新位置、或是根據任何新的或更新的規則中的放置指示、為現有物件建立新的物件複本。
@@ -219,6 +227,7 @@ CAUTION: 當您啟動新的ILM原則時StorageGRID 、利用它來管理所有�
 
 
 
+[[what-happens-when-erasure-coding-instructions-change]]
 === 當銷毀編碼指令變更時會發生什麼事
 
 在此範例中、目前作用中的 ILM 原則中、屬於租戶 A 的物件會使用站台 1 的 2+1 銷毀編碼來保護。在新的 ILM 原則中、屬於租戶 A 的物件將在站台 1 、 2 和 3 使用 2+1 銷毀編碼來保護。
@@ -235,6 +244,7 @@ NOTE: 站台 1 現有的 2+1 片段不會重複使用。StorageGRID 認為每個
 
 
 
+[[what-happens-when-replication-instructions-change]]
 === 複寫指示變更時會發生什麼事
 
 在此範例中、目前作用中的 ILM 原則中、屬於其他租戶的物件會使用站台 1 和 2 儲存池中的兩個複寫複本來保護。在新的 ILM 原則中、屬於其他租戶的物件將使用站台 1 、 2 和 3 儲存池中的三個複寫複本加以保護。
@@ -247,6 +257,7 @@ NOTE: 站台 1 現有的 2+1 片段不會重複使用。StorageGRID 認為每個
 
 
 
+[[performance-impact-of-activating-this-policy]]
 === 啟用此原則對效能的影響
 
 當本範例中的 ILM 原則啟動時、此 StorageGRID 系統的整體效能將暫時受到影響。若要為租戶 A 的現有物件建立新的銷毀編碼片段、以及在站台 3 為其他租戶現有物件建立新的複寫複本、則需要比一般網格資源層級更高的網格資源層級。

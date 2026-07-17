@@ -17,6 +17,7 @@ summary: 設定並使用儲存資源池、透過在多個站台之間散佈資�
 
 
 
+[[guidelines-for-all-storage-pools]]
 == 所有儲存資源池的準則
 
 * 盡量簡化儲存資源池組態。請勿建立超過必要數量的儲存資源池。
@@ -27,6 +28,7 @@ summary: 設定並使用儲存資源池、透過在多個站台之間散佈資�
 
 
 
+[[guidelines-for-storage-pools-used-for-replicated-copies]]
 == 複寫複本所使用的儲存資源池準則
 
 * 對於使用的站台遺失保護link:what-replication-is.html["複寫"]，請在中指定一或多個站台專屬link:create-ilm-rule-define-placements.html["每個 ILM 規則的放置指示"]的儲存集區。
@@ -43,6 +45,7 @@ summary: 設定並使用儲存資源池、透過在多個站台之間散佈資�
 
 
 
+[[guidelines-for-storage-pools-used-for-erasure-coded-copies]]
 == 用於銷毀編碼複本的儲存資源池準則
 
 * 若要使用link:what-erasure-coding-is.html["銷毀編碼"]進行站台遺失保護、請建立至少包含三個站台的儲存資源池。如果儲存池只包含兩個站台、您就無法使用該儲存池進行銷毀編碼。對於有兩個站台的儲存資源池、沒有可用的銷毀編碼方案。

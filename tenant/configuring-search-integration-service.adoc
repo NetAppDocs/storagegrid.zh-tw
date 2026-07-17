@@ -184,6 +184,7 @@ NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Management 
 
 
 
+[[example-notification-configexample-metadata-notification-configuration-that-applies-to-all-objects]]
 == [[example-notice-config]] 範例：適用於所有物件的中繼資料通知組態
 
 在此範例中、所有物件的物件中繼資料都會傳送到相同的目的地。
@@ -203,6 +204,7 @@ NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Management 
 ----
 
 
+[[example-metadata-notification-configuration-with-two-rules]]
 == 範例：中繼資料通知組態有兩個規則
 
 在此範例中、符合前置碼之物件的物件中繼資料 `/images`會傳送至一個目的地、而符合前置碼之物件的物件中繼資料 `/videos`則會傳送至第二個目的地。
@@ -231,6 +233,7 @@ NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Management 
 ----
 
 
+[[metadata-notification-format]]
 == 中繼資料通知格式
 
 當您啟用儲存區的搜尋整合服務時、每次新增、更新或刪除物件中繼資料或標記時、都會產生Json文件並傳送至目的地端點。
@@ -257,6 +260,7 @@ NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Management 
 ----
 
 
+[[fields-included-in-the-json-document]]
 === JSON 文件中包含的欄位
 
 文件名稱包含儲存區名稱、物件名稱及版本ID（若有）。
@@ -301,6 +305,7 @@ NOTE: 每個租戶帳戶都必須由StorageGRID 使用Grid Manager或Management 
 
 
 
+[[how-to-view-results-in-elasticsearch]]
 === 如何在彈性搜尋中檢視結果
 
 針對標記和使用者中繼資料StorageGRID 、將日期和數字以字串或S3事件通知的形式傳送至Elasticsearch。若要設定Elasticsearch將這些字串解譯為日期或數字、請遵循Elasticsearch指示進行動態欄位對應、以及對應日期格式。設定搜尋整合服務之前、請先啟用索引上的動態欄位對應。建立文件索引後、您就無法編輯索引中文件的欄位類型。

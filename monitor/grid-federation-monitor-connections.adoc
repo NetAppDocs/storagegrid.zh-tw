@@ -20,6 +20,7 @@ summary: 您可以監控所有網格同盟連線的基本資訊、特定連線�
 
 
 
+[[view-all-connections]]
 == 檢視所有連線
 
 「 Grid Federation 」頁面會顯示所有網格同盟連線的基本資訊、以及所有允許使用網格同盟連線的租戶帳戶。
@@ -59,6 +60,7 @@ image:grid-federation-permitted-tenants-tab.png["Grid Federation 的「允許租
 
 
 
+[[view-specific-connectionview-a-specific-connection]]
 == [[view-specific 連線 ]] 檢視特定連線
 
 您可以檢視特定網格同盟連線的詳細資料。
@@ -102,6 +104,7 @@ image:grid-federation-certificates-tab.png["GRID 同盟憑證索引標籤"]
 
 
 
+[[review-cross-grid-replication-metrics]]
 == 檢閱跨網格複寫指標
 
 您可以使用 Grafana 中的跨網格複寫儀表板來檢視 Prometheus 在您網格上跨網格複寫作業的計量。

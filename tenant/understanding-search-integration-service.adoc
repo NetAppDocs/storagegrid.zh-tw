@@ -24,6 +24,7 @@ NOTE: 由於搜尋整合服務會將物件中繼資料傳送至目的地、因�
 
 
 
+[[search-integration-and-s3-buckets]]
 == 搜尋整合與 S3 儲存區
 
 您可以針對任何版本控制或未版本控制的儲存區啟用搜尋整合服務。搜尋整合是透過將中繼資料通知組態XML與儲存區建立關聯來設定、此儲存區會指定要在哪些物件上執行動作、以及物件中繼資料的目的地。
@@ -35,6 +36,7 @@ NOTE: 針對標記和使用者中繼資料StorageGRID 、將日期和數字以�
 
 
 
+[[search-notifications]]
 == 搜尋通知
 
 在下列情況下、會產生中繼資料通知並排入佇列以供交付：
@@ -52,6 +54,7 @@ NOTE: 針對標記和使用者中繼資料StorageGRID 、將日期和數字以�
 
 
 
+[[search-integration-service-and-elasticsearch]]
 == 搜尋整合服務和彈性搜尋
 
 支援以Elasticsearch叢集作為目的地的支援。StorageGRID如同其他平台服務、目的地是在端點中指定、而其URN則用於服務的組態XML中。使用 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]來決定 Elasticsearch 支援的版本。

@@ -20,6 +20,7 @@ CAUTION: 如果您急需擴展儲存以增加容量（如果您的儲存幾乎�
 
 
 
+[[before-you-upgrade]]
 == 升級之前
 
 查看這些主題以了解StorageGRID 12.0 中的新功能和增強功能，確定是否有任何功能已被棄用或刪除，並了解StorageGRID API 的變化。

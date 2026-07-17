@@ -21,6 +21,7 @@ image:kms_configuration_overview.png["KMS 組態工作流程、如下列文字�
 
 
 
+[[set-up-the-key-management-server-kms]]
 == 設定金鑰管理伺服器（KMS）
 
 設定金鑰管理伺服器包括下列高層級步驟。
@@ -52,6 +53,7 @@ link:kms-adding.html["新增金鑰管理伺服器（KMS）"]
 |===
 
 
+[[set-up-the-appliance]]
 == 設定產品
 
 設定KMS使用的應用裝置節點包括下列高層級步驟。
@@ -74,6 +76,7 @@ NOTE: 將應用裝置新增至網格後、您無法啟用 * 節點加密 * 設�
 
 
 
+[[key-management-encryption-process-occurs-automatically]]
 == 金鑰管理加密程序（自動執行）
 
 金鑰管理加密包括下列自動執行的高層級步驟。

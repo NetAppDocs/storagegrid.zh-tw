@@ -19,6 +19,7 @@ summary: 監控可用空間總量、確保StorageGRID 不讓物件或物件中�
 
 
 
+[[monitor-storage-capacity-for-the-entire-grid]]
 == 監控整個網格的儲存容量
 
 監控網格的整體儲存容量、確保物件資料和物件中繼資料有足夠的可用空間。瞭解隨著時間而改變的儲存容量、有助於您在使用網格的可用儲存容量之前、計畫新增儲存節點或儲存磁碟區。
@@ -72,6 +73,7 @@ NOTE: 如果您的ILM原則使用銷毀編碼、當現有的儲存節點已滿�
 
 
 
+[[monitor-storage-capacity-for-each-storage-node]]
 == 監控每個儲存節點的儲存容量
 
 監控每個儲存節點的總可用空間、確保節點有足夠空間容納新的物件資料。
@@ -128,6 +130,7 @@ link:../troubleshoot/troubleshooting-low-object-data-storage-alert.html["低物�
 
 
 
+[[monitor-object-metadata-capacity-for-each-storage-node]]
 == 監控每個儲存節點的物件中繼資料容量
 
 監控每個儲存節點的中繼資料使用量、確保有足夠的空間可供重要的資料庫作業使用。在物件中繼資料超過允許的100%中繼資料空間之前、您必須在每個站台新增儲存節點。
@@ -188,6 +191,7 @@ CAUTION: 當*已用（%）*值達到特定臨界值時、會觸發*低中繼資�
 
 
 
+[[monitor-space-usage-forecasts]]
 == 監控空間使用量預測
 
 監控使用者資料和中繼資料的空間使用量預測link:../expand/index.html["展開網格"]、以預估何時需要。

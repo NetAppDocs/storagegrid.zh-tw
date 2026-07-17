@@ -15,6 +15,7 @@ summary: '如果您已設定並啟用單一登入 (SSO) 並使用 Entra ID 作�
 
 
 
+[[sign-in-to-the-api-if-entra-id-single-sign-on-is-enabled]]
 == 如果啟用了 Entra ID 單一登入，Sign inAPI
 
 如果您使用 Entra ID 作為 SSO 身分提供者，則適用這些說明

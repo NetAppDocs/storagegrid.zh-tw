@@ -15,6 +15,7 @@ summary: 節點和站台之間的網路完整性和頻寬、以及個別網格�
 
 
 
+[[monitor-network-connections-and-performance]]
 == 監控網路連線與效能
 
 如果您的資訊生命週期管理（ILM）原則使用提供站台遺失保護的方案、在站台之間複製複寫的物件、或是儲存以銷毀編碼的物件、那麼網路連線能力和頻寬就特別重要。如果站台之間的網路無法使用、網路延遲太高、或網路頻寬不足、則部分ILM規則可能無法將物件放置在預期位置。這可能會導致擷取失敗（若為 ILM 規則選取嚴格擷取選項）、或是擷取效能和 ILM 待處理記錄不佳。
@@ -77,6 +78,7 @@ image:traffic_classification_policies_main_screen_w_examples.png["圖表的流�
 
 
 
+[[monitor-node-level-resources]]
 == 監控節點層級資源
 
 監控個別網格節點、以檢查其資源使用量。如果節點持續過載、則可能需要更多節點才能有效運作。

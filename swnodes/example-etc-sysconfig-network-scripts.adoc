@@ -15,6 +15,7 @@ summary: 您可以使用範例檔案、將四個Linux實體介面集合成單一
 
 
 
+[[physical-interfaces]]
 == 實體介面
 
 請注意、位於連結另一端的交換器也必須將四個連接埠視為單一LACP主幹或連接埠通道、而且必須至少通過三個帶有標籤的參考VLAN。
@@ -69,6 +70,7 @@ SLAVE=yes
 ----
 
 
+[[bond-interface]]
 == Bond介面
 
 `*/etc/sysconfig/network-scripts/ifcfg-bond0*`
@@ -84,6 +86,7 @@ BONDING_OPTS=mode=802.3ad
 ----
 
 
+[[vlan-interfaces]]
 == VLAN 介面
 
 `*/etc/sysconfig/network-scripts/ifcfg-bond0.1001*`

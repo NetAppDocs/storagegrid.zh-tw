@@ -15,6 +15,7 @@ summary: 整個系統的基本建置區塊StorageGRID 是網格節點。節點�
 
 
 
+[[types-of-grid-nodes]]
 == 網格節點類型
 
 StorageGRID系統使用三種類型的網格節點：
@@ -45,12 +46,14 @@ StorageGRID系統使用三種類型的網格節點：
 
 
 
+[[hardware-and-software-nodes]]
 == 硬體和軟體節點
 
 StorageGRID節點可以部署為StorageGRID設備節點或基於軟體的節點。每個系統的最大節點數（包括所有節點類型）為 220。
 
 
 
+[[storagegrid-appliance-nodes]]
 === 應用裝置節點StorageGRID
 
 用作作業系統的各種硬體應用。StorageGRID StorageGRID有些應用裝置可做為儲存節點。其他應用裝置可做為管理節點或閘道節點。您可以將應用裝置節點與軟體型節點結合、或部署完全工程設計的全應用裝置網格、而這些網格不需依賴外部Hypervisor、儲存設備或運算硬體。
@@ -63,6 +66,7 @@ StorageGRID節點可以部署為StorageGRID設備節點或基於軟體的節點�
 
 
 
+[[software-based-nodes]]
 === 軟體型節點
 
 基於軟體的網格節點可以部署為 VMware 虛擬機器或 Linux 主機上的容器引擎內。看link:../swnodes/index.html["在基於軟體的節點上安裝StorageGRID"] 。
@@ -71,6 +75,7 @@ StorageGRID節點可以部署為StorageGRID設備節點或基於軟體的節點�
 
 
 
+[[storagegrid-services]]
 == 支援服務StorageGRID
 
 以下是StorageGRID 完整的支援服務清單。

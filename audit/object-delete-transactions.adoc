@@ -17,6 +17,7 @@ summary: 您可以找出 S3 API 特定稽核訊息、以識別稽核記錄中的
 
 
 
+[[s3-delete-audit-messages]]
 == S3刪除稽核訊息
 
 [cols="1a,1a,2a,1a,2a"]
@@ -38,6 +39,7 @@ link:sdel-s3-delete.html["SDEL：S3刪除"]
 |===
 
 
+[[example-s3-object-deletion]]
 == 範例：S3物件刪除
 
 當S3用戶端從儲存節點（LMR服務）刪除物件時、會產生稽核訊息並儲存至稽核記錄。
@@ -47,6 +49,7 @@ NOTE: 並非所有在刪除交易期間產生的稽核訊息都會列在下例�
 
 
 
+[[sdel-s3-delete]]
 === SDEL：S3刪除
 
 當用戶端將 DeleteObject 要求傳送至 LDR 服務時、即會開始刪除物件。訊息包含用來刪除物件的儲存區、以及用來識別物件的S3金鑰。

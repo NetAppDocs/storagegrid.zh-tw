@@ -22,6 +22,7 @@ image:grid_manager_dashboard.png["Grid Manager儀表板"]
 
 
 
+[[view-the-dashboard]]
 == 檢視儀表板
 
 儀表板由包含 StorageGRID 系統特定資訊的索引標籤所組成。每個索引標籤都包含顯示在卡片上的資訊類別。
@@ -73,6 +74,7 @@ CPU 、資料和記憶體使用量、依節點而定。S3 依節點執行作業�
 
 
 
+[[manage-dashboards]]
 == 管理儀表板
 
 如果您擁有 root 存取權（請參閱link:../admin/admin-group-permissions.html["管理群組權限"]）、您可以針對儀表板執行下列管理工作：
@@ -95,6 +97,7 @@ image:dashboard_manage.png["管理儀表板"]
 
 
 
+[[configure-dashboards]]
 == 設定儀表板
 
 若要透過複製作用中儀表板來建立新的儀表板、請選取 * 動作 * > * 複製作用中儀表板 * 。

@@ -15,6 +15,7 @@ summary: /etc/network/interfaces檔案包含三個區段、分別定義實體介
 
 
 
+[[physical-interfaces]]
 == 實體介面
 
 請注意、位於連結另一端的交換器也必須將四個連接埠視為單一LACP主幹或連接埠通道、而且必須至少通過三個帶有標籤的參考VLAN。
@@ -48,6 +49,7 @@ iface ens256 inet manual
 ----
 
 
+[[bond-interface]]
 == Bond介面
 
 [listing]
@@ -61,6 +63,7 @@ iface bond0 inet manual
 ----
 
 
+[[vlan-interfaces]]
 == VLAN 介面
 
 [listing]

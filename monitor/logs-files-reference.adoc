@@ -25,6 +25,7 @@ NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術�
 
 
 
+[[access-the-logs]]
 == 存取記錄
 
 要存取日誌，您可以link:collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]來自一個或多個節點作為單一日誌檔案存檔。或者，您可以如下存取每個網格節點的單獨日誌檔案：
@@ -38,6 +39,7 @@ NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術�
 
 
 
+[[export-logs-to-the-syslog-server]]
 == 將記錄匯出至 Syslog 伺服器
 
 將記錄匯出至 Syslog 伺服器可提供下列功能：
@@ -52,6 +54,7 @@ NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術�
 
 
 
+[[log-file-categories]]
 == 記錄檔類別
 
 包含針對每個類別所描述的記錄檔、以及包含度量和偵錯命令輸出的其他檔案。StorageGRID

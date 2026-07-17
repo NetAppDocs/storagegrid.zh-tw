@@ -30,6 +30,7 @@ image:nodes_page_memory_usage_details.png["節點頁面 > 硬體 > 記憶體使�
 
 
 
+[[view-information-about-appliance-storage-nodes]]
 == 檢視應用裝置儲存節點的相關資訊
 
 「節點」頁面會列出每個應用裝置儲存節點的服務健全狀況及所有運算、磁碟設備和網路資源相關資訊。您也可以看到記憶體、儲存硬體、控制器韌體版本、網路資源、網路介面、 網路位址、以及接收和傳輸資料。
@@ -496,6 +497,7 @@ image:nodes_page_storage_tables.png["節點頁面儲存表格"]
 
 
 
+[[view-information-about-appliance-admin-nodes-and-gateway-nodes]]
 == 檢視應用裝置管理節點和閘道節點的相關資訊
 
 「節點」頁面會列出服務健全狀況的相關資訊、以及每個作為管理節點或閘道節點之服務應用裝置的所有運算、磁碟裝置和網路資源。您也可以看到記憶體、儲存硬體、網路資源、網路介面、網路位址、 以及接收和傳輸資料。

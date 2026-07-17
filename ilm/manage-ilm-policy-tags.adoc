@@ -20,6 +20,7 @@ summary: 您可以檢視 ILM 原則標籤詳細資料、編輯標籤或移除標
 
 
 
+[[view-ilm-policy-tag-details]]
 == 檢視 ILM 原則標籤詳細資料
 
 若要檢視標記的詳細資料：
@@ -32,6 +33,7 @@ summary: 您可以檢視 ILM 原則標籤詳細資料、編輯標籤或移除標
 
 
 
+[[edit-ilm-policy-tag]]
 == 編輯 ILM 原則標籤
 
 
@@ -50,6 +52,7 @@ NOTE: 租戶可以看到標籤名稱和說明。選擇可協助租戶在選擇�
 
 
 
+[[remove-ilm-policy-tag]]
 == 移除 ILM 原則標籤
 
 當您移除原則標籤時、任何指派該標籤的貯體都會套用預設原則。

@@ -15,6 +15,7 @@ summary: 根據您的生命週期組態、物件會遵循 S3 儲存區生命週�
 
 
 
+[[example-of-bucket-lifecycle-taking-priority-over-ilm-policy]]
 == 儲存庫生命週期的範例優先於 ILM 原則
 
 ILM原則::
@@ -50,6 +51,7 @@ ILM原則::
 
 
 
+[[example-of-bucket-lifecycle-implicitly-keeping-forever]]
 == 儲存貯體生命週期的範例則隱含永久保存
 
 ILM原則::
@@ -85,6 +87,7 @@ ILM原則::
 
 
 
+[[example-of-using-bucket-lifecycle-to-duplicate-ilm-and-clean-up-expired-delete-markers]]
 == 使用貯體生命週期來複製 ILM 並清除過期刪除標記的範例
 
 ILM原則::

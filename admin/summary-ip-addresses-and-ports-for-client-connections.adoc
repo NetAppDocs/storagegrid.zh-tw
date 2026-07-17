@@ -71,6 +71,7 @@ LdR
 |===
 
 
+[[example-urls]]
 == URL 範例
 
 若要將用戶端應用程式連線至 HA 群組的閘道節點負載平衡器端點、請使用如下所示的 URL 結構：
@@ -83,6 +84,7 @@ LdR
 
 
 
+[[where-to-find-ip-addresses]]
 == 何處可以找到 IP 位址
 
 . 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。

@@ -15,6 +15,7 @@ summary: 安裝 StorageGRID 之前、請收集並準備所需的資訊和資料�
 
 
 
+[[required-information]]
 == 必要資訊
 
 網路計畫:: 您打算連接至每個 StorageGRID 節點的網路。StorageGRID 支援多個網路、提供流量分離、安全性和管理便利性。
@@ -37,6 +38,7 @@ NOTE: 如果您的 StorageGRID 安裝將不會使用 StorageGRID 應用裝置（
 
 
 
+[[required-materials]]
 == 必要資料
 
 NetApp StorageGRID 產品授權:: 您必須擁有有效且經過數位簽署的NetApp授權。

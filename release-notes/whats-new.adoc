@@ -17,6 +17,7 @@ StorageGRID 12.0 擴展了物件儲存容量，提高了對 AI/ML 工作負載�
 
 
 
+[[appliances]]
 == 應用裝置
 
 * 儲存容量和成本效率大幅提升。
@@ -25,6 +26,7 @@ StorageGRID 12.0 擴展了物件儲存容量，提高了對 AI/ML 工作負載�
 
 
 
+[[artificial-intelligence-ai-and-machine-learning-ml]]
 == 人工智慧（AI）和機器學習（ML）
 
 * link:../tenant/what-is-branch-bucket.html["分支桶"]允許儲存桶的時間點版本，以促進更快的勒索軟體復原和隔離資料集以進行測試和實驗。
@@ -33,12 +35,14 @@ StorageGRID 12.0 擴展了物件儲存容量，提高了對 AI/ML 工作負載�
 
 
 
+[[capacity]]
 == 容量
 
 StorageGRID現在支援一兆個對象，是先前限制的兩倍以上。請參閱 https://fusion.netapp.com/["NetApp Fusion工具"^]確定StorageGRID 的大小並進行設計。
 
 
 
+[[cassandra-updates]]
 == Cassandra 更新
 
 StorageGRID現在使用較新版本的 Cassandra 進行元資料儲存。此版本的 Cassandra 更有效地利用磁碟空間來儲存更多元資料。
@@ -49,6 +53,7 @@ StorageGRID現在使用較新版本的 Cassandra 進行元資料儲存。此版�
 
 
 
+[[federation]]
 == 聯邦
 
 * 您現在可以link:../admin/managing-users.html#import-federated-users["導入最多 100 個聯合用戶"]進入StorageGRID。
@@ -61,6 +66,7 @@ NetApp建議僅在StorageGRID 12.0 來源儲存桶和目標儲存桶之間使用
 
 
 
+[[manageability]]
 == 可管理性
 
 * 改進link:../maintain/decommission-procedure.html["退役程序"]減少時間和複雜性，提高營運效率。
@@ -85,6 +91,7 @@ NOTE: 如果您需要恢復到先前的行為以實現強全域一致性，請�
 
 
 
+[[security]]
 == 安全性
 
 * 更強大的資料加密和完整性保護提供了更高的安全性和效能。
@@ -94,6 +101,7 @@ NOTE: 如果您需要恢復到先前的行為以實現強全域一致性，請�
 
 
 
+[[tenant-groups]]
 == 租戶組
 
 * 您現在可以link:../tenant/manage-groups.html["配置新的 S3 信任策略"]支援 AssumeRole API。  AssumeRole 功能提供短期憑證，以增強安全性和靈活的存取控制。
@@ -102,6 +110,7 @@ NOTE: 如果您需要恢復到先前的行為以實現強全域一致性，請�
 
 
 
+[[user-interface]]
 == 使用者介面
 
 * 網格管理器和租戶管理器的使用者選單中提供了深色主題和系統主題設定。

@@ -15,6 +15,7 @@ summary: 在解除委任儲存節點之前、請考慮是否可以改為複製�
 
 
 
+[[when-to-clone-a-node-instead-of-decommissioning-it]]
 == 何時要複製節點而非將其停用
 
 如果您想要以較新或較大的應用裝置來取代較舊的應用裝置儲存節點、請考慮複製應用裝置節點、而不要在擴充中新增新應用裝置、然後將舊應用裝置汰換。
@@ -33,6 +34,7 @@ summary: 在解除委任儲存節點之前、請考慮是否可以改為複製�
 
 
 
+[[considerations-for-connected-storage-nodes]]
 == 連線儲存節點的考量事項
 
 檢閱解除委任連線儲存節點的考量事項。
@@ -57,6 +59,8 @@ NOTE: 只有在達到ILM評估或銷毀編碼資料解除委任階段時、才�
 
 
 
+[[considerations-for-disconnected-storage-nodes]]
+[[considerations-disconnected-storage-nodes]]
 == 中斷連線儲存節點的考量事項
 
 檢閱解除委任中斷連線的儲存節點的考量事項。

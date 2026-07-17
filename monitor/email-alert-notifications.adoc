@@ -161,6 +161,7 @@ NOTE: 測試警示通知時、您必須登入每個管理節點以驗證連線�
 
 
 
+[[information-included-in-alert-email-notifications]]
 == 警示電子郵件通知中包含的資訊
 
 設定好SMTP電子郵件伺服器之後、除非警示規則被靜音抑制、否則會在觸發警示時、將電子郵件通知傳送給指定的收件者。請參閱。 link:silencing-alert-notifications.html["靜音警示通知"]
@@ -210,6 +211,7 @@ image:alerts_email_notification.png["警示電子郵件通知"]
 |===
 
 
+[[how-alerts-are-grouped]]
 == 警示的分組方式
 
 為了避免在觸發警示時傳送過多的電子郵件通知、StorageGRID 所以當同一通知中、我們會嘗試將多個警示分組。
@@ -278,6 +280,7 @@ image:alerts_email_notification.png["警示電子郵件通知"]
 |===
 
 
+[[troubleshoot-alert-email-notifications]]
 == 疑難排解警示電子郵件通知
 
 如果觸發*電子郵件通知失敗*警示、或您無法接收測試警示電子郵件通知、請依照下列步驟解決問題。

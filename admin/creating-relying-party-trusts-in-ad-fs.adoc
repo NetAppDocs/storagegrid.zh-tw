@@ -31,6 +31,7 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立信賴�
 
 
 
+[[create-a-relying-party-trust-using-windows-powershell]]
 == 使用Windows PowerShell建立信賴廠商信任
 
 您可以使用Windows PowerShell快速建立一或多個信賴關係人信任。
@@ -93,6 +94,7 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立信賴�
 
 
 
+[[create-a-relying-party-trust-by-importing-federation-metadata]]
 == 透過匯入聯盟中繼資料來建立依賴方信任
 
 您可以存取每個管理節點的SAML中繼資料、以匯入每個信賴方信任的值。
@@ -144,6 +146,7 @@ NOTE: 輸入顯示名稱時、請使用管理節點的信賴方識別碼、如�
 
 
 
+[[create-a-relying-party-trust-manually]]
 == 手動建立依賴方信任
 
 如果您選擇不匯入依賴零件信任的資料、您可以手動輸入值。

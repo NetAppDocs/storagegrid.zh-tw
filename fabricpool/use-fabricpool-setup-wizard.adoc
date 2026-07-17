@@ -15,6 +15,7 @@ summary: 您可以使用 FabricPool 設定精靈、將 StorageGRID 設定為 Fab
 
 
 
+[[when-to-use-the-fabricpool-setup-wizard]]
 == 何時使用 FabricPool 設定精靈
 
 FabricPool 安裝精靈會引導您完成設定 StorageGRID 以搭配 FabricPool 使用的每個步驟、並自動為您設定特定實體、例如 ILM 和流量分類原則。完成精靈時、您可以下載檔案、以便在 ONTAP 系統管理員中輸入值。使用精靈可更快速地設定系統、並確保您的設定符合 StorageGRID 和 FabricPool 最佳實務做法。
@@ -26,12 +27,14 @@ TIP: 除非您知道自己有特殊需求、否則請使用 FabricPool 安裝精
 
 
 
+[[before-using-the-wizard]]
 == 使用精靈之前
 
 確認您已完成這些必要步驟。
 
 
 
+[[review-best-practices]]
 === 檢視最佳實務做法
 
 * 您大致瞭解link:information-needed-to-attach-storagegrid-as-cloud-tier.html["將 StorageGRID 附加為雲端層所需的資訊"]。
@@ -46,6 +49,7 @@ TIP: 除非您知道自己有特殊需求、否則請使用 FabricPool 安裝精
 
 
 
+[[obtain-ip-addresses-and-set-up-vlan-interfaces]]
 === 取得 IP 位址並設定 VLAN 介面
 
 如果您要設定 HA 群組、就會知道 ONTAP 將連接哪些節點、以及將使用哪個 StorageGRID 網路。您也知道要輸入哪些子網路 CIDR 、閘道 IP 位址和虛擬 IP （ VIP ）位址值。
@@ -54,12 +58,14 @@ TIP: 除非您知道自己有特殊需求、否則請使用 FabricPool 安裝精
 
 
 
+[[configure-identity-federation-and-sso]]
 === 設定身分識別聯盟和 SSO
 
 如果您打算對StorageGRID系統使用身分聯合或單一登入 (SSO)，則您已啟用這些功能。您也知道哪個聯合群組應該對ONTAP將使用的租用戶帳戶具有 root 存取權。看link:../admin/using-identity-federation.html["使用身分識別聯盟"]和link:../admin/how-sso-works.html["設定單一登入"]。
 
 
 
+[[obtain-and-configure-domain-names]]
 === 取得及設定網域名稱
 
 * 您知道 StorageGRID 要使用哪個完整網域名稱（ FQDN ）。網域名稱伺服器（ DNS ）項目會將此 FQDN 對應到您使用精靈建立的 HA 群組的虛擬 IP （ VIP ）位址。請參閱。 link:../fabricpool/configure-dns-server.html["設定 DNS 伺服器"]
@@ -68,6 +74,7 @@ TIP: 除非您知道自己有特殊需求、否則請使用 FabricPool 安裝精
 
 
 
+[[review-load-balancer-and-security-certificate-requirements]]
 === 檢閱負載平衡器和安全性憑證需求
 
 如果您打算使用 StorageGRID 負載平衡器，則已查看了常規link:../admin/managing-load-balancing.html["負載平衡考量"]。您擁有要上傳的憑證或產生憑證所需的值。
@@ -76,6 +83,7 @@ TIP: 除非您知道自己有特殊需求、否則請使用 FabricPool 安裝精
 
 
 
+[[confirm-ilm-storage-pool-configuration]]
 === 確認 ILM 儲存池組態
 
 如果您最初安裝的是 StorageGRID 11.6 或更早版本、則表示您已設定要使用的儲存池。一般而言、您應該為將用於儲存 ONTAP 資料的每個 StorageGRID 站台建立儲存池。
@@ -85,6 +93,7 @@ NOTE: 如果您最初安裝的是 StorageGRID 11.7 或 11.8 、則不適用此�
 
 
 
+[[relationship-between-ontap-and-the-storagegrid-cloud-tier]]
 == ONTAP 與 StorageGRID 雲端層之間的關係
 
 FabricPool 精靈會引導您完成建立單一 StorageGRID 雲端層的程序、其中包括一個 StorageGRID 租戶、一組存取金鑰和一個 StorageGRID 貯體。您可以將此 StorageGRID 雲端層附加到一或多個 ONTAP 本機層。
@@ -98,6 +107,7 @@ NOTE: 有關將 StorageGRID 與 NetApp MetroCluster ™和 FabricPool 鏡像配�
 
 
 
+[[optional-use-a-different-bucket-for-each-local-tier]]
 === 選用：為每個本機層使用不同的貯體
 
 若要在 ONTAP 叢集中的本機階層使用多個儲存區、請在 ONTAP 中新增多個 StorageGRID 雲端層。每個雲端層都共用相同的 HA 群組、負載平衡器端點、租戶和存取金鑰、但使用不同的容器（ StorageGRID 貯體）。請遵循下列一般步驟：
@@ -111,6 +121,7 @@ NOTE: 有關將 StorageGRID 與 NetApp MetroCluster ™和 FabricPool 鏡像配�
 
 
 
+[[optional-use-a-different-tenant-and-bucket-for-each-local-tier]]
 === 選用：為每個本機層使用不同的租戶和貯體
 
 若要為 ONTAP 叢集中的本機層使用多個租戶和不同的存取金鑰集、請在 ONTAP 中新增多個 StorageGRID 雲端層。每個雲端層共用相同的 HA 群組、負載平衡器端點、但使用不同的租戶、存取金鑰和容器（ StorageGRID 貯體）。請遵循下列一般步驟：

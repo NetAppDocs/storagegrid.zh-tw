@@ -26,6 +26,7 @@ summary: 根據需要配置審計等級、協定標頭以及稽核訊息和日�
 
 
 
+[[change-audit-message-levels]]
 == 變更稽核訊息層級
 
 您可以在稽核日誌中針對下列每個類別的訊息設定不同的稽核層級：
@@ -148,6 +149,7 @@ NOTE: 如果您不需要 S3 應用程式的用戶端讀取操作的詳細記錄�
 
 
 
+[[define-http-request-headers]]
 == 定義 HTTP 要求標頭
 
 您可以選擇定義要包含在客戶端讀寫審計訊息中的任何 HTTP 請求標頭。
@@ -170,6 +172,7 @@ NOTE: 只有當「*用戶端讀取*」或「*用戶端寫入*」的稽核等級�
 
 
 
+[[configure-log-location]]
 == 配置日誌位置
 
 預設情況下，稽核訊息和日誌會保存在產生它們的節點上。它們會定期輪換並最終被刪除，以防止它們佔用過多的磁碟空間。如果要在外部保存稽核訊息和日誌子集，<<use-external-syslog-server,使用外部系統日誌伺服器>> 。
@@ -178,6 +181,7 @@ NOTE: 只有當「*用戶端讀取*」或「*用戶端寫入*」的稽核等級�
 
 
 
+[[use-external-syslog-serveruse-an-external-syslog-server]]
 === [[use-external -syslog-server]] 使用外部 Syslog 伺服器
 
 您可以選擇性地設定外部 Syslog 伺服器、將稽核記錄、應用程式記錄和安全性事件記錄儲存到網格外的位置。
@@ -579,6 +583,7 @@ NOTE: 直到您選擇包含外部系統日誌伺服器的目標時， StorageGRI
 
 
 
+[[select-log-location]]
 === 選擇日誌位置
 
 您可以指定稽核日誌、安全事件日誌、link:../monitor/storagegrid-software-logs.html["StorageGRID應用程式日誌"] ，並發送訪問日誌。
@@ -650,6 +655,7 @@ TIP: * 僅限本機節點 * 和 * 外部系統記錄伺服器 * 通常可提供�
 
 
 
+[[use-bucketuse-a-bucket]]
 === [[use-bucket]]使用儲存桶
 
 日誌會定期輪換。使用同一網格中的 S3 儲存桶來長期儲存日誌。

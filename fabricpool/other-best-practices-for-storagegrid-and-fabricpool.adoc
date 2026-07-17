@@ -15,6 +15,7 @@ summary: 設定 StorageGRID 系統搭配 FabricPool 使用時、您可能需要�
 
 
 
+[[audit-message-and-log-destinations]]
 == 稽核訊息和記錄目的地
 
 FabricPool 工作負載的讀取作業率通常很高、可能會產生大量的稽核訊息。
@@ -25,30 +26,35 @@ FabricPool 工作負載的讀取作業率通常很高、可能會產生大量的
 
 
 
+[[object-encryption]]
 == 物件加密
 
 設定 StorageGRID 時、您可以選擇性地啟用link:../admin/changing-network-options-object-encryption.html["儲存物件加密的全域選項"]、以瞭解是否需要其他 StorageGRID 用戶端的資料加密。從FabricPool 「支援」層級到StorageGRID 「支援」層級的資料已經加密、因此StorageGRID 不需要啟用「支援」功能。用戶端加密金鑰歸ONTAP 靜止所有。
 
 
 
+[[object-compression]]
 == 物件壓縮
 
 設定 StorageGRID 時、請勿啟用link:../admin/configuring-stored-object-compression.html["用於壓縮儲存物件的全域選項"]。從FabricPool 功能到StorageGRID 功能的分層資料已經被壓縮。使用 StorageGRID 選項不會進一步縮小物件的大小。
 
 
 
+[[s3-object-lock]]
 == S3物件鎖定
 
 如果您的StorageGRID系統啟用了全域 S3 物件鎖定設置，請不要啟用link:../s3/use-s3-api-for-s3-object-lock.html["S3物件鎖定"]當您建立FabricPool儲存桶。  FabricPool儲存桶不支援 S3 物件鎖定。
 
 
 
+[[bucket-consistency]]
 == 貯體一致性
 
 對於 FabricPool 貯體、建議的貯體一致性為 * 新寫入後讀取 * 、這是新貯體的預設一致性。請勿編輯 FabricPool 儲存庫以使用 * 可用 * 或 * 強式站台 * 。
 
 
 
+[[fabricpool-tiering]]
 == 分層FabricPool
 
 如果 StorageGRID 節點使用從 NetApp ONTAP 系統指派的儲存設備、請確認該磁碟區未啟用 FabricPool 分層原則。例如、如果StorageGRID VMware主機上正在執行某個節點、請確保支援StorageGRID 該節點之資料存放區的磁碟區FabricPool 未啟用「分層原則」。停用FabricPool 與物件節點搭配使用的磁碟區的分層StorageGRID 功能、可簡化疑難排解和儲存作業。

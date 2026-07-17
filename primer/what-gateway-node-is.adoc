@@ -21,6 +21,7 @@ StorageGRID 負載平衡器服務會在所有管理節點和所有閘道節點�
 
 
 
+[[primary-services-for-gateway-nodes]]
 == 閘道節點的主要服務
 
 下表顯示閘道節點的主要服務、但此表並未列出所有節點服務。

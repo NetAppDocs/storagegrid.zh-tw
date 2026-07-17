@@ -15,6 +15,7 @@ summary: 您必須先在 StorageGRID 中執行組態步驟、並取得特定值�
 
 
 
+[[what-values-do-i-need]]
 == 我需要什麼價值？
 
 下表顯示您必須在 StorageGRID 中設定的值、以及 ONTAP 和 DNS 伺服器如何使用這些值。
@@ -79,6 +80,7 @@ ONTAP 系統管理員 > 新增雲端層
 |===
 
 
+[[how-do-i-get-these-values]]
 == 如何取得這些價值？
 
 視您的需求而定、您可以執行下列任一動作來取得所需資訊：

@@ -17,6 +17,7 @@ summary: 帳戶複製是自動複寫租戶帳戶、租戶群組、租戶使用�
 
 
 
+[[workflow-for-account-clone]]
 == 帳戶複製工作流程
 
 工作流程圖顯示網格管理員和允許的租戶設定帳戶複製所需執行的步驟。這些步驟會在之後執行link:grid-federation-create-connection.html["已設定網格同盟連線"]。
@@ -25,12 +26,14 @@ image:grid-federation-account-clone-workflow.png["帳戶複製工作流程"]
 
 
 
+[[grid-admin-workflow]]
 == Grid 管理工作流程
 
 網格管理員執行的步驟取決於使用單一登入（ SSO ）或身分識別聯盟中的 StorageGRID 系統link:grid-federation-overview.html["網格同盟連線"]。
 
 
 
+[[account-clone-ssoconfigure-sso-for-account-clone-optional]]
 === [[account-clone-SSO ]] 設定帳戶複製的 SSO （選用）
 
 如果網格同盟連線中的任一 StorageGRID 系統使用 SSO 、則兩個網格都必須使用 SSO 。在建立網格同盟的租戶帳戶之前、租戶來源和目的地網格的網格管理員必須執行這些步驟。
@@ -50,6 +53,7 @@ NOTE: 如果在您建立租戶之前、這兩個網格上都不存在這個管�
 
 
 
+[[account-clone-identity-federationconfigure-grid-level-identity-federation-for-account-clone-optional]]
 === [[account-clone-identity-Federation ]] 設定帳戶複製的網格層級身分識別同盟（選用）
 
 如果任一 StorageGRID 系統使用無 SSO 的身分識別聯盟、則兩個網格都必須使用身分識別聯盟。在建立網格同盟的租戶帳戶之前、租戶來源和目的地網格的網格管理員必須執行這些步驟。
@@ -66,6 +70,7 @@ NOTE: 如果您將「根」存取權限指派給兩個網格上都不存在的�
 
 
 
+[[create-permitted-s3-tenant-account]]
 === 建立允許的 S3 租戶帳戶
 
 在選擇性設定 SSO 或身分識別聯盟之後、網格管理員會執行這些步驟、以判斷哪些租戶可以將儲存區物件複寫到其他 StorageGRID 系統。
@@ -98,6 +103,7 @@ NOTE: 如果您將「根」存取權限指派給兩個網格上都不存在的�
 
 
 
+[[permitted-tenant-account-workflow]]
 == 允許的租戶帳戶工作流程
 
 將具有 * 使用網格同盟連線 * 權限的租戶複寫到目的地網格之後、允許的租戶帳戶可以執行這些步驟來複製租戶群組、使用者和 S3 存取金鑰。

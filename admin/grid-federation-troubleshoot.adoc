@@ -15,6 +15,7 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 
 
 
+[[grid-federation-errorsgrid-federation-connection-alerts-and-errors]]
 == [[grid-Federation 錯誤 ]] Grid 聯盟連線警示和錯誤
 
 您可能會收到網格同盟連線的警示或錯誤。
@@ -23,6 +24,7 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 
 
 
+[[grid-federation-connection-failure-alert]]
 === Grid Federation 連線失敗警示
 
 .問題
@@ -40,6 +42,7 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 
 
 
+[[expiration-of-grid-federation-certificate-alert]]
 === Grid Federation 憑證警示過期
 
 .問題
@@ -53,6 +56,7 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 
 
 
+[[error-editing-a-grid-federation-connection]]
 === 編輯網格同盟連線時發生錯誤
 
 .問題
@@ -69,10 +73,12 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 
 
 
+[[account-clone-errors]]
 == 帳戶複製錯誤
 
 
 
+[[cant-sign-in-to-a-cloned-tenant-account]]
 === 無法登入複製的租戶帳戶
 
 .問題
@@ -88,6 +94,7 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 
 
 
+[[tenant-created-without-a-clone]]
 === 未建立複本的租戶
 
 .問題
@@ -110,10 +117,12 @@ image:grid-federation-retry-account-clone.png["顯示錯誤訊息和重試帳戶
 
 
 
+[[cross-grid-replication-alerts-and-errors]]
 == 跨網格複寫警示和錯誤
 
 
 
+[[last-error-shown-for-connection-or-tenant]]
 === 顯示連線或租戶的最後一個錯誤
 
 .問題
@@ -156,6 +165,7 @@ TIP: 清除錯誤之後、如果物件被擷取到另一個儲存格中、而且
 
 
 
+[[cross-grid-replication-permanent-failure-alert]]
 === 跨網格複寫永久故障警示
 
 .問題
@@ -204,6 +214,7 @@ NOTE: 警示解決後、可能需要一天的時間才能清除。
 
 
 
+[[cross-grid-replication-resource-unavailable-alert]]
 === 跨網格複寫資源無法使用警示
 
 .問題

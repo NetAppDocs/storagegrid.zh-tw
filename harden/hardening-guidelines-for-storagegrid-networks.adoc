@@ -17,6 +17,7 @@ summary: 此支援每個網格節點最多三個網路介面、可讓您針對�
 
 
 
+[[guidelines-for-grid-network]]
 == Grid Network準則
 
 您必須為所有內部StorageGRID 的資訊流量設定Grid Network。所有的網格節點都位於網格網路上、而且必須能夠與所有其他節點交談。
@@ -31,6 +32,7 @@ summary: 此支援每個網格節點最多三個網路介面、可讓您針對�
 
 
 
+[[guidelines-for-admin-network]]
 == 管理網路準則
 
 管理網路通常用於管理工作（使用Grid Manager或SSH的信任員工）、以及與其他信任的服務（例如LDAP、DNS、NTP或KMS（或KMIP伺服器）通訊。不過StorageGRID 、內部不強制使用此功能。
@@ -43,6 +45,7 @@ summary: 此支援每個網格節點最多三個網路介面、可讓您針對�
 
 
 
+[[guidelines-for-client-network]]
 == 用戶端網路準則
 
 用戶端網路通常用於租戶及與外部服務（例如CloudMirror複寫服務或其他平台服務）通訊。不過StorageGRID 、內部不強制使用此功能。

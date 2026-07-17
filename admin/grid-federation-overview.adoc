@@ -15,12 +15,14 @@ summary: 您可以使用網格同盟來複製租戶、並在兩個 StorageGRID �
 
 
 
+[[what-is-a-grid-federation-connection]]
 == 什麼是網格同盟連線？
 
 網格同盟連線是兩個 StorageGRID 系統中管理節點和閘道節點之間的雙向、信任和安全連線。
 
 
 
+[[workflow-for-grid-federation]]
 == 網格同盟的工作流程
 
 工作流程圖摘要說明在兩個網格之間設定網格同盟連線的步驟。
@@ -29,6 +31,7 @@ image:grid-federation-workflow.png["網格同盟連線工作流程"]
 
 
 
+[[considerations-and-requirements-for-grid-federation-connections]]
 == 網格同盟連線的考量與需求
 
 * 用於網格同盟的網格必須執行相同的 StorageGRID 版本、或兩者之間的主要版本差異不超過一個。
@@ -42,6 +45,7 @@ image:grid-federation-workflow.png["網格同盟連線工作流程"]
 
 
 
+[[networking-and-ip-address-requirements]]
 === 網路和 IP 位址需求
 
 * 網格同盟連線可能發生在網格網路、管理網路或用戶端網路上。
@@ -53,6 +57,7 @@ image:grid-federation-workflow.png["網格同盟連線工作流程"]
 
 
 
+[[use-fqdns-to-load-balance-the-connection]]
 === 使用 FQDN 來平衡連線負載
 
 對於正式作業環境、請使用完整網域名稱（ FQDN ）來識別連線中的每個網格。然後、建立適當的 DNS 項目、如下所示：
@@ -69,6 +74,7 @@ image:grid-federation-workflow.png["網格同盟連線工作流程"]
 
 
 
+[[port-requirements]]
 === 連接埠需求
 
 建立網格同盟連線時、您可以指定任何未使用的連接埠號碼、範圍從 23000 到 23999 。此連線中的兩個網格都會使用相同的連接埠。
@@ -77,6 +83,7 @@ image:grid-federation-workflow.png["網格同盟連線工作流程"]
 
 
 
+[[certificate-requirements]]
 === 憑證需求
 
 當您設定網格同盟連線時、 StorageGRID 會自動產生四個 SSL 憑證：

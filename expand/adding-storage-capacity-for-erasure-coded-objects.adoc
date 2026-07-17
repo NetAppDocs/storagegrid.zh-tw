@@ -19,6 +19,7 @@ summary: 如果您的ILM原則包含製作銷毀編碼複本的規則、您必�
 
 
 
+[[general-recommendation-for-adding-storage-capacity-for-erasure-coded-objects]]
 == 新增銷毀編碼物件儲存容量的一般建議
 
 如果您想要避免詳細計算、當現有儲存節點的容量達到70%時、您可以在每個站台新增兩個儲存節點。

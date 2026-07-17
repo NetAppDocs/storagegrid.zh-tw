@@ -17,6 +17,7 @@ summary: 如果在功能版本之間偵測到並解決軟體問題、您可能�
 
 
 
+[[considerations-for-applying-a-hotfix]]
 == 套用修補程式的考量
 
 當另一個維護程序正在執行時、您無法套用 StorageGRID Hotfix 。例如、在執行取消委任、擴充或還原程序時、您無法套用 Hotfix 。
@@ -32,6 +33,7 @@ NOTE: 如果節點或站台停用程序暫停、您可以安全地套用修補�
 
 
 
+[[how-hotfixes-are-applied-for-recovery-and-expansion]]
 == 如何套用修補程式來進行還原和擴充
 
 將修補程式套用至網格後、主管理節點會自動將相同的修補程式版本安裝至任何透過還原作業還原或新增至擴充中的節點。

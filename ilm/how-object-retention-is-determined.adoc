@@ -15,6 +15,7 @@ summary: 支援網格管理員和個別租戶使用者的選項、可指定儲�
 
 
 
+[[how-tenant-users-control-object-retention]]
 == 租戶使用者如何控制物件保留
 
 租戶使用者可以使用這些方法來控制物件在 StorageGRID 中的儲存時間：
@@ -33,6 +34,7 @@ summary: 支援網格管理員和個別租戶使用者的選項、可指定儲�
 
 
 
+[[how-grid-administrators-control-object-retention]]
 == 網格管理員如何控制物件保留
 
 網格管理員可以使用下列方法來控制物件保留：
@@ -44,18 +46,21 @@ summary: 支援網格管理員和個別租戶使用者的選項、可指定儲�
 
 
 
+[[how-s3-bucket-lifecycle-and-ilm-interact]]
 == S3儲存區生命週期與ILM之間的互動方式
 
 當 S3 貯體生命週期設定完成時、生命週期到期動作會覆寫符合生命週期篩選器之物件的 ILM 原則。因此、即使放置物件的任何ILM指示失效、物件仍可能保留在網格上。
 
 
 
+[[examples-for-object-retention]]
 == 物件保留範例
 
 若要更深入瞭解S3物件鎖定、儲存區生命週期設定、用戶端刪除要求和ILM之間的互動、請考慮下列範例。
 
 
 
+[[example-1-s3-bucket-lifecycle-keeps-objects-longer-than-ilm]]
 === 範例1：S3儲存區生命週期可延長物件的壽命、而非ILM
 
 ILM:: 儲存兩份複本一年（365天）
@@ -68,6 +73,7 @@ NOTE: 如果儲存區生命週期指定物件的保留時間應超過ILM指定�
 
 
 
+[[example-2-s3-bucket-lifecycle-expires-objects-before-ilm]]
 === 範例2：S3儲存區生命週期會在ILM之前過期物件
 
 ILM:: 儲存兩份複本2年（730天）
@@ -77,6 +83,7 @@ ILM:: 儲存兩份複本2年（730天）
 
 
 
+[[example-3-client-delete-overrides-bucket-lifecycle-and-ilm]]
 === 範例3：用戶端刪除會覆寫儲存區生命週期和ILM
 
 ILM:: 在儲存節點上「永遠」儲存兩份複本
@@ -87,6 +94,7 @@ ILM:: 在儲存節點上「永遠」儲存兩份複本
 
 
 
+[[example-4-s3-object-lock-overrides-client-delete-request]]
 === 範例4：S3物件鎖定會覆寫用戶端刪除要求
 
 S3物件鎖定:: 物件版本的保留截止日期為2026-03-31。合法持有並未生效。

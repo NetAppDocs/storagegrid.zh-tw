@@ -20,12 +20,14 @@ summary: 一致性值可用來指定儲存區設定變更的可用度、並在�
 
 
 
+[[bucket-consistency-guidelines]]
 == 貯體一致性準則
 
 貯體一致性用於判斷影響該 S3 貯體內物件的用戶端應用程式一致性。一般而言、您應該為儲存區使用 * 讀取 - 新寫入 * 一致性。
 
 
 
+[[change-bucket-consistencychange-bucket-consistency]]
 == [[change-bucker-consistency （變更貯體一致性） ] 變更貯體一致性
 
 如果 *Read-after new-write* 的一致性不符合用戶端應用程式的要求、您可以透過設定貯體一致性或使用標頭來變更一致性 `Consistency-Control`。 `Consistency-Control`標頭會取代貯體一致性。
@@ -54,6 +56,7 @@ NOTE: 當您變更貯體的一致性時、只有在變更後擷取的物件才�
 
 
 
+[[what-happens-when-you-change-bucket-settings]]
 == 變更貯體設定時會發生什麼情況
 
 貯體有多個設定會影響貯體和這些貯體內物件的行為。

@@ -15,6 +15,7 @@ summary: 如果您的租用戶帳戶在建立時被指派了 Use grid federation
 
 
 
+[[workflow-for-cross-grid-replication]]
 == 跨網格複寫的工作流程
 
 工作流程圖總結了配置兩個網格上的儲存桶之間的跨網格複製所執行的步驟。圖表下方對這些步驟進行了更詳細的描述。
@@ -23,6 +24,7 @@ image:grid-federation-cgr-workflow.png["跨網格複寫工作流程"]
 
 
 
+[[configure-cross-grid-replication]]
 == 設定跨網格複寫
 
 在使用跨網格複製之前，您必須登入每個網格上對應的租用戶帳戶並建立兩個儲存桶。然後，您可以在一個或兩個儲存桶上啟用跨網格複製。
@@ -37,6 +39,7 @@ image:grid-federation-cgr-workflow.png["跨網格複寫工作流程"]
 
 
 
+[[create-two-buckets]]
 === 建立兩個儲存桶
 
 第一步，登入每個網格上對應的租戶帳戶，並在每個網格上建立一個儲存桶。
@@ -68,6 +71,7 @@ TIP: 根據需要、每個貯體可以使用不同的區域。
 
 
 
+[[enable-cross-grid-replication]]
 === 啟用跨網格複寫
 
 您必須先執行這些步驟、才能將任何物件新增至任一貯體。
@@ -115,6 +119,7 @@ NOTE: 如果刪除請求包含版本 ID，則該物件版本將從來源儲存�
 
 
 
+[[test-replication-between-grids]]
 == 測試網格之間的複寫
 
 如果已為貯體啟用跨網格複寫、您可能需要驗證連線和跨網格複寫是否正常運作、以及來源和目的地貯體是否仍符合所有需求（例如、版本設定仍為啟用狀態）。
@@ -138,6 +143,7 @@ NOTE: 如果刪除請求包含版本 ID，則該物件版本將從來源儲存�
 
 
 
+[[disable-cross-grid-replication]]
 == 停用跨網格複寫
 
 如果您不想再將物件複製到其他網格、可以永久停止跨網格複寫。

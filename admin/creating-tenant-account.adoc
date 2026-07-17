@@ -39,6 +39,7 @@ TIP: 如果在您建立租戶之前、這兩個網格上都不存在這個管理
 
 
 
+[[access-the-wizard]]
 == 存取精靈
 
 .步驟
@@ -48,6 +49,7 @@ TIP: 如果在您建立租戶之前、這兩個網格上都不存在這個管理
 
 
 
+[[enter-details]]
 == 輸入詳細資料
 
 .步驟
@@ -92,6 +94,7 @@ TIP: 如果在您建立租戶之前、這兩個網格上都不存在這個管理
 
 
 
+[[admin-tenant-select-permissionsselect-permissions]]
 == [[admin-租 戶選取權限 ]] 選取權限
 
 .步驟
@@ -163,6 +166,7 @@ S3物件鎖定
 
 
 
+[[define-root-access-and-create-tenant]]
 == 定義 root 存取權並建立租戶
 
 .步驟
@@ -221,12 +225,14 @@ TIP: 在變更密碼之前、本機根使用者無法在目的地網格上登入
 
 
 
+[[sign-in-to-tenant-optional]]
 == 登入租戶（選用）
 
 視需要、您可以立即登入新租戶以完成組態、或是稍後登入租戶。登入步驟取決於您是使用預設連接埠（ 443 ）還是受限連接埠登入 Grid Manager 。請參閱。 link:controlling-access-through-firewalls.html["控制外部防火牆的存取"]
 
 
 
+[[sign-in-now]]
 === 立即登入
 
 [cols="1a,3a"]
@@ -278,6 +284,7 @@ TIP: 在變更密碼之前、本機根使用者無法在目的地網格上登入
 |===
 
 
+[[sign-in-later]]
 === 稍後登入
 
 [cols="1a,3a"]
@@ -321,6 +328,7 @@ TIP: 在變更密碼之前、本機根使用者無法在目的地網格上登入
 |===
 
 
+[[configure-the-tenant]]
 == 設定租戶
 
 請遵循中的指示link:../tenant/index.html["使用租戶帳戶"]、管理租戶群組和使用者、 S3 存取金鑰、工作區、平台服務、帳戶複製和跨網格複寫。

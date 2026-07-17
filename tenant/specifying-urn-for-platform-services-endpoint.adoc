@@ -17,6 +17,7 @@ summary: 當您建立平台服務端點時、必須指定唯一的資源名稱�
 
 
 
+[[urn-elements]]
 == urnElements
 
 平台服務端點的 URN 必須以或 `urn:mysite`開頭 `arn:aws`、如下所示：
@@ -92,6 +93,7 @@ CloudMirror複寫
 |===
 
 
+[[urns-for-services-hosted-on-aws-and-gcp]]
 == 提供AWS和GCP上的服務
 
 對於AWS和GCP實體而言、完整的URN是有效的AWS ARN。例如：
@@ -122,6 +124,7 @@ NOTE: 對於 AWS 搜尋整合端點、 `domain-name`必須包含文字字串 `do
 
 
 
+[[urns-for-locally-hosted-services]]
 == 適用於本機代管服務
 
 使用本機代管服務而非雲端服務時、只要URN在第三和最後的位置中包含必要的元素、您就可以以任何方式指定URN、以建立有效且獨特的URN。您可以將選用的元素保留空白、也可以以任何方式指定這些元素、協助您識別資源並使URN成為唯一的。例如：

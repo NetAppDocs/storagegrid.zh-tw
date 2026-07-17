@@ -26,6 +26,7 @@ image:grid-federation-create-connection.png["在兩個網格上建立連線步�
 
 
 
+[[add-connection]]
 == 新增連線
 
 在兩個 StorageGRID 系統中的任一系統上執行這些步驟。
@@ -113,6 +114,7 @@ CAUTION: 此檔案包含機密（以遮罩 `***`）及其他敏感詳細資料�
 
 
 
+[[complete-connection]]
 == 完整連線
 
 在您要連線的 StorageGRID 系統（另一個網格）上執行這些步驟。

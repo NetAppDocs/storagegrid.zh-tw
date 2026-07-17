@@ -22,12 +22,14 @@ CAUTION: 請勿直接使用連結或橋接裝置做為容器網路介面。這�
 
 
 
+[[host-network-configuration-for-container-engine-deployments]]
 == 用於容器引擎部署的主機網路組態
 
 在StorageGRID 容器引擎平台上開始進行功能性部署之前、請先判斷每個節點將使用哪些網路（Grid、管理、用戶端）。您必須確保每個節點的網路介面都設定在正確的虛擬或實體主機介面上、而且每個網路都有足夠的頻寬。
 
 
 
+[[physical-hosts]]
 === 實體主機
 
 如果您使用實體主機來支援網格節點：
@@ -52,6 +54,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[minimum-bandwidth-recommendations]]
 === 建議的最低頻寬
 
 下表針對每種類型的 StorageGRID 節點和每種類型的網路、提供最低 LAN 頻寬建議。您必須為每部實體或虛擬主機配置足夠的網路頻寬、以符合StorageGRID 您計畫在該主機上執行的所有節點數和類型的總頻寬需求。

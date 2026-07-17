@@ -15,6 +15,7 @@ summary: 如果您已設定並啟用單一登入（SSO）、而且使用PingFeda
 
 
 
+[[sign-in-to-the-api-if-single-sign-on-is-enabled]]
 == 如果啟用單一登入、請登入API
 
 如果您使用PingFedate做為SSO身分識別供應商、則適用這些指示
@@ -204,6 +205,7 @@ export MYTOKEN="56eb07bf-21f6-40b7-af0b-5c6cacfb25e7"
 
 
 
+[[sign-out-of-the-api-if-single-sign-on-is-enabled]]
 == 如果啟用單一登入、請登出API
 
 如果已啟用單一登入（SSO）、您必須發出一系列API要求、以登出Grid Management API或租戶管理API。如果您使用PingFedate做為SSO身分識別供應商、則適用這些指示

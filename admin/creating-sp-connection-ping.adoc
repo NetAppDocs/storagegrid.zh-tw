@@ -28,12 +28,14 @@ summary: 您可以使用PingFedate為系統中的每個管理節點建立服務�
 
 
 
+[[complete-prerequisites-in-pingfederate]]
 == 完整的PingFedate必備條件
 
 在建立要用於StorageGRID 觀賞的SP連線之前、您必須先在PingFederate完成必要的工作。設定SP連線時、您將會使用這些必要條件的資訊。
 
 
 
+[[create-data-storedata-store]]
 === 建立資料儲存區[data-store]
 
 如果您尚未建立資料存放區、請建立資料存放區、將PingFedate連線至AD FS LDAP伺服器。請使用您在 StorageGRID 中使用的值link:../admin/using-identity-federation.html["設定身分識別聯盟"]。
@@ -45,6 +47,7 @@ summary: 您可以使用PingFedate為系統中的每個管理節點建立服務�
 
 
 
+[[create-password-credential-validatorpassword-validator]]
 === 建立密碼認證驗證器[密碼 驗證器]
 
 如果您還沒有、請建立密碼認證驗證程式。
@@ -58,6 +61,7 @@ summary: 您可以使用PingFedate為系統中的每個管理節點建立服務�
 
 
 
+[[create-idp-adapter-instanceadapter-instance]]
 === 建立IDP介面卡執行個體[[介 面卡執行個體]
 
 如果您尚未建立IDP介面卡執行個體、請建立一個IDP介面卡執行個體。
@@ -74,6 +78,7 @@ summary: 您可以使用PingFedate為系統中的每個管理節點建立服務�
 
 
 
+[[create-or-import-signing-certificatesigning-certificate]]
 === 建立或匯入簽署憑證[[Signing認證證]
 
 如果您尚未建立簽署憑證、請建立或匯入簽署憑證。
@@ -85,6 +90,7 @@ summary: 您可以使用PingFedate為系統中的每個管理節點建立服務�
 
 
 
+[[create-an-sp-connection-in-pingfederate]]
 == 在PingFedate建立SP連線
 
 當您在PingFedate建立SP連線時、會將從StorageGRID 支援管理節點的支援節點下載的SAML中繼資料匯入。中繼資料檔案包含許多您需要的特定值。
@@ -94,6 +100,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 
 
 
+[[choose-sp-connection-type]]
 === 選擇SP連線類型
 
 .步驟
@@ -105,6 +112,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 
 
 
+[[import-sp-metadata]]
 === 匯入SP中繼資料
 
 .步驟
@@ -119,6 +127,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 
 
 
+[[configure-idp-browser-sso]]
 === 設定IDP瀏覽器SSO
 
 .步驟
@@ -137,6 +146,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 
 
 
+[[map-adapter-instance]]
 === 對應介面卡執行個體
 
 .步驟
@@ -163,6 +173,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 
 
 
+[[configure-protocol-settings]]
 === 設定傳輸協定設定
 
 .步驟
@@ -178,6 +189,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 
 
 
+[[configure-credentials]]
 === 設定認證資料
 
 .步驟
@@ -195,6 +207,7 @@ TIP: 您必須為StorageGRID 您的支援系統中的每個管理節點建立SP�
 
 
 
+[[create-additional-sp-connections]]
 === 建立其他SP連線
 
 您可以複製第一個SP連線、為網格中的每個管理節點建立所需的SP連線。您上傳每個複本的新中繼資料。

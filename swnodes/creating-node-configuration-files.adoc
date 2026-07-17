@@ -18,6 +18,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[location-for-node-configuration-files]]
 == 節點組態檔案的位置
 
 將每個 StorageGRID 節點的組態檔放在要執行節點的主機上的目錄中 `/etc/storagegrid/nodes`。例如、如果您計畫在主機 A 上執行一個管理節點、一個閘道節點和一個儲存節點、則必須在主機 A 上放置三個節點組態檔案 `/etc/storagegrid/nodes`。
@@ -26,6 +27,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[naming-of-node-configuration-files]]
 == 節點組態檔案的命名
 
 組態檔的名稱很重要。格式為 `node-name.conf`、其中 `node-name`是您指派給節點的名稱。此名稱會顯示在StorageGRID 《Iserfor Installer（英文）：用於節點維護作業（例如節點移轉）。
@@ -50,6 +52,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[contents-of-a-node-configuration-file]]
 == 節點組態檔案的內容
 
 組態檔案包含金鑰 / 值配對、每行一個金鑰和一個值。針對每個金鑰 / 值配對、請遵循下列規則：
@@ -69,6 +72,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[admin-network-keys]]
 === 管理網路金鑰
 
 
@@ -317,6 +321,7 @@ node_type = vm_admin_Node 時需要
 |===
 
 
+[[block-device-keys]]
 === 封鎖裝置金鑰
 
 
@@ -453,6 +458,7 @@ BLOCK_DEVICE_RANGEDB_015
 |===
 
 
+[[client-network-keys]]
 === 用戶端網路金鑰
 
 
@@ -656,6 +662,7 @@ client_network_config = 靜態時需要
 |===
 
 
+[[grid-network-keys]]
 === 網格網路金鑰
 
 
@@ -847,6 +854,7 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 |===
 
 
+[[installation-password-key-temporary]]
 === 安裝密碼金鑰（暫時）
 
 
@@ -876,6 +884,7 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 |===
 
 
+[[interfaces-key]]
 === 介面金鑰
 
 
@@ -903,6 +912,7 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 |===
 
 
+[[maximum-ram-key]]
 === 最大 RAM 金鑰
 
 
@@ -934,6 +944,7 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 |===
 
 
+[[node-type-keys]]
 === 節點類型金鑰
 
 
@@ -981,6 +992,7 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 |===
 
 
+[[port-remap-keys]]
 === 連接埠重新對應鍵
 
 

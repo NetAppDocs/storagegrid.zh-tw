@@ -34,6 +34,7 @@ NOTE: 為了確保操作不會因伺服器憑證失敗而中斷，當此伺服�
 ====
 
 
+[[add-a-custom-management-interface-certificate]]
 == 新增自訂管理介面認證
 
 若要新增自訂管理介面認證、您可以提供自己的認證、或使用Grid Manager產生認證。
@@ -161,6 +162,7 @@ NOTE: 上傳或產生新的憑證後、請允許清除任何相關的憑證過�
 
 
 
+[[restore-the-default-management-interface-certificate]]
 == 還原預設的管理介面憑證
 
 您可以恢復使用Grid Manager和Tenant Manager連線的預設管理介面憑證。
@@ -177,6 +179,7 @@ NOTE: 上傳或產生新的憑證後、請允許清除任何相關的憑證過�
 
 
 
+[[use-a-script-to-generate-a-new-self-signed-management-interface-certificate]]
 == 使用指令碼來產生新的自我簽署管理介面憑證
 
 如果需要嚴格的主機名稱驗證、您可以使用指令碼來產生管理介面憑證。
@@ -238,6 +241,7 @@ NOTE: 憑證的有效期間從執行開始 `make-certificate`。您必須確保�
 
 
 
+[[download-or-copy-the-management-interface-certificate]]
 == 下載或複製管理介面憑證
 
 您可以儲存或複製管理介面憑證內容、以便在其他地方使用。

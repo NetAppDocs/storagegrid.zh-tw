@@ -15,6 +15,7 @@ summary: 您可以視需要變更整個 Grid Manager 、每個站台及每個節
 
 
 
+[[what-is-the-rename-procedure]]
 == 什麼是重新命名程序？
 
 一開始安裝 StorageGRID 時、您會為網格、每個站台及每個節點指定一個名稱。這些初始名稱稱為 _ 系統名稱 _ 、這些名稱最初會顯示在整個 StorageGRID 中。
@@ -25,6 +26,7 @@ summary: 您可以視需要變更整個 Grid Manager 、每個站台及每個節
 
 
 
+[[where-do-system-and-display-names-appear]]
 == 系統名稱和顯示名稱出現在何處？
 
 下表摘要說明系統名稱和顯示名稱在 StorageGRID 使用者介面和 StorageGRID 檔案中的顯示位置。
@@ -121,12 +123,14 @@ Grid Manager 頁面
 |===
 
 
+[[display-name-requirements]]
 == 顯示名稱需求
 
 使用此程序之前、請先檢閱顯示名稱的需求。
 
 
 
+[[display-names-for-nodes]]
 === 節點的顯示名稱
 
 節點的顯示名稱必須遵循下列規則：
@@ -144,6 +148,7 @@ Grid Manager 頁面
 
 
 
+[[display-names-for-grid-and-sites]]
 === 顯示網格和網站的名稱
 
 網格和網站的顯示名稱遵循相同的規則、但這些例外情況除外：
@@ -156,6 +161,7 @@ Grid Manager 頁面
 
 
 
+[[display-name-best-practices]]
 == 顯示名稱最佳實務做法
 
 如果您打算重新命名多個項目、請在使用此程序之前記錄一般的命名方案。請準備一套系統、確保名稱獨一無二、一致且易於理解、一目瞭然。
@@ -171,6 +177,7 @@ Grid Manager 頁面
 
 
 
+[[example-display-names]]
 === 顯示名稱範例
 
 假設您的 StorageGRID 系統有三個資料中心、每個資料中心都有不同類型的節點。您的顯示名稱可能與以下名稱一樣簡單：

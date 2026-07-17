@@ -69,6 +69,7 @@ S3客戶端存取--負載平衡器服務
 |===
 
 
+[[limitations-of-using-ha-groups-with-grid-manager-or-tenant-manager]]
 == 搭配Grid Manager或Tenant Manager使用HA群組的限制
 
 如果Grid Manager或Tenant Manager服務失敗、HA群組容錯移轉就不會觸發。

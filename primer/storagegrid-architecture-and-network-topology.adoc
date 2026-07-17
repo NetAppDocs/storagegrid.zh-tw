@@ -19,12 +19,14 @@ summary: 這個系統包含多種類型的網格節點、位於一或多個資�
 
 
 
+[[deployment-topologies]]
 == 部署拓撲
 
 StorageGRID系統可以部署到單一資料中心站點或多個資料中心站點。每個部署的最大站點數為 16 個。
 
 
 
+[[single-site]]
 === 單一站台
 
 在部署單一站台的StorageGRID 情況下、將會集中化整個過程中的基礎架構和運作。
@@ -33,6 +35,7 @@ image:data_center_site_single.png["單一資料中心站台"]
 
 
 
+[[multiple-sites]]
 === 多個站台
 
 在部署多個站台的情況下、StorageGRID 每個站台都能安裝不同類型和數量的支援資源。例如、一個資料中心可能需要比另一個資料中心更多的儲存設備。
@@ -45,12 +48,14 @@ image:data_center_sites_multiple.png["多個資料中心站台"]
 
 
 
+[[grid-node-redundancy]]
 === 網格節點備援
 
 在單一站台或多站台部署中、您可以選擇性地包含多個管理節點或閘道節點來提供備援。例如、您可以在單一站台或多個站台上安裝多個管理節點。不過StorageGRID 、每個功能完善的系統只能有一個主要管理節點。
 
 
 
+[[system-architecture]]
 == 系統架構
 
 下圖顯示StorageGRID 如何在一個E不到 位的系統中排列網格節點。

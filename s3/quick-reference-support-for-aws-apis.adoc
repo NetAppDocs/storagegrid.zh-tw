@@ -20,6 +20,8 @@ NOTE: 若要查看每項作業的 AWS 文件、請選取標題中的連結。
 
 
 
+[[common-uri-query-parameters-and-request-headers]]
+[[common-params]]
 == 通用 URI 查詢參數和要求標頭
 
 除非另有說明、否則支援下列常見的 URI 查詢參數：
@@ -47,6 +49,7 @@ NOTE: 若要查看每項作業的 AWS 文件、請選取標題中的連結。
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiabortmultipartupload-htmlabortmultipartupload]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html["AbortMultiPart上 傳"^]
 
 .URI 查詢參數和要求標頭
@@ -63,6 +66,7 @@ link:operations-for-multipart-uploads.html["多部份上傳作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapicompletemultipartupload-htmlcompletemultipartupload]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html["完成多個部分上傳"^]
 
 .URI 查詢參數和要求標頭
@@ -87,6 +91,7 @@ link:complete-multipart-upload.html["完成多個部分上傳"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapicopyobject-htmlcopyobject]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html["CopyObject"^]
 
 .URI 查詢參數和要求標頭
@@ -122,6 +127,7 @@ link:put-object-copy.html["CopyObject"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapicreatebucket-htmlcreatebucket]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html["建立庫位"^]
 
 .URI 查詢參數和要求標頭
@@ -138,6 +144,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapicreatemultipartupload-htmlcreatemultipartupload]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html["建立多個部分上傳"^]
 
 .URI 查詢參數和要求標頭
@@ -169,6 +176,7 @@ link:initiate-multipart-upload.html["建立多個部分上傳"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideletebucket-htmldeletebucket]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html["刪除Bucket"^]
 
 .URI 查詢參數和要求標頭
@@ -179,6 +187,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideletebucketcors-htmldeletebucketcors]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html["刪除 BucketCors"^]
 
 .URI 查詢參數和要求標頭
@@ -192,6 +201,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideletebucketencryption-htmldeletebucketencryption]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html["刪除 BucketEncryption"^]
 
 .URI 查詢參數和要求標頭
@@ -205,6 +215,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideletebucketlifecycle-htmldeletebucketlifecycle]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html["刪除 BucketLifecycle"^]
 
 .URI 查詢參數和要求標頭
@@ -220,6 +231,7 @@ StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功�
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideletebucketpolicy-htmldeletebucketpolicy]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html["刪除BucketPolicy"^]
 
 .URI 查詢參數和要求標頭
@@ -233,6 +245,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideletebucketreplication-htmldeletebucketreplication]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html["刪除 BucketReplication"^]
 
 .URI 查詢參數和要求標頭
@@ -246,6 +259,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideletebuckettagging-htmldeletebuckettagging]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html["刪除 Bucketagging"^]
 
 .URI 查詢參數和要求標頭
@@ -259,6 +273,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideleteobject-htmldeleteobject]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html["刪除物件"^]
 
 .URI 查詢參數和要求標頭
@@ -275,6 +290,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideleteobjects-htmldeleteobjects]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html["刪除物件"^]
 
 .URI 查詢參數和要求標頭
@@ -291,6 +307,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapideleteobjecttagging-htmldeleteobjecttagging]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html["刪除ObjectTagging"^]
 
 StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功能。
@@ -303,6 +320,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketacl-htmlgetbucketacl]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html["GetBucketAcl"^]
 
 .URI 查詢參數和要求標頭
@@ -316,6 +334,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketcors-htmlgetbucketcors]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html["GetBucketCors"^]
 
 .URI 查詢參數和要求標頭
@@ -329,6 +348,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketencryption-htmlgetbucketencryption]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html["GetBucketEncryption"^]
 
 .URI 查詢參數和要求標頭
@@ -342,6 +362,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketlifecycleconfiguration-htmlgetbucketlifecycleconfiguration]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html["GetBucketLifecycleConfiguration"^]
 
 .URI 查詢參數和要求標頭
@@ -357,6 +378,7 @@ StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功�
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketlocation-htmlgetbucketlocation]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html["GetBucketLocation"^]
 
 .URI 查詢參數和要求標頭
@@ -370,6 +392,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketnotificationconfiguration-htmlgetbucketnotificationconfiguration]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html["GetBucketNotificationConfiguration"^]
 
 .URI 查詢參數和要求標頭
@@ -383,6 +406,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketpolicy-htmlgetbucketpolicy]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html["GetBucketPolicy"^]
 
 .URI 查詢參數和要求標頭
@@ -396,6 +420,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketreplication-htmlgetbucketreplication]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html["GetBucketReplication"^]
 
 .URI 查詢參數和要求標頭
@@ -409,6 +434,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbuckettagging-htmlgetbuckettagging]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html["GetBucketTagging"^]
 
 .URI 查詢參數和要求標頭
@@ -422,6 +448,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetbucketversioning-htmlgetbucketversioning]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html["GetBucketVersion"^]
 
 .URI 查詢參數和要求標頭
@@ -435,6 +462,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetobject-htmlgetobject]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html["GetObject"^]
 
 .URI 查詢參數和要求標頭
@@ -470,6 +498,7 @@ link:get-object.html["GetObject"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetobjectacl-htmlgetobjectacl]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html["GetObjectAcl"^]
 
 .URI 查詢參數和要求標頭
@@ -483,6 +512,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetobjectlegalhold-htmlgetobjectlegalhold]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html["GetObjectLegalHold"^]
 
 .URI 查詢參數和要求標頭
@@ -496,6 +526,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 �
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetobjectlockconfiguration-htmlgetobjectlockconfiguration]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html["GetObjectLockConfiguration"^]
 
 .URI 查詢參數和要求標頭
@@ -509,6 +540,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 �
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetobjectretention-htmlgetobjectretention]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html["GetObjectRetention"^]
 
 .URI 查詢參數和要求標頭
@@ -522,6 +554,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 �
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapigetobjecttagging-htmlgetobjecttagging]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html["GetObjectTagging"^]
 
 .URI 查詢參數和要求標頭
@@ -535,6 +568,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiheadbucket-htmlheadbucket]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html["標題庫"^]
 
 .URI 查詢參數和要求標頭
@@ -548,6 +582,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiheadobject-htmlheadobject]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html["標題物件"^]
 
 .URI 查詢參數和要求標頭
@@ -572,6 +607,7 @@ link:head-object.html["標題物件"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapilistbuckets-htmllistbuckets]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html["列表桶"^]
 
 .URI 查詢參數和要求標頭
@@ -585,6 +621,7 @@ link:operations-on-the-service.html["服務 > ListB桶 的操作"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapilistmultipartuploads-htmllistmultipartuploads]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html["ListMultipartUploads"^]
 
 .URI 查詢參數和要求標頭
@@ -605,6 +642,7 @@ link:list-multipart-uploads.html["ListMultipartUploads"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapilistobjects-htmllistobjects]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html["清單物件"^]
 
 .URI 查詢參數和要求標頭
@@ -625,6 +663,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapilistobjectsv2-htmllistobjectsv2]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html["清單對象V2."^]
 
 .URI 查詢參數和要求標頭
@@ -647,6 +686,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapilistobjectversions-htmllistobjectversions]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html["ListObjectVerions"^]
 
 .URI 查詢參數和要求標頭
@@ -668,6 +708,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapilistparts-htmllistparts]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html["清單零件"^]
 
 .URI 查詢參數和要求標頭
@@ -686,6 +727,7 @@ link:list-multipart-uploads.html["ListMultipartUploads"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputbucketcors-htmlputbucketcors]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html["PuttBucketCors"^]
 
 .URI 查詢參數和要求標頭
@@ -699,6 +741,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputbucketencryption-htmlputbucketencryption]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html["PuttBucketEncryption"^]
 
 .URI 查詢參數和要求標頭
@@ -718,6 +761,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputbucketlifecycleconfiguration-htmlputbucketlifecycleconfiguration]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html["PuttBucketLifecycleConfiguration"^]
 
 .URI 查詢參數和要求標頭
@@ -751,6 +795,7 @@ StorageGRID 支援這些要求本文 XML 標記：
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputbucketnotificationconfiguration-htmlputbucketnotificationconfiguration]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html["PutBucketNotificationConfiguration"^]
 
 .URI 查詢參數和要求標頭
@@ -778,6 +823,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputbucketpolicy-htmlputbucketpolicy]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html["PuttBucketPolicy"^]
 
 .URI 查詢參數和要求標頭
@@ -788,6 +834,7 @@ StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功�
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputbucketreplication-htmlputbucketreplication]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html["PutBucketReplication"^]
 
 .URI 查詢參數和要求標頭
@@ -808,6 +855,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputbuckettagging-htmlputbuckettagging]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html["PuttBucketTagging"^]
 
 .URI 查詢參數和要求標頭
@@ -821,6 +869,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputbucketversioning-htmlputbucketversioning]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html["PuttBucketVersion"^]
 
 .URI 查詢參數和要求標頭
@@ -838,6 +887,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputobject-htmlputobject]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html["PuttObject"^]
 
 .URI 查詢參數和要求標頭
@@ -870,6 +920,7 @@ link:put-object.html["PuttObject"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputobjectlegalhold-htmlputobjectlegalhold]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html["PutObjectLegalHold"^]
 
 .URI 查詢參數和要求標頭
@@ -883,6 +934,7 @@ link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件�
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputobjectlockconfiguration-htmlputobjectlockconfiguration]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html["PutObjectLockConfiguration"^]
 
 .URI 查詢參數和要求標頭
@@ -896,6 +948,7 @@ link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件�
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputobjectretention-htmlputobjectretention]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html["PutObjectRetention"^]
 
 .URI 查詢參數和要求標頭
@@ -912,6 +965,7 @@ link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件�
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiputobjecttagging-htmlputobjecttagging]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html["PuttObjectTagging"^]
 
 .URI 查詢參數和要求標頭
@@ -925,6 +979,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapirestoreobject-htmlrestoreobject]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html["RestoreObject"^]
 
 .URI 查詢參數和要求標頭
@@ -935,6 +990,7 @@ StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功�
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiselectobjectcontent-htmlselectobjectcontent]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html["選取物件內容"^]
 
 .URI 查詢參數和要求標頭
@@ -949,6 +1005,7 @@ StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功�
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiuploadpart-htmluploadpart]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html["上傳零件"^]
 
 .URI 查詢參數和要求標頭
@@ -975,6 +1032,7 @@ link:upload-part.html["上傳零件"]
 
 
 
+[[httpsdocs-aws-amazon-comamazons3latestapiapiuploadpartcopy-htmluploadpartcopy]]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html["上傳PartCopy"^]
 
 .URI 查詢參數和要求標頭

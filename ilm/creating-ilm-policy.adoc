@@ -19,6 +19,7 @@ summary: 建立一或多個 ILM 原則以符合您的服務品質要求。
 
 
 
+[[create-an-ilm-policy]]
 == 建立ILM原則
 
 .關於這項工作
@@ -172,6 +173,8 @@ NOTE: 您必須確認ILM規則的順序正確。當原則啟動時、新物件�
 
 
 
+[[simulate-a-policy]]
+[[simulate-ilm-policy]]
 == 模擬原則
 
 在啟動原則並將其套用至正式作業資料之前、先模擬測試物件的原則。
@@ -201,6 +204,8 @@ link:simulating-ilm-policy-examples.html["ILM 原則模擬範例"]
 
 
 
+[[activate-a-policy]]
+[[activate-ilm-policy]]
 == 啟動原則
 
 當您啟動單一新的 ILM 原則時、現有物件和新擷取的物件都會由該原則管理。當您啟動多個原則時、指派給儲存區的 ILM 原則標記會決定要管理的物件。

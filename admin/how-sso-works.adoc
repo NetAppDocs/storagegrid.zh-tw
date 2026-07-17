@@ -19,6 +19,7 @@ summary: '啟用單一登入 (SSO) 後，只有使用貴組織實作的 SSO 登�
 
 
 
+[[sign-in-when-sso-is-enabled]]
 == 啟用SSO時登入
 
 啟用SSO並登入StorageGRID 支援功能時、系統會將您重新導向至組織的SSO頁面、以驗證您的認證資料。
@@ -69,6 +70,7 @@ NOTE: 如果無法存取服務帳戶、您仍可登入、只要您是擁有Stora
 
 
 
+[[sign-out-when-sso-is-enabled]]
 == 啟用SSO時登出
 
 啟用SSO以StorageGRID 利執行功能時、登出時會發生什麼事取決於您登入的項目、以及登出的位置。

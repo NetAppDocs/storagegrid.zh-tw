@@ -17,6 +17,7 @@ summary: 解決跨網格複寫永久性故障警示後、您應該判斷是否�
 
 
 
+[[determine-if-any-objects-failed-to-be-replicated]]
 == 判斷是否有任何物件無法複寫
 
 若要判斷是否有任何物件或刪除標記尚未複寫至其他網格、您可以在稽核記錄中搜尋link:../audit/cgrr-cross-grid-replication-request.html["CGRR （跨網格複寫要求）"]訊息。當 StorageGRID 無法將物件、多個零件物件或刪除標記複寫至目的地儲存區時、此訊息會新增至記錄檔。
@@ -116,6 +117,7 @@ CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:44789
 
 
 
+[[retry-failed-replications]]
 == 重試失敗的複製
 
 產生物件清單並刪除未複寫至目的地儲存區的標記、並解決基礎問題之後、您可以使用下列兩種方法重試複寫：
@@ -150,6 +152,7 @@ NOTE: 擱置表示已將跨網格複寫要求新增至內部佇列以進行處�
 
 
 
+[[monitor-replication-retries]]
 == 監控複寫重試次數
 
 您應該監控複寫重試作業、以確保其完成。

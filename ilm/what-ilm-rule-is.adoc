@@ -20,6 +20,7 @@ NOTE: 物件中繼資料並非由 ILM 規則管理。相反地、物件中繼資
 
 
 
+[[elements-of-an-ilm-rule]]
 == ILM規則的元素
 
 ILM規則有三個元素：
@@ -31,6 +32,7 @@ ILM規則有三個元素：
 
 
 
+[[ilm-rule-filtering]]
 == ILM 規則篩選
 
 建立ILM規則時、您可以指定篩選條件、以識別規則所套用的物件。
@@ -60,6 +62,7 @@ ILM規則有三個元素：
 
 
 
+[[ilm-rule-placement-instructions]]
 == ILM 規則放置指示
 
 放置指示可決定物件資料的儲存位置、時間及方式。ILM規則可以包含一或多個放置指示。每項放置指示均適用於單一時間段。
@@ -95,6 +98,7 @@ image:ilm_rule_multiple_placements_in_single_time_period.png["Grid Manager的ILM
 
 
 
+[[ilm-rule-ingest-behavior]]
 == ILM 規則擷取行為
 
 擷取行為可控制物件複本是否立即根據規則中的指示放置、或是是否製作了過渡複本、並於稍後套用放置指示。下列擷取行為適用於ILM規則：
@@ -112,6 +116,7 @@ image:ilm_rule_multiple_placements_in_single_time_period.png["Grid Manager的ILM
 
 
 
+[[example-ilm-rule]]
 == ILM規則範例
 
 以 ILM 規則為例、可以指定下列項目：

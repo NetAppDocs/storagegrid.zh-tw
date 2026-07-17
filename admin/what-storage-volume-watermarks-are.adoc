@@ -20,6 +20,7 @@ NOTE: 儲存Volume浮點僅適用於複寫和銷毀編碼物件資料所使用�
 
 
 
+[[what-is-the-soft-read-only-watermark]]
 == 什麼是軟式唯讀浮水印？
 
 * 儲存磁碟區軟式唯讀浮水印 * 是第一個指出儲存節點的物件資料可用空間已滿的浮水印。
@@ -30,6 +31,7 @@ NOTE: 儲存Volume浮點僅適用於複寫和銷毀編碼物件資料所使用�
 
 
 
+[[what-is-the-hard-read-only-watermark]]
 == 什麼是強制唯讀浮水印？
 
 * 儲存磁碟區硬式唯讀浮水印 * 是下一個浮水印、表示節點的物件資料可用空間已滿。
@@ -42,6 +44,7 @@ NOTE: 儲存Volume浮點僅適用於複寫和銷毀編碼物件資料所使用�
 
 
 
+[[what-is-the-read-write-watermark]]
 == 什麼是讀寫浮水印？
 
 * 儲存磁碟區讀寫浮水印 * 僅適用於已轉換為唯讀模式的儲存節點。它決定何時可以再次讀寫節點。當儲存節點中任一儲存磁碟區的可用空間大於該磁碟區的讀寫浮水印時、節點會自動轉換回讀寫狀態。
@@ -52,6 +55,7 @@ NOTE: 儲存Volume浮點僅適用於複寫和銷毀編碼物件資料所使用�
 
 
 
+[[view-storage-volume-watermarks]]
 == 檢視儲存Volume浮點
 
 您可以檢視目前的浮水印設定和系統最佳化的值。如果未使用最佳化的浮水印、您可以判斷是否可以或應該調整設定。
@@ -64,6 +68,7 @@ NOTE: 儲存Volume浮點僅適用於複寫和銷毀編碼物件資料所使用�
 
 
 
+[[view-current-watermark-settings]]
 === 檢視目前的浮水印設定
 
 您可以在Grid Manager中檢視目前的儲存浮水印設定。
@@ -86,6 +91,7 @@ NOTE: 儲存Volume浮點僅適用於複寫和銷毀編碼物件資料所使用�
 
 
 
+[[view-optimized-storage-watermarksview-optimized-storage-watermarks]]
 === [[view-優 化的儲存浮水印 ]] 檢視最佳化的儲存浮水印
 
 StorageGRID 使用兩個 Prometheus 指標來顯示其針對儲存 Volume 軟唯讀浮水印所計算的最佳化值。您可以檢視網格中每個儲存節點的最小和最大最佳化值。

@@ -30,6 +30,7 @@ NOTE: 每個網格最多可以有 100,000 個 bucket，包括link:../tenant/what
 
 
 
+[[access-the-wizard]]
 == 存取精靈
 
 .步驟
@@ -39,6 +40,7 @@ NOTE: 每個網格最多可以有 100,000 個 bucket，包括link:../tenant/what
 
 
 
+[[enter-details]]
 == 輸入詳細資料
 
 .步驟
@@ -82,6 +84,7 @@ NOTE: 每個網格最多可以有 100,000 個 bucket，包括link:../tenant/what
 
 
 
+[[manage-settings]]
 == 管理設定
 
 .步驟

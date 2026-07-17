@@ -44,6 +44,7 @@ NOTE: 如果您使用金鑰管理伺服器 (KMS) 來保護特殊設定應用裝�
 
 
 
+[[add-client-certificates]]
 == 新增用戶端憑證
 
 若要新增用戶端憑證、請使用下列其中一個程序：
@@ -55,6 +56,7 @@ NOTE: 如果您使用金鑰管理伺服器 (KMS) 來保護特殊設定應用裝�
 
 
 
+[[management-interface-certificate-already-configured]]
 === 管理介面憑證已設定
 
 如果已使用客戶提供的CA、用戶端憑證和私密金鑰來設定管理介面憑證、請使用此程序來新增用戶端憑證。
@@ -85,6 +87,7 @@ NOTE: 如果您使用金鑰管理伺服器 (KMS) 來保護特殊設定應用裝�
 
 
 
+[[ca-issued-client-certificate]]
 === CA發行的用戶端憑證
 
 如果未設定管理介面憑證、且您計畫新增使用CA發行用戶端憑證和私密金鑰的Prometheus用戶端憑證、請使用此程序來新增管理員用戶端憑證。
@@ -116,6 +119,7 @@ NOTE: 如果您使用金鑰管理伺服器 (KMS) 來保護特殊設定應用裝�
 
 
 
+[[generated-certificate-from-grid-manager]]
 === 從Grid Manager產生憑證
 
 如果管理介面憑證尚未設定、且您計畫在Grid Manager中新增使用產生憑證功能的Prometheus用戶端憑證、請使用此程序來新增管理員用戶端憑證。
@@ -185,6 +189,7 @@ TIP: 關閉對話方塊後、您將無法檢視憑證私密金鑰。將金鑰複
 
 
 
+[[configure-external-monitoring-toolconfigure-an-external-monitoring-tool]]
 === [[configure-exter-monitoring-ool]] 設定外部監控工具
 
 .步驟
@@ -223,6 +228,7 @@ TIP: 關閉對話方塊後、您將無法檢視憑證私密金鑰。將金鑰複
 
 
 
+[[edit-client-certificates]]
 == 編輯用戶端憑證
 
 您可以編輯系統管理員用戶端憑證來變更其名稱、啟用或停用Prometheus存取、或是在目前憑證過期時上傳新的憑證。
@@ -244,6 +250,7 @@ TIP: 關閉對話方塊後、您將無法檢視憑證私密金鑰。將金鑰複
 
 
 
+[[attach-new-client-certificate]]
 == 附加新的用戶端憑證
 
 您可以在目前的憑證過期時上傳新的憑證。
@@ -338,6 +345,7 @@ TIP: 關閉對話方塊後、您將無法檢視憑證私密金鑰。將金鑰複
 
 
 
+[[download-or-copy-client-certificates]]
 == 下載或複製用戶端憑證
 
 您可以下載或複製用戶端憑證、以便在其他地方使用。
@@ -379,6 +387,7 @@ TIP: 關閉對話方塊後、您將無法檢視憑證私密金鑰。將金鑰複
 
 
 
+[[remove-client-certificates]]
 == 移除用戶端憑證
 
 如果不再需要系統管理員用戶端憑證、您可以將其移除。

@@ -15,6 +15,7 @@ summary: 請使用這些指示來設定及管理StorageGRID 一套功能完善�
 
 
 
+[[about-these-instructions]]
 == 關於這些指示
 
 設定及管理 StorageGRID 的主要工作可讓您：
@@ -28,6 +29,7 @@ summary: 請使用這些指示來設定及管理StorageGRID 一套功能完善�
 
 
 
+[[before-you-begin]]
 == 開始之前
 
 * 您大致瞭StorageGRID 解整個系統。

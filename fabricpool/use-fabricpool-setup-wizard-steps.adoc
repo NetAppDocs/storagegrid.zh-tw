@@ -24,6 +24,7 @@ NOTE: 如果您想將 StorageGRID 設定為與任何其他 S3 用戶端應用程
 
 
 
+[[access-the-wizard]]
 == 存取精靈
 
 您可以在開始使用 StorageGRID Grid Manager 時完成 FabricPool 設定精靈、也可以在任何時候存取並完成精靈。
@@ -42,6 +43,7 @@ image:help_menu.png["說明功能表"]
 
 
 
+[[step-1-of-9-configure-ha-group]]
 == 步驟 9 之 1 ：設定 HA 群組
 
 高可用度（ HA ）群組是每個節點包含 StorageGRID 負載平衡器服務的集合。HA 群組可以包含閘道節點、管理節點或兩者。
@@ -144,6 +146,7 @@ HA 群組名稱
 
 
 
+[[step-2-of-9-configure-load-balancer-endpoint]]
 == 步驟 2 、共 9 步：設定負載平衡器端點
 
 StorageGRID 使用負載平衡器來管理用戶端應用程式（例如 FabricPool ）的工作負載。負載平衡可將多個儲存節點的速度和連線容量最大化。
@@ -347,6 +350,7 @@ FabricPool 用來連線至外部負載平衡器的連接埠號碼。
 
 
 
+[[step-3-of-9-tenant-and-bucket]]
 == 步驟 3 、共 9 步：租戶和貯體
 
 租戶是可以使用 S3 應用程式在 StorageGRID 中儲存及擷取物件的實體。每個租戶都有自己的使用者、存取金鑰、貯體、物件和一組特定功能。您必須先建立 StorageGRID 租戶、才能建立 FabricPool 將使用的貯體。
@@ -427,6 +431,7 @@ NOTE: 請勿選擇已啟用 S3 物件鎖定的貯體來搭配 FabricPool 使用�
 ====
 
 
+[[step-4-of-9-download-ontap-settings]]
 == 步驟 4 / 9 ：下載 ONTAP 設定
 
 在此步驟中、您可以下載檔案、以便在 ONTAP 系統管理員中輸入值。
@@ -457,6 +462,7 @@ CAUTION: 在複製兩個存取金鑰、下載 ONTAP 設定或兩者之前、請�
 
 
 
+[[step-5-of-9-select-a-storage-pool]]
 == 步驟 5 （共 9 步）：選擇一個儲存池
 
 儲存池是一組儲存節點。當您選取儲存池時、您會決定 StorageGRID 將使用哪些節點來儲存從 ONTAP 分層的資料。
@@ -474,6 +480,7 @@ CAUTION: 在複製兩個存取金鑰、下載 ONTAP 設定或兩者之前、請�
 
 
 
+[[step-6-of-9-review-ilm-rule-for-fabricpool]]
 == 第 6 步、共 9 步：檢閱 FabricPool 的 ILM 規則
 
 資訊生命週期管理（ ILM ）規則可控制 StorageGRID 系統中所有物件的放置、持續時間和擷取行為。
@@ -539,6 +546,7 @@ FabricPool 安裝精靈會自動建立建議的 ILM 規則以供 FabricPool 使�
 
 
 
+[[step-7-of-9-review-and-activate-ilm-policy]]
 == 第 7 步、共有 9 步：審查並啟動 ILM 原則
 
 在 FabricPool 安裝精靈建立 ILM 規則以供 FabricPool 使用之後，它會建立 ILM 原則。您必須先仔細模擬並檢閱此原則、然後再加以啟動。
@@ -578,6 +586,8 @@ CAUTION: ILM 原則中的錯誤可能導致無法修復的資料遺失。在啟�
 
 
 
+[[step-8-of-9-create-traffic-classification-policy]]
+[[traffic-classification]]
 == 步驟 8 （共 9 步）：建立流量分類原則
 
 FabricPool 設定精靈可選擇建立流量分類原則、以用於監控 FabricPool 工作負載。系統建立的原則會使用相符的規則來識別與您建立的貯體相關的所有網路流量。此原則僅監控流量、不會限制 FabricPool 或任何其他用戶端的流量。
@@ -595,6 +605,7 @@ FabricPool 設定精靈可選擇建立流量分類原則、以用於監控 Fabri
 
 
 
+[[step-9-of-9-review-summary]]
 == 步驟 9 之 9 ：檢視摘要
 
 此摘要提供您設定項目的詳細資料、包括負載平衡器、租戶和貯體的名稱、流量分類原則、以及作用中的 ILM 原則、
@@ -606,6 +617,7 @@ FabricPool 設定精靈可選擇建立流量分類原則、以用於監控 Fabri
 
 
 
+[[next-steps]]
 == 後續步驟
 
 完成 FabricPool 精靈後、請執行這些額外步驟。

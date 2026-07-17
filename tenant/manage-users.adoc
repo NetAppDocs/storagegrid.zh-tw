@@ -24,6 +24,7 @@ NOTE: 如果您的 StorageGRID 系統啟用單一登入（ SSO ）、本機使�
 
 
 
+[[create-usercreate-a-local-user]]
 == [[create-user]] 建立本機使用者
 
 您可以建立本機使用者並將其指派給一或多個本機群組、以控制其存取權限。
@@ -32,6 +33,7 @@ NOTE: 如果您的 StorageGRID 系統啟用單一登入（ SSO ）、本機使�
 
 
 
+[[access-the-create-user-wizard]]
 === 存取建立使用者精靈
 
 .步驟
@@ -47,6 +49,7 @@ image:grid-federation-tenant-user-banner.png["如果這是租戶來源網格、�
 
 
 
+[[enter-credentials]]
 === 輸入認證
 
 .步驟
@@ -93,6 +96,7 @@ image:grid-federation-tenant-user-banner.png["如果這是租戶來源網格、�
 
 
 
+[[assign-to-groups]]
 === 指派給群組
 
 .步驟
@@ -112,6 +116,7 @@ image:grid-federation-tenant-user-banner.png["如果這是租戶來源網格、�
 
 
 
+[[view-or-edit-local-user]]
 == 檢視或編輯本機使用者
 
 .步驟
@@ -172,6 +177,7 @@ image:grid-federation-tenant-user-banner.png["如果這是租戶來源網格、�
 
 
 
+[[import-federated-users]]
 == 導入聯合用戶
 
 您可以將一個或多個聯合使用者（最多 100 個使用者）直接匯入「使用者」頁面。
@@ -199,6 +205,7 @@ image:grid-federation-tenant-user-banner.png["如果這是租戶來源網格、�
 
 
 
+[[duplicate-local-user]]
 == 重複的本機使用者
 
 您可以複製本機使用者、以更快建立新使用者。
@@ -216,6 +223,7 @@ NOTE: 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、且�
 
 
 
+[[clone-usersretry-user-clone]]
 == [[clone-user]] 重試使用者複製
 
 若要重試失敗的複製：
@@ -229,6 +237,7 @@ NOTE: 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、且�
 
 
 
+[[delete-one-or-more-local-users]]
 == 刪除一或多個本機使用者
 
 您可以永久刪除不再需要存取 StorageGRID 租戶帳戶的一或多個本機使用者。

@@ -15,6 +15,7 @@ summary: 在啟用 StorageGRID 系統的單一登入之前、請先檢閱需求�
 
 
 
+[[identity-provider-requirements]]
 == 身分識別供應商要求
 
 支援下列SSO身分識別供應商（IDP）StorageGRID ：
@@ -49,6 +50,7 @@ Active Directory
 |===
 
 
+[[ad-fs-requirements]]
 === AD FS需求
 
 您可以使用下列任何版本的AD FS：
@@ -63,6 +65,7 @@ NOTE: Windows Server 2016 應使用 https://support.microsoft.com/en-us/help/320
 
 
 
+[[additional-requirements]]
 === 其他需求
 
 * 傳輸層安全性（TLS）1.2或1.3
@@ -71,12 +74,14 @@ NOTE: Windows Server 2016 應使用 https://support.microsoft.com/en-us/help/320
 
 
 
+[[considerations-for-entra-id]]
 === Entra ID 的注意事項
 
 如果您使用 Entra ID 作為 SSO 類型，且使用者的使用者主體名稱不使用 sAMAccountName 作為前綴，則當StorageGRID與 LDAP 伺服器失去連線時，可能會發生登入問題。若要允許使用者登入，您必須恢復與 LDAP 伺服器的連線。
 
 
 
+[[server-certificate-requirements]]
 == 伺服器憑證需求
 
 預設情況下， StorageGRID在每個管理節點上使用管理介面憑證來保護對網格管理器、租用戶管理員、網格管理 API 和租用戶管理 API 的存取。為StorageGRID設定信賴方信任 (AD FS)、企業應用程式 (Entra ID) 或服務供應商連線 (PingFederate) 時，您可以使用伺服器憑證作為StorageGRID要求的簽章憑證。
@@ -90,6 +95,7 @@ NOTE: 不建議在依賴方信任、企業應用程式或SP連線中使用管理
 
 
 
+[[port-requirements]]
 == 連接埠需求
 
 單一登入（SSO）無法在受限網格管理器或租戶管理器連接埠上使用。如果您想要使用者透過單一登入進行驗證、則必須使用預設的HTTPS連接埠（443）。請參閱。 link:controlling-access-through-firewalls.html["控制外部防火牆的存取"]

@@ -35,6 +35,7 @@ StorageGRID 提供選用的 Python 指令碼、可將 StorageGRID 應用裝置�
 
 
 
+[[automate-the-installation-and-configuration-of-the-storagegrid-host-service]]
 == 自動化StorageGRID 安裝及設定整套的支援服務
 
 您可以StorageGRID 使用Ansible、Puppet、Chef、Fabric或SaltStack等標準協調架構來自動化安裝支援服務。
@@ -45,6 +46,7 @@ StorageGRID主機服務打包在 DEB（Ubuntu 或 Debian）或 RPM（RHEL）中�
 
 
 
+[[example-ansible-role-and-playbook]]
 === Ansible角色與方針範例
 
 範例 Ansible 角色和教戰手冊隨附於資料夾中的安裝封存 `/extras`。Ansible 教戰手冊說明角色如何 `storagegrid`準備主機、並將 StorageGRID 安裝到目標伺服器上。您可以視需要自訂角色或方針。
@@ -75,6 +77,7 @@ NOTE: 範例播放手冊不包含在開始StorageGRID 執行「支援服務」�
 ====
 
 
+[[automate-the-configuration-of-storagegrid]]
 == 自動化StorageGRID 功能組態
 
 部署完網格節點之後、您可以自動化StorageGRID 設定該系統。

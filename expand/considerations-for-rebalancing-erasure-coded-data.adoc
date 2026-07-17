@@ -17,6 +17,7 @@ summary: 如果您正在執行擴充以新增儲存節點、並使用 ILM 規則
 
 
 
+[[what-is-ec-rebalancing]]
 == 什麼是EC重新平衡？
 
 EC重新平衡StorageGRID 是擴充儲存節點之後可能需要的一個過程。此程序會以命令列指令碼形式從主要管理節點執行。當您執行 EC 重新平衡程序時、 StorageGRID 會在站台的現有儲存節點和新新增的儲存節點之間重新分配銷毀編碼片段。
@@ -52,6 +53,7 @@ image:used_space_with_larger_node.png["擴充前已用空間"]
 
 
 
+[[when-to-rebalance-erasure-coded-data]]
 == 何時重新平衡銷毀編碼資料
 
 EC 重新平衡程序重新分配現有的擦除編碼數據，以確保節點不會變滿或保持滿狀態。該程序有助於確保 EC 編碼能夠在網站上繼續進行。
@@ -70,6 +72,7 @@ image:used_space_before_expansion.png["擴充前已用空間"]
 
 
 
+[[rebalance-is-not-required-if-you-add-enough-nodes]]
 === 如果您新增了足夠的節點、則不需要重新平衡
 
 若要瞭解何時不需要 EC 重新平衡、請假設您新增了三個（或更多）新的儲存節點。在這種情況下、您不需要執行 EC 重新平衡。原始儲存節點將保持完整狀態、但新物件現在將使用三個新節點來進行 2+1 銷毀編碼和 #8212 ；兩個資料片段和一個同位元區隔片段都可以儲存在不同的節點上。
@@ -81,6 +84,7 @@ CAUTION: 雖然您可以在此案例中執行 EC 重新平衡程序、但移動�
 
 
 
+[[rebalance-is-required-if-you-cant-add-enough-nodes]]
 === 如果您無法新增足夠的節點、則需要重新平衡
 
 若要瞭解何時需要 EC 重新平衡、假設您只能新增兩個儲存節點、而不能新增三個。由於 2+1 配置需要至少三個儲存節點才能有可用空間、因此無法將空節點用於新的銷毀編碼資料。
@@ -93,6 +97,7 @@ image:used_space_after_ec_rebalance.png["EC重新平衡後的已用空間"]
 
 
 
+[[recommendations-for-ec-rebalancing]]
 == EC 重新平衡的建議
 
 如果下列陳述中的所有陳述均正確、則 NetApp 需要 EC 重新平衡：
@@ -107,6 +112,7 @@ image:used_space_after_ec_rebalance.png["EC重新平衡後的已用空間"]
 
 
 
+[[how-ec-rebalance-procedure-interacts-with-other-maintenance-tasks]]
 == EC重新平衡程序如何與其他維護工作互動
 
 您無法在執行 EC 重新平衡程序的同時執行某些維護程序。
@@ -184,6 +190,7 @@ EC資料修復工作
 |===
 
 
+[[how-ec-rebalance-procedure-interacts-with-ilm]]
 == EC重新平衡程序如何與ILM互動
 
 當EC重新平衡程序正在執行時、請避免變更ILM、以免變更現有銷毀編碼物件的位置。例如、請勿開始使用具有不同銷毀編碼設定檔的 ILM 規則。如果您需要進行此類 ILM 變更、您應該終止 EC 重新平衡程序。

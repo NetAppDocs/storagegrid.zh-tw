@@ -17,6 +17,7 @@ summary: 您可以找出 S3 API 專屬稽核訊息、以識別稽核記錄中的
 
 
 
+[[s3-retrieval-audit-messages]]
 == S3擷取稽核訊息
 
 [cols="1a,1a,2a,1a,1a"]
@@ -38,6 +39,7 @@ link:sget-s3-get.html["SGET：S3取得"]
 |===
 
 
+[[example-s3-object-retrieval]]
 == 範例：S3物件擷取
 
 當S3用戶端從儲存節點（LMR服務）擷取物件時、會產生稽核訊息並儲存至稽核記錄。
@@ -46,6 +48,7 @@ link:sget-s3-get.html["SGET：S3取得"]
 
 
 
+[[sget-s3-get]]
 === SGET：S3取得
 
 當用戶端將 GetObject 要求傳送至 LDR 服務時、就會開始物件擷取。訊息包含用來擷取物件的儲存區、以及用來識別物件的S3金鑰。
@@ -64,6 +67,7 @@ link:sget-s3-get.html["SGET：S3取得"]
 ----
 
 
+[[example-s3-select-on-an-object]]
 == 範例：在物件上選取S3
 
 當S3用戶端對物件發出S3 Select查詢時、會產生稽核訊息並儲存至稽核記錄。

@@ -28,6 +28,7 @@ summary: '您可以新增、刪除和更新 DNS 伺服器，以便使用完整�
 
 
 
+[[add-a-dns-server]]
 == 新增 DNS 伺服器
 
 請依照下列步驟新增 DNS 伺服器。
@@ -40,6 +41,7 @@ summary: '您可以新增、刪除和更新 DNS 伺服器，以便使用完整�
 
 
 
+[[modify-a-dns-server]]
 == 修改 DNS 伺服器
 
 請依照下列步驟修改 DNS 伺服器。
@@ -52,6 +54,7 @@ summary: '您可以新增、刪除和更新 DNS 伺服器，以便使用完整�
 
 
 
+[[delete-a-dns-server]]
 == 刪除 DNS 伺服器
 
 請依照下列步驟刪除 DNS 伺服器的 IP 位址。

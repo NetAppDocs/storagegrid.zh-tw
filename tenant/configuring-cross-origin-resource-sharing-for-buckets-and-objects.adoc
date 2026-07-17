@@ -25,6 +25,7 @@ summary: 如果您想讓其他網域中的 Web 應用程式能夠存取 S3 貯�
 
 
 
+[[enable-cors-for-a-bucket]]
 == 為貯體啟用 CORS
 
 .步驟
@@ -70,6 +71,7 @@ summary: 如果您想讓其他網域中的 Web 應用程式能夠存取 S3 貯�
 
 
 
+[[modify-cors-setting]]
 == 修改 CORS 設定
 
 .步驟
@@ -79,6 +81,7 @@ summary: 如果您想讓其他網域中的 Web 應用程式能夠存取 S3 貯�
 
 
 
+[[disable-cors-setting]]
 == 停用 CORS 設定
 
 .步驟

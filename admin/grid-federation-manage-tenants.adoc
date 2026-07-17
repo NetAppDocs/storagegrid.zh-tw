@@ -23,6 +23,7 @@ summary: 您可以允許 S3 租戶帳戶在兩個 StorageGRID 系統之間使用
 
 
 
+[[create-a-permitted-tenant]]
 == 建立允許的租戶
 
 如果您想要允許新的或現有的租戶帳戶使用網格同盟連線來進行帳戶複製和跨網格複寫、請遵循或link:editing-tenant-account.html["編輯租戶帳戶"]的一般指示、link:creating-tenant-account.html["建立新的 S3 租戶"]並注意下列事項：
@@ -47,6 +48,7 @@ TIP: 本機根使用者必須先登入目的地網格上複寫的租用戶、該
 
 
 
+[[view-a-permitted-tenant]]
 == 檢視允許的租戶
 
 您可以查看允許使用網格同盟連線之租用戶的詳細資料。
@@ -65,6 +67,7 @@ image:grid-federation-tenant-detail.png["租戶詳細資料頁面中的網格同
 
 
 
+[[edit-a-permitted-tenant]]
 == 編輯允許的租戶
 
 如果您需要編輯具有「 * 使用網格同盟連線 * 」權限的租用戶、請遵循的一般指示、link:editing-tenant-account.html["編輯租戶帳戶"]並注意下列事項：
@@ -76,6 +79,7 @@ image:grid-federation-tenant-detail.png["租戶詳細資料頁面中的網格同
 
 
 
+[[delete-a-permitted-tenant]]
 == 刪除允許的租戶
 
 如果您需要移除具有「 * 使用網格同盟連線 * 」權限的租用戶、請遵循的一般指示、link:deleting-tenant-account.html["刪除租戶帳戶"]並注意下列事項：
@@ -92,6 +96,7 @@ image:grid-federation-tenant-detail.png["租戶詳細資料頁面中的網格同
 
 
 
+[[remove-grid-federation-connection-permissionremove-use-grid-federation-connection-permission]]
 == [[remove-grid 聯合連線權限 ]] 移除使用網格同盟連線權限
 
 若要防止租戶使用網格同盟連線、您必須移除 * 使用網格同盟連線 * 權限。
@@ -115,6 +120,7 @@ NOTE: 重新啟用「 * 使用網格同盟連線 * 」權限、可讓本機網�
 
 
 
+[[disable-replication-for-tenant-buckets]]
 === 停用租戶貯體的複寫
 
 第一步是停用所有租戶貯體的跨網格複寫。
@@ -133,6 +139,7 @@ TIP: 如果任何租戶貯體已啟用跨網格複寫、則無法移除 * 使用
 
 
 
+[[remove-permission-for-tenant]]
 === 移除租戶權限
 
 停用租戶貯體的跨網格複寫之後、您可以移除租戶使用網格同盟連線的權限。
@@ -184,6 +191,7 @@ image:grid-federation-remove-permission-error.png["如果租戶已啟用貯體�
 
 
 
+[[forceremovepermissionremove-the-permission-by-force]]
 == [[force_remove_permission]] 強制移除權限
 
 如有必要、您可以強制移除租戶使用網格同盟連線的權限、即使租戶區已啟用跨網格複寫。

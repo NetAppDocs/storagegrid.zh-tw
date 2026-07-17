@@ -15,6 +15,7 @@ ILM 原則模擬範例提供了建構及修改環境模擬的準則。
 
 
 
+[[example-1-verify-rules-when-simulating-an-ilm-policy]]
 == 範例 1 ：模擬 ILM 原則時驗證規則
 
 此範例說明如何在模擬原則時驗證規則。
@@ -39,6 +40,7 @@ image:simulate_policy_screen.png["模擬原則結果"]
 
 
 
+[[example-2-reorder-rules-when-simulating-an-ilm-policy]]
 == 範例 2 ：模擬 ILM 原則時重新排序規則
 
 此範例說明如何在模擬原則時重新排序規則、以變更結果。
@@ -81,6 +83,7 @@ image:simulate_reorder_rules_correct_result.png["範例 2 ：模擬 ILM 原則�
 
 
 
+[[example-3-correct-a-rule-when-simulating-an-ilm-policy]]
 == 範例 3 ：模擬 ILM 原則時修正規則
 
 此範例說明如何模擬原則、修正原則中的規則、以及繼續模擬。

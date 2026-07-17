@@ -34,6 +34,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[create-a-high-availability-group]]
 == 建立高可用度群組
 
 當您建立高可用度群組時、請選取一或多個介面、然後依優先順序加以組織。然後、您將一個或多個VIP位址指派給群組。
@@ -42,6 +43,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[access-the-wizard]]
 === 存取精靈
 
 .步驟
@@ -51,6 +53,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[enter-details-for-the-ha-group]]
 === 輸入HA群組的詳細資料
 
 .步驟
@@ -61,6 +64,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[add-interfaces-to-the-ha-group]]
 === 新增介面至HA群組
 
 .步驟
@@ -95,6 +99,7 @@ image:vlan_parent_interface_tooltip.png["VLAN介面工具秘訣"]
 
 
 
+[[determine-the-priority-order]]
 === 決定優先順序
 
 如果 HA 群組包含多個介面、您可以判斷哪個是主要介面、哪些是備份（容錯移轉）介面。如果主要介面故障、 VIP 位址會移至可用的最高優先順序介面。如果該介面故障、VIP位址會移至下一個可用的最高優先順序介面、依此類推。
@@ -116,6 +121,7 @@ TIP: 如果HA群組可存取Grid Manager、則您必須在主要管理節點上�
 
 
 
+[[enter-ip-addresses]]
 === 輸入IP位址
 
 .步驟
@@ -146,12 +152,14 @@ HA群組隨即建立、您現在可以使用已設定的虛擬IP位址。
 
 
 
+[[next-steps]]
 === 後續步驟
 
 如果您要使用此HA群組進行負載平衡、請建立負載平衡器端點、以判斷連接埠和網路傳輸協定、並附加任何必要的憑證。請參閱。 link:configuring-load-balancer-endpoints.html["設定負載平衡器端點"]
 
 
 
+[[edit-a-high-availability-group]]
 == 編輯高可用度群組
 
 您可以編輯高可用度（HA）群組、以變更其名稱和說明、新增或移除介面、變更優先順序、或新增或更新虛擬IP位址。
@@ -194,6 +202,7 @@ NOTE: 如果HA群組可存取Grid Manager、則您必須在主要管理節點上
 
 
 
+[[remove-a-high-availability-group]]
 == 移除高可用度群組
 
 您可以一次移除一或多個高可用度（HA）群組。

@@ -15,12 +15,14 @@ summary: 您可以使用 S3 CopyObject 要求來建立已儲存在 S3 中的物�
 
 
 
+[[resolve-conflicts]]
 == 解決衝突
 
 衝突的用戶端要求（例如兩個寫入同一個金鑰的用戶端）會以「最新致勝」的方式解決。「最新致勝」評估的時間取決於StorageGRID 何時由VMware系統完成指定的要求、而非S3用戶端開始作業的時間。
 
 
 
+[[object-size]]
 == 物件大小
 
 單一 PutObject 作業的最大大小 _ 建議 _ 為 5 GiB （ 5 、 368 、 709 、 120 位元組）。如果物件大於 5 GiB 、請改用link:operations-for-multipart-uploads.html["多部分上傳"]。
@@ -32,6 +34,7 @@ NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳�
 
 
 
+[[utf-8-characters-in-user-metadata]]
 == 使用者中繼資料中的UTF-8字元
 
 如果要求在使用者定義的中繼資料金鑰名稱或值中包含（未轉義）utf-8值、StorageGRID 則無法定義任何不正常的行為。
@@ -44,6 +47,7 @@ NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳�
 
 
 
+[[supported-request-headers]]
 == 支援的要求標頭
 
 支援下列要求標頭：
@@ -92,6 +96,7 @@ NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳�
 
 
 
+[[unsupported-request-headers]]
 == 不支援的要求標頭
 
 不支援下列要求標頭：
@@ -118,6 +123,7 @@ NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳�
 
 
 
+[[storage-class-options]]
 == 儲存類別選項
 
  `x-amz-storage-class`如果匹配的 ILM 規則使用雙提交或平衡，則會支持請求標頭link:../ilm/data-protection-options-for-ingest.html["擷取選項"]，並影響 StorageGRID 創建的對象複製數量。
@@ -138,6 +144,7 @@ NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體�
 
 
 
+[[using-x-amz-copy-source-in-copyobject]]
 == 在 CopyObject 中使用 x-amz-copy-source
 
 如果在標頭中指定的來源貯體和金鑰與目的地貯體和金鑰不同、則 `x-amz-copy-source`會將來源物件資料的複本寫入目的地。
@@ -153,6 +160,7 @@ NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體�
 
 
 
+[[request-headers-for-server-side-encryption]]
 == 要求伺服器端加密的標頭
 
 如果link:using-server-side-encryption.html["使用伺服器端加密"]是、您提供的要求標頭取決於來源物件是否已加密、以及您是否打算加密目標物件。
@@ -188,6 +196,7 @@ NOTE:  `server-side-encryption`物件的值無法更新。相反，請使用以�
 
 
 
+[[versioning]]
 == 版本管理
 
 如果來源貯體已版本化、您可以使用 `x-amz-copy-source`標頭來複製物件的最新版本。若要複製物件的特定版本、您必須使用 SubResource 明確指定要複製的版本 `versionId`。如果目的地貯體已版本化、則會在回應標頭中傳回產生的版本 `x-amz-version-id`。如果目標貯體的版本設定已暫停、則 `x-amz-version-id`會傳回「 null 」值。

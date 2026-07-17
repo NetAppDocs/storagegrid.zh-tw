@@ -22,6 +22,7 @@ image:tenant_dashboard_with_buckets.png["儀表板-目標清單"]
 
 
 
+[[tenant-account-information]]
 == 租戶帳戶資訊
 
 儀表板頂端會顯示已設定的貯體或容器、群組和使用者數目。如果已設定任何平台服務端點、也會顯示其數量。選取連結以檢視詳細資料。
@@ -30,6 +31,7 @@ image:tenant_dashboard_with_buckets.png["儀表板-目標清單"]
 
 
 
+[[storage-and-quota-usage]]
 == 儲存設備與配額使用量
 
 「儲存設備」使用面板包含下列資訊：
@@ -64,6 +66,7 @@ NOTE: 若要變更租戶管理程式中顯示的儲存值單位、請選取租�
 
 
 
+[[quota-usage-alerts]]
 == 配額使用量警示
 
 如果 Grid Manager 已啟用配額使用量警示、則當配額不足或超過時、這些警示會顯示在租戶管理程式中、如下所示：
@@ -77,6 +80,7 @@ NOTE: 若要變更租戶管理程式中顯示的儲存值單位、請選取租�
 
 
 
+[[bucket-capacity-usagecapacity-limit-usage]]
 == [[bucker-capity-usage]] 容量限制使用
 
 如果您已為貯體設定容量限制、租戶管理器儀表板會依容量限制使用量顯示最大貯體清單。
@@ -85,6 +89,7 @@ NOTE: 若要變更租戶管理程式中顯示的儲存值單位、請選取租�
 
 
 
+[[endpoint-errors]]
 == 端點錯誤
 
 如果您使用 Grid Manager 來設定一個或多個端點以搭配平台服務使用、租戶管理程式儀表板會在過去七天內發生任何端點錯誤時、顯示警示。

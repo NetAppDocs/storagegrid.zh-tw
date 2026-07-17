@@ -21,6 +21,7 @@ summary: 「Get Storage使用量」要求會告訴您某個帳戶所使用的總
 
 
 
+[[request-example]]
 == 申請範例
 
 [listing, subs="specialcharacters,quotes"]
@@ -32,6 +33,7 @@ Host: _host_
 ----
 
 
+[[response-example]]
 == 回應範例
 
 此範例顯示一個帳戶、其中兩個儲存區中有四個物件和12個位元組的資料。每個儲存區包含兩個物件和六個位元組的資料。
@@ -67,6 +69,7 @@ Content-Type: application/xml
 ----
 
 
+[[versioning]]
 == 版本管理
 
 儲存的每個物件版本都會影響 `ObjectCount`回應中的和 `DataBytes`值。刪除標記不會新增至 `ObjectCount`總計。

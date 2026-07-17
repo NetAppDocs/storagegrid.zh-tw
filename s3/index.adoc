@@ -17,6 +17,7 @@ S3 REST API 的支援可讓您將專為 S3 Web 服務開發的服務導向應用
 
 
 
+[[supported-versions]]
 == 支援的版本
 
 StorageGRID支援以下特定版本的 STS、S3 和 HTTP：
@@ -56,6 +57,8 @@ https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616：超文字傳輸�
 |===
 
 
+[[updates-to-s3-rest-api-support]]
+[[updates-to-rest-api-support]]
 == S3 REST API 支援的更新
 
 [cols="1a,4a"]

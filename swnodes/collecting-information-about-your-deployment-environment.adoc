@@ -18,6 +18,7 @@ NOTE: 更有效率的做法是對所有節點執行單一安裝、而非現在�
 
 
 
+[[vmware-information]]
 == VMware資訊
 
 您必須存取部署環境、並收集有關VMware環境、為Grid、Admin和Client Networks建立的網路、以及您計畫用於儲存節點的儲存Volume類型的資訊。
@@ -33,6 +34,7 @@ NOTE: VMware Live VMotion會使虛擬機器時鐘時間跳過、而且不支援�
 
 
 
+[[grid-network-information]]
 == 網格網路資訊
 
 您必須收集StorageGRID 有關為「VMware Grid Network」（必填）所建立之VMware網路的資訊、包括：
@@ -48,6 +50,7 @@ NOTE: VMware Live VMotion會使虛擬機器時鐘時間跳過、而且不支援�
 
 
 
+[[admin-network-information]]
 == 管理網路資訊
 
 若節點將連線至選用StorageGRID 的「VMware管理網路」、您必須收集有關為此網路所建立的VMware網路的資訊、包括：
@@ -64,6 +67,7 @@ NOTE: VMware Live VMotion會使虛擬機器時鐘時間跳過、而且不支援�
 
 
 
+[[client-network-information]]
 == 用戶端網路資訊
 
 對於要連線至選用StorageGRID 的「VMware用戶端網路」的節點、您必須收集有關為此網路建立的VMware網路的資訊、包括：
@@ -75,6 +79,7 @@ NOTE: VMware Live VMotion會使虛擬機器時鐘時間跳過、而且不支援�
 
 
 
+[[information-about-additional-interfaces]]
 == 其他介面的相關資訊
 
 安裝節點之後、您可以選擇性地在vCenter中新增主幹或存取介面至VM。例如、您可能想要將主幹介面新增至管理或閘道節點、以便使用VLAN介面來分隔屬於不同應用程式或租戶的流量。或者、您可能想要新增存取介面、以便在高可用度（HA）群組中使用。
@@ -87,6 +92,7 @@ NOTE: VMware Live VMotion會使虛擬機器時鐘時間跳過、而且不支援�
 
 
 
+[[storage-volumes-for-virtual-storage-nodes]]
 == 虛擬儲存節點的儲存磁碟區
 
 您必須針對虛擬機器型儲存節點收集下列資訊：
@@ -96,6 +102,7 @@ NOTE: VMware Live VMotion會使虛擬機器時鐘時間跳過、而且不支援�
 
 
 
+[[grid-configuration-information]]
 == 網格組態資訊
 
 您必須收集資訊才能設定網格：

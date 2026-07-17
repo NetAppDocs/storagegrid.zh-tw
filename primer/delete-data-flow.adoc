@@ -15,6 +15,7 @@ summary: 當用戶端或租用戶執行刪除作業、或物件的生命週期�
 
 
 
+[[deletion-hierarchy]]
 == 刪除階層架構
 
 支援多種方法來控制何時保留或刪除物件。StorageGRID物件可以由用戶端要求刪除、也可以自動刪除。不只是用戶端刪除要求、而且S3物件鎖定設定的優先順序總是高於S3儲存區生命週期和ILM放置指示。StorageGRID
@@ -41,6 +42,7 @@ NOTE: 當 S3 貯體生命週期設定完成時、生命週期到期動作會覆�
 
 
 
+[[data-flow-for-client-deletes]]
 == 用戶端刪除的資料流
 
 image:delete_data_flow.png["用戶端刪除資料流程"]
@@ -52,6 +54,7 @@ image:delete_data_flow.png["用戶端刪除資料流程"]
 
 
 
+[[data-flow-for-ilm-deletes]]
 == ILM刪除的資料流
 
 image:automatic_deletion_data_flow.png["自動刪除資料流程"]

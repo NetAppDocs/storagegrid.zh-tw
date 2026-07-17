@@ -22,6 +22,7 @@ CAUTION: 您使用 API 文件網頁執行的任何 API 作業都是即時作業�
 
 
 
+[[storagegrid-installation-api]]
 == 安裝API StorageGRID
 
 StorageGRID 安裝 API 僅在您初次設定 StorageGRID 系統、以及需要執行主要管理節點還原時可用。安裝API可透過HTTPS從Grid Manager存取。

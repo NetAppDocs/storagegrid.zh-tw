@@ -19,6 +19,7 @@ summary: 如果建立或編輯租戶以使用網格同盟連線、則該租戶�
 
 
 
+[[tenant-workflow-for-account-clone]]
 == 帳戶複製的租戶工作流程
 
 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、請檢閱工作流程圖、查看您將執行哪些步驟來複製群組、使用者和 S3 存取金鑰。
@@ -57,12 +58,14 @@ image:grid-federation-account-clone-workflow-tm.png["帳戶複製的租戶工作
 
 
 
+[[how-are-groups-users-and-s3-access-keys-cloned]]
 == 如何複製群組、使用者和 S3 存取金鑰？
 
 請參閱本節、瞭解如何在租戶來源網格和租戶目的地網格之間複製群組、使用者和 S3 存取金鑰。
 
 
 
+[[local-groups-created-on-source-grid-are-cloned]]
 === 複製在來源網格上建立的本機群組
 
 建立租戶帳戶並複寫到目的地網格之後、 StorageGRID 會自動將您新增至租戶來源網格的任何本機群組、複製到租戶的目的地網格。
@@ -76,6 +79,7 @@ NOTE: 當您在來源網格上建立本機群組時所選取的任何使用者�
 
 
 
+[[local-users-created-on-source-grid-are-cloned]]
 === 複製在來源網格上建立的本機使用者
 
 當您在來源網格上建立新的本機使用者時， StorageGRID會自動將該使用者複製到目標網格。原始使用者及其複製使用者俱有相同的全名、使用者名稱和*拒絕存取*設定。兩個用戶也屬於同一組。有關說明，請參閱link:manage-users.html["管理使用者"]。
@@ -86,6 +90,7 @@ image:grid-federation-local-user-clone.png["顯示本機使用者已從來源網
 
 
 
+[[federated-groups-created-on-source-grid-are-cloned]]
 === 複製在來源網格上建立的同盟群組
 
 假設已符合使用和link:../admin/grid-federation-what-is-account-clone.html#account-clone-identity-federation["身分識別聯盟"]的帳戶複製需求link:../admin/grid-federation-what-is-account-clone.html#account-clone-sso["單一登入"]、您在來源網格上為租用戶建立（匯入）的同盟群組會自動複製到目的地網格上的租用戶。
@@ -98,6 +103,7 @@ image:grid-federation-federated-group-clone.png["顯示同盟群組已從來源�
 
 
 
+[[s3-access-keys-can-be-manually-cloned]]
 === S3 存取金鑰可以手動複製
 
 StorageGRID 不會自動複製 S3 存取金鑰、因為每個網格上都有不同的金鑰、因此安全性得到改善。
@@ -115,6 +121,7 @@ NOTE: 當您複製同盟使用者的 S3 存取金鑰時、使用者和 S3 存取
 
 
 
+[[groups-and-users-added-to-destination-grid-arent-cloned]]
 === 不會複製新增至目的地網格的群組和使用者
 
 只會從租戶的來源網格到租戶的目的地網格進行複製。如果您在租戶的目的地網格上建立或匯入群組和使用者、 StorageGRID 將不會將這些項目複製回租戶的來源網格。
@@ -123,6 +130,7 @@ image:grid-federation-account-not-cloned.png["顯示目的地網格詳細資料�
 
 
 
+[[edited-or-deleted-groups-users-and-access-keys-arent-cloned]]
 === 編輯或刪除的群組、使用者和存取金鑰不會複製
 
 只有在您建立新群組和使用者時、才會進行複製。

@@ -15,6 +15,7 @@ summary: 物件中繼資料容量StorageGRID 的功能可控制可儲存在該�
 
 
 
+[[what-is-object-metadata]]
 == 什麼是物件中繼資料？
 
 物件中繼資料是指描述物件的任何資訊。利用物件中繼資料來追蹤整個網格中所有物件的位置、並長期管理每個物件的生命週期。StorageGRID
@@ -32,6 +33,7 @@ summary: 物件中繼資料容量StorageGRID 的功能可控制可儲存在該�
 
 
 
+[[how-is-object-metadata-stored]]
 == 物件中繼資料如何儲存？
 
 此功能可在Cassandra資料庫中維護物件中繼資料、並獨立儲存物件資料。StorageGRID為了提供備援並保護物件中繼資料免於遺失、StorageGRID 我們在每個站台儲存系統中所有物件的三份中繼資料複本。
@@ -42,6 +44,7 @@ image:metadata_space_across_sites.png["跨站台的中繼資料空間"]
 
 
 
+[[where-is-object-metadata-stored]]
 == 物件中繼資料儲存在何處？
 
 此圖代表單一儲存節點的儲存磁碟區。
@@ -54,6 +57,7 @@ image:metadata_space_storage_node.png["中繼資料空間儲存節點"]
 
 
 
+[[metadata-reserved-space-setting]]
 == 中繼資料保留空間設定
 
 _中繼 資料保留空間 _ 是系統範圍的設定、代表將保留給每個儲存節點的磁碟區 0 上中繼資料的空間量。如表所示、此設定的預設值是根據：
@@ -111,6 +115,7 @@ _中繼 資料保留空間 _ 是系統範圍的設定、代表將保留給每個
 |===
 
 
+[[view-metadata-reserved-space-setting]]
 === 檢視中繼資料保留空間設定
 
 請依照下列步驟檢視 StorageGRID 系統的中繼資料保留空間設定。
@@ -126,6 +131,7 @@ _中繼 資料保留空間 _ 是系統範圍的設定、代表將保留給每個
 
 
 
+[[actual-reserved-space-for-metadata]]
 == 中繼資料的實際保留空間
 
 與系統範圍的中繼資料保留空間設定不同、物件中繼資料的實際保留空間 _ 是針對每個儲存節點所決定。對於任何指定的儲存節點、中繼資料的實際保留空間取決於節點的 Volume 0 大小和系統範圍的中繼資料保留空間設定。
@@ -156,6 +162,7 @@ _中繼 資料保留空間 _ 是系統範圍的設定、代表將保留給每個
 |===
 
 
+[[view-actual-reserved-space-for-metadata]]
 === 檢視中繼資料的實際保留空間
 
 請依照下列步驟、檢視特定儲存節點上的中繼資料實際保留空間。
@@ -173,6 +180,7 @@ image:storage_used_object_metadata_actual_reserved.png["使用的儲存設備-�
 
 
 
+[[example-for-actual-reserved-metadata-space]]
 === 實際保留的中繼資料空間範例
 
 假設您使用 11.7 版或更新版本來安裝新的 StorageGRID 系統。在此範例中、假設每個儲存節點的RAM超過128 GB、而儲存節點1（SN1）的Volume 0為6 TB。根據這些值：
@@ -183,6 +191,7 @@ image:storage_used_object_metadata_actual_reserved.png["使用的儲存設備-�
 
 
 
+[[allowed-metadata-space]]
 == 允許的中繼資料空間
 
 每個儲存節點的中繼資料實際保留空間、都會細分為物件中繼資料可用空間（_allowed中繼資料空間_）、以及必要資料庫作業（例如壓縮與修復）和未來硬體與軟體升級所需的空間。允許的中繼資料空間可控制整體物件容量。
@@ -191,6 +200,7 @@ image:metadata_allowed_space_volume_0.png["中繼資料允許空間Volume 0"]
 
 下表顯示StorageGRID 根據節點的記憶體容量和中繼資料的實際保留空間、如何針對不同的儲存節點計算*允許的中繼資料空間*。
 
+[[table-allowed-space-for-metadata]]
 [cols="1a,1a,2a,2a"]
 |===
 
@@ -232,6 +242,7 @@ image:metadata_allowed_space_volume_0.png["中繼資料允許空間Volume 0"]
 |===
 
 
+[[view-allowed-metadata-space]]
 === 檢視允許的中繼資料空間
 
 請遵循下列步驟、檢視儲存節點允許的中繼資料空間。
@@ -254,6 +265,7 @@ image:storage_used_object_metadata_allowed.png["使用的儲存設備-物件中�
 
 
 
+[[example-for-allowed-metadata-space]]
 == 允許的中繼資料空間範例
 
 假設您使用 11.6 版安裝 StorageGRID 系統。在此範例中、假設每個儲存節點的RAM超過128 GB、而儲存節點1（SN1）的Volume 0為6 TB。根據這些值：
@@ -265,6 +277,7 @@ image:storage_used_object_metadata_allowed.png["使用的儲存設備-物件中�
 
 
 
+[[how-storage-nodes-of-different-sizes-affect-object-capacity]]
 == 不同大小的儲存節點如何影響物件容量
 
 如上所述StorageGRID 、功能不均可在每個站台的儲存節點之間平均散佈物件中繼資料。因此、如果站台包含大小不同的儲存節點、站台上最小的節點就會決定站台的中繼資料容量。

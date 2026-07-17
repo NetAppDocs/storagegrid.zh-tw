@@ -15,6 +15,7 @@ summary: 跨網格複寫是在網格同盟連線中連接的兩個 StorageGRID �
 
 
 
+[[workflow-for-cross-grid-replication]]
 == 跨網格複寫的工作流程
 
 工作流程圖總結了在兩個網格上的儲存桶之間配置跨網格複製的步驟。
@@ -23,6 +24,7 @@ image:grid-federation-cgr-workflow.png["跨網格複寫工作流程"]
 
 
 
+[[requirements-for-cross-grid-replication]]
 == 跨網格複寫的需求
 
 如果租用戶帳戶具有使用網格聯合連線權限，則可以使用一個或多個link:grid-federation-overview.html["網格同盟連線"]，具有Root存取權限的租用戶用戶可以在每個網格上對應的租用戶帳戶中建立bucket。這些存儲桶：
@@ -40,12 +42,14 @@ link:../tenant/grid-federation-manage-cross-grid-replication.html["管理跨網�
 
 
 
+[[how-cross-grid-replication-works]]
 == 跨網格複寫的運作方式
 
 您可以將跨網格複製配置為單向或雙向進行。
 
 
 
+[[replication-in-one-direction]]
 === 單向複寫
 
 如果僅為一個網格上的儲存桶啟用跨網格複製，則新增至該儲存桶（來源儲存桶）的物件將複製到另一個網格上的對應儲存桶（目標儲存桶）。但是，新增到目標儲存桶的物件不會被複製回來源。圖中，啟用了跨網格複製 `my-bucket`從網格 1 到網格 2，但在另一個方向則無法啟用。
@@ -54,6 +58,7 @@ image:grid-federation-cross-grid-replication-one-direction.png["顯示單向網�
 
 
 
+[[replication-in-both-directions]]
 === 雙向複寫
 
 如果您在兩個網格上為相同的儲存格啟用跨網格複寫、則新增至任一儲存格的物件都會複寫至其他網格。在圖中、雙向啟用跨網格複寫 `my-bucket`。
@@ -62,6 +67,7 @@ image:grid-federation-cross-grid-replication.png["影像顯示複寫的單一方
 
 
 
+[[what-happens-when-objects-are-ingested]]
 === 擷取物件時會發生什麼情況？
 
 當 S3 用戶端將物件新增至已啟用跨網格複寫的貯體時、會發生下列情況：
@@ -101,6 +107,7 @@ NOTE: StorageGRID不支援 `x-amz-replication-status`標頭。
 
 
 
+[[what-happens-when-objects-are-deleted]]
 === 刪除物件時會發生什麼情況？
 
 如中所述link:../primer/delete-data-flow.html["刪除資料流程"]， StorageGRID 可以刪除物件，原因如下：
@@ -144,6 +151,7 @@ NOTE: 如果您想要在網格之間保持物件刪除同步、請為兩個網�
 
 
 
+[[how-encrypted-objects-are-replicated]]
 === 加密物件的複寫方式
 
 當您使用跨網格複寫在網格之間複寫物件時、可以加密個別物件、使用預設的儲存格加密、或設定全網格加密。您可以在為貯體啟用跨網格複寫之前或之後、新增、修改或移除預設的貯體或全網格加密設定。
@@ -178,6 +186,8 @@ NOTE: SSE 不支援 AES-128。如果使用 *AES-128* 選項為來源網格啟用
 
 
 
+[[cross-grid-replication-with-s3-object-lock]]
+[[cgr-with-ol]]
 === 使用 S3 物件鎖定進行跨網格複製
 
 您可以在下列情況下配置啟用了 S3 物件鎖定的StorageGRID桶之間的跨網格複製。
@@ -230,6 +240,7 @@ NOTE: SSE 不支援 AES-128。如果使用 *AES-128* 選項為來源網格啟用
 
 
 
+[[putobjecttagging-and-deleteobjecttagging-arent-supported]]
 === 不支援 PutObjectTagged 和 DeleteObjectTagging
 
 已啟用跨網格複寫的貯體中的物件不支援 PutObjectTagged 和 DeleteObjectTagged 要求。
@@ -238,6 +249,7 @@ NOTE: SSE 不支援 AES-128。如果使用 *AES-128* 選項為來源網格啟用
 
 
 
+[[putobjectretention-and-putobjectlegalhold-arent-supported]]
 === 不支援 PutObjectRetention 和 PutObjectLegalHold
 
 對於啟用了跨網格複製的儲存桶中的對象，PutObjectRetention 和 PutObjectLegalHold 請求不完全支援。
@@ -246,6 +258,7 @@ NOTE: SSE 不支援 AES-128。如果使用 *AES-128* 選項為來源網格啟用
 
 
 
+[[how-segmented-objects-are-replicated]]
 === 分割物件的複寫方式
 
 來源網格的最大段大小適用於複製到目標網格的物件。當物件被複製到另一個網格時，兩個網格都會使用來源網格的*最大段大小*設定（*配置* > *系統* > *儲存選項*）。例如，假設來源網格的最大段大小為 1 GB，而目標網格的最大段大小為 50 MB。如果您在來源網格上提取一個 2 GB 的對象，則該對象將保存為兩個 1 GB 的段。它也會作為兩個 1 GB 的段複製到目標網格，儘管該網格的最大段大小為 50 MB。

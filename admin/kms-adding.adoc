@@ -25,6 +25,7 @@ summary: 您可以使用StorageGRID 「驗鑰管理伺服器」精靈來新增�
 
 
 
+[[step-1-kms-details]]
 == 步驟 1 ： KMS 詳細資料
 
 在新增金鑰管理伺服器精靈的步驟 1 （ KMS 詳細資料）中、您會提供 KMS 或 KMS 叢集的詳細資料。
@@ -96,6 +97,7 @@ KMS的完整網域名稱或IP位址。
 
 
 
+[[step-2-upload-server-certificate]]
 == 步驟 2 ：上傳伺服器憑證
 
 在新增金鑰管理伺服器精靈的步驟 2 （上傳伺服器憑證）中、您可以上傳 KMS 的伺服器憑證（或憑證套件）。伺服器憑證可讓外部KMS驗證自己StorageGRID 以供驗證。
@@ -115,6 +117,7 @@ NOTE: 如果您上傳了憑證套件組合、每個憑證的中繼資料都會�
 
 
 
+[[sg-create-keystep-3-upload-client-certificates]]
 == [[sg-cree-key]] 步驟 3 ：上傳用戶端憑證
 
 在新增金鑰管理伺服器精靈的步驟 3 （上傳用戶端憑證）中、您可以上傳用戶端憑證和用戶端憑證私密金鑰。用戶端憑證StorageGRID 可讓支援驗證本身到KMS。

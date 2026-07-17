@@ -25,6 +25,7 @@ StorageGRID SNMP 代理程式支援 SNMPv1 、 SNMPv2c 和 SNMPv3 。您可以�
 
 
 
+[[specify-basic-configuration]]
 == 指定基本組態
 
 首先、請啟用 StorageGRID SMNP 代理程式、並提供基本資訊。
@@ -79,6 +80,7 @@ StorageGRID SNMP 代理程式支援 SNMPv1 、 SNMPv2c 和 SNMPv3 。您可以�
 
 
 
+[[enter-community-strings]]
 == 輸入社群字串
 
 如果您使用 SNMPv1 或 SNMPv2c 、請填寫社群字串一節。
@@ -102,6 +104,7 @@ TIP: 為了確保 StorageGRID 系統的安全性、請勿使用「 public 」作
 
 
 
+[[selecttrapdestinationcreate-trap-destinations]]
 == [[SELECT （選取） TRAP_DESTIN] ：建立設陷目的地
 
 使用「其他組態」區段中的「設陷目的地」索引標籤、可定義 StorageGRID 設陷或通知通知通知的一個或多個目的地。當您啟用 SNMP 代理程式並選取 * 儲存 * 時、 StorageGRID 會在觸發警示時、將通知傳送至每個定義的目的地。也會針對支援的MIB-II實體（例如ifdown和coldStart）傳送標準通知。
@@ -277,6 +280,7 @@ USM使用者
 
 
 
+[[create-agent-addresses]]
 == 建立代理程式位址
 
 或者、您也可以使用「其他組態」區段中的「值機員位址」標籤來指定一或多個「接聽位址」。這些是 SNMP 代理程式可以接收查詢的 StorageGRID 位址。
@@ -344,6 +348,7 @@ SNMP代理程式的預設udp連接埠為161、但您可以輸入任何未使用�
 
 
 
+[[create-usm-userscreate-usm-users]]
 == [[create-USM-us者 ]] 建立 USM 使用者
 
 如果您使用的是 SNMPv3 、請使用「其他組態」區段中的 USM 使用者索引標籤、定義授權查詢 MIB 或接收設陷並通知的 USM 使用者。

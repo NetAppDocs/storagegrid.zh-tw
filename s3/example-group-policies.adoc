@@ -17,6 +17,7 @@ summary: 使用本節中的範例、為群組建置 StorageGRID 存取原則。
 
 
 
+[[example-set-group-policy-using-tenant-manager]]
 == 範例：使用租戶管理程式設定群組原則
 
 當您在租戶管理器中新增或編輯群組時、可以選取群組原則、以判斷此群組成員將擁有哪些 S3 存取權限。請參閱。 link:../tenant/creating-groups-for-s3-tenant.html["為S3租戶建立群組"]
@@ -33,6 +34,7 @@ summary: 使用本節中的範例、為群組建置 StorageGRID 存取原則。
 
 
 
+[[example-allow-group-full-access-to-all-buckets]]
 == 範例：允許群組完整存取所有儲存區
 
 在此範例中、除非庫位原則明確拒絕、否則群組的所有成員都可以完整存取租戶帳戶擁有的所有庫位。
@@ -51,6 +53,7 @@ summary: 使用本節中的範例、為群組建置 StorageGRID 存取原則。
 ----
 
 
+[[example-allow-group-read-only-access-to-all-buckets]]
 == 範例：允許群組唯讀存取所有儲存區
 
 在此範例中、除非資源庫原則明確拒絕、否則群組的所有成員都擁有S3資源的唯讀存取權。例如、此群組中的使用者可以列出物件並讀取物件資料、中繼資料和標記。
@@ -78,6 +81,7 @@ summary: 使用本節中的範例、為群組建置 StorageGRID 存取原則。
 ----
 
 
+[[example-allow-group-members-full-access-to-only-their-folder-in-a-bucket]]
 == 範例：允許群組成員完全存取儲存庫中的「資料夾」
 
 在此範例中、群組成員只能在指定的儲存區中列出及存取其特定資料夾（金鑰首碼）。請注意、在決定這些資料夾的隱私權時、應考慮其他群組原則和儲存區原則的存取權限。

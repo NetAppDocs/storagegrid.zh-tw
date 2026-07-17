@@ -23,6 +23,7 @@ summary: 安全證書是小型資料檔案、用於在StorageGRID 各個元件�
 
 充當某些連線（例如負載平衡器端點）的伺服器、或作為其他連線（例如CloudMirror複寫服務）的用戶端。StorageGRID
 
+[[gridca_details]]
 *預設Grid CA憑證*
 
 StorageGRID具有內建憑證授權單位 (CA)，可在系統安裝期間產生內部 Grid CA 憑證。預設情況下，使用 Grid CA 憑證來保護內部StorageGRID流量。外部憑證授權單位 (CA) 可以頒發完全符合您組織的資訊安全策略的自訂憑證。
@@ -41,6 +42,7 @@ NOTE: 此外、還包括所有網格上相同的作業系統CA憑證。StorageGR
 
 
 
+[[access-security-certificates]]
 == 存取安全性憑證
 
 您可以在StorageGRID 單一位置存取所有的資訊、以及每個憑證的組態工作流程連結。
@@ -195,12 +197,15 @@ NOTE: 如果您有link:admin-group-permissions.html["適當的權限"]，則只�
 
 
 
+[[security-certificate-details]]
 == 安全性憑證詳細資料
 
 每種安全性憑證類型如下所述、並提供實作指示的連結。
 
 
 
+[[management-interface-certificate]]
+[[adminclientcert_details]]
 === 管理介面認證
 
 [cols="1a,1a,1a,1a"]
@@ -224,6 +229,7 @@ link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[
 |===
 
 
+[[s3-api-certificate]]
 === S3 API 憑證
 
 [cols="1a,1a,1a,1a"]
@@ -243,12 +249,14 @@ link:configuring-custom-server-certificate-for-storage-node.html["設定 S3 API 
 |===
 
 
+[[grid-ca-certificate]]
 === Grid CA憑證
 
 請參閱<<gridca_details,預設Grid CA憑證說明>>。
 
 
 
+[[administrator-client-certificate]]
 === 系統管理員用戶端憑證
 
 [cols="1a,1a,1a,1a"]
@@ -272,6 +280,7 @@ link:configuring-administrator-client-certificates.html["設定用戶端憑證"]
 |===
 
 
+[[load-balancer-endpoint-certificate]]
 === 負載平衡器端點憑證
 
 [cols="1a,1a,1a,1a"]
@@ -297,6 +306,7 @@ link:configuring-administrator-client-certificates.html["設定用戶端憑證"]
 |===
 
 
+[[cloud-storage-pool-endpoint-certificate]]
 === 雲端儲存資源池端點憑證
 
 [cols="1a,1a,1a,1a"]
@@ -316,6 +326,7 @@ link:../ilm/creating-cloud-storage-pool.html["建立雲端儲存資源池"]
 |===
 
 
+[[email-alert-notification-certificate]]
 === 電子郵件警示通知憑證
 
 [cols="1a,1a,1a,1a"]
@@ -339,6 +350,7 @@ link:../monitor/email-alert-notifications.html["設定警示的電子郵件通�
 |===
 
 
+[[external-syslog-server-certificate]]
 === 外部syslog伺服器憑證
 
 [cols="1a,1a,1a,1a"]
@@ -360,6 +372,7 @@ link:../monitor/configure-log-management.html#use-external-syslog-server["使用
 |===
 
 
+[[grid-federation-certificategrid-federation-connection-certificate]]
 === [[grid-Federation 認證 ]] Grid 聯盟連線憑證
 
 [cols="1a,1a,1a,1a"]
@@ -381,6 +394,7 @@ link:../monitor/configure-log-management.html#use-external-syslog-server["使用
 |===
 
 
+[[identity-federation-certificate]]
 === 身分識別聯盟憑證
 
 [cols="1a,1a,1a,1a"]
@@ -400,6 +414,7 @@ link:using-identity-federation.html["使用身分識別聯盟"]
 |===
 
 
+[[key-management-server-kms-certificate]]
 === 金鑰管理伺服器（KMS）憑證
 
 [cols="1a,1a,1a,1a"]
@@ -419,6 +434,7 @@ link:kms-adding.html["新增金鑰管理伺服器（KMS）"]
 |===
 
 
+[[platform-services-endpoint-certificate]]
 === 平台服務端點憑證
 
 [cols="1a,1a,1a,1a"]
@@ -440,6 +456,7 @@ link:../tenant/editing-platform-services-endpoint.html["編輯平台服務端點
 |===
 
 
+[[single-sign-on-sso-certificate]]
 === 單一登入（SSO）憑證
 
 [cols="1a,1a,1a,1a"]
@@ -459,10 +476,12 @@ link:how-sso-works.html["設定單一登入"]
 |===
 
 
+[[certificate-examples]]
 == 憑證範例
 
 
 
+[[example-1-load-balancer-service]]
 === 範例1：負載平衡器服務
 
 在此範例中StorageGRID 、用作伺服器的是功能。
@@ -477,6 +496,7 @@ link:how-sso-works.html["設定單一登入"]
 
 
 
+[[example-2-external-key-management-server-kms]]
 === 範例2：外部金鑰管理伺服器（KMS）
 
 在此範例中StorageGRID 、由客戶扮演的角色就是

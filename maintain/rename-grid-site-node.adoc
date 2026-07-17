@@ -22,6 +22,7 @@ summary: 您可以使用此程序來新增或更新用於網格、站台和節�
 
 
 
+[[how-to-rename-grid-sites-or-nodes]]
 == 如何重新命名網格、站台或節點
 
 您可以重新命名 StorageGRID 系統、一個或多個站台、或是一個或多個節點。
@@ -30,6 +31,7 @@ summary: 您可以使用此程序來新增或更新用於網格、站台和節�
 
 
 
+[[select-items-to-rename]]
 === 選取要重新命名的項目
 
 若要開始、請選取您要重新命名的項目。
@@ -93,6 +95,7 @@ summary: 您可以使用此程序來新增或更新用於網格、站台和節�
 
 
 
+[[propose-new-names]]
 === 提出新名稱
 
 對於 * 建議新名稱 * 步驟、您可以分別為每個項目輸入顯示名稱、或是大量重新命名項目。
@@ -161,6 +164,7 @@ image:rename-bulk-rename-tool-after.png["之後大量重新命名工具"]
 ====
 
 
+[[download-recovery-packagedownload-the-recovery-package]]
 === [[download-recovery-package]]下載復原包
 
 完成重新命名專案後，下載並儲存新的復原包。您重新命名的項目的新顯示名稱包含在 `Passwords.txt`文件。
@@ -182,6 +186,7 @@ CAUTION: 復原包檔案必須是安全的，因為它包含可用於從StorageG
 
 
 
+[[revert-display-names-back-to-system-names]]
 == 將顯示名稱回復為系統名稱
 
 您可以將重新命名的網格、站台或節點還原為其原始系統名稱。當您將項目還原為其系統名稱時、 Grid Manager 頁面和其他 StorageGRID 位置不會再顯示該項目的 * 顯示名稱 * 。只會顯示項目的系統名稱。

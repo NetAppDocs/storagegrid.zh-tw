@@ -43,6 +43,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[automate-the-installation]]
 == 自動化安裝
 
 

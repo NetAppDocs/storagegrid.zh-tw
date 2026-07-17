@@ -20,6 +20,7 @@ summary: 您可以使用 S3 設定精靈、將 StorageGRID 設定為 S3 應用�
 
 
 
+[[access-the-wizard]]
 == 存取精靈
 
 .步驟
@@ -33,6 +34,7 @@ image:help_menu.png["說明功能表"]
 
 
 
+[[step-1-of-6-configure-ha-group]]
 == 步驟 6 之 1 ：設定 HA 群組
 
 HA 群組是每個節點包含 StorageGRID 負載平衡器服務的集合。HA 群組可以包含閘道節點、管理節點或兩者。
@@ -135,6 +137,7 @@ HA 群組名稱
 
 
 
+[[step-2-of-6-configure-load-balancer-endpoint]]
 == 步驟 2 、共 6 步：設定負載平衡器端點
 
 StorageGRID 使用負載平衡器從用戶端應用程式管理工作負載。負載平衡可將多個儲存節點的速度和連線容量最大化。
@@ -334,6 +337,7 @@ S3 應用程式用來連線到外部負載平衡器的連接埠編號。
 ====
 
 
+[[step-3-of-6-create-tenant-and-bucket]]
 == 步驟 3 、共 6 步：建立租戶和貯體
 
 租戶是可以使用 S3 應用程式在 StorageGRID 中儲存及擷取物件的實體。每個租戶都有自己的使用者、存取金鑰、貯體、物件和一組特定功能。
@@ -401,6 +405,7 @@ TIP: 如果已啟用網格的 S3 物件鎖定功能、則在此步驟建立的�
 
 
 
+[[download-datastep-4-of-6-download-data]]
 == [[download-data]] 步驟 4 、共 6 步：下載資料
 
 在下載資料步驟中、您可以下載一或兩個檔案、以儲存您剛設定的詳細資料。
@@ -424,6 +429,7 @@ CAUTION: 在複製兩個存取金鑰之前、請勿關閉此頁面。關閉此�
 
 
 
+[[step-5-of-6-review-ilm-rule-and-ilm-policy-for-s3]]
 == 第 5 步、共 6 步：審查 S3 的 ILM 規則和 ILM 原則
 
 資訊生命週期管理（ ILM ）規則可控制 StorageGRID 系統中所有物件的放置、持續時間和擷取行為。StorageGRID 隨附的 ILM 原則會為所有物件建立兩個複寫複本。此原則會生效、直到您至少啟動一個新原則為止。
@@ -438,6 +444,7 @@ CAUTION: 在複製兩個存取金鑰之前、請勿關閉此頁面。關閉此�
 
 
 
+[[step-6-of-6-review-summary]]
 == 步驟 6 之 6 ：檢視摘要
 
 .步驟

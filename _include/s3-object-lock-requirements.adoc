@@ -4,6 +4,7 @@
 
 
 
+[[requirements-for-buckets-with-s3-object-lock-enabled]]
 == 啟用S3物件鎖定的儲存區需求
 
 * 如果StorageGRID 已針對整個S3物件鎖定設定啟用for the S廳 系統、您可以使用租戶管理程式、租戶管理API或S3 REST API來建立啟用S3物件鎖定的儲存區。
@@ -16,6 +17,7 @@
 
 
 
+[[requirements-for-objects-in-buckets-with-s3-object-lock-enabled]]
 == 啟用S3物件鎖定之儲存區中的物件需求
 
 * 若要保護物件版本、您可以指定貯體的預設保留設定、或是指定每個物件版本的保留設定。可以使用 S3 用戶端應用程式或 S3 REST API 來指定物件層級保留設定。
@@ -24,6 +26,7 @@
 
 
 
+[[lifecycle-of-objects-in-buckets-with-s3-object-lock-enabled]]
 == 啟用S3物件鎖定的儲存區物件生命週期
 
 儲存在已啟用 S3 物件鎖定的儲存貯體中的每個物件都會經過下列階段：

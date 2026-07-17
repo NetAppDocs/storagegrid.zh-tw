@@ -15,6 +15,7 @@ summary: 平台服務中使用的端點由租用戶使用者在 Tenant Manager �
 
 
 
+[[issues-with-new-endpoints]]
 == 新端點的問題
 
 租戶必須先使用租戶管理程式建立一或多個端點、才能使用平台服務。每個端點代表一個平台服務的外部目的地、例如 StorageGRID S3 儲存庫、 Amazon Web Services 儲存庫、 Amazon Simple Notification Service 主題、 Kafka 主題、或本地或 AWS 上託管的 ElasticSearch 叢集。每個端點都包括外部資源的位置、以及存取該資源所需的認證資料。
@@ -28,6 +29,7 @@ NOTE: 如果未啟用租戶帳戶的平台服務、端點建立將會失敗。
 
 
 
+[[issues-with-existing-endpoints]]
 == 現有端點的問題
 
 如果 StorageGRID 嘗試連線至現有端點時發生錯誤、租戶管理程式的儀表板上會顯示訊息。
@@ -43,18 +45,21 @@ NOTE: *最後一個錯誤*欄中的某些錯誤訊息可能會在括弧中包含
 
 
 
+[[issues-related-to-proxy-servers]]
 == 與Proxy伺服器相關的問題
 
 如果您已配置link:configuring-storage-proxy-settings.html["儲存代理伺服器"]在儲存節點和平台服務端點之間，如果您的代理服務不允許來自StorageGRID的訊息，則可能會發生錯誤。若要解決這些問題，請檢查代理伺服器的設置，以確保與平台服務相關的訊息不會被封鎖。
 
 
 
+[[determine-if-an-error-has-occurred]]
 == 確定是否發生錯誤
 
 如果過去 7 天內發生任何端點錯誤、租戶管理程式中的儀表板會顯示警示訊息。您可以前往「端點」頁面、查看更多錯誤的詳細資料。
 
 
 
+[[client-operations-fail]]
 == 用戶端作業失敗
 
 某些平台服務問題可能會導致S3儲存區上的用戶端作業失敗。例如、如果內部複寫狀態機器（RSM）服務停止、或是有太多平台服務訊息排入佇列等待傳送、S3用戶端作業就會失敗。
@@ -68,6 +73,7 @@ NOTE: *最後一個錯誤*欄中的某些錯誤訊息可能會在括弧中包含
 
 
 
+[[recoverable-and-unrecoverable-endpoint-errors]]
 == 可恢復和不可恢復的端點錯誤
 
 建立端點之後、平台服務要求可能會因為各種原因而發生錯誤。使用者介入可恢復部分錯誤。例如、可能會發生可恢復的錯誤、原因如下：
@@ -94,6 +100,7 @@ NOTE: *最後一個錯誤*欄中的某些錯誤訊息可能會在括弧中包含
 
 
 
+[[platform-services-messages-cant-be-delivered]]
 == 無法傳送平台服務訊息
 
 如果目標遇到問題而無法接受平台服務訊息，則儲存桶上的用戶端操作會成功，但平台服務訊息不會被傳遞。例如，如果在目標上更新憑證，使得StorageGRID無法再對目標服務進行身份驗證，則可能會發生此錯誤。
@@ -102,6 +109,7 @@ NOTE: *最後一個錯誤*欄中的某些錯誤訊息可能會在括弧中包含
 
 
 
+[[slower-performance-for-platform-service-requests]]
 == 平台服務要求的效能變慢
 
 如果傳送要求的速度超過目的地端點接收要求的速度、則支援使用此軟體來限制傳入S3的貯體要求。StorageGRID節流只會在有待傳送至目的地端點的要求待處理項目時發生。
@@ -112,6 +120,7 @@ CloudMirror要求較容易受到目的地端點效能的影響、因為這些要
 
 
 
+[[platform-service-requests-fail]]
 == 平台服務要求失敗
 
 若要檢視平台服務的要求失敗率：
@@ -126,6 +135,7 @@ image:nodes_page_site_level_platform_services.gif["節點頁面站台層級平�
 
 
 
+[[platform-services-unavailable-alert]]
 == 平台服務無法使用警示
 
 *平台服務無法使用*警示表示站台無法執行平台服務作業、因為有太少的儲存節點正在執行或可用、因此無法在站台上執行平台服務作業。
@@ -139,6 +149,7 @@ NOTE: 如果站台上有多個包含RSM服務的儲存節點故障、您就會�
 
 
 
+[[additional-troubleshooting-guidance-for-platform-services-endpoints]]
 == 平台服務端點的其他疑難排解指南
 
 如需其他資訊link:../tenant/troubleshooting-platform-services-endpoint-errors.html["使用租戶帳戶 > 疑難排解平台服務端點"]、請參閱。

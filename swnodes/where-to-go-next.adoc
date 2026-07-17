@@ -15,6 +15,7 @@ summary: 完成安裝後、請執行必要的整合與組態工作。您可以�
 
 
 
+[[required-tasks]]
 == 必要的工作
 
 * （僅限 VMware）配置 VMware vSphere Hypervisor 以實現自動重新啟動。
@@ -42,6 +43,7 @@ summary: 完成安裝後、請執行必要的整合與組態工作。您可以�
 
 
 
+[[optional-tasks]]
 == 選用工作
 
 * link:../maintain/changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html["更新網格節點 IP 位址"]如果自您計劃部署並產生復原套件以來它們已經發生了變化。

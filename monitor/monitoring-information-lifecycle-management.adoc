@@ -20,6 +20,7 @@ StorageGRID 系統會套用主動式 ILM 原則來管理物件。ILM 原則和�
 
 
 
+[[use-grid-manager-dashboard-tab]]
 == 使用 Grid Manager 儀表板索引標籤
 
 .步驟
@@ -34,6 +35,7 @@ StorageGRID 系統會套用主動式 ILM 原則來管理物件。ILM 原則和�
 
 
 
+[[use-the-nodes-page]]
 == 使用節點頁面
 
 .步驟

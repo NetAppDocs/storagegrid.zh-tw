@@ -15,6 +15,7 @@ summary: 除了遵循StorageGRID 有關「不二網」和「節點」的強化�
 
 
 
+[[temporary-installation-password]]
 == 暫時安裝密碼
 
 若要在安裝期間保護 StorageGRID 系統、請在 StorageGRID 安裝 UI 或安裝 API 的暫存安裝程式密碼頁面上設定密碼。設定此密碼時、會套用至所有安裝 StorageGRID 的方法、包括使用者介面、安裝 API 和 `configure-storagegrid.py`指令碼。
@@ -27,6 +28,7 @@ summary: 除了遵循StorageGRID 有關「不二網」和「節點」的強化�
 
 
 
+[[logs-and-audit-messages]]
 == 記錄與稽核訊息
 
 請務必StorageGRID 以安全的方式保護不間斷記錄和稽核訊息輸出。從支援和系統可用度的觀點來看、支援記錄和稽核訊息可提供寶貴的資訊。StorageGRID此外StorageGRID 、包含在「資訊記錄」和「稽核訊息」輸出中的資訊和詳細資料、通常屬於敏感性質。
@@ -37,6 +39,7 @@ summary: 除了遵循StorageGRID 有關「不二網」和「節點」的強化�
 
 
 
+[[netapp-autosupport]]
 == NetApp AutoSupport
 
 StorageGRID 的 AutoSupport 功能可讓您主動監控系統健全狀況、並自動將套件傳送至 NetApp 支援網站 、貴組織的內部支援團隊或支援合作夥伴。根據預設、第一次設定 StorageGRID 時、會啟用傳送 AutoSupport 套件至 NetApp 。
@@ -47,6 +50,7 @@ StorageGRID 的 AutoSupport 功能可讓您主動監控系統健全狀況、並�
 
 
 
+[[cross-origin-resource-sharing-cors]]
 == 跨來源資源共享（ CORS ）
 
 如果您想讓其他網域中的 Web 應用程式能夠存取 S3 貯體中的貯體和物件、則可以為 S3 貯體設定跨來源資源共享（ CORS ）。一般而言、除非需要、否則請勿啟用 CORS 。如果需要CORS、請將其限制在信任的來源。
@@ -55,6 +59,7 @@ StorageGRID 的 AutoSupport 功能可讓您主動監控系統健全狀況、並�
 
 
 
+[[external-security-devices]]
 == 外部安全裝置
 
 完整的強化解決方案必須能解決StorageGRID 不屬於其他功能的安全機制問題。使用額外的基礎架構裝置來篩選及限制StorageGRID 存取功能、是建立及維持嚴苛安全態勢的有效方法。這些外部安全裝置包括防火牆、入侵防禦系統（IPS）和其他安全裝置。
@@ -63,6 +68,7 @@ StorageGRID 的 AutoSupport 功能可讓您主動監控系統健全狀況、並�
 
 
 
+[[ransomware-mitigation]]
 == 勒索軟體緩解
 
 遵循中的建議、協助保護物件資料免遭勒索軟體攻擊 https://www.netapp.com/media/69498-tr-4921.pdf["使用 StorageGRID 進行勒索軟體防禦"^]。

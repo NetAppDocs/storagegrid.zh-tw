@@ -19,6 +19,7 @@ summary: 如果您想StorageGRID 要使用簡單網路管理傳輸協定（SNMP�
 
 
 
+[[capabilities]]
 == 功能
 
 每個 StorageGRID 節點都會執行 SNMP 代理程式或常駐程式、提供 MIB 。StorageGRID MIB 包含警示的表格和通知定義。此外、也包含系統說明資訊、例如每個節點的平台和型號。每StorageGRID 個支援MIB-II物件的子集。
@@ -54,6 +55,7 @@ SNMP的所有三個版本均支援陷阱。
 
 
 
+[[snmp-version-support]]
 == SNMP 版本支援
 
 下表提供每個SNMP版本所支援項目的高層摘要。
@@ -112,6 +114,7 @@ SNMP的所有三個版本均支援陷阱。
 |===
 
 
+[[limitations]]
 == 限制
 
 * 支援唯讀的mib存取。StorageGRID不支援讀寫存取。

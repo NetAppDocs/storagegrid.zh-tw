@@ -26,6 +26,7 @@ Get Bucket法規遵循要求已過時。不過、您可以繼續使用此要求�
 
 
 
+[[request-example]]
 == 申請範例
 
 此範例要求可讓您決定名為的貯體的符合性設定 `mybucket`。
@@ -39,6 +40,7 @@ Host: _host_
 ----
 
 
+[[response-example]]
 == 回應範例
 
 在回應 XML 中、 `<SGCompliance>`列出有效的符合性設定。此回應範例顯示儲存區的法規遵循設定、其中每個物件將保留一年（525600分鐘）、從物件擷取到網格開始算起。此庫位目前沒有合法持有。每個物件將在一年後自動刪除。
@@ -90,6 +92,7 @@ LegalHold
 |===
 
 
+[[error-responses]]
 == 錯誤回應
 
 如果建立的貯體不符合標準、則回應的 HTTP 狀態代碼為、 S3 錯誤代碼 `XNoSuchBucketCompliance`為 `404 Not Found`。

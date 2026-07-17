@@ -15,6 +15,7 @@ summary: 當S3用戶端更新物件的中繼資料時、就會產生稽核訊息
 
 
 
+[[s3-metadata-update-audit-messages]]
 == S3中繼資料更新稽核訊息
 
 [cols="1a,1a,2a,1a,2a"]
@@ -36,12 +37,14 @@ link:supd-s3-metadata-updated.html["SUBPD：S3中繼資料已更新"]
 |===
 
 
+[[example-s3-metadata-update]]
 == 範例：S3中繼資料更新
 
 此範例顯示更新現有S3物件中繼資料的成功交易。
 
 
 
+[[supd-s3-metadata-update]]
 === SUBPD：S3中繼資料更新
 
 S3客戶端發出請求（SUPD）來更新指定的元數據(`x-amz-meta-\*`) 用於 S3 物件 (S3KY)。在此範例中，請求標頭包含在欄位 HTRH 中，因為它已配置為稽核協定標頭（*設定* > *監控* > *稽核和系統日誌伺服器*）。看link:../monitor/configure-log-management.html["設定日誌管理和外部系統日誌伺服器"] 。

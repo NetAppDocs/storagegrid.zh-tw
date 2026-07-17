@@ -99,6 +99,7 @@ NOTE: 如果您的 Active Directory 伺服器強制執行 LDAP 簽名，則不�
 
 
 
+[[test-the-connection-and-save-the-configuration]]
 === 測試連線並儲存組態
 
 輸入所有值之後、您必須先測試連線、才能儲存組態。如果您提供LDAP伺服器的連線設定和連結使用者名稱格式、則可透過此驗證。StorageGRID

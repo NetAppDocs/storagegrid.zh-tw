@@ -107,6 +107,7 @@ summary: 請根據升級所需的時間考慮何時升級。請注意在升級�
 |===
 
 
+[[estimate-time-to-upgrade]]
 == 估計升級時間
 
 .步驟
@@ -125,6 +126,7 @@ summary: 請根據升級所需的時間考慮何時升級。請注意在升級�
 
 
 
+[[example-estimated-time-to-upgrade-to-storagegrid-12-0]]
 == 範例：升級到StorageGRID 12.0 的預計時間
 
 假設您的系統有14個網格節點、其中8個是Linux節點。

@@ -15,12 +15,14 @@ summary: 您可以使用 S3 PuttObject 要求、將物件新增至貯體。
 
 
 
+[[resolve-conflicts]]
 == 解決衝突
 
 衝突的用戶端要求（例如兩個寫入同一個金鑰的用戶端）會以「最新致勝」的方式解決。「最新致勝」評估的時間取決於StorageGRID 何時由VMware系統完成指定的要求、而非S3用戶端開始作業的時間。
 
 
 
+[[object-size]]
 == 物件大小
 
 單一 PutObject 作業的最大大小 _ 建議 _ 為 5 GiB （ 5 、 368 、 709 、 120 位元組）。如果物件大於 5 GiB 、請改用link:operations-for-multipart-uploads.html["多部分上傳"]。
@@ -32,12 +34,14 @@ NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳�
 
 
 
+[[user-metadata-size]]
 == 使用者中繼資料大小
 
 Amazon S3會將每個PUT要求標頭內使用者定義的中繼資料大小限制為2 KB。支援範圍將使用者中繼資料限制為24 KiB。StorageGRID使用者定義的中繼資料大小是以每個金鑰和值的utf-8編碼方式、計算出位元組數的總和。
 
 
 
+[[utf-8-characters-in-user-metadata]]
 == 使用者中繼資料中的UTF-8字元
 
 如果要求在使用者定義的中繼資料金鑰名稱或值中包含（未轉義）utf-8值、StorageGRID 則無法定義任何不正常的行為。
@@ -50,18 +54,21 @@ Amazon S3會將每個PUT要求標頭內使用者定義的中繼資料大小限�
 
 
 
+[[object-tag-limits]]
 == 物件標籤限制
 
 您可以在上傳新物件時新增標記、也可以將標記新增至現有物件。每個物件最多可支援10個標記的支援功能。StorageGRID與物件相關聯的標記必須具有唯一的標記金鑰。標籤金鑰長度最多可達128個UNICODE字元、標籤值長度最多可達256個UNICODE字元。金鑰和值區分大小寫。
 
 
 
+[[object-ownership]]
 == 物件擁有權
 
 在功能區中StorageGRID 、所有物件均歸庫位擁有者帳戶所有、包括非擁有者帳戶或匿名使用者所建立的物件。
 
 
 
+[[supported-request-headers]]
 == 支援的要求標頭
 
 支援下列要求標頭：
@@ -137,6 +144,7 @@ NOTE: ILM 規則不能同時使用 * 使用者定義的建立時間 * 作為參�
 
 
 
+[[unsupported-request-headers]]
 == 不支援的要求標頭
 
 不支援下列要求標頭：
@@ -160,6 +168,7 @@ NOTE: ILM 規則不能同時使用 * 使用者定義的建立時間 * 作為參�
 
 
 
+[[storage-class-options]]
 == 儲存類別選項
 
  `x-amz-storage-class`支援要求標頭。提交的值 `x-amz-storage-class`會影響 StorageGRID 在擷取期間保護物件資料的方式、而不會影響儲存在 StorageGRID 系統中的物件持續複本數量（由 ILM 決定）。
@@ -198,6 +207,7 @@ NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體�
 
 
 
+[[request-headers-for-server-side-encryption]]
 == 要求伺服器端加密的標頭
 
 您可以使用下列要求標頭、以伺服器端加密來加密物件。「SSE」和「SSE-C」選項互不相關。
@@ -227,6 +237,7 @@ NOTE: 如果物件是以SSE或SSE-C加密、則會忽略任何儲存區層級或
 
 
 
+[[versioning]]
 == 版本管理
 
 如果已啟用貯體的版本設定功能、則會針對儲存的物件版本自動產生唯一的 `versionId`版本。這 `versionId`也會在回應中使用回應標頭傳回 `x-amz-version-id`。
@@ -235,6 +246,7 @@ NOTE: 如果物件是以SSE或SSE-C加密、則會忽略任何儲存區層級或
 
 
 
+[[signature-calculations-for-the-authorization-header]]
 == 授權標頭的簽名計算
 
 使用 `Authorization`標頭驗證要求時、 StorageGRID 與 AWS 的差異如下：

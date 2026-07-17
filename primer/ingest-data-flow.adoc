@@ -15,6 +15,7 @@ summary: 擷取或儲存作業是由用戶端與StorageGRID 該系統之間定�
 
 
 
+[[data-flow]]
 == 資料流
 
 當用戶端將物件擷取至StorageGRID 物件系統時、儲存節點上的LMR服務會處理要求、並將中繼資料和資料儲存至磁碟。

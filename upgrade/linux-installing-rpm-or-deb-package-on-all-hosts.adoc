@@ -15,6 +15,7 @@ summary: 如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開
 
 
 
+[[download-upgrade-linux-and-hotfix-files]]
 == 下載升級、 Linux 和 Hotfix 檔案
 
 當您從 Grid Manager 執行 StorageGRID 升級時、系統會提示您下載升級歸檔和任何必要的 Hotfix 作為第一步。不過、如果您需要下載檔案來升級 Linux 主機、您可以事先下載所有必要的檔案、以節省時間。
@@ -67,6 +68,7 @@ summary: 如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開
 
 
 
+[[install-archive-on-all-linux-hosts]]
 == 在所有 Linux 主機上安裝歸檔
 
 在升級 StorageGRID 軟體之前、請先執行這些步驟。
@@ -84,6 +86,7 @@ summary: 如果在 Linux 主機上部署了任何 StorageGRID 節點、請在開
 
 
 
+[[remove-installation-archives-for-previous-versions]]
 == 移除舊版的安裝封存
 
 若要釋放 Linux 主機上的空間、您可以移除不再需要的舊版 StorageGRID 安裝歸檔。

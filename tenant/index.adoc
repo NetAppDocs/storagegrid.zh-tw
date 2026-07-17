@@ -15,6 +15,7 @@ summary: '租用戶帳戶可讓您使用簡單儲存服務 (S3) REST API 在Stor
 
 
 
+[[what-is-a-tenant-account]]
 == 什麼是租戶帳戶？
 
 每個租戶帳戶都有自己的同盟或本機群組、使用者、 S3 貯體和物件。
@@ -31,6 +32,7 @@ NOTE: 如果您使用 S3 用戶端協議，您也可以使用 S3 儲存桶和儲
 
 
 
+[[how-to-create-a-tenant-account]]
 == 如何建立租戶帳戶
 
 租戶帳戶是由建立link:../admin/managing-tenants.html["使用Grid Manager的網格管理員StorageGRID"]的。建立租戶帳戶時、網格管理員會指定下列項目：
@@ -44,6 +46,7 @@ NOTE: 如果您使用 S3 用戶端協議，您也可以使用 S3 儲存桶和儲
 
 
 
+[[configure-s3-tenants]]
 === 設定S3租戶
 
 之後link:../admin/creating-tenant-account.html["S3租戶帳戶已建立"]、您可以存取租戶管理程式來執行下列工作：

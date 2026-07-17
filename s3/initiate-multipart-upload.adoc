@@ -49,6 +49,7 @@ NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體�
 
 
 
+[[supported-request-headers]]
 == 支援的要求標頭
 
 支援下列要求標頭：
@@ -114,6 +115,7 @@ NOTE: 有關 StorageGRID 如何處理 UTF-8 字元的資訊、請參閱link:put-
 
 
 
+[[request-headers-for-server-side-encryption]]
 == 要求伺服器端加密的標頭
 
 您可以使用下列要求標頭、以伺服器端加密來加密多部份物件。「SSE」和「SSE-C」選項互不相關。
@@ -137,6 +139,7 @@ CAUTION: 您提供的加密金鑰永遠不會儲存。如果您遺失加密金�
 
 
 
+[[unsupported-request-headers]]
 == 不支援的要求標頭
 
 不支援下列要求標頭：
@@ -149,6 +152,7 @@ CAUTION: 您提供的加密金鑰永遠不會儲存。如果您遺失加密金�
 
 
 
+[[versioning]]
 == 版本管理
 
 多部分上傳包含不同的作業、可用於初始化上傳、列出上傳內容、上傳零件、組裝上傳的零件、以及完成上傳。執行「 CompleteMultpartUpload 」（ CompleteMultpartUpload ）作業時、即會建立物件（並在適用的情況下進行版本控制）。

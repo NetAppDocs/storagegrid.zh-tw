@@ -15,6 +15,7 @@ summary: 在混合雲組態中使用 StorageGRID 、方法是實作原則導向�
 
 
 
+[[cloud-storage-pools]]
 == 雲端儲存資源池
 
 雲端儲存資源池可讓您將物件儲存在StorageGRID 不屬於該系統的地方。例如、您可能想要將不常存取的物件移至成本較低的雲端儲存設備、例如 Amazon S3 Glacier 、 S3 Glacier Deep Archive 、 Google Cloud 、或 Microsoft Azure Blob 儲存設備中的歸檔存取層。或者、您可能想要維護StorageGRID 一份適用於各種物件的雲端備份、以便用來恢復儲存磁碟區或儲存節點故障所導致的資料遺失。
@@ -26,6 +27,7 @@ NOTE: 由於從雲端儲存資源池目標擷取物件的延遲增加、因此�
 
 
 
+[[s3-platform-services]]
 == S3平台服務
 
 S3平台服務可讓您使用遠端服務做為物件複寫、事件通知或搜尋整合的端點。平台服務獨立運作於網格的ILM規則、並可針對個別S3儲存區啟用。支援下列服務：
@@ -39,6 +41,7 @@ S3平台服務可讓您使用遠端服務做為物件複寫、事件通知或搜
 
 
 
+[[ontap-data-tiering-using-fabricpool]]
 == 使用 FabricPool 進行 ONTAP 資料分層
 
 您可以ONTAP 使用StorageGRID 效益技術將資料分層至資料以降低資料的儲存成本FabricPool 。FabricPool 可將資料自動分層至低成本的物件儲存層、無論是內部部署或外部部署。

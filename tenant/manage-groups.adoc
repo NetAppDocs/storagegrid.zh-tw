@@ -20,6 +20,7 @@ summary: 視需要管理租戶群組、以檢視、編輯或複製群組等項�
 
 
 
+[[view-or-edit-group]]
 == 檢視或編輯群組
 
 您可以檢視和編輯每個群組的基本資訊和詳細資料。
@@ -104,6 +105,7 @@ image:manage_users.png["管理使用者"]
 
 
 
+[[duplicate-group]]
 == 複製群組
 
 您可以複製現有群組、以更快建立新群組。
@@ -121,6 +123,7 @@ NOTE: 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、而�
 
 
 
+[[clone-groupsretry-group-clone]]
 == [[clone-groups]] 重試群組複製
 
 若要重試失敗的複製：
@@ -134,6 +137,7 @@ NOTE: 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、而�
 
 
 
+[[delete-one-or-more-groups]]
 == 刪除一或多個群組
 
 您可以刪除一或多個群組。只屬於已刪除群組的任何使用者將無法再登入租戶管理員或使用租戶帳戶。
@@ -153,6 +157,7 @@ NOTE: 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、而�
 
 
 
+[[set-up-assumerole]]
 == 設定 AssumeRole
 
 .開始之前
@@ -176,6 +181,7 @@ NOTE: 如果您的租戶帳戶具有 * 使用網格同盟連線 * 權限、而�
 
 
 
+[[example-of-an-assumerole-s3-trust-policy]]
 === AssumeRole S3 信任策略範例
 
 [listing]

@@ -20,6 +20,7 @@ NOTE: 租戶管理程式會隨每個版本一起更新、可能與本頁的範�
 
 
 
+[[tenant-manager-dashboard]]
 == 租戶管理器儀表板
 
 網格管理員使用Grid Manager或Grid Management API建立租戶帳戶之後、租戶使用者就可以登入租戶管理程式。
@@ -32,6 +33,7 @@ image:tenant_dashboard_with_buckets.png["租戶管理器儀表板"]
 
 
 
+[[storage-menu-s3]]
 == 儲存功能表（ S3 ）
 
 此選單允許 S3 用戶：
@@ -44,6 +46,7 @@ image:tenant_dashboard_with_buckets.png["租戶管理器儀表板"]
 
 
 
+[[my-access-keys]]
 === 我的存取金鑰
 
 S3租戶使用者可以管理存取金鑰、如下所示：
@@ -58,6 +61,7 @@ NOTE: 透過存取管理選單可以管理其他使用者的存取金鑰。
 
 
 
+[[buckets]]
 === 桶
 
 擁有適當權限的 S3 租戶使用者可為其貯體執行下列工作：
@@ -83,18 +87,21 @@ NOTE: 透過存取管理選單可以管理其他使用者的存取金鑰。
 
 
 
+[[platform-services-endpoints]]
 === 平台服務端點
 
 如果網格管理員已為租戶帳戶啟用平台服務、具有「管理端點」權限的 S3 租戶使用者可以為每個平台服務設定目的地端點。
 
 
 
+[[grid-federation-connections]]
 === 網格同盟連線
 
 如果網格管理員已啟用租戶帳戶的網格同盟連線、則具有「根」存取權限的 S3 租戶使用者可以檢視連線名稱、存取已啟用跨網格複寫的每個儲存格的儲存格詳細資料頁面、 並檢視儲存區資料複寫到連線中其他網格時發生的最新錯誤。請參閱。 link:../tenant/grid-federation-view-connections-tenant.html["檢視網格同盟連線"]
 
 
 
+[[access-management-menu]]
 == 存取管理功能表
 
 「存取管理」功能表可讓StorageGRID 無權從聯盟身分識別來源匯入使用者群組、並指派管理權限。租戶也可以管理本機租戶群組和使用者、除非整個StorageGRID 作業系統都有單一登入（SSO）功能。

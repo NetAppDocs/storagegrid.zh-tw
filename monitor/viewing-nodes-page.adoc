@@ -28,6 +28,8 @@ image:nodes_table.png["節點功能表"]
 
 
 
+[[connection-state-icons]]
+[[connection-state]]
 == 連線狀態圖示
 
 如果節點與網格中斷連線、下列任一圖示會出現在節點名稱旁。
@@ -74,6 +76,7 @@ image:icon_alarm_gray_administratively_down.png["灰色問號圖示"]
 
 
 
+[[alert-icons]]
 == 警示圖示
 
 如果節點有作用中警示、節點名稱旁會出現下列其中一個圖示：
@@ -86,6 +89,7 @@ image:icon_alert_yellow_minor.png["圖示警示黃色次要"] *Minor*：系統�
 
 
 
+[[view-details-for-a-system-site-or-node]]
 == 檢視系統、站台或節點的詳細資料
 
 若要篩選「節點」表格中顯示的資訊、請在「 * 搜尋 * 」欄位中輸入搜尋字串。您可以依系統名稱、顯示名稱或類型進行搜尋（例如、輸入 * gat* 以快速找到所有閘道節點）。

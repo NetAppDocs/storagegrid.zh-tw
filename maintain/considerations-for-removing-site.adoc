@@ -15,6 +15,7 @@ summary: 在使用站台取消委任程序移除站台之前、您必須先檢�
 
 
 
+[[what-happens-when-you-decommission-a-site]]
 == 當您取消委任站台時會發生什麼事
 
 當您取消對站台的委任時StorageGRID 、由站台上的所有節點和站台本身從StorageGRID 這個系統中永久移除。
@@ -27,6 +28,7 @@ summary: 在使用站台取消委任程序移除站台之前、您必須先檢�
 
 
 
+[[differences-between-connected-site-and-disconnected-site-decommission-procedures]]
 == 連線站台與中斷站台停用程序之間的差異
 
 您可以使用站台取消委任程序來移除所有節點都連接StorageGRID 到該站台的站台（稱為「連線站台取消委任」）、或移除所有節點從StorageGRID 該站台中斷連線的站台（稱為「中斷連線的站台取消委任」）。開始之前、您必須先瞭解這些程序之間的差異。
@@ -48,6 +50,7 @@ CAUTION: 在執行中斷連線的站台取消委任程序之前、您必須聯�
 
 
 
+[[general-requirements-for-removing-a-connected-or-a-disconnected-site]]
 == 移除已連線或已中斷連線站台的一般需求
 
 在移除已連線或已中斷連線的站台之前、您必須瞭解下列需求：
@@ -74,6 +77,7 @@ NOTE: 如果您需要在連線站台取消委任期間執行其他維護程序�
 
 
 
+[[requirements-for-information-lifecycle-management-ilm]]
 == 資訊生命週期管理（ILM）需求
 
 在移除站台時、您必須更新ILM組態。取消委任網站精靈會引導您完成許多必要步驟、以確保達成下列目標：
@@ -89,6 +93,7 @@ CAUTION: 您可能需要先建立新的ILM規則並啟動新的ILM原則、才�
 
 
 
+[[considerations-for-the-object-data-at-a-connected-site]]
 == 連接站台的物件資料考量
 
 如果您要執行連線的站台取消委任、則必須在建立新的ILM規則和新的ILM原則時、決定該如何處理站台上的現有物件資料。您可以執行下列其中一項或兩項操作：
@@ -113,6 +118,7 @@ CAUTION: 切勿建立單一複本ILM規則來因應網站移除作業。ILM規�
 
 
 
+[[additional-requirements-for-a-connected-site-decommission]]
 == 連線站台取消委任的其他需求
 
 在移除連線站台之前StorageGRID 、您必須先確認下列事項：
@@ -136,6 +142,7 @@ NOTE: 從站台移動或刪除物件資料可能需要數天、數週甚至數�
 
 
 
+[[additional-requirements-for-a-disconnected-site-decommission]]
 == 中斷站台停用的其他需求
 
 在移除中斷連線的站台之前StorageGRID 、您必須先確認下列事項：
@@ -162,6 +169,7 @@ NOTE: 如果您的ILM規則和原則是設計用來防止單一站台遺失、�
 
 
 
+[[considerations-for-consistency-when-you-remove-a-site]]
 == 移除網站時的一致性考量
 
 S3 貯體的一致性決定 StorageGRID 是否在告知用戶端物件擷取成功之前、將物件中繼資料完全複寫至所有節點和站台。一致性可在物件的可用度與這些物件在不同儲存節點和站台之間的一致性之間取得平衡。

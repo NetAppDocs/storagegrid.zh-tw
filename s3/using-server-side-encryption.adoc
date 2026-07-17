@@ -32,6 +32,7 @@ NOTE: 如果物件是以SSE或SSE-C加密、則會忽略任何儲存區層級或
 
 
 
+[[use-sse]]
 == 使用SS
 
 若要使用StorageGRID 由支援此功能的唯一金鑰來加密物件、請使用下列要求標頭：
@@ -47,6 +48,7 @@ NOTE: 如果物件是以SSE或SSE-C加密、則會忽略任何儲存區層級或
 
 
 
+[[use-sse-c]]
 == 使用SSE-C
 
 若要使用您管理的唯一金鑰來加密物件、請使用三個要求標頭：
@@ -89,6 +91,7 @@ NOTE: 如果物件是以SSE或SSE-C加密、則會忽略任何儲存區層級或
 
 
 
+[[considerations-for-using-server-side-encryption-with-customer-provided-keys-sse-c]]
 == 使用伺服器端加密搭配客戶提供的金鑰（SSE-C）時的考量
 
 使用SSE-C之前、請注意下列考量事項：

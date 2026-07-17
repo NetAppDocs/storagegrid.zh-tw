@@ -15,6 +15,7 @@ summary: 您可以使用 S3 設定精靈、將 StorageGRID 設定為 S3 應用�
 
 
 
+[[when-to-use-the-s3-setup-wizard]]
 == 何時使用 S3 設定精靈
 
 S3 安裝精靈會引導您完成每個步驟、設定 StorageGRID 以搭配 S3 應用程式使用。在完成精靈的過程中、您可以下載檔案、以便在 S3 應用程式中輸入值。使用精靈可更快速地設定您的系統、並確保您的設定符合 StorageGRID 最佳實務做法。
@@ -23,6 +24,7 @@ S3 安裝精靈會引導您完成每個步驟、設定 StorageGRID 以搭配 S3 
 
 
 
+[[before-using-the-wizard]]
 == 使用精靈之前
 
 使用精靈之前、請確認您已完成這些先決條件。

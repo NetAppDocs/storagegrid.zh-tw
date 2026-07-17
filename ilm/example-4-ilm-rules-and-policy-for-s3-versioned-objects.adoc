@@ -29,6 +29,7 @@ link:how-objects-are-deleted.html["如何刪除物件"]
 
 
 
+[[ilm-rule-1-for-example-4-save-three-copies-for-10-years]]
 == ILM規則1（例如4）：儲存三份複本10年
 
 本範例 ILM 規則會將每個物件的複本儲存在三個站台上 10 年。
@@ -69,6 +70,7 @@ link:how-objects-are-deleted.html["如何刪除物件"]
 |===
 
 
+[[ilm-rule-2-for-example-4-save-two-copies-of-noncurrent-versions-for-2-years]]
 == ILM規則2例如4：將兩個非目前版本的複本儲存2年
 
 本範例ILM規則儲存S3版本物件的兩個非目前版本複本、為期2年。
@@ -117,6 +119,7 @@ image:ilm-rule-apply-only-to-older-object-verions.png["僅將 ILM 規則套用�
 |===
 
 
+[[ilm-policy-for-example-4-s3-versioned-objects]]
 == ILM原則、例如4：S3版本控制物件
 
 如果您想要以不同於目前版本的方式來管理物件的舊版、則使用「非目前時間」做為參考時間的規則必須先出現在 ILM 原則中、然後才會套用至目前物件版本的規則。

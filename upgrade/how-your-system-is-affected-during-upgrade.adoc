@@ -15,12 +15,14 @@ summary: 瞭解 StorageGRID 系統在升級期間會受到哪些影響。
 
 
 
+[[external-ssh-access-is-allowed-until-upgrade-completes]]
 == 升級完成前允許外部 SSH 訪問
 
 升級期間允許外部 SSH 存取。升級完成後，外部 SSH 存取預設會被阻止。升級後，您可以使用“網格管理器”>“安全性設定”頁面上的“阻止 SSH”選項卡來link:../admin/manage-external-ssh-access.html["管理外部 SSH 訪問"]。網格節點之間的 SSH 存取不受影響。
 
 
 
+[[storagegrid-upgrades-are-non-disruptive]]
 == 不中斷升級StorageGRID
 
 整個升級過程中、這個系統可以從用戶端應用程式擷取及擷取資料。StorageGRID如果您核准所有類型相同的節點進行升級（例如儲存節點）、則節點會一次關閉一個節點、因此當某種類型的所有網格節點或所有網格節點都無法使用時、就不會有任何時間。
@@ -35,6 +37,7 @@ summary: 瞭解 StorageGRID 系統在升級期間會受到哪些影響。
 
 
 
+[[client-applications-might-experience-short-term-disruptions]]
 == 用戶端應用程式可能會遭遇短期中斷
 
 StorageGRID 系統可在整個升級程序中從用戶端應用程式擷取和擷取資料、但是、如果升級需要在這些節點上重新啟動服務、用戶端與個別閘道節點或儲存節點的連線可能會暫時中斷。升級程序完成後、連線能力將會恢復、而服務會在個別節點上恢復。
@@ -46,12 +49,14 @@ NOTE: 您可以使用多個閘道和高可用度（ HA ）群組、在升級過�
 
 
 
+[[background-repairs-wont-run-on-grids-with-mixed-version-nodes]]
 == 後台修復無法在具有混合版本節點的網格上運行
 
 當網格包含混合版本節點時，升級期間不會執行背景修復。在網站中斷期間出現的任何不一致問題在升級完成之前都不會修復。
 
 
 
+[[appliance-firmware-is-upgraded]]
 == 應用裝置韌體已升級
 
 在StorageGRID 12.0 升級期間：
@@ -64,6 +69,7 @@ NOTE: 您可以使用多個閘道和高可用度（ HA ）群組、在升級過�
 
 
 
+[[ilm-policies-are-handled-differently-according-to-their-status]]
 == ILM 原則的處理方式會因其狀態而異
 
 * 升級後、作用中原則將維持不變。
@@ -73,6 +79,7 @@ NOTE: 您可以使用多個閘道和高可用度（ HA ）群組、在升級過�
 
 
 
+[[alerts-might-be-triggered]]
 == 可能會觸發警示
 
 當服務啟動和停止時、StorageGRID 以及當作業系統以混合版本環境運作時、可能會觸發警示（部分網格節點執行較早版本、而其他節點則已升級至較新版本）。升級完成後、可能會觸發其他警示。
@@ -85,6 +92,7 @@ NOTE: 您可以使用多個閘道和高可用度（ HA ）群組、在升級過�
 
 
 
+[[configuration-changes-are-restricted]]
 == 組態變更受到限制
 
 

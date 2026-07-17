@@ -21,6 +21,7 @@
 
 
 
+[[optional-tasks]]
 == 選用工作
 
 * link:../maintain/changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html["更新網格節點 IP 位址"]如果自您計劃部署並產生復原套件以來它們已經發生了變化。

@@ -17,6 +17,7 @@ summary: 所有StorageGRID 的支援服務都會在正常系統運作期間產�
 
 
 
+[[audit-message-flow]]
 == 稽核訊息流程
 
 當StorageGRID配置為 *管理節點/本機節點* 或 *管理節點和外部系統日誌伺服器* 時，稽核訊息由管理節點處理，並且由具有管理網域控制器 (ADC) 服務的儲存節點處理。
@@ -31,6 +32,7 @@ image:audit_message_flow.gif["摘要報告透過中繼之稽核訊息流程的�
 
 
 
+[[audit-message-retention]]
 === 稽核訊息保留
 
 使用複製與刪除程序、確保不會遺失任何稽核訊息、然後再寫入稽核記錄。StorageGRID
@@ -61,6 +63,7 @@ NOTE: 如果 ADC 服務沒有可用的儲存節點、儲存節點會將稽核訊
 
 
 
+[[large-audit-queue-alert-and-audit-messages-queued-amqs-alarm]]
 === 大型稽核佇列警示和稽核訊息佇列（AMQS）警示
 
 為了協助您監控一段時間內稽核訊息佇列的大小、當儲存節點佇列或管理節點佇列中的訊息數目達到特定臨界值時、就會觸發*大型稽核佇列*警示和舊版AMQS警示。
@@ -71,6 +74,7 @@ NOTE: 如果 ADC 服務沒有可用的儲存節點、儲存節點會將稽核訊
 
 
 
+[[duplicate-messages]]
 === 重複的訊息
 
 如果發生網路或節點故障、StorageGRID 那麼這個系統會採取保守的方法。因此、稽核記錄中可能會出現重複的訊息。

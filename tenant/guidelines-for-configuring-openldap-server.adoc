@@ -15,12 +15,14 @@ summary: 如果您要使用OpenLDAP伺服器進行身分識別聯盟、則必須
 
 
 
+[[memberof-and-refint-overlays]]
 == memberOf和refert覆疊
 
 應啟用memberof和refert覆疊。如需詳細資訊、請參閱_OpenLDAP Software Administrator指南_中的反轉群組成員資格維護說明。
 
 
 
+[[indexing]]
 == 索引
 
 您必須使用指定的索引關鍵字來設定下列OpenLDAP屬性：

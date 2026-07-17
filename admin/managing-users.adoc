@@ -20,6 +20,7 @@ summary: 您可以檢視本機和聯盟使用者。您也可以建立本機使�
 
 
 
+[[create-a-local-user]]
 == 建立本機使用者
 
 您可以建立一或多個本機使用者、並將每個使用者指派給一或多個本機群組。群組的權限可控制使用者可以存取的Grid Manager和Grid Management API功能。
@@ -33,6 +34,7 @@ NOTE: 如果啟用單一登入（ SSO ）、本機使用者將無法登入 Stora
 
 
 
+[[access-the-wizard]]
 === 存取精靈
 
 .步驟
@@ -42,6 +44,7 @@ NOTE: 如果啟用單一登入（ SSO ）、本機使用者將無法登入 Stora
 
 
 
+[[enter-user-credentials]]
 === 輸入使用者認證資料
 
 .步驟
@@ -52,6 +55,7 @@ NOTE: 如果啟用單一登入（ SSO ）、本機使用者將無法登入 Stora
 
 
 
+[[assign-to-groups]]
 === 指派給群組
 
 .步驟
@@ -67,6 +71,7 @@ NOTE: 如果啟用單一登入（ SSO ）、本機使用者將無法登入 Stora
 
 
 
+[[view-and-edit-local-users]]
 == 檢視及編輯本機使用者
 
 您可以檢視現有本機和聯盟使用者的詳細資料。您可以修改本機使用者、以變更使用者的完整名稱、密碼或群組成員資格。您也可以暫時禁止使用者存取Grid Manager和Grid Management API。
@@ -175,6 +180,7 @@ NOTE: 本機使用者可以使用 Grid Manager 橫幅中的 * 變更密碼 * 選
 
 
 
+[[import-federated-users]]
 == 導入聯合用戶
 
 您可以將一個或多個聯合使用者（最多 100 個使用者）直接匯入「使用者」頁面。
@@ -202,6 +208,7 @@ NOTE: 本機使用者可以使用 Grid Manager 橫幅中的 * 變更密碼 * 選
 
 
 
+[[duplicate-a-user]]
 == 複製使用者
 
 您可以複製現有使用者、以建立具有相同權限的新使用者。
@@ -214,6 +221,7 @@ NOTE: 本機使用者可以使用 Grid Manager 橫幅中的 * 變更密碼 * 選
 
 
 
+[[delete-a-user]]
 == 刪除使用者
 
 您可以刪除本機使用者、將該使用者從系統中永久移除。

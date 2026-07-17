@@ -17,6 +17,7 @@ summary: 在擴充中部署新網格節點的步驟、與第一次安裝網格�
 
 
 
+[[vmware-deploy-grid-nodes]]
 == VMware：部署網格節點
 
 您必須在VMware vSphere中為要新增至擴充的每個VMware節點部署虛擬機器。
@@ -31,6 +32,7 @@ summary: 在擴充中部署新網格節點的步驟、與第一次安裝網格�
 
 
 
+[[linux-deploy-grid-nodes]]
 == Linux：部署網格節點
 
 您可以在新的Linux主機或現有的Linux主機上部署網格節點。如果您需要額外的Linux主機來支援StorageGRID 您要新增至網格之支撐節點的CPU、RAM和儲存需求、請依照您第一次安裝主機時的準備方式來準備這些主機。然後、您可以依照安裝期間部署網格節點的相同方式來部署擴充節點。
@@ -59,6 +61,7 @@ CAUTION: 在正式作業部署中、請勿在單一實體或虛擬主機上執�
 
 
 
+[[appliances-deploying-storage-gateway-or-non-primary-admin-nodes]]
 == 設備：部署儲存設備、閘道或非主要管理節點
 
 若要在StorageGRID 應用裝置節點上安裝此功能、請使用StorageGRID 產品隨附的《應用程式安裝程式（介紹）：在擴充過程中、每個儲存設備都會以單一儲存節點的形式運作、而每個服務應用裝置則會以單一閘道節點或非主要管理節點的形式運作。任何應用裝置都可以連線至Grid Network、管理網路和用戶端網路。

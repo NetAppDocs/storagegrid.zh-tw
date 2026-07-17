@@ -33,6 +33,7 @@ NOTE: 對全網格一致性所做的變更僅適用於變更設定後所建立�
 
 
 
+[[consistency-values]]
 == 一致性值
 
 一致性會影響StorageGRID用於追蹤物件的元資料在節點之間的分佈方式。一致性影響物件對於客戶端請求的可用性。
@@ -66,6 +67,7 @@ NOTE: 對全網格一致性所做的變更僅適用於變更設定後所建立�
 
 
 
+[[use-read-after-new-write-and-available-consistency]]
 == 使用「讀取後新寫入」和「可用」一致性
 
 當標頭或 GET 作業使用「讀取後新寫入」一致性時、 StorageGRID 會以多個步驟執行查詢、如下所示：
@@ -80,6 +82,7 @@ NOTE: 對全網格一致性所做的變更僅適用於變更設定後所建立�
 
 
 
+[[api-operation-consistency-controlspecify-consistency-for-api-operation]]
 == [[API- 作業 - 一致性控制 ] ] 指定 API 作業的一致性
 
 若要設定個別 API 作業的一致性、作業必須支援一致性值、而且您必須在要求標頭中指定一致性。此範例會將 GetObject 作業的一致性設定為「 Strong-site 」。
@@ -97,6 +100,7 @@ NOTE: PutObject 和 GetObject 作業必須使用相同的一致性。
 
 
 
+[[bucket-consistencyspecify-consistency-for-bucket]]
 == [[bucket-consistency]]指定 bucket 的一致性
 
 若要設定貯體的一致性、您可以使用 StorageGRID link:put-bucket-consistency-request.html["實現庫位一致性"]要求。或者、您也可以link:../tenant/manage-bucket-consistency.html#change-bucket-consistency["改變貯體的一致性"]從租戶管理程式中執行。
@@ -110,6 +114,7 @@ NOTE: PutObject 和 GetObject 作業必須使用相同的一致性。
 
 
 
+[[how-consistency-and-ilm-rules-interacthow-consistency-and-ilm-rules-interact-to-affect-data-protection]]
 == 一致性和 ILM 規則如何相互作用以影響資料保護
 
 您選擇的一致性和 ILM 規則都會影響物件的保護方式。這些設定可以互動。
@@ -125,6 +130,7 @@ ILM 規則適用下列link:../ilm/data-protection-options-for-ingest.html["擷�
 
 
 
+[[example-of-how-the-consistency-and-ilm-rule-can-interact]]
 == 一致性與 ILM 規則如何互動的範例
 
 假設您有一個三站點網格，具有以下 ILM 規則和以下一致性：

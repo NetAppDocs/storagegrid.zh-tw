@@ -19,6 +19,7 @@ summary: 平台服務包括CloudMirror複寫、事件通知及搜尋整合服務
 
 
 
+[[cloudmirror-replication]]
 == CloudMirror複寫
 
 StorageGRID CloudMirror 複寫服務用於將特定物件從 StorageGRID 儲存庫鏡射到指定的外部目的地。
@@ -32,6 +33,7 @@ NOTE: 如果來源儲存桶啟用了 S3 物件鎖定，則不支援 CloudMirror 
 
 
 
+[[notifications]]
 == 通知
 
 每個儲存桶事件通知用於將有關對物件執行的特定操作的通知傳送到指定的外部 Kafka 叢集、webhook 端點或 Amazon Simple Notification Service。
@@ -43,6 +45,7 @@ NOTE: 雖然事件通知可在已啟用S3物件鎖定的儲存區上設定、但
 
 
 
+[[search-integration-service]]
 == 搜尋整合服務
 
 搜尋整合服務用於將 S3 物件中繼資料傳送至指定的彈性搜尋索引、以便使用外部服務搜尋或分析中繼資料。
@@ -56,6 +59,7 @@ NOTE: 雖然可在啟用S3物件鎖定的儲存區上設定Elasticsearch整合�
 
 
 
+[[recommendations-for-using-platform-services]]
 == 使用平台服務的建議
 
 在使用平台服務之前、請注意下列建議：

@@ -25,6 +25,7 @@ NOTE: 某些 StorageGRID 服務尚未更新、無法在這些原則中使用密�
 
 
 
+[[select-a-security-policy]]
 == 選取安全性原則
 
 .步驟
@@ -111,6 +112,7 @@ NetApp StorageGRID Kernel Crypto API 模組僅存在於 VM 和StorageGRID設備�
 
 
 
+[[create-a-custom-security-policy]]
 == 建立自訂安全性原則
 
 如果您需要套用自己的密碼、可以建立自訂原則。
@@ -132,6 +134,8 @@ image:securitysettings-custom-security-policy-copy.png["複製現有原則以建
 
 
 
+[[temporarily-revert-to-the-default-security-policy]]
+[[temporarily-revert-to-default-security-policy]]
 == 暫時恢復為預設的安全性原則
 
 如果您設定了自訂安全性原則、如果設定的 TLS 原則與不相容link:global-certificate-types.html["已設定的伺服器憑證"]、您可能無法登入 Grid Manager 。

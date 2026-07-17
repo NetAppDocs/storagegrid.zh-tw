@@ -19,6 +19,7 @@ summary: 「取得貯體一致性」要求可讓您判斷套用至特定貯體�
 
 
 
+[[request-example]]
 == 申請範例
 
 [listing, subs="specialcharacters,quotes"]
@@ -30,6 +31,7 @@ Host: _host_
 ----
 
 
+[[response]]
 == 回應
 
 在回應 XML 中、 `<Consistency>`會傳回下列其中一個值：
@@ -75,6 +77,7 @@ Host: _host_
 |===
 
 
+[[response-example]]
 == 回應範例
 
 [listing]

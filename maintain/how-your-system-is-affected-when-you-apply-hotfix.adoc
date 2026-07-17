@@ -15,6 +15,7 @@ summary: 您必須瞭StorageGRID 解套用修補程式時、您的整個系統�
 
 
 
+[[storagegrid-hotfixes-are-non-disruptive]]
 == StorageGRID Hotfix 不中斷營運
 
 StorageGRID 系統可在整個 Hotfix 程序中、從用戶端應用程式擷取及擷取資料。如果您將所有類型相同的節點都核准給 Hotfix （例如儲存節點）、則節點會一次關閉一個節點、因此當某種類型的所有網格節點或所有網格節點都無法使用時、就不會有任何時間。
@@ -29,6 +30,7 @@ StorageGRID 系統可在整個 Hotfix 程序中、從用戶端應用程式擷取
 
 
 
+[[client-applications-might-experience-short-term-disruptions]]
 == 用戶端應用程式可能會遭遇短期中斷
 
 整個修復程序過程中、支援從用戶端應用程式擷取和擷取資料；不過、如果修復程式需要重新啟動這些節點上的服務、則個別閘道節點或儲存節點的用戶端連線可能會暫時中斷。StorageGRID在修復程序完成後、連線功能將會恢復、而服務會在個別節點上恢復。
@@ -40,12 +42,14 @@ NOTE: 您可以使用多個閘道和高可用度（HA）群組、在修復程序
 
 
 
+[[alerts-and-snmp-notifications-might-be-triggered]]
 == 可能會觸發警示和SNMP通知
 
 當服務重新啟動時、StorageGRID 以及當作業系統以混合版本環境運作時（某些執行舊版的網格節點、而其他節點則已升級至更新版本）、可能會觸發警示和SNMP通知。一般而言、這些警示和通知會在修復程式完成時清除。
 
 
 
+[[configuration-changes-are-restricted]]
 == 組態變更受到限制
 
 將修補程式套用StorageGRID 至

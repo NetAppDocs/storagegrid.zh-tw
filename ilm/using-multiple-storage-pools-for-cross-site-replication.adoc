@@ -24,6 +24,7 @@ CAUTION: 在配置StorageGRID部署以進行站點遺失保護時，也必須考
 
 
 
+[[replication-example]]
 == 複寫範例
 
 根據預設、 StorageGRID 安裝期間會為每個站台建立一個儲存池。只有一個站台組成儲存集區、您就能設定使用複寫來保護站台遺失的 ILM 規則。在此範例中：
@@ -48,6 +49,7 @@ image:ilm_replication_make_2_copies_2_pools_2_sites.png["在 2 個站台中的�
 
 
 
+[[erasure-coding-example]]
 == 銷毀編碼範例
 
 每個儲存資源池包含多個站台、可讓您設定 ILM 規則、使用銷毀編碼來保護站台遺失。在此範例中：

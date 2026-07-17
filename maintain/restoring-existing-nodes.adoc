@@ -22,6 +22,8 @@ summary: 若要將故障的網格節點還原至新的 Linux 主機、請執行�
 
 
 
+[[restore-and-validate-grid-nodes]]
+[[restore-validate-grid-nodes]]
 == 還原及驗證網格節點
 
 您必須還原任何故障網格節點的網格組態檔、然後驗證網格組態檔並解決任何錯誤。
@@ -96,6 +98,7 @@ NOTE: 如果您使用任何新的區塊裝置（ StorageGRID 節點先前未使�
 
 
 
+[[fix-missing-network-interface-errors]]
 === 修正遺失的網路介面錯誤
 
 如果主機網路未正確設定或名稱拼錯、 StorageGRID 會在檢查檔案中指定的對應時發生錯誤 `/etc/storagegrid/nodes/_node-name_.conf`。
@@ -118,6 +121,8 @@ ERROR: <node-name>: GRID_NETWORK_TARGET = <host-interface-name>
 
 
 
+[[fix-missing-block-device-errors]]
+[[fix-block-errors]]
 === 修正遺失的區塊裝置錯誤
 
 系統會檢查每個還原的節點是否對應到有效的區塊裝置特殊檔案、或是區塊裝置特殊檔案的有效軟體連結。如果 StorageGRID 在檔案中找到無效的對應 `/etc/storagegrid/nodes/_node-name_.conf`、就會顯示遺失區塊裝置錯誤。
@@ -152,6 +157,7 @@ NOTE: 如果您必須為任何組態檔案變數提供新的區塊儲存裝置�
 ====
 
 
+[[start-storagegrid-host-service]]
 == 啟動StorageGRID 支援服務
 
 若要啟動StorageGRID 您的支援節點、並確保在主機重新開機後重新啟動節點、您必須啟用StorageGRID 並啟動該支援中心服務。
@@ -186,6 +192,8 @@ sudo systemctl reload-or-restart storagegrid
 
 
 
+[[recover-nodes-that-fail-to-start-normally]]
+[[recover-nodes-fail-start]]
 == 恢復無法正常啟動的節點
 
 如果 StorageGRID 節點無法正常重新加入網格、且未顯示為可還原、則可能已毀損。您可以強制節點進入恢復模式。

@@ -17,6 +17,7 @@ summary: 您必須先將至少一個端點設定為平台服務的目的地、�
 
 
 
+[[what-is-a-platform-services-endpoint]]
 == 什麼是平台服務端點？
 
 平台服務端點會指定 StorageGRID 存取外部目的地所需的資訊。
@@ -29,12 +30,14 @@ summary: 您必須先將至少一個端點設定為平台服務的目的地、�
 
 
 
+[[endpoints-for-cloudmirror-replication]]
 == 用於CloudMirror複寫的端點
 
 支援代表S3儲存區的複寫端點。StorageGRID這些儲存庫可能託管在Amazon Web Services、相同或遠端StorageGRID 的功能或其他服務上。
 
 
 
+[[endpoints-for-notifications]]
 == 通知的端點
 
 StorageGRID支援 Amazon SNS、Kafka 和 webhook 端點。不支援簡單佇列服務 (SQS) 和 AWS Lambda 端點。
@@ -43,6 +46,7 @@ StorageGRID支援 Amazon SNS、Kafka 和 webhook 端點。不支援簡單佇列�
 
 
 
+[[endpoints-for-the-search-integration-service]]
 == 搜尋整合服務的端點
 
 支援代表Elasticsearch叢集的搜尋整合端點。StorageGRID這些彈性搜尋叢集可以位於本機資料中心、也可以存放在 AWS 雲端或其他地方。

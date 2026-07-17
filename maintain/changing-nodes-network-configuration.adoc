@@ -207,6 +207,7 @@ Updating grid network configuration on Name
 
 
 
+[[temporarily-changing-the-lacp-pdu-rate]]
 == 暫時更改 LACP PDU 速率
 
 若要對裝置中安裝的網路元件執行維護作業（例如昇級 NIC 韌體），您可以檢查目前 LACP PDU 速率設定是否符合 NIC 通訊時序要求。如果需要，您可以非持續地在快速（等待 1 秒）和慢速（等待 30 秒）之間切換 LACP PDU 速率。

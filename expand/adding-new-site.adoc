@@ -15,6 +15,7 @@ summary: 您可以新增一個網站來擴充StorageGRID 您的功能。
 
 
 
+[[guidelines-for-adding-a-site]]
 == 新增站台的準則
 
 在新增站台之前、請先檢閱下列需求與限制：

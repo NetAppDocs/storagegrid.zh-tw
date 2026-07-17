@@ -20,6 +20,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[storage-categories]]
 == 儲存類別
 
 不需使用下列三種邏輯儲存設備：StorageGRID
@@ -33,6 +34,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[performance-requirements]]
 == 效能要求
 
 用於容器集區、系統資料和物件中繼資料的磁碟區效能、會大幅影響系統的整體效能。您應該為這些磁碟區使用效能層（10K SAS或SSD）儲存設備、以確保在延遲、每秒輸入/輸出作業（IOPS）和處理量等方面達到適當的磁碟效能。您可以使用容量層（NL-SAS/SATA）儲存設備來持續儲存物件資料。
@@ -41,6 +43,7 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 
 
+[[requirements-for-hosts-that-use-netapp-ontap-storage]]
 == 使用 NetApp ONTAP 儲存設備的主機需求
 
 如果 StorageGRID 節點使用從 NetApp ONTAP 系統指派的儲存設備、請確認該磁碟區未啟用 FabricPool 分層原則。停用FabricPool 與物件節點搭配使用的磁碟區的分層StorageGRID 功能、可簡化疑難排解和儲存作業。
@@ -50,6 +53,7 @@ NOTE: 切勿使用FabricPool 無法將StorageGRID 任何與還原StorageGRID 本
 
 
 
+[[number-of-hosts-required]]
 == 所需的主機數量
 
 每StorageGRID 個站台至少需要三個儲存節點。
@@ -64,6 +68,7 @@ NOTE: 磁碟快照無法用於還原網格節點。請參閱link:../maintain/war
 
 
 
+[[number-of-storage-volumes-for-each-node]]
 == 每個節點的儲存卷數量
 
 下表顯示每個主機所需的儲存磁碟區（LUN）數量、以及每個LUN所需的最小大小、視該主機上部署的節點而定。
@@ -159,6 +164,7 @@ NOTE: 根據設定的稽核等級、使用者輸入的大小（例如 S3 物件�
 
 
 
+[[minimum-storage-space-for-a-host]]
 == 主機的最小儲存空間
 
 下表顯示每種節點類型所需的最小儲存空間。您可以使用此表格來決定每個儲存類別中的主機所必須提供的最小儲存容量、這取決於要在該主機上部署哪些節點。
@@ -204,6 +210,7 @@ _不適用_
 |===
 
 
+[[example-calculating-the-storage-requirements-for-a-host-or-virtual-machine]]
 == 範例：計算主機或虛擬機器的儲存需求
 
 假設您打算在同一台主機或虛擬機器上部署三個節點：一個儲存節點、一個管理節點和一個網關節點。您應該向主機提供至少九個儲存磁碟區。您將需要至少 300 GB 的效能層儲存用於節點容器，700 GB 的效能層儲存用於系統資料和交易日誌，以及 12 TB 的容量層儲存用於物件資料。
@@ -380,6 +387,8 @@ Container引擎儲存資源池
 ====
 
 
+[[specific-storage-requirements-for-storage-nodes]]
+[[storage_req_SN]]
 == 儲存節點的特定儲存要求
 
 Linux和VMware對儲存節點的儲存需求不同：

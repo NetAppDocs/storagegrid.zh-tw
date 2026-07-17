@@ -27,6 +27,7 @@ summary: 您可以使用租戶管理REST API（而非租戶管理程式使用者
 
 
 
+[[api-operations]]
 == API 作業
 
 租戶管理API會將可用的API作業組織成下列區段：
@@ -59,6 +60,7 @@ NOTE: 如果StorageGRID 啟用了單一登入（SSO）功能、您必須執行�
 
 
 
+[[operation-details]]
 == 營運詳細資料
 
 展開每個API作業時、您可以看到其HTTP動作、端點URL、任何必要或選用參數的清單、要求本文的範例（視需要）、以及可能的回應。
@@ -67,6 +69,7 @@ image:tenant_api_swagger_example.gif["顯示Swagger API中Get Groups作業的範
 
 
 
+[[issue-api-requests]]
 == 發出API要求
 
 

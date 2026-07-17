@@ -36,6 +36,7 @@ _公司A可以使用Grid Management API中的Deactivate Features系統來達成�
 
 
 
+[[reactivate-deactivated-features]]
 == 重新啟動停用的功能
 
 根據預設、您可以使用Grid Management API重新啟動已停用的功能。不過、如果您想要防止停用的功能再次被重新啟動、您可以停用*啟用功能*功能本身。

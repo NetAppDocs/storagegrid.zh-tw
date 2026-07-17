@@ -22,6 +22,7 @@ summary: 您可以新增、更新或移除網路時間傳輸協定（ NTP ）伺
 
 
 
+[[how-storagegrid-uses-ntp]]
 == StorageGRID 如何使用 NTP
 
 StorageGRID 系統使用網路時間傳輸協定（ NTP ）來同步網格中所有網格節點之間的時間。
@@ -32,6 +33,7 @@ StorageGRID 系統使用網路時間傳輸協定（ NTP ）來同步網格中所
 
 
 
+[[ntp-server-guidelines]]
 == NTP 伺服器準則
 
 請遵循以下準則、避免發生時間問題：
@@ -46,6 +48,7 @@ NOTE: 指定正式作業層級 StorageGRID 安裝的外部 NTP 來源時、請�
 
 
 
+[[configure-ntp-servers]]
 == 設定 NTP 伺服器
 
 請依照下列步驟新增、更新或移除 NTP 伺服器。
@@ -68,6 +71,7 @@ NOTE: 如果所有 NTP 伺服器在您儲存新的 NTP 伺服器之後都未通�
 
 
 
+[[resolve-ntp-server-issues]]
 == 解決 NTP 伺服器問題
 
 如果您在安裝期間遇到最初指定NTP伺服器的穩定性或可用度問題、您可以StorageGRID 新增其他伺服器、或更新或移除現有伺服器、以更新該系統使用的外部NTP來源清單。

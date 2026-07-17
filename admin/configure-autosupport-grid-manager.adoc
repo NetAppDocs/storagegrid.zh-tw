@@ -35,6 +35,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 
 
 
+[[specify-protocol-for-autosupport-packagesspecify-the-protocol-for-autosupport-packages]]
 == [[specify － protocol-for － autosupport － packages]] 指定 AutoSupport 軟件包的協議
 
 您可以使用下列任一種通訊協定來傳送 AutoSupport 套件：
@@ -60,6 +61,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 
 
 
+[[disable-weekly-autosupport]]
 == 停用每週 AutoSupport
 
 根據預設、 StorageGRID 系統會設定為每週傳送一次 AutoSupport 套件給技術支援。
@@ -76,6 +78,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 
 
 
+[[disable-event-triggered-autosupport]]
 == 停用事件觸發的 AutoSupport
 
 根據預設、 StorageGRID 系統會設定為每小時傳送一次 AutoSupport 套件給技術支援。
@@ -90,6 +93,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 
 
 
+[[enable-autosupport-on-demand]]
 == 啟用AutoSupport 隨需功能
 
 根據需求提供支援、協助您解決技術支援部門正在積極處理的問題。AutoSupport
@@ -111,6 +115,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 
 
 
+[[disable-checks-for-software-updates]]
 == 停用軟體更新檢查
 
 根據預設、StorageGRID 此功能會聯絡NetApp以判斷您的系統是否有可用的軟體更新。如果StorageGRID 有可用的更新版本或更新版本、則StorageGRID 更新版本會顯示在「更新版」頁面上。
@@ -125,6 +130,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 
 
 
+[[add-an-additional-autosupport-destination]]
 == 新增AutoSupport 其他的目的地
 
 啟用 AutoSupport 時、 heath 和 status 套件會傳送至技術支援。您可以為所有 AutoSupport 套件指定一個額外目的地。
@@ -177,6 +183,7 @@ CA 憑證中繼資料即會出現。
 
 
 
+[[autosupport-for-appliancesconfigure-autosupport-for-appliances]]
 == [[autosup-for -ariance]] 設定應用裝置的 AutoSupport
 
 AutoSupport for Appliance 回報 StorageGRID 硬體問題、而 StorageGRID AutoSupport 回報 StorageGRID 軟體問題、但有一個例外：對於 SGF6112 、 StorageGRID AutoSupport 同時報告硬體和軟體問題。您必須在每個應用裝置上設定 AutoSupport 、 SGF6112 除外、因為 SGF6112 不需要額外的組態。AutoSupport 在服務應用裝置和儲存設備上的實作方式有所不同。

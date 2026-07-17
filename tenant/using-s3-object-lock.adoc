@@ -18,6 +18,7 @@ NOTE: 您的網格管理員必須授予您使用 S3 物件鎖定特定功能的�
 
 
 
+[[what-is-s3-object-lock]]
 == 什麼是S3物件鎖定？
 
 「物件鎖定」功能是物件保護解決方案、StorageGRID 相當於Amazon Simple Storage Service（Amazon S3）中的S3物件鎖定。
@@ -34,6 +35,7 @@ NOTE: 您的網格管理員必須授予您使用 S3 物件鎖定特定功能的�
 
 
 
+[[retention-modes]]
 === 保留模式
 
 StorageGRID S3 物件鎖定功能支援兩種保留模式、可將不同層級的保護套用至物件。這些模式相當於 Amazon S3 保留模式。
@@ -56,6 +58,7 @@ StorageGRID S3 物件鎖定功能支援兩種保留模式、可將不同層級�
 
 
 
+[[retention-settings-for-object-versions]]
 === 物件版本的保留設定
 
 如果在啟用 S3 物件鎖定的情況下建立貯體、使用者可以使用 S3 用戶端應用程式、針對新增至貯體的每個物件、選擇性地指定下列保留設定：
@@ -74,6 +77,7 @@ NOTE: 如果物件處於合法保留狀態、則無論物件的保留模式為�
 
 
 
+[[default-retention-setting-for-buckets]]
 === 貯體的預設保留設定
 
 如果在啟用 S3 物件鎖定的情況下建立貯體、使用者可以選擇性地指定貯體的下列預設設定：
@@ -88,6 +92,7 @@ NOTE: 如果物件處於合法保留狀態、則無論物件的保留模式為�
 
 
 
+[[s3-object-lock-tasks]]
 == S3 物件鎖定工作
 
 下列網格管理員和租戶使用者清單包含使用 S3 物件鎖定功能的高階工作。
@@ -127,6 +132,7 @@ NOTE: 如果物件處於合法保留狀態、則無論物件的保留模式為�
 
 
 
+[[requirements-for-buckets-with-s3-object-lock-enabled]]
 == 啟用S3物件鎖定的儲存區需求
 
 * 如果StorageGRID 已針對整個S3物件鎖定設定啟用for the S廳 系統、您可以使用租戶管理程式、租戶管理API或S3 REST API來建立啟用S3物件鎖定的儲存區。
@@ -139,6 +145,7 @@ NOTE: 如果物件處於合法保留狀態、則無論物件的保留模式為�
 
 
 
+[[requirements-for-objects-in-buckets-with-s3-object-lock-enabled]]
 == 啟用S3物件鎖定之儲存區中的物件需求
 
 * 若要保護物件版本、您可以指定貯體的預設保留設定、或是指定每個物件版本的保留設定。可以使用 S3 用戶端應用程式或 S3 REST API 來指定物件層級保留設定。
@@ -147,6 +154,7 @@ NOTE: 如果物件處於合法保留狀態、則無論物件的保留模式為�
 
 
 
+[[lifecycle-of-objects-in-buckets-with-s3-object-lock-enabled]]
 == 啟用S3物件鎖定的儲存區物件生命週期
 
 儲存在已啟用 S3 物件鎖定的儲存貯體中的每個物件都會經過下列階段：
@@ -176,6 +184,7 @@ StorageGRID 會在指定的保留期間內儲存每個受保護物件的多個�
 
 
 
+[[can-i-still-manage-legacy-compliant-buckets]]
 == 我是否仍能管理舊有的法規遵循貯體？
 
 S3物件鎖定功能取代先前StorageGRID 版本的Compliance功能。如果您使用StorageGRID 舊版的《不規則》建立了相容的儲存桶、您可以繼續管理這些儲存桶的設定、但是您無法再建立新的相容儲存桶。有關說明，請參閱https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp知識庫：如何管理StorageGRID 支援老舊的知識庫、請參閱《知識庫文章"^]。

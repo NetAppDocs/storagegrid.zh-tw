@@ -27,6 +27,7 @@ summary: 為了確保物件中繼資料有足夠的可用空間、您可能需�
 
 
 
+[[guidelines-for-increasing-metadata-capacity]]
 == 增加中繼資料容量的準則
 
 在新增儲存節點以增加中繼資料容量之前、請先檢閱下列準則與限制：
@@ -62,6 +63,7 @@ summary: 為了確保物件中繼資料有足夠的可用空間、您可能需�
 
 
 
+[[how-metadata-is-redistributed-when-you-add-storage-nodes]]
 == 新增儲存節點時、中繼資料的重新分配方式
 
 在擴充中新增儲存節點時StorageGRID 、功能區會將現有的物件中繼資料重新分配至每個站台的新節點、以增加網格的整體中繼資料容量。不需要使用者採取任何行動。
