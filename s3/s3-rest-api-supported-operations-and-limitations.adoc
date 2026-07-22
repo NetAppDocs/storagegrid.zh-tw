@@ -13,7 +13,7 @@ summary: 此系統實作簡單儲存服務API（API版本2002-03）、支援大�
 [role="lead"]
 此系統實作簡單儲存服務API（API版本2002-03）、支援大部分作業、並有一些限制。StorageGRID整合S3 REST API用戶端應用程式時、您必須瞭解實作詳細資料。
 
-支援虛擬託管型要求和路徑型要求的支援。StorageGRID
+StorageGRID 系統同時支援虛擬託管式請求和路徑式請求。
 
 
 

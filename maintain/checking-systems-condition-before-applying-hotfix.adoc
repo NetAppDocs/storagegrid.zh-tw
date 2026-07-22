@@ -13,6 +13,7 @@ summary: 您必須驗證系統是否已準備好容納此修復程式。
 [role="lead"]
 您必須驗證系統是否已準備好容納此修復程式。
 
+.步驟
 . 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 . 如有可能、請確定系統正常運作、且所有網格節點均已連接至網格。
 +

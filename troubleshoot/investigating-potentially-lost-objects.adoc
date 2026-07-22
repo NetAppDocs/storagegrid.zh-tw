@@ -129,7 +129,12 @@ Admin: # grep OLST audit.log
  a| 
 如果輸出中沒有列出位置，則該物件可能會遺失。聯繫技術支援。
 
-技術支援人員可能會要求您判斷是否有正在進行的儲存恢復程序。請參閱和link:../maintain/restoring-object-data-to-storage-volume.html["將物件資料還原至儲存磁碟區"]的相關資訊link:../maintain/restoring-volume.html["使用 Grid Manager 還原物件資料"]。
+技術支援可能會要求您確定是否存在正在進行的儲存設備恢復流程。請參閱：
+
+*** link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html["將物件資料還原至應用裝置的儲存磁碟區"]
+*** link:../maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html["將物件資料還原至系統磁碟機不受影響的儲存磁碟區"]
+*** link:../maintain/restoring-object-data-to-storage-volume.html["將物件資料還原至儲存磁碟區（系統磁碟機故障）"]
+
 
 |===
 

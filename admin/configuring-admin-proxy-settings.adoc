@@ -13,7 +13,7 @@ summary: 如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、則可以在
 [role="lead"]
 如果您使用 HTTP 或 HTTPS 傳送 AutoSupport 套件、則可以在管理節點和技術支援（ AutoSupport ）之間設定不透明的 Proxy 伺服器。
 
-如需 AutoSupport 的詳細資訊，請參閱link:configure-autosupport-grid-manager.html["設定AutoSupport 功能"]。
+如需更多關於 AutoSupport 的資訊，請參閱 link:../monitor/configure-autosupport-grid-manager.html["設定AutoSupport 功能"]。
 
 .開始之前
 * 您有 link:admin-group-permissions.html["特定存取權限"]。

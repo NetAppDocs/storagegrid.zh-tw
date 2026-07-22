@@ -33,7 +33,14 @@ summary: 本節說明StorageGRID 此功能如何支援多部份上傳作業。
 * 所有分段上傳操作都支援StorageGRIDlink:consistency.html["一致性值"] 。
 * 當使用多部分上傳擷取物件時、link:../admin/what-object-segmentation-is.html["物件分割臨界值（ 1 GiB ）"]不會套用。
 * 視需要、您可以使用link:using-server-side-encryption.html["伺服器端加密"]多部分上傳。若要使用 SSE （伺服器端加密搭配 StorageGRID 託管金鑰）、請僅在 CreateMultpartUpload 要求中加入 `x-amz-server-side-encryption`要求標頭。若要使用 SSE-C （伺服器端加密搭配客戶提供的金鑰）、您可以在 CreateMultpartUpload 要求和每個後續的 UploPart 要求中指定相同的三個加密金鑰要求標頭。
-* 分段上傳的物件包含在link:../tenant/what-is-branch-bucket.html["分支桶"]如果攝取是在基本儲存桶的 Before 時間戳之前啟動的，則無論上傳何時完成。
+* 多部分上傳物件是否包含在 link:../tenant/what-is-branch-bucket.html["分支桶"] 中，取決於發起擷取的時間和分支儲存桶的時間篩選器：
++
+** *之前*。如果擷取是在分支儲存桶的 _Before_ 時間戳記之前啟動，則無論上傳何時完成，都會包含多部分上傳的物件。
+** *之後*。如果擷取是在分支儲存桶的 _After_ 時間戳記之後發起的，則會包含多部分上傳的物件。
+** *介於*之間。如果擷取是在分支儲存桶的 _From_ 和 _To_ 時間戳記之間啟動，則無論上傳何時完成，都會包含多部分上傳的物件。
+** *排除*。如果擷取是在分支儲存桶的 _Exclude from_ 時間之前或 _Exclude to_ 時間之後發起的，則多部分上傳的物件將包含在內。
+
+
 
 
 [cols="2a,3a"]

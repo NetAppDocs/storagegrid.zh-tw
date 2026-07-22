@@ -268,18 +268,9 @@ NOTE: 若link:../maintain/configuring-ntp-servers.html["指定外部 NTP 來源"
 在某些情況下，可以透過使用 MAC 位址克隆來解決網路問題。如果您使用虛擬主機，請在節點設定檔中將每個網路的 MAC 位址複製鍵的值設為「true」。此設定會導致StorageGRID容器的 MAC 位址使用主機的 MAC 位址。請參閱說明link:../swnodes/creating-node-configuration-files.html["建立節點設定檔"]。
 
 
-NOTE: 建立獨立的虛擬網路介面、供Linux主機作業系統使用。如果StorageGRID Hypervisor上未啟用混雜模式、則在Linux主機作業系統和支援此功能的Container上使用相同的網路介面、可能會導致主機作業系統無法連線。
+NOTE: 為 Linux 主機作業系統建立分隔的虛擬網路介面。如果 Linux 主機作業系統和 StorageGRID Container 使用相同的網路介面，可能會導致主機作業系統無法存取。
 
 欲了解更多信息，請參閱link:../swnodes/configuring-host-network.html["啟用 MAC 克隆"]。
-
-
-
-[[promiscuous-mode]]
-=== 混雜模式
-
-如果您不想使用 MAC 位址複製、而是希望允許所有介面接收和傳輸 MAC 位址的資料、而非 Hypervisor 指定的位址、 請確定虛擬交換器和連接埠群組層級的安全性內容在「雜亂模式」、「 MAC 位址變更」和「僞造傳輸」中設為 * 接受 * 。虛擬交換器上設定的值可由連接埠群組層級的值覆寫、因此請確保兩個位置的設定都相同。
-
-有關使用混雜模式的更多信息，請參閱link:../swnodes/configuring-host-network.html["如何配置主機網路"]。
 
 
 

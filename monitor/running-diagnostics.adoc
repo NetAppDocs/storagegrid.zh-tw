@@ -43,7 +43,7 @@ summary: 疑難排解問題時、您可以與技術支援部門合作、在Stora
 +
 image:support_diagnostics_page.png["支援診斷頁面"]
 
-. 若要深入瞭解特定診斷、請按一下列中的任何位置。
+. 若要深入瞭解特定診斷，請選取該列。
 +
 將顯示診斷及其目前結果的詳細資料。下列為詳細資料：
 
@@ -75,7 +75,7 @@ NOTE: 您也可以從 *支援* > *工具* > *指標* 頁面的 Grafana 部分存
 +
 image:grafana_dashboard_nodes.png["Grafana儀表板節點"]
 
-. *選用*：若要查看Prometheus運算式一段時間的圖表、請按一下*在Prometheus*中檢視。
+. *選用*：若要查看 Prometheus 表示式隨時間變化的圖表，請選擇 *View in Prometheus*。
 +
 隨即顯示診斷所使用之運算式的Prometheus圖表。
 

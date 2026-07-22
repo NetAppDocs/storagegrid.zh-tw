@@ -47,13 +47,9 @@ summary: 您可以執行數項工作、以協助判斷與管理節點和 Storage
 
 
 . 判斷節點的硬體是否離線。
-. 如果您的StorageGRID系統啟用了單一登入 (SSO)，請參閱link:../admin/configure-sso.html["設定單一登入"]。
+. 如果您的 StorageGRID 系統已啟用單一登入 （SSO），請參閱使用 link:../admin/learn-about-setting-up-sso-oidc.html["OIDC"] 或 link:../admin/learn-about-setting-up-sso-saml.html["SAML"] 設定 SSO。
 +
 您可能需要暫時停用單一管理節點並重新啟用SSO、才能解決任何問題。
-
-+
-
-NOTE: 如果啟用 SSO 、您就無法使用限制的連接埠登入。您必須使用連接埠443。
 
 . 判斷您使用的帳戶是否屬於聯盟使用者。
 +
@@ -64,7 +60,7 @@ NOTE: 如果啟用 SSO 、您就無法使用限制的連接埠登入。您必須
 +
 ... 檢閱警示。
 ... 選擇*配置* > *存取控制* > *身份聯合*。
-... 按一下*測試連線*以驗證LDAP伺服器的連線設定。
+... 選擇「測試連線」以驗證 LDAP 伺服器的連線設定。
 ... 如果測試失敗、請解決任何組態錯誤。
 
 

@@ -10,8 +10,10 @@ settings:
     harmony_enabled: false
     hide_language_selector: false
   versions:
-  - version-number: '12.0'
+  - version-number: '12.1'
     url: "/storagegrid"
+  - version-number: '12.0'
+    url: "/storagegrid-120"
   - version-number: '11.9'
     url: "/storagegrid-119"
   - version-number: '11.8'
@@ -25,13 +27,13 @@ settings:
   langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
 sidebar:
   entries:
-  - title: StorageGRID 12.0 軟體
+  - title: StorageGRID 12.1 軟體
     url: "/index.html"
   - title: StorageGRID 應用裝置
     url: "/swnodes/storagegrid-hardware.html"
   - title: 版本資訊
     entries:
-    - title: StorageGRID 12.0 中的新功能
+    - title: StorageGRID 12.1 的新功能
       url: "/release-notes/whats-new.html"
     - title: 已移除或已過時的功能和特性
       url: "/release-notes/removed-or-deprecated-features.html"
@@ -39,6 +41,8 @@ sidebar:
       url: "/release-notes/changes-to-grid-management-api.html"
     - title: 租戶管理API變更
       url: "/release-notes/changes-to-tenant-management-api.html"
+    - title: S3 REST API 支援的變更
+      url: "/release-notes/changes-to-s3-rest-api.html"
   - title: 開始使用
     url: "/landing-get-started/index.html"
     entries:
@@ -269,22 +273,20 @@ sidebar:
           url: "/maintain/selecting-start-recovery-to-configure-appliance-storage-node.html"
         - title: 重新掛載及重新格式化應用裝置儲存磁碟區（手動步驟）
           url: "/maintain/remounting-and-reformatting-appliance-storage-volumes.html"
-        - title: 將物件資料還原至應用裝置的儲存磁碟區
+        - title: 將物件資料還原至應用裝置儲存設備 Volume
           url: "/maintain/restoring-object-data-to-storage-volume-for-appliance.html"
         - title: 恢復應用裝置儲存節點後、請檢查儲存狀態
           url: "/maintain/checking-storage-state-after-recovering-sga.html"
       - title: 從系統磁碟機不受影響的儲存磁碟區故障中恢復
+        pdf-filename: 從系統磁碟機不受影響的儲存磁碟區故障中恢復
         entries:
-        - title: 恢復工作
-          pdf-filename: 從系統磁碟機不受影響的儲存磁碟區故障中恢復
-          url: "/maintain/recovering-from-storage-volume-failure-where-system-drive-is-intact.html"
         - title: 儲存磁碟區恢復警告
           url: "/maintain/reviewing-warnings-about-storage-volume-recovery.html"
         - title: 識別並卸載故障的儲存磁碟區
           url: "/maintain/identifying-and-unmounting-failed-storage-volumes.html"
         - title: 恢復故障的儲存磁碟區並重建Cassandra資料庫
           url: "/maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html"
-        - title: 將物件資料還原至系統磁碟機不受影響的儲存磁碟區
+        - title: 將物件資料還原至系統磁碟機完好的 StorageGRID Volume
           url: "/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html"
         - title: 恢復儲存磁碟區後、請檢查儲存狀態
           url: "/maintain/checking-storage-state-after-recovering-storage-volumes.html"
@@ -298,23 +300,19 @@ sidebar:
           url: "/maintain/selecting-start-recovery-to-configure-storage-node.html"
         - title: 重新掛載及重新格式化儲存磁碟區（手動步驟）
           url: "/maintain/remounting-and-reformatting-storage-volumes-manual-steps.html"
-        - title: 將物件資料還原至儲存磁碟區（系統磁碟機故障）
+        - title: 將物件資料還原至儲存設備 Volume
           url: "/maintain/restoring-object-data-to-storage-volume.html"
         - title: 恢復儲存節點系統磁碟機後、請檢查儲存狀態
           url: "/maintain/checking-storage-state-after-recovering-storage-node-system-drive.html"
-      - title: 使用 Grid Manager 還原物件資料
-        url: "/maintain/restoring-volume.html"
-      - title: 監控修復資料工作
-        url: "/maintain/monitor-repairs.html"
     - title: 從管理節點故障中恢復
       entries:
       - title: 主要或非主要管理節點
         pdf-filename: 從管理節點故障中恢復
         url: "/maintain/recovering-from-admin-node-failures.html"
-      - title: 從主要管理節點故障中恢復
+      - title: 使用同一個主要管理節點從主要管理節點故障中恢復
         entries:
-        - title: 恢復主管理節點
-          pdf-filename: 從主要管理節點故障中恢復
+        - title: 使用同一個主要管理節點恢復主要管理節點
+          pdf-filename: 使用同一個主要管理節點恢復主要管理節點
           url: "/maintain/recovering-from-primary-admin-node-failures.html"
         - title: 從故障的主要管理節點複製稽核記錄
           url: "/maintain/copying-audit-logs-from-failed-primary-admin-node.html"
@@ -330,6 +328,23 @@ sidebar:
           url: "/maintain/restoring-admin-node-database-primary-admin-node.html"
         - title: 恢復主管理節點時、請還原Prometheus指標
           url: "/maintain/restoring-prometheus-metrics-primary-admin-node.html"
+      - title: 使用非主要管理節點從主要管理節點故障中恢復
+        entries:
+        - title: 使用非主要管理節點恢復主要管理節點
+          pdf-filename: 使用非主要管理節點恢復主要管理節點
+          url: "/maintain/recovering-from-primary-admin-node-failures-using-npan.html"
+        - title: 從故障的主要管理節點複製稽核記錄
+          url: "/maintain/copying-audit-logs-from-failed-primary-admin-node-using-npan.html"
+        - title: 取代主要管理節點
+          url: "/maintain/replacing-primary-admin-node-using-npan.html"
+        - title: 選擇「開始恢復」以設定主要管理節點
+          url: "/maintain/selecting-start-recovery-to-configure-primary-admin-node.html"
+        - title: 判斷主要管理節點的 Hotfix 需求
+          url: "/maintain/assess-hotfix-requirement-during-primary-admin-node-recovery-using-npan.html"
+        - title: 在恢復的主要管理節點上還原稽核記錄
+          url: "/maintain/restoring-audit-log-on-recovered-primary-admin-node-using-npan.html"
+        - title: 恢復主管理節點時、請還原Prometheus指標
+          url: "/maintain/restoring-prometheus-metrics-primary-admin-node-using-npan.html"
       - title: 從非主要管理節點故障中恢復
         entries:
         - title: 恢復非主要管理節點
@@ -369,8 +384,10 @@ sidebar:
         url: "/maintain/restoring-existing-nodes.html"
       - title: 接下來：視需要執行其他恢復步驟
         url: "/maintain/whats-next-performing-additional-recovery-steps-if-required.html"
-    - title: 更換 VMware 節點
+    - title: 以恢復節點取代 VMware 節點
       url: "/maintain/all-node-types-replacing-vmware-node.html"
+    - title: 將 VMware 節點替換為 SG1000 或 SG100
+      url: "/maintain/replace-vmware-node-with-sg1000-sg100.html"
     - title: 使用服務應用裝置來更換故障節點
       entries:
       - title: 更換準則

@@ -23,10 +23,10 @@ CAUTION: 如果您急需擴展儲存以增加容量（如果您的儲存幾乎�
 [[before-you-upgrade]]
 == 升級之前
 
-查看這些主題以了解StorageGRID 12.0 中的新功能和增強功能，確定是否有任何功能已被棄用或刪除，並了解StorageGRID API 的變化。
+請查看這些主題，了解 StorageGRID 12.1 中的新功能和增強功能、確認是否有任何功能已過時或移除，以及了解 StorageGRID API 的變更。
 
 * link:how-your-system-is-affected-during-upgrade.html["系統在升級期間的影響"]
-* link:../release-notes/whats-new.html["StorageGRID 12.0 中的新功能"]
+* link:../release-notes/whats-new.html["StorageGRID 12.1 的新功能"]
 * link:../release-notes/removed-or-deprecated-features.html["已移除或已過時的功能"]
 * link:../release-notes/changes-to-grid-management-api.html["網格管理API的變更"]
 * link:../release-notes/changes-to-tenant-management-api.html["租戶管理API變更"]

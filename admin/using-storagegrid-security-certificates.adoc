@@ -186,7 +186,7 @@ NOTE: 如果您有link:admin-group-permissions.html["適當的權限"]，則只�
 *** link:grid-federation-manage-connection.html#rotate-connection-certificates["旋轉網格同盟連線憑證"]
 *** link:using-identity-federation.html["檢視及編輯身分識別聯盟憑證"]
 *** link:kms-adding.html["上傳金鑰管理伺服器（KMS）伺服器和用戶端憑證"]
-*** link:creating-relying-party-trusts-in-ad-fs.html#create-a-relying-party-trust-manually["手動指定依賴方信任的 SSO 憑證"]
+*** link:creating-relying-party-trusts-in-ad-fs-saml.html#create-a-relying-party-trust-manually["手動指定依賴方信任的 SSO 憑證"]
 
 
 --
@@ -317,7 +317,7 @@ link:configuring-administrator-client-certificates.html["設定用戶端憑證"]
  a| 
 伺服器
  a| 
-驗證StorageGRID 從Ss3 Glacier或Microsoft Azure Blob儲存設備等外部儲存位置的連接。每種雲端供應商類型都需要不同的憑證。
+用於驗證從 StorageGRID 雲端儲存資源池到外部儲存設備位置（例如 S3 Glacier 或 Microsoft Azure Blob 儲存體）的連線。每種雲端供應商類型都需要不同的憑證。
  a| 
 * ILM *>*儲存資源池*
  a| 

@@ -1,0 +1,112 @@
+---
+permalink: admin/configure-multi-admin-verify.html 
+sidebar: sidebar 
+keywords: multi-admin verification, mav, mav administrators, mav approval groups 
+summary: 管理 StorageGRID 多管理員驗證 （MAV） 系統涉及建立和管理 MAV 系統管理員群組和使用者、啟用 MAV 功能以及設定或選擇受保護的操作。 
+---
+= 設定 StorageGRID 多管理員驗證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定 StorageGRID 多管理員驗證 (MAV) 系統涉及建立和管理 MAV 系統管理員群組和使用者、啟用 MAV 功能以及選擇或設定受保護的作業。
+
+MAV 系統管理員對受保護的操作擁有批准權和否決權。
+
+.開始之前
+* 您有link:../admin/admin-group-permissions.html["root 存取權限"]。
+* 您已從主要管理節點登入 Grid Manager。
+
+
+
+
+[[step-1-create-mav-administrator-groups-and-users]]
+== 步驟 1：建立 MAV 系統管理員群組和使用者
+
+您可以將現有系統管理員新增至 MAV 群組，也可以建立新的系統管理員。
+
+您可以將 Active Directory (AD) 使用者設定為 MAV 系統管理員。AD 使用者必須設定為 StorageGRID 系統管理員。
+
+.步驟
+. 若要建立 MAV 系統管理員群組，請依照下列步驟操作 link:../admin/managing-admin-groups.html["建立本機或聯合群組"]。
+. 對於群組權限，請選擇 *Root access* 或 *Multi-admin verification requests*。
+. 將本機使用者或聯合使用者新增至群組，或建立新的本機使用者並將其新增至群組，請依照以下步驟操作 link:../admin/managing-users.html#create-a-local-user["建立本機使用者"]。
+
+
+
+
+[[step-2-enable-or-disable-mav]]
+== 步驟 2：啟用或停用 MAV
+
+您必須明確啟用多重管理員驗證 (MAV)。如果 MAV 已啟用，而您在有待處理的 MAV 要求時決定停用它，則會收到通知，說明待處理的要求將被刪除。
+
+.步驟
+. 選擇 *Configuration* > *Access control* > *Multi-admin verification* > *MAV settings*。
+. 選取 *Enable MAV* 核取方塊以啟用多管理員驗證。
+. 「核准者群組」區段列出 MAV 系統管理員群組和核准者。
+. 在「操作」部分，選取要使用 MAV 保護的操作的核取方塊。
+. （可選）如果您想使用電子郵件通知來提醒 MAV 系統管理員有待核准的請求：
++
+.. 如果您尚未設定電子郵件伺服器，請依照下列步驟操作 link:../monitor/configure-email-server.html["設定電子郵件伺服器"]。
+.. 請輸入寄件者的電子郵件地址。
+.. 請輸入一個或多個電子郵件通知收件者。
+
+
+. 選擇 *Save* 以儲存變更。
++
+
+NOTE: 如果您決定不設定電子郵件通知，MAV 系統管理員可以檢視 Grid Manager 儀表板或檢查待審核要求的核准佇列。若要檢查審核佇列，請在多重管理員驗證頁面上選擇 *Other requests*。
+
+
+
+
+
+[[step-3-manage-protected-operations]]
+== 步驟 3：管理受保護的作業
+
+啟用多管理員驗證後，您可以透過選取或取消選取要使用 MAV 保護的作業核取方塊來管理受保護的作業。
+
+
+NOTE: 對於 StorageGRID 12.1，唯一受保護的作業是 ILM 原則啟動。如果要啟用 MAV，則必須選取 ILM 原則啟動的核取方塊。
+
+MAV 請求可以具有以下幾種狀態之一：
+
+* *待處理*。要求已發起。
+* *已過期*。要求未在 30 天內處理。或者，具有 Root 存取權限的使用者停用了 MAV，這表示所有待處理的要求都已過期。
+* *已撤回*。使用者已撤回其請求。
+* *已核准*。MAV 系統管理員已核准待處理的請求。
+* *已拒絕*。MAV 系統管理員已拒絕待處理的請求。
+
+
+
+
+[[troubleshoot-mav-email-notifications]]
+== 排除 MAV 電子郵件通知故障
+
+如果 MAV 系統管理員沒有收到待處理要求的電子郵件通知，請依照下列步驟解決問題。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:../admin/admin-group-permissions.html["管理警示或根目錄存取權限"]。
+
+
+.步驟
+. 驗證您的設定。
++
+.. 選擇 *組態* > *監控* > *電子郵件伺服器*。
+.. 確認電子郵件（SMTP）伺服器設定正確。
+.. 確認您已為收件者指定有效的電子郵件地址。
+
+
+. 檢查垃圾郵件篩選器、確定電子郵件未傳送至垃圾郵件資料夾。
+. 請要求您的電子郵件管理員確認寄件者地址的電子郵件並未遭到封鎖。
+. 收集管理節點的記錄檔、然後聯絡技術支援部門。
++
+技術支援人員可以使用記錄中的資訊來協助判斷發生問題的原因。例如、prometheus.log檔案在連線至您指定的伺服器時可能會顯示錯誤。
+
++
+請參閱 link:../monitor/collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]。
+
+

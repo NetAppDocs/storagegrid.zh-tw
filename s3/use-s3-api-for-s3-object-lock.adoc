@@ -14,6 +14,9 @@ summary: 如果 StorageGRID 系統已啟用全域 S3 物件鎖定設定、您可
 如果 StorageGRID 系統已啟用全域 S3 物件鎖定設定、您可以在啟用 S3 物件鎖定的情況下建立儲存區。您可以針對每個物件版本、指定每個儲存區或保留設定的預設保留。
 
 
+NOTE: StorageGRID 不支援 `x-amz-sdk-checksum-algorithm`請求標頭。
+
+
 
 [[how-to-enable-s3-object-lock-for-a-bucket]]
 == 如何為貯體啟用 S3 物件鎖定
@@ -22,10 +25,11 @@ summary: 如果 StorageGRID 系統已啟用全域 S3 物件鎖定設定、您可
 
 S3 物件鎖定是永久性設定、只有在建立貯體時才能啟用。建立貯體後、您無法新增或停用 S3 物件鎖定。
 
-若要為貯體啟用 S3 物件鎖定、請使用下列其中一種方法：
+若要為儲存桶啟用 S3 物件鎖定，請使用下列方法之一：
 
 * 使用租戶管理程式建立桶。請參閱。 link:../tenant/creating-s3-bucket.html["建立S3儲存區"]
 * 使用具有要求標頭的 CreateBucket 要求建立貯體 `x-amz-bucket-object-lock-enabled`。請參閱。 link:operations-on-buckets.html["在貯體上作業"]
+* 從租戶管理器管理儲存桶設定。請參閱link:../tenant/update-default-retention-settings.html["更新 S3 物件鎖定預設保留"]。
 
 
 S3 物件鎖定需要儲存區版本設定、此功能會在建立儲存區時自動啟用。您無法暫停儲存區的版本設定。請參閱。 link:object-versioning.html["物件版本管理"]
@@ -83,19 +87,27 @@ S3 物件鎖定需要儲存區版本設定、此功能會在建立儲存區時�
 
 PutObjectLockConfiguration 要求可讓您設定及修改已啟用 S3 物件鎖定的儲存區的預設保留模式和預設保留期間。您也可以移除先前設定的預設保留設定。
 
-將新的物件版本擷取至貯體時、若未指定、 `x-amz-object-lock-retain-until-date`則會套用預設保留模式 `x-amz-object-lock-mode`。如果未指定、則會使用預設保留期間來計算保留截止日期 `x-amz-object-lock-retain-until-date`。
+當新物件版本被擷取至儲存桶時，如果未指定 `x-amz-object-lock-mode`和 `x-amz-object-lock-retain-until-date`，則套用預設保留模式。如果未指定 `x-amz-object-lock-retain-until-date`，則使用預設保留期間來計算保留至日期。
 
-如果在擷取物件版本之後修改預設保留期間、則物件版本的保留截止日期將維持不變、且不會使用新的預設保留期間重新計算。
+如果在擷取物件版本後修改了預設保留期間，則物件版本的保留截止日期保持不變，不會使用新的預設保留期間重新計算。
 
 您必須具有 `s3:PutBucketObjectLockConfiguration`權限或是帳戶根目錄、才能完成此作業。
 
- `Content-MD5`必須在 PUT 要求中指定要求標頭。
+您必須在 PutObjectLockConfiguration 要求中指定以下要求標頭之一：
+
+[listing]
+----
+Content-MD5
+x-amz-checksum-*
+----
+
+NOTE: StorageGRID 不會驗證此操作的 x-amz-checksum-* 標頭內容。
 
 
 
 ==== 申請範例
 
-此範例可為貯體啟用 S3 物件鎖定、並將預設保留模式設為符合法規、並將預設保留期間設為 6 年。
+此範例為儲存桶啟用 S3 Object Lock（如果您的網格系統管理員已授予權限），並將預設保留模式設為 COMPLIANCE，預設保留期間設為 6 年。
 
 [listing, subs="specialcharacters,quotes"]
 ----
@@ -137,7 +149,7 @@ Authorization: _authorization-string_
 
 GetObjectLockConfiguration 要求可讓您判斷儲存區是否已啟用 S3 物件鎖定、如果已啟用、請查看儲存區是否已設定預設保留模式和保留期間。
 
-將新物件版本擷取至貯體時、如果未指定、則會套用預設保留模式 `x-amz-object-lock-mode`。如果未指定、則會使用預設保留期間來計算保留截止日期 `x-amz-object-lock-retain-until-date`。
+當新物件版本擷取至儲存桶時，如果未指定 `x-amz-object-lock-mode`，則套用預設保留模式。如果未指定 `x-amz-object-lock-retain-until-date`，則使用預設保留期間來計算保留截止日期。
 
 您必須具有 `s3:GetBucketObjectLockConfiguration`權限或是帳戶根目錄、才能完成此作業。
 
@@ -226,8 +238,17 @@ NOTE: 如果指定 `x-amz-object-lock-mode`，則還必須指定 `x-amz-object-l
 
 如果您使用上述任一要求標頭、請注意下列限制：
 
-*  `Content-MD5`如果 PuttObject 要求中有任何要求標頭、則需要申請標頭 `x-amz-object-lock-*`。 `Content-MD5`複製物件或 CreateMultpartUpload 不需要。
-* 如果貯體未啟用 S3 物件鎖定、且 `x-amz-object-lock-*`存在要求標頭、則會傳回 400 錯誤要求（ InvalidRequest ）錯誤。
+* 如果 PutObject 請求中存在任何 x-amz-object-lock-* 請求標頭，則必須包含下列其中一個請求標頭：
++
+[listing]
+----
+Content-MD5
+x-amz-checksum-*
+----
++
+這些標頭對於 CopyObject 或 CreateMultipartUpload 並非必要。
+
+* 如果儲存桶未啟用 S3 物件鎖定，且存在 x-amz-object-lock-* 請求標頭，則會傳回 400 Bad Request （InvalidRequest） 錯誤。
 * PutObject 要求支援使用 `x-amz-storage-class: REDUCED_REDUNDANCY`以符合 AWS 行為。然而、當物件被擷取至啟用S3物件鎖定的儲存區時StorageGRID 、則會一律執行雙重認可擷取。
 * 後續的 Get 或 HeadObject 版本回應將包括標頭 `x-amz-object-lock-mode`、和 `x-amz-object-lock-legal-hold`（如果已設定）、 `x-amz-object-lock-retain-until-date`以及要求寄件者是否擁有正確的 `s3:Get*`權限。
 
@@ -254,6 +275,16 @@ NOTE: 如果指定 `x-amz-object-lock-mode`，則還必須指定 `x-amz-object-l
 
 
 
+您必須在請求中指定以下請求標頭之一：
+
+[listing]
+----
+Content-MD5
+x-amz-checksum-*
+----
+
+NOTE: StorageGRID 不會驗證這些操作中 x-amz-checksum-* 標頭的內容。
+
 
 
 [[how-to-use-governance-mode]]
@@ -264,6 +295,9 @@ NOTE: 如果指定 `x-amz-object-lock-mode`，則還必須指定 `x-amz-object-l
 * 執行 DeleteObject 或 DeleteObjects 作業、以在物件版本的保留期間結束之前刪除物件版本。
 +
 合法持有的物件無法刪除。合法持有必須關閉。
+
++
+此 `x-amz-bypass-governance-retention`標頭對沒有 S3 Object Lock 的物件無效。
 
 * 在物件的保留期間結束之前、執行 PutObjectRetention 作業、將物件版本的模式從治理模式變更為法規遵循模式。
 +

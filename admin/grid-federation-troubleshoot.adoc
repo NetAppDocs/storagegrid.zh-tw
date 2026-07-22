@@ -1,8 +1,8 @@
 ---
 permalink: admin/grid-federation-troubleshoot.html 
 sidebar: sidebar 
-keywords: troubleshoot, grid federation connection, account clone, cross-grid replication, alerts, errors 
-summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨網格複寫相關的警示和錯誤。 
+keywords: troubleshoot, grid federation connection, account sync, cross-grid replication, alerts, errors 
+summary: 您可能需要排查與網格聯合連線、帳戶同步和跨網格複寫相關的警報和錯誤。 
 ---
 = 排查 StorageGRID 中的網格聯合錯誤
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 
 
 [role="lead"]
-您可能需要疑難排解與網格同盟連線、帳戶複製和跨網格複寫相關的警示和錯誤。
+您可能需要排查與網格聯合連線、帳戶同步和跨網格複寫相關的警報和錯誤。
 
 
 
@@ -73,32 +73,30 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 
 
 
-[[account-clone-errors]]
-== 帳戶複製錯誤
+[[account-sync-errors]]
+== 帳戶同步錯誤
 
 
 
-[[cant-sign-in-to-a-cloned-tenant-account]]
-=== 無法登入複製的租戶帳戶
+[[cant-sign-in-to-a-synced-tenant-account]]
+=== 無法登入已同步的租戶帳戶
 
 .問題
-您無法登入複製的租戶帳戶。租戶管理程式登入頁面上的錯誤訊息是「您的此帳戶認證無效。請再試一次。 "
+您無法登入已同步的租戶帳戶。Tenant Manager 登入頁面上的錯誤訊息為「此帳戶的憑證無效。請重試。」
 
 .詳細資料
-基於安全理由、當租戶帳戶從租戶的來源網格複製到租戶的目的地網格時、您為租戶的本機根使用者設定的密碼不會複製。同樣地、當租戶在其來源網格上建立本機使用者時、本機使用者密碼不會複製到目的地網格。
+您為租戶的本機 root 使用者和其他本機使用者設定的密碼會自動同步。但是，您可能需要在目的地網格上變更租戶的本機 root 使用者密碼，才能登入該網格上的租戶帳戶。
 
 .建議採取的行動
 根使用者必須先在目的地網格上登入租戶的目的地網格、然後才能登入租戶的目的地link:changing-password-for-tenant-local-root-user.html["變更本機 root 使用者的密碼"]網格。
 
-在複製的本機使用者可以登入租用戶的目標網格之前，複製租用戶的根用戶必須在目標網格上為該用戶新增密碼。有關說明，請參閱link:../tenant/manage-users.html["管理使用者"]在使用租戶管理器的說明中。
 
 
-
-[[tenant-created-without-a-clone]]
-=== 未建立複本的租戶
+[[tenant-created-without-a-sync]]
+=== 租戶建立時未進行同步
 
 .問題
-在建立具有「 * 使用網格同盟連線 * 」權限的新租用戶之後、您會看到訊息「租戶建立時不含複製項目」。
+使用 *Use grid federation connection* 權限建立新租戶後，您會看到訊息「Tenant created without a sync」。
 
 .詳細資料
 如果連線狀態的更新延遲、可能導致不良連線被列為 * 連線 * 、就會發生此問題。
@@ -107,12 +105,9 @@ summary: 您可能需要疑難排解與網格同盟連線、帳戶複製和跨�
 . 檢閱錯誤訊息中列出的原因、並解決可能導致連線無法正常運作的任何網路或其他問題。請參閱。 <<grid-federation-errors,Grid Federation 連線警示和錯誤>>
 . 請依照中的指示測試網格同盟連線link:grid-federation-manage-connection.html["管理網格同盟連線"]、確認問題已解決。
 . 從租戶的來源網格中，選擇*租戶*。
-. 找出無法複製的租戶帳戶。
+. 找到同步失敗的租戶帳戶。
 . 選取租戶名稱以顯示詳細資料頁面。
-. 選擇 * 重試帳戶複製 * 。
-+
-image:grid-federation-retry-account-clone.png["顯示錯誤訊息和重試帳戶複製按鈕的螢幕擷取畫面"] 如果錯誤已解決，租用戶帳戶現在將複製到另一個網格。
-
+. 選取 *Retry sync*。如果錯誤已解決，租戶帳戶現在將同步到另一個網格。
 
 
 
@@ -128,7 +123,7 @@ image:grid-federation-retry-account-clone.png["顯示錯誤訊息和重試帳戶
 .問題
 當link:../monitor/grid-federation-monitor-connections.html["檢視網格同盟連線"]（或連線時link:grid-federation-manage-tenants.html["管理允許的租戶"]）您在連線詳細資料頁面的 * 最後一個錯誤 * 欄中發現錯誤。例如：
 
-image:grid-federation-last-error.png["顯示網格同盟連線最後一個錯誤欄中訊息的螢幕擷取畫面"]
+image:grid_federation_last_error.png["顯示網格同盟連線最後一個錯誤欄中訊息的螢幕擷取畫面"]
 
 .詳細資料
 對於每個網格聯合連接，*最後一個錯誤*列顯示租戶資料複製到另一個網格時發生的最近錯誤（如果有）。此列僅顯示最後發生的跨網格複製錯誤；不會顯示可能發生的先前錯誤。此列中的錯誤可能由於以下原因之一而發生：
@@ -147,7 +142,10 @@ image:grid-federation-last-error.png["顯示網格同盟連線最後一個錯誤
 如果在 * 最後一個錯誤 * 欄中出現錯誤訊息、請遵循下列步驟：
 
 . 檢閱訊息文字。
-. 執行任何建議的動作。例如、如果目的地貯體上的版本設定已暫停進行跨網格複寫、請重新啟用該貯體的版本設定。
+. 執行所有建議的操作。
++
+例如，如果跨網格複寫的目的地儲存桶的版本控制功能被暫停，請重新啟用該儲存桶的版本控制功能。或者，如果跨網格複寫的目的地儲存桶的 S3 Object Lock 已停用，請啟用該儲存桶的 S3 Object Lock。
+
 . 從表格中選取連線或租戶帳戶。
 . 選取 * 清除錯誤 * 。
 . 選擇 * 是 * 以清除訊息並更新系統狀態。

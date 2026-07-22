@@ -57,9 +57,9 @@ summary: 取得必要的 StorageGRID 資訊之後、您可以前往 ONTAP 將 St
  a| 
 URL 樣式
  a| 
-如果您link:../admin/configuring-s3-api-endpoint-domain-names.html["已設定 S3 端點網域名稱"]選擇 * 虛擬託管樣式 URL* 。
+如果是link:../admin/configuring-s3-api-endpoint-domain-names.html["已設定 S3 端點網域名稱"]，請選擇「虛擬託管式 URL」。
 
-* 路徑樣式 URL* 是 ONTAP 的預設值、但建議 StorageGRID 使用虛擬託管樣式的要求。如果您為 * 伺服器名稱（ FQDN ） * 欄位提供 IP 位址而非網域名稱、則必須使用 * 路徑樣式 URL* 。
+*Path-Style URL* 是 ONTAP 的預設值，但建議 StorageGRID 使用虛擬託管式請求。如果您在「伺服器名稱 （FQDN）」欄位中提供的是 IP 位址而不是網域名稱，則必須使用 *Path-Style URL*。
 
 
 

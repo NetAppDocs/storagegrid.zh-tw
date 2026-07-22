@@ -13,10 +13,10 @@ summary: 本頁概述 StorageGRID 如何支援 Amazon Simple Storage Service （
 [role="lead"]
 本頁概述 StorageGRID 如何支援 Amazon Simple Storage Service （ S3 ） API 。
 
-本頁僅包含 StorageGRID 支援的 S3 作業。
+本頁僅包含 StorageGRID 支援的 S3 操作。任何未列出的 S3 操作都可能傳回 `501 Not Implemented`或導致意外行為。
 
 
-NOTE: 若要查看每項作業的 AWS 文件、請選取標題中的連結。
+TIP: 若要查看每項作業的 AWS 文件、請選取標題中的連結。
 
 
 
@@ -73,12 +73,20 @@ link:operations-for-multipart-uploads.html["多部份上傳作業"]
 StorageGRID 支援此要求的全部<<common-params,通用參數和標頭>>功能、加上此額外的 URI 查詢參數：
 
 * `uploadId`
+* `x-amz-checksum-crc32`
+* `x-amz-checksum-crc32c`
+* `x-amz-checksum-crc64nvme`
 * `x-amz-checksum-sha256`
+* `x-amz-checksum-type`
+* `x-amz-storage-class`
 
 
 .要求內文 XML 標記
 StorageGRID 支援這些要求本文 XML 標記：
 
+* `ChecksumCRC32`
+* `ChecksumCRC32C`
+* `ChecksumCRC64NVME`
 * `ChecksumSHA256`
 * `CompleteMultipartUpload`
 * `ETag`
@@ -97,6 +105,7 @@ link:complete-multipart-upload.html["完成多個部分上傳"]
 .URI 查詢參數和要求標頭
 StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功能、以及下列額外標頭：
 
+* `x-amz-checksum-algorithm`
 * `x-amz-copy-source`
 * `x-amz-copy-source-if-match`
 * `x-amz-copy-source-if-modified-since`
@@ -156,6 +165,7 @@ StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功�
 * `Content-Language`
 * `Expires`
 * `x-amz-checksum-algorithm`
+* `x-amz-checksum-type`
 * `x-amz-server-side-encryption`
 * `x-amz-storage-class`
 * `x-amz-server-side-encryption-customer-algorithm`
@@ -898,6 +908,9 @@ StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功�
 * `Content-Encoding`
 * `Content-Language`
 * `Expires`
+* `x-amz-checksum-crc32`
+* `x-amz-checksum-crc32c`
+* `x-amz-checksum-crc64nvme`
 * `x-amz-checksum-sha256`
 * `x-amz-server-side-encryption`
 * `x-amz-storage-class`
@@ -938,10 +951,12 @@ link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件�
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html["PutObjectLockConfiguration"^]
 
 .URI 查詢參數和要求標頭
-StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功能。
+StorageGRID 支援此請求的 _大多數_ <<common-params,通用參數和標頭>>。
 
 .申請本文
-StorageGRID 支援 Amazon S3 REST API 在實作時所定義的所有要求主體參數。
+StorageGRID 支援 Amazon S3 REST API 在實作時定義的_大多數_請求本文參數，但下列情況除外：
+
+除非您的網格系統管理員已授予權限，否則您無法使用 PutObjectLockConfiguration 在現有儲存桶上啟用 S3 物件鎖定。
 
 .本文檔StorageGRID
 link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]
@@ -1017,6 +1032,9 @@ StorageGRID 支援此要求的所有<<common-params,通用參數和標頭>>功�
 
 以及這些額外的要求標頭：
 
+* `x-amz-checksum-crc32`
+* `x-amz-checksum-crc32c`
+* `x-amz-checksum-crc64nvme`
 * `x-amz-checksum-sha256`
 * `x-amz-server-side-encryption-customer-algorithm`
 * `x-amz-server-side-encryption-customer-key`

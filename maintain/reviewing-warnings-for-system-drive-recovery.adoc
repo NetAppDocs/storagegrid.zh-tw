@@ -29,7 +29,7 @@ summary: 在恢復儲存節點的故障系統磁碟機之前、請先檢閱網�
 CAUTION: 如果多個儲存節點發生故障（或離線），請聯絡技術支援。不要執行以下恢復程序。可能會發生資料遺失。有關詳細信息，請參閱link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"] 。
 
 
-CAUTION: 如果此儲存節點處於唯讀維護模式、以允許另一個儲存節點擷取故障儲存磁碟區的物件、請先在儲存節點上恢復故障儲存磁碟區的磁碟區、然後再恢復此故障儲存節點。請參閱的說明link:recovering-from-storage-volume-failure-where-system-drive-is-intact.html["從系統磁碟機完好無損的儲存磁碟區故障中恢復"]。
+CAUTION: 如果此儲存節點處於唯讀維護模式，以便其他儲存節點能夠從儲存磁碟區發生故障的儲存節點擷取物件，請先恢復儲存磁碟區發生故障的儲存節點上的磁碟區，再還原此故障儲存節點。請參閱相關說明 link:reviewing-warnings-about-storage-volume-recovery.html["從系統磁碟機完好無損的儲存磁碟區故障中恢復"]。
 
 
 CAUTION: 如果ILM規則設定為僅儲存一個複寫複本、且複本存在於故障的儲存磁碟區、您將無法恢復物件。

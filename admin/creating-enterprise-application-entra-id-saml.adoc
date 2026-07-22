@@ -1,21 +1,21 @@
 ---
-permalink: admin/creating-enterprise-application-entra-id.html 
+permalink: admin/creating-enterprise-application-entra-id-saml.html 
 sidebar: sidebar 
 keywords: enterprise application, entra id, single sign on, sso 
 summary: 您使用 Entra ID 為系統中的每個管理節點建立一個企業應用程式。 
 ---
-= 在 Entra ID 中為 StorageGRID 建立企業應用程式
+= 在 StorageGRID 中為 SAML 建立 Entra ID 企業應用程式
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-您使用 Entra ID 為系統中的每個管理節點建立一個企業應用程式。
+使用 Entra ID 為系統中每個 Admin Node 建立一個適用於 SAML 的企業應用程式。
 
 .開始之前
 * 您已開始為StorageGRID設定單一登錄，並選擇 *Entra ID* 作為 SSO 類型。
-* 你有link:../admin/configure-sso.html#enter-sandbox-mode["進入沙盒模式"]在網格管理器中。
+* 您在 Grid Manager 中擁有 link:../admin/configure-sso-saml.html#enter-sandbox-mode["進入沙盒模式"]。
 * 您的系統中的每個管理節點都有*企業應用程式名稱*。您可以從設定 SSO 頁面上的管理節點詳細資料表中複製這些值。
 +
 
@@ -28,8 +28,8 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 
 
 
-[[access-entra-id]]
-== 訪問 Entra ID
+[[step-1-access-entra-id]]
+== 步驟 1：存取 Entra ID
 
 .步驟
 . 登入 https://portal.azure.com["Azure Portal"^]。
@@ -39,8 +39,8 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 
 
 
-[[create-enterprise-applications-and-save-storagegrid-sso-configuration]]
-== 建立企業應用程式並儲存StorageGRID 不可靠的SSO組態
+[[step-2-create-enterprise-applications-and-save-storagegrid-sso-configuration]]
+== 步驟 2：建立企業應用程式並儲存 StorageGRID SSO 組態
 
 若要在StorageGRID中儲存 Entra ID 的 SSO 配置，您必須使用 Entra ID 為每個管理節點建立一個企業應用程式。您將從 Entra ID 複製聯合元資料 URL，並將其貼上到配置 SSO 頁面上對應的 *聯合元資料 URL* 欄位中。
 
@@ -63,8 +63,8 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 
 
 
-[[download-saml-metadata-for-every-admin-node]]
-== 下載每個管理節點的SAML中繼資料
+[[step-3-download-saml-metadata-for-every-admin-node]]
+== 步驟 3：下載每個管理節點的 SAML 中繼資料
 
 儲存SSO組態之後、您可以為StorageGRID 您的系統中的每個管理節點下載SAML中繼資料檔案。
 
@@ -81,8 +81,8 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 
 
 
-[[upload-saml-metadata-to-each-enterprise-application]]
-== 將SAML中繼資料上傳至每個企業應用程式
+[[step-4-upload-saml-metadata-to-each-enterprise-application]]
+== 步驟 4：將 SAML 中繼資料上傳到每個企業應用程式
 
 為每個StorageGRID管理節點下載 SAML 元資料檔案後，在 Entra ID 中執行下列步驟：
 
@@ -102,5 +102,5 @@ NOTE: 您可能需要重新整理「企業應用程式」頁面、以查看先�
 .. 載入檔案後、選取*「Save"（儲存）*、然後選取「* X*」以關閉窗格。您將返回「使用SAML設定單一登入」頁面。
 
 
-. link:../admin/configure-sso.html#test-sso["測試每個應用程式"] 。
+. link:../admin/configure-sso-saml.html#test-sso["測試每個應用程式"]。
 

@@ -39,10 +39,10 @@ NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳�
 
 如果要求在使用者定義的中繼資料金鑰名稱或值中包含（未轉義）utf-8值、StorageGRID 則無法定義任何不正常的行為。
 
-不剖析或解譯使用者定義之中繼資料的金鑰名稱或值中包含的轉義式utf-8字元。StorageGRID轉義的UTF-8字元會視為Ascii字元：
+StorageGRID 不會解析或解釋使用者自訂中繼資料鍵名或值中包含的轉義 UTF-8 字元。轉義 UTF-8 字元將被視為 ASCII 字元：
 
 * 如果使用者定義的中繼資料包含轉義的utf-8字元、則要求會成功。
-* 如果金鑰名稱或值的解譯值包含不可列印字元、則 StorageGRID 不會傳回 `x-amz-missing-meta`標頭。
+* 如果鍵名或值的解釋值包含不可列印字元，StorageGRID 不會傳回 `x-amz-missing-meta`標頭。
 
 
 
@@ -53,6 +53,20 @@ NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳�
 支援下列要求標頭：
 
 * `Content-Type`
+* `x-amz-checksum-algorithm`：指定 `CRC32`、 `CRC32C`、 `CRC64NVME`或 `SHA256`
++
+複製物件時，如果來源物件具有 `checksum`或包含 `x-amz-checksum-algorithm`，則複製的物件具有 FULL_OBJECT Checksum。
+
++
+如果來源物件具有 Checksum，但請求中未包含 `x-amz-checksum-algorithm`或使用了不支援的 Checksum 值，則複製的物件將具有與來源物件相同類型的 Checksum。StorageGRID 會忽略無效或不支援的 `x-amz-checksum-algorithm`值。
+
++
+如果來源物件沒有 Checksum，或不包含 `x-amz-checksum-algorithm`，或使用了不支援的 Checksum 值，則複製的物件也沒有 Checksum。
+
++
+
+NOTE: 如果 CopyObject 請求未指定 Checksum，且來源物件沒有 Checksum，StorageGRID 不會為物件計算預設的 CRC-64/NVME Checksum。
+
 * `x-amz-copy-source`
 * `x-amz-copy-source-if-match`
 * `x-amz-copy-source-if-none-match`
@@ -108,15 +122,11 @@ NOTE: 如果您從 StorageGRID 11.6 或更早版本升級、當您嘗試上傳�
 * `Expires`
 * `If-Match`
 +
- `If-Match header`已被接受，但無法正常使用。
+The `If-Match`標頭的行為會根據您的 StorageGRID 組態而有所不同。提供此標頭可能會傳回錯誤訊息（501 Not Implemented）。如果 `If-Match`標頭被接受但無法運作，則可能會觸發警示，其中包含有關啟用更嚴格的 501 Not Implemented 錯誤行為的說明。
 
 * `If-None-Match`
 +
- `If-None-Match header`已被接受，但無法正常使用。
-
-* `x-amz-checksum-algorithm`
-+
-當您複製物件時、如果來源物件有 Checksum 、 StorageGRID 就不會將該 Checksum 值複製到新物件。無論您是否嘗試在物件要求中使用、都會套用此行為 `x-amz-checksum-algorithm`。
+The `If-None-Match`標頭的行為會根據您的 StorageGRID 組態而有所不同。提供此標頭可能會傳回錯誤訊息（501 Not Implemented）。如果 `If-None-Match`標頭被接受但無法運作，則可能會觸發警示，其中包含有關啟用更嚴格的 501 Not Implemented 錯誤行為的說明。
 
 * `x-amz-website-redirect-location`
 
@@ -149,10 +159,10 @@ NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體�
 
 如果在標頭中指定的來源貯體和金鑰與目的地貯體和金鑰不同、則 `x-amz-copy-source`會將來源物件資料的複本寫入目的地。
 
-如果來源和目的地相符、且 `x-amz-metadata-directive`標頭指定為 `REPLACE`、則物件的中繼資料會以要求中提供的中繼資料值進行更新。在這種情況StorageGRID 下、無法重新擷取物件。這有兩個重要後果：
+如果來源和目的地相符，且 `x-amz-metadata-directive`標頭指定為 `REPLACE`，則物件的中繼資料將使用請求中提供的中繼資料值進行更新。在這種情況下，StorageGRID 不會重新擷取物件。這會產生兩個重要後果：
 
 * 您無法使用 CopyObject 來加密現有物件、或變更現有物件的加密。如果您提供 `x-amz-server-side-encryption`標頭或 `x-amz-server-side-encryption-customer-algorithm`標頭、 StorageGRID 會拒絕要求並傳回 `XNotImplemented`。
-* 不會使用相符ILM規則中指定的擷取行為選項。當ILM由正常背景ILM程序重新評估時、會對更新所觸發的物件放置位置進行任何變更。
+* 符合的 ILM 規則中指定的「擷取行為」選項不會被使用。由更新觸發的任何物件放置變更，都會在正常的背景 ILM 程序重新評估 ILM 時生效。
 +
 這表示、如果 ILM 規則使用嚴格選項來擷取行為、則無法在無法進行所需物件放置時（例如、因為新要求的位置無法使用）、就不會採取任何行動。更新後的物件會保留其目前的放置位置、直到能夠放置所需的位置為止。
 

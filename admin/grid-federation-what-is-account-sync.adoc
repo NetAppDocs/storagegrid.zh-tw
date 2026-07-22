@@ -1,0 +1,122 @@
+---
+permalink: admin/grid-federation-what-is-account-sync.html 
+sidebar: sidebar 
+keywords: account sync, tenant replication, disaster recovery, grid federation 
+summary: 帳戶同步是指在一個或多個網格聯合連線中的 StorageGRID 系統之間自動、持續複寫租戶帳戶、租戶群組、租戶使用者和 S3 存取金鑰。 
+---
+= 了解 StorageGRID 中的帳戶同步
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+帳戶同步是指在一個或多個 link:grid-federation-overview.html["網格同盟連線"] 中的 StorageGRID 系統之間，自動且持續地複寫租戶帳戶、租戶群組、租戶使用者，以及（可選的）S3 存取金鑰。
+
+帳戶同步是 link:grid-federation-what-is-cross-grid-replication.html["跨網格複寫"] 所必需的。在 StorageGRID 系統之間同步帳戶資訊，可確保租戶使用者和群組能夠存取任何已連接網格上的對應儲存桶和物件。
+
+
+
+[[workflow-for-account-sync]]
+== 帳戶同步工作流程
+
+工作流程圖顯示了網格管理員和獲准租戶為設定帳戶同步而需要執行的步驟。這些步驟在 link:grid-federation-create-connection.html["已設定網格同盟連線"] 之後執行。
+
+image:grid_federation_account_sync_workflow.png["帳戶同步工作流程"]
+
+
+
+[[grid-admin-workflow]]
+== Grid 管理工作流程
+
+網格管理員執行的步驟取決於使用單一登入（ SSO ）或身分識別聯盟中的 StorageGRID 系統link:grid-federation-overview.html["網格同盟連線"]。
+
+
+
+[[account-sync-ssoconfigure-sso-for-account-sync-optional]]
+=== [[account-sync-sso]]設定帳戶同步的單一登入（選用）
+
+如果網格同盟連線中的任一 StorageGRID 系統使用 SSO 、則兩個網格都必須使用 SSO 。在建立網格同盟的租戶帳戶之前、租戶來源和目的地網格的網格管理員必須執行這些步驟。
+
+.步驟
+. 為兩個網格設定相同的身分識別來源。請參閱。 link:using-identity-federation.html["使用身分識別聯盟"]
+. 為兩個網格配置相同的 SSO 身分提供者 (IdP)。看link:how-sso-works.html["設定單一登入"] 。
+. link:managing-admin-groups.html["建立相同的管理群組"]在兩個網格上匯入相同的同盟群組。
++
+當您建立租戶時、您將會選取此群組、以取得來源和目的地租戶帳戶的初始根存取權限。
+
++
+
+NOTE: 如果在您建立租戶之前、這兩個網格上都不存在這個管理群組、則租戶不會複寫到目的地。
+
+
+
+
+
+[[account-sync-identity-federationconfigure-grid-level-identity-federation-for-account-sync-optional]]
+=== [[account-sync-identity-federation]]設定帳戶同步的網格層級身分識別聯盟（選用）
+
+如果任一 StorageGRID 系統使用無 SSO 的身分識別聯盟、則兩個網格都必須使用身分識別聯盟。在建立網格同盟的租戶帳戶之前、租戶來源和目的地網格的網格管理員必須執行這些步驟。
+
+.步驟
+. 為兩個網格設定相同的身分識別來源。請參閱。 link:using-identity-federation.html["使用身分識別聯盟"]
+. 或者、如果同盟群組在兩個網格上都有來源和目的地租戶帳戶的初始根存取權限link:managing-admin-groups.html["建立相同的管理群組"]、請匯入相同的同盟群組。
++
+
+NOTE: 如果您將「根」存取權限指派給兩個網格上都不存在的同盟群組、則租用戶不會複寫到目的地網格。
+
+. 如果您不想讓同盟群組擁有兩個帳戶的初始根目錄存取權限、請指定本機根目錄使用者的密碼。
+
+
+
+
+[[create-permitted-s3-tenant-account]]
+=== 建立允許的 S3 租戶帳戶
+
+在選擇性設定 SSO 或身分識別聯盟之後、網格管理員會執行這些步驟、以判斷哪些租戶可以將儲存區物件複寫到其他 StorageGRID 系統。
+
+.步驟
+. 決定要將哪個網格作為租戶帳戶同步作業的來源網格。
++
+最初建立租戶的網格稱為租戶的 _ 來源網格 _ 。複寫租戶的網格稱為租戶的 _ 目的地網格 _ 。
+
+. 在該網格上、建立新的 S3 租戶帳戶或編輯現有帳戶。
+. 指派 * 使用網格同盟連線 * 權限。
+. 如果租戶帳戶要管理自己的同盟使用者、請指派 * 使用自己的身分識別來源 * 權限。
++
+如果指派了此權限，則來源和目的地租戶帳戶必須先設定相同的身分來源，然後才能建立聯合群組。除非兩個網格使用相同的身分來源，否則新增至來源租戶的聯合群組無法同步到目的地租戶。
+
+. 選取特定的網格同盟連線。
+. 儲存新的或修改過的租戶。
++
+儲存具有 * 使用網格同盟連線 * 權限的新租用戶時、 StorageGRID 會自動在其他網格上建立該租用戶的複本、如下所示：
+
++
+** 兩個租戶帳戶都具有相同的帳戶 ID 、名稱、儲存配額和指派的權限。
+** 如果您選擇讓某個聯合群組擁有租戶的 Root 存取權限，則該群組將被 Clone 到目的地租戶。但是，聯合群組和使用者不會進行持續同步。只會進行一次性 Clone。
+** 如果您選擇本機使用者擁有租戶的 Root 存取權限，則該使用者將同步至目的地租戶。
+
+
+
+
+如需詳細資訊，請參閱 link:grid-federation-manage-tenants.html["管理網格同盟的允許租戶"]。
+
+
+
+[[permitted-tenant-account-workflow]]
+== 允許的租戶帳戶工作流程
+
+將具有「使用網格聯合連線」權限的租戶複製到目的地網格後，獲得許可的租戶帳戶可以執行下列步驟來同步租戶群組、使用者和 S3 存取金鑰。
+
+.步驟
+. 在任何已連接的網格登入租戶帳戶。
+. 如果允許，請在來源租戶帳戶和目的地租戶帳戶上設定身分識別聯盟。
+. 在任何已連接的網格上建立群組和使用者。
++
+當在租戶上建立新群組或使用者時，StorageGRID 會自動將其同步到目的地租戶。
+
+. 建立 S3 存取金鑰。
+. （可選）將來源租戶的 S3 存取金鑰同步到目的地租戶。
+
+
+有關允許的租戶帳戶工作流程的詳細資訊，以及如何同步群組、使用者和 S3 存取金鑰，請參閱 link:../tenant/grid-federation-account-sync.html["同步租戶群組和使用者"]。

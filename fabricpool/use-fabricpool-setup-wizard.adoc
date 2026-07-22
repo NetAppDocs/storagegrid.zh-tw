@@ -69,7 +69,7 @@ TIP: 除非您知道自己有特殊需求、否則請使用 FabricPool 安裝精
 === 取得及設定網域名稱
 
 * 您知道 StorageGRID 要使用哪個完整網域名稱（ FQDN ）。網域名稱伺服器（ DNS ）項目會將此 FQDN 對應到您使用精靈建立的 HA 群組的虛擬 IP （ VIP ）位址。請參閱。 link:../fabricpool/configure-dns-server.html["設定 DNS 伺服器"]
-* 如果您打算使用 S3 虛擬託管式要求link:../admin/configuring-s3-api-endpoint-domain-names.html["已設定 S3 端點網域名稱"]、您有。ONTAP 預設會使用路徑樣式的 URL 、但建議使用虛擬託管樣式的要求。
+* 如果您打算使用 S3 虛擬託管風格的請求，則需要link:../admin/configuring-s3-api-endpoint-domain-names.html["已設定 S3 端點網域名稱"]。ONTAP 預設使用路徑風格的 URL，但建議使用虛擬託管風格的請求。
 
 
 

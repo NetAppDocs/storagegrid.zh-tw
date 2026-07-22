@@ -18,6 +18,7 @@ summary: 管理節點的還原程序取決於它是主要管理節點還是非�
 請務必針對您要恢復的管理節點、執行正確的還原程序。程序看起來大致相同、但細節卻不同。
 
 .選擇
-* link:recovering-from-primary-admin-node-failures.html["從主要管理節點故障中恢復"]
+* link:recovering-from-primary-admin-node-failures.html["使用同一個主要管理節點恢復主要管理節點"]
+* link:recovering-from-primary-admin-node-failures-using-npan.html["使用非主要管理節點從主要管理節點故障中恢復"]
 * link:recovering-from-non-primary-admin-node-failures.html["從非主要管理節點故障中恢復"]
 

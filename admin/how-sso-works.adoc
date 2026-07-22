@@ -13,7 +13,7 @@ summary: '啟用單一登入 (SSO) 後，只有使用貴組織實作的 SSO 登�
 [role="lead"]
 啟用單一登入 (SSO) 後，只有使用貴組織實作的 SSO 登入流程授權使用者的憑證後，使用者才可以存取網格管理員、租用戶管理器、網格管理 API 或租用戶管理 API。本機使用者無法登入StorageGRID。
 
-支援使用安全聲明標記語言2.0（SAML 2.0）標準的單一登入（SSO）StorageGRID 。
+StorageGRID 系統支援使用安全性斷言標記語言 2.0 （SAML 2.0） 標準或 OpenID Connect 的單一登入 （SSO）。
 
 在啟用單一登入（SSO）之前、請先檢閱StorageGRID 啟用SSO時、哪些地方會影響到「資訊登入」和「登出」程序。
 

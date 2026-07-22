@@ -36,7 +36,7 @@ NOTE: 如果新IP位址上的網格無法存取現有的DNS伺服器、請在執
 
 +
 
-NOTE: 如果您的StorageGRID系統啟用了 SSO，並且使用管理節點 IP 位址（而不是建議的完全限定網域名稱）設定了任何依賴方信任，請準備在變更 IP 位址後立即在 Active Directory 聯合驗證服務 (AD FS) 中更新或重新設定這些依賴方信任。看link:../admin/configure-sso.html["設定單一登入"] 。
+NOTE: 如果您的 StorageGRID 系統已啟用 SSO，且任何信賴方信任都是使用管理節點 IP 位址（而非建議的完整網域名稱）設定的，請在變更 IP 位址後，立即在 Active Directory Federation Services （AD FS） 中更新或重新設定這些信賴方信任。請參閱使用 link:../admin/learn-about-setting-up-sso-oidc.html["OIDC"] 或 link:../admin/learn-about-setting-up-sso-saml.html["SAML"] 設定 SSO 的相關資訊。
 
 +
 

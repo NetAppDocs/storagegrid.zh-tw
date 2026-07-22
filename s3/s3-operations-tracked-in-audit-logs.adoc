@@ -20,13 +20,18 @@ summary: 稽核訊息是StorageGRID 由支援服務產生、並儲存在文字�
 
 * 建立庫位
 * 刪除Bucket
+* 刪除BucketPolicy
 * 刪除 Bucketagging
 * 刪除物件
+* GetBucketLifecycleConfiguration
+* GetBucketPolicy
 * GetBucketTagging
 * 標題庫
 * 清單物件
 * ListObjectVerions
 * 符合資源需求
+* PuttBucketLifecycleConfiguration
+* PuttBucketPolicy
 * PuttBucketTagging
 * PuttBucketVersion
 

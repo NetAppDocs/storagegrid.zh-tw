@@ -11,7 +11,7 @@ summary: 您可以透過StorageGRID 建立或匯入群組和使用者、並指�
 
 
 [role="lead"]
-您可以透過StorageGRID 建立或匯入群組和使用者、並指派權限給每個群組、來控制哪些人可以存取功能、以及使用者可以執行哪些工作。您也可以選擇啟用單一登入（SSO）、建立用戶端憑證、以及變更網格密碼。
+您可以建立或匯入使用者群組，並為每個使用者群組指派權限，從而控制誰可以存取 StorageGRID 以及使用者可以執行哪些任務。您也可以選擇啟用單一登入 （SSO）、建立用戶端憑證、變更網格密碼以及使用多重管理員驗證。
 
 
 
@@ -34,7 +34,7 @@ NOTE: 如果您想要使用另一項LDAP v3服務、請聯絡技術支援部門�
 [[enable-single-sign-on]]
 == 啟用單一登入
 
-StorageGRID系統支援使用安全性斷言標記語言 2.0 (SAML 2.0) 標準的單一登入 (SSO)。您先請link:how-sso-works.html["設定並啟用 SSO"]，所有使用者必須經過外部身分提供者的驗證，然後才能存取網格管理器、租用戶管理器、網格管理 API 或租用戶管理 API。本機使用者無法登入StorageGRID。
+StorageGRID 系統支援使用安全性斷言標記語言 2.0 （SAML 2.0） 或 OpenID Connect （OIDC） 標準的單一登入 （SSO）。在您 link:how-sso-works.html["設定並啟用 SSO"] 之後，所有使用者必須先透過外部身分供應商進行驗證，才能存取 Grid Manager、Tenant Manager、Grid Management API 或 Tenant Management API。本機使用者無法登入 StorageGRID。
 
 
 
@@ -49,3 +49,10 @@ StorageGRID系統支援使用安全性斷言標記語言 2.0 (SAML 2.0) 標準�
 == 變更節點主控台密碼
 
 網格中的每個節點都有一個節點控制台密碼，您需要使用 SSH 以「管理員」身分登入節點，或以 VM/實體控制台連線上的 root 使用者身分登入。根據需要，您可以link:change-node-console-password.html["變更節點主控台密碼"]對於每個節點。
+
+
+
+[[use-multi-admin-verification]]
+== 使用多管理員驗證
+
+您可以使用多重管理員驗證 (MAV) 來確保某些 StorageGRID 操作只能在指定管理員核准後才能執行。MAV 可防止遭入侵、惡意或經驗不足的管理員進行不必要的變更或刪除資料。

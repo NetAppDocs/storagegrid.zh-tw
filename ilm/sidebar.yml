@@ -113,8 +113,8 @@ entries:
     url: "/ilm/workflow-for-s3-object-lock.html"
   - title: S3物件鎖定需求
     url: "/ilm/requirements-for-s3-object-lock.html"
-  - title: 全域啟用S3物件鎖定
-    url: "/ilm/enabling-s3-object-lock-globally.html"
+  - title: 啟用 S3 物件鎖定
+    url: "/ilm/enabling-s3-object-lock.html"
   - title: 解決更新S3物件鎖定或舊版法規遵循組態時發生的一致性錯誤
     url: "/ilm/resolving-consistency-errors-when-updating-bucket-s3-object-lock-configuration.html"
 - title: ILM規則與原則範例

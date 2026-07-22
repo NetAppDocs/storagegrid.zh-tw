@@ -11,7 +11,7 @@ summary: 您必須瞭解StorageGRID 有關支援節點的儲存需求、以便�
 
 
 [role="lead"]
-您必須瞭解StorageGRID 有關支援節點的儲存需求、以便提供足夠的空間來支援初始組態和未來的儲存擴充。
+您必須了解 StorageGRID 節點的儲存設備需求，以確保您有足夠的空間來支援初始組態和未來的儲存擴充。
 
 儲存和效能要求根據基於軟體的節點實現而有所不同。
 
@@ -25,12 +25,12 @@ NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版�
 
 不需使用下列三種邏輯儲存設備：StorageGRID
 
-* * Container Pool*-節點容器的效能層（10K SAS或SSD）儲存設備、當您在支援StorageGRID 您的支援您的節點節點的主機上安裝及設定Container引擎時、會將其指派給Container引擎儲存驅動程式。
-* *系統資料*-效能層（10K SAS或SSD）儲存設備、可持續儲存每個節點的系統資料和交易記錄、StorageGRID 而這些資料和記錄將會由非主機服務使用、並對應至個別節點。
+* *Container pool* -- 節點 Container 的效能層（10K SAS 或 SSD）儲存設備，當您在支援 StorageGRID 節點的主機上安裝和設定 Container 引擎時，該儲存設備將指派給 Container 引擎儲存設備驅動程式。
+* *系統資料* -- 效能層（10K SAS 或 SSD）儲存設備，用於每個節點持續儲存系統資料和交易日誌，StorageGRID 主機服務使用這些儲存設備並將其對應到各個節點。
 * *物件資料*：效能層（10K SAS或SSD）儲存與容量層（NL-SAS/SATA）大量儲存、可持續儲存物件資料和物件中繼資料。
 
 
-您必須針對所有儲存類別使用RAID備援區塊裝置。不支援非備援磁碟、 SSD 或 JBOD 。您可以將共用或本機 RAID 儲存設備用於任何儲存類別；不過、如果您想要在 StorageGRID 中使用節點移轉功能、則必須將系統資料和物件資料儲存在共用儲存設備上。如需更多資訊、請參閱 link:node-container-migration-requirements.html["節點容器移轉需求"]。
+所有儲存設備類別都必須使用 RAID 支援的區塊設備。不支援非冗餘磁碟、SSD 或 JBOD。任何儲存設備類別都可以使用共享的或本機 RAID 儲存設備。若要在 StorageGRID 中移轉節點，必須將系統資料和物件資料都儲存在共享儲存設備上。如需詳細資訊，請參閱 link:node-container-migration-requirements.html["節點容器移轉需求"]。
 
 
 
@@ -59,21 +59,21 @@ NOTE: 切勿使用FabricPool 無法將StorageGRID 任何與還原StorageGRID 本
 每StorageGRID 個站台至少需要三個儲存節點。
 
 
-NOTE: 在正式作業部署中、請勿在單一實體或虛擬主機上執行多個儲存節點。使用每個儲存節點的專屬主機、可提供隔離的故障網域。
+NOTE: 在正式作業部署時，請勿在單一實體主機或虛擬主機上執行多個儲存節點。每個儲存節點使用專用主機可提供隔離的故障網域。
 
-其他類型的節點（例如管理節點或閘道節點）可以部署在相同的主機上、也可以視需要部署在自己的專屬主機上。
+您可以在同一主機上部署其他類型的節點，例如管理節點或閘道節點，也可以視需要將其部署在專用主機上。
 
 
-NOTE: 磁碟快照無法用於還原網格節點。請參閱link:../maintain/warnings-and-considerations-for-grid-node-recovery.html["網格節點恢復"]每種節點類型的程序。
+NOTE: 您不能使用磁碟快照來還原網格節點。請參考link:../maintain/warnings-and-considerations-for-grid-node-recovery.html["網格節點恢復"]每種節點類型的復原步驟。
 
 
 
 [[number-of-storage-volumes-for-each-node]]
 == 每個節點的儲存卷數量
 
-下表顯示每個主機所需的儲存磁碟區（LUN）數量、以及每個LUN所需的最小大小、視該主機上部署的節點而定。
+下表顯示每個主機所需的儲存 Volume （LUN）數量，以及每個 LUN 所需的最小大小，視該主機上部署了哪些節點而定。
 
-測試的LUN大小上限為39 TB。
+測試的最大 LUN 大小為 100 TiB。
 
 
 NOTE: 這些數字適用於每個主機、而非整個網格。
@@ -111,13 +111,13 @@ Container Pool
  a| 
 3：針對此主機上的每個儲存節點
 
-*注意：*基於 Linux 軟體的儲存節點可以有 1 到 48 個儲存磁碟區。基於 VMware 軟體的儲存節點可以有 1 到 16 個儲存磁碟區。建議至少有 3 個儲存卷。
+*附註：*基於 Linux 軟體的儲存節點和基於 VMware 軟體的儲存節點可擁有 1 至 48 個儲存 Volume。建議至少擁有 3 個儲存 Volume。
  a| 
 12 TB（最低 4 TB/LUN）
 
-測試的LUN大小上限：39 TB。
+最大測試 LUN 大小：100 TiB。
 
-看<<storage_req_SN,儲存節點的儲存需求>>了解更多。
+請參閱 <<storage_req_SN,儲存節點的儲存需求>> 以取得更多資訊。
 
 
 
@@ -130,9 +130,9 @@ Container Pool
  a| 
 最低 4 TB/LUN
 
-測試的LUN大小上限：39 TB。
+最大測試 LUN 大小：100 TiB。
 
-看<<storage_req_SN,儲存節點的儲存需求>>了解更多。
+請參閱 <<storage_req_SN,儲存節點的儲存需求>> 以取得更多資訊。
 
 * 附註 * ：僅中繼資料儲存節點只需要一個 rangedb 。
 
@@ -160,17 +160,17 @@ Container Pool
 
 |===
 
-NOTE: 根據設定的稽核等級、使用者輸入的大小（例如 S3 物件金鑰名稱）以及需要保留的稽核日誌資料量，您可能需要增加每個管理節點上稽核日誌 LUN 的大小。通常，網格每次 S3 操作會產生約 1 KB 的審計數據，這意味著 200 GB 的 LUN 可以在兩到三天內支援每天 7000 萬次操作或每秒 800 次操作。
+NOTE: 根據設定的稽核層級、使用者輸入（例如 S3 物件鍵名）的大小以及需要保留的稽核日誌資料量，您可能需要增加每個管理節點上的稽核日誌 LUN 的大小。通常，網格每次 S3 操作會產生約 1 KB 的稽核資料，這意味著 200 GB 的 LUN 可支援每天 7000 萬次操作，或每秒 800 次操作，持續兩到三天。
 
 
 
 [[minimum-storage-space-for-a-host]]
 == 主機的最小儲存空間
 
-下表顯示每種節點類型所需的最小儲存空間。您可以使用此表格來決定每個儲存類別中的主機所必須提供的最小儲存容量、這取決於要在該主機上部署哪些節點。
+下表顯示每種節點類型所需的最小儲存空間。您可以根據部署在該主機上的節點，使用此表格確定每個儲存設備類別中必須為主機提供的最小儲存空間。
 
 
-NOTE: 磁碟快照無法用於還原網格節點。請參閱link:../maintain/warnings-and-considerations-for-grid-node-recovery.html["網格節點恢復"]每種節點類型的程序。
+NOTE: 您不能使用磁碟快照來還原網格節點。請參考link:../maintain/warnings-and-considerations-for-grid-node-recovery.html["網格節點恢復"]每種節點類型的復原步驟。
 
 每個節點主機需要一個 100 GB 的 LUN 用於作業系統。
 
@@ -213,7 +213,7 @@ _不適用_
 [[example-calculating-the-storage-requirements-for-a-host-or-virtual-machine]]
 == 範例：計算主機或虛擬機器的儲存需求
 
-假設您打算在同一台主機或虛擬機器上部署三個節點：一個儲存節點、一個管理節點和一個網關節點。您應該向主機提供至少九個儲存磁碟區。您將需要至少 300 GB 的效能層儲存用於節點容器，700 GB 的效能層儲存用於系統資料和交易日誌，以及 12 TB 的容量層儲存用於物件資料。
+假設您打算在同一台主機或虛擬機器上部署三個節點：一個 Storage Node、一個 Admin Node 和一個 Gateway Node。您至少需要為主機提供九個儲存 Volume。您至少需要 300 GB 的效能層儲存設備用於節點 Container、700 GB 的效能層儲存設備用於系統資料和交易日誌，以及 12 TB 的容量層儲存設備用於物件資料。
 
 [role="tabbed-block"]
 ====
@@ -391,10 +391,10 @@ Container引擎儲存資源池
 [[storage_req_SN]]
 == 儲存節點的特定儲存要求
 
-Linux和VMware對儲存節點的儲存需求不同：
+Linux 和 VMware 對儲存節點有以下儲存設備需求：
 
-* 基於 Linux 軟體的儲存節點可以有 1 到 48 個儲存卷
-* 基於 VMware 軟體的儲存節點可以有 1 到 16 個儲存卷
+* 基於 Linux 軟體的儲存節點可以擁有 1 到 48 個儲存 Volume。
+* 基於 VMware 軟體的儲存節點可以擁有 1 到 48 個儲存 Volume。
 * 建議使用三個或更多儲存卷。
 * 每個儲存磁碟區應為 4 TB 或更大。
 
@@ -408,7 +408,7 @@ image:metadata_space_storage_node.png["中繼資料空間儲存節點"]
 
 為了提供備援並保護物件中繼資料免於遺失、StorageGRID 我們在每個站台儲存系統中所有物件的三份中繼資料複本。物件中繼資料的三個複本會平均分散於每個站台的所有儲存節點。
 
-安裝具有純中繼資料儲存節點的網格時、網格也必須包含物件儲存的最小節點數。如需僅中繼資料儲存節點的詳細資訊、請參閱link:../primer/what-storage-node-is.html#types-of-storage-nodes["儲存節點類型"]。
+安裝含有僅中繼資料 Storage Nodes 的網格時，此網格還必須包含最少數量的物件儲存節點。如需有關僅中繼資料 Storage Nodes 的詳細資訊，請參閱 link:../primer/what-storage-node-is.html#types-of-storage-nodes["儲存節點類型"]。
 
 * 對於單一站台網格、至少會針對物件和中繼資料設定兩個儲存節點。
 * 對於多站台網格、每個站台至少要設定一個儲存節點、用於物件和中繼資料。
@@ -441,7 +441,7 @@ NOTE: 如果您指派小於 500 GB 的磁碟區 0 （僅限非正式作業使用
 
 
 * 如果您要安裝新的系統（ StorageGRID 11.6 或更新版本）、且每個儲存節點都有 128 GB 以上的 RAM 、請將 8 TB 或更多的 RAM 指派給 Volume 0 。使用較大的Volume 0值、可增加每個儲存節點上中繼資料所允許的空間。
-* 為站台設定不同的儲存節點時、請盡可能為Volume 0使用相同的設定。如果站台包含大小不同的儲存節點、則具有最小Volume 0的儲存節點將決定該站台的中繼資料容量。
+* 為網站設定不同的儲存節點時，請盡可能對 Volume 0 使用相同的設定。如果網站包含不同大小的儲存節點，則 Volume 0 容量最小的儲存節點決定該網站的中繼資料容量。
 
 
 如需詳細資訊link:../admin/managing-object-metadata-storage.html["管理物件中繼資料儲存"]、請前往。

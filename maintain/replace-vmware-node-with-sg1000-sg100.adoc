@@ -1,0 +1,285 @@
+---
+permalink: maintain/replace-vmware-node-with-sg1000-sg100.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, primary admin node, SG1000, SG100, appliance, services, prepare, installation, software 
+summary: 將作為 VMware 節點運作的主要管理節點替換為 SG1000 或 SG100 服務應用裝置。 
+---
+= 將 StorageGRID 中的 VMware 節點替換為 SG1000 或 SG100
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果主要管理節點以 VMware 節點執行，您可以將其替換為 SG1000 或 SG100 服務應用裝置。
+
+
+CAUTION: 完成並驗證節點替換後，必須刪除原有的 VMware 節點。如果舊節點保留在原地，一旦它重新上線，可能會導致嚴重的網格中斷。
+
+.開始之前
+* 您已確定無法還原虛擬機器、因此必須更換該虛擬機器。
+* 您已確認目前沒有正在進行的網格維護程序。
+* 您已確認 SG1000 或 SG100 服務應用裝置上的 StorageGRID Appliance Installer 版本與您的 StorageGRID 系統軟體版本相符。
+* 您擁有以下關於現有主管理節點的資訊：
++
+*節點名稱*：您必須使用與現有主要管理節點相同的節點名稱來安裝服務應用裝置。節點名稱即主機名稱（系統名稱）。
+
++
+*IP 位址*：您可以將服務應用裝置指派與現有主要管理節點相同的 IP 位址（建議），或者您可以為每個網路選擇一個新的未使用 IP 位址。
+
+* 您有資源配置通關密碼。
+
+
+
+
+[[step-1-replace-the-vmware-node]]
+== 步驟 1：替換 VMware 節點
+
+首先，您需要在 Grid Manager 中移除現有的主管理節點。然後，使用 StorageGRID 應用裝置安裝程式將 SG1000 或 SG100 服務應用裝置安裝為新的主管理節點，並恢復該節點。如果您使用的是新的 IP 位址，則可以在移除現有主管理節點之前安裝服務應用裝置。
+
+[role="tabbed-block"]
+====
+.使用現有 IP 位址
+--
+使用現有主要管理節點 IP 位址取代主要管理節點。
+
+.步驟
+. [[download-recovery-package-a]]從 Grid Manager 下載恢復套件：
++
+.. 選擇 *Maintenance* > *Recovery package*。
+.. 輸入佈建密碼並下載套件。
+
+
+. 登入現有主管理節點：
++
+.. 輸入下列命令： `ssh admin@grid_node_IP`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 切換到根目錄： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. link:copying-audit-logs-from-failed-primary-admin-node.html["從現有主管理節點複製稽核日誌"]。
+. 停止 Server Manager 和網格節點上的所有服務：
++
+[listing]
+----
+shutdown -h now
+----
++
+服務暫停最多需要 15 分鐘。
+
+. link:https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html["安裝 SG1000 或 SG100 服務應用裝置"^]。
+. link:https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/deploying-services-appliance-node.html#deploy-services-appliance-as-primary-admin-node["部署 SG1000 或 SG100 服務應用裝置"^]。
+. 選擇 *Start installation* 後，大約需要十分鐘時間，安裝才能到達 *Load StorageGRID installer* 步驟。
++
+六到七分鐘後，瀏覽器會重新導向以開始恢復。
+
+. 檢查應用裝置的時鐘是否正確。
++
+.. 使用 SSH 連接到 8022 連接埠：
++
+... 輸入命令： `ssh -p 8022 admin@_grid_node_IP_`。
+... 切換到根目錄： `su -`
+... 輸入 `netapp1!`。
+
+
+.. 請確認應用裝置時鐘與目前世界協調時 (UTC) 時間相差不超過幾分鐘。如有必要，請設定正確的日期和時間：
++
+[listing]
+----
+date -s "DD Mon YYYY HH:MM:SS"
+----
+
+
+. 返回網頁瀏覽器並選擇 *Recover a failed primary Admin Node*。
+. 上傳<<download-recovery-package-a,您下載的恢復套件>>。
+. 輸入佈建密碼短語，然後選擇 *Start Recovery*。
++
+恢復進度列將顯示。請等待六到十分鐘，讓恢復程序完成並啟動服務。
+
+. 出現提示時，請登入 Grid Manager。
+
+
+--
+.使用新的 IP 位址
+--
+使用新的 IP 位址取代主要管理節點。
+
+.步驟
+. link:https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html["安裝 SG1000 或 SG100 服務應用裝置"^]。
+. 檢查應用裝置時鐘是否正確，以避免恢復期間出現 NTP 錯誤。
++
+.. 使用 SSH 連接到 8022 連接埠：
++
+... 輸入命令： `ssh -p 8022 admin@_grid_node_IP_`。
+... 切換到根目錄： `su -`
+... 輸入 `netapp1!`。
+
+
+.. 請確認應用裝置時鐘與目前協調世界時 (UTC) 的誤差在幾分鐘以內。如有需要，請設定正確的日期和時間：
++
+[listing]
+----
+date -s "DD Mon YYYY HH:MM:SS"
+----
+
+
+. 在 StorageGRID 應用裝置安裝程式中，前往 *Upload StorageGRID Software*，並檢查應用裝置上預先載入的軟體版本是否與網格上執行的 StorageGRID 版本相符。如果版本不符：
++
+.. 從 link:https://mysupport.netapp.com/site/["NetApp 支援網站"^] 下載正確的 StorageGRID Debian 安裝套件。
+.. 選擇*移除*以移除安裝軟體。
+.. 上傳 `storagegrid-webscale-images-<sg-version>.deb`和 `storagegrid-webscale-images-<sgversion>.deb.md5`檔案。
+
+
+. 在 StorageGRID 應用裝置安裝程式的 Home 索引標籤上，選取 *Primary Admin (with Load Balancer)* 作為節點類型。
+. 請輸入節點名稱。節點名稱必須與現有主管理節點名稱一致。
++
+
+IMPORTANT: 不要選擇 *Start Installation*。
+
+. 檢查新 IP 位址的子網路是否在網格網路中。如果新 IP 子網路不存在，請將其新增至網格網路：
++
+.. 在 Grid Manager 中，選擇 *Maintenance* > *Grid Network*。
+.. 輸入佈建密碼以更新子網路清單。
+
+
+. 從 Grid Manager 下載恢復套件：
++
+.. 選擇 *Maintenance* > *Recovery package*。
+.. 輸入佈建密碼，然後下載套件。
+
+
+. 登入現有主管理節點：
++
+.. 輸入下列命令： `ssh admin@grid_node_IP`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+.. 輸入以下命令切換到 root ： `su -`
+.. 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
++
+當您以 root 登入時、提示會從變更 `$`為 `#`。
+
+. link:copying-audit-logs-from-failed-primary-admin-node.html["從現有主管理節點複製稽核日誌"]。
+. 停止 Server Manager 和網格節點上的所有服務：
++
+[listing]
+----
+service servermanager stop
+----
++
+服務暫停最多需要 15 分鐘。
+
+. 在 StorageGRID 應用裝置安裝程式主頁標籤上：
++
+.. 請驗證以下設定：
++
+*** 節點類型設定為 *Primary Admin （含負載平衡器）*
+*** 節點名稱與現有主要管理節點名稱相符
+
+
+.. 記錄新的 IP 位址。
+
+
+. 選擇 *Start Installation*。
++
+安裝大約需要 10 分鐘才能到達 *載入 StorageGRID 安裝程式* 步驟。
+
++
+六到七分鐘後，瀏覽器將會重新導向以開始恢復程式。
+
+. 檢查應用裝置的時鐘是否正確。
++
+.. 使用 SSH 連接到 8022 連接埠：
++
+... 輸入命令： `ssh -p 8022 admin@_grid_node_IP_`。
+... 切換到根目錄： `su -`
+... 輸入 `netapp1!`。
+
+
+.. 請確認應用裝置時鐘與目前世界協調時 (UTC) 時間相差不超過幾分鐘。如有必要，請設定正確的日期和時間：
++
+[listing]
+----
+date -s "DD Mon YYYY HH:MM:SS"
+----
+
+
+. 返回網頁瀏覽器，然後選擇 *Recover a failed primary Admin Node*。
+. 上傳<<download-recovery-package,您下載的恢復套件>>。
+. 輸入佈建密碼短語，然後選擇 *Start Recovery*。
++
+主管理節點恢復頁面消失後又重新出現。如果再次選擇 *Start Recovery*， `500: Internal Server Error`則會出現，因為恢復已啟動，但無法將更新傳送至使用新 IP 位址的 Grid Manager。若要解決此問題，請更新 `/etc/hosts`檔案中的主管理節點 IP 位址：
+
++
+.. 使用 SSH 連接到 8022 連接埠：
++
+... 輸入命令： `ssh -p 8022 admin@_grid_node_IP_`。
+... 切換到根目錄： `su -`
+... 輸入檔案中列出的密碼 `Passwords.txt`。
+
+
+.. 存取日誌：
++
+[listing]
+----
+tail /var/local/log/install.log
+----
++
+您應該會重複看到以下錯誤： `curl: (7) Failed to connect to <primary_Admin_Node_name> port9999: No route to host`
+
++
+這是預期行為。StorageGRID 正在嘗試使用現有的主要管理節點 IP 位址、將更新傳送至主要管理節點。
+
+.. 確認Container正在運作：
++
+`storagegrid node status`
+
++
+`storagegrid node enter <primary_Admin_Node_name>`
+
+.. 在 Container 內的 `/etc/hosts`檔案中，將現有的主要管理節點 IP 位址替換為新的 IP 位址。
+.. 儲存檔案。
+.. 返回網頁瀏覽器。幾秒鐘後，恢復進度條將會出現。
++
+請等待六到十分鐘，以便恢復程序完成並啟動服務。
+
+
+
+. 出現提示時，請登入 Grid Manager。
+. 更新恢復套件：
++
+.. 登入主要管理節點：
++
+... 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
+... 切換到根目錄： `su -`
+... 輸入以下命令： `change-ip`
+
+
+.. 選擇選項 *3 – 編輯管理網路子網路清單*，然後新增子網路。
+
+
++
+StorageGRID 會自動產生一個包含新主要管理節點 IP 位址的新恢復套件。
+
+. 從 Grid Manager 下載最新的恢復套件。
+
+
+--
+====
+
+
+[[step-2-complete-node-recovery]]
+== 步驟 2：完成節點恢復
+
+使用現有的非主要管理節點作為還原程序（稽核日誌、管理節點資料庫和 Prometheus 計量）的來源管理節點。如果網格沒有非主要管理節點，則可以使用要替換的原始 VMware 節點，前提是其執行的 IP 位址與已恢復的主要管理節點不同。
+
+.步驟
+. link:restoring-audit-log-on-recovered-primary-admin-node.html["還原稽核日誌"]。
+. link:restoring-admin-node-database-primary-admin-node.html["還原管理節點資料庫"]。
+. link:restoring-prometheus-metrics-primary-admin-node-using-npan.html["還原 Prometheus 計量"]。
+. 確認新的主管理節點運作正常。然後，立即刪除原有的虛擬機器節點或裸機 Container。
+

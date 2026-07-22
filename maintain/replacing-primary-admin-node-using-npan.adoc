@@ -1,0 +1,56 @@
+---
+permalink: maintain/replacing-primary-admin-node-using-npan.html 
+sidebar: sidebar 
+keywords: storagegrid, replace, primary admin node, non-primary admin node 
+summary: 使用非主要管理節點替換發生故障的主要管理節點。 
+---
+= 使用非主要管理節點取代 StorageGRID 主要管理節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要恢復主管理節點、您必須先更換實體或虛擬硬體。
+
+* 您可以將發生故障的主要管理節點替換為在同一平台上執行的主要管理節點。
+* 您可以將執行在 VMware 或 Linux 主機上的主要管理節點取代為託管在 StorageGRID 服務應用裝置上的主要管理節點。
+* 您可以將執行在 VMware 主機上的主要管理節點替換為 SG1000 或 SG100 服務應用裝置。
+
+
+請使用符合您為節點所選替換平台的程序。完成節點更換程序（適用於所有節點類型）之後、該程序將引導您進行主要管理節點恢復的下一步。
+
+[cols="1a,2a"]
+|===
+| 替換平台 | 程序 
+
+
+ a| 
+VMware
+ a| 
+link:all-node-types-replacing-vmware-node.html["將 VMware 節點替換為恢復節點"]
+
+link:replace-vmware-node-with-sg1000-sg100.html["將 VMware 節點替換為 SG1000 或 SG100 服務應用裝置"]
+
+
+
+ a| 
+Linux
+ a| 
+link:all-node-types-replacing-linux-node.html["更換Linux節點"]
+
+
+
+ a| 
+服務應用裝置
+ a| 
+link:replacing-failed-node-with-services-appliance.html["更換服務應用裝置"]
+
+
+
+ a| 
+OpenStack
+ a| 
+NetApp提供的OpenStack虛擬機器磁碟檔案和指令碼不再支援還原作業。如果您需要恢復在OpenStack部署中執行的節點、請下載適用於您Linux作業系統的檔案。然後，請遵循的程序link:all-node-types-replacing-linux-node.html["更換 Linux 節點"]。
+
+|===

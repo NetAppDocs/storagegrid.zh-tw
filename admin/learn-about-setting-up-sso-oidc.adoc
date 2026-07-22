@@ -1,0 +1,50 @@
+---
+permalink: admin/learn-about-setting-up-sso-oidc.html 
+sidebar: sidebar 
+keywords: use sandbox mode for sso, how to test single sign-on 
+summary: 在 StorageGRID 中設定單一登入 （SSO） 可讓 StorageGRID （服務供應商）和 SSO 身分供應商安全地就使用者身分驗證請求進行通訊。 
+---
+= 了解如何使用 OIDC 在 StorageGRID 中設定 SSO
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 StorageGRID 中設定單一登入 （SSO） 可讓 StorageGRID （服務供應商）和 SSO 身分供應商安全地就使用者身分驗證請求進行通訊。
+
+您可以使用 OpenID Connect (OIDC) 或 SAML 在 StorageGRID 中設定 SSO。請依照以下高階步驟使用 OIDC 在 StorageGRID 中設定 SSO，或了解 link:learn-about-setting-up-sso-saml.html["使用 SAML 設定 SSO"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 設定身分識別供應商
+[role="quick-margin-para"]
+根據您計劃使用的 SSO 身分供應商，您可以選擇 Active Directory 或 Entra ID 作為身分聯合 LDAP 服務類型。
+
+[role="quick-margin-list"]
+* 對於 Active Directory Federation Service (AD FS)，您可以使用 AD FS、Entra ID、Keycloak、Okta 或 PingFederate 身分供應商。
+* 對於 Entra ID，您只能使用 Entra ID 身分供應商。
+
+
+[role="quick-margin-para"]
+使用 SSO 身分供應商的軟體為網格中的每個管理節點設定 OIDC。
+
+[role="quick-margin-list"]
+* 了解 Active Directory 中的 link:creating-relying-party-trusts-in-ad-fs-oidc.html["為每個管理節點建立一個應用程式群組"]
+* 了解 link:creating-enterprise-application-entra-id-oidc.html["為每個管理節點建立一個應用程式"] 在 Entra ID 中的資訊
+* 了解 Keycloak 中的 link:create-client-keycloak-oidc.html["為每個管理節點建立一個用戶端"]
+* 瞭解 link:create-okta-application-oidc.html["為每個管理節點建立一個 Okta 應用程式"]
+* 了解 link:creating-sp-connection-ping-oidc.html["為每個管理節點建立服務供應商連線"] 在 PingFederate 中的相關資訊
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]設定 SSO
+[role="quick-margin-para"]
+選擇 OIDC 的「設定 SSO」精靈。然後，使用您的身分識別供應商設定 SSO，並進入沙盒模式以設定和測試 SSO，再為 StorageGRID 使用者啟用此功能。
+
+[role="quick-margin-para"]
+瞭解 link:configure-sso-oidc.html["使用 OIDC 設定 SSO"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]啟用 SSO
+[role="quick-margin-para"]
+確認可以使用 SSO 登入每個管理節點後，為所有 StorageGRID 使用者啟用 SSO。
+
+[role="quick-margin-para"]
+瞭解 link:configure-sso-oidc.html#enable-sso-oidc["為 StorageGRID 使用者啟用 SSO"]

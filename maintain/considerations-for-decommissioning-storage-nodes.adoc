@@ -40,7 +40,7 @@ summary: 在解除委任儲存節點之前、請考慮是否可以改為複製�
 檢閱解除委任連線儲存節點的考量事項。
 
 * 在單一取消委任節點程序中、您不應取消委任超過10個儲存節點。
-* 系統必須始終包含足夠的儲存節點來滿足操作要求，包括link:understanding-adc-service-quorum.html["ADC 仲裁"]和活動的link:reviewing-ilm-policy-and-storage-configuration.html["ILM原則"]。若要滿足此限制、您可能需要在擴充作業中新增儲存節點、才能取消委任現有的儲存節點。
+* 系統必須始終包含足夠的儲存節點以滿足運作需求，包括 link:understanding-adc-service-quorum.html["ADC 仲裁"] 和使用中的 link:reviewing-ilm-policy-and-storage-configuration.html["ILM原則"]。如果退役作業會導致站台的 ADC 數量低於法定人數，StorageGRID 會自動將 ADC 服務移至同一站台上可用的非 ADC 儲存節點，以維持 ADC 法定人數。如果 ADC 服務無法自動移動，您可能需要先 link:../expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html["在擴充作業中新增儲存節點"]，才能退役現有的儲存節點。
 +
 在包含僅軟體中繼資料節點的網格中取消委任儲存節點時、請務必謹慎。如果您取消委任所有設定為儲存物件和中繼資料的節點、則儲存物件的能力會從網格中移除。如需僅中繼資料儲存節點的詳細資訊、請參閱link:../primer/what-storage-node-is.html#types-of-storage-nodes["儲存節點類型"]。
 

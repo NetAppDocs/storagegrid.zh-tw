@@ -2,7 +2,7 @@
 permalink: release-notes/removed-or-deprecated-features.html 
 sidebar: sidebar 
 keywords:  
-summary: 了解 StorageGRID 12.0 中已移除或棄用的功能和特性。升級前，請檢查已移除或棄用的功能是否會影響您的用戶端應用程式或網格配置。 
+summary: 了解 StorageGRID 12.1.0 中已移除或棄用的功能和特性。升級前，請檢查已移除或棄用的功能是否會影響您的用戶端應用程式或網格組態。 
 ---
 = StorageGRID 中已移除或已棄用的功能
 :allow-uri-read: 
@@ -11,14 +11,14 @@ summary: 了解 StorageGRID 12.0 中已移除或棄用的功能和特性。升�
 
 
 [role="lead"]
-了解 StorageGRID 12.0 中已移除或棄用的功能和特性。升級前，請檢查已移除或棄用的功能是否會影響您的用戶端應用程式或網格配置。
+了解 StorageGRID 12.1.0 中已移除或棄用的功能和特性。升級前，請檢查已移除或棄用的功能是否會影響您的用戶端應用程式或網格組態。
 
 
 
 [[definitions]]
 == 定義
 
-已過時:: 此功能 * 不應 * 用於新的正式作業環境。現有的正式作業環境可以繼續使用此功能。
+已過時:: 您*不應該*在新生產環境中使用此功能。現有生產環境可以繼續使用此功能。
 生命週期終止:: 支援此功能的上次出貨版本。在某些情況下、此功能的文件可能會在此階段移除。
 已移除:: * 不 * 支援此功能的第一個版本。
 
@@ -38,6 +38,19 @@ NOTE: 在某些情況下、 NetApp 可能會比指定時間更快終止對特定
 [cols="2a,1a,1a,1a,3a"]
 |===
 | 功能 | 已過時 | 生命週期終止 | 已移除 | 先前文件的連結 
+
+
+ a| 
+AES-128 加密的全域 SSE 設定
+ a| 
+12.1
+ a| 
+12.2
+ a| 
+12.3
+ a| 
+從 StorageGRID 12.1.0 開始，對新儲存物件靜態資料進行 AES-128 加密的支援已過時。對於最初以 AES-128 加密的儲存物件，仍繼續支援其擷取作業。
+
 
 
  a| 
@@ -66,8 +79,8 @@ https://docs.netapp.com/us-en/storagegrid-118/maintain/considerations-for-decomm
 
 * 注意 * ：開始升級之前、您必須：
 
-. 取消委任所有歸檔節點。請參閱。 https://docs.netapp.com/us-en/storagegrid-118/maintain/grid-node-decommissioning.html["Grid 節點汰換（ StorageGRID 11.8 doc 網站）"^]
-. 從儲存資源池和 ILM 原則中移除所有歸檔節點參照。請參閱。 https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["NetApp 知識庫： StorageGRID 11.9 軟體升級解決方案指南"^]
+. 停用所有歸檔節點。請參閱 https://docs.netapp.com/us-en/storagegrid-118/maintain/grid-node-decommissioning.html["Grid 節點汰換（ StorageGRID 11.8 doc 網站）"^]。
+. 從儲存設備集區和 ILM 原則中移除所有歸檔節點參考。請參閱 https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["NetApp 知識庫： StorageGRID 11.9 軟體升級解決方案指南"^]。
 
 
 

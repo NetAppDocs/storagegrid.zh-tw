@@ -19,7 +19,7 @@ summary: 如有必要、您可以手動驗證 StorageGRID 安裝歸檔中的檔�
 .步驟
 . 從驗證套件擷取成品：
 +
-`tar -xf StorageGRID_12.0.0_Code_Signature_Verification_Package.tar.gz`
+`tar -xf StorageGRID_12.1.0_Code_Signature_Verification_Package.tar.gz`
 
 . 確保擷取這些假影：
 +

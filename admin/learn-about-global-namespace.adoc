@@ -1,0 +1,143 @@
+---
+permalink: admin/learn-about-global-namespace.html 
+sidebar: sidebar 
+keywords: global namespace, grid federation, S3 endpoint domain names, default region, grid federation connection, multi-grid 
+summary: 全域命名空間允許租戶存取跨多個 StorageGRID 系統的儲存桶。在網格聯合連線上啟用全域命名空間後，以全域命名空間端點為目標的 S3 CreateBucket 和 ListBuckets 請求可以傳送到任何網格的負載平衡器端點，並根據請求中的簽章區域自動路由到正確的網格。 
+---
+= 了解網格聯邦的全域命名空間
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+全域命名空間允許租戶存取跨多個 StorageGRID 系統的儲存桶。在網格聯合連線上啟用全域命名空間後，以全域命名空間端點為目標的 S3 CreateBucket 和 ListBuckets 請求可以傳送到任何網格的負載平衡器端點，並根據請求中的簽章區域自動路由到正確的網格。
+
+
+
+[[what-is-a-global-namespace]]
+== 什麼是全域命名空間？
+
+全域命名空間允許租戶存取跨多個 StorageGRID 系統的儲存桶。在網格聯合連線上啟用全域命名空間後，以全域命名空間端點為目標的 S3 CreateBucket 和 ListBuckets 請求可以傳送到任何網格的負載平衡器端點，並根據請求中的簽章區域自動路由到正確的網格。
+
+
+NOTE: 您應該設定 DNS 解析器，將儲存桶 URL 的 DNS 對應到特定的網格。如有需要，請諮詢您的網路管理員，以確保 DNS 解析器設定正確。請參閱 link:../admin/configure-global-namespace.html#config-dns-resolution["設定 DNS 解析"]。
+
+StorageGRID 不會強制要求全域命名空間內的各個網格使用唯一的儲存桶名稱，因此同名儲存桶可能存在於不同的網格中。要求中的簽署區域用於確定哪個網格擁有該儲存桶並應接收該要求。
+
+例如，如果網格 A 使用區域 `us-east-1`，網格 B 使用區域 `us-west-1`，傳送到任何具有該區域 `us-west-1`之網格的 CreateBucket 請求都會自動路由到網格 B。
+
+如需網格聯盟的詳細資訊，請參閱 link:grid-federation-overview.html["什麼是網格同盟？"]。
+
+
+
+[[gns-exampleglobal-namespace-example]]
+== [[gns-example]]全域命名空間範例
+
+.網格 1
+* 預設區域： `region-1`
+* 預設 CNAME： `s3.region-1.company.com`
+* 全域端點： `s3.company.com`
+
+
+.網格 2
+* 預設區域： `region-2`
+* 預設 CNAME： `s3.region-2.company.com`
+* 全域端點： `s3.company.com`
+
+
+.網格 3
+* 預設區域： `region-3`
+* 預設 CNAME： `s3.region-3.company.com`
+* 全域端點： `s3.company.com`
+
+
+
+
+[[createbucket-and-listbuckets-operations]]
+=== CreateBucket 和 ListBuckets 作業
+
+如果您建立儲存貯體 (`bucket123`)，其具有簽署區域  `region-2` 且以全域端點  `s3.company.com` 為目標，則任何接收到此要求的網格都將在 Grid 2 上建立該儲存貯體。
+
+
+
+[[bucket-specific-and-general-object-operations]]
+=== 儲存桶特定物件操作和通用物件操作
+
+在指定網格上建立儲存桶後，您的 DNS 解析器會將儲存桶 URL 解析為儲存桶和網格 CNAME。
+
+在 <<gns-example,以上範例>> 中，DNS 解析器應將  `bucket123.s3.company.com` 解析為  `bucket123.s3.grid3.company.com`（儲存桶和網格的 CNAME）。換句話說，所有請求都直接傳送至該網格，無需額外的路由。
+
+.範例
+`PutObject to bucket123.s3.company.com` 解析為 `bucket123.s3.grid3.company.com`
+
+
+
+[[s3-behavior-with-global-namespace]]
+== S3 與全域命名空間的行為
+
+全域命名空間完全設定完成後，S3 將採取以下行為。
+
+
+
+[[region-enforcement]]
+=== 區域強制執行
+
+除了 link:../s3/operations-on-buckets.html["建立庫位"] 和 link:../s3/operations-on-the-service.html["列表桶"] 之外，所有發送到全域命名空間端點的 S3 請求都要求 V4 驗證標頭中的簽署區域與網格的預設區域相符。
+
+* 如果簽署區域不符，請求將遭拒，並顯示以下錯誤訊息：
++
+[listing]
+----
+An error occurred (AuthorizationHeaderMalformed) when calling the <operation> operation: The authorization header is malformed; the region '<signing-region>' is wrong; expecting '<grid-default-region>'
+----
+* 區域強制執行適用於網格上的所有儲存桶，包括在啟用全域命名空間之前建立的儲存桶。
+* 區域限制僅適用於 V4 驗證請求。匿名請求和 V2 請求不受區域限制。
+
+
+
+
+[[createbucket-routing]]
+=== CreateBucket 路由
+
+CreateBucket 發送到全域命名空間端點的請求(`s3.company.com`）可以導向至任何網格的負載平衡器端點。請求會自動路由到預設區域與請求中簽署區域相符的網格。
+
+例如：
+
+* 網格 A 有預設區域 `us-east-1`，網格 B 有預設區域 `us-west-1`。
+* 用戶端傳送 CreateBucket 請求至 `s3.company.com`，並帶有簽署區域 `us-west-1`。
+* 循環 DNS 將請求導向網格 A。
+* 網格 A 將請求路由至網格 B。
+* 儲存桶建立在網格 B 上。
+
+
+CreateBucket 的其他考量事項：
+
+* 該 `LocationConstraint`元素可以設定為網格的任何預設或非預設區域。這只會影響 ILM 原則，而不會影響建立儲存桶的網格（與 AWS 的行為不同 `us-east-1`）。
+* 請求中的簽署區域決定哪個網格建立儲存桶（簽署區域必須與目標網格的預設區域相符）。
+* 支援預簽章 V4 請求。
+* 全域命名空間路由不支援匿名請求和 V2 請求。
+
+
+
+
+[[listbuckets-routing]]
+=== ListBuckets 路由
+
+ListBuckets 發送到全域命名空間端點的請求與 CreateBucket 請求的路由方式類似，使用簽章區域來確定正確的網格。
+
+HEAD Bucket 和 ListBuckets 回應均不包含網格的預設區域。預設區域由簽署區域隱含，且簽署區域必須與網格的預設區域相符。
+
+
+
+[[account-and-access-key-management]]
+=== 帳戶和存取金鑰管理
+
+租用戶帳戶和 S3 存取金鑰可以透過 link:grid-federation-what-is-account-sync.html["帳戶同步"] 在所有網格之間同步，但即使每個網格都有自己獨立的存取金鑰集，全域命名空間也同樣適用。如果使用獨立的存取金鑰，請確保 S3 用戶端在向每個網格發送請求時使用正確的存取金鑰。
+
+
+
+[[whats-next]]
+== 接下來呢？
+
+現在您已準備好link:../admin/configure-global-namespace.html["設定全域命名空間"]。

@@ -66,6 +66,14 @@ Sid元素為選用項目。Sid僅供使用者說明使用。它會儲存、但St
  a| 
 您可以允許使用者、群組和帳戶存取特定資源並執行特定動作。如果要求中未包含S3簽名、則可指定萬用字元（*）做為主體、以匿名存取。根據預設、只有root帳戶可以存取該帳戶擁有的資源。
 
+主體：
+
+* `"Principal": "*"`符合所有請求，包括匿名（未簽署）請求。
+* `"Principal": { "AWS": "*" }` 符合任何已驗證的身分或使用者（不符合匿名請求）
+* 僅適用於儲存桶原則
+* 主體是指被授予或拒絕權限的帳戶/使用者。
+
+
 您只需要在庫位原則中指定主要元素。對於群組原則而言、附加原則的群組是內含的主體元素。
 
 
@@ -186,7 +194,7 @@ arn:aws:iam::account_id:federated-group/group_name
 其他考量事項：
 
 * 您可以使用星號（*）做為萬用字元、以比對物件金鑰內的零個或多個字元。
-* 可以在物件金鑰中指定的國際字元、應使用Json utf-8或Json \u轉義序列進行編碼。不支援百分比編碼。
+* 物件鍵中可指定的國際字元應使用 JSON UTF-8 編碼或使用 JSON \u 轉義序列進行編碼。不支援百分比編碼。
 +
 https://www.ietf.org/rfc/rfc2141.txt["RFC 2141 URN語法"^]
 
@@ -215,7 +223,7 @@ PuttBucketPolicy 作業的 HTTP 要求主體必須以 charset=UTF-8 編碼。
 ----
 "Resource": "arn:aws:s3:::mybucket/home/${aws:username}/*"
 ----
-* 資源值可以指定在建立群組原則時尚未存在的儲存區。
+* 資源值可以指定在建立群組原則時尚不存在的儲存桶。
 
 
 
@@ -273,7 +281,7 @@ arn:aws:iam::27233906934684427525:user-uuid/de305d54-75b4-431b-adb2-eb6b9e546013
 +
 例如、假設 Alex 離開組織並刪除使用者名稱 `Alex`。如果有新的 Alex 加入組織並指派相同的 `Alex`使用者名稱、新使用者可能會不小心繼承授予原始使用者的權限。
 
-* 主要值可以指定建立儲存區原則時尚未存在的群組/使用者名稱。
+* 主值可以指定在建立儲存桶原則時尚不存在的群組/使用者名稱。
 
 
 
@@ -486,9 +494,10 @@ S3：ListAllMyb桶
  a| 
 S3：清單庫
  a| 
-* 清單物件
+* GetObject
 * 標題庫
-* RestoreObject
+* 標題物件
+* 清單物件
 
  a| 
 
@@ -498,7 +507,6 @@ S3：清單庫
 S3：listBucketMultiPartUploads
  a| 
 * ListMultipartUploads
-* RestoreObject
 
  a| 
 
@@ -644,7 +652,6 @@ PutBucketReplication
 S3：中止多重角色上傳
  a| 
 * AbortMultiPart上 傳
-* RestoreObject
 
  a| 
 
@@ -666,7 +673,6 @@ S3：刪除物件
  a| 
 * 刪除物件
 * 刪除物件
-* RestoreObject
 
  a| 
 
@@ -701,7 +707,6 @@ S3：GetObject
  a| 
 * GetObject
 * 標題物件
-* RestoreObject
 * 選取物件內容
 
  a| 
@@ -759,7 +764,7 @@ GetObject （物件的特定版本）
  a| 
 S3：列出多個零件上傳零件
  a| 
-ListParts 、 RestoreObject
+清單零件
  a| 
 
 
@@ -767,11 +772,10 @@ ListParts 、 RestoreObject
  a| 
 S3：PuttObject
  a| 
-* PuttObject
 * CopyObject
-* RestoreObject
-* 建立多個部分上傳
 * 完成多個部分上傳
+* 建立多個部分上傳
+* PuttObject
 * 上傳零件
 * 上傳PartCopy
 
@@ -814,11 +818,11 @@ PutObjectTagging( 物件的特定版本 )
  a| 
 S3：PuttOverwriteObject
  a| 
-* PuttObject
-* CopyObject
-* PuttObjectTagging
-* 刪除ObjectTagging
 * 完成多個部分上傳
+* CopyObject
+* 刪除ObjectTagging
+* PuttObject
+* PuttObjectTagging
 
  a| 
 是的
@@ -851,10 +855,10 @@ S3：PuttOverwriteObject權限是套StorageGRID 用至建立或更新物件之�
 *** 如果啟用 S3 版本設定、則「拒絕」設定會防止 PutObjectTagging 或 DeleteObjectTagging 作業修改物件及其非目前版本的 TagSet 。
 
 
-** 如果找不到現有的物件、此權限將不會生效。
+** 如果找不到現有物件，則此權限無效。
 
 
-* 當此權限不存在時、效果與「允許」設定相同。
+* 如果此權限不存在，則效果與設定了「允許」權限相同。
 
 
 
@@ -1020,7 +1024,7 @@ null
  a| 
 如果存在
  a| 
-附加到任何條件運算子（Null 條件除外），以檢查該條件鍵是否不存在。如果條件鍵不存在，則傳回 TRUE。
+附加到除 Null 條件之外的任何條件運算子，以檢查該條件索引鍵是否不存在。如果條件索引鍵不存在，則傳回 TRUE。
 
 |===
 
@@ -1038,11 +1042,11 @@ AWS：來源Ip
  a| 
 IP營運者
  a| 
-將會與傳送要求的IP位址進行比較。可用於庫位或物件作業。
+與傳送請求的 IP 位址進行比較。可用於儲存桶或物件操作。
 
-*附註：*如果S3要求是透過管理節點和閘道節點上的負載平衡器服務傳送、則這會與負載平衡器服務上游的IP位址進行比較。
+*注意：*如果 S3 請求是透過管理節點和閘道節點上的負載平衡器服務發送的，則此請求將與負載平衡器服務的上游 IP 位址進行比較。
 
-*附註*：如果使用第三方、不透明的負載平衡器、則會比較該負載平衡器的IP位址。任何標頭都 `X-Forwarded-For`將被忽略、因為無法確定其有效性。
+*注意*：如果使用第三方非透明負載平衡器，則會與該負載平衡器的 IP 位址進行比較。任何 `X-Forwarded-For`標頭都將被忽略，因為無法確定其有效性。
 
 
 
@@ -1051,7 +1055,7 @@ AWS：使用者名稱
  a| 
 資源/身分識別
  a| 
-將會比較傳送者的使用者名稱、以從中傳送要求。可用於庫位或物件作業。
+與傳送請求的傳送者使用者名稱進行比較。可用於儲存桶或物件操作。
 
 
 
@@ -1062,7 +1066,7 @@ S3：清單儲存庫和
 
 S3：listBucketVerions權限
  a| 
-將與 ListObjects 或 ListObjectVerions 要求中指定的分隔參數進行比較。
+與 ListObjects 或 ListObjectVersions 請求中指定的分隔符號參數進行比較。
 
 
 
@@ -1093,7 +1097,7 @@ S3 ： PutObjectVersionAcl
 
 S3：PuttObjectVersion標記
  a| 
-需要現有物件具有特定的標記金鑰和值。
+要求現有物件具有特定的標籤鍵和值。
 
 
 
@@ -1104,7 +1108,7 @@ S3：清單儲存庫和
 
 S3：listBucketVerions權限
  a| 
-將與 ListObjects 或 ListObjectVerions 要求中指定的 max-keys 參數進行比較。
+與 ListObjects 或 ListObjectVersions 請求中指定的 max-keys 參數進行比較。
 
 
 
@@ -1156,7 +1160,7 @@ S3：清單儲存庫和
 
 S3：listBucketVerions權限
  a| 
-將與 ListObjects 或 ListObjectVerions 要求中指定的前置參數進行比較。
+與 ListObjects 或 ListObjectVersions 請求中指定的前綴參數，或為 GetObject 或 HeadObject 指定的金鑰進行比較。
 
 
 
@@ -1169,7 +1173,16 @@ S3：PuttObjectTagging
 
 S3：PuttObjectVersion標記
  a| 
-當物件要求包含標記時、需要特定的標記金鑰和值。
+當物件請求包含標籤時，需要特定的標籤索引鍵和值。
+
+
+
+ a| 
+s3:x-amz-copy-source
+ a| 
+S3：PuttObject
+ a| 
+與 PutObject 和 UploadPartCopy 請求標頭中展開的 x-amz-copy-source 進行比較。
 
 
 
@@ -1374,7 +1387,7 @@ S3：PuttObject
  a| 
 鏟斗
  a| 
-有效。物件由建立者帳戶擁有、且庫位原則不適用。建立者帳戶必須使用物件ACL來授與物件的存取權限。
+有效。物件歸建立者帳戶所有，儲存桶原則不適用。建立者帳戶必須使用物件 ACL 授予物件的存取權限。
  a| 
 有效。物件由庫位擁有者帳戶擁有。適用庫位政策。
 
@@ -1399,7 +1412,7 @@ S3：PuttObject
 
 
 
-NOTE: 在 S3 原則中將 DeleteObject 設定為拒絕、並不會在存在「 30 天後零複本」等規則時、阻止 ILM 刪除物件。
+NOTE: 在 S3 原則中將 DeleteObject 設定為 DENY，並不能防止 ILM 在存在「30 天後零複本」之類的規則時刪除物件。
 
 
 NOTE: 即使套用了所有這些規則和原則、也無法防範並行寫入（請參閱情況 A ）。它們確實能防止連續完成的覆寫（請參閱情況B）。

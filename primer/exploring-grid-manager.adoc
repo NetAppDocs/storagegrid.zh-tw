@@ -47,7 +47,7 @@ image:grid_manager_dashboard_and_menu.png["Grid Manager中的儀表板"]
 [[help-menu]]
 == 說明功能表
 
-說明選單 image:icon-help-menu-bar.png["功能表列上的說明圖示"] 提供以下項目的存取：
+說明選單 image:icon_help_menu_bar.png["功能表列上的說明圖示"] 提供以下項目的存取：
 
 * 這link:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool"]和link:../admin/use-s3-setup-wizard.html["S3 設定"]巫師
 * 目前版本的StorageGRID文件站點
@@ -68,7 +68,7 @@ image:grid_manager_dashboard_and_menu.png["Grid Manager中的儀表板"]
 * 檢閱已解決的警示
 * 設定靜音以隱藏警示通知
 * 針對觸發警示的條件定義警示規則
-* 設定電子郵件伺服器以接收警示通知
+* 設定 StorageGRID 警示的電子郵件通知
 
 
 
@@ -148,7 +148,7 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 
 系統工作包括：
 
-* 使用link:../admin/grid-federation-overview.html["網格同盟"]複製租用戶帳戶資訊並在兩個StorageGRID系統之間複製物件數據
+* 使用 link:../admin/grid-federation-overview.html["網格同盟"] 在兩個 StorageGRID 系統之間同步租戶帳戶資訊和複寫物件資料
 * （可選）啟用link:../admin/configuring-stored-object-compression.html["壓縮儲存的物件"]選項
 * 或者，配置link:../s3/consistency.html["預設桶一致性設定"]
 * link:../ilm/managing-objects-with-s3-object-lock.html["管理 S3 對象鎖"]
@@ -163,6 +163,7 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 
 監控工作包括：
 
+* link:../monitor/configure-email-server.html["設定郵件伺服器"]
 * link:../monitor/configure-log-management.html["設定日誌管理"]
 * link:../monitor/using-snmp-monitoring.html["使用SNMP監控"]
 
@@ -179,6 +180,7 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 * 變更link:../admin/changing-provisioning-passphrase.html["資源配置複雜密碼"]或者link:../admin/change-node-console-password.html["節點主控台密碼"]
 * link:../admin/using-identity-federation.html["使用身分識別聯盟"]
 * link:../admin/how-sso-works.html["配置 SSO"]
+* link:../admin/about-multi-admin-verify.html["設定多管理員驗證"]
 
 
 
@@ -201,7 +203,13 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 * link:../maintain/rename-grid-site-node-overview.html["重新命名程序"]可更改網格、站點和節點的顯示名稱
 * link:../troubleshoot/verifying-object-integrity.html["物件存在檢查作業"]驗證物件資料是否存在（雖然不是正確的）
 * 執行link:../maintain/rolling-reboot-procedure.html["循環重新開機"]重新啟動多個網格節點
-* link:../maintain/restoring-volume.html["Volume 還原作業"]
+* 恢復物件資料
++
+** link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html["將物件資料還原至應用裝置的儲存磁碟區"]
+** link:../maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html["將物件資料還原至系統磁碟機不受影響的儲存磁碟區"]
+** link:../maintain/restoring-object-data-to-storage-volume.html["將物件資料還原至儲存磁碟區（系統磁碟機故障）"]
+
+
 
 
 
@@ -249,7 +257,7 @@ link:using-information-lifecycle-management.html["ILM功能表"]可讓您link:..
 
 從「支援」功能表的「工具」區段、您可以：
 
-* link:../admin/configure-autosupport-grid-manager.html["設定AutoSupport 功能"]
+* link:../monitor/configure-autosupport-grid-manager.html["設定AutoSupport 功能"]
 * link:../monitor/running-diagnostics.html["執行診斷"] 位於網格的目前狀態
 * link:../monitor/collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]
 * link:../monitor/reviewing-support-metrics.html["檢視支援指標"]
@@ -267,7 +275,6 @@ NOTE: * Metrics *選項提供的工具、是專供技術支援使用。這些工
 從「支援」功能表的其他區段、您可以：
 
 * 配置link:../monitor/manage-io-prioritization.html["I/O 優先權"]
-* 配置link:../admin/configure-autosupport-grid-manager.html["AutoSupport電子郵件設定（舊版）"]
 * 管理link:../admin/manage-link-costs.html["連結成本"]
 * 查看節點服務ID
 * 管理link:../admin/what-storage-volume-watermarks-are.html["儲存浮水印"]

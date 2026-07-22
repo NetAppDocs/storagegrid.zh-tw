@@ -2,6 +2,19 @@
 section: monitor
 title: 監控 StorageGRID 系統
 entries:
+- title: 使用AutoSupport
+  entries:
+  - title: 什麼AutoSupport 是呢
+    pdf-filename: 使用AutoSupport
+    url: "/monitor/what-is-autosupport.html"
+  - title: 設定AutoSupport 功能
+    url: "/monitor/configure-autosupport-grid-manager.html"
+  - title: 手動觸發 AutoSupport 套件
+    url: "/monitor/manually-triggering-autosupport-package.html"
+  - title: StorageGRID 如何處理 AutoSupport 套件故障
+    url: "/monitor/autosupport-package-failure-handling.html"
+  - title: 透過 StorageGRID 傳送 E 系列 AutoSupport 套件
+    url: "/monitor/sending-eseries-autosupport-messages-through-storagegrid.html"
 - title: 監控工作
   pdf-filename: 監控 StorageGRID 系統
   url: "/monitor/index.html"
@@ -25,7 +38,7 @@ entries:
   - title: 檢視ILM索引標籤
     url: "/monitor/viewing-ilm-tab.html"
   - title: 使用工作索引標籤
-    url: "/monitor/using-task-tab-to-reboot-grid-node.html"
+    url: "/monitor/using-task-tab.html"
   - title: 檢視負載平衡器索引標籤
     url: "/monitor/viewing-load-balancer-tab.html"
   - title: 檢視平台服務索引標籤
@@ -97,6 +110,8 @@ entries:
     url: "/monitor/considerations-for-external-syslog-server.html"
   - title: 設定日誌管理
     url: "/monitor/configure-log-management.html"
+- title: 設定郵件伺服器
+  url: "/monitor/configure-email-server.html"
 - title: 使用SNMP監控
   entries:
   - title: SNMP監控
@@ -118,8 +133,6 @@ entries:
     url: "/monitor/reviewing-audit-messages.html"
   - title: 收集記錄檔和系統資料
     url: "/monitor/collecting-log-files-and-system-data.html"
-  - title: 手動觸發 AutoSupport 套件
-    url: "/monitor/manually-triggering-autosupport-message.html"
   - title: 檢視支援指標
     url: "/monitor/reviewing-support-metrics.html"
   - title: 更改 I/O 優先權

@@ -42,8 +42,6 @@ summary: 您必須先將至少一個端點設定為平台服務的目的地、�
 
 StorageGRID支援 Amazon SNS、Kafka 和 webhook 端點。不支援簡單佇列服務 (SQS) 和 AWS Lambda 端點。
 
-對於 Kafka 端點，不支援 Mutual TLS。因此，如果你有 `ssl.client.auth`設定為 `required`在您的 Kafka 代理配置中，它可能會導致 Kafka 端點配置問題。
-
 
 
 [[endpoints-for-the-search-integration-service]]

@@ -40,7 +40,7 @@ NOTE: 當您複製同盟使用者的 S3 存取金鑰時、使用者和 S3 存取
 `POST /org/users/current-user/replicate-s3-access-key`
 
 +
-image:grid-federation-post-current-user-replicate.png["用於複寫自己存取金鑰的後端點"]
+image:grid_federation_post_current_user_replicate.png["用於複寫自己存取金鑰的後端點"]
 
 . 選擇*試用*。
 . 在 * 本文 * 文字方塊中、將 *AccessKey* 和 *secretAccessKey* 的範例項目取代為您下載的 * 。 csv* 檔案中的值。
@@ -48,7 +48,7 @@ image:grid-federation-post-current-user-replicate.png["用於複寫自己存取�
 請務必保留每個字串的雙引號。
 
 +
-image:grid-federation-clone-access-key.png["租戶管理器 API 輸入值以複製存取金鑰"]
+image:grid_federation_clone_access_key.png["租戶管理器 API 輸入值以複製存取金鑰"]
 
 . 如果金鑰即將過期、請將 * Expires* 的範例項目取代為 ISO 8601 資料時間格式的字串到期日和時間（例如 `2024-02-28T22:46:33-08:00`）。如果金鑰不會過期、請輸入 * null * 作為 * Expires* 項目的值（或移除 * Expires* 行及前面的逗號）。
 . 選擇*執行*。
@@ -82,7 +82,7 @@ image:grid-federation-clone-access-key.png["租戶管理器 API 輸入值以複�
 `POST /org/users/{userId}/replicate-s3-access-key`
 
 +
-image:grid-federation-post-other-user.png["用於複寫其他使用者存取金鑰的 POST 端點"]
+image:grid_federation_post_other_user.png["用於複寫其他使用者存取金鑰的 POST 端點"]
 
 . 選擇*試用*。
 . 在 * 使用者 ID* 文字方塊中、貼上您複製的使用者 ID 。

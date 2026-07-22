@@ -15,9 +15,6 @@ summary: 使用Grid Manager之後、您必須登出、以確保未獲授權的�
 
 .步驟
 . 在右上角選取您的使用者名稱。
-+
-image:sign_out.png["登出連結"]
-
 . 選取 * 登出 * 。
 +
 [cols="1a,2a"]

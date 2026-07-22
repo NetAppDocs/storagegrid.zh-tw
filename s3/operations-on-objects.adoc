@@ -44,10 +44,14 @@ summary: 本節說明StorageGRID 此「物件」的「物件」功能如何執�
 +
 --
 * 不支援多因素驗證（ MFA ）和回應標頭 `x-amz-mfa`。
-* The `If-None` 和 `If-None-Match` 標頭已被接受，但無法正常工作。
+*  `If-Match` 和  `If-None-Match` 標頭的行為會因 StorageGRID 組態而有所不同。提供這些標頭可能會傳回錯誤訊息（501 Not Implemented）。如果  `If-Match` 或  `If-None-Match` 標頭被接受但無法運作，則可能會觸發警示，其中包含有關啟用更嚴格的 501 Not Implemented 錯誤行為的說明。
 
 
 --
+
+
+此 `x-amz-bypass-governance-retention`標頭對沒有 S3 Object Lock 的物件無效。
+
 版本管理:: 若要移除特定版本、申請者必須是貯體擁有者、並使用 `versionId`子資源。使用此子資源會永久刪除版本。如果與刪除標記相對應、則 `versionId`回應標頭 `x-amz-delete-marker`會設為 `true`。
 +
 --
@@ -73,6 +77,8 @@ summary: 本節說明StorageGRID 此「物件」的「物件」功能如何執�
 不支援多因素驗證（ MFA ）和回應標頭 `x-amz-mfa`。
 
 您可以在同一個要求訊息中刪除多個物件。
+
+此 `x-amz-bypass-governance-retention`標頭對沒有 S3 Object Lock 的物件無效。
 
 請參閱link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]以瞭解如何在治理模式中刪除物件版本。
 

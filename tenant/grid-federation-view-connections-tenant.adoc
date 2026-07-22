@@ -77,7 +77,7 @@ NOTE: 此欄只會顯示最後發生的跨網格複寫錯誤、不會顯示先�
 例如、此錯誤表示跨網格複寫的目的地儲存格處於無效狀態、可能是因為版本設定已暫停或啟用 S3 物件鎖定。
 
 +
-image:grid-federation-cgr-object-example-last-error.png["GRID 聯盟 - cgr-object-example-last 錯誤"]
+image:grid_federation_cgr_object_example_last_error.png["GRID 聯盟 - cgr-object-example-last 錯誤"]
 
 . 執行任何建議的動作。例如、如果目的地貯體上的版本設定已暫停進行跨網格複寫、請重新啟用該貯體的版本設定。
 . 從表格中選取連線。

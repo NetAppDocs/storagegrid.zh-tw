@@ -43,4 +43,4 @@ CAUTION: 從現有儲存池新增或移除站台不會移動任何現有的銷�
 
 
 .完成後
-如果您將新的站台或儲存等級新增至使用中 ILM 原則的儲存池、請啟動新的 ILM 原則、強制 StorageGRID 使用新的站台或儲存等級。例如、複製現有的ILM原則、然後啟動複本。請參閱。 link:working-with-ilm-rules-and-ilm-policies.html["使用ILM規則和ILM原則"]
+如果您在使用中的 ILM 原則所使用的儲存資源池中新增了新的站台或儲存設備等級，請啟動新的 ILM 原則，強制 StorageGRID 使用新的站台或儲存設備等級。例如，Clone 現有的 ILM 原則，然後啟動該 Clone。請參閱 link:working-with-ilm-rules-and-ilm-policies.html["使用ILM規則和ILM原則"]。

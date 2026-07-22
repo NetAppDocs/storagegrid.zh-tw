@@ -46,3 +46,7 @@ NOTE: 此程序不適用於StorageGRID 以容器形式部署在裸機主機上�
 . 在每個重新對應連接埠發生衝突的管理節點和閘道節點上重複這些步驟。
 . 如果您允許外部 SSH 訪問，link:../admin/manage-external-ssh-access.html["阻止訪問"]當您完成刪除連接埠重新映射後。
 
+
+.相關資訊
+* link:../network/external-communications.html["用於外部通訊的連接埠"]
+

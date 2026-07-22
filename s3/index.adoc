@@ -67,10 +67,37 @@ https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616：超文字傳輸�
 
 
  a| 
+12.1.0
+ a| 
+* `If-Match`
++
+The `If-Match`標頭的行為會根據您的 StorageGRID 組態而有所不同。提供此標頭可能會傳回錯誤訊息（501 Not Implemented）。如果 `If-Match`標頭被接受但無法運作，則可能會觸發警示，其中包含有關啟用更嚴格的 501 Not Implemented 錯誤行為的說明。
+
+* `If-None-Match`
++
+The `If-None-Match`標頭的行為會根據您的 StorageGRID 組態而有所不同。提供此標頭可能會傳回錯誤訊息（501 Not Implemented）。如果 `If-None-Match`標頭被接受但無法運作，則可能會觸發警示，其中包含有關啟用更嚴格的 501 Not Implemented 錯誤行為的說明。
+
+* 為以下請求和支援的標頭新增了對預先計算 Checksum 值的支援：
++
+** CompleteMultipartUpload： `x-amz-checksum-crc32`， `x-amz-checksum-crc32c`，和 `x-amz-checksum-crc64nvme`
+** CreateMultipartUpload： `CRC32`， `CRC32C`，以及 `CRC64NVME`，適用於 `x-amz-checksum-algorithm`
+** CopyObject： `CRC32`， `CRC32C`， `CRC64NVME`，以及 `SHA256`（適用於 `x-amz-checksum-algorithm`）
+** PutObject： `x-amz-checksum-crc32`、 `x-amz-checksum-crc32c`和 `x-amz-checksum-crc64nvme`
+** UploadPart： `x-amz-checksum-crc32`、 `x-amz-checksum-crc32c`和 `x-amz-checksum-crc64nvme`
+
+
+* 新增了對  `x-amz-checksum-type` 的支援，適用於 CreateMultipartUpload 和 CompleteMultipartUpload。
+* 增加了對 `s3:x-amz-copy-source`原則條件索引鍵的支援。
+* 允許在現有儲存桶上啟用 S3 物件鎖定。
+
+
+
+
+ a| 
 12.0
  a| 
 * 增加了對管理介面的跨域資源共用 (CORS) 支持，允許另一個網域使用管理 API 存取StorageGRID中的資料。link:../admin/enable-cross-origin-resource-sharing-for-management-interface.html["深入瞭解"] 。
-* 增加了對 STS AssumeRole 和會話策略的支援。看link:example-session-policies.html["會話策略範例"] 。您可以在租用戶群組下設定AssumeRole。
+* 新增對 STS AssumeRole 和工作階段原則的支援。請參閱 link:../s3/example-session-policies.html["會話策略範例"]。您可以在租戶群組下設定 AssumeRole。
 
 
 
@@ -115,7 +142,7 @@ https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616：超文字傳輸�
  a| 
 11.7
  a| 
-* 已新增。link:quick-reference-support-for-aws-apis.html["快速參考：支援的 S3 API 要求"]
+* 已新增link:../s3/quick-reference-support-for-aws-apis.html["快速參考：支援的 S3 API 要求"]。
 * 新增對使用 S3 物件鎖定的治理模式的支援。
 * 新增「取得物件」和「標頭物件」要求的 StorageGRID 特定回應標頭支援 `x-ntap-sg-cgr-replication-status`。此標頭提供物件的跨網格複寫狀態。
 * SelectObjectContent 要求現在支援 Parquet 物件。
@@ -215,7 +242,7 @@ https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616：超文字傳輸�
  a| 
 10.1
  a| 
-新增多部分上傳、虛擬託管樣式要求及v4驗證的支援。
+新增對多部分上傳、虛擬主機式請求和 v4 驗證的支援。
 
 
 

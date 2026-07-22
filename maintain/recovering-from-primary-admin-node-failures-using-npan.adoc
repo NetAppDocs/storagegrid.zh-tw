@@ -1,0 +1,24 @@
+---
+permalink: maintain/recovering-from-primary-admin-node-failures-using-npan.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, primary admin node, non-primary admin node 
+summary: 使用非主要管理節點完成一組特定任務，以從主要管理節點故障中恢復。 
+---
+= 使用非主要管理節點從 StorageGRID 主要管理節點故障中恢復
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要使用非主要管理節點從主要管理節點故障中恢復，您必須完成一組特定的任務。主要管理節點託管網格的組態管理節點 (CMN) 服務。
+
+請依照以下高階步驟，使用非主要管理節點恢復主要管理節點：
+
+. link:copying-audit-logs-from-failed-primary-admin-node-using-npan.html["從故障的主要管理節點複製稽核記錄"]
+. link:replacing-primary-admin-node-using-npan.html["取代主要管理節點"]
+. link:selecting-start-recovery-to-configure-primary-admin-node.html["選擇「開始恢復」以設定主管理節點"]
+. link:assess-hotfix-requirement-during-primary-admin-node-recovery-using-npan.html["判斷主要管理節點的 Hotfix 需求"]
+. link:restoring-audit-log-on-recovered-primary-admin-node-using-npan.html["在恢復的主要管理節點上還原稽核記錄"]
+. link:restoring-prometheus-metrics-primary-admin-node-using-npan.html["恢復主管理節點時、請還原Prometheus指標"]
+

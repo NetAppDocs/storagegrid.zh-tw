@@ -37,7 +37,7 @@ NOTE: 已移除對歸檔節點的支援。透過 S3 API 將物件從歸檔節點
 * 高可用度的資料儲存設備和部分管理功能、搭配整合式負載平衡功能、以最佳化StorageGRID 整個VMware資源的資料負載。
 * 支援多個儲存租戶帳戶、可將儲存在系統上的物件依不同實體分隔。
 * 監控StorageGRID 您的整套系統健全狀況的眾多工具、包括全方位警示系統、圖形儀表板、以及所有節點和站台的詳細狀態。
-* 支援軟體或硬體型部署。您可以在StorageGRID 下列任一項目上部署此功能：
+* 支援基於軟體或硬體的部署。您可以將 StorageGRID 部署在以下任何平台上：
 +
 ** 在VMware中執行的虛擬機器。
 ** Linux主機上的Container引擎。
@@ -57,5 +57,5 @@ NOTE: 已移除對歸檔節點的支援。透過 S3 API 將物件從歸檔節點
 
 
 * 不中斷的升級與維護作業。在升級、擴充、取消委任及維護程序期間、維持對內容的存取。
-* 聯合身分識別管理：整合Active Directory、OpenLDAP或Oracle Directory Service以進行使用者驗證。支援單一登入（SSO）、使用安全聲明標記語言2.0（SAML 2.0）標準、在StorageGRID 支援的範圍是在支援的範圍內、交換驗證和授權資料。
+* 聯合身分管理。與 Active Directory、OpenLDAP 或 Oracle Directory Service 整合，用於使用者身分驗證。支援使用安全性斷言標記語言 2.0 （SAML 2.0） 或 OpenID Connect （OIDC） 的單一登入 （SSO），以在 StorageGRID 和外部身分供應商（例如 Active Directory Federation Services （AD FS））之間交換驗證和授權資料。
 

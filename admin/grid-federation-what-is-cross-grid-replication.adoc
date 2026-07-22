@@ -2,7 +2,7 @@
 permalink: admin/grid-federation-what-is-cross-grid-replication.html 
 sidebar: sidebar 
 keywords: cross-grid replication, cgr, disaster recovery, grid federation 
-summary: 跨網格複寫是在網格同盟連線中連接的兩個 StorageGRID 系統中、在所選的 S3 儲存區之間自動複寫物件。跨網格複寫需要帳戶複製。 
+summary: 跨網格複寫是指在透過網格聯合連線連接的兩個 StorageGRID 系統中，自動複寫所選 S3 儲存桶中的物件。跨網格複寫需要帳戶同步。 
 ---
 = 瞭解 StorageGRID 中的跨網格複寫
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 跨網格複寫是在網格同盟連線中連接的兩個 StorageGRID �
 
 
 [role="lead"]
-跨網格複寫是在中連接的兩個 StorageGRID 系統中、在所選的 S3 儲存區之間自動複寫物件link:grid-federation-overview.html["網格同盟連線"]。link:grid-federation-what-is-account-clone.html["帳戶複製"]為跨網格複寫所需。
+跨網格複寫是指在兩個以某種方式連接的 StorageGRID 系統中，在選定的 S3 儲存桶之間自動複寫物件link:grid-federation-overview.html["網格同盟連線"]。link:grid-federation-what-is-account-sync.html["帳戶同步"]跨網格複寫需要進行設定。
 
 
 
@@ -20,22 +20,28 @@ summary: 跨網格複寫是在網格同盟連線中連接的兩個 StorageGRID �
 
 工作流程圖總結了在兩個網格上的儲存桶之間配置跨網格複製的步驟。
 
-image:grid-federation-cgr-workflow.png["跨網格複寫工作流程"]
+image:grid_federation_cgr_workflow.png["跨網格複寫工作流程"]
 
 
 
 [[requirements-for-cross-grid-replication]]
 == 跨網格複寫的需求
 
-如果租用戶帳戶具有使用網格聯合連線權限，則可以使用一個或多個link:grid-federation-overview.html["網格同盟連線"]，具有Root存取權限的租用戶用戶可以在每個網格上對應的租用戶帳戶中建立bucket。這些存儲桶：
+如果租戶帳戶擁有「使用網格聯合連線」權限，可使用一或多個 link:grid-federation-overview.html["網格同盟連線"]，則具有根存取權限的租戶使用者可以在每個網格的對應租戶帳戶中建立儲存貯體（「來源」儲存貯體和「目的地」儲存貯體）。這些儲存貯體：
 
 * 可以有不同的名稱
 * 可以有不同的區域
 * 必須啟用版本設定
-* 必須為空白
+* 必須採用下列其中一種 S3 物件鎖定組態：
++
+** 來源：*已停用*，目的地：*已停用*
+** 來源：*已啟用*，目的地：*已啟用*
+** 來源：*已停用*，目的地：*已啟用*
 
 
-建立兩個貯體之後、即可針對任一或兩個貯體設定跨網格複寫。
+
+
+建立完兩個儲存桶後，您可以為其中一個或兩個儲存桶設定跨網格複寫。
 
 .深入瞭解
 link:../tenant/grid-federation-manage-cross-grid-replication.html["管理跨網格複寫"]
@@ -54,7 +60,7 @@ link:../tenant/grid-federation-manage-cross-grid-replication.html["管理跨網�
 
 如果僅為一個網格上的儲存桶啟用跨網格複製，則新增至該儲存桶（來源儲存桶）的物件將複製到另一個網格上的對應儲存桶（目標儲存桶）。但是，新增到目標儲存桶的物件不會被複製回來源。圖中，啟用了跨網格複製 `my-bucket`從網格 1 到網格 2，但在另一個方向則無法啟用。
 
-image:grid-federation-cross-grid-replication-one-direction.png["顯示單向網格同盟連線的影像"]
+image:grid_federation_cross_grid_replication_one_direction.png["顯示單向網格同盟連線的影像"]
 
 
 
@@ -63,7 +69,7 @@ image:grid-federation-cross-grid-replication-one-direction.png["顯示單向網�
 
 如果您在兩個網格上為相同的儲存格啟用跨網格複寫、則新增至任一儲存格的物件都會複寫至其他網格。在圖中、雙向啟用跨網格複寫 `my-bucket`。
 
-image:grid-federation-cross-grid-replication.png["影像顯示複寫的單一方向、與雙向複寫比較"]
+image:grid_federation_cross_grid_replication.png["影像顯示複寫的單一方向、與雙向複寫比較"]
 
 
 
@@ -144,7 +150,7 @@ NOTE: StorageGRID不支援 `x-amz-replication-status`標頭。
 
 在圖中，當link:../tenant/grid-federation-manage-cross-grid-replication.html["已啟用跨網格複寫"]。包含版本 ID 的來源儲存桶的刪除請求不會從目標儲存桶中刪除物件。不包含版本 ID 的來源儲存桶的刪除請求似乎會刪除目標儲存桶中的物件。
 
-image:grid-federation-cross-grid-replication-delete.png["顯示在兩個網格上複寫用戶端刪除的影像"]
+image:grid_federation_cross_grid_replication_delete.png["顯示在兩個網格上複寫用戶端刪除的影像"]
 
 
 NOTE: 如果您想要在網格之間保持物件刪除同步、請為兩個網格上的儲存格建立對應的物件刪除link:../s3/create-s3-lifecycle-configuration.html["S3 生命週期組態"]。
@@ -210,6 +216,12 @@ NOTE: SSE 不支援 AES-128。如果使用 *AES-128* 選項為來源網格啟用
 已啟用
 
 |===
+
+CAUTION: 您可以對現有儲存桶啟用 S3 物件鎖定，這可能會導致日後發生組態錯誤。
+
+
+NOTE: 如果在來源儲存桶上啟用了 S3 Object Lock，請確保在目的地儲存桶上也啟用了此功能。如果在目的地儲存桶上停用了 S3 Object Lock，則在複寫期間會發生錯誤。請參閱 link:../admin/grid-federation-troubleshoot.html#cross-grid-replication-alerts-and-errors["跨網格複寫警示和錯誤"]。
+
 當來源儲存桶上的 S3 物件鎖定啟用時：
 
 * 物件按照以下順序在目標處使用保留設定進行鎖定：

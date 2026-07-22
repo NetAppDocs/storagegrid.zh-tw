@@ -106,10 +106,7 @@ image:nodes_page_storage_used_object_data.png["節點頁面儲存使用的物件
 . 檢閱「Volumes and Object Stores」（磁碟區和物件儲存區）表格中的可用值、圖表下方。
 +
 
-NOTE: 若要查看這些值的圖表，請按一下「可用」欄中的圖表圖示 image:icon_chart_new_for_11_5.png["圖表圖示"]。
-
-+
-image:nodes_page_storage_tables.png["物件儲存資料表"]
+NOTE: 若要檢視這些值的圖表，請選取「可用欄」中的圖表圖示。
 
 . 監控一段時間內的值、以預估可用儲存空間的使用率。
 . 若要維持正常的系統作業、請先新增儲存節點、新增儲存磁碟區或歸檔物件資料、然後再使用可用空間。
@@ -206,4 +203,4 @@ CAUTION: 當*已用（%）*值達到特定臨界值時、會觸發*低中繼資�
 . 使用這些值來估計何時需要新增資料和中繼資料儲存的儲存節點。
 
 
-image:forecast-metadata-usage.png["依站台預測中繼資料使用量"]
+image:forecast_metadata_usage.png["依站台預測中繼資料使用量"]

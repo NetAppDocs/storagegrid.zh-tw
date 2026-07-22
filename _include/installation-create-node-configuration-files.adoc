@@ -74,8 +74,6 @@
 您要用於安裝基於 Linux 的節點的管理節點的網格網路 IPv4 位址。對於恢復，如果可用，請使用主管理節點的 IP；否則，使用非主管理節點的 IP。如果省略此參數，節點將嘗試使用 mDNS 發現主管理節點。
 
 link:how-grid-nodes-discover-primary-admin-node.html["網格節點如何探索主要管理節點"]
-
-*附註*：此值會在主要管理節點上被忽略、而且可能被禁止。
  a| 
 最佳實務做法
 
@@ -260,7 +258,7 @@ DHCP、靜態或停用
 
 
  a| 
-介面（這是唯一支援的值。）
+DedicatedInterface（這是唯一支援的值。）
  a| 
 選用
 
@@ -278,8 +276,6 @@ DHCP、靜態或停用
 是非題
 
 將金鑰設為「true」、以使用StorageGRID 管理網路上主機目標介面的MAC位址來使該容器失效。
-
-*最佳實務做法：*在需要混雜模式的網路中、請改用admin_network_target類型_interface_clone _MAC金鑰。
 
 有關 Linux 的 MAC 克隆的更多詳細信息，請參閱link:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製的考量與建議"]
  a| 
@@ -620,7 +616,7 @@ client_network_config = 靜態時需要
 
 
  a| 
-介面（僅支援此值）。
+DedicatedInterface（這是唯一支援的值。）
  a| 
 選用
 
@@ -638,8 +634,6 @@ client_network_config = 靜態時需要
 是非題
 
 將金鑰設為「true」、使StorageGRID 「支援」容器使用用戶端網路上主機目標介面的MAC位址。
-
-*最佳實務做法：*在需要混雜模式的網路中、請改用用戶端網路連線目標類型介面介面複製_MAC金鑰。
 
 有關 Linux 的 MAC 克隆的更多詳細信息，請參閱link:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製的考量與建議"]
  a| 
@@ -812,7 +806,7 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 
 
  a| 
-介面（這是唯一支援的值。）
+DedicatedInterface（這是唯一支援的值。）
  a| 
 選用
 
@@ -830,8 +824,6 @@ Grid Network上此節點的最大傳輸單位（MTU）。不要指定 grid_netwo
 是非題
 
 將金鑰的值設為「true」、使StorageGRID 該容器使用Grid Network上主機目標介面的MAC位址。
-
-*最佳實務做法：*在需要混雜模式的網路中、請改用GRID_NETNETWORD_TAR_AT_type_interface_clone _MAC金鑰。
 
 有關 Linux 的 MAC 克隆的更多詳細信息，請參閱link:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["MAC位址複製的考量與建議"]
  a| 

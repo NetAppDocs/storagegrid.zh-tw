@@ -18,7 +18,7 @@ summary: 如果您打算使用雲端儲存資源池將物件移出StorageGRID �
 [[general-considerations]]
 == 一般考量
 
-* 一般而言、Amazon S3 Glacier或Azure Blob儲存設備等雲端歸檔儲存設備、是儲存物件資料的廉價場所。然而、從雲端歸檔儲存設備擷取資料的成本相對較高。若要達到最低的整體成本、您必須考慮何時及多久存取雲端儲存池中的物件。建議僅針對您預期不常存取的內容使用雲端儲存池。
+* 一般來說，雲端歸檔儲存設備（例如 Amazon S3 Glacier 或 Azure Blob 儲存設備）是儲存物件資料的一種經濟實惠的方式。然而，從雲端歸檔儲存設備擷取資料的成本相對較高。為了達到最低的整體成本，您必須考慮何時以及多久存取一次 Cloud Storage Pool 中的物件。建議僅將 Cloud Storage Pool 用於您預計存取頻率較低的內容。
 * 由於從雲端儲存資源池目標擷取物件的延遲增加、因此不支援使用FabricPool 含有支援功能的雲端儲存資源池。
 * 啟用 S3 物件鎖定的物件無法放置在雲端儲存資源池中。
 * Cloud Storage Pool 不支援以下平台、驗證及具有 S3 物件鎖定的傳輸協定組合：
@@ -128,7 +128,7 @@ CAUTION: 設定外部儲存庫的生命週期時、切勿使用* Expiration*動�
 [[azure-lifecycle-management-not-supported]]
 == Azure：不支援生命週期管理
 
-請勿將 Azure Blob 儲存生命週期管理用於與雲端儲存池搭配使用的容器。生命週期作業可能會干擾Cloud Storage Pool作業。
+請勿對與 Cloud Storage Pool 搭配使用的 Container 使用 Azure Blob Storage 生命週期管理。生命週期操作可能會干擾 Cloud Storage Pool 的操作。
 
 .相關資訊
 link:creating-cloud-storage-pool.html["建立雲端儲存資源池"]

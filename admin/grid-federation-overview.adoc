@@ -1,8 +1,8 @@
 ---
 permalink: admin/grid-federation-overview.html 
 sidebar: sidebar 
-keywords: grid federation, cross-grid replication, account clone, cgr, disaster recovery 
-summary: 您可以使用網格同盟來複製租戶、並在兩個 StorageGRID 系統之間複寫其物件、以進行災難恢復。 
+keywords: grid federation, cross-grid replication, account sync, cgr, disaster recovery 
+summary: 您可以使用網格聯合來同步租戶，並在多個 StorageGRID 系統之間複寫其物件，以實現災難恢復。 
 ---
 = 了解 StorageGRID 網格聯邦
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可以使用網格同盟來複製租戶、並在兩個 StorageGRID �
 
 
 [role="lead"]
-您可以使用網格同盟來複製租戶、並在兩個 StorageGRID 系統之間複寫其物件、以進行災難恢復。
+您可以使用網格聯合來同步租戶，並在多個 StorageGRID 系統之間複寫其物件，以實現災難恢復。
 
 
 
@@ -27,7 +27,7 @@ summary: 您可以使用網格同盟來複製租戶、並在兩個 StorageGRID �
 
 工作流程圖摘要說明在兩個網格之間設定網格同盟連線的步驟。
 
-image:grid-federation-workflow.png["網格同盟連線工作流程"]
+image:grid_federation_workflow.png["網格同盟連線工作流程"]
 
 
 
@@ -36,11 +36,11 @@ image:grid-federation-workflow.png["網格同盟連線工作流程"]
 
 * 用於網格同盟的網格必須執行相同的 StorageGRID 版本、或兩者之間的主要版本差異不超過一個。
 +
-有關版本要求的詳細資訊，請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["版本資訊"^]。您必須使用 NetApp 帳戶登入或建立帳戶，才能存取版本資訊。
+有關版本要求的詳細資訊，請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP3373065["版本資訊"^]。您必須登入現有 NetApp 帳戶或建立帳戶才能存取發行說明。
 
 * 網格可以有一個或多個網格同盟連線到其他網格。每個網格同盟連線都與任何其他連線相互關聯。例如、如果 Grid 1 與 Grid 2 有一個連線、而與 Grid 3 有第二個連線、則 Grid 2 和 Grid 3 之間不會有任何隱含連線。
 * 網格同盟連線是雙向的。建立連線後、您可以從任一網格監控及管理連線。
-* 使用或之前、至少必須存在一個網格同盟連線link:grid-federation-what-is-account-clone.html["帳戶複製"]link:grid-federation-what-is-cross-grid-replication.html["跨網格複寫"]。
+* 必須至少存在一個網格同盟連線，才能使用 link:grid-federation-what-is-account-sync.html["帳戶同步"] 或 link:grid-federation-what-is-cross-grid-replication.html["跨網格複寫"]。
 
 
 
@@ -92,7 +92,7 @@ image:grid-federation-workflow.png["網格同盟連線工作流程"]
 * 伺服器和用戶端憑證、用於驗證和加密從網格 2 傳送至網格 1 的資訊
 
 
-image:grid-federation-certificates.png["網格同盟憑證"]
+image:grid_federation_certificates.png["網格同盟憑證"]
 
 依預設、憑證的有效期限為 730 天（ 2 年）。當這些憑證接近到期日時、「 * 網格聯合憑證到期日 * 」警示會提醒您旋轉憑證、您可以使用 Grid Manager 來進行。
 

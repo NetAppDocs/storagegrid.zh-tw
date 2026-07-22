@@ -315,6 +315,21 @@ AWS
 
 
  a| 
+636
+ a| 
+TCP/ udp
+ a| 
+LDAP
+ a| 
+具有ADC的儲存節點
+ a| 
+Active Directory / LDAP
+ a| 
+用於連線至Active Directory或LDAP伺服器以進行身分識別聯盟。
+
+
+
+ a| 
 5353
  a| 
 UDP

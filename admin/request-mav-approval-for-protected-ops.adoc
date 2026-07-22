@@ -1,0 +1,40 @@
+---
+permalink: admin/request-mav-approval-for-protected-ops.html 
+sidebar: sidebar 
+keywords: multi-admin verification, mav 
+summary: 身為 StorageGRID 系統管理員或用戶，當您在 StorageGRID 中啟動受 MAV 保護的作業時，系統會自動產生一個請求。同時，會顯示一則訊息，告知您該作業需要獲得核准。 
+---
+= 請求核准 StorageGRID 中受 MAV 保護的作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+身為 StorageGRID 系統管理員或用戶，當您在 StorageGRID 中啟動受 MAV 保護的作業時，系統會自動產生一個請求。同時，會顯示一則訊息，告知您該作業需要獲得核准。
+
+StorageGRID 系統定義哪些作業受 MAV 保護。當您啟動受 MAV 保護的作業時，要求將傳送給 MAV 系統管理員以取得核准。
+
+.步驟
+StorageGRID 系統通知您，您已啟動受 MAV 保護的作業。
+
+. 根據需要，執行以下任何任務：
++
+.. 請依序選取 *Configuration* > *Access control* > *Multi-admin verification* > *My requests*，查看您的要求狀態。
++
+*** *待處理*。要求已發起。
+*** *已過期*。要求未在 30 天內處理。或者，具有 Root 存取權限的使用者停用了 MAV，這表示所有待處理的要求都已過期。
+*** *已撤回*。使用者已撤回其請求。
+*** *已核准*。MAV 系統管理員已核准待處理的請求。
+*** *已拒絕*。MAV 系統管理員已拒絕待處理的請求。
+
+
+.. 選擇 *Configuration* > *Access control* > *Multi-admin verification* > *Other requests*，查看其他使用者的待處理要求。
+.. 若要取消作業，請選擇「我的請求」>「要取消的請求」>「撤回」。
+
+
+
+
+MAV 系統管理員核准請求後，操作將自動執行。
+
+如果您的請求遭到拒絕，則操作將不會執行，您可以視需要提交新的請求。

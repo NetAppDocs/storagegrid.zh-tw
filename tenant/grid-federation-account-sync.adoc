@@ -1,0 +1,125 @@
+---
+permalink: tenant/grid-federation-account-sync.html 
+sidebar: sidebar 
+keywords: account sync, tenant sync, grid federation, cross-grid replication 
+summary: 如果建立或編輯租戶時啟用了網格聯合連線，則該租戶會從一個 StorageGRID 系統（來源租戶）複寫到所有其他已連線的 StorageGRID 系統（複本租戶）。租戶複寫完成後，租戶群組、使用者和 S3 存取金鑰會在已連線的網格之間同步。 
+---
+= 同步 StorageGRID 中的租戶群組和使用者
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果建立或編輯租戶時啟用了網格聯合連線，則該租戶會從一個 StorageGRID 系統（來源租戶）複寫到所有其他已連線的 StorageGRID 系統（複本租戶）。租戶複寫完成後，租戶群組、使用者和 S3 存取金鑰會在已連線的網格之間同步。
+
+租戶最初建立的 StorageGRID 系統是該租戶的來源網格。租戶會複製到一個或多個目的地網格。所有已連接網格上的租戶帳戶具有相同的帳戶 ID、名稱、執行摘要、儲存配額、已指派的權限和 root 使用者密碼。如需詳細資訊，請參閱 link:../admin/grid-federation-what-is-account-sync.html["了解網格聯盟的帳戶同步"] 和 link:../admin/grid-federation-manage-tenants.html["管理允許的租戶"]。
+
+同步租戶帳戶資訊是link:../admin/grid-federation-what-is-cross-grid-replication.html["跨網格複寫"]儲存桶物件的必要條件。在所有網格上使用相同的租戶群組和使用者，可確保您能在任何已連線的網格上存取對應的儲存桶和物件。
+
+
+
+[[tenant-workflow-for-account-sync]]
+== 租戶帳戶同步工作流程
+
+如果您的租戶帳戶具有「使用網格聯合連線」權限，請審查工作流程圖，以了解同步群組、使用者和 S3 存取金鑰的步驟。
+
+image:grid_federation_account_sync_workflow_tm.png["租戶帳戶同步工作流程。具體步驟如下。"]
+
+以下是工作流程的主要步驟：
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]登入租戶
+[role="quick-margin-para"]
+在任何已連接的網格登入租戶帳戶。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]您也可以選擇設定身分識別聯盟
+[role="quick-margin-para"]
+如果您的租戶帳戶擁有 *Use own identity source* 權限以使用聯合群組和使用者，請為來源和一個或多個目的地租戶帳戶設定相同的身分來源（使用相同的設定）。聯合群組在建立時進行 Clone，聯合使用者在建立金鑰時進行 Clone。若要進行 Clone，必須在所有網格上設定相同的身分來源。如需相關指示，請參閱 link:using-identity-federation.html["使用身分識別聯盟"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]建立群組和使用者
+[role="quick-margin-para"]
+您可以從任何已連接的網格建立群組和使用者。當新增本機群組時，StorageGRID 會自動將其同步到所有已連接的網格。對本機群組的變更（編輯、刪除）也會持續同步。聯合群組在建立時會 Clone 一次。
+
+[role="quick-margin-list"]
+* 如果身分識別同盟是針對整個 StorageGRID 系統或租戶帳戶而設定、請link:creating-groups-for-s3-tenant.html["建立新的租戶群組"]從身分識別來源匯入同盟群組。
+
+
+[role="quick-margin-list"]
+* 如果您不使用身份聯合，link:creating-groups-for-s3-tenant.html["建立新的本機群組"]進而link:manage-users.html["建立本機使用者"]。
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]建立 S3 存取金鑰
+[role="quick-margin-para"]
+您可以link:creating-your-own-s3-access-keys.html["建立您自己的存取金鑰"]或link:creating-another-users-s3-access-keys.html["建立其他使用者的存取金鑰"]在任何網格上，以存取所有已連接網格上的儲存桶。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 同步 S3 存取金鑰
+[role="quick-margin-para"]
+如果您需要在所有網格中使用相同的存取金鑰存取儲存桶，請在其中一個網格上建立存取金鑰。對於本機使用者，存取金鑰預設會自動同步。對於聯合使用者，您必須在來源網格上建立 S3 存取金鑰，並選取 *Enable access key sync*，才能將金鑰同步到所有目的地網格。
+
+
+
+[[how-are-groups-users-and-s3-access-keys-synced]]
+== 群組、使用者和 S3 存取金鑰是如何同步的？
+
+請審查本節內容，以了解如何在連接的網格之間同步群組、使用者和 S3 存取金鑰。
+
+
+
+[[local-groups-are-continuously-synced]]
+=== 本機群組持續同步
+
+租戶帳戶建立並複製到目的地網格後，StorageGRID 會持續同步所有已連接網格之間的本機群組。在任何網格上對本機群組所做的所有變更（包括建立、編輯和刪除操作）都會自動複製到所有其他已連接的網格。
+
+原始群組及其同步副本具有相同的存取模式、群組權限和 S3 群組原則。有關說明，請參閱link:creating-groups-for-s3-tenant.html["為S3租戶建立群組"]。
+
+
+
+[[local-users-are-continuously-synced]]
+=== 本機使用者會持續同步
+
+當您在任何已連接的網格上建立新的本機使用者時，StorageGRID 會自動將該使用者同步到所有其他已連接的網格。後續的變更（包括編輯、刪除和密碼重設）也會持續同步。原始使用者及其同步副本具有相同的完整名稱、使用者名稱和 *Deny access* 設定。每個網格上的相同使用者也屬於相同的群組。如需相關指示，請參閱 link:manage-users.html["管理使用者"]。
+
+
+
+[[federated-groups-are-synced-once-at-creation]]
+=== 聯合群組在建立時同步一次。
+
+假設使用帳戶同步搭配 link:../admin/grid-federation-what-is-account-sync.html#account-sync-sso["單一登入"] 和 link:../admin/grid-federation-what-is-account-sync.html#account-sync-identity-federation["身分識別聯盟"] 的要求已滿足，則您為網格上的租戶建立（匯入）的聯合群組會自動同步到所有其他已連線網格上的租戶。
+
+兩個群組具有相同的存取模式、群組權限和 S3 群組原則。
+
+在為來源租戶建立聯合群組並將其同步到其他網格後，聯合使用者可以在任何已連接的網格上登入該租戶。之後對聯合群組的變更不會自動跨網格同步。
+
+
+
+[[s3-access-keys-can-be-automatically-or-manually-synced]]
+=== S3 存取金鑰可以自動同步，也可以手動同步。
+
+預設情況下，StorageGRID 會自動同步 S3 存取金鑰。為了安全性，您可以為每個租戶停用 S3 存取金鑰的自動同步，並為每個網格上的每個租戶使用不同的金鑰。
+
+若要管理聯網網格上的存取金鑰，您可以執行下列任一操作：
+
+* 如果不需要在每個網格中使用相同的金鑰，則可以停用自動存取金鑰同步，並在每個網格上 link:creating-your-own-s3-access-keys.html["建立您自己的存取金鑰"] 或 link:creating-another-users-s3-access-keys.html["建立其他使用者的存取金鑰"]。
+
+
+
+NOTE: 當您為聯合使用者同步 S3 存取金鑰時，使用者和 S3 存取金鑰都會同步到目的地租戶。
+
+
+NOTE: 本機使用者擁有的 S3 存取金鑰會在連接的網格之間持續同步，包括金鑰遭到刪除時。聯合使用者擁有的 S3 存取金鑰僅在建立時同步一次；後續變更（包括刪除）不會複寫。您可以為每個租戶連線啟用或停用存取金鑰同步。
+
+
+
+[[groups-and-users-added-to-destination-grid-are-synced]]
+=== 新增至目的地網格的群組和使用者已同步
+
+在任何已連接的網格上所做的變更，包括建立或匯入本機群組和使用者，都會自動同步到所有其他已連接的網格。
+
+
+
+[[edited-or-deleted-local-groups-users-and-access-keys-are-synced]]
+=== 已編輯或刪除的本機群組、使用者和存取金鑰會同步。
+
+本機群組、本機使用者以及本機使用者擁有的 S3 存取金鑰的變更會在所有連線的網格之間持續同步。同步操作包括編輯、刪除和密碼重設。
+
+聯合群組和聯合使用者擁有的 S3 存取金鑰的變更在初始建立後不會同步。

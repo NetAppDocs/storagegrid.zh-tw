@@ -1,0 +1,73 @@
+---
+permalink: monitor/configure-email-server.html 
+sidebar: sidebar 
+keywords: notifications, email, system events, technical support 
+summary: 身為 StorageGRID 系統管理員，您需要設定電子郵件伺服器，以便從 StorageGRID 警示和監控系統傳送通知，告知您、其他系統管理員及技術支援有關系統事件和問題的資訊。 
+---
+= 設定郵件伺服器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+身為 StorageGRID 系統管理員，您需要設定電子郵件伺服器，以便從 StorageGRID 警示和監控系統傳送通知，告知您、其他系統管理員及技術支援有關系統事件和問題的資訊。
+
+StorageGRID 使用郵件伺服器進行通知的功能包括警報、AutoSupport 和多重管理員驗證 (MAV)。您可以使用同一個郵件伺服器來傳送所有通知。
+
+.開始之前
+* 您有link:../admin/admin-group-permissions.html["root 存取權限"]。
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+
+
+.步驟
+. 選擇 *組態* > *監控* > *電子郵件伺服器*。
++
+顯示電子郵件伺服器頁面。
+
+. 選擇下拉式選單「檢視可能需要電子郵件伺服器的功能」。如果您想檢視設定某項功能的電子郵件通知的詳細資訊和所需資訊，請選擇「檢視」。
++
+您將被引導至 Grid Manager 中該功能的組態頁面。每個功能的組態頁面都包含一則通知，提示您需要一個郵件伺服器才能傳送電子郵件通知。
+
+. 若要從「電子郵件伺服器」頁面設定電子郵件伺服器：
++
+.. 請輸入郵件伺服器的 IP 位址或 FQDN。
+.. 選擇郵件伺服器使用的連接埠號碼。預設值為 25。
+.. 若要啟用驗證，請選擇 *Use authentication* ，然後輸入使用者名稱和密碼。
+.. 若要要求驗證 SMTP 伺服器的身份，請選擇「使用傳輸層安全性協定 (TLS)」。然後：
++
+... 提供 CA 憑證套裝組合。
+... 如果 SMTP 郵件伺服器要求郵件寄件者提供用戶端憑證進行驗證，請選擇 *Send client certificate*。然後提供用戶端憑證和私鑰。
+
+
+.. 為確保您的電子郵件設定正確，請輸入寄件者和收件者資訊以傳送測試電子郵件。選取 * 傳送 *。
++
+隨即顯示確認訊息、表示已傳送測試電子郵件。
+
+.. 勾選所有電子郵件收件者的收件匣、確認已收到測試電子郵件。
++
+
+NOTE: 如果幾分鐘內未收到電子郵件、或觸發*電子郵件通知失敗*警示、請檢查您的設定、然後再試一次。
+
+.. 登入任何其他管理節點、然後傳送測試電子郵件以驗證所有站台的連線能力。
++
+
+NOTE: 測試警示通知時、您必須登入每個管理節點以驗證連線能力。這與測試 AutoSupport 套件形成對照、其中所有管理節點都會傳送測試電子郵件。
+
+
+
+. 選擇*保存*。
++
+發送測試郵件不會儲存您的設定。您必須選擇 *Save*。
+
++
+電子郵件設定即會儲存。
+
+. 前往使用電子郵件伺服器的功能的組態頁面，並完成電子郵件通知設定。
++
+** link:../monitor/email-alert-notifications.html["警示"]。對於警示，您也可以 link:../monitor/snmp-alert-notifications.html["設定 SNMP 通知"]。
+** link:../monitor/configure-autosupport-grid-manager.html["AutoSupport"].您可以透過電子郵件、HTTPS 或 HTTP 傳送 AutoSupport 套件（不建議使用 HTTP）。
+** link:../admin/configure-multi-admin-verify.html["多重管理員驗證 (MAV)"]。
+
+
+

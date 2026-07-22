@@ -21,16 +21,15 @@ summary: 恢復故障儲存節點的程序取決於故障類型和故障儲存�
 
 
  a| 
-* 多個儲存節點發生故障。
-
+多個儲存節點發生故障。
  a| 
 聯絡技術支援。
  a| 
-復原多個儲存節點可能會影響 Cassandra 資料庫的完整性，進而導致資料遺失。
+如果多個儲存節點發生故障，技術支援必須協助進行恢復，以防止 Cassandra 資料庫出現不一致，進而導致資料遺失。可能需要執行站台恢復程序。
 
-技術支援可判斷何時可以安全地開始恢復第二個儲存節點。
+技術支援可以確定何時可以安全地開始恢復第二個儲存節點。
 
-*附註*：如果站台上有多個含有此ADC服務的儲存節點故障、您就會遺失該站台的任何擱置中平台服務要求。
+*注意*：如果某個站台上有多個包含 ADC 服務的儲存節點發生故障，則該站台所有待處理的平台服務要求都將遺失。
 
 
 
@@ -55,7 +54,7 @@ link:recovering-storagegrid-appliance-storage-node.html["恢復應用裝置儲�
  a| 
 一或多個儲存磁碟區發生故障、但系統磁碟機仍未受損
  a| 
-link:recovering-from-storage-volume-failure-where-system-drive-is-intact.html["從系統磁碟機不受影響的儲存磁碟區故障中恢復"]
+link:reviewing-warnings-about-storage-volume-recovery.html["從系統磁碟機不受影響的儲存磁碟區故障中恢復"]
  a| 
 此程序適用於軟體型儲存節點。
 

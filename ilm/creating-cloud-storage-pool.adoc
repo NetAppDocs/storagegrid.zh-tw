@@ -2,7 +2,7 @@
 permalink: ilm/creating-cloud-storage-pool.html 
 sidebar: sidebar 
 keywords: how to create cloud storage pool 
-summary: Cloud Storage Pool 會指定單一外部 Amazon S3 儲存區或其他 S3 相容供應商、或 Azure Blob 儲存容器。 
+summary: 雲端儲存資源池指定單一外部 Amazon S3 儲存桶或其他 S3 相容供應商或 Azure Blob Storage Container。 
 ---
 = 在 StorageGRID 中建立雲端儲存資源池
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: Cloud Storage Pool 會指定單一外部 Amazon S3 儲存區或其他 S
 
 
 [role="lead"]
-Cloud Storage Pool 會指定單一外部 Amazon S3 儲存區或其他 S3 相容供應商、或 Azure Blob 儲存容器。
+雲端儲存資源池指定單一外部 Amazon S3 儲存桶或其他 S3 相容供應商或 Azure Blob Storage Container。
 
-建立雲端儲存池時、您可以指定 StorageGRID 用來儲存物件的外部儲存區或容器名稱和位置、雲端供應商類型（ Amazon S3/GCP 或 Azure Blob 儲存設備）、以及 StorageGRID 存取外部儲存區或容器所需的資訊。
+建立雲端儲存資源池時，您可以指定 StorageGRID 將用於儲存物件的外部儲存桶或 Container 的名稱和位置、雲端供應商類型（Amazon S3/GCP 或 Azure Blob Storage）以及 StorageGRID 存取外部儲存桶或 Container 所需的資訊。
 
 一旦儲存雲端儲存資源池、即可驗證其運作、因此您必須確保Cloud Storage Pool中指定的儲存庫或容器存在且可存取。StorageGRID
 
@@ -227,3 +227,6 @@ _Azure Blob 儲存設備、僅共用金鑰 _
 
 . 如果發生錯誤link:troubleshooting-cloud-storage-pools.html["疑難排解雲端儲存資源池的指示"]、請參閱、解決任何問題、然後再次嘗試儲存雲端儲存池。
 
+
+.相關資訊
+link:../network/external-communications.html["用於外部通訊的連接埠"]

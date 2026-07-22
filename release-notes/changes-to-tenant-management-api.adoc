@@ -2,7 +2,7 @@
 permalink: release-notes/changes-to-tenant-management-api.html 
 sidebar: sidebar 
 keywords: tenant management api, api, api version, swagger, rest api 
-summary: StorageGRID 12.0 使用租用戶管理 API 的第 4 版。第 4 版已棄用第 3 版。但是，第 1 版、第 2 版和第 3 版仍然受支援。 
+summary: StorageGRID 12.1 使用租用戶管理 API 的第 4 版。第 4 版已棄用第 3 版。但是，第 1 版、第 2 版和第 3 版仍然受支援。 
 ---
 = StorageGRID 中租戶管理 API 的變更
 :allow-uri-read: 
@@ -11,10 +11,10 @@ summary: StorageGRID 12.0 使用租用戶管理 API 的第 4 版。第 4 版已�
 
 
 [role="lead"]
-StorageGRID 12.0 使用租用戶管理 API 的第 4 版。版本 4 棄用了版本 3；但是，版本 1、2 和 3 仍然受支援。
+StorageGRID 12.1 使用租戶管理 API 的第 4 版。第 4 版已棄用第 3 版；但是，第 1 版、第 2 版和第 3 版仍受支援。
 
 
-NOTE: 您可以繼續將租用戶管理 API 的棄用版本與StorageGRID 12.0 一起使用；但是， StorageGRID的未來版本將刪除對這些 API 版本的支援。升級到StorageGRID 12.0 後，您可以使用 `PUT /grid/config/management`API。
+NOTE: 您可以繼續在 StorageGRID 中使用已棄用的租戶管理 API 版本；但是，StorageGRID 的未來版本將不再支援這些 API 版本。升級至 StorageGRID 12.0 或更新版本後，您可以使用 `PUT /grid/config/management` API 停用已棄用的 API。
 
 若要深入瞭解link:../tenant/understanding-tenant-management-api.html["瞭解租戶管理API"]、請前往。
 

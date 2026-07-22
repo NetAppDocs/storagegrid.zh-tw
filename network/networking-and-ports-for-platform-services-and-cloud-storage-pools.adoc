@@ -31,7 +31,7 @@ summary: 如果您計畫使用StorageGRID 支援不支援的平台服務或雲�
 [[networking-for-cloud-storage-pools]]
 == 雲端儲存資源池的網路功能
 
-雲端儲存資源池也需要從儲存節點存取外部服務所提供的端點、例如Amazon S3 Glacier或Microsoft Azure Blob儲存設備。如需相關資訊，請參閱 link:../ilm/what-cloud-storage-pool-is.html["什麼是雲端儲存池"]。
+雲端儲存集區也需要儲存節點存取所用外部服務（例如 Amazon S3 Glacier 或 Microsoft Azure Blob Storage）提供的端點。如需相關資訊，請參閱 link:../ilm/what-cloud-storage-pool-is.html["什麼是雲端儲存池"]。
 
 
 

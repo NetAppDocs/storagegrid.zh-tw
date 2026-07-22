@@ -59,12 +59,12 @@ NOTE: 您可以使用多個閘道和高可用度（ HA ）群組、在升級過�
 [[appliance-firmware-is-upgraded]]
 == 應用裝置韌體已升級
 
-在StorageGRID 12.0 升級期間：
+StorageGRID 12.1 升級期間：
 
-* 所有StorageGRID設備節點都會自動升級到StorageGRID Appliance Installer 韌體版本 12.0。
+* 所有 StorageGRID 應用裝置節點會自動升級至 StorageGRID Appliance Installer 韌體版本 12.1。
 * SG6060 和 SGF6024 設備自動升級到 BIOS 韌體版本 3B08.EX 和BMC韌體版本 4.01.07。
 * SG100 和 SG1000 裝置自動升級至 BIOS 韌體版本 3B13.EC 和BMC韌體版本 4.75.07。
-* SGF6112、SG6160、SG110 和 SG1100 設備自動升級至 BIOS 韌體版本 3A14.QD 和BMC韌體版本 3.19.07。
+* SGF6112、SG6160、SG110 和 SG1100 應用裝置將自動升級至 BIOS 韌體版本 3A14.QD 和 BMC 韌體版本 3.21.07。
 
 
 
@@ -84,9 +84,9 @@ NOTE: 您可以使用多個閘道和高可用度（ HA ）群組、在升級過�
 
 當服務啟動和停止時、StorageGRID 以及當作業系統以混合版本環境運作時、可能會觸發警示（部分網格節點執行較早版本、而其他節點則已升級至較新版本）。升級完成後、可能會觸發其他警示。
 
-例如，當服務停止時，您可能會看到*無法與節點通訊*警報，或當某些節點已升級至StorageGRID 12.0 但其他節點仍在執行StorageGRID 11.9 時，您可能會看到*Cassandra 通訊錯誤*警報。一般來說，升級完成後這些警報將會清除。
+例如，當服務停止時，您可能會看到 *Unable to communicate with node* 警示；或者，當某些節點已升級至 StorageGRID 12.0 或更高版本，而其他節點仍在執行舊版 StorageGRID 時，您可能會看到 *Cassandra communication error* 警示。通常、這些警示會在升級完成後消失。
 
-在升級到StorageGRID 12.0 期間儲存節點停止時，可能會觸發 *ILM 放置無法實現* 警報。升級完成後，此警報可能會持續 1 天。
+在升級至 StorageGRID 12.0 或更新版本期間，若儲存節點停止運作，可能會觸發 *ILM placement unachievable* 警示。此警示可能在升級完成後持續 1 天。
 
 升級完成後、您可以從 Grid Manager 儀表板選取 * 最近解決的警示 * 或 * 目前警示 * 、來檢閱任何與升級相關的警示。
 
@@ -96,7 +96,7 @@ NOTE: 您可以使用多個閘道和高可用度（ HA ）群組、在升級過�
 == 組態變更受到限制
 
 
-NOTE: 此清單專門適用於從StorageGRID 11.9 升級到StorageGRID 12.0。如果您要升級到另一個StorageGRID版本，請參閱該版本升級說明中的受限變更清單。
+NOTE: 組態變更限制因版本而異。如果您要升級至其他 StorageGRID 版本，請參閱該版本升級說明中的受限變更清單。
 
 在*啟用新功能*工作完成之前：
 
@@ -108,8 +108,8 @@ NOTE: 此清單專門適用於從StorageGRID 11.9 升級到StorageGRID 12.0。�
 
 NOTE: 如果您需要在升級期間恢復節點、請聯絡技術支援部門。
 
-* 升級至StorageGRID 12.0 時，您不應管理 HA 群組、VLAN 介面或負載平衡器端點。
-* 在升級到StorageGRID 12.0 完成之前，請勿刪除任何 HA 群組。其他 HA 群組中的虛擬 IP 位址可能變得無法存取。
+* 升級期間，請勿管理 HA 群組、VLAN 介面或負載平衡器端點。
+* 升級完成前請勿刪除任何高可用性 (HA) 組。否則，其他 HA 群組中的虛擬 IP 位址可能無法存取。
 
 
 直到*最終升級步驟*工作完成為止：

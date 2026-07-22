@@ -1,8 +1,8 @@
 ---
 permalink: maintain/changing-nodes-network-configuration.html 
 sidebar: sidebar 
-keywords: storagegrid, network configuration, node network configuration 
-summary: 您可以使用變更IP工具來變更一或多個節點的網路組態。您可以變更Grid Network的組態、或新增、變更或移除管理或用戶端網路。 
+keywords: storagegrid, network configuration, node network configuration, bmc ip 
+summary: 您可以使用「變更 IP」工具變更一個或多個節點的網路組態。您可以變更網格網路的組態，也可以新增、變更或移除管理網路或用戶端網路。您也可以變更應用裝置節點 BMC 的 LAN IP 設定。 
 ---
 = 變更 StorageGRID 中的節點網路組態
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可以使用變更IP工具來變更一或多個節點的網路組態
 
 
 [role="lead"]
-您可以使用變更IP工具來變更一或多個節點的網路組態。您可以變更Grid Network的組態、或新增、變更或移除管理或用戶端網路。
+您可以使用「變更 IP」工具變更一個或多個節點的網路組態。您可以變更網格網路的組態，也可以新增、變更或移除管理網路或用戶端網路。您也可以變更應用裝置節點 BMC 的 LAN IP 設定。
 
 .開始之前
 您有 `Passwords.txt`檔案。
@@ -36,7 +36,7 @@ summary: 您可以使用變更IP工具來變更一或多個節點的網路組態
 NOTE: 不允許 IP 位址交換。如果您必須在網格節點之間交換IP位址、則必須使用暫用的中繼IP位址。
 
 
-NOTE: 如果您的StorageGRID系統啟用了單一登入 (SSO) 並且您正在變更管理節點的 IP 位址，請注意，使用管理節點的 IP 位址（而不是建議的完全限定網域名稱）配置的任何依賴方信任都會變為無效。您將無法再登入該節點。變更 IP 位址後，必須立即使用新的 IP 位址更新或重新設定 Active Directory 聯合驗證服務 (AD FS) 中節點的信賴方信任。請參閱說明link:../admin/configure-sso.html["設定 SSO"]。
+NOTE: 如果您的 StorageGRID 系統已啟用單一登入 (SSO)，且您正在變更管理節點的 IP 位址，請注意，任何使用管理節點的 IP 位址（而非建議的完整網域名稱）設定的信賴方信任都將失效。您將無法再登入該節點。變更 IP 位址後，您必須立即使用新的 IP 位址在 Active Directory Federation Services (AD FS) 中更新或重新設定節點的信賴方信任。請參閱使用 link:../admin/learn-about-setting-up-sso-oidc.html["OIDC"] 或 link:../admin/learn-about-setting-up-sso-saml.html["SAML"] 設定 SSO 的說明。
 
 
 NOTE: 您使用變更IP工具對網路所做的任何變更、都會傳播至StorageGRID 安裝程式韌體、以供使用各種版本的應用裝置使用。如此一StorageGRID 來、如果在應用裝置上重新安裝了支援功能的軟體、或是將應用裝置置於維護模式、網路組態就會正確。
@@ -246,3 +246,18 @@ NOTE: 若要永久變更 LACP PDU 速率，請參閱 https://docs.netapp.com/us-
 
 
 下次設備重新啟動時，LACP PDU 速率將恢復到先前的設定。
+
+
+
+[[change-appliance-node-bmc-lan-ip-settings]]
+== 更改應用裝置節點 BMC LAN IP 設定
+
+您可以變更應用裝置節點 BMC 的 LAN IP 設定。
+
+. 在 Grid Manager 中，前往 *節點* > *_grid node_* > *BMC 設定*。
+. 在 LAN IP 設定部分，選擇 *靜態* 或 *DHCP* 的 IP 指派類型。
+. 輸入 BMC 的 MAC 位址、IPv4 位址（CIDR）和預設閘道。
+. 選擇*保存*。
+
+
+您也可以使用 `PUT /bmc-configuration/root-password`或 `GET /bmc-configuration/root-password` API 來變更或檢視 BMC LAN IP 設定。

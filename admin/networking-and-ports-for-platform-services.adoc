@@ -45,4 +45,6 @@ NOTE: 如果StorageGRID 將某個支援區部署做為CloudMirror複寫的目的
 如果您使用非透明 Proxy 伺服器、也必須link:configuring-storage-proxy-settings.html["設定儲存Proxy設定"]允許訊息傳送至外部端點、例如網際網路上的端點。
 
 .相關資訊
-link:../tenant/index.html["使用租戶帳戶"]
+* link:../tenant/index.html["使用租戶帳戶"]
+* link:../network/external-communications.html["用於外部通訊的連接埠"]
+

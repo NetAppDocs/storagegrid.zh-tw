@@ -13,47 +13,12 @@ summary: 在解除委任網格節點之前、您必須確認沒有任何資料�
 [role="lead"]
 在退役或擴展網格節點之前，您必須確認沒有處於活動狀態的資料修復作業。如果任何修復失敗，則必須重新啟動它們並讓它們完成，然後再執行退役程序。
 
-參考link:../expand/index.html["擴充類型"]有關如何擴展網格節點的詳細資訊。
-
-.關於這項工作
-如果需要退役已斷開連線的儲存節點，請在退役程序完成後完成下列步驟，以確保資料修復工作已完成。您必須確保已刪除節點上的所有擦除編碼片段都已恢復。
-
-這些步驟僅適用於具有銷毀編碼物件的系統。
-
-.步驟
-. 登入主要管理節點：
+* 參考link:../expand/index.html["擴充類型"]有關如何擴展網格節點的詳細資訊。
+* 使用 Grid Manager 監控正在進行的恢復程序並顯示恢復歷史記錄。請參閱以下程序：
 +
-.. 輸入下列命令： `ssh admin@_grid_node_IP_`
-.. 輸入檔案中列出的密碼 `Passwords.txt`。
-.. 輸入以下命令切換到 root ： `su -`
-.. 輸入檔案中列出的密碼 `Passwords.txt`。
-+
-當您以 root 登入時、提示會從變更 `$`為 `#`。
-
-
-
-. 檢查正在執行的維修： `repair-data show-ec-repair-status`
-+
-** 如果您從未執行過資料修復工作、則輸出為 `No job found`。您不需要重新啟動任何修復工作。
-** 如果資料修復工作先前執行或目前正在執行、則輸出會列出修復的資訊。每項維修都有唯一的維修ID。
-+
-image:repair-data-status.png["維修資料狀態"]
-
-
-
-+
-
-TIP: 您也可以選擇使用 Grid Manager 來監控正在進行的還原程序、並顯示還原歷程記錄。請參閱。 link:../maintain/restoring-volume.html["使用 Grid Manager 還原物件資料"]
-
-. 如果所有維修的狀態為、則 `Completed`不需要重新啟動任何修復工作。
-. 如果任何修復的狀態為、則 `Stopped`必須重新啟動該修復。
-+
-.. 從輸出中取得故障修復的修復ID。
-.. 執行 `repair-data start-ec-node-repair`命令。
-+
-使用 `--repair-id`選項來指定「維修 ID 」。例如、如果您想要重試修復 ID 為 949292 的修復、請執行此命令： `repair-data start-ec-node-repair --repair-id 949292`
-
-.. 繼續追蹤 EC 資料維修的狀態、直到所有維修的狀態均為 `Completed`。
+** link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html["將物件資料還原至應用裝置的儲存磁碟區"]
+** link:../maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html["將物件資料還原至系統磁碟機不受影響的儲存磁碟區"]
+** link:../maintain/restoring-object-data-to-storage-volume.html["將物件資料還原至儲存磁碟區（系統磁碟機故障）"]
 
 
 

@@ -78,7 +78,7 @@ image:decommission_site_step_5_ha_groups.png["取消委任站台步驟5 HA群組
 
 
 +
-如果所有節點均已連線、且所選站台中沒有節點用於HA群組、則會啟用*資源配置密碼*欄位。
+如果所有節點都已連線，且所選站台中沒有節點用於 HA 群組，則會啟用 *Provisioning passphrase* 欄位。
 
 . 輸入資源配置通關密碼。
 +

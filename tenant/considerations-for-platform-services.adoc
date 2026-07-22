@@ -24,7 +24,7 @@ StorageGRID 平台服務可讓您將 S3 物件和物件中繼資料的事件通�
 
 由於平台服務的目標位置通常是StorageGRID 不受您的支援、因此平台服務可讓您靈活運用外部儲存資源、通知服務、以及搜尋或分析資料服務。
 
-任何平台服務組合都可設定為單一S3儲存區。例如、您可以在 StorageGRID S3 儲存區上同時設定link:../tenant/understanding-cloudmirror-replication-service.html["CloudMirror 服務"]和link:../tenant/understanding-notifications-for-buckets.html["通知"]、以便將特定物件鏡射至 Amazon Simple Storage Service （ S3 ）、同時將每個物件的相關通知傳送至協力廠商監控應用程式、以協助您追蹤 AWS 費用。
+您可以為單一 S3 儲存桶設定任意平台服務組合。例如，您可以在 StorageGRID S3 儲存桶上同時設定 link:../tenant/understanding-cloudmirror-replication-service.html["CloudMirror 服務"] 和 link:../tenant/understanding-notifications-for-buckets.html["通知"]，以便將特定物件鏡射到 Amazon Simple Storage Service (S3)，同時將每個此類物件的通知傳送到第三方監控應用程式，協助您追蹤 AWS 費用。
 
 
 TIP: 每個租戶帳戶必須由StorageGRID 使用Grid Manager或Grid Management API的管理員啟用平台服務的使用。
@@ -139,8 +139,6 @@ ILM導向物件刪除
  a| 
 使用 Kafka 端點
  a| 
-對於 Kafka 端點、不支援相互 TLS 。因此、如果您 `ssl.client.auth`在 Kafka Broker 組態中設定為 `required`、可能會導致 Kafka 端點組態問題。
-
 Kafka 端點的驗證使用下列驗證類型。這些類型與用於驗證其他端點（例如 Amazon SNS ）的類型不同、需要使用者名稱和密碼認證。
 
 * SLS/PLAIN
@@ -182,7 +180,7 @@ CloudMirror複寫服務可複寫至目的地儲存區的物件大小上限為5 T
  a| 
 如果StorageGRID 支援版本管理功能的來源S3儲存區、您也應該啟用目的地儲存區的版本管理功能。
 
-使用版本管理時、請注意、由於S3傳輸協定的限制、CloudMirror服務無法保證目的地儲存庫中物件版本的順序順序。
+使用版本控制時，請附註，由於 S3 協定的限制，目的地儲存桶中物件版本的順序是盡力而為的，CloudMirror 服務無法保證其完全一致。此外，目的地儲存桶會維護自身的設定，且可能不提供版本控制功能。
 
 * 附註 * ： StorageGRID 中來源貯體的版本 ID 與目的地貯體的版本 ID 無關。
 
@@ -214,6 +212,8 @@ CloudMirror 服務不支援使用 SSE-C 加密的物件。如果您嘗試將物�
  a| 
 啟用S3物件鎖定的儲存區
  a| 
-啟用S3物件鎖定的來源或目的地桶不支援複寫。
+如果 StorageGRID 中的來源 S3 儲存桶已啟用 S3 Object Lock，則也應為已設定預設保留的目的地儲存桶啟用 S3 Object Lock。
+
+啟用 S3 Object Lock 後，來源桶和目的地桶均支援_物件資料_的複寫。但是，目的地桶會維護自身的物件保留設定，且可能無法提供法規遵循或版本控制。
 
 |===

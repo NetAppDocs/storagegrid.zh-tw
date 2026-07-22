@@ -13,7 +13,7 @@ summary: 設定並使用儲存資源池、透過在多個站台之間散佈資�
 [role="lead"]
 設定並使用儲存資源池、透過在多個站台之間散佈資料來防止資料遺失。複寫複本和銷毀編碼複本需要不同的儲存池組態。
 
-請參閱。 link:using-multiple-storage-pools-for-cross-site-replication.html["使用複寫和銷毀編碼來啟用站台遺失保護的範例"]
+請參閱 link:using-multiple-storage-pools-for-cross-site-replication.html["使用複寫和銷毀編碼來啟用站台遺失保護的範例"]。
 
 
 
@@ -54,7 +54,7 @@ summary: 設定並使用儲存資源池、透過在多個站台之間散佈資�
 * 將儲存節點分散至各個站台、盡量平均。例如、若要支援6+3銷毀編碼方案、請在三個站台設定至少包含三個儲存節點的儲存資源池。
 * 如果您的處理量需求很高、如果站台之間的網路延遲超過 100 毫秒、則不建議使用包含多個站台的儲存池。隨著延遲時間增加、StorageGRID 由於TCP網路處理量減少、導致導致導致無法建立、放置及擷取物件片段的速度大幅降低。
 +
-處理量的降低會影響物件擷取和擷取的最大可達成率（如果選取平衡或嚴格作為擷取行為）、或可能導致 ILM 佇列待處理記錄（當選擇雙重提交作為擷取行為時）。請參閱。 link:what-ilm-rule-is.html#ilm-rule-ingest-behavior["ILM 規則擷取行為"]
+處理量的下降會影響物件擷取和檢索的最大可達速率（當選擇 Balanced 或 Strict 作為擷取行為時），或可能導致 ILM 佇列積壓（當選擇 Dual commit 作為擷取行為時）。請參閱link:what-ilm-rule-is.html#ilm-rule-ingest-behavior["ILM 規則擷取行為"]。
 
 +
 

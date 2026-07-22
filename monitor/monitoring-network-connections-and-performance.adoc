@@ -48,9 +48,6 @@ image:nodes_page_network_interfaces.png["節點頁面網路介面"]
 +
 「接收和傳輸」表格顯示已在每個網路上接收和傳送多少位元組和封包、以及其他接收和傳輸度量。
 
-+
-image:nodes_page_network_communication.png["節點頁面網路通訊"]
-
 
 
 . 使用與流量分類原則相關的度量來監控網路流量。
@@ -62,7 +59,7 @@ image:nodes_page_network_communication.png["節點頁面網路通訊"]
 +
 image:traffic_classification_policies_main_screen_w_examples.png["圖表的流量原則範例"]
 
-.. 若要檢視顯示與原則相關聯之網路度量的圖表、請選取原則左側的選項按鈕、然後按一下* Metrics *。
+.. 若要檢視顯示與原則關聯的連網計量的圖表，請選擇原則左側的單選按鈕，然後選擇 *Metrics*。
 .. 檢閱圖表以瞭解與原則相關的網路流量。
 +
 如果流量分類原則是設計用來限制網路流量、請分析流量受限的頻率、並決定原則是否持續符合您的需求。不時地link:../admin/managing-traffic-classification-policies.html["視需要調整每個流量分類原則"]、

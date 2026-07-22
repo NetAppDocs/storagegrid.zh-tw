@@ -50,7 +50,7 @@ summary: 您可以使用 Cloud Storage Pool 將資料備份或分層至外部位
 [[maintain-multiple-cloud-endpoints]]
 == 維護多個雲端端點
 
-如果您想要將物件資料分層或備份到多個雲端、可以設定多個雲端儲存池端點。ILM規則中的篩選器可讓您指定儲存在每個雲端儲存資源池中的物件。例如、您可能想要將來自 Amazon S3 Glacier 中某些租戶或貯體的物件、以及來自 Azure Blob 儲存區中其他租戶或貯體的物件儲存起來。或者、您可能想要在Amazon S3 Glacier與Azure Blob儲存設備之間移動資料。
+如果您希望將物件資料分層或備份到多個雲端平台，可以設定多個 Cloud Storage Pool 端點。ILM 規則中的篩選器可讓您指定哪些物件儲存在每個 Cloud Storage Pool 中。例如，您可能想要將某些租戶或儲存桶中的物件儲存在 Amazon S3 Glacier 中，而將其他租戶或儲存桶中的物件儲存在 Azure Blob Storage 中。或者，您可能希望在 Amazon S3 Glacier 和 Azure Blob Storage 之間移動資料。
 
 
 NOTE: 使用多個雲端儲存池端點時、請記住、物件一次只能儲存在一個雲端儲存池中。

@@ -37,7 +37,21 @@ TIP: 停用單一管理節點的SSO並不會影響網格中任何其他管理節
 
 
 
-. 執行下列命令：``disable-saml``
+. 根據您的 SSO 組態，執行以下命令之一：
++
+[role="tabbed-block"]
+====
+.SAML
+--
+`disable-saml`
+
+--
+.OIDC
+--
+`disable-oidc`
+
+--
+====
 +
 訊息表示該命令僅適用於此管理節點。
 

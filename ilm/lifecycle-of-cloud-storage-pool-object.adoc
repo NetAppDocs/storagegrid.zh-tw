@@ -73,18 +73,18 @@ NOTE: 如果 StorageGRID 內的儲存節點上也有一個或多個物件複本�
 
 . *物件移至Azure Cloud Storage Pool*
 +
-當物件與使用 Azure Cloud Storage Pool 做為放置位置的 ILM 規則相符時、 StorageGRID 會將物件移至由 Cloud Storage Pool 指定的外部 Azure Blob 儲存容器。
+當物件與使用 Azure Cloud Storage Pool 作為其放置位置的 ILM 規則相符時，StorageGRID 會將物件移至 Cloud Storage Pool 指定的外部 Azure Blob 儲存 Container。
 
 . *物件移轉至歸檔層（無法擷取的狀態）*
 +
-將物件移至Azure Cloud Storage Pool之後StorageGRID 、立即將物件自動移轉至Azure Blob儲存歸檔層。
+將物件移至 Azure Cloud Storage Pool 後，StorageGRID 會自動將物件轉換至 Azure Blob Storage Archive 分層。
 
 . *物件從歸檔層還原*
 +
 如果物件已移轉至歸檔層、用戶端應用程式就可以發出 S3 RestoreObject 要求、將可擷取的複本還原至 Azure Cloud Storage Pool 。
 
 +
-當 StorageGRID 收到 RestoreObject 時、它會暫時將物件轉換至 Azure Blob 儲存超酷層。一旦達到 RestoreObject 要求的到期日、 StorageGRID 就會將物件轉換回歸檔層。
+當 StorageGRID 收到 RestoreObject 請求時，它會將物件暫時轉換到 Azure Blob 儲存體的冷分層。一旦 RestoreObject 請求中的過期日期到達，StorageGRID 就會將物件轉換回封存分層。
 
 +
 

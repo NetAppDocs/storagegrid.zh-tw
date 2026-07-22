@@ -29,9 +29,6 @@ StorageGRID CloudMirror 複寫服務用於將特定物件從 StorageGRID 儲存�
 CloudMirror 複寫與跨網格複寫功能有一些重要的相似之處和差異。若要深入瞭解link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["比較跨網格複寫和 CloudMirror 複寫"]、請參閱。
 
 
-NOTE: 如果來源儲存桶啟用了 S3 物件鎖定，則不支援 CloudMirror 複製。
-
-
 
 [[notifications]]
 == 通知

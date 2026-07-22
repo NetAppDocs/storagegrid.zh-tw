@@ -1,7 +1,7 @@
 ---
 permalink: harden/hardening-guidelines-for-storagegrid-nodes.html 
 sidebar: sidebar 
-keywords: StorageGRID, hardening guidelines, nodes, security 
+keywords: StorageGRID, hardening guidelines, nodes, security, bmc password 
 summary: 可在VMware虛擬機器、Linux主機上的容器引擎內或專屬硬體設備上部署支援節點。StorageGRID每種類型的平台和每種類型的節點都有自己的強化最佳實務做法。 
 ---
 = 強化有關節點的準則StorageGRID
@@ -18,9 +18,9 @@ summary: 可在VMware虛擬機器、Linux主機上的容器引擎內或專屬硬
 [[block-remote-ipmicontrol-remote-ipmi-access-to-bmc]]
 == [[block-remote-ipmi]]控制遠端 IPMI 對BMC的訪問
 
-您可以為所有包含 BMC 的應用裝置啟用或停用遠端 IPMI 存取。遠端 IPMI 介面可讓任何擁有 BMC 帳戶和密碼的人、對您的 StorageGRID 應用裝置進行低階硬體存取。如果不需要對 BMC 進行遠端 IPMI 存取、請停用此選項。
+您可以為所有包含 BMC 的應用裝置啟用或停用遠端 IPMI 存取。遠端 IPMI 介面允許任何擁有 BMC 帳戶和密碼的使用者對您的 StorageGRID 應用裝置進行底層硬體存取。如果您不需要對 BMC 進行遠端 IPMI 存取，請停用此選項。
 
-* 若要控制 Grid Manager 中對BMC 的遠端 IPMI 訪問，請前往 *配置* > *安全性* > *安全設定* > *裝置*：
+* 若要在 Grid Manager 中控制對 BMC 的遠端 IPMI 存取，請前往 *Configuration* > *Security* > *Security settings* > *Appliances* > *Remote IPMI access*：
 +
 ** 清除 * 啟用遠端 IPMI 存取 * 核取方塊、以停用對 BMC 的 IPMI 存取。
 ** 選中 *Enable remote IPMI access* （啓用遠程 IPMI 訪問 * ）複選框以啓用對 BMC 的 IPMI 訪問。
@@ -29,6 +29,38 @@ summary: 可在VMware虛擬機器、Linux主機上的容器引擎內或專屬硬
 
 
 有關BMC強化的更多信息，請參閱 https://media.defense.gov/2023/Jun/14/2003241405/-1/-1/0/CSI_HARDEN_BMCS.PDF["強化基板管理控制器"^]網路安全資訊表 https://www.nsa.gov/["國家安全局（NSA）"^]和 https://www.cisa.gov/["網路安全與基礎設施安全局（CISA）"^]。
+
+
+
+[[change-appliance-bmc-password]]
+== 更改應用裝置 BMC 密碼
+
+您可以變更應用裝置的 BMC 密碼，以限制存取並提高系統安全性。
+
+. 在 Grid Manager 中，前往 *節點* > *_grid node_* > *BMC 設定*。
+. 在「變更密碼」部分，在「新密碼」中輸入長度為 8 到 16 個字元的新 BMC 密碼，然後在「確認新密碼」中再次輸入。
+. 選擇*保存*。
+
+
+您也可以使用  `PUT /bmc-configuration/root-password` API 變更 BMC 密碼。
+
+
+
+[[control-remote-access-through-usb-portscontrol-external-usb-port-access-on-appliances]]
+== [[control-remote-access-through-usb-ports]]控制應用裝置外部 USB 連接埠的存取
+
+您可以啟用應用裝置上的 USB 連接埠，以便技術支援存取進行診斷和疑難排解。如果您不需要存取 USB 連接埠，請基於安全性考量停用這些連接埠。初始安裝或升級後，USB 連接埠預設為啟用。
+
+* 在 Grid Manager 中，前往 *Configuration* > *Security* > *Security settings* > *Appliances* > *USB port access*，啟用或停用 USB 連接埠：
++
+** 選取 *Enable USB ports* 核取方塊並儲存以啟用連接埠。
++
+如果之前未選取 USB 複選框並已儲存，請勾選 *Enable USB ports* 複選框並儲存以再次啟用 USB 連接埠。
+
+** 取消選取「啟用 USB 連接埠」核取方塊並儲存以停用這些連接埠。
+
+
+
 
 
 
@@ -107,7 +139,7 @@ StorageGRID 在每個節點上都包含內部防火牆、可讓您控制對節�
 
 儲存節點可管理及儲存物件資料和中繼資料。請遵循以下準則、將儲存節點固定在StorageGRID 您的一套系統上。
 
-* 請勿允許不受信任的用戶端直接連線至儲存節點。使用由閘道節點或協力廠商負載平衡器提供服務的負載平衡器端點。
+* 不要允許不受信任的用戶端直接連線至儲存節點。請使用由 Gateway Node 或第三方負載平衡器提供的負載平衡器端點。
 * 請勿為不受信任的租戶啟用外傳服務。例如、為不受信任的租戶建立帳戶時、請勿允許租戶使用自己的身分識別來源、也不允許使用平台服務。請參閱的步驟link:../admin/creating-tenant-account.html["建立租戶帳戶"]。
 * 針對不受信任的用戶端流量使用協力廠商負載平衡器。第三方負載平衡可提供更多控制能力、並提供額外的層級保護、防止攻擊。
 * 您也可以選擇使用儲存 Proxy 、以更有效地控制雲端儲存池、以及從儲存節點到外部服務的平台服務通訊。請參閱的步驟link:../admin/configuring-storage-proxy-settings.html["建立儲存 Proxy"]。
@@ -144,12 +176,13 @@ StorageGRID 在每個節點上都包含內部防火牆、可讓您控制對節�
 如果沒有安全、可信任的內部管理網絡，請將BMC管理連接埠保持未連接或阻塞狀態。技術支援可能會在支援案例期間請求臨時存取權限。
 
 * 如果應用裝置使用智慧型平台管理介面（IPMI）標準、支援透過乙太網路遠端管理控制器硬體、請封鎖連接埠623上不受信任的流量。
++
+您還可以<<block-remote-ipmi,停用遠端 IPMI 存取>>。
+
 
 
 
 NOTE: 您可以為所有包含BMC 的裝置啟用或停用遠端 IPMI 存取。遠端 IPMI 介面允許任何擁有BMC帳戶和密碼的人對您的StorageGRID設備進行低階硬體存取。如果您不需要遠端 IPMI 存取BMC，請使用下列方法之一停用此選項：+ 在 Grid Manager 中，前往 *設定* > *安全* > *安全設定* > *裝置*，然後清除 *啟用遠端 IPMI 存取*複選框。  + 在網格管理 API 中，使用私有端點： `PUT /private/bmc` 。
-
-+ 您還可以<<block-remote-ipmi,停用遠端 IPMI 存取>>。
 
 * 對於包含 SED 、 FDE 或 FIPS NL-SAS 磁碟機的應用裝置機型、您可以使用 SANtricity System Manager 來管理 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/accessing-and-configuring-santricity-system-manager.html["啟用和設定 SANtricity 磁碟機安全性"^]。
 * 對於包含使用StorageGRID Appliance Installer 和 Grid Manager 管理的 SED 或 FIPS NVMe SSD 的裝置型號， https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html#enable-drive-encryption["啟用及設定 StorageGRID 磁碟機加密"^] 。

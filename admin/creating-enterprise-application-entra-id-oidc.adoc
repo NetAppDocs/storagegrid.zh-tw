@@ -1,0 +1,109 @@
+---
+permalink: admin/creating-enterprise-application-entra-id-oidc.html 
+sidebar: sidebar 
+keywords: enterprise application, entra id, single sign on, sso 
+summary: 使用 Entra ID 為系統中的每個管理節點建立一個應用程式。 
+---
+= 在 StorageGRID 中為 OIDC 建立 Entra ID 企業應用程式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 Entra ID 為系統中每個 Admin Node 建立 OpenID Connect (OIDC) 的企業應用程式。
+
+.開始之前
+* 您的系統中每個管理節點都有信賴方識別碼和完整網域名稱 (FQDN) 或 IP 位址。
++
+
+NOTE: StorageGRID 系統中的每個管理節點都必須配備企業應用程式。這可確保使用者可以安全地登入和登出任何管理節點。您可以為所有管理節點建立單一企業應用程式（建議），也可以為每個管理節點建立一個不同的企業應用程式。
+
+* 您有在 Entra ID 中建立應用程式的經驗。
+* 您有一個具有有效訂閱的 Entra ID 帳戶。
+* 您在 Entra ID 帳戶中擁有以下角色之一：全域管理員、雲端應用程式管理員、應用程式管理員或服務主體的擁有者。
+
+
+
+
+[[step-1-access-entra-id]]
+== 步驟 1：存取 Entra ID
+
+.步驟
+. 登入 https://portal.azure.com["Azure Portal"^]。
+. 選擇 link:https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview["微軟Entra ID"^]。
+. 選擇 link:https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps["應用程式註冊"^]。
+
+
+
+
+[[step-2-register-a-new-application]]
+== 步驟 2：註冊新應用程式
+
+為系統中的每個管理節點註冊一個新的企業應用程式。
+
+.步驟
+. 在 Entra ID Enterprise 應用程式窗格中，選取「應用程式註冊」>「新增註冊」。
+. 對於 *Name*，請輸入信賴方識別碼。
+. 在「支援的帳戶類型」下，選擇可以使用該應用程式或存取 API 的帳戶類型，例如「僅限單一租戶 - <tenant_name>」。
+. 在「重新導向 URI」下，選取「選取平台」>「Web」。
+. 輸入管理節點的 FQDN（或 IP 位址）重新導向 URI： `https://<FQDN>/api/v4/oidc-callback` 或 `https://<IP_address>/api/v4/oidc-callback`
++
+如果您所有管理節點都使用同一個企業應用程式，請輸入每個管理節點的 URI。如果您每個管理節點使用不同的企業應用程式，則只需輸入對應管理節點的 URI。
+
+. 選擇 *Register*。
+. 在新應用程式註冊的「概覽」頁面上，記錄 *Application （client） ID* 和 *Directory （tenant） ID*。
+
+
+
+
+[[step-3-configure-a-client-secret]]
+== 步驟 3：設定用戶端密鑰
+
+為每個新應用程式註冊一個用戶端密鑰。
+
+.步驟
+. 在新應用程式註冊的「概觀」頁面上，選取 *管理* > *憑證和密碼* > *新用戶端密碼*。
+. 輸入用戶端密鑰並設定所需的過期日期。
+. 選擇 *Add* 以建立用戶端密鑰。
+. 複製密鑰*值*。
++
+
+NOTE: 重新整理頁面或離開用戶端金鑰頁面後，金鑰值將不可見。
+
+
+
+
+
+[[step-4-set-up-the-api-permissions]]
+== 步驟 4：設定 API 權限
+
+為每個新應用程式設定 API 權限。
+
+.步驟
+. 在新應用程式註冊的「概覽」頁面上，選擇 *Manage* > *API permissions* > *Add a permission*。
+. 選擇 *Microsoft APIs* > *Microsoft Graph* > *Delegated permissions*。
+. 展開 *OpenId 權限*，然後選擇 *email*、*offline_access*、*openid* 和 *profile*。
+. 選擇 *新增權限*。
+. 選取 *授予管理員同意 <tenant>*，然後選取 *是*。
+
+
+
+
+[[step-5-add-the-logged-out-redirect-uri]]
+== 步驟 5：新增登出重新導向 URI
+
+為每個新應用程式新增登出重新導向 URI。
+
+.步驟
+. 在新應用程式註冊的「概覽」頁面上，選取 *Manage* > *Authentication*。
+. 選擇 *Add Redirect URI* > *Web*。
+. 輸入管理節點的 FQDN （或 IP 位址）重新導向 URI： `https://<FQDN>/api/v4/oidc-logged-out` 或 `https://<IP_address>/api/v4/oidc-logged-out`
++
+如果您對所有管理節點使用同一個應用程式群組，請輸入每個管理節點的 URI。如果您為每個管理節點使用不同的應用程式群組，則只需輸入對應管理節點的 URI。
+
+. 選擇 *Configure*。
+
+
+.接下來
+建立企業應用程式之後，link:configure-sso-oidc.html["使用 OIDC 設定 SSO"]。

@@ -1,0 +1,212 @@
+---
+permalink: admin/configure-global-namespace.html 
+sidebar: sidebar 
+keywords: global namespace, grid federation, S3 endpoint domain names, default region, grid federation connection, multi-grid 
+summary: 設定全域命名空間，允許租戶存取多個 StorageGRID 系統中的儲存桶。 
+---
+= 設定網格聯邦的全域命名空間
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定全域命名空間，允許租戶存取多個 StorageGRID 系統中的儲存桶。
+
+有關全域命名空間的詳細資訊，請參閱 link:learn-about-global-namespace.html["了解網格聯邦的全域命名空間"]。
+
+.開始之前
+* 您已使用 link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"] 登入每個網格上的 Grid Manager。
+* 您擁有每個網格的 link:../admin/admin-group-permissions.html["root 存取權限"]。
+* 您已審核網格聯邦連線的 link:../admin/grid-federation-overview.html["考量與要求"]。
+
+
+
+
+[[requirements-for-configuring-global-namespace]]
+== 配置全域命名空間的要求
+
+* 全域命名空間中的所有網格必須具有網格聯合連接，且每對網格之間必須啟用全域命名空間。
+* 單一全域命名空間中最多可包含 11 個網格（本機網格和 10 個遠端網格）。
++
+
+CAUTION: 10 個網格的限制受 StorageGRID 部署所支援的網格聯合連線總數上限所約束。連線總數限制適用於部署中的*所有*網格聯合連線，包括未啟用全域命名空間的連線，因此您必須確保完全連線的全域命名空間與任何其他網格聯合連線的總和不超過此整體限制。
+
+* S3 用戶端必須使用簽署版本 4 (SigV4) 驗證。全域命名空間路由操作不支援匿名請求和簽署版本 2 請求。
++
+** 正常的簽名請求依照以下說明指定 https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html["驗證要求：使用授權標頭（AWS Signature Version 4）"]。
+** 預簽名請求的具體說明請見 https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html["驗證請求：使用查詢參數（AWS Signature Version 4）"]。
+
+
+
+
+
+
+[[number-of-required-connectionsnumber-of-required-connections]]
+== 所需連線數
+
+在全域命名空間中，每對網格都必須連接。所需的連接數取決於網格的數量：
+
+[cols="1a,1a"]
+|===
+| 網格數量 | 所需連線數 
+
+
+ a| 
+2
+ a| 
+1
+
+
+
+ a| 
+3
+ a| 
+3
+
+
+
+ a| 
+4
+ a| 
+6
+
+
+
+ a| 
+5
+ a| 
+10
+
+
+
+ a| 
+_n_
+ a| 
+_n_ × (_n_ − 1) / 2
+
+|===
+
+
+[[step-1-set-a-unique-default-region-for-each-grid]]
+[[configure-default-region]]
+== 步驟 1：為每個網格設定唯一的預設區域
+
+全域命名空間中的每個網格都必須有一個唯一的預設區域。預設區域用於識別擁有儲存桶的網格。
+
+CreateBucket 和 ListBuckets 請求會根據此區域進行路由，所有其他請求必須與它們被傳送到的預設區域相符。
+
+如需詳細資訊、請參閱 link:../ilm/configuring-regions-optional-and-s3-only.html["配置 S3 區域"]。
+
+.步驟
+. 在每個網格上link:../ilm/configuring-regions-optional-and-s3-only.html["將預設區域設為唯一值"]。例如，將 Grid A 設定為 `us-east-1`，將 Grid B 設定為 `us-west-1`。
++
+
+NOTE: 您仍然可以使用非預設區域（透過  `LocationConstraint` 元素在 link:../s3/operations-on-buckets.html["CreateBucket 請求"] 中設定），以供 ILM 原則使用。非預設區域不會在全域命名空間中的網格之間進行唯一性驗證。
+
+. 對全域命名空間中的每個網格重複上述步驟。每個網格必須具有不同的預設區域。
+. 視需要設定其他區域。
+
+
+
+
+[[step-2-configure-s3-global-namespace-settings]]
+== 步驟 2：設定 S3 全域命名空間設定
+
+在全域命名空間中的每個網格上，新增兩個 S3 端點網域名稱：
+
+* 一個在所有網格上都相同的全域命名空間端點
+* 網格的唯一 CNAME
+
+
+您需要設定外部 DNS，以便全域命名空間端點解析至一個或多個網格，且唯一的 CNAME 端點解析至特定網格。
+
+
+CAUTION: 您必須<<configure-default-region,設定預設區域>>才能設定 S3 全域命名空間設定。啟用全域命名空間設定後，如果 S3 請求未指定正確的區域，則請求將失敗。所有 S3 請求都需要使用網格的預設區域進行簽署。
+
+.步驟
+. 在每個網格中，選擇 *組態* > *網路* > *S3 端點網域名稱* > *網域名稱*。
+. 新增一個在所有網格中都相同的全域命名空間端點網域名稱。例如： `s3.example.com`。
+. 為網格新增唯一的 CNAME。例如， `s3.company.com`。
+. 選擇*保存*。
+. 選擇 *Global namespace settings*。
++
+.. 選擇全域命名空間端點。
+.. 選擇網格的唯一 CNAME 網域名稱。
+
+
+. 選擇*保存*。
+. 確保用戶端使用的伺服器憑證包含新的 S3 端點網域名稱。
++
+** 如果用戶端連線到使用其本身憑證的負載平衡器端點，請參閱link:../admin/configuring-load-balancer-endpoints.html["更新與端點相關的憑證"]。
+** 如果用戶端連線到使用全域 S3 API 憑證的負載平衡器端點、link:../admin/use-s3-setup-wizard-steps.html["更新全域 S3 API 憑證"]或直接連線到 Storage Nodes 、。
+
+
+. 在全域命名空間中的每個網格上重複這些步驟。
+
+
+如需詳細資訊，請參閱 link:../admin/configuring-s3-api-endpoint-domain-names.html["設定 S3 端點網域名稱"]。
+
+
+
+[[step-3-create-grid-federation-connections-with-global-namespace-enabled]]
+== 步驟 3：建立啟用全域命名空間的網格聯合連線
+
+在所有網格上設定 S3 端點網域名稱和預設區域後，即可建立啟用全域命名空間的網格聯合連線。
+
+.關於這項工作
+建立網格聯合連線並啟用全域命名空間時，全域命名空間端點、CNAME 和預設區域欄位將使用您在先前步驟中設定的值自動填入。如果這些欄位未正確設定，Grid Manager 將阻止啟用全域命名空間。
+
+
+CAUTION: 建立具有全域命名空間的網格聯合連線後，該連線中網格的全域命名空間端點、CNAME 和預設區域將無法變更。
+
+.步驟
+. 在第一個網格中，請按照 link:../admin/grid-federation-create-connection.html["建立網格同盟連線"] 中所述的步驟進行操作。
+. 輸入連線詳細資料時，選取 *Enable global namespace*。
++
+全域命名空間端點、CNAME 和預設區域的欄位會自動填入您在先前步驟中設定的值。如果任何值缺失或無效，您將無法啟用全域命名空間，直到解決這些問題為止。
+
+. 下載驗證檔案並將其上傳到另一個網格，完成連接。
+. 對全域命名空間中的每一對網格重複上述步驟。
++
+例如，3 個網格需要 3 個連線（網格 A–網格 B、網格 A–網格 C、網格 B–網格 C）。4 個網格需要 6 個連線。一個全域命名空間中最多可以有 10 個網格。請參閱 <<number-of-required-connections,所需連線數>>。
+
+
+
+
+
+[[step-4-configure-load-balancer-endpoints]]
+== 步驟 4：設定負載平衡器端點
+
+link:../admin/configuring-load-balancer-endpoints.html["設定負載平衡器端點"] 對於全域命名空間中的每個網格。請為每個端點使用相同的連接埠。
+
+
+NOTE: 請確保在設定 DNS 解析之前設定負載平衡器端點。
+
+
+
+[[config-dns-resolutionstep-5-configure-dns-resolution]]
+== 步驟 5：設定 DNS 解析
+
+StorageGRID 並沒有提供用於全域命名空間的內建 DNS 解析器。您必須設定外部 DNS 基礎架構，才能將 S3 請求路由到正確的網格。
+
+您的 DNS 解析器應該：
+
+. 將全域命名空間端點（例如， `s3.example.com`）解析為一個或多個網格的負載平衡器端點，通常使用輪詢 DNS。
+. 將每個網格的唯一 CNAME（例如， `s3.grid-a.example.com`）解析為該特定網格的負載平衡器端點。
+. 對於虛擬託管風格的儲存桶請求（例如 `_bucket_.s3.example.com`），請使用您組織的路由原則將儲存桶名稱對應至適當網格的 CNAME。
++
+StorageGRID 不提供基於 DNS 的機制來決定儲存桶所屬的網格。如果您需要基於儲存桶所有權的自動路由，請使用 link:../tenant/understanding-tenant-management-api.html["租戶管理API"] 發出 ListBucket 請求以傳回儲存桶的 UUID。維護從儲存桶 UUID 到網格的內部對應。您的外部 DNS 應使用此對應，而非直接查詢 StorageGRID。
+
+
+
+
+
+[[related-information]]
+== 相關資訊
+
+* link:grid-federation-overview.html["什麼是網格同盟？"]
+* link:grid-federation-create-connection.html["建立網格同盟連線"]
+* link:configuring-s3-api-endpoint-domain-names.html["設定 S3 端點網域名稱"]
+* link:grid-federation-manage-connection.html["管理網格同盟連線"]
+

@@ -2,7 +2,7 @@
 permalink: upgrade/performing-upgrade.html 
 sidebar: sidebar 
 keywords: upgrade, how to perform a software upgrade 
-summary: 您可以升級到StorageGRID 12.0 並同時套用該版本的最新修補程式。  StorageGRID升級頁面提供了建議的升級路徑並直接連結到正確的下載頁面。 
+summary: 您可以升級至 StorageGRID 12.1，並同時套用該版本的最新 Hotfix。StorageGRID 升級頁面提供了建議的升級途徑，並直接連結至正確的下載頁面。 
 ---
 = 執行 StorageGRID 升級
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可以升級到StorageGRID 12.0 並同時套用該版本的最新修
 
 
 [role="lead"]
-您可以升級到StorageGRID 12.0 並同時套用該版本的最新修補程式。  StorageGRID升級頁面提供了建議的升級路徑並直接連結到正確的下載頁面。
+您可以升級至 StorageGRID 12.1，並同時套用該版本的最新 Hotfix。StorageGRID 升級頁面提供了建議的升級途徑，並直接連結至正確的下載頁面。
 
 .開始之前
 您已檢閱所有考量事項、並完成所有規劃與準備步驟。
@@ -37,7 +37,7 @@ CAUTION: 如果您急需擴展儲存以增加容量（如果您的儲存幾乎�
 [[select-files]]
 == 選取檔案
 
-StorageGRID升級頁面上的更新路徑指示必須安裝哪些主要版本（例如，12.0.0）和修補程式（例如，12.0.0.1）才能取得最新的StorageGRID版本。您應該按照顯示的順序安裝建議的版本和修補程式。
+StorageGRID 升級頁面上的升級途徑指示了要升級到最新 StorageGRID 版本，必須安裝哪些主要版本（例如 12.1.0）和 Hotfix（例如 12.1.0.1）。您應該按照所示順序安裝建議的版本和 Hotfix。
 
 
 TIP: 如果沒有顯示更新路徑，您的瀏覽器可能無法存取NetApp支援站點，或AutoSupport頁面（*支援* > *工具* > *AutoSupport* > *設定*）上的 *檢查軟體更新*複選框可能已停用。
@@ -52,7 +52,7 @@ TIP: 如果沒有顯示更新路徑，您的瀏覽器可能無法存取NetApp支
 
 NOTE: 如果您需要在所有 Linux 主機上下載並安裝 RPM 或 Deb 套件、您可能已經在更新路徑中列出 StorageGRID 升級和 Hotfix 檔案。
 
-. 選擇*瀏覽*將版本升級檔上傳到StorageGRID： `NetApp_StorageGRID_12.0.0_Software_uniqueID.upgrade`
+. 選擇 *Browse* 將版本升級檔案上傳到 StorageGRID： `NetApp_StorageGRID_12.1.0_Software_uniqueID.upgrade`
 +
 上傳和程式碼簽署驗證完成後，檔案名稱旁邊會出現一個綠色複選標記。
 
@@ -80,7 +80,7 @@ NOTE: 如果您需要在所有 Linux 主機上下載並安裝 RPM 或 Deb 套件
 CAUTION: 復原包檔案必須是安全的，因為它包含可用於從StorageGRID系統取得資料的加密金鑰和密碼。
 
 . 選取 * 執行預先檢查 * 、然後等待預先檢查完成。
-. 查看每個報告的預檢的詳細資訊並解決任何報告的錯誤。查看 https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_12.0_software_upgrade_resolution_guide["StorageGRID 軟體升級解決方案指南"^]適用於StorageGRID 12.0 版本。
+. 請查看每項已報告的預先檢查的詳細資訊，並解決所有已報告的錯誤。請參閱 https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_12.1_software_upgrade_resolution_guide["StorageGRID 軟體升級解決方案指南"^]，以取得 StorageGRID 12.1 版本的相關說明。
 +
 您必須先解決所有預先檢查錯誤 _ 、才能升級系統。不過、您不需要在升級前先處理預先檢查 _ 警告 _ 。
 
@@ -158,7 +158,7 @@ CAUTION: 主管理節點升級後，您應該下載恢復包檔案的新副本�
 . [[approvion-step ]] 當您準備好選擇要升級的網格節點（或需要取消核准選取的節點）時、請使用下列指示：
 +
 
-NOTE: 對於StorageGRID 12.0 升級，如果您想要批准單一節點而不是所有節點，最佳做法是在前往下一個網站之前升級整個網站。
+NOTE: 對於 StorageGRID 12.1 升級，如果您想要核准單一節點而不是所有節點，最佳實務做法是在移至下一個站台之前升級整個站台。
 
 +
 [cols="1a,1a"]
@@ -252,9 +252,10 @@ NOTE: 某些應用裝置機型可能會多次重新開機、以升級韌體和 B
 當所有網格節點完成升級階段後、 * 升級其他網格節點 * 工作會顯示為已完成。其餘的升級工作會在背景中自動執行。
 
 .步驟
-. 一旦 * 啟用功能 * 工作完成（很快就會發生）、您就可以在升級的 StorageGRID 版本中開始使用link:whats-new.html["新功能"]。
-. Cassandra 資料庫升級開始。此升級將在背景進行一到三天，並且 Cassandra 服務將在每個儲存節點上停止並重新啟動。在此期間，涉及元資料流的某些維護程序（例如擴充）將被停用。
-. * 最終升級步驟 * 完成後、即完成升級。第一步 * 選擇檔案 * 會以綠色成功橫幅重新顯示。
+. 「啟用功能」工作完成後（最多一小時），即可開始使用升級後的 StorageGRID 版本中的 link:whats-new.html["新功能"]。
++
+* 最終升級步驟 * 完成後、即完成升級。第一步 * 選擇檔案 * 會以綠色成功橫幅重新顯示。
+
 . 確認網格作業已恢復正常：
 +
 .. 檢查服務是否正常運作、以及是否沒有非預期的警示。

@@ -97,4 +97,5 @@ restore copies of data.
 
 
 
-儲存磁碟區重新格式化、重新掛載、必要的 Cassandra 作業完成之後link:../maintain/restoring-volume.html["使用 Grid Manager 還原物件資料"]、您可以。
+.接下來呢？
+儲存設備磁碟區重新格式化並重新掛載，必要的 Cassandra 操作完成後，您可以link:../maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html["使用 Grid Manager 還原物件資料"]。

@@ -16,7 +16,12 @@ summary: 若要在StorageGRID 應用裝置儲存節點上安裝功能、請使�
 .開始之前
 * 應用裝置已安裝在機架中、連接至您的網路、並已開啟電源。
 * 已使用StorageGRID 《整套應用程式安裝程式》為應用裝置設定網路連結和IP位址。
-* 您知道StorageGRID 適用於此資訊網的主要管理節點IP位址。
+* 您知道以下其中一個管理節點的 IP 位址：
++
+** StorageGRID 網格的主要管理節點
+** 非主要管理節點（如果可用）
+
+
 * 列出在《IP組態》頁面StorageGRID 上的所有Grid Network子網路、均已在主要管理節點的Grid Network Subnet List（網格網路子網路清單）中定義。
 * 您已依照儲存設備的安裝指示完成這些必要工作。請參閱。 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["硬體安裝快速入門"^]
 * 您使用的是link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
@@ -26,7 +31,7 @@ summary: 若要在StorageGRID 應用裝置儲存節點上安裝功能、請使�
 .關於這項工作
 若要在StorageGRID 應用裝置儲存節點上安裝功能：
 
-* 您可以指定或確認主管理節點的 IP 位址和節點的主機名稱（系統名稱）。
+* 您需要指定主要管理節點的 IP 位址。如果主要管理節點無法使用，則需要指定非主要管理節點的 IP 位址（如果可用）。您還需要確認節點的主機名稱（系統名稱）。
 * 您可以開始安裝、並在磁碟區已設定且已安裝軟體時等待。
 +
 
@@ -86,17 +91,17 @@ NOTE: 恢復設備儲存節點時，使用與原始設備相同的儲存類型�
 |===
 
 
-. 在 *Node Name* （節點名稱 * ）欄位中、輸入您要復原之節點所使用的相同主機名稱（系統名稱）、然後按一下 * 儲存 * 。
-. 在「安裝」區段中、確認目前的狀態為「準備好開始安裝至主管理節點 `_admin_ip_ 的網格」、且 * 開始安裝 `_node name_` * 按鈕已啟用。
+. 在「節點名稱」欄位中，輸入與要恢復的節點相同的主機名稱（系統名稱），然後選擇「儲存」。
+. 在「安裝」部分，確認目前狀態為「準備開始將  `_node name_` 安裝到主要管理節點 `_admin_ip_` 的網格中」，且「開始安裝」按鈕已啟用。
 +
 如果*開始安裝*按鈕未啟用、您可能需要變更網路組態或連接埠設定。如需相關指示、請參閱產品的維護指示。
 
-. 從「the Some Appliance Installer」首頁、按一下StorageGRID 「*開始安裝*」。
+. 從 StorageGRID 應用裝置安裝程式首頁，選取 * 開始安裝 *。
 +
-目前狀態會變更為「安裝進行中」、並顯示「監控安裝」頁面。
+目前狀態變更為「Installation is in progress」，並顯示監控安裝頁面。
 
 +
 
-NOTE: 如果您需要手動存取「監視器安裝」頁面、請從功能表列按一下「*監視器安裝*」。請參閱。 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/monitoring-appliance-installation.html["監控應用裝置安裝"^]
+NOTE: 如果需要手動存取 Monitor 安裝頁面，請從功能表列中選取 *Monitor installation*。參見 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/monitoring-appliance-installation.html["監控應用裝置安裝"^]。
 
 

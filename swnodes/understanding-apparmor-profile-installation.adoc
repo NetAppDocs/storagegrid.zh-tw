@@ -36,7 +36,7 @@ sudo apparmor_parser -R /etc/apparmor.d/<profile.name>
 sudo ln -s /etc/apparmor.d/bin.ping /etc/apparmor.d/disable/
 sudo apparmor_parser -R /etc/apparmor.d/bin.ping
 ----
-* 完全停用AppArmor。對於 Ubuntu 9.10 或更新版本、請遵循 Ubuntu 線上社群中的指示： https://help.ubuntu.com/community/AppArmor#Disable_AppArmor_framework["停用AppArm"^]。在較新的 Ubuntu 版本上、可能無法完全停用 AppArmor 。
+* 完全停用 AppArmor。對於 Ubuntu 9.10 或更新版本，請按照 https://help.ubuntu.com/community["Ubuntu 線上社群"]中的說明操作。在較新的 Ubuntu 版本上，可能無法完全停用 AppArmor。
 +
 停用 AppArmor 之後、 StorageGRID 記錄檔中不會出現表示已啟用 AppArmor 的項目。
 

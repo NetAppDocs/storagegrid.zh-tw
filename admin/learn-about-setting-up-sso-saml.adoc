@@ -1,0 +1,55 @@
+---
+permalink: admin/learn-about-setting-up-sso-saml.html 
+sidebar: sidebar 
+keywords: use sandbox mode for sso, how to test single sign-on 
+summary: 在 StorageGRID 中設定單一登入 （SSO） 可讓 StorageGRID （服務供應商）和 SSO 身分供應商安全地就使用者身分驗證請求進行通訊。 
+---
+= 了解如何使用 SAML 在 StorageGRID 中設定 SSO
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 StorageGRID 中設定單一登入 （SSO） 可讓 StorageGRID （服務供應商）和 SSO 身分供應商安全地就使用者身分驗證請求進行通訊。
+
+您可以使用 OpenID Connect (OIDC) 或 SAML 在 StorageGRID 中設定 SSO。請依照以下高階步驟使用 SAML 在 StorageGRID 中設定 SSO，或了解更多資訊link:learn-about-setting-up-sso-oidc.html["使用 OIDC 設定 SSO"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]設定 SSO
+[role="quick-margin-para"]
+選擇「設定 SAML 單一登入」精靈。然後，設定身分供應商的單一登入，並進入沙盒模式。
+
+[role="quick-margin-para"]
+瞭解 link:configure-sso-saml.html["使用 SAML 設定 SSO"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 設定身分識別供應商
+[role="quick-margin-para"]
+根據您計劃使用的 SSO 身分供應商，您可以選擇 Active Directory 或 Entra ID 作為身分聯合 LDAP 服務類型。
+
+[role="quick-margin-list"]
+* 對於 Active Directory Federation Service (AD FS)，您可以使用 AD FS、Entra ID 或 PingFederate 身分供應商。
+* 對於 Entra ID，您只能使用 Entra ID 身分供應商。
+
+
+[role="quick-margin-para"]
+使用 SSO 身分識別供應商的軟體為網格中的每個管理節點設定 SAML。
+
+[role="quick-margin-list"]
+* 了解 Active Directory 中的 link:creating-relying-party-trusts-in-ad-fs-saml.html["為每個管理節點建立一個應用程式群組"]
+* 了解 link:creating-enterprise-application-entra-id-saml.html["為每個管理節點建立一個應用程式"] 在 Entra ID 中的資訊
+* 了解 link:creating-sp-connection-ping-saml.html["為每個管理節點建立服務供應商連線"] 在 PingFederate 中的相關資訊
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 測試組態
+[role="quick-margin-para"]
+為每個管理節點設定 SAML 後，返回設定單一登入精靈並測試組態。
+
+[role="quick-margin-para"]
+瞭解 link:configure-sso-saml.html#test-sso["測試 SSO 組態"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]啟用 SSO
+[role="quick-margin-para"]
+為所有 StorageGRID 使用者啟用 SSO。
+
+[role="quick-margin-para"]
+瞭解 link:configure-sso-saml.html#enable-sso-saml["為 StorageGRID 使用者啟用 SSO"]

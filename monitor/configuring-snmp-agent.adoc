@@ -444,3 +444,6 @@ USM 使用者的安全層級：
 新的SNMP代理程式組態會變成作用中狀態。
 
 
+
+.相關資訊
+link:../network/external-communications.html["用於外部通訊的連接埠"]

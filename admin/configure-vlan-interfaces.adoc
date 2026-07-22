@@ -90,7 +90,7 @@ VLAN ID 不一定是唯一的。例如、您可以使用VLAN ID 200來管理某�
 例如、您可能想要將VLAN附加至閘道節點和管理節點的用戶端網路（eth2）介面。
 
 +
-image:vlan-create-parent-interfaces.png["VLAN建立精靈父介面"]
+image:vlan_create_parent_interfaces.png["VLAN建立精靈父介面"]
 
 . 選擇*繼續*。
 
@@ -105,7 +105,7 @@ image:vlan-create-parent-interfaces.png["VLAN建立精靈父介面"]
 +
 ** 如果您需要變更VLAN ID或說明、請選取頁面頂端的*輸入VLAN詳細資料*。
 ** 如果您需要變更父介面、請選取頁面頂端的*選擇父介面*、或選取*上一個*。
-** 如果需要刪除父級介面，請選擇垃圾桶圖示image:icon-trash-can.png["垃圾桶圖示"]。
+** 如果需要刪除父級介面，請選擇垃圾桶圖示image:icon_trash_can.png["垃圾桶圖示"]。
 
 
 . 選擇*保存*。

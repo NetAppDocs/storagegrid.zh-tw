@@ -55,7 +55,7 @@ image:nodes_page_overview_tab_extended.png["節點頁面總覽已擴充"]
 
 . 選取*硬體*以查看有關應用裝置的詳細資訊。
 +
-.. 檢視CPU使用率和記憶體圖表、以判斷CPU和記憶體使用率的百分比。若要顯示不同的時間間隔、請選取圖表或圖表上方的其中一個控制項。您可以顯示1小時、1天、1週或1個月的可用時間間隔資訊。您也可以設定自訂時間間隔、以便指定日期和時間範圍。
+.. 查看 CPU 使用率和記憶體使用率圖表，以了解 CPU 和記憶體容量使用率隨時間變化的百分比。若要顯示不同的時間間隔，請選擇圖表上方的其中一個控制項。您可以顯示 1 小時、1 天、1 週或 1 個月的時間間隔內的資訊。您也可以設定自訂時間間隔，指定日期和時間範圍。
 +
 image:nodes_page_hardware_tab_graphs.png["硬體圖表"]
 
@@ -66,9 +66,6 @@ NOTE: 某些欄位（例如運算控制器BMC IP和運算硬體）僅會針對�
 
 +
 儲存櫃和擴充櫃的元件（如果是安裝的一部分）會顯示在應用裝置表格下方的獨立表格中。
-
-+
-image:nodes_page_hardware_tab_for_appliance.png["應用裝置的節點頁面硬體索引標籤"]
 
 +
 [cols="1a,2a"]
@@ -261,6 +258,20 @@ SG6160 也會顯示快取磁碟機的大小。
  a| 
 運算控制器的溫度狀態。
 
+
+
+ a| 
+運算控制器電源供應 A
+ a| 
+運算控制器電源供應 A 的狀態。
+
+
+
+ a| 
+運算控制器電源供應 B
+ a| 
+運算控制器電源供應 B 的狀態。
+
 |===
 +
 [cols="1a,2a"]
@@ -379,12 +390,12 @@ IOM 狀態
 image:nodes_page_network_traffic_graph.png["節點頁面網路流量圖"]
 
 +
-.. 請參閱「網路介面」一節。
+.. 請查看「網路介面」部分。
 +
 image:nodes_page_network_interfaces.png["節點頁面網路介面"]
 
 +
-下表與「網路介面」表格中* Speed*欄位的值一起使用、以判斷應用裝置上的10/25-GbE網路連接埠是否設定為使用主動/備份模式或LACP模式。
+使用下表以及網路介面表中「速度」欄中的值，確定應用裝置上的 10/25-GbE 網路連接埠是否已設定為使用主動/備份模式或 LACP 模式。
 
 +
 
@@ -464,12 +475,9 @@ LACP
 +
 如需設定 10/25-GbE 連接埠的詳細資訊、請參閱 https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-network-links.html["設定網路連結"^]。
 
-.. 請參閱「網路通訊」一節。
+.. 請查看「網路通訊」部分。
 +
 「接收和傳輸」表格顯示已在每個網路上接收和傳送多少位元組和封包、以及其他接收和傳輸度量。
-
-+
-image:nodes_page_network_communication.png["節點頁面網路通訊"]
 
 
 
@@ -488,9 +496,6 @@ image:storage_used_object_metadata.png["使用的儲存設備-物件中繼資料
 +
 為了協助您解讀磁碟讀取及寫入與磁碟區掛載點相關的統計資料、「磁碟裝置」表格*名稱*欄（即_sdc_、_sdd_、_sde_等）中顯示的名稱第一部分、會與「磁碟區」表格*「裝置*」欄中顯示的值相符。
 
-+
-image:nodes_page_storage_tables.png["節點頁面儲存表格"]
-
 
 
 
@@ -504,7 +509,7 @@ image:nodes_page_storage_tables.png["節點頁面儲存表格"]
 
 .步驟
 . 從「節點」頁面、選取應用裝置管理節點或應用裝置閘道節點。
-. 選擇*總覽*。
+. 選擇* Overview（概述）*選項卡。
 +
 「概觀」索引標籤的「節點資訊」區段會顯示節點的摘要資訊、例如節點的名稱、類型、ID和連線狀態。IP位址清單包含每個位址的介面名稱、如下所示：
 
@@ -521,16 +526,13 @@ image:nodes_page_overview_tab_services_appliance.png["服務應用裝置的「�
 +
 「概觀」索引標籤的「警示」區段會顯示節點的任何作用中警示。
 
-. 選取*硬體*以查看有關應用裝置的詳細資訊。
+. 選取*硬體*索引標籤，以查看有關此應用裝置的更多資訊。
 +
 .. 檢視CPU使用率和記憶體圖表、以判斷CPU和記憶體使用率的百分比。若要顯示不同的時間間隔、請選取圖表或圖表上方的其中一個控制項。您可以顯示1小時、1天、1週或1個月的可用時間間隔資訊。您也可以設定自訂時間間隔、以便指定日期和時間範圍。
 +
 image:nodes_page_hardware_tab_graphs_services_appliance.png["節點頁面服務應用裝置的硬體索引標籤圖表"]
 
-.. 向下捲動以檢視應用裝置的元件表。此表包含機型名稱、序號、控制器韌體版本、以及每個元件的狀態等資訊。
-+
-image:nodes_page_hardware_tab_services_appliance.png["服務應用裝置的「節點」頁面「硬體」索引標籤"]
-
+.. 向下捲動以檢視應用裝置的組件表。此表包含型號名稱、序號、控制器韌體版本以及每個組件的狀態等資訊。
 +
 [cols="1a,2a"]
 |===
@@ -621,7 +623,7 @@ image:nodes_page_hardware_tab_services_appliance.png["服務應用裝置的「�
 
 
 
-. 選取*網路*以檢視每個網路的資訊。
+. 選擇 *Network* 索引標籤以檢視每個網路的資訊。
 +
 網路流量圖表提供整體網路流量的摘要。
 
@@ -629,12 +631,9 @@ image:nodes_page_hardware_tab_services_appliance.png["服務應用裝置的「�
 image:nodes_page_network_traffic_graph.png["節點頁面網路流量圖"]
 
 +
-.. 請參閱「網路介面」一節。
+.. 請查看「網路介面」部分。
 +
-image:nodes_page_hardware_tab_network_services_appliance.png["節點頁面硬體索引標籤Network Services Appliance"]
-
-+
-下表與「網路介面」表格中* Speed*欄位的值一起使用、以判斷應用裝置上的四個40/100-GbE網路連接埠是否設定為使用主動/備份模式或LACP模式。
+使用下表以及網路介面表中「速度」欄中的值，確定應用裝置上的四個 40/100-GbE 網路連接埠是否已設定為使用主動/備份模式或 LACP 模式。
 
 +
 
@@ -711,17 +710,11 @@ LACP
 40
 
 |===
-.. 請參閱「網路通訊」一節。
+.. 請查看「網路通訊」部分。
 +
 「接收和傳輸」表格顯示已在每個網路上接收和傳送多少位元組和封包、以及其他接收和傳輸度量。
 
-+
-image:nodes_page_network_communication.png["節點頁面網路通訊"]
 
 
-
-. 選取* Storage *以檢視服務應用裝置上磁碟裝置和磁碟區的相關資訊。
-+
-image:nodes_page_storage_tab_services_appliance.png["節點頁面儲存索引標籤服務設備"]
-
+. 選擇 *Storage* 索引標籤，以檢視服務應用裝置上磁碟設備和 Volume 的相關資訊。
 

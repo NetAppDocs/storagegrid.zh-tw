@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to administer storagegrid 
 summary: 請使用這些指示來設定及管理StorageGRID 一套功能完善的系統。 
 ---
-= 管理StorageGRID
+= StorageGRID 管理快速入門
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,24 +14,67 @@ summary: 請使用這些指示來設定及管理StorageGRID 一套功能完善�
 請使用這些指示來設定及管理StorageGRID 一套功能完善的系統。
 
 
+NOTE: 請確保您對 StorageGRID 系統有基本的了解，並且對 Linux 命令 shell、連網以及伺服器硬體設定和組態有相當詳細的知識。
 
-[[about-these-instructions]]
-== 關於這些指示
-
-設定及管理 StorageGRID 的主要工作可讓您：
-
-* 使用 Grid Manager 來設定群組和使用者
-* 建立租戶帳戶、以允許 S3 用戶端應用程式儲存及擷取物件
-* 設定及管理 StorageGRID 網路
-* 設定AutoSupport 功能
-* 管理節點設定
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 開始使用 Grid Manager
+[role="quick-margin-list"]
+* link:../admin/web-browser-requirements.html["學習使用 Grid Manager 使用者介面的基本步驟"]
+* link:../admin/viewing-storagegrid-license-information.html["了解授權資訊"]
+* link:../admin/using-grid-management-api.html["了解如何使用網格管理 API"]
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]控制對 StorageGRID 的存取
+[role="quick-margin-list"]
+* link:../admin/controlling-storagegrid-access.html["了解通行密碼、密碼和權限"]
+* link:../admin/using-identity-federation.html["設定身分識別聯盟"]
+* link:../admin/managing-admin-groups.html["管理管理群組"]
+* link:../admin/managing-users.html["管理使用者"]
+* link:../admin/how-sso-works.html["設定單一登入 (SSO)"]
 
 
-[[before-you-begin]]
-== 開始之前
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 使用網格聯邦
+[role="quick-margin-list"]
+* link:../admin/grid-federation-overview.html["設定網格聯盟連線"]
+* link:../admin/grid-federation-what-is-account-sync.html["了解帳戶同步"]
+* link:../admin/grid-federation-what-is-cross-grid-replication.html["了解跨網格複寫"]
+* link:../admin/learn-about-global-namespace.html["設定全域命名空間"]
 
-* 您大致瞭StorageGRID 解整個系統。
-* 您對Linux命令Shell、網路及伺服器硬體設定與組態擁有相當詳細的知識。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 管理安全性
+[role="quick-margin-list"]
+* link:../admin/reviewing-storagegrid-encryption-methods.html["檢閱StorageGRID 功能加密方法"]
+* link:../admin/using-storagegrid-security-certificates.html["管理憑證"]
+* link:../admin/manage-tls-ssh-policy.html["設定安全性設定"]
+* link:../admin/kms-configuring.html["設定金鑰管理伺服器"]
+* link:../admin/configuring-storage-proxy-settings.html["管理Proxy設定"]
+* link:../admin/controlling-access-through-firewalls.html["控制防火牆"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 管理租戶
+[role="quick-margin-list"]
+* link:../admin/managing-tenants.html["了解並管理租戶帳戶"]
+* link:../admin/manage-platform-services-for-tenants.html["管理租戶平台服務"]
+* link:../admin/manage-s3-select-for-tenant-accounts.html["管理用戶帳戶的S3 Select"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 設定用戶端連線
+[role="quick-margin-list"]
+* link:../admin/security-for-clients.html["了解 S3 用戶端的安全性"]
+* link:../admin/use-s3-setup-wizard.html["使用 S3 設定精靈"]
+* link:../admin/managing-high-availability-groups.html["管理高可用度群組"]
+* link:../admin/configuring-s3-api-endpoint-domain-names.html["設定 S3 端點網域名稱"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"] 管理網路和連線
+[role="quick-margin-list"]
+* link:../admin/configuring-network-settings.html["設定網路設定"]
+* link:../admin/configure-vlan-interfaces.html["設定VLAN介面"]
+* link:../admin/managing-traffic-classification-policies.html["管理流量分類原則"]
+* link:../admin/manage-link-costs.html["管理連結成本"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["八"] 管理節點
+[role="quick-margin-list"]
+* link:../admin/what-object-segmentation-is.html["管理儲存節點"]
+* link:../admin/using-multiple-admin-nodes.html["管理管理節點"]
 

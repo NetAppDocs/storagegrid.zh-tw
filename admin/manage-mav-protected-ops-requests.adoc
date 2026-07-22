@@ -1,0 +1,29 @@
+---
+permalink: admin/manage-mav-protected-ops-requests.html 
+sidebar: sidebar 
+keywords: multi-admin verification, mav 
+summary: 身為 MAV 系統管理員，您可以管理 StorageGRID 中受 MAV 保護的操作請求。您可以檢視自己或其他使用者的待處理請求、批准或拒絕請求，以及檢視過往請求的歷史記錄。 
+---
+= 在 StorageGRID 中管理受 MAV 保護的操作請求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+身為 MAV 系統管理員，您可以管理 StorageGRID 中受 MAV 保護的操作請求。您可以檢視自己或其他使用者的待處理請求、批准或拒絕請求，以及檢視過往請求的歷史記錄。
+
+.開始之前
+* 您屬於 MAV 系統管理員群組，並且擁有link:../admin/admin-group-permissions.html["root 存取權限"]。
+* 您已從主要管理節點登入 Grid Manager。
+
+
+.步驟
+. 如果您收到有關 MAV 要求的電子郵件通知，請選擇 *Configuration* > *Multi-admin verification* > *Other requests*。
++
+此外，Grid Manager 儀表板也會顯示待處理 MAV 請求的通知。
+
+. 選擇要管理的每個請求對應的單選按鈕。
+. 選取 *Approve* 或 *Reject* 以核准或拒絕所選的要求。
+. 若要檢視過去的請求記錄，請選擇 *History*。
+

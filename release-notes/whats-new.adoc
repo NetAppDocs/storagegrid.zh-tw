@@ -1,119 +1,221 @@
 ---
 permalink: release-notes/whats-new.html 
 sidebar: sidebar 
-keywords: what is new in StorageGRID 12.0 
-summary: StorageGRID 12.0 擴展了物件儲存容量，提高了對 AI/ML 工作負載的支援，加強了網格聯合，簡化了系統管理，並增強了整個平台的安全性。 
+keywords: what is new in StorageGRID 12.1 
+summary: 此版本的 StorageGRID 引入了以下功能和功能變更。 
 ---
-= StorageGRID 12.0 中的新功能
+= StorageGRID 12.1 的新功能
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-StorageGRID 12.0 擴展了物件儲存容量，提高了對 AI/ML 工作負載的支援，加強了網格聯合，簡化了系統管理，並增強了整個平台的安全性。
+StorageGRID 12.1 引進了以下功能與功能變更。
 
-有關 StorageGRID 12.0 最新版本中已修復問題和已知問題的詳細資訊，請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["StorageGRID 12.0 版本說明"^]。您必須使用 NetApp 帳戶登入或建立帳戶才能存取版本資訊。
-
-
-
-[[appliances]]
-== 應用裝置
-
-* 儲存容量和成本效率大幅提升。
-* 自動驅動器韌體升級可增強系統可靠性並減少維護開銷。
-
-
-
-
-[[artificial-intelligence-ai-and-machine-learning-ml]]
-== 人工智慧（AI）和機器學習（ML）
-
-* link:../tenant/what-is-branch-bucket.html["分支桶"]允許儲存桶的時間點版本，以促進更快的勒索軟體復原和隔離資料集以進行測試和實驗。
-* S3 快取層增強了 AI/ML 訓練的效能。
-
+有關 StorageGRID 12.1 最新版本中已修復問題和已知問題的詳細資訊，請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP3373065["StorageGRID 12.1 版本說明"^]。您必須登入現有 NetApp 帳戶或建立帳戶才能存取發行說明。
 
 
 
 [[capacity]]
 == 容量
 
-StorageGRID現在支援一兆個對象，是先前限制的兩倍以上。請參閱 https://fusion.netapp.com/["NetApp Fusion工具"^]確定StorageGRID 的大小並進行設計。
+
+
+[[ec-rebalance-now-uses-free-space]]
+=== EC 重新平衡現在使用可用空間
+
+EC 重新平衡現在使用可用空間而不是已使用空間。請參閱link:../expand/considerations-for-rebalancing-erasure-coded-data.html#what-is-ec-rebalancing["了解StorageGRID中擴充後的 EC 重新平衡"]。
 
 
 
-[[cassandra-updates]]
-== Cassandra 更新
+[[metadata-allowed-space]]
+=== 中繼資料允許空間
 
-StorageGRID現在使用較新版本的 Cassandra 進行元資料儲存。此版本的 Cassandra 更有效地利用磁碟空間來儲存更多元資料。
+現在您可以將允許的最大中繼資料值從 3.96 TB 增加到 7.92 TB。請參閱link:../admin/managing-object-metadata-storage.html#allowed-metadata-space["允許的中繼資料空間"]。
 
-您先請link:../upgrade/index.html["從StorageGRID 11.9 升級到 12.0"]，元資料格式更新將在後台進行一到三天。在此期間，涉及元資料流的某些維護程序（例如擴充）將被停用。
 
-請參閱link:../upgrade/performing-upgrade.html#upgrade-other-nodes["升級其他節點"] 。
+
+[[control-access]]
+== 控制存取
+
+
+
+[[sso-using-oidc]]
+=== 使用 OIDC 的 SSO
+
+現在可以了link:../admin/learn-about-setting-up-sso-oidc.html["使用 OpenID Connect (OIDC) 在 StorageGRID 中設定單一登入 （SSO）"]。
 
 
 
 [[federation]]
 == 聯邦
 
-* 您現在可以link:../admin/managing-users.html#import-federated-users["導入最多 100 個聯合用戶"]進入StorageGRID。
-* 您現在可以link:../ilm/configuring-regions-optional-and-s3-only.html["修改預設區域"]用於 S3 儲存桶。此功能為管理資料區域設定和合規性提供了更大的靈活性。
-* 現在您可以在啟用 S3 物件鎖定的情況下配置儲存桶之間的跨網格複製。請參閱link:../admin/grid-federation-what-is-cross-grid-replication.html#cgr-with-ol["使用 S3 物件鎖定進行跨網格複製"] 。
-+
-NetApp建議僅在StorageGRID 12.0 來源儲存桶和目標儲存桶之間使用此功能。但是，停用 S3 物件鎖定的StorageGRID 11.9 來源儲存桶與啟用 S3 物件鎖定的StorageGRID 12.0 目標儲存桶之間支援此功能。
 
 
+[[global-namespace]]
+=== 全域命名空間
+
+現在您可以設定全域命名空間，以允許租戶存取跨多個 StorageGRID 系統的儲存桶。請參閱link:../admin/learn-about-global-namespace.html["了解全域命名空間"]。
 
 
 
 [[manageability]]
 == 可管理性
 
-* 改進link:../maintain/decommission-procedure.html["退役程序"]減少時間和複雜性，提高營運效率。
-* 當網格具有三個或更多網站時，強全域一致性的改進行為為客戶端請求提供了網站故障容忍度。
-+
-** 新安裝的StorageGRID 12.0 及更高版本將預設使用 Quorum 語意link:../s3/consistency.html["強全域一致性"]已設定。
-** 如果從StorageGRID 11.9 升級到StorageGRID 12.0，升級後的網格將保留先前的行為以實現強大的全域一致性。
+
+
+[[auto-move-adc-service]]
+=== 自動移動 ADC 服務
+
+link:../maintain/understanding-adc-service-quorum.html["當需要滿足 ADC 法定人數要求時"]，當您link:../maintain/convert-to-data-only-node.html["將儲存節點轉換為僅資料節點"]或link:../maintain/considerations-for-decommissioning-storage-nodes.html["停用儲存節點"]時，ADC 服務現在將自動遷移。
 
 
 
+[[primary-admin-node-recovery]]
+=== 主管理節點恢復
+
+現在您可以從非主管理節點恢復任何節點。請參閱link:../maintain/recovering-from-primary-admin-node-failures.html["從主要管理節點故障中恢復"]。
 
 
-NOTE: 如果您需要恢復到先前的行為以實現強全域一致性，請參閱 https://kb.netapp.com/hybrid/StorageGRID/Object_Mgmt/Configuring_StorageGRID_quorum_semantics_for_strong-global_consistency["配置StorageGRID Quorum 語意以實現強全域一致性"^]以取得說明。
 
-* 啟動日誌上傳功能link:../admin/configure-autosupport-grid-manager.html["AutoSupport"]有助於增強支援響應能力。
-* 減少 https://docs.netapp.com/us-en/storagegrid-appliances/index.html["器皿"^]重新啟動時間最大限度地減少了停機時間，從而提高了整體系統可用性。
-* link:../maintain/move-adc-service.html["行動 ADC 服務的能力"]到另一個儲存節點增加了管理託管 ADC 服務的儲存節點的靈活性和彈性。您可以在停用儲存節點或將儲存節點轉換為僅資料節點之前移動 ADC 服務。
-* 為了最大化資料儲存容量，您可以link:../maintain/convert-to-data-only-node.html["將儲存節點轉換為僅資料節點"]，這會導致該節點上的元資料遷移到組合或僅元資料的儲存節點。
-* 任何管理節點都能夠link:../maintain/selecting-node-recovery-procedure.html["恢復任何其他節點"]（主管理節點除外）增強了系統復原和容錯能力，提高了整體可靠性。
-* 使用者現在可以使用 S3 bucket 來link:../monitor/configure-log-management.html#use-a-bucket["長期儲存審計日誌"]。
+[[s3]]
+== S3
 
+
+
+[[enable-s3-object-lock-on-existing-buckets]]
+=== 對現有儲存桶啟用 S3 物件鎖定
+
+啟用「允許對現有儲存桶啟用 S3 物件鎖定」設定後，S3 租戶帳戶即可對現有儲存桶啟用 S3 物件鎖定。S3 租戶帳戶啟用現有儲存桶的 S3 物件鎖定後，將無法停用此功能。
+
+
+
+[[replication-allowed-for-s3-object-lock-enabled-buckets]]
+=== 允許對啟用了 S3 物件鎖定的儲存桶進行複寫
+
+現在您可以使用 CloudMirror 在啟用 S3 物件鎖定的儲存桶中複寫物件。請參閱 link:../tenant/considerations-for-platform-services.html["了解平台服務"]。
+
+
+
+[[enable-cross-grid-replication-for-non-empty-buckets]]
+=== 為非空白儲存桶啟用跨網格複寫
+
+現在您可以為非空白儲存桶啟用跨網格複寫。請參閱link:../admin/grid-federation-what-is-cross-grid-replication.html#requirements-for-cross-grid-replication["跨網格複寫的需求"]。
+
+
+
+[[s3-batch-operations-fpvr-only]]
+=== S3 批量操作（僅限 FPVR）
+
+您可以使用 S3 批次操作，複寫已啟用版本控制的儲存桶中的現有物件，並計劃將該儲存桶設定為跨網格複寫。
+
+此功能需要 FPVR 核准才能用於 StorageGRID 12.1。若要使用此功能，請聯絡您的客戶代表。
+
+
+
+[[non-functional-s3-rest-api-headers]]
+=== 無法正常運作的 S3 REST API 標頭
+
+ `If-Match`和 `If-None-Match`標頭已被接受，但對於 S3 REST API link:../s3/put-object.html["PuttObject"]、link:../s3/complete-multipart-upload.html["完成多個部分上傳"]、link:../s3/put-object-copy.html["CopyObject"]和link:../s3/operations-on-objects.html["刪除物件"]而言不具功能性。
+
+如需更多資訊，請參閱link:../release-notes/changes-to-s3-rest-api.html["StorageGRID S3 REST API 支援變更"]。
+
+
+
+[[support-for-pre-calculated-checksum-values]]
+=== 支援預先計算的 Checksum 值
+
+S3 REST SPI 現在支援預先計算的 Checksum 值和 `x-amz-checksum-type`請求標頭。請參閱link:../s3/index.html#updates-to-rest-api-support["REST API 支援更新"]。
 
 
 
 [[security]]
 == 安全性
 
-* 更強大的資料加密和完整性保護提供了更高的安全性和效能。
-* 提高儲存密碼的安全性可降低未經授權存取的風險。
-* link:../admin/manage-external-ssh-access.html["SSH 預設被阻止"]在允許受控存取的同時增強安全性。
+
+
+[[multi-admin-verification]]
+=== 多重管理員驗證
+
+多重管理員驗證 (MAV) 有助於防止對 StorageGRID 系統進行意外或未經授權的變更。請參閱link:../admin/about-multi-admin-verify.html["了解 StorageGRID 多管理員驗證"]。
 
 
 
+[[security-policy-updates-for-fips]]
+=== FIPS 安全性原則更新
 
-[[tenant-groups]]
-== 租戶組
+FIPS 嚴格原則標準已更新。請參閱link:../admin/manage-tls-ssh-policy.html#select-a-security-policy["在「管理 TLS 和 SSH 原則」中選擇安全性原則"]。
 
-* 您現在可以link:../tenant/manage-groups.html["配置新的 S3 信任策略"]支援 AssumeRole API。  AssumeRole 功能提供短期憑證，以增強安全性和靈活的存取控制。
-* 每個儲存桶的物件計數配額可更好地控制和管理儲存資源。
 
+
+[[tenants]]
+== 租戶
+
+
+
+[[account-sync]]
+=== 帳戶同步
+
+_帳戶 Clone_ 功能現在是指對特定租戶帳戶資訊進行一次性 Clone。
+
+「帳戶同步」是一項新功能，可讓您在一個或多個網格聯合連線中的 StorageGRID 系統之間自動且持續地複寫租戶帳戶、租戶群組、租戶用戶和 S3 存取金鑰。請參閱 link:../admin/grid-federation-what-is-account-sync.html["了解 StorageGRID 中的帳戶同步"]。
+
+
+
+[[kafka-endpoints-and-mtls-authentication]]
+=== Kafka 端點和 mTLS 驗證
+
+Kafka 端點現已支援相互傳輸層安全協定 (mTLS)。請參閱link:../tenant/configuring-platform-services-endpoints.html["設定平台服務端點"]。
+
+
+
+[[maximum-number-of-buckets]]
+=== 最大儲存桶數
+
+StorageGRID 系統現在為每個 S3 租戶帳戶支援最多 20,000 個儲存桶。
+
+
+
+[[upgrade]]
+== 升級
+
+
+
+[[time-to-enable-features-is-increased]]
+=== 啟用功能所需時間增加
+
+在 StorageGRID 升級至版本 12.1 期間，啟用功能所需的時間從不到五分鐘增加至一小時。請參閱link:../upgrade/estimating-time-to-complete-upgrade.html#estimate-time-to-upgrade["估算完成 StorageGRID 升級所需的時間"]。
 
 
 
 [[user-interface]]
 == 使用者介面
 
-* 網格管理器和租戶管理器的使用者選單中提供了深色主題和系統主題設定。
-* 審計和系統日誌伺服器頁面已重新命名link:../monitor/configure-log-management.html["日誌管理"]，已重構，並增加了將日誌儲存在系統儲存桶中以用於備份的功能。
-* 舊版網格拓樸頁面已被刪除。在過去的幾個StorageGRID版本中，該頁面提供的操作和指標已遷移到網格管理器中的其他頁面，特別是link:../monitor/viewing-nodes-page.html["節點頁面"]。
 
+
+[[bmc-settings-page]]
+=== BMC 設定頁面
+
+Grid Manager 的「節點」頁面新增了「BMC 設定」索引標籤，用於重設 BMC 密碼和變更 BMC LAN IP 設定。請參閱 link:../harden/hardening-guidelines-for-storagegrid-nodes.html["更改應用裝置 BMC 密碼"] 和 link:../maintain/changing-nodes-network-configuration.html#change-appliance-node-bmc-lan-ip-settings["更改應用裝置節點 BMC LAN IP 設定"]。此外，還新增了 API 端點以支援這些功能。請參閱 link:../release-notes/changes-to-grid-management-api.html["用於變更 BMC 密碼和 LAN IP 設定的新端點"]。
+
+
+
+[[email-notifications]]
+=== 電子郵件通知
+
+Grid Manager 現在提供一個通用的電子郵件頁面，用於設定和管理警報、AutoSupport 及多管理員驗證 (MAV) 的電子郵件通知。請參閱link:../monitor/configure-email-server.html["設定郵件伺服器"]。
+
+
+
+[[link-cost-page-update]]
+=== 連結成本頁面更新
+
+StorageGRID 12.1 提供了更詳細的連結成本資訊和設定。請參閱link:../admin/manage-link-costs.html["管理連結成本"]。
+
+
+
+[[usb-port-control]]
+=== USB 連接埠控制
+
+現在您可以透過 Grid Manager 啟用或停用 USB 連接埠。請參閱link:../harden/hardening-guidelines-for-storagegrid-nodes.html#control-remote-access-through-usb-ports["透過 USB 連接埠控制遠端存取"]。

@@ -26,7 +26,7 @@ NOTE: 只有使用 E 系列硬體的儲存設備節點才會顯示 SANtricity �
 * 執行支援功能、包括檢視診斷資料和設定 E 系列 AutoSupport 。
 +
 
-NOTE: 若要使用 SANtricity 系統管理員來設定 E 系列 AutoSupport 的 Proxy 、請參閱link:../admin/sending-eseries-autosupport-messages-through-storagegrid.html["透過 StorageGRID 傳送 E 系列 AutoSupport 套件"]。
+NOTE: 若要使用 SANtricity System Manager 為 E 系列 AutoSupport 設定 Proxy，請參閱link:sending-eseries-autosupport-messages-through-storagegrid.html["透過 StorageGRID 傳送 E 系列 AutoSupport 套件"]。
 
 
 

@@ -65,7 +65,7 @@ Cloud Storage Pool中的物件、但尚未轉換為無法擷取的狀態
 
 （可選）使用 `Tier` request 元素來確定恢復作業完成(`Expedited`、 `Standard`或所 `Bulk`需的時間。如果未指定 `Tier`，則使用該 `Standard`層。
 
-* 重要 * ：如果物件已移轉至 S3 Glacier Deep Archive 、或雲端儲存池使用 Azure Blob 儲存設備、則無法使用該層還原 `Expedited`。返回以下錯誤 `403 Forbidden` `InvalidTier`： `Retrieval option is not supported by this storage class`。
+*重要事項*：如果物件已移轉至 S3 Glacier Deep Archive 或雲端儲存池使用 Azure Blob Storage，則無法使用 `Expedited`分層還原物件。系統將傳回下列錯誤 `403 Forbidden`， `InvalidTier`： `Retrieval option is not supported by this storage class`。
 
 
 

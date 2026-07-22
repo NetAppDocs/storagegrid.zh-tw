@@ -70,7 +70,7 @@ FabricPool 租戶通常不需要使用平台服務、例如 CloudMirror 複寫�
 +
 FabricPool 租戶通常不需要使用 S3 Select 。
 
-.. 您也可以選擇 * 使用網格同盟連線 * 、以允許租戶使用link:../admin/grid-federation-overview.html["網格同盟連線"]進行帳戶複製和跨網格複寫。然後選取要使用的網格同盟連線。
+.. （可選）選取「*使用網格聯合連線*」，以允許租戶使用 link:../admin/grid-federation-overview.html["網格同盟連線"] 進行帳戶同步和跨網格複寫。然後，選取要使用的網格聯合連線。
 
 
 . 對於定義根存取權限步驟，根據您的StorageGRID系統是否使用link:../admin/using-identity-federation.html["身分識別聯盟"]，link:../admin/how-sso-works.html["單一登入（ SSO ）"] ，或兩者兼而有之。

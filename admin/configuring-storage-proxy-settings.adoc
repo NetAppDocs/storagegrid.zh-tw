@@ -44,3 +44,6 @@ NOTE: Proxy變更可能需要10分鐘才能生效。
 . 檢查Proxy伺服器的設定、確保StorageGRID 不會封鎖來自下列項目的平台服務相關訊息。
 . 如果您需要停用儲存 Proxy 、請清除核取方塊、然後選取 * 儲存 * 。
 
+
+.相關資訊
+link:../network/external-communications.html["用於外部通訊的連接埠"]

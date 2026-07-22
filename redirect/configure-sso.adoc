@@ -1,0 +1,8 @@
+---
+permalink: admin/configure-sso.html 
+redirect: storagegrid/admin/configure-sso-saml.html 
+---
+= 
+:allow-uri-read: 
+
+

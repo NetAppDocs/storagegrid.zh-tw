@@ -17,7 +17,7 @@ summary: 在主機上完成Linux安裝之後、您可能需要執行一些額外
 NOTE: 「Linux」指的是 RHEL、Ubuntu 或 Debian 部署。有關受支援版本的列表，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^]。
 
 .開始之前
-* 您已檢閱link:../network/index.html["網路連線準則StorageGRID"]。
+* 您已查看 link:../network/index.html["網路準則"] 中的資訊。
 * 您已檢閱有關的資訊link:node-container-migration-requirements.html["節點容器移轉需求"]。
 * 如果您正在使用虛擬主機，您已經閱讀了<<mac_address_cloning,MAC位址複製的考量與建議>>在配置主機網路之前。
 
@@ -43,14 +43,14 @@ NOTE: 請勿直接使用連結或橋接裝置做為容器網路介面。這樣�
 == MAC位址複製的考量與建議
 
 .[[mac_address_cloning]]
-MAC位址複製會導致容器使用主機的MAC位址、而主機使用您指定的位址或隨機產生的位址的MAC位址。您應該使用MAC位址複製來避免使用混雜模式網路組態。
+MAC 位址複製使 Container 使用主機的 MAC 位址，而主機則使用您指定的位址或隨機產生的位址的 MAC 位址。
 
 
 
 [[enabling-mac-cloning]]
 === 啟用MAC複製
 
-在某些環境中、您可以透過MAC位址複製來增強安全性、因為它可讓您將專用的虛擬NIC用於管理網路、網格網路和用戶端網路。讓容器使用主機上專用NIC的MAC位址、可避免使用雜亂模式網路組態。
+在某些環境中，可以透過 MAC 位址複製來增強安全性，因為它可讓您為管理網路、Grid 網路和用戶端網路使用專用虛擬 NIC。
 
 
 NOTE: Mac位址複製是設計用於虛擬伺服器安裝、可能無法在所有實體應用裝置組態中正常運作。
@@ -70,21 +70,18 @@ Mac位址複製預設為停用、必須由節點組態金鑰設定。安裝Stora
 將金鑰設定為「true」會導致容器使用主機NIC的MAC位址。此外、主機也會使用指定容器網路的MAC位址。根據預設、容器位址是隨機產生的位址、但如果您已使用節點組態金鑰設定位址、則 `_NETWORK_MAC`會改用該位址。主機和容器將永遠擁有不同的MAC位址。
 
 
-NOTE: 在虛擬主機上啟用MAC複製、而不同時在Hypervisor上啟用雜亂模式、可能會導致使用主機介面的Linux主機網路停止運作。
-
-
 
 [[mac-cloning-use-cases]]
 === Mac複製使用案例
 
 有兩種使用案例可考慮使用MAC複製：
 
-* 未啟用 MAC 複製：當節點組態檔案中的金鑰未設定或設定為「假」時 `_CLONE_MAC`、主機將使用主機 NIC MAC 、除非金鑰中指定了 MAC 、否則容器將會有 StorageGRID 產生的 MAC `_NETWORK_MAC` 。如果在金鑰中設定了位址 `_NETWORK_MAC`、則容器會在金鑰中指定位址 `_NETWORK_MAC`。此金鑰組態需要使用混雜模式。
-* 啟用 MAC 複製：當節點組態檔案中的金鑰設定為「 true 」時 `_CLONE_MAC`、容器會使用主機 NIC MAC 、而且除非金鑰中指定了 MAC 、否則主機會使用 StorageGRID 產生的 MAC `_NETWORK_MAC` 。如果在金鑰中設定了位址 `_NETWORK_MAC`、則主機會使用指定的位址、而非產生的位址。在此金鑰組態中、您不應使用混雜模式。
+* MAC 複製未啟用：當 `_CLONE_MAC`節點組態檔案中的金鑰未設定或設定為「false」時，主機將使用主機 NIC MAC 位址，Container 將使用 StorageGRID 產生的 MAC 位址，除非在 `_NETWORK_MAC`金鑰中指定了 MAC 位址。如果在 `_NETWORK_MAC`金鑰中設定了位址，則 Container 將使用 `_NETWORK_MAC`金鑰中指定的位址。
+* MAC 複製已啟用：當 `_CLONE_MAC`節點組態檔案中的金鑰設為「true」時，Container 將使用主機 NIC MAC 位址，而主機將使用 StorageGRID 產生的 MAC 位址，除非在 `_NETWORK_MAC`金鑰中指定了 MAC 位址。如果在 `_NETWORK_MAC`金鑰中設定了位址，則主機將使用指定的位址，而非產生的位址。
 
 
 
-NOTE: 如果您不想使用 MAC 位址複製、而是希望允許所有介面接收和傳輸 MAC 位址的資料、而非 Hypervisor 指定的位址、 請確定虛擬交換器和連接埠群組層級的安全性內容在「雜亂模式」、「 MAC 位址變更」和「僞造傳輸」中設為 * 接受 * 。虛擬交換器上設定的值可由連接埠群組層級的值覆寫、因此請確保兩個位置的設定都相同。
+NOTE: 如果您不想使用 MAC 位址克隆，而是希望允許所有介面接收和傳送除 Hypervisor 指派的 MAC 位址之外的其他 MAC 位址的資料，請確保虛擬交換器和連接埠群組層級的安全性屬性設定為 *Accept*，以用於 MAC Address Changes 和 Forged Transmits。虛擬交換器上的設定值可能會被連接埠群組層級的設定值覆蓋，因此請確保兩處的設定相同。
 
 若要啟用 MAC 複製link:creating-node-configuration-files.html["建立節點組態檔的指示"]、請參閱。
 

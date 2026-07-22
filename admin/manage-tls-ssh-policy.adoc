@@ -57,9 +57,9 @@ image:securitysettings_tls_ssh_policies_current.png["TLS 和 SSH 原則"]
 --
 .FIPS 嚴格
 --
-如果您需要通用標準認證，並且需要使用NetApp加密安全模組 (NCSM) 3.0.8 或NetApp StorageGRID核心加密 API 6.1.129-1-ntap1-amd64 模組將外部用戶端連接到負載平衡器端點、租用戶管理器和網格管理器，請使用 FIPS 嚴格原則。使用此策略可能會降低效能。
+如果您需要通用準則（Common Criteria）認證，且需要使用 NetApp Cryptographic Security Module (NCSM) 3.1.2 或 NetApp StorageGRID Kernel Crypto API 6.12.63-1+ntap1 模組來進行與負載平衡器端點、租戶管理員和網格管理員的外部用戶端連線，請使用 FIPS 嚴格原則。使用此原則可能會降低效能。
 
-NCSM 3.0.8 和NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64 模組用於下列操作：
+NCSM 3.1.2 和 NetApp StorageGRID Kernel Crypto API 6.12.63-1+ntap1 模組用於下列操作：
 
 ** 全國運動醫學委員會
 +
@@ -71,7 +71,7 @@ NCSM 3.0.8 和NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64 模組�
 
 
 +
-欲了解更多信息，請參閱 NIST 加密演算法驗證程序link:https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4838["證書編號 #4838"^]。
+如需更多資訊，請參閱 NIST Cryptographic Algorithm Validation Program link:https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/details?validation=40426["憑證 #A7816"^]。
 
 ** NetApp StorageGRID核心加密 API 模組
 +
@@ -80,10 +80,13 @@ NetApp StorageGRID Kernel Crypto API 模組僅存在於 VM 和StorageGRID設備�
 +
 *** 熵收集
 *** 節點加密
++
+*注意*：本模組尚未提交認證。
+
 
 
 +
-欲了解更多信息，請參閱 NIST 加密演算法驗證程序link:https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/validation-search?searchMode=implementation&product=NetApp+StorageGRID+Kernel+Crypto+API&productType=-1&ipp=50["證書 #A6242 至 #A6257"^]和link:https://csrc.nist.gov/projects/cryptographic-module-validation-program/entropy-validations/certificate/223["熵證書#E223"^]。
+如需更多資訊，請參閱 NIST Cryptographic Algorithm Validation Program link:https://csrc.nist.gov/projects/cryptographic-module-validation-program/entropy-validations/certificate/223["熵證書#E223"^]。
 
 
 
@@ -94,7 +97,7 @@ NetApp StorageGRID Kernel Crypto API 模組僅存在於 VM 和StorageGRID設備�
 --
 如果您需要套用自己的密碼、請建立自訂原則。
 
-或者，如果您的StorageGRID具有 FIPS 140 加密需求，請啟用 FIPS 模式功能以使用 NCSM 3.0.8 和NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64 模組：
+如果您的 StorageGRID 具有 FIPS 140 密碼編譯需求，則可選擇啟用 FIPS 模式功能，以使用 NCSM 3.1.2 和 NetApp StorageGRID Kernel Crypto API 6.12.63-1+ntap1 模組：
 
 .. 設定 `fipsMode`參數 `true`。
 .. 當出現提示時，link:../maintain/rolling-reboot-procedure.html["執行滾動重啟"]所有節點都啟動加密模組。使用*維護* > *滾動重新啟動*來啟動和監控重新啟動。
@@ -121,7 +124,7 @@ NetApp StorageGRID Kernel Crypto API 模組僅存在於 VM 和StorageGRID設備�
 . 從最類似您要建立之自訂原則的原則方塊中、選取 * 檢視詳細資料 * 。
 . 選取 * 複製到剪貼簿 * 、然後選取 * 取消 * 。
 +
-image:securitysettings-custom-security-policy-copy.png["複製現有原則以建立自訂原則"]
+image:securitysettings_custom_security_policy_copy.png["複製現有原則以建立自訂原則"]
 
 . 從 * 自訂原則 * 方塊中、選取 * 設定與使用 * 。
 . 貼上您複製的 JSON 、然後進行任何必要的變更。

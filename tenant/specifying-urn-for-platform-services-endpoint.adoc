@@ -133,7 +133,7 @@ NOTE: 對於 AWS 搜尋整合端點、 `domain-name`必須包含文字字串 `do
 +
 [listing]
 ----
-urn:mysite:s3:optional:optional:bucket-name
+urn:mysite:s3:::bucket-name
 ----
 +
 對於託管在 StorageGRID 上的 CloudMirror 端點、您可以指定以下列開頭的有效 URN `urn:sgws` ：
@@ -141,7 +141,7 @@ urn:mysite:s3:optional:optional:bucket-name
 +
 [listing]
 ----
-urn:sgws:s3:optional:optional:bucket-name
+urn:sgws:s3:::bucket-name
 ----
 * 通知：
 +
@@ -150,7 +150,7 @@ urn:sgws:s3:optional:optional:bucket-name
 +
 [listing]
 ----
-urn:mysite:sns:optional:optional:sns-topic-name
+urn:aws:sns:region:account-id:sns-topic-name
 ----
 +
 指定 Kafka 端點：
@@ -158,21 +158,25 @@ urn:mysite:sns:optional:optional:sns-topic-name
 +
 [listing]
 ----
-urn:mysite:kafka:optional:optional:kafka-topic-name
+urn::kafka:::kafka-topic-name
 ----
++
+
+NOTE: 您可以選擇性地在指定 Kafka 端點時包含 `mysite`： `urn:mysite:kafka:::kafka-topic-name`
+
 +
 指定 webhook 端點：
 
 +
 [listing]
 ----
-urn:mysite:webhook:optional:optional:webhook-name
+urn:mysite:webhook:::webhook-name
 ----
 * 搜尋整合：
 +
 [listing]
 ----
-urn:mysite:es:optional:optional:domain-name/index-name/type-name
+urn:mysite:es:::domain-name/index-name/type-name
 ----
 +
 

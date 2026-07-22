@@ -18,13 +18,33 @@ summary: 在啟用 StorageGRID 系統的單一登入之前、請先檢閱需求�
 [[identity-provider-requirements]]
 == 身分識別供應商要求
 
-支援下列SSO身分識別供應商（IDP）StorageGRID ：
+StorageGRID 支援多個 SSO 身分提供者 (IdP)。
+
+[role="tabbed-block"]
+====
+.OIDC
+--
+以下 SSO IdPs 支援 OpenID Connect (OIDC)：
+
+* Active Directory Federation Service（AD FS）
+* 微軟Entra ID
+* Keycloak
+* PingFedate
+* Okta
+
+
+--
+.SAML
+--
+以下 SSO IdPs 支援安全性聲明標記語言 2.0 （SAML 2.0）：
 
 * Active Directory Federation Service（AD FS）
 * 微軟Entra ID
 * PingFedate
 
 
+--
+====
 您必須先為StorageGRID 您的支援系統設定身分識別聯盟、才能設定SSO身分識別供應商。您用於身分識別聯盟的LDAP服務類型會控制您可以實作的SSO類型。
 
 [cols="1a,1a"]
@@ -36,6 +56,8 @@ summary: 在啟用 StorageGRID 系統的單一登入之前、請先檢閱需求�
 Active Directory
  a| 
 * Active Directory
+* Keycloak
+* Okta
 * 進入 ID
 * PingFedate
 

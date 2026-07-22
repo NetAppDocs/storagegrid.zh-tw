@@ -2,7 +2,7 @@
 permalink: maintain/remounting-and-reformatting-storage-volumes-manual-steps.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, appliance storage volume, appliance volume, remount manually, reformat manually 
-summary: 您必須手動執行兩個指令碼、以重新掛載保留的儲存磁碟區、並重新格式化任何故障的儲存磁碟區。第一個指令碼會重新掛載已正確格式化為StorageGRID 「循環儲存磁碟區」的磁碟區。第二個指令碼會重新格式化任何未掛載的磁碟區、視需要重新建置Cassandra、然後啟動服務。 
+summary: 如果自動程式未能重新掛載已保留的儲存設備磁碟區並重新格式化故障的儲存設備磁碟區，則必須手動執行兩個指令碼來完成這些作業。第一個指令碼重新掛載已正確格式化為 StorageGRID 儲存設備磁碟區的磁碟區。第二個指令碼重新格式化所有未掛載的磁碟區，並在需要時重建 Cassandra 資料庫，然後啟動服務。 
 ---
 = 重新掛載並重新格式化 StorageGRID 儲存磁碟區（手動步驟）
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: 您必須手動執行兩個指令碼、以重新掛載保留的儲存�
 
 
 [role="lead"]
-您必須手動執行兩個指令碼、以重新掛載保留的儲存磁碟區、並重新格式化任何故障的儲存磁碟區。第一個指令碼會重新掛載已正確格式化為StorageGRID 「循環儲存磁碟區」的磁碟區。第二個指令碼會重新格式化任何未掛載的磁碟區、視需要重新建置Cassandra、然後啟動服務。
+如果自動程式未能重新掛載已保留的儲存設備磁碟區並重新格式化故障的儲存設備磁碟區，則必須手動執行兩個指令碼來完成這些作業。第一個指令碼重新掛載已正確格式化為 StorageGRID 儲存設備磁碟區的磁碟區。第二個指令碼重新格式化所有未掛載的磁碟區，並在需要時重建 Cassandra 資料庫，然後啟動服務。
+
+在儲存節點恢復期間，如果 Grid Manager 中出現「等待手動步驟」訊息，請依照下列步驟重新掛載和重新格式化儲存設備磁碟區。如果未看到此訊息，則重新掛載和重新格式化操作已自動完成，您可以跳過此程序並link:../maintain/restoring-object-data-to-storage-volume.html["還原物件資料"]。
 
 .開始之前
 * 您已更換硬體、以更換已知需要更換的任何故障儲存磁碟區。
@@ -191,9 +193,6 @@ CAUTION: 如果儲存磁碟區被回報為屬於其他儲存節點、請聯絡�
 
 NOTE: 您必須修復或更換任何無法掛載的儲存裝置。
 
-+
-您將使用裝置名稱來查詢 Volume ID 、這是執行指令碼將物件資料還原至磁碟區時所需的輸入 `repair-data`（下一個程序）。
-
 .. 修復或更換所有無法掛載的裝置之後、請再次執行 `sn-remount-volumes`指令碼、確認所有可重新掛載的儲存磁碟區都已重新掛載。
 +
 
@@ -240,21 +239,8 @@ image:recovering_cassandra.png["顯示Grid Management Interface恢復進度的�
 指令碼會詢問您是否要使用 Grid Manager Volume 還原程序。
 
 +
-** 在大多數情況下link:../maintain/restoring-volume.html["使用 Grid Manager 還原物件資料"]，您應該。使用 Grid Manager 的答案 `y`。
-** 在極少數情況下、例如在技術支援的指示下、或當您知道更換節點的物件儲存可用磁碟區比原始節點少時、您必須link:restoring-object-data-to-storage-volume.html["手動還原物件資料"]使用 `repair-data`指令碼。如果其中一種情況適用、請回答 `n`。
-+
-[NOTE]
-====
-如果您回答 `n`使用 Grid Manager Volume 還原程序（手動還原物件資料）：
-
-*** 您無法使用 Grid Manager 還原物件資料。
-*** 您可以使用 Grid Manager 來監控手動還原工作的進度。
-
-
-====
-+
-完成選擇後、指令碼會完成、並顯示後續步驟以恢復物件資料。檢閱這些步驟後、按下任意鍵即可返回命令列。
-
+** 大多數情況下，您應該link:../maintain/restoring-object-data-to-storage-volume.html["使用 Grid Manager 還原物件資料"]。回答 `y`以使用 Grid Manager。
+** 在極少數情況下，例如當您知道替換節點可用於物件儲存的 Volume 比原始節點少時，請聯絡技術支援以手動還原物件資料。如果其中一種情況適用，請回答 `n`並按任意鍵返回命令列。
 
 
 

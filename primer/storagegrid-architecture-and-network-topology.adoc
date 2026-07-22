@@ -15,7 +15,7 @@ summary: 這個系統包含多種類型的網格節點、位於一或多個資�
 
 了解link:nodes-and-services.html["網格節點類型"]。
 
-有關StorageGRID網路拓撲、要求和網格通訊的更多信息，請參閱link:../network/index.html["網路準則"]。
+有關 StorageGRID 網路拓撲、需求和網格通訊的詳細資訊，請參閱 link:../network/index.html["網路準則"]。
 
 
 
@@ -62,8 +62,8 @@ image:data_center_sites_multiple.png["多個資料中心站台"]
 
 image:grid_nodes_and_components.png["以周遭文字說明的圖表"]
 
-S3 用戶端會在 StorageGRID 中儲存及擷取物件。其他用戶端則用於傳送電子郵件通知、存取StorageGRID 「資訊管理」介面、以及選擇性存取稽核共用。
+S3 用戶端用於在 StorageGRID 中儲存和擷取物件。其他用戶端用於存取 StorageGRID 管理介面，並可選擇存取稽核共享。此外，StorageGRID 還可以選擇透過外部 SMTP 伺服器傳送電子郵件警報。
 
 S3 用戶端可以連線至閘道節點或管理節點、以使用負載平衡介面來連接儲存節點。或者、 S3 用戶端也可以使用 HTTPS 直接連線至儲存節點。
 
-物件可以儲存在StorageGRID中基於軟體或硬體的儲存節點上，也可以儲存在由外部 S3 儲存體桶或 Azure Blob 儲存容器組成的雲端儲存池中。
+物件可以儲存在 StorageGRID 的軟體或硬體型儲存節點上，也可以儲存在雲端儲存集區中，雲端儲存集區由外部 S3 儲存貯體或 Azure Blob Storage Container 組成。

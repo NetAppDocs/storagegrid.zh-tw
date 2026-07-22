@@ -21,10 +21,10 @@ summary: 您可以使用租戶管理程式來建立S3儲存區以供物件資料
 NOTE: 設定或修改儲存桶或物件的 S3 物件鎖定屬性的權限可以透過以下方式授予link:../s3/use-access-policies.html["庫位原則或群組原則"]。
 
 * 如果您計畫為貯體啟用 S3 物件鎖定、則網格管理員已為 StorageGRID 系統啟用全域 S3 物件鎖定設定、而且您已檢閱 S3 物件鎖定貯體和物件的需求。
-* 如果每個租戶都有 5 、 000 個貯體、則網格中的每個儲存節點至少有 64 GB 的 RAM 。
+* 如果多個租戶各自擁有最多 5,000 個儲存桶，則網格中的每個儲存節點至少需要 64 GB 的 RAM。
 +
 
-NOTE: 每個網格最多可以有 100,000 個 bucket，包括link:../tenant/what-is-branch-bucket.html["分支桶"]。
+NOTE: StorageGRID 系統為每個 S3 租戶帳戶支援最多 20,000 個儲存桶。每個網格最多可以擁有 100,000 個儲存桶，包括 link:../tenant/what-is-branch-bucket.html["分支桶"]。此外，link:../tenant/manage-branch-buckets.html["分支桶深度"] 也有數量限制。
 
 
 
@@ -63,7 +63,7 @@ NOTE: 每個網格最多可以有 100,000 個 bucket，包括link:../tenant/what
 ** 不得包含虛擬託管樣式要求的句點。期間會導致伺服器萬用字元憑證驗證發生問題。
 
 
-如需詳細資訊，請參閱 https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html["Amazon Web Services（AWS）儲存區命名規則文件"^]。
+如需更多資訊，請參閱 https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html["Amazon Web Services（AWS）儲存區命名規則文件"^]。
 
 * 附註 * ：建立貯體後、您無法變更貯體名稱。
 

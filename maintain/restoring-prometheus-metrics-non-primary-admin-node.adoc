@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, restore metrics, restore prometheus, non-primary admin node 
 summary: 或者、您可以將Prometheus維護的歷史數據保留在失敗的非主要管理節點上。 
 ---
-= 恢復非主 StorageGRID 管理節點時，恢復 Prometheus 指標
+= 恢復 StorageGRID 非主要管理節點時還原 Prometheus 計量
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

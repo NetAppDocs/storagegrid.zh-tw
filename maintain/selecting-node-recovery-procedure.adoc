@@ -2,7 +2,7 @@
 permalink: maintain/selecting-node-recovery-procedure.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, procedure 
-summary: 您必須針對發生故障的節點類型、選取正確的還原程序。 
+summary: 選擇與發生故障的節點類型相對應的正確恢復程序。 
 ---
 = 選擇 StorageGRID 節點還原程序
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您必須針對發生故障的節點類型、選取正確的還原程�
 
 
 [role="lead"]
-您必須針對發生故障的節點類型、選取正確的還原程序。
+選擇與發生故障的節點類型相對應的正確恢復程序。
 
 [cols="1a,2a"]
 |===
@@ -19,18 +19,9 @@ summary: 您必須針對發生故障的節點類型、選取正確的還原程�
 
 
  a| 
-多個儲存節點
+儲存節點
  a| 
-聯絡技術支援。如果有多個儲存節點故障、技術支援人員必須協助恢復、以避免資料庫不一致而導致資料遺失。可能需要執行站台還原程序。
-
-link:how-site-recovery-is-performed-by-technical-support.html["技術支援如何恢復網站"]
-
-
-
- a| 
-單一儲存節點
- a| 
-儲存節點還原程序取決於故障的類型和持續時間。
+儲存節點恢復程序取決於故障類型。
 
 link:recovering-from-storage-node-failures.html["從儲存節點故障中恢復"]
 
@@ -59,4 +50,4 @@ https://docs.netapp.com/us-en/storagegrid-118/maintain/recovering-from-archive-n
 
 |===
 
-NOTE: 如果託管多個網格節點的伺服器發生故障，您可以按任意順序還原節點。但是，如果發生故障的伺服器託管主管理節點，則必須先還原該節點。首先恢復主管理節點可防止其他節點復原因等待聯繫主管理節點而停止。
+NOTE: 如果託管多個網格節點的伺服器發生故障，您可以以任意順序恢復這些節點。但是，如果發生故障的伺服器託管著主要管理節點，且不存在其他非主要管理節點，則必須先恢復主要管理節點。先恢復主要管理節點可防止其他節點的恢復因嘗試聯繫主要管理節點而停滯。如果存在非主要管理節點，您也可以使用它來恢復其他節點，使這些節點的恢復無需聯繫主要管理節點即可繼續進行。

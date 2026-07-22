@@ -1,17 +1,17 @@
 ---
-permalink: admin/configure-sso.html 
+permalink: admin/configure-sso-saml.html 
 sidebar: sidebar 
 keywords: use sandbox mode for sso, how to test single sign-on 
-summary: 您可以依照「設定 SSO」精靈的步驟進入沙盒模式，在為所有 StorageGRID 使用者啟用單一登入 （SSO） 之前，對其進行設定和測試。啟用 SSO 後，您可以視需要返回沙盒模式來變更或重新測試組態。 
+summary: 您可以依照 SAML 單一登入 （SSO） 設定精靈的步驟操作，並進入沙盒模式，在為所有 StorageGRID 使用者啟用 SSO 之前，先設定和測試 SSO。啟用 SSO 後，您可以視需要返回沙盒模式來變更或重新測試組態。 
 ---
-= 在 StorageGRID 中設定 SSO
+= 使用 SAML 在 StorageGRID 中設定 SSO
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-您可以依照設定 SSO 精靈並進入沙盒模式來設定和測試單一登入 (SSO)，然後為所有StorageGRID使用者啟用它。啟用 SSO 後，您可以在需要時返回沙盒模式以變更或重新測試配置。
+依照 SAML 單一登入 （SSO） 設定精靈的步驟操作，進入沙盒模式，在為所有 StorageGRID 使用者啟用 SSO 之前，先設定並測試單一登入 （SSO）。啟用 SSO 後，您可以根據需要返回沙盒模式來變更或重新測試組態。
 
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
@@ -49,10 +49,10 @@ Active Directory Federation Service（AD FS）
 * Entra ID 的回應包括使用者主體名稱 (UPN)。
 
 
-為了允許StorageGRID （服務提供者）和 SSO 身分提供者就使用者身分驗證請求進行安全通信，您需要完成以下任務：
+為了允許 StorageGRID （服務供應商）和 SSO 身分供應商就使用者身分驗證請求進行安全通訊，您需要完成以下任務：
 
 . 在StorageGRID中配置設定。
-. 使用 SSO 身分提供者的軟體為每個管理節點建立依賴方信任 (AD FS)、企業應用程式 (Entra ID) 或服務提供者 (PingFederate)。
+. 使用 SSO 身分提供者的軟體，為每個管理節點建立信賴方信任（AD FS）、企業應用程式（Entra ID）或服務供應商（PingFederate）。
 . 返回StorageGRID以啟用 SSO。
 
 
@@ -60,24 +60,23 @@ Active Directory Federation Service（AD FS）
 
 
 
-[[access-the-wizard]]
-== 存取精靈
+[[step-1-provide-identity-provider-details]]
+== 步驟 1：提供身分識別供應商詳細資訊
+
+開啟精靈，填寫「提供身分供應商詳細資料」頁面上的欄位。
 
 .步驟
-. 選擇*設定* > *存取控制* > *單一登入*。出現「單一登入」頁面。
+. 存取精靈：
++
+.. 選擇*設定* > *存取控制* > *單一登入*。出現「單一登入」頁面。
 +
 
 NOTE: 如果設定 SSO 設定按鈕已停用，請確認您已將身分提供者設定為聯合身分識別來源。請參閱link:requirements-for-sso.html["單一登入的要求與考量"] 。
 
-. 選擇*配置 SSO 設定*。出現提供身分提供者詳細資訊頁面。
+.. 選擇*配置 SSO 設定*。出現提供身分提供者詳細資訊頁面。
 
 
-
-
-[[provide-identity-provider-details]]
-== 提供身份提供者詳細信息
-
-.步驟
+. 在 *Protocol* 下，選擇 *SAML*。
 . 從下拉式清單中選取* SSO類型*。
 . 如果您選擇 Active Directory 作為 SSO 類型，請輸入身分提供者的 *聯合驗證服務名稱*，與 Active Directory 聯合驗證服務 (AD FS) 中顯示的完全一致。
 +
@@ -91,7 +90,7 @@ NOTE: 若要尋找Federation服務名稱、請前往Windows Server Manager。選
 +
 如果選取此設定、請複製自訂憑證的文字、然後貼到「* CA認證*」文字方塊中。
 
-** *請勿使用TLS*：請勿使用TLS憑證來保護連線安全。
+** *請勿使用 TLS*：請勿使用 TLS 憑證來保護連線的安全。
 +
 
 CAUTION: 如果您變更 CA 憑證、請立即link:../maintain/starting-or-restarting-service.html["在管理節點上重新啟動 mgmt-API 服務"]在 Grid Manager 中測試成功的 SSO 。
@@ -103,60 +102,69 @@ CAUTION: 如果您變更 CA 憑證、請立即link:../maintain/starting-or-resta
 
 
 
-[[enter-sandbox-modeprovide-relying-party-identifier]]
-== [[enter-sandbox-mode]]提供依賴方標識符
+[[enter-sandbox-modestep-2-provide-relying-party-trusts-enterprise-applications-or-sp-connections]]
+== [[enter-sandbox-mode]]步驟 2：提供信賴方信任、企業應用程式或 SP 連線
 
-. 根據您選擇的 SSO 類型填寫「提供依賴方識別碼」頁面上的欄位。
-+
+根據您選擇的 SSO 類型，填寫精靈步驟 2 中的欄位。
+
 [role="tabbed-block"]
 ====
 .Active Directory
 --
-.. 指定StorageGRID的 *依賴方識別碼*。此值控制您在 AD FS 中為每個信賴方信任所使用的名稱。
+填寫「提供信賴方識別碼」步驟中的欄位。
+
+.步驟
+. 指定StorageGRID的 *依賴方識別碼*。此值控制您在 AD FS 中為每個信賴方信任所使用的名稱。
 +
-*** 例如，如果您的網格只有一個管理節點，而且您預期未來不會新增更多管理節點，請輸入 `SG`或 `StorageGRID`。
-*** 如果您的網格包含多個管理節點，請包含字串 `[HOSTNAME]`在標識符中。例如，  `SG-[HOSTNAME]` 。包含此字串將產生一個表，該表根據節點的主機名稱顯示網格中每個管理節點的依賴方識別碼。
+** 例如，如果您的網格只有一個管理節點，而且您預期未來不會新增更多管理節點，請輸入 `SG`或 `StorageGRID`。
+** 如果您的網格包含多個管理節點，請包含字串 `[HOSTNAME]`在標識符中。例如，  `SG-[HOSTNAME]` 。包含此字串將產生一個表，該表根據節點的主機名稱顯示網格中每個管理節點的依賴方識別碼。
 +
 
 NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立信賴關係人信任關係。信任每個管理節點的依賴方、可確保使用者能夠安全地登入及登出任何管理節點。
 
 
 
-.. 選擇*儲存並進入沙盒模式*。
+. 選擇*儲存並進入沙盒模式*。
 
 
 --
 .進入 ID
 --
-.. 在企業應用程式部分，指定StorageGRID的 *企業應用程式名稱*。此值控制您在 Entra ID 中為每個企業應用程式使用的名稱。
+完成「設定企業應用程式」步驟中的欄位。
+
+.步驟
+. 在企業應用程式部分，指定StorageGRID的 *企業應用程式名稱*。此值控制您在 Entra ID 中為每個企業應用程式使用的名稱。
 +
-*** 例如，如果您的網格只有一個管理節點，而且您預期未來不會新增更多管理節點，請輸入 `SG`或 `StorageGRID`。
-*** 如果您的網格包含多個管理節點，請包含字串 `[HOSTNAME]`在標識符中。例如，  `SG-[HOSTNAME]` 。包含此字串將產生一個表，該表根據節點的主機名稱顯示系統中每個管理節點的企業應用程式名稱。
+** 例如，如果您的網格只有一個管理節點，而且您預期未來不會新增更多管理節點，請輸入 `SG`或 `StorageGRID`。
+** 如果您的網格包含多個管理節點，請包含字串 `[HOSTNAME]`在標識符中。例如，  `SG-[HOSTNAME]` 。包含此字串將產生一個表，該表根據節點的主機名稱顯示系統中每個管理節點的企業應用程式名稱。
 +
 
 NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業應用程式。為每個管理節點設定企業應用程式、可確保使用者安全地登入及登出任何管理節點。
 
 
 
-.. 請依照以下步驟操作link:../admin/creating-enterprise-application-entra-id.html["在 Entra ID 中建立企業應用程式"]為表中列出的每個管理節點建立一個企業應用程式。
-.. 從 Entra ID 複製每個企業應用程式的聯合元資料 URL。然後，將此 URL 貼到StorageGRID中對應的 *Federation metadata URL* 欄位中。
-.. 複製並貼上所有管理節點的聯合元資料 URL 後，選擇 *儲存並進入沙盒模式*。
+. 依照link:../admin/creating-enterprise-application-entra-id-saml.html["在 Entra ID 中建立企業應用程式"]中的步驟，為表格中列出的每個管理節點建立一個企業應用程式。
+. 從 Entra ID 複製每個企業應用程式的聯合元資料 URL。然後，將此 URL 貼到StorageGRID中對應的 *Federation metadata URL* 欄位中。
+. 複製並貼上所有管理節點的聯合元資料 URL 後，選擇 *儲存並進入沙盒模式*。
 
 
 --
 .PingFedate
 --
-.. 在「服務供應商（SP）」區段中、指定* SP連線ID* StorageGRID 以供參考。此值可控制您在PingFedate中用於每個SP連線的名稱。
+填寫「提供 SP 連線 ID」步驟中的欄位。
+
+.步驟
+. 在「服務供應商（SP）」區段中、指定* SP連線ID* StorageGRID 以供參考。此值可控制您在PingFedate中用於每個SP連線的名稱。
 +
-*** 例如，如果您的網格只有一個管理節點，而且您預期未來不會新增更多管理節點，請輸入 `SG`或 `StorageGRID`。
-*** 如果您的網格包含多個管理節點，請包含字串 `[HOSTNAME]`在標識符中。例如，  `SG-[HOSTNAME]` 。包含此字串將產生一個表，該表根據節點的主機名稱顯示系統中每個管理節點的SP連線 ID。
+** 例如，如果您的網格只有一個管理節點，而且您預期未來不會新增更多管理節點，請輸入 `SG`或 `StorageGRID`。
+** 如果您的網格包含多個管理節點，請包含字串 `[HOSTNAME]`在標識符中。例如，  `SG-[HOSTNAME]` 。包含此字串將產生一個表，該表根據節點的主機名稱顯示系統中每個管理節點的SP連線 ID。
 +
 
 NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立SP連線。為每個管理節點建立SP連線、可確保使用者安全地登入及登出任何管理節點。
 
 
 
-.. 在*聯盟中繼資料URL*欄位中、指定每個管理節點的聯盟中繼資料URL。
+. 在*聯盟中繼資料URL*欄位中、指定每個管理節點的聯盟中繼資料URL。
 +
 請使用下列格式：
 
@@ -165,17 +173,15 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立SP連線
 ----
 https://<Federation Service Name>:<port>/pf/federation_metadata.ping?PartnerSpId=<SP Connection ID>
 ----
-.. 選擇*儲存並進入沙盒模式*。
+. 選擇*儲存並進入沙盒模式*。
 
 
 --
 ====
 
 
-
-
-[[configure-relying-party-trusts-enterprise-applications-or-sp-connections]]
-== 設定依賴方信任、企業應用程式或SP連線
+[[step-3-configure-relying-party-trusts-enterprise-applications-or-sp-connections]]
+== 步驟 3：設定信賴方信任、企業應用程式或 SP 連線
 
 儲存配置並進入沙盒模式後，您可以完成並測試所選 SSO 類型的配置。
 
@@ -192,7 +198,7 @@ StorageGRID可依需求維持沙盒模式。但是，只有聯合用戶和本地
 您必須為表格中顯示的每個管理節點建立一個信任關係。
 
 +
-如需相關指示link:../admin/creating-relying-party-trusts-in-ad-fs.html["在AD FS中建立依賴方信任"]、請前往。
+有關說明，請前往 link:../admin/creating-relying-party-trusts-in-ad-fs-saml.html["在AD FS中建立依賴方信任"]。
 
 
 
@@ -209,7 +215,7 @@ StorageGRID可依需求維持沙盒模式。但是，只有聯合用戶和本地
 
 
 . 前往 Azure 入口網站。
-. 請依照以下步驟操作link:../admin/creating-enterprise-application-entra-id.html["在 Entra ID 中建立企業應用程式"]將每個管理節點的 SAML 元資料檔案上傳到其對應的 Entra ID 企業應用程式中。
+. 請依照 link:../admin/creating-enterprise-application-entra-id-saml.html["在 Entra ID 中建立企業應用程式"] 中的步驟，將每個管理節點的 SAML 中繼資料檔案上傳至其對應的 Entra ID 企業應用程式。
 
 
 --
@@ -225,7 +231,7 @@ StorageGRID可依需求維持沙盒模式。但是，只有聯合用戶和本地
 
 
 . 前往PingFedate。
-. link:../admin/creating-sp-connection-ping.html["建立一個或多個StorageGRID 服務供應商（SP）連線以供使用"] 。使用每個管理節點的SP連線 ID（顯示在設定 SSO 頁面上的表格中）以及為該管理節點下載的 SAML 元資料。
+. link:../admin/creating-sp-connection-ping-saml.html["建立一個或多個StorageGRID 服務供應商（SP）連線以供使用"]。使用每個管理節點的 SP 連線 ID（顯示在「設定 SSO」頁面上的表格中）以及您為該管理節點下載的 SAML 中繼資料。
 +
 您必須為表中所示的每個管理節點建立一個SP連線。
 
@@ -235,8 +241,8 @@ StorageGRID可依需求維持沙盒模式。但是，只有聯合用戶和本地
 ====
 
 
-[[test-ssotest-configuration]]
-== [[test-sso]]測試配置
+[[test-ssostep-4-test-configuration]]
+== [[test-sso]]步驟 4：測試組態
 
 在強制整個StorageGRID系統使用單一登入之前，請確認每個管理節點的單一登入和單一登出均已正確設定。
 
@@ -299,10 +305,10 @@ StorageGRID可依需求維持沙盒模式。但是，只有聯合用戶和本地
 ====
 
 
-[[enable-single-sign-on]]
-== 啟用單一登入
+[[enable-sso-samlstep-5-enable-single-sign-on]]
+== 步驟 5：啟用單一登入
 
-當您確認可以使用SSO登入每個管理節點時、您可以為整個StorageGRID 支援系統啟用SSO。
+當您確認可以使用 SSO 登入每個管理節點後，即可為整個 StorageGRID 系統啟用 SSO。
 
 
 TIP: 啟用SSO時、所有使用者都必須使用SSO存取Grid Manager、租戶管理程式、Grid Management API及租戶管理API。本機使用者無法再存取StorageGRID 此功能。
@@ -319,3 +325,32 @@ TIP: 啟用SSO時、所有使用者都必須使用SSO存取Grid Manager、租戶
 
 
 TIP: 如果您使用 Azure 門戶，並且從用於存取 Entra ID 的相同電腦存取StorageGRID ，請確保 Azure 入口網站使用者也是授權的StorageGRID使用者（已匯入StorageGRID 的聯合群組中的使用者），或在嘗試登入StorageGRID之前登出 Azure 入口網站。
+
+.接下來呢？
+使用 SAML 設定 SSO 後，為管理節點設定身分供應商。
+
+[cols="1a,2a"]
+|===
+| 如果您的身分供應商是…… | 您需要…… 
+
+
+ a| 
+Active Directory
+ a| 
+link:creating-relying-party-trusts-in-ad-fs-saml.html["為每個管理節點建立一個應用程式群組"]
+
+
+
+ a| 
+進入 ID
+ a| 
+link:creating-enterprise-application-entra-id-saml.html["為每個管理節點建立一個應用程式"]
+
+
+
+ a| 
+PingFedate
+ a| 
+link:creating-sp-connection-ping-saml.html["為每個管理節點建立服務供應商連線"]
+
+|===

@@ -363,9 +363,9 @@ TLS
 
 |===
 --
-.僅限 Webhook 端點
+.Webhook 和 Kafka 端點
 --
-驗證 webhook 端點的 TLS 連線。
+驗證 webhook 或 Kafka 端點的 TLS 連線。
 
 [cols="1a,2a"]
 |===
@@ -397,6 +397,15 @@ TLS
 使用自訂CA憑證
  a| 
 自訂 CA 憑證用於在連接到端點時驗證伺服器的身份。
+
+
+
+ a| 
+使用作業系統CA憑證
+ a| 
+使用作業系統上安裝的預設Grid CA憑證來保護連線安全。
+
+*附註*：Webhook 端點沒有此選項。
 
 |===
 當您選擇 *mTLS* 時，這些選項會變成可用。
@@ -454,4 +463,5 @@ NOTE: 如果您的租戶帳戶未啟用平台服務、端點建立將會失敗�
 * link:configuring-cloudmirror-replication.html["設定CloudMirror複寫"]
 * link:configuring-event-notifications.html["設定事件通知"]
 * link:configuring-search-integration-service.html["設定搜尋整合服務"]
+* link:../network/external-communications.html["用於外部通訊的連接埠"]
 

@@ -64,6 +64,11 @@ NOTE: 每種記錄類型的詳細資料僅供參考。這些記錄可由技術�
 | 歸檔位置 | 說明 
 
 
+| acct-tunnel.log  a| 
+與負載平衡器搭配使用的帳戶通道協助程式記錄。
+
+
+
 | 稽核  a| 
 稽核在正常系統作業期間所產生的訊息。
 
@@ -114,6 +119,11 @@ VCSs 有關目前節點和 EC 群組資訊的資訊（依設定檔 ID ）。
 
 
 
+| internal-access.log  a| 
+內部 HTTP Proxy 流量記錄。
+
+
+
 | Lambda-仲裁 人  a| 
 與S3 Select Proxy要求相關的記錄。
 
@@ -126,6 +136,11 @@ VCSs 有關目前節點和 EC 群組資訊的資訊（依設定檔 ID ）。
 
 | lumberjack.log  a| 
 偵錯與記錄收集相關的訊息。
+
+
+
+| manage-audit.log  a| 
+`mgmt-api`存取稽核日誌。
 
 
 
@@ -174,6 +189,10 @@ MariaDB資料庫組態及相關記錄。
 
 
 * `nginx-gw-dns-check.log`：與新的 DNS 檢查警示有關。
+* stream-access.log：流區塊的 TCP/TLS 流（第 4 階層）Proxy 工作階段。
++
+*注意*：這不是 HTTP 請求日誌。
+
 
 
 
@@ -220,6 +239,16 @@ CPU、網路和磁碟I/O的效能資訊
 
 
 
+| revision_history.json  a| 
+修訂歷史。
+
+
+
+| routed-s3-access.log.gz  a| 
+存取日誌用於記錄透過 S3（全域命名空間/聯盟 URL）路由的網格聯盟流量。
+
+
+
 | SSH  a| 
 與 SSH 組態和服務相關的記錄。
 
@@ -235,6 +264,11 @@ CPU、網路和磁碟I/O的效能資訊
 
 
 
+| system-bucket.log  a| 
+`update-system-bucket-configuration.log`：系統儲存桶日誌。
+
+
+
 | system-commands.txt  a| 
 輸出示例容器命令。StorageGRID包含系統資訊、例如網路和磁碟使用量。
 
@@ -242,5 +276,15 @@ CPU、網路和磁碟I/O的效能資訊
 
 | Synchrone-recovery 套件  a| 
 與維護託管 ADC 服務的所有管理節點和儲存節點上最新恢復包的一致性有關。
+
+
+
+| update-cipher-configurations.log  a| 
+`update-cors-configurations.log`：追蹤與 TLS/密碼和 CORS 變更相關的記錄。
+
+
+
+| update-leakd-configurations.log  a| 
+孤立偵測組態記錄。
 
 |===

@@ -1,0 +1,149 @@
+---
+permalink: admin/create-okta-application-oidc.html 
+sidebar: sidebar 
+keywords: okta, application, single sign on, sso 
+summary: 為 StorageGRID 系統中所有管理節點的 OpenID Connect （OIDC） 建立 Okta 應用程式。 
+---
+= 在 StorageGRID 中為 OIDC 建立 Okta 應用程式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為 StorageGRID 系統中所有管理節點的 OpenID Connect （OIDC） 建立 Okta 應用程式。
+
+.開始之前
+* 您有建立 Okta 應用程式的經驗，或者您可以存取 Okta 文件。
+* 您擁有 Okta 管理員存取權限。
+
+
+.關於這項工作
+Okta 應用程式必須包含所有管理節點的登入和登出重新導向 URI。重新導向 URI 可確保使用者能夠安全地登入和登出任何管理節點。您可以為所有管理節點建立單一 Okta 應用程式（建議），也可以為每個管理節點建立不同的應用程式。
+
+除非另有說明，否則請使用預設設定。在某些情況下，您可以使用組織要求的設定。
+
+
+
+[[step-1-create-an-okta-application]]
+== 步驟 1：建立 Okta 應用程式
+
+使用 Okta UI 建立 Okta 應用程式。
+
+.步驟
+. 在 Okta 中，前往 *應用程式* > *應用程式*。
+. 選擇 *Create App Integration*，然後輸入以下資訊：
++
+** 登入方式：*OIDC - OpenID Connect*
+** 應用程式類型：*Web Application*
+
+
+. 選擇*下一步*。
+. 在「應用程式整合」欄位中輸入應用程式名稱。
+. 確認核心授權已選取「授權碼」（預設）。
+. 為每個管理節點新增登入和登出重新導向 URI：
++
+** 登入重新導向 URI： `\https://<Admin_IP_address_or_FQDN>/api/v4/oidc-callback`
+** 登出重新導向 URI： `\https://<Admin_IP_address_or_FQDN>/api/v4/oidc-logged-out`
++
+
+NOTE: 如果為管理介面設定了一個或多個負載平衡器端點，請為每個連接埠新增重新導向 URI。例如： `\https://<Admin_IP_address_or_FQDN>:<port>/api/v4/oidc-callback` 和 `\https://<Admin_IP_address_or_FQDN>:<port>/api/v4/oidc-logged-out`
+
+
+
+. 選擇 *Save*。儲存用戶端 ID 和用戶端金鑰值以備後用。
+
+
+
+
+[[step-2-add-a-federate-group]]
+== 步驟 2：新增聯邦組
+
+為 StorageGRID 建立群組或使用 Active Directory Federation Service （AD FS） 伺服器中的現有群組。
+
+.步驟
+. 在 GRID Manager 中，選擇 *Configuration* > *Admin groups* > *Create group* > *Federate Group*。
+. 輸入 AD FS 伺服器群組名稱。
+. 選擇「讀寫」作為存取模式，「Root 存取」作為權限設定。
+. 選取*建立群組*。
+
+
+
+
+[[step-3-import-ad-fs-server-groups-and-users]]
+== 步驟 3：匯入 AD FS 伺服器群組和使用者
+
+在 AD FS 伺服器上安裝 Okta Active Directory 用戶端。然後，匯入 AD FS 伺服器群組和使用者。
+
+.步驟
+. 在 Okta 中，前往 *Directory* > *Directory Integrations* > *Add Directory* > *Add Active Directory*。
+. 選擇 *Set Up Active Directory* > *Download Agent*。
+. 立即按照設定流程進行操作。
++
+
+NOTE: 如果拖延，設定可能會停滯，您將需要重新開始。
+
++
+.. 選擇 Active Directory 網域。
+.. 建立 OktaService 帳戶，而不是連結現有使用者。
+.. 選擇包含使用者的組織單元和包含群組的組織單元。
+.. 選擇使用 AD UPN 作為 Okta 使用者名稱的使用者主體名稱 (UPN)。例如：user@domain.com
+
+
+. 搜尋 *Okta AD Agent Management Utility* 應用程式。然後，執行該應用程式並確認狀態訊息 `The agent is running`是否出現。
++
+
+NOTE: 當您想要使用 Okta 執行 AD FS 伺服器同步和匯入時，Okta AD 用戶端必須處於運作狀態。
+
+. 在 Okta 中，前往 *Directory* > *Directory Integrations*。
+. 選擇您建立的目錄整合。
+. 選擇 *Import* > *Import Now*。
+. 選擇要匯入的使用者，然後選擇 *Confirm Assignments*。
+. 前往 *Directory* > *People*，確認使用者已成功匯入。
++
+如果使用者狀態不是「Active」，請選擇 *Activate* ，然後持續重新整理頁面，直到使用者狀態變成「Active」。
+
+. 前往 *Directory* > *Groups*，確認匯入使用者的群組已自動匯入。
+. 選擇該群組並確認匯入的使用者是否屬於該群組。
+
+
+
+
+[[step-4-set-up-a-claim]]
+== 步驟 4：設定申請
+
+設定一個聲明，將 AD FS 伺服器群組包含在存取權杖中。然後，驗證該聲明是否包含已匯入使用者和 Okta 應用程式的已匯入群組。
+
+.步驟
+. 在 Okta 中，前往 *Directory* > *Groups*。
+. 選取匯入使用者的匯入群組。
+. 選擇 *應用程式* > *指派應用程式* > *指派*。
+. 前往 *Security* > *API*。
+. 選擇*預設*授權伺服器。
+. 選擇 *Claims* > *Add Claim*。然後，使用以下憑證建立聲明：
++
+** 名稱：*群組*
+** 包含在權杖類型中：*ID Token - Always*
+** 值類型：*Expression*
+** 值：*Groups.startsWith("active_directory","",100)*
+** 包含範圍：*任何範圍*
+
+
+. 前往 *Security* > *API*。
+. 選擇*預設*授權伺服器。
+. 選取 *Token Preview* 索引標籤，然後輸入以下 Request Properties 的憑證：
++
+** OAuth/OIDC 用戶端：*<application name>*
+** 授權類型：*Authorization Code*
+** 使用者：*匯入使用者（電子郵件地址）*
+** 範圍：*email, profile, openid*
+
+
+. 選擇*執行*。
++
+導入的群組出現在有效負載的「預覽 id_token」標籤中。
+
+
+
+.接下來
+建立 Okta 應用程式後，link:configure-sso-oidc.html["使用 OIDC 設定 SSO"]。

@@ -55,10 +55,12 @@ NOTE: 如果您在啟用 S3 物件鎖定的情況下、將物件擷取至貯體�
 支援下列要求標頭：
 
 * `Content-Type`
-* `x-amz-checksum-algorithm`
+* `x-amz-checksum-algorithm`：指定 `CRC32`、 `CRC32C`、 `CRC64NVME`或 `SHA256`
 +
-目前僅支援的 SHA256 值 `x-amz-checksum-algorithm`。
 
+NOTE: 如果 CreateMultipartUpload 請求未指定 Checksum，StorageGRID 不會為物件計算預設的 CRC-64/NVME Checksum。StorageGRID 會忽略無效或不支援的 `x-amz-checksum-algorithm`值。
+
+* `x-amz-checksum-type`
 * `x-amz-meta-`，然後是包含使用者定義中繼資料的名稱值配對
 +
 為使用者定義的中繼資料指定名稱值配對時、請使用以下一般格式：

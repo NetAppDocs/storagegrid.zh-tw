@@ -2,7 +2,7 @@
 permalink: admin/grid-federation-create-connection.html 
 sidebar: sidebar 
 keywords: grid federation, create connection, configure connection 
-summary: 如果您想要複製租戶詳細資料並複寫物件資料、可以在兩個 StorageGRID 系統之間建立網格同盟連線。 
+summary: 如果要同步租戶詳細資料和複寫物件資料，可以在 StorageGRID 系統之間建立網格聯合連接。 
 ---
 = 建立 StorageGRID 網格聯合連線
 :allow-uri-read: 
@@ -11,11 +11,14 @@ summary: 如果您想要複製租戶詳細資料並複寫物件資料、可以�
 
 
 [role="lead"]
-如果您想要複製租戶詳細資料並複寫物件資料、可以在兩個 StorageGRID 系統之間建立網格同盟連線。
+如果要同步租戶詳細資料和複寫物件資料，可以在 StorageGRID 系統之間建立網格聯合連接。
 
 如圖所示、建立網格同盟連線包括兩個網格上的步驟。您可以在一個網格上新增連線、然後在另一個網格上完成連線。您可以從任一網格開始。
 
-image:grid-federation-create-connection.png["在兩個網格上建立連線步驟的圖形總覽"]
+
+TIP: 您也可以選擇link:../admin/grid-federation-automate-connections.html["自動化建立、編輯及維護網格聯盟連線"]。
+
+image:grid_federation_create_connection.png["在兩個網格上建立連線步驟的圖形總覽"]
 
 .開始之前
 * 您已檢閱link:grid-federation-overview.html["考量與要求"]以設定網格同盟連線。
@@ -35,18 +38,15 @@ image:grid-federation-create-connection.png["在兩個網格上建立連線步�
 . 從任一網格上的主要管理節點登入 Grid Manager 。
 . 選擇*配置* > *系統* > *網格聯合*。
 . 選取 * 新增連線 * 。
-. 輸入連線的詳細資料。
-+
+. 輸入連線名稱，該名稱必須是唯一的，以便您識別此連線。例如， `Grid 1-Grid 2`。
+. 如果需要link:../admin/configure-global-namespace.html["設定全域命名空間"]，請選擇 *Enable global namespace*。
+. 選擇*繼續*。
+. 輸入網格詳細資訊，如下所示：
+
+
 [cols="1a,2a"]
 |===
 | 欄位 | 說明 
-
-
- a| 
-連線名稱
- a| 
-可協助您辨識此連線的唯一名稱、例如「 Grid 1-Grid 2 」。
-
 
 
  a| 
@@ -54,9 +54,9 @@ image:grid-federation-create-connection.png["在兩個網格上建立連線步�
  a| 
 下列其中一項：
 
-** 您目前登入之網格的 FQDN
-** 此網格上 HA 群組的 VIP 位址
-** 此網格上管理節點或閘道節點的 IP 位址。IP 可以位於目的地網格所能到達的任何網路上。
+* 您目前登入之網格的 FQDN
+* 此網格上 HA 群組的 VIP 位址
+* 此網格上管理節點或閘道節點的 IP 位址。IP 可以位於目的地網格所能到達的任何網路上。
 
 
 
@@ -91,9 +91,9 @@ image:grid-federation-create-connection.png["在兩個網格上建立連線步�
  a| 
 下列其中一項：
 
-** 您要連線的網格 FQDN
-** 其他網格上 HA 群組的 VIP 位址
-** 另一個網格上管理節點或閘道節點的 IP 位址。IP 可以位於來源網格所能到達的任何網路上。
+* 您要連線的網格 FQDN
+* 其他網格上 HA 群組的 VIP 位址
+* 另一個網格上管理節點或閘道節點的 IP 位址。IP 可以位於來源網格所能到達的任何網路上。
 
 
 |===
@@ -155,5 +155,5 @@ CAUTION: 如果連線任一端的憑證過期、連線將會停止運作、而�
 * link:creating-tenant-account.html["建立一個或多個新的租戶帳戶"]、指派 * 使用網格聯盟連線 * 權限、然後選取新的連線。
 * link:grid-federation-manage-connection.html["管理連線"]視需要。您可以編輯連線值、測試連線、旋轉連線憑證或移除連線。
 * link:../monitor/grid-federation-monitor-connections.html["監控連線"]作為正常 StorageGRID 監控活動的一部分。
-* link:grid-federation-troubleshoot.html["疑難排解連線問題"]包括解決與帳戶複製和跨網格複寫有關的任何警示和錯誤。
+* link:grid-federation-troubleshoot.html["疑難排解連線問題"]，包括解決與帳戶同步和跨網格複寫相關的任何警報和錯誤。
 

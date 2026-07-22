@@ -202,7 +202,7 @@ summary: 如果您在使用StorageGRID 無法修復的系統時遇到問題、�
 技術支援可能會要求您收集資料或檢閱特定資訊、以協助疑難排解問題。
  a| 
 * link:../monitor/collecting-log-files-and-system-data.html["收集記錄檔和系統資料"]
-* link:../monitor/manually-triggering-autosupport-message.html["手動觸發 AutoSupport 套件"]
+* link:../monitor/manually-triggering-autosupport-package.html["手動觸發 AutoSupport 套件"]
 * link:../monitor/reviewing-support-metrics.html["檢視支援指標"]
 
 

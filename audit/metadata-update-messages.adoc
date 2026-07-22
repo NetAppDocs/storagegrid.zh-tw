@@ -47,7 +47,9 @@ link:supd-s3-metadata-updated.html["SUBPD：S3中繼資料已更新"]
 [[supd-s3-metadata-update]]
 === SUBPD：S3中繼資料更新
 
-S3客戶端發出請求（SUPD）來更新指定的元數據(`x-amz-meta-\*`) 用於 S3 物件 (S3KY)。在此範例中，請求標頭包含在欄位 HTRH 中，因為它已配置為稽核協定標頭（*設定* > *監控* > *稽核和系統日誌伺服器*）。看link:../monitor/configure-log-management.html["設定日誌管理和外部系統日誌伺服器"] 。
+S3 用戶端發出請求 (SUPD) 以更新 S3 物件 (S3KY) 的指定中繼資料 (`x-amz-meta-*`。
+
+在本例中，請求標頭包含在 HTRH 欄位中，因為它已設定為稽核協定標頭（*組態* > *監控* > *稽核和 syslog 伺服器*）。請參閱link:../monitor/configure-log-management.html["設定日誌管理和外部系統日誌伺服器"]。
 
 [listing]
 ----

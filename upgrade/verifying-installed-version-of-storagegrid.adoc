@@ -14,7 +14,7 @@ summary: 在開始升級之前、請確認先前版本的 StorageGRID 目前已�
 在開始升級之前、請確認先前版本的 StorageGRID 目前已安裝、並套用最新的可用 Hotfix 。
 
 .關於這項工作
-在升級到StorageGRID 12.0 之前，您的網格必須安裝StorageGRID 11.9.0.8 或更高版本。如果您目前正在使用先前版本的StorageGRID，則必須安裝所有先前的升級檔案及其最新的修補程式（強烈建議），直到網格的目前版本至少為StorageGRID 11.9.0.8。
+在升級至 StorageGRID 12.1 之前，您的網格必須安裝 StorageGRID 12.0 或更新版本。如果您目前使用的是舊版 StorageGRID，則必須安裝所有先前的升級檔案及其最新的 Hotfix（強烈建議），直到您的網格目前版本至少達到 StorageGRID 12.0.0。
 
 中顯示了一個可能的升級途徑<<example-upgrade-path,範例>>。
 
@@ -41,7 +41,7 @@ CAUTION: NetApp強烈建議您在升級到下一個版本之前為每個StorageG
 [[example-upgrade-pathexample-upgrade-to-storagegrid-12-0-from-version-11-8]]
 == [[example-upgrade-path]]範例：從版本 11.8 升級到StorageGRID 12.0
 
-以下範例顯示了從StorageGRID版本 11.8 升級到版本 11.9 以準備升級到StorageGRID 12.0 的步驟。
+以下範例說明從 StorageGRID 版本 11.9 升級至版本 12.0 的步驟，以準備進行 StorageGRID 12.1 升級。
 
 請依下列順序下載並安裝軟體、以準備系統進行升級：
 

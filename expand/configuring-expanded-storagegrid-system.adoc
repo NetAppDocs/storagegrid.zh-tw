@@ -43,9 +43,8 @@ CAUTION: 請確定每個站台至少有兩個節點可以存取至少四個外�
 
 . 如果您新增了管理節點：
 +
-.. 如果您的StorageGRID系統啟用了單一登入 (SSO)，請為新的管理節點建立依賴方信任。在建立此依賴方信任之前，您無法登入該節點。看link:../admin/configure-sso.html["設定單一登入"] 。
+.. 如果您的 StorageGRID 系統已啟用單一登入 （SSO），請為新的管理節點建立信賴方信任。在建立此信賴方信任之前，您無法登入該節點。請參閱使用 link:../admin/learn-about-setting-up-sso-oidc.html["OIDC"] 或 link:../admin/learn-about-setting-up-sso-saml.html["SAML"] 設定 SSO。
 .. 如果您打算在管理節點上使用負載平衡器服務，則可以選擇將新的管理節點新增至 HA 群組。選擇「*設定*」>「*網路*」>「*高可用性群組*」來查看現有 HA 群組的清單並新增節點。看link:../admin/configure-high-availability-group.html["設定高可用度群組"] 。
-.. 或者、如果您想在每個管理節點上保持屬性和稽核資訊一致、請將管理節點資料庫從主要管理節點複製到擴充管理節點。請參閱。 link:copying-admin-node-database.html["複製管理節點資料庫"]
 .. 或者、如果您想在每個管理節點上保持歷史數據一致、請將Prometheus資料庫從主要管理節點複製到擴充管理節點。請參閱。 link:copying-prometheus-metrics.html["複製Prometheus指標"]
 .. 或者、如果您想要在每個管理節點上保持記錄資訊一致、請將現有的稽核記錄從主要管理節點複製到擴充管理節點。請參閱。 link:copying-audit-logs.html["複製稽核記錄"]
 

@@ -27,6 +27,17 @@ summary: 您必須檢閱啟用全域S3物件鎖定設定的需求、建立相容
 
 
 
+[[requirements-for-allowing-s3-object-lock-to-be-enabled-on-existing-buckets]]
+[[s3-object-lock-existing-buckets]]
+== 允許在現有儲存桶上啟用 S3 物件鎖定的要求
+
+啟用全域 S3 物件鎖定設定後，您可以選擇允許所有具有對應權限的 S3 租戶帳戶或 S3 使用者對現有儲存桶啟用 S3 物件鎖定。當 S3 租戶帳戶或 S3 使用者對現有儲存桶啟用 S3 物件鎖定時，根據您的 ILM 規則，可能會導致非預期的資料從雲端儲存資源池移轉回 StorageGRID。
+
+
+CAUTION: 一旦意外的資料移轉開始，就無法停止。
+
+
+
 [[requirements-for-compliant-ilm-rules]]
 == 符合ILM規則的要求
 
@@ -59,11 +70,9 @@ link:example-7-compliant-ilm-policy-for-s3-object-lock.html["S3 物件鎖定適�
 == 啟用S3物件鎖定的儲存區需求
 
 * 如果StorageGRID 已針對整個S3物件鎖定設定啟用for the S廳 系統、您可以使用租戶管理程式、租戶管理API或S3 REST API來建立啟用S3物件鎖定的儲存區。
-* 如果您打算使用S3物件鎖定、則必須在建立儲存區時啟用S3物件鎖定。您無法為現有貯體啟用 S3 物件鎖定。
 * 當「S3物件鎖定」已啟用時、StorageGRID 即可自動啟用該儲存區的版本管理功能。您無法停用儲存區的 S3 物件鎖定或暫停版本設定。
 * 您也可以選擇使用租戶管理員、租戶管理 API 或 S3 REST API 、為每個貯體指定預設保留模式和保留期間。貯體的預設保留設定僅適用於新增至貯體但沒有其本身保留設定的新物件。您可以指定保留模式來覆寫這些預設設定、並在上傳每個物件版本時保留至日期。
 * 啟用 S3 物件鎖定的貯體支援貯體生命週期組態。
-* 啟用S3物件鎖定的儲存區不支援CloudMirror複寫。
 
 
 

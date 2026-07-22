@@ -38,7 +38,9 @@ summary: 視您在StorageGRID 替換主機上執行的支援功能而定、您�
  a| 
 主要管理節點
  a| 
-link:configuring-replacement-primary-admin-node.html["設定替換的主要管理節點"]
+* link:selecting-start-recovery-to-configure-primary-admin-node.html["選擇「開始恢復」以設定主要管理節點"]
+* link:selecting-start-recovery-to-configure-non-primary-admin-node.html["使用非主要管理節點恢復主要管理節點"]
+
 
 
 
@@ -74,6 +76,6 @@ link:selecting-start-recovery-to-configure-storage-node.html["選取「Start Rec
 * 如果 `<PURPOSE>`組態檔案變數的值 `BLOCK_DEVICE_<PURPOSE>`是指不包含與主機故障前相同資料的區塊裝置。
 
  a| 
-link:recovering-from-storage-volume-failure-where-system-drive-is-intact.html["從系統磁碟機不受影響的儲存磁碟區故障中恢復"]
+link:reviewing-warnings-about-storage-volume-recovery.html["從系統磁碟機不受影響的儲存磁碟區故障中恢復"]
 
 |===

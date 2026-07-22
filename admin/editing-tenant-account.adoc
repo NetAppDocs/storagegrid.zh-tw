@@ -13,9 +13,6 @@ summary: 您可以編輯租戶帳戶、以變更顯示名稱、儲存配額或�
 [role="lead"]
 您可以編輯租戶帳戶、以變更顯示名稱、儲存配額或租戶權限。
 
-
-TIP: 如果租戶具有 * 使用網格同盟連線 * 權限、您可以從連線中的任一網格編輯租戶詳細資料。不過、您在連線中的某個網格上所做的任何變更、都不會複製到另一個網格。如果您想要讓租戶詳細資料在網格之間保持完全同步、請在兩個網格上進行相同的編輯。請參閱。 link:grid-federation-manage-tenants.html["管理網格同盟連線的允許租戶"]
-
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 * 您有link:admin-group-permissions.html["root 存取權或 Tenant 帳戶權限"]。
@@ -62,7 +59,8 @@ image:tenant_accounts_page.png["租戶帳戶頁面"]
 ** 視需要選取或清除 * 允許 S3 選取 * 權限。請參閱。 link:manage-s3-select-for-tenant-accounts.html["管理用戶帳戶的S3 Select"]
 ** 若要移除 * 使用網格同盟連線 * 權限：
 +
-... 選取 * Grid Federation * 標籤。
+... 在租戶詳細資料頁面上選擇「Grid federation」標籤。
+... 選擇要移除的連線。
 ... 選取 * 移除權限 * 。
 
 
@@ -71,6 +69,10 @@ image:tenant_accounts_page.png["租戶帳戶頁面"]
 ... 選取 * Grid Federation * 標籤。
 ... 選中 * 使用網格聯合連接 * 複選框。
 ... 或者、選取 * 複製現有的本機使用者和群組 * 、將其複製到遠端網格。如果需要、您可以停止正在進行的複製、或是在完成最後一次複製作業之後、如果無法複製某些本機使用者或群組、請重試複製。
++
+
+TIP: 如果出於安全性或法規遵循原因需要，您可以取消選擇「啟用存取金鑰同步」。
+
 
 
 ** 若要設定最長保留期間或允許符合性模式：

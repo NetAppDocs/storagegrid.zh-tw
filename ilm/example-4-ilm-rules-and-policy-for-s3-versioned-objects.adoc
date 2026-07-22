@@ -24,9 +24,6 @@ CAUTION: 下列ILM規則和原則僅為範例。有許多方法可以設定ILM�
 
 NOTE: 若要在物件的非目前版本上執行 ILM 原則模擬、您必須知道物件版本的 UUID 或 CBID 。若要尋找 UUID 和 CBID 、請在物件仍為最新狀態時使用link:verifying-ilm-policy-with-object-metadata-lookup.html["物件中繼資料查詢"]。
 
-.相關資訊
-link:how-objects-are-deleted.html["如何刪除物件"]
-
 
 
 [[ilm-rule-1-for-example-4-save-three-copies-for-10-years]]
@@ -79,7 +76,7 @@ link:how-objects-are-deleted.html["如何刪除物件"]
 
 若要建立使用「非目前時間」做為參考時間的規則、請針對「僅將此規則套用至較舊的物件版本（在啟用版本設定的 S3 儲存區中）」問題選取 * 是 * ？ 在「建立 ILM 規則」精靈的步驟 1 （輸入詳細資料）中。當您選取 * 是 * 時、就會自動為參考時間選取 _ 非目前時間 _ 、而且您無法選取不同的參考時間。
 
-image:ilm-rule-apply-only-to-older-object-verions.png["僅將 ILM 規則套用至較舊的物件版本（非目前時間）"]
+image:ilm_rule_apply_only_to_older_object_verions.png["僅將 ILM 規則套用至較舊的物件版本（非目前時間）"]
 
 在此範例中、只會儲存兩個非目前版本的複本、而這些複本會儲存兩年。
 
@@ -139,3 +136,6 @@ NOTE: 「非目前時間」規則必須出現在原則中、然後才會套用�
 * 任何非目前的物件版本都會與第一個規則相符。如果非目前的物件版本早於2年、則ILM會永久刪除該版本（從網格中移除的所有非目前版本複本）。
 * 目前的物件版本會與第二個規則相符。當目前的物件版本已儲存 10 年、 ILM 程序會將刪除標記新增為物件的目前版本、並將先前的物件版本設為「非目前」。下次進行 ILM 評估時、第一個規則會比對此非目前版本。如此一來、將會清除第 3 站點的複本、並將第 1 站點和第 2 站點的兩份複本再儲存 2 年。
 
+
+.相關資訊
+link:how-objects-are-deleted.html["如何刪除物件"]

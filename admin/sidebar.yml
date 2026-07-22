@@ -2,7 +2,7 @@
 section: admin
 title: 管理StorageGRID
 entries:
-- title: 系統管理工作
+- title: 管理快速入門
   pdf-filename: 管理StorageGRID 一套系統
   url: "/admin/index.html"
 - title: 開始使用 Grid Manager
@@ -67,31 +67,67 @@ entries:
       url: "/admin/requirements-for-sso.html"
     - title: 確認同盟使用者可以登入
       url: "/admin/confirming-federated-users-can-sign-in.html"
-    - title: 配置 SSO
-      url: "/admin/configure-sso.html"
-    - title: 在AD FS中建立依賴方信任
-      url: "/admin/creating-relying-party-trusts-in-ad-fs.html"
-    - title: 在 Entra ID 中建立企業應用程式
-      url: "/admin/creating-enterprise-application-entra-id.html"
-    - title: 在PingFedate建立SP連線
-      url: "/admin/creating-sp-connection-ping.html"
+    - title: 使用 OIDC 設定 SSO
+      entries:
+      - title: 了解
+        url: "/admin/learn-about-setting-up-sso-oidc.html"
+      - title: 在 AD FS 中建立應用程式群組
+        url: "/admin/creating-relying-party-trusts-in-ad-fs-oidc.html"
+      - title: 在 Entra ID 中建立應用程式
+        url: "/admin/creating-enterprise-application-entra-id-oidc.html"
+      - title: 在 Keycloak 中建立用戶端
+        url: "/admin/create-client-keycloak-oidc.html"
+      - title: 建立 Okta 應用程式
+        url: "/admin/create-okta-application-oidc.html"
+      - title: 在PingFedate建立SP連線
+        url: "/admin/creating-sp-connection-ping-oidc.html"
+      - title: 配置 SSO
+        url: "/admin/configure-sso-oidc.html"
+    - title: 使用 SAML 設定 SSO
+      entries:
+      - title: 了解
+        url: "/admin/learn-about-setting-up-sso-saml.html"
+      - title: 配置 SSO
+        url: "/admin/configure-sso-saml.html"
+      - title: 在AD FS中建立依賴方信任
+        url: "/admin/creating-relying-party-trusts-in-ad-fs-saml.html"
+      - title: 在 Entra ID 中建立企業應用程式
+        url: "/admin/creating-enterprise-application-entra-id-saml.html"
+      - title: 在PingFedate建立SP連線
+        url: "/admin/creating-sp-connection-ping-saml.html"
     - title: 禁用 SSO
       url: "/admin/disabling-single-sign-on.html"
     - title: 暫時停用並重新啟用一個管理節點的 SSO
       url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
+  - title: 使用多管理員驗證
+    entries:
+    - title: 了解多管理員驗證
+      url: "/admin/about-multi-admin-verify.html"
+    - title: 設定多管理員驗證
+      url: "/admin/configure-multi-admin-verify.html"
+    - title: 要求核准受保護的作業
+      url: "/admin/request-mav-approval-for-protected-ops.html"
+    - title: 管理受保護的操作請求
+      url: "/admin/manage-mav-protected-ops-requests.html"
 - title: 使用網格同盟
   entries:
   - title: 什麼是網格同盟
     pdf-filename: 使用網格同盟
     url: "/admin/grid-federation-overview.html"
-  - title: 什麼是帳戶複製
-    url: "/admin/grid-federation-what-is-account-clone.html"
+  - title: 什麼是帳戶同步
+    url: "/admin/grid-federation-what-is-account-sync.html"
   - title: 什麼是跨網格複寫
     url: "/admin/grid-federation-what-is-cross-grid-replication.html"
   - title: 比較跨網格複寫和 CloudMirror 複寫
     url: "/admin/grid-federation-compare-cgr-to-cloudmirror.html"
   - title: 建立網格同盟連線
     url: "/admin/grid-federation-create-connection.html"
+  - title: 自動化網格聯邦連線
+    url: "/admin/grid-federation-automate-connections.html"
+  - title: 了解全域命名空間
+    url: "/admin/learn-about-global-namespace.html"
+  - title: 設定全域命名空間
+    url: "/admin/configure-global-namespace.html"
   - title: 管理網格同盟連線
     url: "/admin/grid-federation-manage-connection.html"
   - title: 管理允許的租戶
@@ -257,19 +293,6 @@ entries:
     url: "/admin/benefits-of-active-idle-and-concurrent-http-connections.html"
   - title: 管理連結成本
     url: "/admin/manage-link-costs.html"
-- title: 使用AutoSupport
-  entries:
-  - title: 什麼AutoSupport 是呢
-    pdf-filename: 使用AutoSupport
-    url: "/admin/what-is-autosupport.html"
-  - title: 設定AutoSupport 功能
-    url: "/admin/configure-autosupport-grid-manager.html"
-  - title: 手動觸發 AutoSupport 套件
-    url: "/admin/manually-triggering-autosupport-message.html"
-  - title: 疑難排解 AutoSupport 套件
-    url: "/admin/troubleshooting-autosupport-messages.html"
-  - title: 透過 StorageGRID 傳送 E 系列 AutoSupport 套件
-    url: "/admin/sending-eseries-autosupport-messages-through-storagegrid.html"
 - title: 管理儲存節點
   entries:
   - title: 使用儲存選項

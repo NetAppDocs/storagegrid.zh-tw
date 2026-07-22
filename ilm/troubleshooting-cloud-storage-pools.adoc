@@ -38,9 +38,24 @@ StorageGRID 會讀取已知物件、以確保雲端儲存池能夠存取且正�
 [[error-health-check-failed-error-from-endpoint]]
 == 錯誤：健全狀況檢查失敗。端點發生錯誤
 
-當您開始將此儲存庫用於 Cloud Storage Pool 之後、針對 Amazon S3 儲存區啟用預設保留的 S3 物件鎖定時、可能會遇到此錯誤。如果 Put 作業沒有 HTTP 標頭的有效負載 Checksum 值（例如）、就會發生此錯誤 `Content-MD5`。AWS 在啟用 S3 物件鎖定的情況下、將作業放入貯體時、需要此標頭值。
+在以下情況下，您可能會遇到此錯誤：
 
-若要修正此問題、請遵循中的步驟、link:editing-cloud-storage-pool.html["編輯雲端儲存資源池"]而不進行任何變更。此動作會觸發 Cloud Storage Pool 組態的驗證、自動偵測並更新 Cloud Storage Pool 端點組態上的 S3 物件鎖定旗標。
+* 當您開始將 Amazon S3 儲存桶用於雲端儲存資源池後，啟用預設保留的 S3 物件鎖定時，會發生此錯誤。這是因為 PUT 操作缺少包含有效負載 Checksum 值的 HTTP 標頭，例如 `Content-MD5`。AWS 要求對已啟用 S3 物件鎖定的儲存桶執行 PUT 操作時，必須包含此標頭值。
++
+若要解決此問題，請按照 link:../ilm/editing-cloud-storage-pool.html["編輯雲端儲存資源池"] 中的步驟操作，無需進行任何變更。此行動將觸發雲端儲存資源池組態的驗證，該驗證會自動偵測並更新雲端儲存資源池端點組態上的 S3 物件鎖定標誌。
+
+* 當您開始將此儲存桶用於雲端儲存資源池後，為 StorageGRID S3 儲存桶啟用具有預設保留的 S3 物件鎖定。
++
+要解決此問題：
+
++
+** 如果您使用的是 HTTP：啟用了 S3 Object Lock 的雲端儲存資源池不受支援。請編輯端點連線，改用 HTTPS。
+** 如果您使用的是 HTTPS：請依照 link:../ilm/editing-cloud-storage-pool.html["編輯雲端儲存資源池"] 中的步驟操作，無需進行任何變更。此行動將觸發雲端儲存資源池組態的驗證，該驗證會自動偵測並更新雲端儲存資源池端點組態上的 S3 物件鎖定標誌。
+
+
+
+
+如果還有其他問題，請聯絡技術支援。
 
 
 

@@ -18,14 +18,14 @@ summary: 您可以在支援的網頁瀏覽器的位址列中輸入管理節點�
 
 
 [[connect-to-ha-group]]
-=== 連線至 HA 群組
+== 連線至 HA 群組
 
 如果管理節點包含在高可用度（HA）群組中、您可以使用HA群組的虛擬IP位址或對應至虛擬IP位址的完整網域名稱來連線。主要管理節點應選取為群組的主要介面、以便在存取Grid Manager時、在主要管理節點上存取、除非主要管理節點無法使用。請參閱。 link:managing-high-availability-groups.html["管理高可用度群組"]
 
 
 
 [[use-sso]]
-=== 使用 SSO
+== 使用 SSO
 
 如果link:how-sso-works.html["已設定單一登入（ SSO ）"]。
 
@@ -51,10 +51,6 @@ summary: 您可以在支援的網頁瀏覽器的位址列中輸入管理節點�
 
 +
 `https://_FQDN_or_Admin_Node_IP:port_/`
-
-+
-
-NOTE: SSO 無法在受限的 Grid Manager 連接埠上使用。您必須使用連接埠443。
 
 
 

@@ -16,9 +16,9 @@ summary: 在升級 StorageGRID 系統之前、請確認系統已準備好容納�
 .步驟
 . 使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 . 檢查並解決任何作用中警示。
-. 參考link:../network/internal-grid-node-communications.html["內部網格節點通訊"]和link:../network/external-communications.html["外部通訊"]確保在升級之前開啟StorageGRID 12.0 所需的所有連接埠。
+. 請參閱 link:../network/internal-grid-node-communications.html["內部網格節點通訊"] 和 link:../network/external-communications.html["外部通訊"]，以確保在升級之前已開啟 StorageGRID 12.1 所需的所有連接埠。
 +
 
-NOTE: 升級到StorageGRID 12.0 時不需要額外的連接埠。
+NOTE: 升級至 StorageGRID 12.1 時，不需要額外的連接埠。
 
 

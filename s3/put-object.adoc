@@ -77,11 +77,11 @@ Amazon S3會將每個PUT要求標頭內使用者定義的中繼資料大小限�
 * `Content-Disposition`
 * `Content-Encoding`
 +
-當您為 ``Content-Encoding``StorageGRID 指定時、 `aws-chunked`不會驗證下列項目：
+當您指定 `aws-chunked`for `Content-Encoding`時，StorageGRID 不會驗證下列項目：
 
 +
-** StorageGRID 不會根據區塊資料來驗證 `chunk-signature`。
-** StorageGRID 不會驗證您針對物件所提供的值 `x-amz-decoded-content-length`。
+** StorageGRID 不會針對資料區塊驗證  `chunk-signature`。
+** StorageGRID 不會驗證您提供的值 `x-amz-decoded-content-length`是否與物件相符。
 
 
 * `Content-Language`
@@ -93,7 +93,20 @@ Amazon S3會將每個PUT要求標頭內使用者定義的中繼資料大小限�
 +
 如果同時使用有效負載簽署、則支援分區傳輸編碼 `aws-chunked`。
 
-* `x-amz-checksum-sha256`
+* Checksum 請求標頭：
++
+--
+** `x-amz-checksum-crc32`
+** `x-amz-checksum-crc32c`
+** `x-amz-checksum-crc64nvme`
+** `x-amz-checksum-sha256`
+
+
+--
++
+
+NOTE: 如果 PutObject 請求未指定 Checksum，StorageGRID 不會為物件計算預設的 CRC-64/NVME Checksum。
+
 * `x-amz-meta-`，然後是包含使用者定義中繼資料的名稱值配對。
 +
 為使用者定義的中繼資料指定名稱值配對時、請使用以下一般格式：
@@ -151,13 +164,19 @@ NOTE: ILM 規則不能同時使用 * 使用者定義的建立時間 * 作為參�
 
 * `If-Match`
 +
- `If-Match header`已被接受，但無法正常使用。
+The `If-Match`標頭的行為會根據您的 StorageGRID 組態而有所不同。提供此標頭可能會傳回錯誤訊息（501 Not Implemented）。如果 `If-Match`標頭被接受但無法運作，則可能會觸發警示，其中包含有關啟用更嚴格的 501 Not Implemented 錯誤行為的說明。
 
 * `If-None-Match`
 +
- `If-None-Match header`已被接受，但無法正常使用。
+The `If-None-Match`標頭的行為會根據您的 StorageGRID 組態而有所不同。提供此標頭可能會傳回錯誤訊息（501 Not Implemented）。如果 `If-None-Match`標頭被接受但無法運作，則可能會觸發警示，其中包含有關啟用更嚴格的 501 Not Implemented 錯誤行為的說明。
 
 * `x-amz-acl`
+* `x-amz-checksum-md5`
+* `x-amz-checksum-sha1`
+* `x-amz-checksum-sha512`
+* `x-amz-checksum-xxhash3`
+* `x-amz-checksum-xxhash64`
+* `x-amz-checksum-xxhash128`
 * `x-amz-sdk-checksum-algorithm`
 * `x-amz-trailer`
 * `x-amz-website-redirect-location`

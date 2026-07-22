@@ -1,0 +1,8 @@
+---
+permalink: expand/copying-admin-node-database.html 
+redirect: storagegrid/expand/configuring-expanded-storagegrid-system.html 
+---
+= 
+:allow-uri-read: 
+
+

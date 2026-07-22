@@ -2,7 +2,7 @@
 permalink: maintain/understanding-adc-service-quorum.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, adc, adc quorum 
-summary: 如果停用後仍有太少的管理網域控制站（ ADC ）服務、您可能無法取消委任某個站台上的特定儲存節點。 
+summary: ADC 仲裁機制可確保每個站點至少保留一定數量的管理網域控制站 （ADC） 服務可用。StorageGRID 在必要時會自動在退役期間移動 ADC 服務。 
 ---
 = 什麼是 StorageGRID ADC 仲裁？
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 如果停用後仍有太少的管理網域控制站（ ADC ）服務、
 
 
 [role="lead"]
-如果停用後仍有太少的管理網域控制站（ ADC ）服務、您可能無法取消委任某個站台上的特定儲存節點。
+ADC 仲裁機制可確保每個站點至少保留一定數量的管理網域控制站 （ADC） 服務可用。StorageGRID 在必要時會自動在退役期間移動 ADC 服務。
 
 在某些儲存節點上找到的 ADC 服務可維護網格拓撲資訊、並為網格提供組態服務。這個支援系統要求每個站台及任何時間都能達到特定的ADC服務量。StorageGRID
 
@@ -26,4 +26,6 @@ CAUTION: 在包含僅軟體中繼資料節點的網格中取消委任儲存節�
 * 在第二個退役過程中，您可以刪除第三個儲存節點，因為 ADC 仲裁現在只需要三個 ADC 服務保持可用： `((0.5 * 4) + 1)` 。
 
 
-如果需要停用某個儲存節點，可以透過link:../release-notes/changes-to-grid-management-api.html#new-private-endpoints-for-move-adc["將 ADC 服務移至同一站點上的另一個儲存節點"]或在link:../expand/index.html["擴充"]中新增一個新的儲存節點並指定其應具有 ADC 服務來繼續滿足 ADC 仲裁要求。然後，您可以停用現有的儲存節點而不會影響仲裁。
+當您退役一個提供 ADC 服務的儲存節點時，如果退役會導致網站的 ADC 數量低於法定數量，StorageGRID 會自動將 ADC 服務遷移到同一網站上的另一個儲存節點。自動遷移的前提是網格中的所有節點都已連線，且同一網站上存在可接收該服務的非 ADC 儲存節點。退役程序會確保每個網站至少保留三個 ADC 儲存節點。例如，如果您在一個網站上退役四個或六個 ADC 節點，假設同一網站上存在可用的非 ADC 節點，則程序結束後仍會保留三個 ADC 儲存節點。
+
+如果 ADC 服務無法自動遷移，您可以link:move-adc-service.html["手動移動 ADC 服務"]將其遷移到同一網站上的另一個儲存節點，或link:../expand/index.html["在擴充中新增一個新的儲存節點"]並指定該節點需要 ADC 服務。然後，您可以退役現有儲存節點，而不會影響仲裁。

@@ -1,0 +1,198 @@
+---
+permalink: admin/grid-federation-automate-connections.html 
+sidebar: sidebar 
+keywords: automate, automating, automation, automatic, configuration, configure 
+summary: 安裝並設定兩個或多個執行 12.1 或更高版本的 StorageGRID 系統後，您可以使用 manage-grid-federation.py Python 指令碼和 JSON 組態檔案自動化建立、編輯和維護網格聯合連線。 
+---
+= 在 StorageGRID 中自動化網格聯盟連線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝並設定兩個或多個執行 12.1 或更高版本的 StorageGRID 系統後，您可以使用 `manage-grid-federation.py` Python 指令碼和 JSON 組態檔案自動化建立、編輯和維護網格聯合連線。
+
+.開始之前
+* 所有網格均執行 StorageGRID 12.1 或更新版本。
+* 如果任何網格上已啟用單一登入 （SSO），您已將其停用。
+* 您的 Linux 機器上已安裝 Python 3.6 或更新版本。
+* 您知道安裝封存中以下檔案的位置：
++
+[cols="1,2"]
+|===
+| 檔案名稱 | 說明 
+
+
+| manage-grid-federation.py | 用於自動化網格聯盟連線管理的 Python 指令碼 
+
+
+| manage-grid-federation.sample.json | 用於指令碼的組態檔範例 
+|===
+* 您已建立 `manage-grid-federation.json`組態檔案。若要建立此檔案，您可以修改範例組態檔案 `manage-grid-federation.sample.json`。
+
+
+
+CAUTION: 將網格管理員密碼和佈建密碼短語從您的 `manage-grid-federation.json`組態檔案儲存在安全的位置。如果檔案中缺少憑證，指令碼將以互動方式提示輸入。您還應該將修改後的組態檔案備份儲存在安全的位置。
+
+
+
+[[configuration-file-fields]]
+== 組態檔案欄位
+
+JSON 組態檔案是一個物件陣列。每個物件代表一個網格，並支援以下欄位：
+
+[cols="1m,1,2"]
+|===
+| 欄位 | 必要 | 說明 
+
+
+| 主機名稱 | 是的 | 網格的管理節點主機名稱或 IP 位址 
+
+
+| 網格名稱 | 是的 | 網格的顯示名稱（最多 12 個字元） 
+
+
+| 使用者名稱 | 否 | 網格管理員使用者名稱（如果省略，則會以互動方式提示） 
+
+
+| 密碼 | 否 | 網格管理員密碼（如果省略，則會以互動方式提示） 
+
+
+| 口令 | 否 | 佈建複雜密碼（如果省略，則會以互動方式提示） 
+
+
+| ca_bundle | 否 | 用於 SSL 驗證的自訂 CA 憑證套裝組合的路徑 
+
+
+| 區域 | 否 | 全域命名空間連線的期望預設 S3 區域 
+
+
+| CNAME | 否 | 全域命名空間連線所需的 CNAME 
+
+
+| globalEndpoint | 否 | 所需的全域命名空間端點 
+|===
+
+NOTE: 如果您設定了任何全域命名空間欄位(`region` `CNAME` `globalEndpoint`），則必須為每個網格提供所有三個欄位。請確保區域和 CNAME 在所有網格中是唯一的，且 `globalEndpoint`值在所有網格中均相同。
+
+.關於這項工作
+您可以使用 `manage-grid-federation.py` Python 指令碼和 `manage-grid-federation.json`組態檔案來自動化網格聯盟連線管理。該指令碼執行以下操作：
+
+* 使用 Grid Management API 對每個網格進行驗證
+* 驗證所有網格是否執行 StorageGRID 12.1 或更新版本。
+* 驗證每個網格上的單一登入是否已停用
+* 檢索現有網格聯盟連線和 S3 組態
+* 設定完成後，更新 S3 區域、CNAME 和全域命名空間端點設定。
+* 為尚未連接的網格對建立新的網格聯邦連線。
+* 當顯示名稱或全域命名空間設定變更時，編輯現有連線
+* 顯示所有連線及其狀態的摘要
+
+
+
+TIP: 您也可以使用 Grid Manager UI 或 Grid Management API 直接管理網格聯合連線。
+
+.步驟
+. 登入您用來執行Python指令碼的Linux機器。
+. 切換到包含指令碼的目錄。
++
+例如：
+
++
+[listing]
+----
+cd StorageGRID-Webscale-version/platform
+----
++
+其中 *platform* 為 `debs`、 `rpms`或 `vsphere`。
+
+. 執行Python指令碼並使用您建立的組態檔。
++
+例如：
+
++
+`./manage-grid-federation.py -i manage-grid-federation.json`
+
++
+您可以使用以下命令列選項：
+
++
+[cols="2m,1,3"]
+|===
+| 選項 | 預設 | 說明 
+
+
+| -i, --input-json-file | _（必需的）_ | 包含網格清單的 JSON 組態檔案路徑 
+
+
+| -b, --base-port | 23001 | 新的網格聯邦連線的起始連接埠號 
+
+
+| --no-verify-ssl | 已啟用 SSL 驗證 | 停用本機對網格連線的 SSL 憑證驗證 
+|===
+
+
+
+
+[[edit-existing-connections]]
+== 編輯現有連線
+
+如果指令碼偵測到現有連線需要變更（例如，網格顯示名稱已變更或全域命名空間設定需要更新），它將顯示建議的編輯執行摘要，並在繼續之前提示確認。
+
+當需要在啟用了全域命名空間的網格上進行 S3 組態更新（(`region`、 `CNAME` 或  `globalEndpoint`）時，指令碼必須暫時停用全域命名空間才能套用變更。在這種情況下，確認提示將警告路由暫時中斷：
+
+[listing]
+----
+*** Global Namespace Disable Required ***
+Global Namespace must be disabled to update region/CNAME/globalEndpoint settings.
+Routing requests will not work until Global Namespace is re-enabled.
+Grids requiring S3 updates: grid1.example.com, grid2.example.com
+Proceed with these edits and the temporary routing outage? [y/N]:
+----
+
+CAUTION: 在 S3 組態更新期間，全域命名空間將暫時停用，全域命名空間路由請求將無法正常運作。請計劃在維護所需時間期間執行此操作。
+
+.完成後
+當指令碼顯示類似以下內容的確認摘要時，表示您的網格聯盟連線已建立並設定完成：
+
+[listing]
+----
+===== Newly Established Connections =====
+ • Grid-A and Grid-B — grid-a.example.com and grid-b.example.com on port 23001
+
+Total new connections: 1
+
+===== All Grid-Federation Connections =====
+  Name              Source                Target                Port   Status    Global Namespace
+  ----------------  --------------------  --------------------  -----  --------  ----------------
+  Grid-A and Grid-B grid-a.example.com    grid-b.example.com    23001  new       enabled
+
+Total connections listed: 1
+
+===== Grid S3 Configuration Summary =====
+ grid-a.example.com:
+    Default Region: us-east-1
+    CNAME: s3-a.example.com
+    Global namespace endpoint: gn.example.com
+ grid-b.example.com:
+    Default Region: us-west-1
+    CNAME: s3-b.example.com
+    Global namespace endpoint: gn.example.com
+----
+
+
+[[exit-status]]
+== 退出狀態
+
+[cols="1m,4"]
+|===
+| 程式碼 | 說明 
+
+
+| 0 | 指令碼已成功執行 
+
+
+| 1 | 驗證失敗或網格 API 呼叫傳回錯誤（請檢查日誌輸出） 
+|===
+
+NOTE: 如果任何連線失敗，指令碼將繼續處理剩餘的連線對，並將所有失敗情況報告在輸出的「失敗連線」部分。請查看錯誤訊息並解決任何問題，然後再重新執行指令碼。

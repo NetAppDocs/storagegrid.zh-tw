@@ -24,6 +24,14 @@ summary: 使用本節中的範例、為貯體建立 StorageGRID 存取原則。
 ----
 
 
+在 StorageGRID 中，主體：
+
+* `"Principal": "*"`符合所有請求，包括匿名（未簽署）請求。
+* `"Principal": { "AWS": "*" }` 符合任何已驗證的身分或使用者（不符合匿名請求）
+* 僅適用於儲存桶原則
+* 主體是指被授予或拒絕權限的帳戶/使用者。
+
+
 
 
 [[example-allow-everyone-read-only-access-to-a-bucket]]

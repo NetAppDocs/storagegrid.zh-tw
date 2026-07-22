@@ -16,7 +16,7 @@ summary: 如果您想StorageGRID 要將新增至儲存區的指定物件複寫�
 例如、您可以使用CloudMirror複寫將特定的客戶記錄鏡射到Amazon S3、然後利用AWS服務對資料執行分析。
 
 
-NOTE: 如果來源儲存區已啟用S3物件鎖定、則不支援CloudMirror複寫。
+NOTE: CloudMirror 複寫僅在來源儲存桶已啟用 S3 物件鎖定且端點為 Amazon 或 StorageGRID S3 儲存桶時才受支援。物件鎖定設定不會複寫至儲存桶端點。
 
 
 

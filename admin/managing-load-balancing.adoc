@@ -176,7 +176,7 @@ Subject DN: /C=Country/ST=State/O=Company,Inc./CN=s3.storagegrid.example.com
 ----
 必要時、憑證可以使用萬用字元來代表執行負載平衡器服務的所有管理節點和閘道節點的完整網域名稱。例如 `*.storagegrid._example_.com`，使用 * 萬用字元來表示 `adm1.storagegrid._example_.com`和 `gn1.storagegrid._example_.com`。
 
-如果您打算使用 S3 虛擬託管樣式要求、則該憑證也必須為您設定的每個項目包含 * 替代名稱 * 項目link:../admin/configuring-s3-api-endpoint-domain-names.html["S3 端點網域名稱"]、包括任何萬用字元名稱。例如：
+如果您打算使用 S3 虛擬主機風格的要求，則憑證也必須包含您已設定的每個 link:../admin/configuring-s3-api-endpoint-domain-names.html["S3 端點網域名稱"] 的*備用名稱*項目，包括任何萬用字元名稱。例如：
 
 [listing]
 ----

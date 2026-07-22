@@ -1,0 +1,96 @@
+---
+permalink: admin/creating-relying-party-trusts-in-ad-fs-oidc.html 
+sidebar: sidebar 
+keywords: application group, active directory, ad fs, single sign on, sso 
+summary: 您必須使用 Active Directory Federation Services （AD FS） 為系統中的每個管理節點建立一個應用程式群組。 
+---
+= 在 AD FS 中為 StorageGRID 中的 OIDC 建立應用程式群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須使用 Active Directory Federation Services （AD FS） 為系統中每個 OpenID Connect （OIDC） 管理節點建立一個應用程式群組。
+
+.開始之前
+* 您擁有系統中每個管理節點的完整網域名稱（或 IP 位址）和信賴方識別碼。
++
+
+NOTE: StorageGRID 系統中的每個管理節點都必須擁有一個應用程式群組。這可確保使用者可以安全地登入和登出任何管理節點。您可以為所有管理節點建立單一應用程式群組（建議），也可以為每個管理節點建立一個不同的應用程式群組。
+
+* 您有在 AD FS 中建立應用程式群組的經驗，或者您可以存取 Microsoft AD FS 文件。
+* 您使用的是AD FS管理嵌入式管理單元、屬於「系統管理員」群組。
+
+
+.關於這項工作
+這些說明適用於 Windows Server 2022 AD FS。如果您使用的是其他版本的 AD FS，您會發現操作步驟略有不同。如有疑問，請參閱 Microsoft AD FS 文件。
+
+
+
+[[step-1-create-an-application-group]]
+== 步驟 1：建立應用程式群組
+
+您可以使用 Windows PowerShell 快速建立應用程式群組。
+
+.步驟
+. 從Windows Server Manager中、選取* Tools *>* AD FS Management *。
+. 選擇 *Application Groups* > *Add Application Group*
+. 對於 *Name*，請輸入信賴方識別碼。
+. 在「範本」下，選擇「用戶端-伺服器應用程式」>「存取 Web API 的伺服器應用程式」。
+. 選擇*下一步*。
+. 記錄 *Client Identifier* 值。
+. 在 *Redirect URI* 下，輸入管理節點的 FQDN （或 IP 位址） `callback` 和 `logged-out` URI：
++
+** `https://<FQDN>/api/v4/oidc-callback` 或  `https://<IP_address>/api/v4/oidc-callback`
+** `https://<FQDN>/api/v4/oidc-logged-out` 或  `https://<IP_address>/api/v4/oidc-logged-out`
+
+
++
+如果您對所有管理節點使用同一個應用程式群組，請輸入每個管理節點的 URI。如果您為每個管理節點使用不同的應用程式群組，則只需輸入對應管理節點的 URI。
+
+. 選取*「Add*」。
+. 選擇 *Generate a shared secret*，記錄 *Secret* 的值，然後選擇 *Next*。
+. 請輸入 *Identifier* 的用戶端識別碼。
+. 選擇 *新增*，然後選擇 *下一步*。
+. 選擇 *Permit everyone*。
+. 請確認已在「用戶端應用程式（呼叫方）」下選擇伺服器應用程式。
+. 在「允許的範圍」下，確認僅選取以下選項：
++
+** allatclaims
+** 電子郵件
+** openid
+** 設定檔
+
+
+. 選擇 *下一步* > *下一步*。
+. 選取 *Close* 。
+
+
+
+
+[[step-2-configure-issuance-transform-rules]]
+== 步驟 2：設定簽發轉換規則
+
+為每個應用程式群組設定發行轉換規則。
+
+.步驟
+. 在「AD FS 管理」頁面中，以滑鼠右鍵按一下應用程式群組，然後選取「內容」。
+. 選擇先前建立的 Web API，然後選擇「編輯」。
+. 選擇 *Issuance Transform Rules* > *Add Rule ……*。
+. 在 *Claim rule template:* 下，選擇 *Send LDAP Attribute as Claims*。
+. 選擇*下一步*。
+. 輸入聲明規則名稱。
+. 選擇 *Active Directory* 作為屬性儲存區。
+. 將 LDAP 屬性映射新增至傳出聲明類型：
++
+** `E-Mail Addresses - E-Mail Address`
+** `Token-Groups - Unqualified Names - Group`
+
+
+. 選擇*完成*。
+. 選擇 *Apply* > *OK* > *OK*。
+
+
+.接下來
+建立應用程式群組之後，link:configure-sso-oidc.html["使用 OIDC 設定 SSO"]。

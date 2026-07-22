@@ -44,7 +44,7 @@ StorageGRID 系統使用網路時間傳輸協定（ NTP ）來同步網格中所
 
 
 
-NOTE: 指定正式作業層級 StorageGRID 安裝的外部 NTP 來源時、請勿在 Windows Server 2016 之前的 Windows 版本上使用 Windows 時間（ W32Time ）服務。舊版 Windows 上的時間服務不夠準確、 Microsoft 不支援在高準確度環境（包括 StorageGRID ）中使用。如需詳細資訊、請參閱 https://support.microsoft.com/en-us/help/939322/support-boundary-to-configure-the-windows-time-service-for-high-accura["支援邊界、可針對高準確度環境設定Windows時間服務"^]。
+NOTE: 為生產級 StorageGRID 安裝指定外部 NTP 來源時，請勿使用 Windows Server 2016 之前的 Windows 版本上的 Windows 時間 （W32Time） 服務。舊版 Windows 上的時間服務精確度不足，Microsoft 不支援在高精度環境（包括 StorageGRID）中使用該服務。如需詳細資訊，請參閱 https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/support-boundary-high-accuracy-time["支援高精度時間的邊界"^]。
 
 
 

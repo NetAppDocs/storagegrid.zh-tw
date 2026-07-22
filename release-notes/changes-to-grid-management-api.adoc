@@ -2,7 +2,7 @@
 permalink: release-notes/changes-to-grid-management-api.html 
 sidebar: sidebar 
 keywords: grid management api, api, api version, swagger, rest api, usageCacheDuration 
-summary: StorageGRID 12.0 使用 Grid Management API 的第 4 版。第 4 版已棄用第 3 版。但是，第 1 版、第 2 版和第 3 版仍然受支援。 
+summary: StorageGRID 12.1 使用 Grid Management API 的第 4 版。第 4 版已棄用第 3 版。但是，第 1 版、第 2 版和第 3 版仍然受支援。 
 ---
 = StorageGRID 中 Grid Management API 的變更
 :allow-uri-read: 
@@ -11,46 +11,24 @@ summary: StorageGRID 12.0 使用 Grid Management API 的第 4 版。第 4 版已
 
 
 [role="lead"]
-StorageGRID 12.0 使用網格管理 API 的第 4 版。版本 4 棄用了版本 3；但是，版本 1、2 和 3 仍然受支援。
+StorageGRID 12.1 使用 Grid Management API 的第 4 版。第 4 版已棄用第 3 版；但是，第 1 版、第 2 版和第 3 版仍受支援。
 
 
-NOTE: 您可以繼續使用StorageGRID 12.0 中已棄用的管理 API 版本；但是， StorageGRID的未來版本將不再支援這些版本的 API。升級到StorageGRID 12.0 後，您可以使用 `PUT /grid/config/management`API。
+NOTE: 您可以繼續使用已棄用的 StorageGRID 管理 API 版本；但是，StorageGRID 的未來版本將不再支援這些 API 版本。升級至 StorageGRID 12.0 或更新版本後，您可以使用 `PUT /grid/config/management` API 停用已棄用的 API。
 
 若要深入瞭解link:../admin/using-grid-management-api.html["使用Grid Management API"]、請前往。
 
 
 
-[[new-endpoints-for-branch-buckets]]
-== 分支儲存桶的新端點
+[[new-endpoints-for-changing-the-bmc-password-and-lan-ip-settings]]
+== 用於變更 BMC 密碼和 LAN IP 設定的新端點
 
-已新增以下端點，以便您link:../tenant/what-is-branch-bucket.html["管理分支儲存桶"]：
+已新增以下端點，以便您可以link:../harden/hardening-guidelines-for-storagegrid-nodes.html#change-appliance-bmc-password["更改應用裝置 BMC 密碼"]。
 
-`GET /org/containers/{branchBucketName}/branch`
+`PUT /bmc-configuration/root-password`
 
-`PUT /org/containers/{branchBucketName}/branch`
+已新增以下端點，以便您可以link:../maintain/changing-nodes-network-configuration.html#change-appliance-node-bmc-lan-ip-settings["更改或檢視 BMC LAN IP 設定"]。
 
+`PUT /grid/bmc/{node-id}/lan-ip-config`
 
-
-[[new-private-endpoints-for-move-adc]]
-== Move ADC 的新專用終端點
-
-已新增下列私有端點，以便您link:../maintain/move-adc-service.html["行動 ADC 服務"]從一個儲存節點到同一站點上的另一個儲存節點：
-
-`/private/move-adc`
-
-`/private/move-adc/start`
-
-`/private/move-adc/retry`
-
-
-
-[[new-private-endpoints-for-convert-to-data-only-node]]
-== 轉換為僅資料節點的新私有端點
-
-已新增下列私有端點，以便您link:../maintain/convert-to-data-only-node.html["轉換一個或多個組合儲存節點"]不包含 ADC 服務到僅資料節點。
-
-`/private/convert-to-data-only-node`
-
-`/private/convert-to-data-only-node/start`
-
-`/private/convert-to-data-only-node/retry`
+`GET /grid/bmc/{node-id}/lan-ip-config`

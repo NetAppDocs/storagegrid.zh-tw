@@ -1,6 +1,6 @@
 ---
 permalink: admin/using-sandbox-mode.html 
-redirect: admin/configure-sso.html 
+redirect: admin/configure-sso-saml.html 
 ---
 = 
 :allow-uri-read: 

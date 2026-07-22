@@ -27,8 +27,10 @@ indexpage:
     links:
     - title: 取代 Linux 節點
       url: "../maintain/all-node-types-replacing-linux-node.html"
-    - title: 更換 VMware 節點
+    - title: 以恢復節點取代 VMware 節點
       url: "../maintain/all-node-types-replacing-vmware-node.html"
+    - title: 將 VMware 節點替換為 SG1000 或 SG100
+      url: "../maintain/replace-vmware-node-with-sg1000-sg100.html"
     - title: 以服務應用裝置取代 Linux 或 VMware 節點
       url: "../maintain/installing-services-appliance-platform-change-only.html"
     - title: 複製應用裝置節點

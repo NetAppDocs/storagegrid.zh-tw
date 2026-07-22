@@ -25,10 +25,7 @@ summary: 您可以使用 S3 設定精靈、將 StorageGRID 設定為 S3 應用�
 
 .步驟
 . 使用登入 Grid Manager link:web-browser-requirements.html["支援的網頁瀏覽器"]。
-. 如果儀表板上出現 * FabricPool 和 S3 設定精靈 * 橫幅、請選取橫幅中的連結。如果橫幅不再出現、請從 Grid Manager 的標題列中選取說明圖示、然後選取 * FabricPool 和 S3 設定精靈 * 。
-+
-image:help_menu.png["說明功能表"]
-
+. 如果儀表板上出現「* FabricPool and S3 設定精靈*」橫幅，請選擇橫幅中的連結。如果橫幅不再顯示，請從 Grid Manager 的標題列中選擇說明圖示 image:icon_help_menu_bar.png["說明圖示"]，然後選擇「* FabricPool and S3 設定精靈*」。
 . 在 FabricPool and S3 安裝精靈頁面的 S3 應用程式區段中、選取 * 立即設定 * 。
 
 

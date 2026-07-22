@@ -244,3 +244,6 @@ CAUTION: 對於非 Active Directory 或 Microsoft Entra ID 的識別來源， St
 此外、請確定使用者名稱說明中所述的欄位已建立索引、以獲得最佳效能。
 
 請參閱中有關反向群組成員資格維護的資訊http://www.openldap.org/doc/admin24/index.html["OpenLDAP文件：2.4版管理員指南"^]。
+
+.相關資訊
+link:../network/external-communications.html["用於外部通訊的連接埠"]

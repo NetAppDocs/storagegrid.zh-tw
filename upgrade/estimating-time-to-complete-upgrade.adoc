@@ -72,26 +72,13 @@ summary: 請根據升級所需的時間考慮何時升級。請注意在升級�
  a| 
 新版本的新功能已啟用。
  a| 
-不到5分鐘
+最多 1 小時
  a| 
 * 請勿變更網格組態。
 * 請勿變更稽核層級組態。
 * 請勿更新 ILM 組態。
 * 您無法執行其他維護程序。
 
-
-
-
- a| 
-升級資料庫
- a| 
-升級過程檢查每個節點以驗證 Cassandra 資料庫不需要更新。
- a| 
-每個節點10秒或整個網格幾分鐘
- a| 
-升級到StorageGRID 12.0 包括 Cassandra 資料庫升級。從StorageGRID 11.9 升級到 12.0 後，元資料格式更新將在背景進行一到三天。在此期間，某些維護程序（例如擴充）將被停用。
-
-對於未來StorageGRID 的版本、Cassandra資料庫更新步驟可能需要幾天的時間才能完成。
 
 
 
@@ -126,8 +113,8 @@ summary: 請根據升級所需的時間考慮何時升級。請注意在升級�
 
 
 
-[[example-estimated-time-to-upgrade-to-storagegrid-12-0]]
-== 範例：升級到StorageGRID 12.0 的預計時間
+[[example-estimated-time-to-upgrade-to-storagegrid-12-1]]
+== 範例：升級至 StorageGRID 12.1 的預計時間
 
 假設您的系統有14個網格節點、其中8個是Linux節點。
 
@@ -142,7 +129,7 @@ summary: 請根據升級所需的時間考慮何時升級。請注意在升級�
 
 . 將這些值加在一起。
 +
-您最多需要 17 小時才能完成系統到StorageGRID 12.0.0 的升級。
+您應該預留最多 18 小時來完成系統升級至 StorageGRID 12.1.0。
 
 
 

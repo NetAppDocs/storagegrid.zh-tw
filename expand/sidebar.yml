@@ -50,8 +50,6 @@ entries:
     url: "/expand/configuring-expanded-storagegrid-system.html"
   - title: 驗證儲存節點是否處於活動狀態
     url: "/expand/verifying-storage-node-is-active.html"
-  - title: 複製管理節點資料庫
-    url: "/expand/copying-admin-node-database.html"
   - title: 複製Prometheus指標
     url: "/expand/copying-prometheus-metrics.html"
   - title: 複製稽核記錄

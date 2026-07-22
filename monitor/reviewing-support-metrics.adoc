@@ -32,7 +32,7 @@ NOTE: 「指標」頁面上提供的工具僅供技術支援使用。這些工�
 +
 image:metrics_page.png["度量頁面"]
 
-. 若要查詢StorageGRID 目前的各項指標值、並檢視一段時間內的值圖表、請按一下「Prometheus」區段中的連結。
+. 若要查詢 StorageGRID 計量的目前值並檢視這些值隨時間變化的圖表，請選擇 Prometheus 部分中的連結。
 +
 隨即顯示Prometheus介面。您可以使用此介面來執行有關可用StorageGRID 的版本資訊指標的查詢、StorageGRID 並在一段時間內繪製各種版本的資訊。
 
@@ -40,7 +40,7 @@ image:metrics_page.png["度量頁面"]
 
 NOTE: 名稱中包含_Private的指標僅供內部使用、StorageGRID 可能會在不另行通知的情況下於各個版本之間變更。
 
-. 若要存取預先建構的儀表板、其中包含StorageGRID 一段時間內的各種指標圖表、請按一下Grafana區段中的連結。
+. 若要存取包含 StorageGRID 計量隨時間變化圖表的預先建置儀表板，請選擇 Grafana 區段中的連結。
 +
 此時會出現所選連結的Grafana介面。
 

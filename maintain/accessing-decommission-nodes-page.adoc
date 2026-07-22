@@ -33,10 +33,10 @@ CAUTION: 在包含僅軟體中繼資料節點的網格中取消委任儲存節�
 ** 按*名稱*、*站台*、*類型*或*具有ADC/*的遞增或遞減順序排序清單。
 ** 輸入搜尋詞彙以快速尋找特定節點。
 +
-在此範例中、「可能取消委任」欄表示您可以取消委任「閘道節點」和四個「儲存節點」中的其中一個。
+在此範例中、「可退役」欄中的綠色核取記號表示您可以退役 API Gateway 節點和僅含資料的儲存節點。其他節點因各種原因無法退役。例如、主要管理節點無法退役、因為不支援退役此類型的節點。僅含中繼資料的儲存節點無法退役、因為退役後站台將不再符合 link:../maintain/understanding-adc-service-quorum.html["ADC 仲裁"]。
 
 +
-image:decommission_nodes_page_all_connected.png["取消委任節點頁面"]
+image:decommission_nodes_page.png["取消委任節點頁面"]
 
 
 
@@ -106,11 +106,11 @@ image:decommission_nodes_page_all_connected.png["取消委任節點頁面"]
 
 
  a| 
-否、站台_x_需要至少_n_個儲存節點搭配ADC服務。
+不，網站 _x_ 至少需要 3 個具備 ADC 服務的儲存節點，或有可用的非 ADC 節點可供移轉 ADC 服務。如果任何節點離線，則無法退役 ADC 節點。
  a| 
-*僅儲存節點*（組合或僅元資料的儲存節點）。如果網站上剩餘的節點不足以支援 ADC 仲裁要求，則您無法停用儲存節點。但是，您可以將 ADC 服務移至另一個儲存節點。
+*僅限儲存節點*（包括組合儲存節點或僅儲存元資料的儲存節點）。如果站台中剩餘節點不足以支援 ADC 仲裁要求，且 ADC 服務無法自動移動，則無法退役儲存節點。自動移動需要網格中有兩個以上的 ADC 儲存節點處於線上狀態，且同一站台上有可用的非 ADC 儲存節點。
  a| 
-link:../maintain/move-adc-service.html["將 ADC 服務移至同一網站上的另一個儲存節點"]或透過向網站新增新的儲存節點並指定它應該具有 ADC 服務來執行擴充。請參閱link:understanding-adc-service-quorum.html["ADC 仲裁"] 。
+確保符合自動 ADC 服務移動的條件（請參閱 link:../maintain/understanding-adc-service-quorum.html["ADC 仲裁"]），或 link:../maintain/move-adc-service.html["手動移動 ADC 服務"] 至同一站台上的另一個儲存節點。您也可以透過向站台新增新的儲存節點並指定其應具有 ADC 服務來執行擴充。請參閱 link:../expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html["將網格節點新增至 StorageGRID 的工作流程概述"]。
 
 
 

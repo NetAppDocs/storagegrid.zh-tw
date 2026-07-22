@@ -1,21 +1,21 @@
 ---
-permalink: admin/creating-relying-party-trusts-in-ad-fs.html 
+permalink: admin/creating-relying-party-trusts-in-ad-fs-saml.html 
 sidebar: sidebar 
 keywords: relying party trust, active directory, ad fs, single sign on, sso 
 summary: 您必須使用Active Directory Federation Services（AD FS）為系統中的每個管理節點建立信賴關係人信任。您可以使用PowerShell命令、從StorageGRID 支援中心匯入SAML中繼資料、或手動輸入資料、來建立依賴方信任。 
 ---
-= 在 AD FS 中為 StorageGRID 建立信賴方信任
+= 在 AD FS 中為 StorageGRID 中的 SAML 建立信賴方信任
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-您必須使用Active Directory Federation Services（AD FS）為系統中的每個管理節點建立信賴關係人信任。您可以使用PowerShell命令、從StorageGRID 支援中心匯入SAML中繼資料、或手動輸入資料、來建立依賴方信任。
+您必須使用 Active Directory Federation Services （AD FS） 為系統中的每個 SAML 管理節點建立信賴方信任。您可以透過 PowerShell 指令建立信賴方信任，也可以從 StorageGRID 匯入 SAML 中繼資料，或手動輸入資料。
 
 .開始之前
 * 您已設定StorageGRID 單一登入以供使用、並選擇* AD FS*作為SSO類型。
-* 你有link:../admin/configure-sso.html["進入沙盒模式"]在網格管理器中。
+* 您在 Grid Manager 中擁有 link:../admin/configure-sso-saml.html["進入沙盒模式"]。
 * 您知道系統中每個管理節點的完全限定網域名稱（或 IP 位址）和信賴方識別碼。您可以在StorageGRID設定 SSO 頁面上的管理節點詳細資料表中找到這些值。
 +
 
@@ -89,7 +89,7 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立信賴�
 
 
 . 重複這些步驟、為StorageGRID 您的整套系統中的所有管理節點設定依賴方信任。
-. 完成後，返回StorageGRID並link:../admin/configure-sso.html#test-sso["測試所有依賴方信任"]確認它們配置正確。
+. 完成後，返回 StorageGRID 並link:../admin/configure-sso-saml.html#test-sso["測試所有依賴方信任"]確認其組態是否正確。
 
 
 
@@ -141,7 +141,7 @@ NOTE: 輸入顯示名稱時、請使用管理節點的信賴方識別碼、如�
 
 
 . 重複這些步驟、為StorageGRID 您的整套系統中的所有管理節點設定依賴方信任。
-. 完成後，返回StorageGRID並link:../admin/configure-sso.html#test-sso["測試所有依賴方信任"]確認它們配置正確。
+. 完成後，返回 StorageGRID 並link:../admin/configure-sso-saml.html#test-sso["測試所有依賴方信任"]確認其是否已正確設定。
 
 
 
@@ -236,5 +236,5 @@ NOTE: (`server.crt`不建議使用管理節點的預設憑證）。如果管理�
 
 
 . 重複這些步驟、為StorageGRID 您的整套系統中的所有管理節點設定依賴方信任。
-. 完成後，返回StorageGRID並link:../admin/configure-sso.html#test-sso["測試所有依賴方信任"]確認它們配置正確。
+. 完成後，返回 StorageGRID 並link:../admin/configure-sso-saml.html#test-sso["測試所有依賴方信任"]確認其是否已正確設定。
 

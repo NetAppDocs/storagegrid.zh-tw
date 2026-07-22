@@ -59,7 +59,6 @@ NOTE: 複製管理節點資料庫可能需要數小時的時間。當服務在�
 .. 停止 mgmt-API 服務： `service mgmt-api stop`
 .. 將SSH私密金鑰新增至SSH代理程式。輸入：``ssh-add``
 .. 輸入檔案中列出的 SSH 存取密碼 `Passwords.txt`。
-.. 將資料庫從來源管理節點複製到復原的管理節點： `/usr/local/mi/bin/mi-clone-db.sh Source_Admin_Node_IP`
 .. 出現提示時、請確認您要覆寫已恢復管理節點上的MI資料庫。
 +
 資料庫及其歷史資料會複製到恢復的管理節點。複製作業完成後、指令碼會啟動恢復的管理節點。

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace VMware node 
 summary: 當您恢復託管在 VMware 上的故障 StorageGRID 節點時、請移除故障節點並部署恢復節點。 
 ---
-= 更換 StorageGRID 中的 VMware 節點
+= 將 StorageGRID 中的 VMware 節點替換為恢復節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -49,16 +49,9 @@ NOTE: 部署新節點之後、您可以根據儲存需求新增虛擬磁碟、�
 
 
  a| 
-主要管理節點
+管理節點
  a| 
-link:configuring-replacement-primary-admin-node.html["設定替換的主要管理節點"]
-
-
-
- a| 
-非主要管理節點
- a| 
-link:selecting-start-recovery-to-configure-non-primary-admin-node.html["選取「Start Recovery」（開始還原）以設定非主要管理節點"]
+link:recovering-from-admin-node-failures.html["StorageGRID 中的主要或非主要管理節點恢復"]
 
 
 

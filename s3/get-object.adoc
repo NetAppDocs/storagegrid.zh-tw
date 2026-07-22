@@ -31,10 +31,14 @@ summary: 您可以使用S3取得物件要求、從S3儲存區擷取物件。
 
 
 
-[[supported-request-header]]
+[[supported-request-headers]]
 == 支援的要求標頭
 
 支援下列要求標頭：
+
+* `Accept-Encoding`
++
+當物件沒有儲存的 `Content-Encoding`時，帶有 `Accept-Encoding: gzip`的 GET 請求會對回應進行動態壓縮。只有 `gzip`會影響 GET 回應的編碼； `deflate`、 `br`和 `identity`則不會。對於已儲存 `Content-Encoding`的物件，StorageGRID 會傳回儲存的編碼，且不會根據 `Accept-Encoding`套用額外的動態壓縮。StorageGRID 不支援帶有 `Accept-Encoding: gzip`的 GET 請求的範圍讀取操作。
 
 * `x-amz-checksum-mode`：具體說明 `ENABLED`
 +

@@ -1,0 +1,133 @@
+---
+permalink: admin/configure-sso-oidc.html 
+sidebar: sidebar 
+keywords: use sandbox mode for sso, how to test single sign-on 
+summary: 您可以依照 OIDC 的 Configure SSO 精靈操作，並進入沙盒模式來設定和測試單一登入 （SSO），然後再為所有 StorageGRID 使用者啟用。啟用 SSO 後，您可以視需要返回沙盒模式來變更或重新測試組態。 
+---
+= 使用 OIDC 在 StorageGRID 中設定 SSO
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+依照 OpenID Connect (OIDC) 的 SSO 設定精靈操作，進入沙盒模式，在為所有 StorageGRID 使用者啟用單一登入 (SSO) 之前，先設定並測試 SSO。啟用 SSO 後，您可以根據需要返回沙盒模式來變更或重新測試組態。
+
+.開始之前
+* 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您有link:admin-group-permissions.html["root 存取權限"]。
+* 您已在 StorageGRID 系統的 SSO 身分識別供應商中設定 OIDC 用戶端。
+* 您的 StorageGRID 系統需要 link:using-identity-federation.html["已設定的身分識別聯盟"]。
+
+
+
+
+[[step-1-provide-identity-provider-details]]
+== 步驟 1：提供身分識別供應商詳細資訊
+
+開啟精靈，填寫「提供身分供應商詳細資料」頁面上的欄位。
+
+.步驟
+. 存取精靈以設定 SSO 設定：
++
+.. 選擇*設定* > *存取控制* > *單一登入*。出現「單一登入」頁面。
++
+
+NOTE: 如果設定 SSO 設定按鈕已停用，請確認您已將身分提供者設定為聯合身分識別來源。請參閱link:requirements-for-sso.html["單一登入的要求與考量"] 。
+
+.. 選擇*配置 SSO 設定*。出現提供身分提供者詳細資訊頁面。
+
+
+. 在 *Protocol* 下，選擇 *OIDC*。
+. 從下拉式清單中選取* SSO類型*。
+. 指定當身分識別供應商傳送SSO組態資訊以回應StorageGRID 需求時、將使用哪些TLS憑證來保護連線安全。
++
+** *使用作業系統CA憑證*：使用作業系統上安裝的預設CA憑證來保護連線安全。
+** *使用自訂CA憑證*：使用自訂CA憑證來保護連線安全。
++
+如果您選擇此設定：
+
++
+... 瀏覽至 CA 憑證的位置。
+... 上傳 CA 憑證檔案。
+
+
+** *請勿使用 TLS*：請勿使用 TLS 憑證來保護連線的安全。
++
+
+CAUTION: 如果您變更 CA 憑證、請立即link:../maintain/starting-or-restarting-service.html["在管理節點上重新啟動 mgmt-API 服務"]在 Grid Manager 中測試成功的 SSO 。
+
+
+
+. 選擇*繼續*。出現「提供依賴方識別碼」頁面。
+
+
+
+
+[[enter-sandbox-modestep-2-enter-client-information]]
+== [[enter-sandbox-mode]]步驟 2：輸入用戶端資訊
+
+請在精靈的「輸入用戶端資訊」步驟中填寫各個欄位。
+
+.步驟
+. 為 StorageGRID 指定*信賴方識別碼*。此值控制您為每個 OIDC 組態使用的名稱。
++
+** 例如，如果您的網格只有一個管理節點，而且您預期未來不會新增更多管理節點，請輸入 `SG`或 `StorageGRID`。
+** 如果您的網格包含多個管理節點，請在識別碼中包含字串 `[HOSTNAME]`。例如， `SG-[HOSTNAME]`。包含此字串後，將產生一個表格，根據節點的主機名稱顯示網格中每個管理節點的 OIDC 組態。
++
+
+NOTE: 您必須為 StorageGRID 系統中的管理節點設定 OIDC。這可確保使用者可以安全地登入和登出任何管理節點。您可以為所有管理節點使用相同的 OIDC 組態（建議），也可以為每個管理節點設定不同的 OIDC 組態。
+
+
+
+. 請輸入每個信賴方識別碼的*用戶端 ID*、*用戶端金鑰*和*OpenID 端點 URL*。
+. 選擇*儲存並進入沙盒模式*。
+
+
+
+
+[[step-3-test-configuration]]
+== 步驟 3：測試組態
+
+進入沙盒模式後，您可以完成並測試您選擇的 SSO 類型的組態。
+
+沙盒模式便於進行來回組態，並在啟用 SSO 之前測試所有設定。StorageGRID 可視需要保持在沙盒模式下。但是，只有同盟使用者和本機使用者才能登入。
+
+.步驟
+. 在設定 SSO 頁面上，找到精靈的測試設定步驟上的連結。
++
+此URL衍生自您在* Federation service name*欄位中輸入的值。
+
+. 選擇連結，或將 URL 複製並貼上到新標籤頁中，即可存取您的身分供應商的登入頁面。
+. 請輸入您的聯合身分驗證使用者名稱和密碼。
++
+** 如果 SSO 登入和登出操作成功，則會顯示綠色橫幅。
+** 如果SSO作業不成功、會出現錯誤訊息。請修正問題、清除瀏覽器的Cookie、然後再試一次。
+
+
+. 請依照精靈中的步驟存取網格中每個管理節點的測試組態頁面。
+. 重複步驟 <<select-link,2>> 和 <<enter-credentials,3>>，驗證每個管理節點的 SSO 連線。
+
+
+
+
+[[enable-sso-oidcstep-4-enable-single-sign-on]]
+== [[enable-sso-oidc]]步驟 4：啟用單一登入
+
+當您確認可以使用 SSO 登入每個管理節點後，即可為整個 StorageGRID 系統啟用 SSO。
+
+
+TIP: 啟用 SSO 後，所有使用者必須使用 SSO 存取 Grid Manager、Tenant Manager、Grid Management API 和 Tenant Management API。本機使用者將無法再存取 StorageGRID。StorageGRID 並未為所有支援的 SSO 供應商提供範例驗證指令碼。
+
+.步驟
+. 從設定 SSO 精靈的測試設定步驟中，選擇*啟用 SSO*。
+. 查看警告訊息，然後選擇*啟用 SSO*。
++
+單一登入現已啟用。出現「單一登入」頁面，其中現在包含您剛剛設定的 SSO 的詳細資訊。
+
+. 若要編輯配置，請選擇*編輯*。
+. 若要停用單一登入，請選擇「停用」。
+
+
+
+TIP: 如果您使用 Azure 門戶，並且從用於存取 Entra ID 的相同電腦存取StorageGRID ，請確保 Azure 入口網站使用者也是授權的StorageGRID使用者（已匯入StorageGRID 的聯合群組中的使用者），或在嘗試登入StorageGRID之前登出 Azure 入口網站。

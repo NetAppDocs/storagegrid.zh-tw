@@ -29,7 +29,7 @@ summary: 建立一或多個 ILM 原則以符合您的服務品質要求。
 NOTE: 在測試系統中、只能使用系統提供的原則、 2 份複本原則（適用於單一站台網格）或每個站台 1 份複本（適用於多站台網格）。對於 StorageGRID 11.6 及更早版本、此原則中的預設規則會使用「所有儲存節點」儲存池、其中包含所有站台。如果StorageGRID 您的作業系統有多個站台、則一個物件的兩份複本可能會放在同一個站台上。
 
 
-NOTE: 如果link:enabling-s3-object-lock-globally.html["全域 S3 物件鎖定設定已啟用"]是、您必須確保 ILM 原則符合已啟用 S3 物件鎖定的儲存區需求。在本節中、請遵循已啟用 S3 物件鎖定的指示。
+NOTE: 如果link:enabling-s3-object-lock.html["全域 S3 物件鎖定設定已啟用"]，您必須確保 ILM 原則符合已啟用 S3 Object Lock 的儲存桶的要求。在本節中，請依照提及已啟用 S3 Object Lock 的說明進行操作。
 
 .開始之前
 * 您已使用登入 Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
@@ -47,7 +47,7 @@ NOTE: 如果link:enabling-s3-object-lock-globally.html["全域 S3 物件鎖定�
 --
 .S3 物件鎖定已啟用
 --
-** link:enabling-s3-object-lock-globally.html["全域 S3 物件鎖定設定已啟用"]適用於 StorageGRID 系統的。
+** link:enabling-s3-object-lock.html["全域 S3 物件鎖定設定已啟用"] 用於 StorageGRID 系統。
 ** 您已link:what-ilm-rule-is.html["已建立相容且不符合法規的 ILM 規則"]想要新增至原則。您可以視需要儲存原則、建立其他規則、然後編輯原則以新增規則。
 ** 您擁有link:creating-default-ilm-rule.html["已建立預設ILM規則"]符合法規的原則。
 
@@ -180,8 +180,7 @@ NOTE: 您必須確認ILM規則的順序正確。當原則啟動時、新物件�
 在啟動原則並將其套用至正式作業資料之前、先模擬測試物件的原則。
 
 .開始之前
-* 您知道要測試的每個物件的 S3 貯體 / 物件金鑰。
-
+您知道要測試的每個物件的 S3 貯體 / 物件金鑰。
 
 .步驟
 . 使用 S3 用戶端或link:../tenant/use-s3-console.html["S3 主控台"]、擷取測試每個規則所需的物件。
@@ -197,7 +196,7 @@ NOTE: 您必須確認ILM規則的順序正確。當原則啟動時、新物件�
 CAUTION: 檢閱現有複寫和刪除編碼物件位置的任何變更。變更現有物件的位置、可能會在評估和實作新放置位置時、導致暫時性資源問題。
 
 .結果
-對策略規則的任何修改都會反映在模擬結果中，並顯示新的匹配項和先前的匹配項。「模擬策略」視窗會保留您測試的物件，直到您針對模擬結果清單中的每個物件選擇 *Clear all* 或移除圖示 image:icon-x-to-remove.png["移除圖示"]。
+對策略規則的任何修改都會反映在模擬結果中，並顯示新的匹配項和先前的匹配項。「模擬策略」視窗會保留您測試的物件，直到您針對模擬結果清單中的每個物件選擇 *Clear all* 或移除圖示 image:icon_x_to_remove.png["移除圖示"]。
 
 .相關資訊
 link:simulating-ilm-policy-examples.html["ILM 原則模擬範例"]

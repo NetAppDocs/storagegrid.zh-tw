@@ -26,6 +26,8 @@ summary: 若要將故障的網格節點還原至新的 Linux 主機、請執行�
 [[restore-validate-grid-nodes]]
 == 還原及驗證網格節點
 
+如果從非主要管理節點恢復節點，請將 ADMIN_IP 設定為該非主要管理節點的網格網路 IP 位址，以便恢復的節點向非主要管理節點註冊，而不是向主要管理節點註冊。若要檢視管理網路金鑰的規則，請參閱 link:../swnodes/creating-node-configuration-files.html["為 Linux 部署建立 StorageGRID 節點組態檔"]。
+
 您必須還原任何故障網格節點的網格組態檔、然後驗證網格組態檔並解決任何錯誤。
 
 .關於這項工作

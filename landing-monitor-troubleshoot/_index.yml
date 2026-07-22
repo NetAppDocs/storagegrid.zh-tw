@@ -17,12 +17,14 @@ indexpage:
       url: "../monitor/monitoring-storage-capacity.html"
   - title: 管理警示和通知
     links:
+    - title: 使用AutoSupport
+      url: "../monitor/what-is-autosupport.html"
     - title: 管理警示
       url: "../monitor/managing-alerts.html"
     - title: 建立自訂警示
       url: "../monitor/creating-custom-alert-rules.html"
-    - title: 管理警示電子郵件
-      url: "../monitor/email-alert-notifications.html"
+    - title: 設定郵件伺服器
+      url: "../monitor/configure-email-server.html"
     - title: 使用SNMP監控
       url: "../monitor/using-snmp-monitoring.html"
   - title: 使用稽核訊息和其他記錄
@@ -37,6 +39,8 @@ indexpage:
       url: "../monitor/logs-files-reference.html"
   - title: 診斷與疑難排解
     links:
+    - title: 使用AutoSupport
+      url: "../monitor/what-is-autosupport.html"
     - title: 檢視支援指標
       url: "../monitor/reviewing-support-metrics.html"
     - title: 更改 I/O 優先權
