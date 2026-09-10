@@ -7696,8 +7696,6 @@
   <block id="3d59bea6f4a99dadb58d606c88a0a18e" category="paragraph">如本範例所示、您可以針對非目前物件版本、使用不同的放置說明來控制版本控制物件所使用的儲存容量。</block>
   <block id="c9f40068b9531937c43d3543d15cde26" category="inline-link-macro">物件中繼資料查詢</block>
   <block id="fc2e646977882531f7e3bb3363f99521" category="admonition">若要在物件的非目前版本上執行 ILM 原則模擬、您必須知道物件版本的 UUID 或 CBID 。若要尋找 UUID 和 CBID 、請在物件仍為最新狀態時使用<block ref="0c103125c5f22ad742ad4ea8f5e77289" category="inline-link-macro-rx"></block>。</block>
-  <block id="845b70f5faea6e7a442ad3e8773a0945" category="inline-link-macro">如何刪除物件</block>
-  <block id="e967c414860e19ddf0019fc5224b3d0f" category="paragraph"><block ref="e967c414860e19ddf0019fc5224b3d0f" category="inline-link-macro-rx"></block></block>
   <block id="ae167593713a343332b84d51febeeb53" category="section-title">ILM規則1（例如4）：儲存三份複本10年</block>
   <block id="bac28f1ad20ebf36b87eb57f76aff7ec" category="paragraph">本範例 ILM 規則會將每個物件的複本儲存在三個站台上 10 年。</block>
   <block id="a1e90d0abe3d2d24c7872fe3142c9e59" category="paragraph">此規則適用於所有物件、無論其版本是否為版本控制。</block>
@@ -7986,8 +7984,6 @@
   <block id="73c96607289e49c7b19e527fb9de95ea" category="list-text">由於保留截止日期仍在2年前、所以無法刪除物件版本。StorageGRID</block>
   <block id="e762d0c762bcc87678d0e3a9d50a075b" category="summary">由於S3儲存區生命週期到期或ILM原則要求到期、因此可直接回應用戶端要求或自動刪除物件。StorageGRID瞭解可刪除物件的不同方式、StorageGRID 以及如何處理刪除要求、有助於您更有效地管理物件。</block>
   <block id="0367de356ced721f2c1e92da9aa98298" category="paragraph">使用下列兩種方法之一刪除物件：StorageGRID</block>
-  <block id="6f00aba503e9e326ea41856448a65dc9" category="list-text">同步刪除：StorageGRID 當物件接收到用戶端刪除要求時、會立即移除所有物件複本。用戶端會被告知刪除作業在複本移除之後成功。</block>
-  <block id="d91ada0ac5ceb626a2debf0e4929549c" category="list-text">物件會排入刪除佇列：StorageGRID 當收到刪除要求時、物件會排入刪除佇列、並立即通知用戶端刪除作業已成功。物件複本稍後會透過背景ILM處理移除。</block>
   <block id="eb572e30af6b1fdabc805c4e06bc0284" category="paragraph">刪除物件時StorageGRID 、利用最佳化刪除效能、最小化可能刪除的待處理項目、以及最快釋出空間的方法、來刪除物件。</block>
   <block id="628f5cf2550c98225e641bacab6db515" category="paragraph">下表摘要說明StorageGRID 各個方法的使用時機。</block>
   <block id="40c3012bb973e62ccc546e8afd3d8c69" category="cell">執行刪除的方法</block>
@@ -8009,30 +8005,14 @@
   <block id="184ecf0f734d33d55b6300d662fe11a3" category="section-title">刪除物件所需的時間</block>
   <block id="19707cde186b769c190acbf5fd50fae1" category="paragraph">物件的刪除方式StorageGRID 可能會影響系統的執行方式：</block>
   <block id="72fc6e1c2910be716e711df0d5c0c89f" category="list-text">執行同步刪除時、最多需要30秒才能將結果傳回給用戶端。StorageGRID StorageGRID這表示刪除的速度似乎較慢、即使複本實際移除速度比StorageGRID 將物件排入佇列以供刪除時更快。</block>
-  <block id="ed208bffe8ba0c09ee4a5fffc00c5e38" category="list-text">如果您在大量刪除期間密切監控刪除效能、可能會注意到刪除某些物件之後、刪除率似乎會變慢。當從佇列物件移至執行同步刪除時、就會發生此變更StorageGRID 。刪除率明顯降低、並不代表物件複本移除速度較慢。相反地、這表示平均而言、空間現在可以更快釋出。</block>
   <block id="d8b8d112bac24065453ac064bd623603" category="paragraph">如果您要刪除大量物件、而且優先要快速釋放空間、請考慮使用用戶端要求來刪除物件、而非使用ILM或其他方法來刪除物件。一般而言、當用戶端執行刪除作業時、空間會更快釋出、因為StorageGRID 使用同步刪除功能時、會有更多空間。</block>
   <block id="0799e9c3a47b609b78ea7d2eb054179e" category="paragraph">刪除物件之後、可用空間所需的時間取決於下列幾個因素：</block>
   <block id="a95eb5d5d9592b739c0ecff82499088a" category="list-text">物件複本是同步移除、還是排入佇列稍後移除（適用於用戶端刪除要求）。</block>
   <block id="c5b250104c750db51af328cda91fa0af" category="list-text">其他因素、例如當物件複本排入移除佇列時、網格中的物件數目或網格資源的可用度（適用於用戶端刪除和其他方法）。</block>
   <block id="e226403172953bd7e5c34989260a72a8" category="section-title">如何刪除S3版本控制物件</block>
-  <block id="fa388bd70730f2af9a6646fb1b2c8838" category="paragraph">啟用S3儲存區的版本管理時、StorageGRID 無論是來自S3用戶端、S3儲存區生命週期到期、或ILM原則需求、均會遵循Amazon S3回應刪除要求的行為。</block>
-  <block id="9e0d3cfa1dad73b22bdc2ed99552c445" category="paragraph">物件版本化時、物件刪除要求不會刪除物件的目前版本、也不會釋放空間。相反地、物件刪除要求會建立零位元組刪除標記、做為物件的目前版本、使物件的舊版「非目前」。當物件刪除標記是目前版本且沒有非目前版本時、它會變成過期的物件刪除標記。</block>
-  <block id="de38396684e8fc60e4bfc2d5ed53d106" category="paragraph">即使物件尚未移除、StorageGRID 但功能上的功能仍然如同物件的目前版本已無法使用。對該物件的要求會傳回404 NotFound.但是、由於非目前物件資料尚未移除、因此指定物件非目前版本的要求可能會成功。</block>
-  <block id="ab917edcb60b0bb9d033ebb8322c167a" category="paragraph">若要在刪除版本化物件時釋放空間、或移除刪除標記、請使用下列其中一項：</block>
-  <block id="f3684dafece62d71204cccbf2b53912e" category="list-text">*S3 用戶端要求 * ：在 S3 刪除物件要求中指定物件版本 ID <block ref="a170517adf955d79d66142375a72f638" prefix="(" category="inline-code"></block>）。請記住、此要求只會移除指定版本的物件複本（其他版本仍佔用空間）。</block>
-  <block id="c2e8bb168c707e22abaf4142c75c604a" category="list-text">* 貯體生命週期 * ：使用<block ref="aa80bebd533f904edac7f02fda95d03a" prefix=" " category="inline-code"></block>貯體生命週期組態中的動作。當符合指定的NoncurrentDays數量時、StorageGRID 不同時更新的物件版本會永久移除所有複本。這些物件版本無法還原。</block>
   <block id="022560f67dc9d1cb1e4b556053a08f08" category="paragraph"><block ref="a6bcc96ad053433fa838326ff49861f4" prefix=" " category="inline-code"></block>貯體生命週期組態中的動作會指定保留在版本化 S3 儲存區中的非目前版本數。如果有比指定的非目前版本更多<block ref="a6bcc96ad053433fa838326ff49861f4" prefix=" " category="inline-code"></block>、 StorageGRID 會在 NoncurrentDays 值過期時移除舊版本。<block ref="a6bcc96ad053433fa838326ff49861f4" prefix=" " category="inline-code"></block>臨界值會覆寫 ILM 所提供的生命週期規則、表示如果 ILM 要求刪除、則會保留臨界值內有版本的非目前物件<block ref="a6bcc96ad053433fa838326ff49861f4" prefix=" " category="inline-code"></block>。</block>
-  <block id="0eb716b75cb566259d6783aea3f62a45" category="paragraph">若要移除過期的物件刪除標記、請使用<block ref="d30fd576bd308f6facc9343ebd031b8e" prefix=" " category="inline-code"></block>具有下列標記之一的動作：<block ref="5928b1b3d0e62426fcef71a996e73731" prefix=" " category="inline-code"></block>、<block ref="e807d3ccf8d24c8c1a3d86db5da78da8" prefix=" " category="inline-code"></block>或<block ref="44749712dbec183e983dcd78a7736c41" prefix=" " category="inline-code"></block>。</block>
-  <block id="b8e1c9f3dd7b509e0eba8219d90212eb" category="inline-link-macro">複製作用中原則</block>
-  <block id="5102333e9fda3d924d57b9c9fb237ecb" category="list-text">* ILM * ：<block ref="fde002861080acf3c3f6737d5f6876f9" category="inline-link-macro-rx"></block>並新增兩個 ILM 規則至新原則：</block>
   <block id="93a361e8fefeb7a4218a820f61271a42" category="inline-link-macro">建立 ILM 規則精靈的步驟 1 （輸入詳細資料）</block>
-  <block id="9f5cd4f28d5c8a3888372a9c532e1ece" category="list-text">第一條規則：使用「非目前時間」做為參考時間、以符合物件的非目前版本。在<block ref="cf2701d01b7e780e02db108625f8aab5" category="inline-link-macro-rx"></block>中、針對「僅將此規則套用至舊版物件版本（在啟用版本設定的 S3 儲存區中）？」問題選取 * 是 * 。</block>
-  <block id="4f420d4387a60c3abf56da860b1dd99d" category="list-text">第二條規則：使用 * 擷取時間 * 來符合目前版本。「非目前時間」規則必須出現在 * 擷取時間 * 規則上方的原則中。</block>
-  <block id="91ae5d8a6d240230ed684e9b4a41f366" category="paragraph">若要移除過期的物件刪除標記、請使用 * 擷取時間 * 規則來符合目前的刪除標記。刪除標記只有在 * 天 * 的 * 期間 * 已經過去、且目前的刪除製作者已過期（沒有非目前版本）時才會移除。</block>
   <block id="bead5e0dd1a5dcafd1e5dcf8ad27dc9e" category="inline-link-macro">刪除所有物件版本</block>
-  <block id="f5f3e32f8987f606565f0cb808921df3" category="list-text">* 刪除貯體中的物件 * ：使用租戶管理員<block ref="5f7e2edc5f5884d52fb2a183a8b948c0" category="inline-link-macro-rx"></block>從貯體中刪除標記。</block>
-  <block id="87b23f0e8a53f2fe7a5e9df2626da7d0" category="paragraph">刪除版本化物件時、 StorageGRID 會建立零位元組刪除標記、做為物件的目前版本。必須先移除所有物件和刪除標記、才能刪除版本化的儲存庫。</block>
-  <block id="eae1d49d311ae5be60b6c3eae92c7fb9" category="list-text">刪除在 StorageGRID 11.7 或更早版本中建立的標記只能透過 S3 用戶端要求移除、但不能由 ILM 、貯體生命週期規則或刪除貯體作業中的物件移除。</block>
   <block id="a6b429d9f48e7cab3cba9b64ee8d9a45" category="list-text">從在 StorageGRID 11.8 或更新版本中建立的貯體中刪除標記、可由 ILM 、貯體生命週期規則、貯體作業中的刪除物件、或明確刪除 S3 用戶端。</block>
   <block id="6d0e61b2118949052808f5b73b2e4d44" category="list-text"><block ref="6d0e61b2118949052808f5b73b2e4d44" category="inline-link-macro-rx"></block></block>
   <block id="eaf1f38ffad5f3c3703030d4272a9bd2" category="paragraph">資訊生命週期管理（ILM）原則是一組依序排列的ILM規則、可決定StorageGRID 整個過程中、物件資料的管理方式。</block>
@@ -13873,7 +13853,6 @@
   <block id="2ae0a86640c62bbe85eeed0673293454" category="list-text">* 刪除貯體中的物件 * ：租戶管理員使用者可以使用此選項、從 StorageGRID 系統中永久移除所選貯體中物件和物件版本的所有複本。</block>
   <block id="0df6a7ed05c31c5cd24b0290f65c6cd5" category="list-text">* S3儲存區生命週期*：S3用戶端可將生命週期組態新增至其儲存區、以指定到期行動。如果儲存區生命週期存在、StorageGRID 除非用戶端先刪除物件、否則當符合到期行動中指定的日期或天數時、將自動刪除物件的所有複本。</block>
   <block id="c19238812bc7e24a8191d53b2abff67f" category="list-text">* ILM放置指示*：假設儲存區未啟用S3物件鎖定、且沒有儲存區生命週期、StorageGRID 則當ILM規則中的最後一個時間段結束、且未指定任何物件的進一步放置位置時、即可自動刪除物件。</block>
-  <block id="be6d40fa67b6391347e205e2620e9d53" category="paragraph">如需詳細資訊、請參閱 <block ref="a75ec9df7c26afb291b1d3018e8e5d7b" category="inline-link-macro-rx"></block> 。</block>
   <block id="d1270b1b5a69c5f479f397491f833b7f" category="section-title">用戶端刪除的資料流</block>
   <block id="6566c04200eb76e2afd07957d3d4fc83" category="image-alt">用戶端刪除資料流程</block>
   <block id="79cb91017c54b7e3d9501e4149b56b18" category="list-text">LMR服務會從用戶端應用程式接收刪除要求。</block>
@@ -15744,7 +15723,6 @@
   <block id="651d8daacb1fb2901c48c30813f49776" category="paragraph">ILM原則會套用至物件的每個版本。ILM掃描程序會持續掃描所有物件、並根據目前的ILM原則重新評估這些物件。您對ILM原則所做的任何變更、都會套用至所有先前擷取的物件。如果啟用版本管理、則包括先前擷取的版本。ILM掃描會將新的ILM變更套用至先前擷取的物件。</block>
   <block id="2e8d606f4368e136067309f2d82af664" category="paragraph">對於啟用版本設定的儲存區中的 S3 物件、版本設定支援可讓您建立使用「非目前時間」做為參考時間的 ILM 規則（請針對中的「僅將此規則套用至舊版物件？」問題選取 * 是 * <block ref="d8de6f3a6af5e67544f25ed826a8c913" category="inline-link-macro-rx"></block>）。更新物件時、其舊版本會變成非最新版本。使用「非目前時間」篩選器可讓您建立原則、以減少舊版物件的儲存影響。</block>
   <block id="d3803123388c3b9e5ccd792ab92f1f25" category="admonition">當您使用多部分上傳作業上傳物件的新版本時、原始版本物件的非目前時間會反映新版本的多部分上傳時間、而非多部分上傳完成時。在有限的情況下、原始版本的非目前時間可能比目前版本的時間早上幾小時或幾天。</block>
-  <block id="0bb8ea1a8156bedc4b798ecfe3a8cd21" category="list-text"><block ref="0bb8ea1a8156bedc4b798ecfe3a8cd21" category="inline-link-macro-rx"></block></block>
   <block id="765aaf8d1ff98fcad091b75fd7b671b6" category="inline-link-macro">S3版本化物件的ILM規則和原則（範例4）</block>
   <block id="6097559db3fbca5c116fd655ff24879a" category="list-text"><block ref="c8648fa847fe898dbaac52665d0b3a65" category="inline-link-macro-rx"></block>。</block>
   <block id="0493253ffed9a6ac0ef6d3d97d75f56c" category="summary">本節說明StorageGRID 此功能如何支援多部份上傳作業。</block>
@@ -16477,7 +16455,6 @@
   <block id="c283f8c5636f528a651389ea99ae0488" category="list-text">停用：從未啟用版本管理</block>
   <block id="99f853fec9ffd10d4e907d59d93f6fcb" category="list-text"><block ref="99f853fec9ffd10d4e907d59d93f6fcb" category="inline-link-macro-rx"></block></block>
   <block id="c8648fa847fe898dbaac52665d0b3a65" category="list-text"><block ref="c8648fa847fe898dbaac52665d0b3a65" category="inline-link-macro-rx"></block></block>
-  <block id="a75ec9df7c26afb291b1d3018e8e5d7b" category="list-text"><block ref="a75ec9df7c26afb291b1d3018e8e5d7b" category="inline-link-macro-rx"></block></block>
   <block id="66f1134d89d78ab3688c7e64b1ea2b1d" category="list-text">從表格中選取貯體名稱。</block>
   <block id="5b6a8a3f86125d3fde42e934ea7cb3d0" category="paragraph">此時會顯示「庫位詳細資料」頁面。</block>
   <block id="70dfc9b4c1f8563ad063bb1908fb982e" category="list-text">從 * 儲存庫選項 * 標籤中、選取 * 物件版本設定 * 折疊器。</block>
@@ -16889,7 +16866,6 @@
   <block id="914d321f82615b8328e3ab1eef8991a7" category="list-text">刪除貯體</block>
   <block id="569678f147417f8b7613313c3eac84b7" category="list-text">將貯體保持在唯讀模式、以保留其名稱供未來使用</block>
   <block id="e17f19cd630dc5fb78daab043191c50c" category="list-text">如果貯體已啟用物件版本設定、則可使用刪除貯體作業中的物件來移除在 StorageGRID 11.8 或更新版本中建立的標記。</block>
-  <block id="928c3c8a653d5a86d49f321caa4a0649" category="list-text">如果某個貯體已啟用物件版本設定、則刪除物件作業將不會移除在 StorageGRID 11.7 或更早版本中建立的刪除標記。請參閱中有關刪除貯體中物件<block ref="0bb8ea1a8156bedc4b798ecfe3a8cd21" category="inline-link-macro-rx"></block>的資訊。</block>
   <block id="a0609befc672f9280ff9f5ce0ecf36b7" category="list-text">如果您使用<block ref="b9e99c6c8a94c8a6de75d15e8c0d9b8b" category="inline-link-macro-rx"></block>、請注意下列事項：</block>
   <block id="4b9876c7e1cc9ee887ff3beb300ca7d6" category="list-text">使用此選項不會刪除其他網格上的貯體中的任何物件。</block>
   <block id="2737d6b4e0daec8fe27380e843f3934c" category="list-text">如果您為來源貯體選取此選項、當您將物件新增至其他網格上的目的地貯體時、就會觸發 * 跨網格複寫失敗 * 警示。如果您無法保證、在刪除所有貯體物件之前、沒有人會將物件新增至另一個網格的貯體<block ref="5cd633176f1709e6cdae1bc1051c9a1d" category="inline-link-macro-rx"></block>。</block>
@@ -16920,7 +16896,6 @@
   <block id="acca3d6f17b6e6da000d94c6a4fa0d1f" category="inline-link-macro">刪除貯體中的物件</block>
   <block id="9fb1f1912705c815984eac2c5a9d2d36" category="list-text">您要刪除的儲存區是空的。如果您要刪除的貯體不是空的，<block ref="d509a5d364c3146020a3ea111fafe452" category="inline-link-macro-rx"></block>。</block>
   <block id="d67eed29899f7b52831d6cc2c36f2408" category="paragraph">這些指示說明如何使用租戶管理程式刪除S3儲存區。您也可以使用或刪除 S3 儲存區<block ref="cc81f9c7ca3cfcc9f647dba9cadc6ca0" category="inline-link-macro-rx"></block><block ref="7b5cdd5b4a33085f5768623ef5889bae" category="inline-link-macro-rx"></block>。</block>
-  <block id="0c0a03ab4819f49751636226c271b4d8" category="paragraph">如果 S3 儲存區包含物件、非目前物件版本或刪除標記、則無法刪除該儲存區。如需如何刪除 S3 版本化物件的相關資訊，請參閱<block ref="a75ec9df7c26afb291b1d3018e8e5d7b" category="inline-link-macro-rx"></block>。</block>
   <block id="aaade3721f674bd663f9d44e22bb97b0" category="list-text">選取您要刪除的每個貯體的核取方塊。</block>
   <block id="4dce5a3896d8bb3cd2f01563fbae673f" category="list-text">選取 * 動作 * &gt; * 刪除儲存區 * 。</block>
   <block id="713f36517449b085816f2fbae8b18695" category="list-text">選取 * 刪除儲存庫 * 。</block>
@@ -19848,7 +19823,6 @@
   <block id="04d4ebbc79f7295128f39acdcf1ec105" category="admonition">當使用多個策略標籤時，如果租戶經常將策略標籤重新指派給儲存桶，則網格效能可能會受到影響。如果您有不受信任的租戶，請考慮僅使用預設策略標籤。</block>
   <block id="5babe2f47877fbc147c02124fab912d7" category="list-text">選擇*配置* &gt; *系統* &gt; *S3 物件鎖定*。</block>
   <block id="a516294ca97700614be5758a46f7a122" category="inline-link-macro">分支桶</block>
-  <block id="07a6d694188cb6628da507f404664ac7" category="paragraph">如果客戶端從<block ref="ffae551a8c2690d1cd867e080bef2711" category="inline-link-macro-rx"></block>， StorageGRID隱藏了物件版本的存在，但不會在分支儲存桶中建立刪除標記。如果用戶端從分支儲存桶中刪除沒有版本 ID 的對象， StorageGRID會根據標準 S3 行為在分支儲存桶中建立刪除標記。</block>
   <block id="9cf70325d498b88ecee626a90942e04e" category="paragraph">如果預設策略無法滿足您的儲存需求，您可以建立自己的規則和策略。看<block ref="5ac6e584006f202b247f942f347e42b2" category="inline-link-macro-rx"></block>和<block ref="ff256b0651fbb3c40dff0aba7e882bf9" category="inline-link-macro-rx"></block>。</block>
   <block id="ec6393b9e4f4bb19ee96e0ec5dcadf33" category="inline-link-macro">最多可建立 10 個策略標籤</block>
   <block id="82b3ed716136d6256ce8431c870928a9" category="admonition">你可以<block ref="82f4af3fc5906c0e47f3ee25cca87c63" category="inline-link-macro-rx"></block>為您的網格。</block>
@@ -20672,7 +20646,6 @@
   <block id="b84978538d78fbe508ce5ed07488d2ee" category="paragraph">HEAD/GET 回傳物件不存在</block>
   <block id="010a1606882b7fabb77577145f6b67c3" category="paragraph">僅刪除分支儲存桶的特定物件版本</block>
   <block id="9dd439dfc2ba8a57ed0ad7924476238f" category="paragraph">HEAD/GET 傳回特定物件版本（基本儲存桶物件不受影響）</block>
-  <block id="8fcb5aa0c41c8623fa218c756ef9094e" category="paragraph">另請參閱<block ref="0bb8ea1a8156bedc4b798ecfe3a8cd21" category="inline-link-macro-rx"></block>。</block>
   <block id="c977bb2bf02a549d1a0d43df3a2d2061" category="paragraph">您可以輸入 UUID、CBID 或 S3 bucket/object-key。</block>
   <block id="d0e3f77d615777bb1b5fe2e632e3961b" category="paragraph">S3 操作速率</block>
   <block id="5e9f51a284a0a39017aabb7aba2aaeb7" category="paragraph">在網格管理器儀表板上，選擇*效能*&gt;*儲存節點的 S3 操作*。</block>
@@ -21132,7 +21105,6 @@
   <block id="3084c30fe5025b80f58230ff2386a442" category="doc">StorageGRID 中的儲存資源池組態準則</block>
   <block id="249cb4d8002e9f348959b7dae0a7b18b" category="doc">ILM 在 StorageGRID 中物件生命週期內的運作方式</block>
   <block id="b498583ce058688a659593ef3585b578" category="doc">StorageGRID 如何確定物件保留</block>
-  <block id="776c76b7fbf209ab5c33fa013a22dbce" category="doc">StorageGRID 如何刪除物件</block>
   <block id="d29051f06d0e35aea20b3e927d1bb131" category="doc">了解 StorageGRID 中的 ILM 原則</block>
   <block id="5d9cac8ac37d608aef8f918512936b33" category="doc">使用 ILM 管理 StorageGRID 中的物件</block>
   <block id="4c0551679190b0b60f40803bc4d720d1" category="doc">StorageGRID 中雲端儲存資源池物件的生命週期</block>
@@ -23938,4 +23910,65 @@
   <block id="1423fff165230e1ba247b1817387ccc4" category="sidebar">什麼是帳戶同步</block>
   <block id="9305357033d7f09634437da777f91ed0" category="sidebar">自動化網格聯邦連線</block>
   <block id="729396c23b9b9b6006edc1d540613190" category="sidebar">啟用 S3 物件鎖定</block>
+  <block id="0a6eda6b58d5a1ccbdd97b13fec6093e" category="inline-link-macro">如何刪除物件和刪除標記</block>
+  <block id="5080f1f47fc3a06c491514eda865a17b" category="paragraph"><block ref="5080f1f47fc3a06c491514eda865a17b" category="inline-link-macro-rx"></block></block>
+  <block id="08851ae848450758cd3d43a31d70e802" category="doc">刪除 StorageGRID 中的非目前版本和已過期的刪除標記</block>
+  <block id="8c9622ee97243da28ea187c8c9f97d85" category="paragraph">當您暫停儲存桶的版本控制時，需要設定儲存桶生命週期來處理非目前版本和過期的空白版本刪除標記。</block>
+  <block id="9aba2e7227759adc51f048839fe0a3d3" category="list-text">處理非目前版本和過期刪除標記的儲存桶生命週期組態範例</block>
+  <block id="e557b9adf1d66c8b18f40a3f263b4a69" category="list-text">以下步驟是在具有作用中 ILM 原則的儲存桶上執行的：</block>
+  <block id="a69f7cc2eb4da8bb3079d6ca0f98cc03" category="list-text">啟用版本控制。當匯入同名物件時，先前的版本會保留為非目前版本，且刪除要求會建立刪除標記。非目前版本可以存取，但會使用儲存空間。</block>
+  <block id="af3f16ebdfeadf7bd85ba2e3f5b240f0" category="list-text">暫停版本控制，因為理想的組態是只保留一個版本，並釋放非目前版本所佔用的儲存空間。這將在下一個步驟中設定。</block>
+  <block id="2776a3277fb368838db9eae624f72427" category="list-text">設定儲存桶生命週期，以處理在版本控制暫停後所留下的非目前版本與刪除標記。</block>
+  <block id="11d5b0318690e43970a3aff3d4d557d2" category="paragraph"><block ref="759ae05d95687b8234f66f770d101146" prefix="" category="inline-code"></block></block>
+  <block id="712f6bb645bede0a0117380b8de5d70a" category="list-text">儲存桶生命週期已設定為處理非目前版本和已過期的刪除標記：</block>
+  <block id="2c3251bd19e5e94580939a441d69f92d" category="list-text">已成為非目前版本超過一天的版本會被刪除。只有目前版本會永久保留。</block>
+  <block id="73efd6f22518197bab724ee20a503bcb" category="list-text">名為 <block ref="7490e857b9cadef6f848879468638882" prefix=" " category="inline-code"></block> 的物件已擷取，且版本 ID 為 <block ref="6c3e226b4d4795d518ab341b0824ec29" prefix=" " category="inline-code"></block>。</block>
+  <block id="901480ff3891718096f8a527e1f72602" category="list-text">如果擷取另一個具有相同名稱的物件 <block ref="7490e857b9cadef6f848879468638882" prefix="(" category="inline-code"></block>），它會覆寫並取代 null 版本，並立即刪除先前的版本。</block>
+  <block id="6c5392fd433a2d39f5c18201ad7229d7" category="list-text">如果對<block ref="7490e857b9cadef6f848879468638882" prefix=" " category="inline-code"></block>發出刪除要求而未指定版本 ID，則會建立 null 版本的刪除標記，取代並刪除 null 版本的物件。</block>
+  <block id="785c103373dbd5063fa010c1d81f128f" category="list-text">由於沒有非目前版本，空版本刪除標記已過期。</block>
+  <block id="179ccf4a48b284fd22a09e67377f83f9" category="list-text">不久之後，過期的 null 版本刪除標記會被刪除。</block>
+  <block id="f2cd62ab2a82323a171f8c9ab3bcdcc6" category="doc">StorageGRID 如何刪除物件和刪除標記</block>
+  <block id="71b57465778573176b6b4e53964cf0e5" category="paragraph">StorageGRID 可以直接回應用戶端要求來刪除物件，也可以因為 S3 儲存桶生命週期到期或 ILM 原則的要求而自動刪除物件。了解物件刪除的不同方式、 StorageGRID 如何處理刪除要求以及如何刪除已過期的刪除標記，有助於您更有效地管理物件。</block>
+  <block id="8c7a7566fc051838fbf811a3cd91d524" category="list-text">*同步刪除*：當 StorageGRID 收到用戶端刪除請求時，所有物件副本都會立即被移除。副本移除完畢後，用戶端會收到刪除成功的通知。</block>
+  <block id="c2149209aef0e669e570be948a9a18b3" category="list-text">*物件已加入刪除佇列*：當 StorageGRID 收到刪除要求時，物件會被加入刪除佇列，用戶端會立即收到刪除成功的通知。物件副本稍後會透過背景 ILM 處理移除。</block>
+  <block id="bf2c6dfcecb382382a9d59952f8629fa" category="list-text">如果您在大量刪除過程中密切監控刪除效能，可能會注意到，在刪除一定數量的物件後，刪除速度似乎會變慢。當 StorageGRID 從將物件排隊等待刪除轉變為執行同步刪除時，就會發生這種變化。刪除速度的明顯下降並不意味著物件副本被移除的速度變慢。相反地，這表示平均而言，空間現在釋放的速度更快。</block>
+  <block id="d1a895a96ee88401dc2c030902700312" category="paragraph">當為 S3 儲存桶啟用版本控制時，StorageGRID 會遵循 Amazon S3 的行為來回應物件刪除要求，無論這些要求是來自 S3 用戶端、S3 儲存桶生命週期到期，或是 ILM 原則的要求。</block>
+  <block id="fda7f9173374d04e8bc690ab838c94d7" category="admonition">刪除物件以釋放儲存空間被視為永久性且不可恢復的操作。</block>
+  <block id="c1183ee3038de14cc369f41461873d2f" category="inline-xref">S3 用戶端請求</block>
+  <block id="c5e9d359cbd86e20e346b75edb7ff817" category="inline-xref">刪除標記</block>
+  <block id="f79b6c8bbd6ba16634c569f65a0c8aec" category="paragraph">了解 StorageGRID 如何處理指定版本 ID（例如 <block ref="7197eeddce3c66a37b4b07bb7d5d69e4" category="inline-xref-macro-rx"></block>）的物件刪除要求，以及不指定版本 ID 的物件刪除要求至關重要。不指定版本 ID 的物件刪除要求不會刪除物件的目前版本，也不會釋放儲存空間。相反地，它們會建立一個零位元組的 <block ref="600ad04e1819afa96f830e409b4c6e6e" category="inline-xref-macro-rx"></block> 作為物件的目前版本，這會使物件的先前版本變成「非目前版本」。非目前版本的物件會使用版本 ID 來識別。</block>
+  <block id="08f3b642400f4ca90de24f8177f1617e" category="paragraph">即使物件尚未從儲存設備中移除，StorageGRID 的行為也如同該物件的目前版本已不再可用。對該物件的要求會傳回 404 NotFound。然而，由於非目前的物件資料尚未被移除，因此指定非目前物件版本 ID 的要求可以成功。</block>
+  <block id="a412efe93d2ec70b8b9af10eca7d953f" category="paragraph">如果您對已暫停版本控制的儲存桶中的物件問題沒有版本 ID 的刪除物件要求， StorageGRID 會為該物件建立一個帶有 null<block ref="770785793844f40549147a07c16f92c3" prefix=" " category="inline-code"></block> 的刪除標記。這將替換並永久刪除先前的 null 版本，因為一個物件只能有一個 null 版本。</block>
+  <block id="ffbdcd511a3006a750e130d83cbfe7d4" category="paragraph">如果用戶端從 <block ref="3191f7547d63fadec08a1e364bc5136e" category="inline-link-macro-rx"></block> 刪除具有版本 ID 的物件版本，StorageGRID 會隱藏該物件版本的存在，但不會在分支儲存貯體中建立刪除標記。如果用戶端從分支儲存貯體刪除不具版本 ID 的物件，StorageGRID 會根據標準 S3 行為在分支儲存貯體中建立刪除標記。</block>
+  <block id="ca5b751f90e89f0f2f549b68a560fda5" category="paragraph">由於物件資料以非目前版本的形式保留，因此從版本化儲存桶中刪除物件通常不會釋放儲存空間。若要永久移除保留的非目前物件版本並釋放可用空間，請使用下列選項之一：</block>
+  <block id="cff0c11feab3f7653828c1977113a96d" category="list-text">*S3 用戶端請求*：在 S3 DELETE 物件請求中指定物件版本 ID <block ref="a170517adf955d79d66142375a72f638" prefix="(" category="inline-code"></block>）。請注意，此請求僅移除指定版本 ID 的物件副本。如果存在多個非目前版本，請根據需要對每個非目前版本重複此操作。</block>
+  <block id="3c9d586bb253e1beb6698d92db32c9f6" category="list-text">*儲存桶生命週期*：在儲存桶生命週期組態中使用 <block ref="aa80bebd533f904edac7f02fda95d03a" prefix=" " category="inline-code"></block> 行動。當 NoncurrentDays 達到指定數量時，StorageGRID 將永久移除所有非目前物件版本的複本。</block>
+  <block id="f3be61a66b74d3927f5a22d2911b6b07" category="list-text">*ILM*：設定一條 ILM 規則，使用「非目前時間」作為參考時間，並且僅套用於較舊的物件版本。當指定的保留期間到期時， StorageGRID 將移除符合的非目前物件版本。在 <block ref="cf2701d01b7e780e02db108625f8aab5" category="inline-link-macro-rx"></block> 中，針對「僅將此規則套用於較舊的物件版本（在已啟用版本控制的 S3 儲存桶中）？」這個問題，選擇 *Yes*。</block>
+  <block id="fee010de0554a8e967c48acce7fa21ff" category="list-text">*刪除儲存桶中的物件*：使用租戶管理程式來<block ref="5f7e2edc5f5884d52fb2a183a8b948c0" category="inline-link-macro-rx"></block>。</block>
+  <block id="09553133b9615996183b5d58f64417f1" category="section-title">如何刪除 S3 版本控制中已過期的刪除標記</block>
+  <block id="b61786005fbfc5e62cf59a8f770ebf04" category="paragraph">啟用 S3 儲存桶的版本控制後，物件刪除要求不會刪除物件的目前版本，也不會釋放儲存空間。相反地，物件刪除要求會建立一個零位元組的刪除標記作為物件的目前版本，進而使物件的先前版本變成「非目前版本」。</block>
+  <block id="55db3c03c4baef3a5cb90d5c814883c8" category="paragraph">當刪除標記為目前版本且沒有非目前版本時，該標記將變為過期刪除標記。過期刪除標記不包含物件資料，但會出現在儲存桶清單和計量中，並防止儲存桶被刪除。</block>
+  <block id="8a33c97384be3b3af57fec039f5dbd9a" category="paragraph">如何設定 StorageGRID 以刪除過期的刪除標記，取決於儲存桶是否打算長期使用（啟用或暫停版本控制），還是準備刪除：</block>
+  <block id="39998bc1cf03e20dc3eab71bae584437" category="inline-link-macro">使用儲存桶生命週期規則移除過期物件刪除標記的範例</block>
+  <block id="59c0ba069f28cacd1dc4a7e0f56585d2" category="list-text">*自動清理現有儲存桶中過期的刪除標記*：若要自動從儲存桶（已啟用版本控制）中移除過期的刪除標記，同時保留物件版本，您需要設定一個儲存桶生命週期規則，包含 <block ref="d30fd576bd308f6facc9343ebd031b8e" prefix=" " category="inline-code"></block> 行動與 <block ref="5928b1b3d0e62426fcef71a996e73731" prefix=" " category="inline-code"></block> 組態。此行動僅適用於過期的刪除標記。當刪除標記過期時，它會自動移除，如 <block ref="83b4c143667d2a14b791aff5c7a81e36" category="inline-link-macro-rx"></block> 所示。</block>
+  <block id="747d87483484d67e1765ef16b4ed456f" category="admonition">ILM 原則無法區分目前物件版本和已過期的刪除標記。如果目標只是移除已過期的刪除標記並保留物件版本，請在儲存桶生命週期中使用<block ref="5928b1b3d0e62426fcef71a996e73731" prefix=" " category="inline-code"></block>，而不是 ILM 原則。</block>
+  <block id="48d9804de1d946e2323fc8db610c6629" category="inline-link-macro">暫停版本控制後，刪除非目前版本和過期刪除標記的範例</block>
+  <block id="f1aa7c439f83cf7c57fe8e7cc1001df9" category="paragraph">如果您對已暫停版本控制的儲存桶中的物件發出不含版本 ID 的 delete-object 要求， StorageGRID 會為該物件建立一個帶有版本 ID<block ref="6c3e226b4d4795d518ab341b0824ec29" prefix=" " category="inline-code"></block> 的刪除標記。這會取代並永久刪除先前的<block ref="6c3e226b4d4795d518ab341b0824ec29" prefix=" " category="inline-code"></block>版本 ID ，因為一個物件只能有一個 null 版本。若要刪除已過期的 null 版本刪除標記，您必須在儲存桶生命週期中使用<block ref="5928b1b3d0e62426fcef71a996e73731" prefix=" " category="inline-code"></block> ，如<block ref="3bb32d0975d2dcb9f9e49f0fa82d7949" category="inline-link-macro-rx"></block>所示。</block>
+  <block id="33b72ab3275d915c8d09ebc47b921494" category="inline-link-macro">移除所有物件版本，包括刪除標記、目前版本和非目前版本</block>
+  <block id="f3f6fbcd5e43a2bfc683acfda7269d82" category="list-text">*準備刪除儲存桶*：如果您要刪除儲存桶，並且確定儲存桶中的所有內容都不再需要，但過期的標記阻止了刪除，請使用租戶管理程式<block ref="b96a9f130ccc4c7219a6bb327d9e2e7e" category="inline-link-macro-rx"></block>從儲存桶中刪除。</block>
+  <block id="f325e07166063129d14f3c7fccfae05f" category="paragraph">從儲存桶中移除刪除標記的方式取決於您的 StorageGRID 版本：</block>
+  <block id="bcc308437fac9c258a6a2a26c568f2f5" category="list-text">在 StorageGRID 11.7 或更早版本中建立的刪除標記只能透過 S3 用戶端請求移除。ILM、儲存桶生命週期規則或「刪除儲存桶中的物件」操作均無法移除它們。</block>
+  <block id="10adc5a6c999ca0d6d6c0bce6beca53f" category="paragraph">如需詳細資訊，請參閱 <block ref="94e45950fc7164e33eb987ad6f8c2f3d" category="inline-link-macro-rx"></block>。</block>
+  <block id="61b2e42a69384aecda70fe126a8d6776" category="section-title">StorageGRID 中的物件版本控制如何使用儲存容量</block>
+  <block id="79cd097481e8f4640b2495ad4fc19cc4" category="paragraph">用於物件版本控制的儲存空間大小取決於您上傳物件的次數、您的 ILM 原則規則以及非最新版本的累積量：</block>
+  <block id="bdfb32e6a61c278f42cc4ad8b4e55348" category="list-text">啟用儲存桶的版本控制後，物件的每個版本都會儲存為一個完整的分隔物件。如果您上傳一個 1 GB 的檔案五次，StorageGRID 將為該物件儲存 5 GB 的原始資料（5 x 1 GB）。</block>
+  <block id="e437abd9f1b909c276f520ac83b0203a" category="list-text">ILM 原則會針對每個物件版本進行評估。例如，如果您有一個雙重副本複寫 ILM 規則，StorageGRID 會儲存每個物件版本（目前版本和非目前版本）的兩個複寫副本。當此 ILM 規則套用於包含 10 個 1 GB 物件版本的儲存桶時，將使用 20 GB 的實體儲存設備。</block>
+  <block id="5e68e47de741eb000f65313758874548" category="list-text">如果沒有針對非目前版本的 S3 儲存桶生命週期原則或 ILM 規則，StorageGRID 會無限期地保留所有舊版本，導致它們持續使用儲存設備。這是版本化儲存桶中儲存設備意外成長的常見原因。</block>
+  <block id="14f21ef532dcb3a00cda4550e83faafb" category="list-text"><block ref="14f21ef532dcb3a00cda4550e83faafb" category="inline-link-macro-rx"></block></block>
+  <block id="6119cab2cae185751fb23ac9688f56d5" category="inline-link-macro">如何刪除物件和刪除操作</block>
+  <block id="6f15f4857424b7c7426d9734b903d307" category="list-text"><block ref="6f15f4857424b7c7426d9734b903d307" category="inline-link-macro-rx"></block></block>
+  <block id="803f0ca43c21d8362bf9abd765153720" category="list-text">如果儲存桶已啟用物件版本控制，則刪除物件作業不會移除在 StorageGRID 11.7 或更早版本中建立的刪除標記。請參閱<block ref="14f21ef532dcb3a00cda4550e83faafb" category="inline-link-macro-rx"></block>中有關刪除儲存桶中物件的資訊。</block>
+  <block id="48c08fc264b006039cbe724aaa46d212" category="paragraph">如果 S3 儲存桶包含物件、非目前物件版本或刪除標記，則無法刪除該儲存桶。有關如何刪除 S3 版本化物件的資訊，請參閱<block ref="94e45950fc7164e33eb987ad6f8c2f3d" category="inline-link-macro-rx"></block>。</block>
+  <block id="05725098980525ddb96dd78658c23348" category="paragraph">另請參閱 <block ref="14f21ef532dcb3a00cda4550e83faafb" category="inline-link-macro-rx"></block>。</block>
+  <block id="63981efce677212da0fd4eb0b567b15d" category="sidebar">範例 9：暫停版本控制後刪除非目前版本與刪除標記</block>
 </blocks>

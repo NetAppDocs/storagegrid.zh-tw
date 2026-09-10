@@ -32,7 +32,7 @@ TIP: 使用 S3 物件鎖定的貯體將保留在 * 刪除物件：唯讀 * 狀�
 
 
 * 如果貯體已啟用物件版本設定、則可使用刪除貯體作業中的物件來移除在 StorageGRID 11.8 或更新版本中建立的標記。
-* 如果某個貯體已啟用物件版本設定、則刪除物件作業將不會移除在 StorageGRID 11.7 或更早版本中建立的刪除標記。請參閱中有關刪除貯體中物件link:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["如何刪除S3版本控制物件"]的資訊。
+* 如果儲存桶已啟用物件版本控制，則刪除物件作業不會移除在 StorageGRID 11.7 或更早版本中建立的刪除標記。請參閱link:../ilm/how-objects-and-delete-markers-are-deleted.html#delete-s3-versioned-objects["如何刪除S3版本控制物件"]中有關刪除儲存桶中物件的資訊。
 * 如果您使用link:grid-federation-manage-cross-grid-replication.html["跨網格複寫"]、請注意下列事項：
 +
 ** 使用此選項不會刪除其他網格上的貯體中的任何物件。

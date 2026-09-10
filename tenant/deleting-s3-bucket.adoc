@@ -22,7 +22,7 @@ summary: 您可以使用租戶管理程式刪除空的S3儲存區。
 .關於這項工作
 這些指示說明如何使用租戶管理程式刪除S3儲存區。您也可以使用或刪除 S3 儲存區link:understanding-tenant-management-api.html["租戶管理API"]link:../s3/operations-on-buckets.html["S3 REST API"]。
 
-如果 S3 儲存區包含物件、非目前物件版本或刪除標記、則無法刪除該儲存區。如需如何刪除 S3 版本化物件的相關資訊，請參閱link:../ilm/how-objects-are-deleted.html["如何刪除物件"]。
+如果 S3 儲存桶包含物件、非目前物件版本或刪除標記，則無法刪除該儲存桶。有關如何刪除 S3 版本化物件的資訊，請參閱link:../ilm/how-objects-and-delete-markers-are-deleted.html["如何刪除物件和刪除標記"]。
 
 .步驟
 . 從儀表板選取 * 檢視貯體 * 、或選取 * 儲存空間（ S3 ） * > * 鏟斗 * 。

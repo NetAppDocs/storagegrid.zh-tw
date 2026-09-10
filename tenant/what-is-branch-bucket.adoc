@@ -44,6 +44,7 @@ summary: 分支儲存桶提供對儲存桶中在特定時間存在的物件的�
 
 
 [[operations-on-objects-in-branch-buckets]]
+[[operations-in-branch-buckets]]
 == 對分支儲存桶中的物件進行操作
 
 * 對分支儲存桶執行 PUT 物件操作會在分支中建立一個物件。
@@ -110,4 +111,4 @@ HEAD/GET 回傳物件版本不存在
 |===
 
 
-另請參閱link:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["如何刪除S3版本控制物件"]。
+另請參閱 link:../ilm/how-objects-and-delete-markers-are-deleted.html#delete-s3-versioned-objects["如何刪除S3版本控制物件"]。

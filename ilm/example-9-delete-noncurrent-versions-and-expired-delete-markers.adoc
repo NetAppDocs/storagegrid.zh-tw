@@ -1,0 +1,49 @@
+---
+permalink: ilm/example-9-delete-noncurrent-versions-and-expired-delete-markers.html 
+sidebar: sidebar 
+keywords: retention priority, example S3 bucket lifecycle, example ILM policy 
+summary: 根據您的生命週期組態、物件會遵循 S3 儲存區生命週期或 ILM 原則的保留設定。 
+---
+= 刪除 StorageGRID 中的非目前版本和已過期的刪除標記
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您暫停儲存桶的版本控制時，需要設定儲存桶生命週期來處理非目前版本和過期的空白版本刪除標記。
+
+處理非目前版本和過期刪除標記的儲存桶生命週期組態範例:: 以下步驟是在具有作用中 ILM 原則的儲存桶上執行的：
++
+--
+. 啟用版本控制。當匯入同名物件時，先前的版本會保留為非目前版本，且刪除要求會建立刪除標記。非目前版本可以存取，但會使用儲存空間。
+. 暫停版本控制，因為理想的組態是只保留一個版本，並釋放非目前版本所佔用的儲存空間。這將在下一個步驟中設定。
+. 設定儲存桶生命週期，以處理在版本控制暫停後所留下的非目前版本與刪除標記。
+
+
+--
+ILM原則::
++
+--
+規則以擷取時間參照為基礎（預設）：在第 0 天、永遠保留 X 份複本
+
+--
+貯體生命週期::
++
+--
+`"Filter": {}, "Expiration": {"ExpiredObjectDeleteMarker": true}, "NoncurrentVersionExpiration": {"NoncurrentDays": 1}`
+
+--
+結果:: 儲存桶生命週期已設定為處理非目前版本和已過期的刪除標記：
++
+--
+. 已成為非目前版本超過一天的版本會被刪除。只有目前版本會永久保留。
+. 名為  `draftdoc` 的物件已擷取，且版本 ID 為  `NULL`。
+. 如果擷取另一個具有相同名稱的物件 (`draftdoc`），它會覆寫並取代 null 版本，並立即刪除先前的版本。
+. 如果對 `draftdoc`發出刪除要求而未指定版本 ID，則會建立 null 版本的刪除標記，取代並刪除 null 版本的物件。
+. 由於沒有非目前版本，空版本刪除標記已過期。
+. 不久之後，過期的 null 版本刪除標記會被刪除。
+
+
+--
+

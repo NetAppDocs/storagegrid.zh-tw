@@ -1,0 +1,149 @@
+---
+permalink: ilm/how-objects-and-delete-markers-are-deleted.html 
+sidebar: sidebar 
+keywords: ILM deletion, how objects are deleted 
+summary: 由於S3儲存區生命週期到期或ILM原則要求到期、因此可直接回應用戶端要求或自動刪除物件。StorageGRID瞭解可刪除物件的不同方式、StorageGRID 以及如何處理刪除要求、有助於您更有效地管理物件。 
+---
+= StorageGRID 如何刪除物件和刪除標記
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 可以直接回應用戶端要求來刪除物件，也可以因為 S3 儲存桶生命週期到期或 ILM 原則的要求而自動刪除物件。了解物件刪除的不同方式、 StorageGRID 如何處理刪除要求以及如何刪除已過期的刪除標記，有助於您更有效地管理物件。
+
+使用下列兩種方法之一刪除物件：StorageGRID
+
+* *同步刪除*：當 StorageGRID 收到用戶端刪除請求時，所有物件副本都會立即被移除。副本移除完畢後，用戶端會收到刪除成功的通知。
+* *物件已加入刪除佇列*：當 StorageGRID 收到刪除要求時，物件會被加入刪除佇列，用戶端會立即收到刪除成功的通知。物件副本稍後會透過背景 ILM 處理移除。
+
+
+刪除物件時StorageGRID 、利用最佳化刪除效能、最小化可能刪除的待處理項目、以及最快釋出空間的方法、來刪除物件。
+
+下表摘要說明StorageGRID 各個方法的使用時機。
+
+[cols="1a,3a"]
+|===
+| 執行刪除的方法 | 使用時 
+
+
+ a| 
+物件會排入佇列以供刪除
+ a| 
+當下列*任一*條件為真時：
+
+* 自動物件刪除已由下列其中一個事件觸發：
++
+** S3儲存區生命週期組態的到期日或天數已達。
+** ILM規則中指定的最後一個時間週期已過。
+
+
++
+* 附註： * 如果儲存庫中的物件已啟用 S3 物件鎖定功能、或是已指定保留日期但尚未符合、則無法刪除該物件。
+
+* S3 用戶端要求刪除、下列一項或多項條件成立：
++
+** 無法在 30 秒內刪除複本、例如物件位置暫時無法使用。
+** 背景刪除佇列閒置。
+
+
+
+
+
+
+ a| 
+立即移除物件（同步刪除）
+ a| 
+當 S3 用戶端提出刪除要求且符合下列 * 全部 * 條件時：
+
+* 所有複本均可在30秒內移除。
+* 背景刪除佇列包含要處理的物件。
+
+
+|===
+當 S3 用戶端提出刪除要求時、 StorageGRID 會先將物件新增至刪除佇列。然後切換至執行同步刪除。確保後臺刪除佇列有要處理的物件、StorageGRID 讓處理器能夠更有效率地處理刪除作業、特別是對於低並行用戶端、同時防止用戶端刪除待處理記錄。
+
+
+
+[[time-required-to-delete-objects]]
+== 刪除物件所需的時間
+
+物件的刪除方式StorageGRID 可能會影響系統的執行方式：
+
+* 執行同步刪除時、最多需要30秒才能將結果傳回給用戶端。StorageGRID StorageGRID這表示刪除的速度似乎較慢、即使複本實際移除速度比StorageGRID 將物件排入佇列以供刪除時更快。
+* 如果您在大量刪除過程中密切監控刪除效能，可能會注意到，在刪除一定數量的物件後，刪除速度似乎會變慢。當 StorageGRID 從將物件排隊等待刪除轉變為執行同步刪除時，就會發生這種變化。刪除速度的明顯下降並不意味著物件副本被移除的速度變慢。相反地，這表示平均而言，空間現在釋放的速度更快。
+
+
+如果您要刪除大量物件、而且優先要快速釋放空間、請考慮使用用戶端要求來刪除物件、而非使用ILM或其他方法來刪除物件。一般而言、當用戶端執行刪除作業時、空間會更快釋出、因為StorageGRID 使用同步刪除功能時、會有更多空間。
+
+刪除物件之後、可用空間所需的時間取決於下列幾個因素：
+
+* 物件複本是同步移除、還是排入佇列稍後移除（適用於用戶端刪除要求）。
+* 其他因素、例如當物件複本排入移除佇列時、網格中的物件數目或網格資源的可用度（適用於用戶端刪除和其他方法）。
+
+
+
+
+[[how-s3-versioned-objects-are-deleted]]
+[[delete-s3-versioned-objects]]
+== 如何刪除S3版本控制物件
+
+當為 S3 儲存桶啟用版本控制時，StorageGRID 會遵循 Amazon S3 的行為來回應物件刪除要求，無論這些要求是來自 S3 用戶端、S3 儲存桶生命週期到期，或是 ILM 原則的要求。
+
+
+CAUTION: 刪除物件以釋放儲存空間被視為永久性且不可恢復的操作。
+
+了解 StorageGRID 如何處理指定版本 ID（例如 <<s3-client-request,S3 用戶端請求>>）的物件刪除要求，以及不指定版本 ID 的物件刪除要求至關重要。不指定版本 ID 的物件刪除要求不會刪除物件的目前版本，也不會釋放儲存空間。相反地，它們會建立一個零位元組的 <<s3-delete-markers,刪除標記>> 作為物件的目前版本，這會使物件的先前版本變成「非目前版本」。非目前版本的物件會使用版本 ID 來識別。
+
+即使物件尚未從儲存設備中移除，StorageGRID 的行為也如同該物件的目前版本已不再可用。對該物件的要求會傳回 404 NotFound。然而，由於非目前的物件資料尚未被移除，因此指定非目前物件版本 ID 的要求可以成功。
+
+如果您對已暫停版本控制的儲存桶中的物件問題沒有版本 ID 的刪除物件要求， StorageGRID 會為該物件建立一個帶有 null `versionId` 的刪除標記。這將替換並永久刪除先前的 null 版本，因為一個物件只能有一個 null 版本。
+
+如果用戶端從 link:../tenant/what-is-branch-bucket.html#operations-in-branch-buckets["分支桶"] 刪除具有版本 ID 的物件版本，StorageGRID 會隱藏該物件版本的存在，但不會在分支儲存貯體中建立刪除標記。如果用戶端從分支儲存貯體刪除不具版本 ID 的物件，StorageGRID 會根據標準 S3 行為在分支儲存貯體中建立刪除標記。
+
+由於物件資料以非目前版本的形式保留，因此從版本化儲存桶中刪除物件通常不會釋放儲存空間。若要永久移除保留的非目前物件版本並釋放可用空間，請使用下列選項之一：
+
+[[s3-client-request]]
+* *S3 用戶端請求*：在 S3 DELETE 物件請求中指定物件版本 ID (`DELETE /object?versionId=ID`）。請注意，此請求僅移除指定版本 ID 的物件副本。如果存在多個非目前版本，請根據需要對每個非目前版本重複此操作。
+* *儲存桶生命週期*：在儲存桶生命週期組態中使用  `NoncurrentVersionExpiration` 行動。當 NoncurrentDays 達到指定數量時，StorageGRID 將永久移除所有非目前物件版本的複本。
++
+ `NewerNoncurrentVersions`貯體生命週期組態中的動作會指定保留在版本化 S3 儲存區中的非目前版本數。如果有比指定的非目前版本更多 `NewerNoncurrentVersions`、 StorageGRID 會在 NoncurrentDays 值過期時移除舊版本。 `NewerNoncurrentVersions`臨界值會覆寫 ILM 所提供的生命週期規則、表示如果 ILM 要求刪除、則會保留臨界值內有版本的非目前物件 `NewerNoncurrentVersions`。
+
+* *ILM*：設定一條 ILM 規則，使用「非目前時間」作為參考時間，並且僅套用於較舊的物件版本。當指定的保留期間到期時， StorageGRID 將移除符合的非目前物件版本。在 link:create-ilm-rule-enter-details.html["建立 ILM 規則精靈的步驟 1 （輸入詳細資料）"] 中，針對「僅將此規則套用於較舊的物件版本（在已啟用版本控制的 S3 儲存桶中）？」這個問題，選擇 *Yes*。
+* *刪除儲存桶中的物件*：使用租戶管理程式來link:../tenant/deleting-s3-bucket-objects.html["刪除所有物件版本"]。
+
+
+
+
+[[how-s3-versioning-expired-delete-markers-are-deleted]]
+[[s3-delete-markers]]
+== 如何刪除 S3 版本控制中已過期的刪除標記
+
+啟用 S3 儲存桶的版本控制後，物件刪除要求不會刪除物件的目前版本，也不會釋放儲存空間。相反地，物件刪除要求會建立一個零位元組的刪除標記作為物件的目前版本，進而使物件的先前版本變成「非目前版本」。
+
+當刪除標記為目前版本且沒有非目前版本時，該標記將變為過期刪除標記。過期刪除標記不包含物件資料，但會出現在儲存桶清單和計量中，並防止儲存桶被刪除。
+
+如何設定 StorageGRID 以刪除過期的刪除標記，取決於儲存桶是否打算長期使用（啟用或暫停版本控制），還是準備刪除：
+
+* *自動清理現有儲存桶中過期的刪除標記*：若要自動從儲存桶（已啟用版本控制）中移除過期的刪除標記，同時保留物件版本，您需要設定一個儲存桶生命週期規則，包含  `Expiration` 行動與  `ExpiredObjectDeleteMarker` 組態。此行動僅適用於過期的刪除標記。當刪除標記過期時，它會自動移除，如 link:example-8-priorities-for-s3-bucket-lifecycle-and-ilm-policy.html#use-bucket-to-lifecycle-remove-expired-delete-markers["使用儲存桶生命週期規則移除過期物件刪除標記的範例"] 所示。
++
+
+CAUTION: ILM 原則無法區分目前物件版本和已過期的刪除標記。如果目標只是移除已過期的刪除標記並保留物件版本，請在儲存桶生命週期中使用 `ExpiredObjectDeleteMarker`，而不是 ILM 原則。
+
++
+如果您對已暫停版本控制的儲存桶中的物件發出不含版本 ID 的 delete-object 要求， StorageGRID 會為該物件建立一個帶有版本 ID `NULL` 的刪除標記。這會取代並永久刪除先前的 `NULL`版本 ID ，因為一個物件只能有一個 null 版本。若要刪除已過期的 null 版本刪除標記，您必須在儲存桶生命週期中使用 `ExpiredObjectDeleteMarker` ，如link:example-9-delete-noncurrent-versions-and-expired-delete-markers.html["暫停版本控制後，刪除非目前版本和過期刪除標記的範例"]所示。
+
+* *準備刪除儲存桶*：如果您要刪除儲存桶，並且確定儲存桶中的所有內容都不再需要，但過期的標記阻止了刪除，請使用租戶管理程式link:../tenant/deleting-s3-bucket-objects.html["移除所有物件版本，包括刪除標記、目前版本和非目前版本"]從儲存桶中刪除。
+
+
+從儲存桶中移除刪除標記的方式取決於您的 StorageGRID 版本：
+
+* 從在 StorageGRID 11.8 或更新版本中建立的貯體中刪除標記、可由 ILM 、貯體生命週期規則、貯體作業中的刪除物件、或明確刪除 S3 用戶端。
+* 在 StorageGRID 11.7 或更早版本中建立的刪除標記只能透過 S3 用戶端請求移除。ILM、儲存桶生命週期規則或「刪除儲存桶中的物件」操作均無法移除它們。
+
+
+.相關資訊
+* link:../s3/index.html["使用S3 REST API"]
+* link:example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["範例4：S3版本化物件的ILM規則和原則"]
+

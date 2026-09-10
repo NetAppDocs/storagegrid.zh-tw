@@ -34,7 +34,19 @@ ILM原則會套用至物件的每個版本。ILM掃描程序會持續掃描所�
 
 NOTE: 當您使用多部分上傳作業上傳物件的新版本時、原始版本物件的非目前時間會反映新版本的多部分上傳時間、而非多部分上傳完成時。在有限的情況下、原始版本的非目前時間可能比目前版本的時間早上幾小時或幾天。
 
+
+
+[[how-object-versioning-uses-storage-capacity-in-storagegrid]]
+== StorageGRID 中的物件版本控制如何使用儲存容量
+
+用於物件版本控制的儲存空間大小取決於您上傳物件的次數、您的 ILM 原則規則以及非最新版本的累積量：
+
+* 啟用儲存桶的版本控制後，物件的每個版本都會儲存為一個完整的分隔物件。如果您上傳一個 1 GB 的檔案五次，StorageGRID 將為該物件儲存 5 GB 的原始資料（5 x 1 GB）。
+* ILM 原則會針對每個物件版本進行評估。例如，如果您有一個雙重副本複寫 ILM 規則，StorageGRID 會儲存每個物件版本（目前版本和非目前版本）的兩個複寫副本。當此 ILM 規則套用於包含 10 個 1 GB 物件版本的儲存桶時，將使用 20 GB 的實體儲存設備。
+* 如果沒有針對非目前版本的 S3 儲存桶生命週期原則或 ILM 規則，StorageGRID 會無限期地保留所有舊版本，導致它們持續使用儲存設備。這是版本化儲存桶中儲存設備意外成長的常見原因。
+
+
 .相關資訊
-* link:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["如何刪除S3版本控制物件"]
+* link:../ilm/how-objects-and-delete-markers-are-deleted.html#delete-s3-versioned-objects["如何刪除S3版本控制物件"]
 * link:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["S3版本化物件的ILM規則和原則（範例4）"]。
 

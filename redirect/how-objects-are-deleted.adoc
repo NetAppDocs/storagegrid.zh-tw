@@ -1,0 +1,8 @@
+---
+permalink: ilm/how-objects-are-deleted.html 
+redirect: storagegrid/ilm/how-objects-and-delete-markers-are-deleted.html 
+---
+= 
+:allow-uri-read: 
+
+

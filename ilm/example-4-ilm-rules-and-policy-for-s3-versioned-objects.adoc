@@ -138,4 +138,4 @@ NOTE: 「非目前時間」規則必須出現在原則中、然後才會套用�
 
 
 .相關資訊
-link:how-objects-are-deleted.html["如何刪除物件"]
+link:how-objects-and-delete-markers-are-deleted.html["如何刪除物件和刪除標記"]

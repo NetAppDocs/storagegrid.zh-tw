@@ -38,7 +38,7 @@ NOTE: 當 S3 貯體生命週期設定完成時、生命週期到期動作會覆�
 
 
 
-如需詳細資訊、請參閱 link:../ilm/how-objects-are-deleted.html["如何刪除物件"] 。
+如需詳細資訊，請參閱 link:../ilm/how-objects-and-delete-markers-are-deleted.html["如何刪除物件和刪除標記"]。
 
 
 
