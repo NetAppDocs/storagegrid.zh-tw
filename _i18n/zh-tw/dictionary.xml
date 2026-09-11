@@ -23965,10 +23965,9 @@
   <block id="e437abd9f1b909c276f520ac83b0203a" category="list-text">ILM 原則會針對每個物件版本進行評估。例如，如果您有一個雙重副本複寫 ILM 規則，StorageGRID 會儲存每個物件版本（目前版本和非目前版本）的兩個複寫副本。當此 ILM 規則套用於包含 10 個 1 GB 物件版本的儲存桶時，將使用 20 GB 的實體儲存設備。</block>
   <block id="5e68e47de741eb000f65313758874548" category="list-text">如果沒有針對非目前版本的 S3 儲存桶生命週期原則或 ILM 規則，StorageGRID 會無限期地保留所有舊版本，導致它們持續使用儲存設備。這是版本化儲存桶中儲存設備意外成長的常見原因。</block>
   <block id="14f21ef532dcb3a00cda4550e83faafb" category="list-text"><block ref="14f21ef532dcb3a00cda4550e83faafb" category="inline-link-macro-rx"></block></block>
-  <block id="6119cab2cae185751fb23ac9688f56d5" category="inline-link-macro">如何刪除物件和刪除操作</block>
-  <block id="6f15f4857424b7c7426d9734b903d307" category="list-text"><block ref="6f15f4857424b7c7426d9734b903d307" category="inline-link-macro-rx"></block></block>
   <block id="803f0ca43c21d8362bf9abd765153720" category="list-text">如果儲存桶已啟用物件版本控制，則刪除物件作業不會移除在 StorageGRID 11.7 或更早版本中建立的刪除標記。請參閱<block ref="14f21ef532dcb3a00cda4550e83faafb" category="inline-link-macro-rx"></block>中有關刪除儲存桶中物件的資訊。</block>
   <block id="48c08fc264b006039cbe724aaa46d212" category="paragraph">如果 S3 儲存桶包含物件、非目前物件版本或刪除標記，則無法刪除該儲存桶。有關如何刪除 S3 版本化物件的資訊，請參閱<block ref="94e45950fc7164e33eb987ad6f8c2f3d" category="inline-link-macro-rx"></block>。</block>
   <block id="05725098980525ddb96dd78658c23348" category="paragraph">另請參閱 <block ref="14f21ef532dcb3a00cda4550e83faafb" category="inline-link-macro-rx"></block>。</block>
   <block id="63981efce677212da0fd4eb0b567b15d" category="sidebar">範例 9：暫停版本控制後刪除非目前版本與刪除標記</block>
+  <block id="94e45950fc7164e33eb987ad6f8c2f3d" category="list-text"><block ref="94e45950fc7164e33eb987ad6f8c2f3d" category="inline-link-macro-rx"></block></block>
 </blocks>

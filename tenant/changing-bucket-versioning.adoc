@@ -31,7 +31,7 @@ summary: 如果您使用的是 S3 租戶、則可以變更 S3 儲存區的版本
 
 * link:../s3/object-versioning.html["物件版本管理"]
 * link:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["S3版本化物件的ILM規則和原則（範例4）"]
-* link:../ilm/how-objects-and-delete-markers-are-deleted.html["如何刪除物件和刪除操作"]
+* link:../ilm/how-objects-and-delete-markers-are-deleted.html["如何刪除物件和刪除標記"]
 
 
 .步驟
