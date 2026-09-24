@@ -19,27 +19,25 @@ entries:
     url: "/admin/viewing-storagegrid-license-information.html"
   - title: 更新StorageGRID 版本的授權資訊
     url: "/admin/updating-storagegrid-license-information.html"
-  - title: 使用API
+  - title: 使用Grid Management API
+    pdf-filename: 網格管理API
+    url: "/admin/using-grid-management-api.html"
+  - title: 網格管理API作業
+    url: "/admin/grid-management-api-operations.html"
+  - title: Grid Management API版本管理
+    url: "/admin/grid-management-api-versioning.html"
+  - title: 防範跨網站要求偽造（CSRF）
+    url: "/admin/protecting-against-cross-site-request-forgery-csrf.html"
+  - title: 如果啟用單一登入、請使用API
     entries:
-    - title: 使用Grid Management API
-      pdf-filename: 網格管理API
-      url: "/admin/using-grid-management-api.html"
-    - title: 網格管理API作業
-      url: "/admin/grid-management-api-operations.html"
-    - title: Grid Management API版本管理
-      url: "/admin/grid-management-api-versioning.html"
-    - title: 防範跨網站要求偽造（CSRF）
-      url: "/admin/protecting-against-cross-site-request-forgery-csrf.html"
-    - title: 如果啟用單一登入、請使用API
-      entries:
-      - title: Active Directory
-        url: "/admin/use-api-if-sso-is-enabled-adfs.html"
-      - title: 進入 ID
-        url: "/admin/use-api-if-sso-is-enabled-entra-id.html"
-      - title: PingFedate
-        url: "/admin/use-api-if-sso-is-enabled-ping.html"
-    - title: 使用API停用功能
-      url: "/admin/deactivate-features-from-api.html"
+    - title: Active Directory
+      url: "/admin/use-api-if-sso-is-enabled-adfs.html"
+    - title: 進入 ID
+      url: "/admin/use-api-if-sso-is-enabled-entra-id.html"
+    - title: PingFedate
+      url: "/admin/use-api-if-sso-is-enabled-ping.html"
+  - title: 使用API停用功能
+    url: "/admin/deactivate-features-from-api.html"
 - title: 控制StorageGRID 對功能的存取
   entries:
   - title: StorageGRID 存取
@@ -59,46 +57,44 @@ entries:
     url: "/admin/admin-group-permissions.html"
   - title: 管理使用者
     url: "/admin/managing-users.html"
-  - title: 使用單一登入（SSO）
+  - title: SSO 的工作原理
+    url: "/admin/how-sso-works.html"
+  - title: SSO 的要求
+    url: "/admin/requirements-for-sso.html"
+  - title: 確認同盟使用者可以登入
+    url: "/admin/confirming-federated-users-can-sign-in.html"
+  - title: 使用 OIDC 設定 SSO
     entries:
-    - title: SSO 的工作原理
-      url: "/admin/how-sso-works.html"
-    - title: SSO 的要求
-      url: "/admin/requirements-for-sso.html"
-    - title: 確認同盟使用者可以登入
-      url: "/admin/confirming-federated-users-can-sign-in.html"
-    - title: 使用 OIDC 設定 SSO
-      entries:
-      - title: 了解
-        url: "/admin/learn-about-setting-up-sso-oidc.html"
-      - title: 在 AD FS 中建立應用程式群組
-        url: "/admin/creating-relying-party-trusts-in-ad-fs-oidc.html"
-      - title: 在 Entra ID 中建立應用程式
-        url: "/admin/creating-enterprise-application-entra-id-oidc.html"
-      - title: 在 Keycloak 中建立用戶端
-        url: "/admin/create-client-keycloak-oidc.html"
-      - title: 建立 Okta 應用程式
-        url: "/admin/create-okta-application-oidc.html"
-      - title: 在PingFedate建立SP連線
-        url: "/admin/creating-sp-connection-ping-oidc.html"
-      - title: 配置 SSO
-        url: "/admin/configure-sso-oidc.html"
-    - title: 使用 SAML 設定 SSO
-      entries:
-      - title: 了解
-        url: "/admin/learn-about-setting-up-sso-saml.html"
-      - title: 配置 SSO
-        url: "/admin/configure-sso-saml.html"
-      - title: 在AD FS中建立依賴方信任
-        url: "/admin/creating-relying-party-trusts-in-ad-fs-saml.html"
-      - title: 在 Entra ID 中建立企業應用程式
-        url: "/admin/creating-enterprise-application-entra-id-saml.html"
-      - title: 在PingFedate建立SP連線
-        url: "/admin/creating-sp-connection-ping-saml.html"
-    - title: 禁用 SSO
-      url: "/admin/disabling-single-sign-on.html"
-    - title: 暫時停用並重新啟用一個管理節點的 SSO
-      url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
+    - title: 了解
+      url: "/admin/learn-about-setting-up-sso-oidc.html"
+    - title: 在 AD FS 中建立應用程式群組
+      url: "/admin/creating-relying-party-trusts-in-ad-fs-oidc.html"
+    - title: 在 Entra ID 中建立應用程式
+      url: "/admin/creating-enterprise-application-entra-id-oidc.html"
+    - title: 在 Keycloak 中建立用戶端
+      url: "/admin/create-client-keycloak-oidc.html"
+    - title: 建立 Okta 應用程式
+      url: "/admin/create-okta-application-oidc.html"
+    - title: 在PingFedate建立SP連線
+      url: "/admin/creating-sp-connection-ping-oidc.html"
+    - title: 配置 SSO
+      url: "/admin/configure-sso-oidc.html"
+  - title: 使用 SAML 設定 SSO
+    entries:
+    - title: 了解
+      url: "/admin/learn-about-setting-up-sso-saml.html"
+    - title: 配置 SSO
+      url: "/admin/configure-sso-saml.html"
+    - title: 在AD FS中建立依賴方信任
+      url: "/admin/creating-relying-party-trusts-in-ad-fs-saml.html"
+    - title: 在 Entra ID 中建立企業應用程式
+      url: "/admin/creating-enterprise-application-entra-id-saml.html"
+    - title: 在PingFedate建立SP連線
+      url: "/admin/creating-sp-connection-ping-saml.html"
+  - title: 禁用 SSO
+    url: "/admin/disabling-single-sign-on.html"
+  - title: 暫時停用並重新啟用一個管理節點的 SSO
+    url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
   - title: 使用多管理員驗證
     entries:
     - title: 了解多管理員驗證

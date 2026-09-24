@@ -9,38 +9,36 @@ entries:
   - title: 快速入門
     pdf-filename: 在基於軟體的節點上安裝StorageGRID
     url: "/swnodes/index.html"
-  - title: 規劃並準備在基於軟體的節點上進行安裝
+  - title: 必要資訊與資料
+    url: "/swnodes/required-materials.html"
+  - title: 下載並解壓縮StorageGRID 安裝檔案
+    url: "/swnodes/downloading-and-extracting-storagegrid-installation-files.html"
+  - title: 手動驗證安裝檔案
+    url: "/swnodes/download-files-verify.html"
+  - title: 軟體需求
+    url: "/swnodes/software-requirements.html"
+  - title: CPU與RAM需求
+    url: "/swnodes/cpu-and-ram-requirements.html"
+  - title: 儲存與效能需求
+    url: "/swnodes/storage-and-performance-requirements.html"
+  - title: 節點容器遷移需求（Linux）
+    url: "/swnodes/node-container-migration-requirements.html"
+  - title: 準備主機（Linux）
     entries:
-    - title: 必要資訊與資料
-      url: "/swnodes/required-materials.html"
-    - title: 下載並解壓縮StorageGRID 安裝檔案
-      url: "/swnodes/downloading-and-extracting-storagegrid-installation-files.html"
-    - title: 手動驗證安裝檔案
-      url: "/swnodes/download-files-verify.html"
-    - title: 軟體需求
-      url: "/swnodes/software-requirements.html"
-    - title: CPU與RAM需求
-      url: "/swnodes/cpu-and-ram-requirements.html"
-    - title: 儲存與效能需求
-      url: "/swnodes/storage-and-performance-requirements.html"
-    - title: 節點容器遷移需求（Linux）
-      url: "/swnodes/node-container-migration-requirements.html"
-    - title: 準備主機（Linux）
-      entries:
-      - title: 全主機設定的變更方式
-        url: "/swnodes/how-host-wide-settings-change.html"
-      - title: 安裝Linux
-        url: "/swnodes/installing-linux.html"
-      - title: AppArmor 設定檔安裝（僅限 Ubuntu 和 Debian）
-        url: "/swnodes/understanding-apparmor-profile-installation.html"
-      - title: 設定主機網路
-        url: "/swnodes/configuring-host-network.html"
-      - title: 設定主機儲存設備
-        url: "/swnodes/configuring-host-storage.html"
-      - title: 配置容器引擎儲存卷
-        url: "/swnodes/configuring-docker-storage-volume.html"
-      - title: 安裝StorageGRID 支援主機服務
-        url: "/swnodes/installing-storagegrid-webscale-host-services.html"
+    - title: 全主機設定的變更方式
+      url: "/swnodes/how-host-wide-settings-change.html"
+    - title: 安裝Linux
+      url: "/swnodes/installing-linux.html"
+    - title: AppArmor 設定檔安裝（僅限 Ubuntu 和 Debian）
+      url: "/swnodes/understanding-apparmor-profile-installation.html"
+    - title: 設定主機網路
+      url: "/swnodes/configuring-host-network.html"
+    - title: 設定主機儲存設備
+      url: "/swnodes/configuring-host-storage.html"
+    - title: 配置容器引擎儲存卷
+      url: "/swnodes/configuring-docker-storage-volume.html"
+    - title: 安裝StorageGRID 支援主機服務
+      url: "/swnodes/installing-storagegrid-webscale-host-services.html"
   - title: 自動化基於軟體的節點安裝
     entries:
     - title: 自動安裝（Linux）
