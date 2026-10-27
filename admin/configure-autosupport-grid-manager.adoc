@@ -133,7 +133,7 @@ summary: 根據預設、 StorageGRID AutoSupport 功能會在您第一次安裝 
 [[add-an-additional-autosupport-destination]]
 == 新增AutoSupport 其他的目的地
 
-啟用 AutoSupport 時、 heath 和 status 套件會傳送至技術支援。您可以為所有 AutoSupport 套件指定一個額外目的地。
+當您啟用 AutoSupport 時，健全狀況和狀態資料包會傳送給技術支援。您可以為所有 AutoSupport 資料包指定一個額外的目的地。
 
 若要驗證或變更用於傳送 AutoSupport 套件的傳輸協定，請參閱的指示<<specify-protocol-for-autosupport-packages,指定 AutoSupport 套件的通訊協定>>。
 

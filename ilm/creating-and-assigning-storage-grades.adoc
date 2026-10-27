@@ -37,9 +37,6 @@ NOTE: 請勿創造超過必要的儲存等級。例如、請勿為每個儲存�
 +
 .. 對於要新增的每個自訂儲存等級，請選擇 *Insert* image:icon_nms_insert.gif["插入圖示"] 以新增一行。
 .. 輸入描述性標籤。
-+
-image:editing_storage_grades.gif["儲存等級頁面"]
-
 .. 選取*套用變更*。
 .. 如果需要修改已儲存的標籤，請選擇「編輯」 image:icon_nms_edit.gif["編輯圖示"] 並選擇「套用變更」。
 +
@@ -52,9 +49,6 @@ NOTE: 您無法刪除儲存成績。
 +
 .. 在 LDR 清單中找到儲存節點，然後選擇其 *Edit* 圖示 image:icon_nms_edit.gif["編輯圖示"]。
 .. 從清單中選取適當的儲存等級。
-+
-image:assigning_storage_grades_to_storage_nodes.gif["儲存等級頁面"]
-
 +
 
 NOTE: 只能將儲存等級指派給指定的儲存節點一次。從故障中恢復的儲存節點會維持先前指派的儲存等級。請勿在 ILM 原則啟動後變更此指派。如果指派變更、資料會根據新的儲存等級儲存。

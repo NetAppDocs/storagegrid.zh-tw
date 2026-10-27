@@ -7313,7 +7313,6 @@
   <block id="5e29712b330c53e5197741af40c687be" category="list-text">定義自訂儲存等級：</block>
   <block id="408ea845582fc67ccb1d6fd994905d7e" category="inline-image-macro">插入圖示</block>
   <block id="55d5ccdf1b43bb95dea2bbae395c7100" category="list-text">輸入描述性標籤。</block>
-  <block id="8db46e44720002b9905d8722431c89b8" category="image-alt">儲存等級頁面</block>
   <block id="44040e214e919d86d6a1f3f26db3d22c" category="inline-image-macro">編輯圖示</block>
   <block id="5264e8aa60ddc8946b0e142d402dbbab" category="admonition">您無法刪除儲存成績。</block>
   <block id="98c138e07d1130e2c1e45731598e1c4c" category="list-text">將新的儲存等級指派給儲存節點：</block>
@@ -18986,12 +18985,10 @@
   <block id="aa5539028c9b3d011d3d7e8668161465" category="sidebar">接下來：視需要執行其他恢復步驟</block>
   <block id="d3eafc8e324ffcc28713f09ecdbe0f64" category="sidebar">更換準則</block>
   <block id="0e64c6d47e1e64f85c3218fa142c4e7d" category="sidebar">開始使用 Grid Manager</block>
-  <block id="15d50a7a5cf4c032d2ff3358f8c40506" category="sidebar">使用API</block>
   <block id="d665fc9cd387f1c3109c57749f94dc8e" category="sidebar">如果啟用單一登入、請使用API</block>
   <block id="4b0cf458ef35425ce2e8ce9bc4a30b73" category="sidebar">控制StorageGRID 對功能的存取</block>
   <block id="2029c13f4c084121ade7b0d45e3abbe4" category="sidebar">StorageGRID 存取</block>
   <block id="668aa3baa0371adeebc3151300cf858a" category="sidebar">變更 SSH 存取密碼</block>
-  <block id="ed76b89f4a82a75ceec8ccf31d796a3a" category="sidebar">使用單一登入（SSO）</block>
   <block id="671acfeb23b874283fb7d6cb00f23d5a" category="sidebar">在PingFedate建立SP連線</block>
   <block id="50afb0045a7590a535362f7f16ab8e49" category="sidebar">什麼是網格同盟</block>
   <block id="064c7d8840ac3011d63b748e377ecdbd" category="sidebar">安全元件</block>
@@ -20775,7 +20772,6 @@
   <block id="62ed4b0a61f62c977216fc9d416892da" category="sidebar">為管理介面啟用 CORS</block>
   <block id="f83e2e7c993092c3eb38c2a2aae88107" category="sidebar">管理存取策略</block>
   <block id="44ba47746c894b6428a84c4055c7d755" category="sidebar">會話策略範例</block>
-  <block id="6e641153adc292811cd64cd30f62cce0" category="sidebar">規劃並準備在基於軟體的節點上進行安裝</block>
   <block id="f41eb31ef15ade3078f9552afed1302c" category="sidebar">準備主機（Linux）</block>
   <block id="fd615e1ea7acc68bc999f463dd2c060f" category="sidebar">AppArmor 設定檔安裝（僅限 Ubuntu 和 Debian）</block>
   <block id="5cc06745ff9839ff5904cd7620b6b7ea" category="sidebar">配置容器引擎儲存卷</block>
@@ -21597,10 +21593,8 @@
   <block id="11ac3b1688e6df08697d739967492a05" category="paragraph"><block ref="11ac3b1688e6df08697d739967492a05" category="inline-image-macro-rx" type="image"></block></block>
   <block id="615b4dad87c60e9d7a13b702a0452476" category="paragraph"><block ref="615b4dad87c60e9d7a13b702a0452476" category="inline-image-macro-rx" type="image"></block></block>
   <block id="411161433047b87fb3a4515684f931f4" category="list-text">對於要新增的每個自訂儲存等級，請選擇 *Insert* <block ref="3e594dc98d94f2c40d70586a4c3267a6" category="inline-image-macro-rx" type="image"></block> 以新增一行。</block>
-  <block id="2faabba81aa5f5ee43e0003de3899a89" category="paragraph"><block ref="2faabba81aa5f5ee43e0003de3899a89" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9405bc43ac4f2b09bb2ab2aa12de9f82" category="list-text">如果需要修改已儲存的標籤，請選擇「編輯」 <block ref="0ebcf8caa3ab7a11eee1d4c56c33220c" category="inline-image-macro-rx" type="image"></block> 並選擇「套用變更」。</block>
   <block id="973bb897b0d4e0f06b2d25fd51360130" category="list-text">在 LDR 清單中找到儲存節點，然後選擇其 *Edit* 圖示 <block ref="0ebcf8caa3ab7a11eee1d4c56c33220c" category="inline-image-macro-rx" type="image"></block>。</block>
-  <block id="2ef47ca8960bcfc68f9fafdffbceb69a" category="paragraph"><block ref="2ef47ca8960bcfc68f9fafdffbceb69a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="118291f749e716c20abad554956d599e" category="paragraph"><block ref="118291f749e716c20abad554956d599e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c8c430402db1f2292c915cec77e8a1c5" category="paragraph"><block ref="c8c430402db1f2292c915cec77e8a1c5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0bd4ce8d20ac68f8d8410bbe868546bb" category="paragraph"><block ref="0bd4ce8d20ac68f8d8410bbe868546bb" category="inline-image-macro-rx" type="image"></block></block>
@@ -23970,4 +23964,5 @@
   <block id="05725098980525ddb96dd78658c23348" category="paragraph">另請參閱 <block ref="14f21ef532dcb3a00cda4550e83faafb" category="inline-link-macro-rx"></block>。</block>
   <block id="63981efce677212da0fd4eb0b567b15d" category="sidebar">範例 9：暫停版本控制後刪除非目前版本與刪除標記</block>
   <block id="94e45950fc7164e33eb987ad6f8c2f3d" category="list-text"><block ref="94e45950fc7164e33eb987ad6f8c2f3d" category="inline-link-macro-rx"></block></block>
+  <block id="731a2e9615c46dc92a43d17a4ed3ebcd" category="paragraph">當您啟用 AutoSupport 時，健全狀況和狀態資料包會傳送給技術支援。您可以為所有 AutoSupport 資料包指定一個額外的目的地。</block>
 </blocks>
